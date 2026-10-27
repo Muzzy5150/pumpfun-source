@@ -1,0 +1,9 @@
+{
+ "suite": "virtual_reserve_sync",
+ "report_sha256": "f36e4d7bcbf6f2e750aeb169b23ec788514d923862c234864125b66f195beaf1",
+ "candidate_sha256": "4cbe303da77b6a4cbdc24302f24b038b86a568fc9568dcd09d4d8621416046e3",
+ "case_count": 192,
+ "errors": [],
+ "diagnostic_log_cases": 192,
+ "diagnostic_mismatches": 0
+}

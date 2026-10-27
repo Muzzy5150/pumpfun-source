@@ -26,7 +26,7 @@ Idempotent and content-addressed so it re-applies to later rounds:
    offsets then equal the original's, e.g. global data at +1672 and the curve at +496.
    Owned sol_vault_authority fits the original try_accounts (0xcd3d8) better (0.49 vs 0.31)
    than the equal-size alternative of an owned token_program.
-6. (opt-in: --with-handler-6) set_mayhem_virtual_params handler (window 0x137fc0, 2,912 bytes): `execute` is crate-private,
+6. set_mayhem_virtual_params handler (window 0x137fc0, 2,912 bytes): `execute` is crate-private,
    so LLVM inlines it into the #[program] fn as in the original. That fn loads the event bump and
    accounts pointer at entry. The curve snapshot is read first, the sync helper takes Global and
    vault values as direct arguments, and the mint key is read with the event. The event is `Copy`
@@ -55,8 +55,10 @@ UGA_HANDLER = """fn update_global_authority_handler(ctx:Context<UpdateGlobalAuth
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--source-directory', type=Path, required=True)
-    ap.add_argument('--with-handler-6', action='store_true',
-                    help='also apply change 6 (set_mayhem_virtual_params handler; measured, runtime validation pending)')
+    ap.add_argument('--without-handler-6', action='store_true',
+                    help='skip change 6 (set_mayhem_virtual_params handler), reproducing the Round25 727 result')
+    ap.add_argument('--with-cpi-7', action='store_true',
+                    help='also apply change 7 (declare_program! generated CPI clients; see tools/cpi_changes.json)')
     a = ap.parse_args()
     lib = a.source_directory / 'src/lib.rs'
     subprocess.run([sys.executable, str(HERE / 'reorder_program.py'), '--lib', str(lib)], check=True)
@@ -74,8 +76,43 @@ def main():
     apply_buy_split(a.source_directory)
     apply_idl_transfer_with_seed(a.source_directory)
     apply_mayhem_params_layout(a.source_directory)
-    if a.with_handler_6:
+    if not a.without_handler_6:
         apply_mayhem_params_handler(a.source_directory)
+    if a.with_cpi_7:
+        apply_generated_cpi_clients(a.source_directory)
+
+
+def apply_generated_cpi_clients(crate):
+    """Change 7: declare_program!(pump_amm)/(pump_fees) from the official upstream IDLs
+    (evidence/upstream, pump-fun/pump-public-docs 639b87f; their instruction and account
+    discriminators equal the original's) and call the generated cpi:: clients instead of
+    hand-built instructions. Whole-line replacements keep every file's line count."""
+    import json, shutil
+    spec = json.loads((HERE / 'cpi_changes.json').read_text())
+    root = next(p for p in HERE.parents if (p / 'evidence/original/pump/deployed.so').is_file())
+    for dest, src in spec['idls'].items():
+        d = crate / dest
+        d.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(root / src, d)
+    lib = crate / 'src/lib.rs'
+    t = lib.read_text()
+    if not t.endswith(spec['lib_append']):
+        if not t.endswith('\n'):
+            t += '\n'
+        lib.write_text(t + spec['lib_append'])
+    by_file = {}
+    for c in spec['line_replacements']:
+        by_file.setdefault(c['file'], []).append(c)
+    for rel, cs in by_file.items():
+        p = crate / rel
+        lines = p.read_text().split('\n')
+        for c in cs:
+            if c['new'] in lines:
+                continue
+            assert lines.count(c['old']) == 1, f'{rel}: expected frontier line not found: {c["old"][:70]}'
+            lines[lines.index(c['old'])] = c['new']
+        p.write_text('\n'.join(lines))
+    print('generated CPI clients: applied')
 
 
 MVH_SUBS = [

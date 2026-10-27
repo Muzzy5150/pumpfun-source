@@ -17,7 +17,10 @@ ELFs, SHA-256 and score output are under `evidence/elf/<name>/`.
 |---|---|---|---|---|---|---|
 | H1 | Round23 | `9e2c319bc`, merged as `e16ab0756` | `5b65eade056826eed16c14e356a4a13be53d9fbe52349e790f04cfc0f0282ca9` (`07f3f871ed8027c8b10f9c9c77369e565af72dc974814924c18b76059fc249bd`) | 714 / 123 / 864,904 | 0x11b758, 0x1348c0 | none |
 | H2 | Round23 | superseded by H3 (not committed separately) | `ccea809baa4dbb26e3da71e660adaae8c51fe4c12a81e6ee32ba9d7fa862ea19` (`b69f014a4d8d3f5a0686df194a5519caebeea2c82503fc36b9f6defe369e55c7`) | 716 / 123 / 868,440 | 0x11b758, 0x1348c0, 0x12a4e0, 0x12abc8 | none |
-| H3 | **Round25** | see the commit that adds this row | `3f9b38145fc777c88ec291a8e25a2687193af05d422ad419a156fda505d23ca3` (`8a45886afb3003205f16b0b085d377dc64f6c478ee6f40cb91be4b815dfaf843`) | **727 / 125 / 890,304** | 0x11b758, 0x1348c0, 0x12a4e0, 0x12abc8, 0x19e3b0, 0x1255a8†, 0xcf510† | none |
+| H3 | **Round25** | `9c4f06050119d4e8bb90c4caf82bd3e0d986facd` | `3f9b38145fc777c88ec291a8e25a2687193af05d422ad419a156fda505d23ca3` (`8a45886afb3003205f16b0b085d377dc64f6c478ee6f40cb91be4b815dfaf843`) | **727 / 125 / 890,304** | 0x11b758, 0x1348c0, 0x12a4e0, 0x12abc8, 0x19e3b0, 0x1255a8†, 0xcf510† | none |
+
+| H4 | Round26 | see the commit that adds this row | `7854036b36e9f9eec1d5bd8791fb832ab6568ad4f3ae683a86753241171490df` (`4cbe303da77b6a4cbdc24302f24b038b86a568fc9568dcd09d4d8621416046e3`) | 729 / 125 / 895,576 | H3 set + 0x137fc0 (set_mayhem_virtual_params handler) | none |
+| H5 | Round26 | same commit (measured; corpus pending) | `c578b83e1684826e37e8a5d74a6d2058ad9e597d56ab4504e7c31d06e45c6c57` (`20961029e5e7fa78b0ea9863d85c52bd3bfc9b8599f34b1977ff6834cdca8a1b`) | **748 / 125 / 951,464** | H4 set + generated CPI clients 0x10a0e0, 0x10c0b8, 0x10d638, 0x10e938, 0x10fb38, 0x1100f8, 0x110d40, 0x1113c8, 0x112220, 0x1133c8, 0x113f00, 0x114d48, 0x116718, 0x118360, 0x119c50 + helpers 0x163ea8, 0xca628†, 0xea68†, 0xf130† | none |
 
 H3 raw gains are 0x198fe8 and 0x19b4e0. † These are in other claim families or lanes and are gained by this lane's SetMayhemVirtualParams layout change; they are reported for dedupe.
 
@@ -52,6 +55,13 @@ H3 raw gains are 0x198fe8 and 0x19b4e0. † These are in other claim families or
 | 07:03 | Round24 | + owned `token_program` instead (b) | 727 (same gains); (c) both → 725 |
 | 07:12 | Round25 | five changes | 727/125/890,304, no losses; reproduced Round20/21/23/24 base hashes exactly |
 | 07:20 | Round25 | `execute` made `pub(crate)` (mvh1); + curve fields first and mint key after Clock (mvh2) | no gain; mvh2 window is now the inlined `#[program]` fn, 0.88 similar |
+
+## Round26 findings
+
+- H4: full public 44-suite corpus passes on `4cbe303d…` (10,468/10,468, 0 diagnostic mismatches; `evidence/runtime-full-r26-lane.json`). `virtual_reserve_sync` also passes on its own (192/192).
+- H5: change 7, `apply_lane_changes.py --with-cpi-7`, is described in `tools/cpi_changes.json`. It adds `declare_program!(pump_amm)` and `declare_program!(pump_fees)` from the official upstream IDLs (`evidence/upstream`, pump-public-docs `639b87f`) and calls the generated clients for create_pool, init_boost, admin_cto_pool, collect_coin_creator_fee, transfer_creator_fees_to_pump_v2 and admin_cto_sharing_config. It gains 19 windows, 0 losses (`evidence/elf/r26-748-cpi`).
+- DistributeCreatorFees with one more owned `AccountInfo` closes `0x131128` (730, 0 losses) with either system_program (d1) or event_authority (d2) owned. The v2 wrapper `0x1316e8` additionally needs `quote_mint` boxed: the original's v2 value is v1 + 40 bytes.
+- No gain: `pub mod fee_cpi` (technique 1) for `0x1176e0`, and the reference-holding admin_set_idl_authority rewrite for `0x1557e8`.
 
 ## Negative controls (do not repeat)
 
