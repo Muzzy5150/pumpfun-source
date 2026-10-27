@@ -1,7 +1,7 @@
 {
   "scope": "pump-hi lane: ordinary-source recovery of main-Pump windows 0x101170..0x1ab9b8 on top of the newest published frontier. Not whole-ELF identity.",
   "result": "H6 (Round36): remaining changes 3,5,6,7. Changes 1,2 (dispatcher order, update_global_authority) and an equivalent of 4 (Anchor transfer_with_seed) are already in Round36.",
-  "adoptable": true,
+  "adoptable": false,
   "adoptability_note": "No source-caused losses. The 19 raw differences against the published Round36 inventory also appear when the UNMODIFIED Round36 source is built with the same plain archived builder (evidence/elf/r36-base: 738/126, same 19 windows). Round36 obtains them from its layout-linked recipe (ordered.ld, data-order certificate, target-library profile), so the integration layout step must re-derive the text/data order including the added functions. Same-recipe comparison: base 738/126/900,520; +3,5,6 743/126/908,888 (evidence/elf/r36-noncpi); +3,5,6,7 762/126/964,776.",
   "frontier_packet": "repro/pump/main-contract-round36-20261027",
   "frontier_candidate_sha256": "f8235c432598bd65ee1626c6ce36bb408cdeb761b87058496ee53a57dea6d265",
@@ -103,5 +103,6 @@
   "same_recipe_controls": {
     "r36-base": "evidence/elf/r36-base",
     "r36-noncpi (changes 3,5,6)": "evidence/elf/r36-noncpi"
-  }
+  },
+  "runtime_invalid": "Do not adopt this 762 build: change 7 as applied here puts generated clients into migrate_v2::execute, whose stack offset becomes 4,104 (> 4,096; compiler warning) and 482 of 827 migrate_v2 corpus cases fail with an access violation in stack frame 5. See evidence/runtime-r36-lane-migrate_v2-rejection.json. tools/cpi_changes.json no longer applies the migrate_v2 entries; a corrected candidate replaces this record after its build, measurement and full corpus."
 }
