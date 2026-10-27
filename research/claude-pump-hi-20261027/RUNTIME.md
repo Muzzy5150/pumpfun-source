@@ -11,9 +11,11 @@ prefix, zero allocation tail) and the same `pump_diagnostic_audit.audit`. The in
 | candidate | suites | cases | errors | paired diagnostic-log cases | diagnostic mismatches | loader loads |
 |---|---:|---:|---:|---:|---:|---:|
 | Round23 + dispatcher order + `update_global_authority` (`07f3f871…`) | 44 / 44 | 10,468 / 10,468 | 0 | 10,464 | 0 | 23,834 |
+| Round23 + legacy buy const split (`b69f014a…`) | 44 / 44 | 10,468 / 10,468 | 0 | 10,464 | 0 | 23,834 |
+| **Round25 + five lane changes** (`8a45886a…`, H3) | 44 / 44 | 10,468 / 10,468 | 0 | 10,464 | 0 | 23,834 |
 
 These totals equal the frontier's own full-corpus totals (10,468 cases, 10,464 log cases). The per-suite counts,
-harness hashes and report hash are in `evidence/runtime-full-r23-gain.json`. The full 13 MB report was kept
+harness hashes and report hashes are in `evidence/runtime-full-r23-gain.json`, `evidence/runtime-full-r23-buy.json` and `evidence/runtime-full-r25-lane.json`. The full 13 MB reports were kept
 outside the repository.
 
 An earlier partial run (8 suites, 4,306 cases, no failures) on the Round21 dispatcher-only candidate was

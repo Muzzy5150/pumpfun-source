@@ -115,8 +115,8 @@ pub mod pump_recovered {
     pub fn multi_hop_curve_swap<'info>(ctx:Context<'_,'_,'info,'info,MultiHopCurve<'info>>,amount_in:u64,hop_fees:Vec<u8>)->Result<CurveRunResult>{multi_hop_curve::execute(ctx,amount_in,hop_fees)}
     pub fn sweep_protocol_fee(ctx:Context<SweepFees>)->Result<()>{sweep::execute(ctx,false)}
     pub fn sweep_creator_fee(ctx:Context<SweepFees>)->Result<()>{sweep::execute(ctx,true)}
-    pub fn buy<'info>(ctx:Context<'_,'_,'_,'info,LegacyBuy<'info>>,amount:u64,max_sol_cost:u64,track_volume:OptionBool,partial_fill:OptionBool)->Result<()>{legacy_buy::execute(ctx,amount,max_sol_cost,track_volume.0,partial_fill.0,false)}
-    pub fn buy_exact_sol_in<'info>(ctx:Context<'_,'_,'_,'info,LegacyBuy<'info>>,spendable_sol_in:u64,min_tokens_out:u64,track_volume:OptionBool,partial_fill:OptionBool)->Result<()>{legacy_buy::execute(ctx,spendable_sol_in,min_tokens_out,track_volume.0,partial_fill.0,true)}
+    pub fn buy<'info>(ctx:Context<'_,'_,'_,'info,LegacyBuy<'info>>,amount:u64,max_sol_cost:u64,track_volume:OptionBool,partial_fill:OptionBool)->Result<()>{legacy_buy::execute::<false>(ctx,amount,max_sol_cost,track_volume.0,partial_fill.0)}
+    pub fn buy_exact_sol_in<'info>(ctx:Context<'_,'_,'_,'info,LegacyBuy<'info>>,spendable_sol_in:u64,min_tokens_out:u64,track_volume:OptionBool,partial_fill:OptionBool)->Result<()>{legacy_buy::execute::<true>(ctx,spendable_sol_in,min_tokens_out,track_volume.0,partial_fill.0)}
     pub fn sell(ctx:Context<LegacySell>,amount:u64,min_sol_output:u64)->Result<()>{legacy_sell::execute(ctx,amount,min_sol_output)}
     pub fn migrate<'info>(ctx:Context<'_,'_,'_,'info,Migrate<'info>>)->Result<()>{migrate::execute(ctx)}
     pub fn migrate_v2<'info>(ctx:Context<'_, '_, '_, 'info,MigrateV2<'info>>)->Result<()>{migrate_v2::execute(ctx)}

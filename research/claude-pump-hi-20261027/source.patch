@@ -1,5 +1,5 @@
---- frontier/repro/pump/main-contract-round23-20261027/primary/src/lib.rs	2026-10-27 06:29:48
-+++ research/claude-pump-hi-20261027/source/src/lib.rs
+--- a/programs/pump/src/lib.rs
++++ b/programs/pump/src/lib.rs
 @@ -66,49 +66,61 @@
  #[program]
  pub mod pump_recovered {
@@ -81,8 +81,8 @@
      pub fn sweep_protocol_fee(ctx:Context<SweepFees>)->Result<()>{sweep::execute(ctx,false)}
 -    pub fn sync_user_volume_accumulator(ctx:Context<SyncUserVolumeAccumulator>)->Result<()>{volume_sync::execute(ctx)}
 +    pub fn sweep_creator_fee(ctx:Context<SweepFees>)->Result<()>{sweep::execute(ctx,true)}
-+    pub fn buy<'info>(ctx:Context<'_,'_,'_,'info,LegacyBuy<'info>>,amount:u64,max_sol_cost:u64,track_volume:OptionBool,partial_fill:OptionBool)->Result<()>{legacy_buy::execute(ctx,amount,max_sol_cost,track_volume.0,partial_fill.0,false)}
-+    pub fn buy_exact_sol_in<'info>(ctx:Context<'_,'_,'_,'info,LegacyBuy<'info>>,spendable_sol_in:u64,min_tokens_out:u64,track_volume:OptionBool,partial_fill:OptionBool)->Result<()>{legacy_buy::execute(ctx,spendable_sol_in,min_tokens_out,track_volume.0,partial_fill.0,true)}
++    pub fn buy<'info>(ctx:Context<'_,'_,'_,'info,LegacyBuy<'info>>,amount:u64,max_sol_cost:u64,track_volume:OptionBool,partial_fill:OptionBool)->Result<()>{legacy_buy::execute::<false>(ctx,amount,max_sol_cost,track_volume.0,partial_fill.0)}
++    pub fn buy_exact_sol_in<'info>(ctx:Context<'_,'_,'_,'info,LegacyBuy<'info>>,spendable_sol_in:u64,min_tokens_out:u64,track_volume:OptionBool,partial_fill:OptionBool)->Result<()>{legacy_buy::execute::<true>(ctx,spendable_sol_in,min_tokens_out,track_volume.0,partial_fill.0)}
 +    pub fn sell(ctx:Context<LegacySell>,amount:u64,min_sol_output:u64)->Result<()>{legacy_sell::execute(ctx,amount,min_sol_output)}
 +    pub fn migrate<'info>(ctx:Context<'_,'_,'_,'info,Migrate<'info>>)->Result<()>{migrate::execute(ctx)}
 +    pub fn migrate_v2<'info>(ctx:Context<'_, '_, '_, 'info,MigrateV2<'info>>)->Result<()>{migrate_v2::execute(ctx)}
@@ -186,3 +186,54 @@
 +    let event=UpdateGlobalAuthorityEvent{global:ctx.accounts.global.key(),authority:ctx.accounts.authority.key(),new_authority:ctx.accounts.new_authority.key(),timestamp:Clock::get()?.unix_timestamp};
 +    emit!(event.clone());emit_cpi!(event);Ok(())
  }
+--- a/programs/pump/src/buy.rs
++++ b/programs/pump/src/buy.rs
+@@ -33,7 +33,7 @@
+ fn add(a:u64,b:u64)->Result<u64>{a.checked_add(b).ok_or_else(||error!(PumpError::Overflow))}
+ fn sub(a:u64,b:u64)->Result<u64>{a.checked_sub(b).ok_or_else(||error!(PumpError::Overflow))}
+ fn narrow(a:u128)->Result<u64>{u64::try_from(a).map_err(|_|error!(PumpError::Truncation))}
+-pub fn execute<'info>(ctx:Context<'_,'_,'_,'info,LegacyBuy<'info>>,input:u64,limit:u64,track:bool,partial:bool,exact:bool)->Result<()>{
++pub fn execute<'info,const EXACT:bool>(ctx:Context<'_,'_,'_,'info,LegacyBuy<'info>>,input:u64,limit:u64,track:bool,partial:bool)->Result<()>{let exact=EXACT;
+  let a=&mut *ctx.accounts;
+  crate::trade_types::prepare_bonding_curve(&a.bonding_curve,&a.system_program,&a.user)?;
+ 
+--- a/programs/pump/src/admin_set_idl_authority.rs
++++ b/programs/pump/src/admin_set_idl_authority.rs
+@@ -16,13 +16,13 @@
+ pub fn execute(ctx:Context<AdminSetIdlAuthority>,idl_authority:Pubkey)->Result<()> {
+     let account=ctx.accounts.idl_account.to_account_info();
+     if account.owner==&anchor_lang::system_program::ID {
+-        let signer=ctx.accounts.program_signer.key();
+-        let ix=anchor_lang::solana_program::system_instruction::transfer_with_seed(
+-            account.key,&signer,String::from("anchor:idl"),&crate::ID,
+-            &ctx.accounts.authority.key(),account.lamports());
+-        anchor_lang::solana_program::program::invoke_signed(&ix,&[
+-            account.clone(),ctx.accounts.program_signer.to_account_info(),ctx.accounts.authority.to_account_info(),ctx.accounts.system_program.to_account_info()
+-        ],&[&[&[ctx.bumps.program_signer]]])?;
++        let cpi_accounts=anchor_lang::system_program::TransferWithSeed{
++            from:account.clone(),base:ctx.accounts.program_signer.to_account_info(),
++            to:ctx.accounts.authority.to_account_info()};
++        let signer_seeds:&[&[&[u8]]]=&[&[&[ctx.bumps.program_signer]]];
++        let cpi_context=CpiContext::new_with_signer(ctx.accounts.system_program.to_account_info(),cpi_accounts,signer_seeds);
++        anchor_lang::system_program::transfer_with_seed(
++            cpi_context,String::from("anchor:idl"),&crate::ID,account.lamports())?;
+         return Ok(());
+     } else {
+         require!(account.owner==&crate::ID,PumpError::AccountTypeNotSupported);
+--- a/programs/pump/src/mayhem_virtual_params.rs
++++ b/programs/pump/src/mayhem_virtual_params.rs
+@@ -12,12 +12,12 @@
+ pub struct SetMayhemVirtualParams<'info> {
+     /// CHECK: The signer constraint and foreign-program PDA seeds authenticate this account.
+     #[account(mut, signer, seeds = [b"sol-vault"], bump, seeds::program = MAYHEM_ID)]
+-    pub sol_vault_authority: UncheckedAccount<'info>,
++    pub sol_vault_authority: AccountInfo<'info>,
+     #[account(mut, associated_token::mint = mint, associated_token::authority = sol_vault_authority, associated_token::token_program = token_program)]
+     pub mayhem_token_vault: InterfaceAccount<'info, TokenAccount>,
+     pub mint: InterfaceAccount<'info, Mint>,
+     #[account(seeds = [b"global"], bump)]
+-    pub global: Box<Account<'info, Global>>,
++    pub global: Account<'info, Global>,
+     #[account(mut, seeds = [b"bonding-curve", mint.key().as_ref()], bump)]
+     pub bonding_curve: Account<'info, BondingCurve>,
+     #[account(address = anchor_spl::token_2022::ID)]
