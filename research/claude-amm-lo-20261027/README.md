@@ -93,6 +93,13 @@ bytes or unused operations are used.
 
 ## Residuals worked but not closed
 
+`PROGRESS.md` holds the full per-window diagnosis and negative controls. The nearest
+miss is the deposit handler `0x2fb38`: with `results/deposit-near-miss/deposit-near-miss.patch`
+(public `liquidity` re-export, Token-program key reference compare, natural reserve read
+order) it is 7,128 bytes with 866/868 slots equal; one load pair remains swapped.
+The same re-export lifts withdraw `0x32750` from .901 to .952.
+
+
 - `update_buyback_config` `0x1c890` (1,344): the body is instruction-for-instruction
   equal except the `Source` path/line and the stack slot order (the original puts the
   `AnchorError`/name temporaries nearer `r10` than the 256-byte recipient array).

@@ -1,0 +1,45 @@
+diff -ru a/programs/pump-amm/src/instructions/liquidity/deposit.rs b/programs/pump-amm/src/instructions/liquidity/deposit.rs
+--- a/programs/pump-amm/src/instructions/liquidity/deposit.rs	2026-10-27 07:05:23
++++ b/programs/pump-amm/src/instructions/liquidity/deposit.rs	2026-10-27 07:14:28
+@@ -54,9 +54,9 @@
+ pub fn deposit(ctx: Context<Liquidity>, amount: u64, base_limit: u64, quote_limit: u64) -> Result<()> {
+     let a = &mut *ctx.accounts;
+     require!(a.global_config.disable_flags & 2 == 0, PumpAmmError::DisabledDeposit);
+-    let base_reserve = a.pool_base_token_account.amount;
+-    let user_quote_token_reserves = a.user_quote_token_account.amount;
+     let user_base_token_reserves = a.user_base_token_account.amount;
++    let user_quote_token_reserves = a.user_quote_token_account.amount;
++    let base_reserve = a.pool_base_token_account.amount;
+     let pool_quote_token_reserves = a.pool_quote_token_account.amount;
+     let quote_reserve = liquidity_quote_reserves(&a.pool, pool_quote_token_reserves)?;
+     let old_supply = a.pool.lp_supply;
+@@ -98,7 +98,7 @@
+     let quote_transfer_fee = quote_transfer_amount.checked_sub(quote_amount)
+         .ok_or_else(|| error!(PumpAmmError::Overflow))?;
+     require_gte!(quote_limit, quote_transfer_amount, PumpAmmError::ExceededSlippage);
+-    let base_program = if *a.base_mint.to_account_info().owner == anchor_spl::token::ID {
++    let base_program = if a.base_mint.to_account_info().owner == a.token_program.key {
+         a.token_program.as_ref()
+     } else {
+         a.token_2022_program.as_ref()
+@@ -106,7 +106,7 @@
+     crate::utils::token::transfer_checked(base_program, &a.base_mint,
+         &a.user_base_token_account, &a.pool_base_token_account,
+         a.user.as_ref(), base_amount, &[])?;
+-    let quote_program = if *a.quote_mint.to_account_info().owner == anchor_spl::token::ID {
++    let quote_program = if a.quote_mint.to_account_info().owner == a.token_program.key {
+         a.token_program.as_ref()
+     } else {
+         a.token_2022_program.as_ref()
+diff -ru a/programs/pump-amm/src/lib.rs b/programs/pump-amm/src/lib.rs
+--- a/programs/pump-amm/src/lib.rs	2026-10-27 07:05:23
++++ b/programs/pump-amm/src/lib.rs	2026-10-27 07:14:28
+@@ -30,7 +30,7 @@
+ mod collect;
+ mod transfer_creator;
+ use anchor_spl::{token::Token, token_2022::Token2022, token_interface::{self, Mint, TokenAccount}};
+-pub use instructions::admin;
++pub use instructions::{admin, liquidity};
+ declare_id!("pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA");
+ 
+ #[program]

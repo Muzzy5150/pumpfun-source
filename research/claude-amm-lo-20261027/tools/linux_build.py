@@ -25,7 +25,7 @@ def main():
     a = ap.parse_args()
     out = a.output.resolve(); out.mkdir(parents=True, exist_ok=False)
     ws = out/'ws'
-    recipe = WT/'repro/pump_amm/native-fee-cpi-recovery-20261027/workspace_recipe_v2.py'
+    recipe = WT/'repro/pump_amm/account-context-recovery-20261027/workspace_recipe_v2.py'
     stage = subprocess.run([sys.executable, '-B', str(recipe), 'stage', '--source-root', str(a.source_root.resolve()), '--output', str(ws)], capture_output=True, text=True, check=True)
     (out/'stage.json').write_text(stage.stdout)
     for p, d in EXPECTED.items(): assert sha(SDK/p) == d, p

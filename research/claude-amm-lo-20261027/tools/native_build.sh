@@ -7,7 +7,7 @@ L=$SP/lanes/amm-lo
 SRC=$(cd "$1" && pwd); OUT=$2
 [ -e "$OUT" ] && { echo "output exists: $OUT"; exit 2; }
 mkdir -p "$OUT"; OUT=$(cd "$OUT" && pwd)
-RECIPE=$L/wt/repro/pump_amm/native-fee-cpi-recovery-20261027/workspace_recipe_v2.py
+RECIPE=$L/wt/repro/pump_amm/account-context-recovery-20261027/workspace_recipe_v2.py
 python3 -B "$RECIPE" stage --source-root "$SRC" --output "$OUT/ws" > "$OUT/stage.json"
 TC=$HOME/.cache/solana/v1.44/platform-tools
 STRIP=$HOME/.cache/solana/v1.52/platform-tools/llvm/bin/llvm-objcopy

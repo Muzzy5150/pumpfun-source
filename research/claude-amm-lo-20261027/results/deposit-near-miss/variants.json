@@ -1,0 +1,102 @@
+{
+ "scope": "native macOS v1.44 builds of the 648 source plus deposit variants; not a claimed gain",
+ "variants": {
+  "n11-rebased": "branch source (648)",
+  "v-dep_b": "owner == a.token_program.key",
+  "v-dep_c": "dep_b + pub use instructions::{admin, liquidity}",
+  "v-dep_d": "dep_c + reserve reads user_base, user_quote, pool_base, pool_quote",
+  "v-dep_e": "dep_d + i128::try_from inside checked_add (negative)"
+ },
+ "results": {
+  "n11-rebased": {
+   "native_normalized": 643,
+   "native_raw": 119,
+   "deposit": {
+    "ratio": 0.9174,
+    "size": 7016,
+    "unequal_slots": 90,
+    "symbol": "_ZN18pump_amm_recovered18pump_amm_recovered7deposit17hd6053af455da9d61E",
+    "original_size": 7128
+   },
+   "withdraw": {
+    "ratio": 0.9011,
+    "size": 7064,
+    "unequal_slots": 110,
+    "symbol": "_ZN18pump_amm_recovered18pump_amm_recovered8withdraw17h337e7df78dcdf1beE",
+    "original_size": 7200
+   }
+  },
+  "v-dep_b": {
+   "native_normalized": 643,
+   "native_raw": 119,
+   "deposit": {
+    "ratio": 0.921,
+    "size": 7016,
+    "unequal_slots": 84,
+    "symbol": "_ZN18pump_amm_recovered18pump_amm_recovered7deposit17hd6053af455da9d61E",
+    "original_size": 7128
+   },
+   "withdraw": {
+    "ratio": 0.9011,
+    "size": 7064,
+    "unequal_slots": 110,
+    "symbol": "_ZN18pump_amm_recovered18pump_amm_recovered8withdraw17h337e7df78dcdf1beE",
+    "original_size": 7200
+   }
+  },
+  "v-dep_c": {
+   "native_normalized": 643,
+   "native_raw": 119,
+   "deposit": {
+    "ratio": 0.9873,
+    "size": 7128,
+    "unequal_slots": 18,
+    "symbol": "_ZN18pump_amm_recovered12instructions9liquidity7deposit7deposit17hb5b00301d68a3884E",
+    "original_size": 7128
+   },
+   "withdraw": {
+    "ratio": 0.9524,
+    "size": 7176,
+    "unequal_slots": 65,
+    "symbol": "_ZN18pump_amm_recovered12instructions9liquidity8withdraw8withdraw17h745474755535fb7eE",
+    "original_size": 7200
+   }
+  },
+  "v-dep_d": {
+   "native_normalized": 643,
+   "native_raw": 119,
+   "deposit": {
+    "ratio": 0.9988,
+    "size": 7128,
+    "unequal_slots": 2,
+    "symbol": "_ZN18pump_amm_recovered12instructions9liquidity7deposit7deposit17hb5b00301d68a3884E",
+    "original_size": 7128
+   },
+   "withdraw": {
+    "ratio": 0.9524,
+    "size": 7176,
+    "unequal_slots": 65,
+    "symbol": "_ZN18pump_amm_recovered12instructions9liquidity8withdraw8withdraw17h745474755535fb7eE",
+    "original_size": 7200
+   }
+  },
+  "v-dep_e": {
+   "native_normalized": 642,
+   "native_raw": 119,
+   "deposit": {
+    "ratio": 0.9487,
+    "size": 7120,
+    "unequal_slots": 80,
+    "symbol": "_ZN18pump_amm_recovered12instructions9liquidity7deposit7deposit17hb5b00301d68a3884E",
+    "original_size": 7128
+   },
+   "withdraw": {
+    "ratio": 0.9524,
+    "size": 7176,
+    "unequal_slots": 65,
+    "symbol": "_ZN18pump_amm_recovered12instructions9liquidity8withdraw8withdraw17h745474755535fb7eE",
+    "original_size": 7200
+   }
+  }
+ }
+}
