@@ -136,3 +136,8 @@ closed upstream).
   error idioms (outlined `math()` vs the original's inline name/fmt/From construction) and
   the CPI account construction (13 memcpy calls in the original). Next: port the AMM Buy
   price check to the Legacy-Buy closure form and its CPI to the `cpi_result` idiom.
+- bv2-c (retained check, then `Pubkey::default() || native_mint::id()` cap test, `native`
+  after buy_amounts): BuyV2 still 18,464 B, structural ratio 0.796 → 0.805; 432/100, no
+  losses. Best current BuyV2 source = wip/bv2_c.py on the 432 parent. Remaining: 184 bytes
+  (23 instructions) short; inlined-clone block order and the price-check/amount block
+  placement differ. Next: IR-edit + llc on the bv2-c IR to identify the block-order cause.
