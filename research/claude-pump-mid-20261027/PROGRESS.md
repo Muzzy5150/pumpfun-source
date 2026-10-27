@@ -9,7 +9,7 @@ Coordinate-only, nearmiss, identity and libinst families belong to the "Main pum
 ### Gain 1 — patches 02, 03 (measured on Round25, committed on Round26)
 
 - Base round: Round26 (`repro/pump/main-contract-round26-20261027`, origin/main `0212e1d54`), 721 normalized / 123 raw.
-- Lane commit: the commit that adds this entry (subject "pump-mid: CurveHop operand order and Mayhem context layout").
+- Lane commit: `4fa246a9bb7d0aba098af73ca0f484ac4d1a5310`.
 - Unstripped sha256: `dfe2e5d6ca1d1b4709d683e3780733bd7d48d8a077b99fccc86d567e74d8442b`.
 - Stripped sha256: `b120fa20eea758a3ac82c0898ff4e4abe37ad549b28dd87c964d40bcd653e148`.
 - Result: 724 normalized / 123 raw, 879,784 text bytes.
