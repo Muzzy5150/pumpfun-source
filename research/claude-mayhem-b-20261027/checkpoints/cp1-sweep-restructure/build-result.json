@@ -1,0 +1,12 @@
+{
+  "returncode": 0,
+  "seconds": 33.29738695800188,
+  "source_unchanged": true,
+  "tools_unchanged": true,
+  "target_libraries_unchanged": true,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "6406034be6aecc286de600181124237cc289e650882af9709b5cb8ce588458c6",
+  "candidate_sha256": "a593869cbb1003f07f43c6d798e279c9d18d3e949e1f1384fe643f3c9c04bc44",
+  "symbols_sha256": "43423a90a09e3a97e95c16b8a329aaa3a3fead50468ba0accb6e371726a5be42",
+  "candidate_bytes": 755632
+}

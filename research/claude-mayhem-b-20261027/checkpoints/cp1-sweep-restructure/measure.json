@@ -1,0 +1,45 @@
+{
+ "candidate_symbols_sha256": "43423a90a09e3a97e95c16b8a329aaa3a3fead50468ba0accb6e371726a5be42",
+ "statuses": {
+  "normalized_only": 329,
+  "raw_local_match": 100,
+  "unmatched": 12
+ },
+ "unmatched_window_bytes": 111288,
+ "unmatched_ids": [
+  "O0073",
+  "O0075",
+  "O0076",
+  "O0077",
+  "O0079",
+  "O0081",
+  "O0082",
+  "O0083",
+  "O0084",
+  "O0092",
+  "O0093",
+  "O0193"
+ ],
+ "counts": {
+  "matched_before": 429,
+  "matched_after": 429,
+  "raw_before": 100,
+  "raw_after": 100,
+  "edges_before": 4288,
+  "edges_after": 4288,
+  "source_before": 446,
+  "source_after": 446
+ },
+ "candidate_text_bytes": 686728,
+ "candidate_functions": 446,
+ "gains": [],
+ "body_losses": [],
+ "raw_gains": [],
+ "raw_losses": [],
+ "profile_losses": [],
+ "edge_losses": [],
+ "source_losses": [],
+ "source_gains": [],
+ "edge_gains": [],
+ "no_losses": true
+}
