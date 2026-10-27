@@ -8,7 +8,7 @@ mod instructions;
 use instructions::admin::create_config::*;
 pub use instructions::token_incentives::init_user_volume_accumulator::InitUserVolumeAccumulator;
 use instructions::token_incentives::*;
-mod legacy_buy;
+use instructions::swap::buy as legacy_buy;
 use legacy_buy::*;
 mod legacy_sell;
 use legacy_sell::*;
@@ -61,16 +61,16 @@ pub mod pump_amm_recovered {
     pub fn disable(ctx: Context<AdminGlobal>, disable_create_pool: bool,
         disable_deposit: bool, disable_withdraw: bool,
         disable_buy: bool, disable_sell: bool) -> Result<()> {
-        let flags = &mut ctx.accounts.global_config.disable_flags;
-        *flags = (*flags & !1) | u8::from(disable_create_pool);
-        *flags = (*flags & !2) | (u8::from(disable_deposit) << 1);
-        *flags = (*flags & !4) | (u8::from(disable_withdraw) << 2);
-        *flags = (*flags & !8) | (u8::from(disable_buy) << 3);
-        *flags = (*flags & !16) | (u8::from(disable_sell) << 4);
+        let global_config = &mut ctx.accounts.global_config;
+        global_config.disable_flags = (global_config.disable_flags & !1) | u8::from(disable_create_pool);
+        global_config.disable_flags = (global_config.disable_flags & !2) | (u8::from(disable_deposit) << 1);
+        global_config.disable_flags = (global_config.disable_flags & !4) | (u8::from(disable_withdraw) << 2);
+        global_config.disable_flags = (global_config.disable_flags & !8) | (u8::from(disable_buy) << 3);
+        global_config.disable_flags = (global_config.disable_flags & !16) | (u8::from(disable_sell) << 4);
         let event = DisableEvent { timestamp: Clock::get()?.unix_timestamp,
             admin: ctx.accounts.admin.key(), disable_create_pool,
             disable_deposit, disable_withdraw, disable_buy, disable_sell };
-        emit!(event.clone());
+        emit!(event);
         emit_cpi!(event);
         Ok(())
     }
@@ -198,15 +198,11 @@ pub mod pump_amm_recovered {
     pub fn admin_cto_pool(ctx:Context<AdminCtoPool>,coin_creator:Pubkey,is_holder_reward:bool,creator_fee_bps:Option<u64>)->Result<()>{creator_reassignment::admin_cto(ctx,coin_creator,is_holder_reward,creator_fee_bps)}
 
     pub fn toggle_mayhem_mode(ctx: Context<AdminGlobal>, enabled: bool) -> Result<()> {
-        require_neq!(ctx.accounts.global_config.mayhem_mode_enabled, enabled, PumpAmmError::MayhemModeInDesiredState);
-        ctx.accounts.global_config.mayhem_mode_enabled = enabled;
-        Ok(())
+        instructions::admin::toggle_mayhem_mode::toggle_mayhem_mode(ctx, enabled)
     }
 
     pub fn toggle_boost(ctx: Context<AdminGlobalNoEvent>, enabled: bool) -> Result<()> {
-        require_keys_neq!(ctx.accounts.global_config.boost_authority, Pubkey::default(), PumpAmmError::InvalidAdmin);
-        ctx.accounts.global_config.boost_enabled = enabled;
-        Ok(())
+        instructions::admin::toggle_boost::toggle_boost(ctx, enabled)
     }
 
     pub fn transfer_creator_fees_to_pump(ctx: Context<TransferCreatorFeesToPump>) -> Result<()> { transfer_creator::legacy(ctx) }
@@ -214,9 +210,7 @@ pub mod pump_amm_recovered {
     pub fn transfer_creator_fees_to_pump_v2(ctx: Context<TransferCreatorFeesToPumpV2>) -> Result<()> { transfer_creator::v2(ctx) }
     pub fn migrate_pool_coin_creator(ctx:Context<MigratePoolCoinCreator>)->Result<()>{creator_reassignment::migrate(ctx)}
     pub fn toggle_cashback_enabled(ctx: Context<AdminGlobal>, enabled: bool) -> Result<()> {
-        require_neq!(ctx.accounts.global_config.is_cashback_enabled, enabled, PumpAmmError::CashbackNotInDesiredState);
-        ctx.accounts.global_config.is_cashback_enabled = enabled;
-        Ok(())
+        instructions::admin::toggle_cashback_enabled::toggle_cashback_enabled(ctx, enabled)
     }
 
     pub fn claim_cashback(ctx:Context<ClaimCashback>)->Result<()>{cashback::claim(ctx)}

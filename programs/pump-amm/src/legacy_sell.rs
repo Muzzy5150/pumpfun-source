@@ -246,7 +246,7 @@ pub fn execute<'info>(
         }
     }
     {
-    let (owner, dest) = crate::legacy_buy::get_buyback_accounts(
+    let (owner, dest) = crate::instructions::swap::buy::get_buyback_accounts(
         ctx.remaining_accounts, &a.global_config, next, &a.quote_mint.key(), &a.quote_token_program.key(),
     )?;
         if buyback_fee > 0 && dest.data_is_empty() {

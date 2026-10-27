@@ -1,5 +1,135 @@
 use crate::*;
 use anchor_spl::{associated_token::AssociatedToken, token_interface::TokenInterface};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pub(crate) fn get_buyback_accounts<'a, 'info>(
+    remaining_accounts: &'a [AccountInfo<'info>],
+    global_config: &GlobalConfig,
+    index: usize,
+    quote_mint: &Pubkey,
+    quote_token_program: &Pubkey,
+) -> Result<(&'a AccountInfo<'info>, &'a AccountInfo<'info>)> {
+    let owner = remaining_accounts.get(index)
+        .ok_or_else(|| error!(PumpAmmError::BuybackFeeRecipientMissing))?;
+
+
+
+    let dest = remaining_accounts.get(index + 1)
+        .ok_or_else(|| error!(PumpAmmError::BuybackFeeRecipientMissing))?;
+    global_config.validate_buyback_recipient(&owner.key(), &dest.key(), quote_mint, quote_token_program)?;
+    Ok((owner, dest))
+}
+
+
+
+
+
+
+
+
 #[derive(Accounts)]
 pub struct LegacyBuy<'info> {
     #[account(mut,has_one=base_mint @ PumpAmmError::InvalidBaseMint,has_one=quote_mint @ PumpAmmError::InvalidQuoteMint,has_one=pool_base_token_account @ PumpAmmError::InvalidPoolBaseTokenAccount,has_one=pool_quote_token_account @ PumpAmmError::InvalidPoolQuoteTokenAccount)]
@@ -78,6 +208,119 @@ fn transfer<'info>(
         mint.decimals,
     )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 pub fn execute<'info>(
     ctx: Context<'_, '_, '_, 'info, LegacyBuy<'info>>,
     amount: u64,
@@ -142,14 +385,17 @@ pub fn execute<'info>(
         .protocol_fees
         .checked_add(a.pool.creator_fees)
         .ok_or_else(|| error!(PumpAmmError::Overflow))?;
+
     let can_boost = old_virtual
         .checked_add(old_accrued as i128)
         .ok_or_else(|| error!(PumpAmmError::Overflow))?
         != 0;
-    a.pool_quote_token_account
-        .amount
+    a.pool_quote_token_account.amount
         .checked_sub(old_accrued)
         .ok_or_else(|| error!(PumpAmmError::Overflow))?;
+
+
+
     let q = u64::try_from(
         (a.pool_quote_token_account.amount as i128)
             .checked_add(old_virtual)
@@ -300,7 +546,7 @@ pub fn execute<'info>(
             transfer_fee(a, &a.coin_creator_vault_ata.to_account_info(), creator_fee)?;
         }
     }
-    let (owner, dest) = crate::legacy_buy::get_buyback_accounts(
+    let (owner, dest) = crate::instructions::swap::buy::get_buyback_accounts(
         ctx.remaining_accounts, &a.global_config, next, &a.quote_mint.key(), &a.quote_token_program.key(),
     )?;
     if buyback_fee > 0 {
@@ -444,21 +690,6 @@ fn transfer_fee<'info>(a: &LegacyBuy<'info>, dest: &AccountInfo<'info>, amount: 
     )
 }
 
-
-pub(crate) fn get_buyback_accounts<'a, 'info>(
-    remaining_accounts: &'a [AccountInfo<'info>],
-    global_config: &GlobalConfig,
-    index: usize,
-    quote_mint: &Pubkey,
-    quote_token_program: &Pubkey,
-) -> Result<(&'a AccountInfo<'info>, &'a AccountInfo<'info>)> {
-    let owner = remaining_accounts.get(index)
-        .ok_or_else(|| error!(PumpAmmError::BuybackFeeRecipientMissing))?;
-    let dest = remaining_accounts.get(index + 1)
-        .ok_or_else(|| error!(PumpAmmError::BuybackFeeRecipientMissing))?;
-    global_config.validate_buyback_recipient(&owner.key(), &dest.key(), quote_mint, quote_token_program)?;
-    Ok((owner, dest))
-}
 
 
 fn distribute_cashback<'info>(

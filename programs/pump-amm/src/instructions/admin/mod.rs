@@ -22,3 +22,7 @@ pub fn extend_global_config<'info>(
     }
     Ok(())
 }
+
+pub mod toggle_boost;
+pub mod toggle_cashback_enabled;
+pub mod toggle_mayhem_mode;
