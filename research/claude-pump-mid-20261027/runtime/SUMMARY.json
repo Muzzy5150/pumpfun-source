@@ -1,0 +1,41 @@
+{
+ "candidate": "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/pump-mid/wt/work/exp/r26g/build-1/candidate.so",
+ "candidate_sha256": "b120fa20eea758a3ac82c0898ff4e4abe37ad549b28dd87c964d40bcd653e148",
+ "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+ "suites": {
+  "virtual_reserve_sync": {
+   "ok": true,
+   "cases": 192,
+   "error": null,
+   "seconds": 21.4,
+   "output_sha256": "f791561db762fb3e197805a644c739bc8e8d0b87f10dfe585623999390cff7b8"
+  },
+  "set_mayhem_virtual_params": {
+   "ok": true,
+   "cases": 84,
+   "error": null,
+   "seconds": 15.6,
+   "output_sha256": "520bf7f0341fc9b69b43f12167b68952dde1b6163ba60185896af236f965f294"
+  },
+  "multi_hop_curve_partial": {
+   "ok": true,
+   "cases": 56,
+   "error": null,
+   "seconds": 11.3,
+   "output_sha256": "656d3d36b570010b304f111523cabad6a2651790ceaaf9e0ae5c60a244728b82"
+  },
+  "tokenkeg_two_curve": {
+   "ok": true,
+   "cases": 20,
+   "error": null,
+   "seconds": 5.7,
+   "output_sha256": "342500f0c57e96c972d4073c928b6d5b8983690a4f7a185a3c9d8adcda944f0a"
+  }
+ },
+ "total_cases": 352,
+ "all_ok": true,
+ "diagnostic_audit": {
+  "log_bearing_cases": 352,
+  "mismatches": 0
+ }
+}

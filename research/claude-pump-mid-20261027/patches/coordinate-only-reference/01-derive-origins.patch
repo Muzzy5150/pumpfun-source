@@ -1,0 +1,69 @@
+
+--- a/programs/pump/src/lib.rs	2026-10-27 05:40:29
++++ b/programs/pump/src/lib.rs	2026-10-27 06:05:50
+@@ -463,16 +463,6 @@
+ pub struct UserVolumeAccumulator{pub user:Pubkey,pub needs_claim:bool,pub total_unclaimed_tokens:u64,pub total_claimed_tokens:u64,pub current_sol_volume:u64,pub last_update_timestamp:i64,pub has_total_claimed_tokens:bool,pub cashback_earned:u64,pub total_cashback_claimed:u64,pub stable_cashback_earned:u64,pub total_stable_cashback_claimed:u64}
+ #[event_cpi]
+ #[derive(Accounts)]
+-pub struct InitUserVolume<'info>{
+- #[account(mut)] pub payer:Signer<'info>,
+- /// CHECK: any user may be funded by the payer.
+- pub user:AccountInfo<'info>,
+- #[account(init_if_needed,payer=payer,space=137,seeds=[b"user_volume_accumulator",user.key().as_ref()],bump)]
+- pub user_volume_accumulator:Account<'info,UserVolumeAccumulator>,
+- pub system_program:Program<'info,System>,
+-}
+-#[event_cpi]
+-#[derive(Accounts)]
+ pub struct CloseUserVolume<'info>{
+  #[account(mut)] pub user:Signer<'info>,
+  #[account(mut,close=user,seeds=[b"user_volume_accumulator",user.key().as_ref()],bump)]
+
+--- a/programs/pump/src/quote_control/initialize_quote_control.rs	2026-10-27 05:40:29
++++ b/programs/pump/src/quote_control/initialize_quote_control.rs	2026-10-27 06:05:50
+@@ -2,6 +2,8 @@
+ 
+ use super::state::{QuoteControl, QUOTE_CONTROL_SEED};
+ 
++/// Accounts for `initialize_quote_control`: creates the singleton quote-control
++/// PDA, funded by `user`.
+ #[derive(Accounts)]
+ pub struct InitializeQuoteControl<'info> {
+     #[account(
+
+--- a/programs/pump/src/token_incentives/init_user_volume_accumulator.rs	1969-12-31 16:00:00
++++ b/programs/pump/src/token_incentives/init_user_volume_accumulator.rs	2026-10-27 06:05:50
+@@ -0,0 +1,23 @@
++use anchor_lang::prelude::*;
++
++use crate::UserVolumeAccumulator;
++
++/// Accounts for `init_user_volume_accumulator`: any payer may create the
++/// accumulator PDA of any user; an existing accumulator is left in place.
++#[event_cpi]
++#[derive(Accounts)]
++pub struct InitUserVolume<'info> {
++    #[account(mut)]
++    pub payer: Signer<'info>,
++    /// CHECK: any user may be funded by the payer.
++    pub user: AccountInfo<'info>,
++    #[account(
++        init_if_needed,
++        payer = payer,
++        space = 137,
++        seeds = [b"user_volume_accumulator", user.key().as_ref()],
++        bump
++    )]
++    pub user_volume_accumulator: Account<'info, UserVolumeAccumulator>,
++    pub system_program: Program<'info, System>,
++}
+
+--- a/programs/pump/src/token_incentives/mod.rs	2026-10-27 05:40:29
++++ b/programs/pump/src/token_incentives/mod.rs	2026-10-27 06:05:50
+@@ -1,4 +1,6 @@
+ pub mod claim_token_incentives;
++pub mod init_user_volume_accumulator;
+ pub mod volume_accumulator;
+ 
+ pub use claim_token_incentives::*;
++pub use init_user_volume_accumulator::*;
