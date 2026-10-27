@@ -112,6 +112,13 @@ def apply_generated_cpi_clients(crate):
             assert lines.count(c['old']) == 1, f'{rel}: expected frontier line not found: {c["old"][:70]}'
             lines[lines.index(c['old'])] = c['new']
         p.write_text('\n'.join(lines))
+    for c in spec.get('substring_replacements', []):
+        p = crate / c['file']
+        t = p.read_text()
+        if c['new'] in t:
+            continue
+        assert t.count(c['old']) == 1, f'{c["file"]}: expected frontier expression not found: {c["old"][:70]}'
+        p.write_text(t.replace(c['old'], c['new']))
     print('generated CPI clients: applied')
 
 
@@ -201,6 +208,9 @@ def apply_idl_transfer_with_seed(crate):
     t = p.read_text()
     if IDL_NEW in t:
         print('admin_set_idl_authority transfer_with_seed: already applied')
+        return
+    if IDL_OLD not in t and 'anchor_lang::system_program::transfer_with_seed(' in t:
+        print('admin_set_idl_authority transfer_with_seed: superseded by the frontier (already uses the Anchor helper)')
         return
     assert t.count(IDL_OLD) == 1, 'admin_set_idl_authority source differs from the expected frontier text'
     assert IDL_OLD.count('\n') == IDL_NEW.count('\n')

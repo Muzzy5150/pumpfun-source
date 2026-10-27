@@ -22,6 +22,8 @@ ELFs, SHA-256 and score output are under `evidence/elf/<name>/`.
 | H4 | Round26 | see the commit that adds this row | `7854036b36e9f9eec1d5bd8791fb832ab6568ad4f3ae683a86753241171490df` (`4cbe303da77b6a4cbdc24302f24b038b86a568fc9568dcd09d4d8621416046e3`) | 729 / 125 / 895,576 | H3 set + 0x137fc0 (set_mayhem_virtual_params handler) | none |
 | H5 | Round26 | same commit (measured; corpus pending) | `c578b83e1684826e37e8a5d74a6d2058ad9e597d56ab4504e7c31d06e45c6c57` (`20961029e5e7fa78b0ea9863d85c52bd3bfc9b8599f34b1977ff6834cdca8a1b`) | **748 / 125 / 951,464** | H4 set + generated CPI clients 0x10a0e0, 0x10c0b8, 0x10d638, 0x10e938, 0x10fb38, 0x1100f8, 0x110d40, 0x1113c8, 0x112220, 0x1133c8, 0x113f00, 0x114d48, 0x116718, 0x118360, 0x119c50 + helpers 0x163ea8, 0xca628†, 0xea68†, 0xf130† | none |
 
+| H6 | **Round36** | see the commit that adds this row | `af3a7529160d5ff55f8cad5fc08b6c3dbbea856435420973b5401071c016a493` (`e11320e4c1c2c29feb775182c90d88ea41defcf2015b6f7a907a8c53f8ae8c81`) | **762 / 126 / 964,776** | 0xea68, 0xf130, 0xca628, 0xcf510, 0x10a0e0, 0x10c0b8, 0x10d638, 0x10e938, 0x10fb38, 0x1100f8, 0x110d40, 0x1113c8, 0x112220, 0x1133c8, 0x113f00, 0x114d48, 0x116718, 0x118360, 0x119c50, 0x1255a8, 0x12a4e0, 0x12abc8, 0x137fc0, 0x163ea8 | **normalized: none. Raw: 19 lost** (0xa7e0, 0x18a3b0, 0x18a4d8, 0x194998, 0x194ae0, 0x197508, 0x1991e0, 0x19a758, 0x19a8a0, 0x1a0f68, 0x1a2340, 0x1a6370, 0x1a6940, 0x1ab220, 0x1ab730, 0x1b3220, 0x1b38c0, 0x1b4088, 0x1b40d0), so not adoptable as-is |
+
 H3 raw gains are 0x198fe8 and 0x19b4e0. † These are in other claim families or lanes and are gained by this lane's SetMayhemVirtualParams layout change; they are reported for dedupe.
 
 ## State for a continuation agent
@@ -55,6 +57,12 @@ H3 raw gains are 0x198fe8 and 0x19b4e0. † These are in other claim families or
 | 07:03 | Round24 | + owned `token_program` instead (b) | 727 (same gains); (c) both → 725 |
 | 07:12 | Round25 | five changes | 727/125/890,304, no losses; reproduced Round20/21/23/24 base hashes exactly |
 | 07:20 | Round25 | `execute` made `pub(crate)` (mvh1); + curve fields first and mint key after Clock (mvh2) | no gain; mvh2 window is now the inlined `#[program]` fn, 0.88 similar |
+
+## Round36 rebase (H6)
+
+- Already in Round36: change 1 (dispatcher order, 0x11b758), change 2 (update_global_authority, 0x1348c0), and an equivalent of change 4 (Anchor `transfer_with_seed`, 0x19e3b0). Round36 also matches the distribution wrappers 0x131128 and 0x1316e8.
+- Re-applied: changes 3 (buy split), 5 and 6 (SetMayhemVirtualParams layout and handler), and 7 (generated CPI clients; the `init_boost` edits are now substring-based because Round36 changed those lines).
+- Measured 738/145 → 762/126 with no normalized losses, but 19 raw losses. Those Round36 raw matches depend on absolute layout, and the added code and rodata shift them. A split build without change 7 is measuring which change causes the raw losses.
 
 ## Round26 findings
 
