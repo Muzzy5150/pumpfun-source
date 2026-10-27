@@ -37,8 +37,32 @@ closed upstream).
 - Layer B-432 (CONDITIONAL allocator context, layers/allocator-context-432): 432/441,
   raw-local 141 (+41), edges 4314→4315, Source 456→456, no losses; stripped 2ef6328d…,
   symbols c9abef93…; 14/14 replay, 6,636 comparisons, 0 mismatches, 0 log differences.
-- BuyV2 (O0083) port into pump_interface_v2.rs (edits/bv2_a.py, WIP, not committed as a gain):
-  18,344 B vs 18,648 original (parent 7,688), structural ratio 0.31 → 0.74, 432/100 kept.
+- Commits: bbbf9eab9 (Layer B, 429 parent), 9158cfa5a (replay + positioning),
+  0cf168ee6 (432 re-base, Layers A and B-432), 3b84764ed (Layer A headline + stdlib verify.py).
+
+## Remaining windows — status and next steps (432 parent)
+- O0083 BuyV2 (18,648 B; parent 7,688 B). Port into pump_interface_v2.rs (lane scratch
+  out/edits/bv2_a.py): `buy_v2_handler` in the blank region with the CPI `error!` on line
+  376 (original Source line 0x178) and the subtractions on 393:25 / 394:26 (original
+  Locations); 27 `inline_cpi_info` clones; legacy-Buy closure price check; `cpi_result`
+  idiom; dispatcher re-pointed; old handler + `math()` removed from buy_v2.rs. Result:
+  18,344 B, structural (register/frame-masked) ratio 0.31 → 0.74, 432/100, no losses.
+  Residuals: (a) the WSOL/`native` comparisons are evaluated at entry in the port but after
+  the price check in the original (variant bv2-b moves them; build queued); (b) block
+  placement of the inlined buy_amounts/price-check error blocks; (c) the new section name
+  is not in the qualified ordered.ld, so it links at the tail (raw-local unaffected,
+  but a recipe update naming the new section at O0083's slot is needed before raw work).
+- O0077 AMM Buy (9,736 B; parent 9,016 B; ratio 0.55). Original has the post-CPI
+  subtractions inline at pump_amm_interface.rs:403:23/404:26 — exactly the columns of the
+  parent's outlined `bought_amounts` (an extra tail section). Next: `#[inline(always)]`
+  on `bought_amounts` (blank line 399, no line shift; variant bps-a prepared), then the
+  closure price check / `cpi_result` idioms as in Legacy Buy and BuyV2, removing the
+  outlined `math()` (MergeFunctions-merged with BuyV2's copy).
+- O0081 Legacy Buy (13,848 B; parent 13,784 B; structural ratio 0.90). Prologue differs
+  only in register choice and an 80-byte deeper frame; the price-check division block sits
+  on the other side of an error block (as Codex documented). Tried: computing `delta`
+  before `price` (13,704 B, worse). Next: IR-edit + llc to find which block order/temps
+  give the original frame size, then a source form.
 
 ## Verified results (history, 429 parent)
 1. Layer B allocator context — CONDITIONAL (not recovered source; see README):
