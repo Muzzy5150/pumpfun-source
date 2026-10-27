@@ -66,6 +66,18 @@
       "variant": "bt2: `a.user_volume_accumulator.user = *a.user.key;`",
       "result": "same as bt1 (ratio 0.877)",
       "kept": false
+    },
+    {
+      "window": "0x51d08 buy_transfers",
+      "variant": "bt_helper: UserVolumeAccumulator::set_user_if_default(&mut self, &Pubkey) method (memcmp + copy_from_slice) called from buy_transfers",
+      "result": "no gain; worse (ratio 0.776, still 880 bytes)",
+      "kept": false
+    },
+    {
+      "window": "0x51d08 buy_transfers (llc on emitted IR)",
+      "variant": "move the error block of the last `?` (transfer_checked_to_account_info) after the copy and join blocks (block order only)",
+      "result": "llc output equals the original window (tokens equal): the residual is IR block order, so the copy block must directly follow the memcmp block at ISel",
+      "kept": "diagnostic only"
     }
   ]
 }

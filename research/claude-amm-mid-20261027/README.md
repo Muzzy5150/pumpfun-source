@@ -111,7 +111,7 @@ At the 623 frontier there are 63 unmatched windows in range (the frontier
 newly matched `0x724a0`). 62 remain with this packet. They fall into these
 groups:
 
-- **Source-line immediates only** (about 25 windows). Every remaining
+- **Source-line immediates only** (29 windows on 623; full list in PROGRESS.md). Every remaining
   difference is the `line` stored by an `error!` or `require!` site, and the
   line deltas within each function already match. Examples:
   - Pool helpers `0x6b780`, `0x6ba68`, `0x6bf50`, `0x6c328`, `0x6c768` and
@@ -132,7 +132,8 @@ groups:
   `0x40a08`, `0x45940`, `0x49b50`, `0x4c750`, `0x53350`, `0x54a20` and
   `0x56710`.
 
-See [PROGRESS.md](PROGRESS.md) for per-window status and next steps.
+See [PROGRESS.md](PROGRESS.md) for the final per-window residual diagnosis, including the fully diagnosed
+but unclosed `0x51d08` (IR block order), and `residual-table-623.json` for every remaining window.
 [`negative-controls/negative-controls.json`](negative-controls/negative-controls.json)
 lists every variant tried.
 
