@@ -57,6 +57,8 @@ def main():
     ap.add_argument('--source-directory', type=Path, required=True)
     ap.add_argument('--without-handler-6', action='store_true',
                     help='skip change 6 (set_mayhem_virtual_params handler), reproducing the Round25 727 result')
+    ap.add_argument('--with-fee-8', action='store_true',
+                    help='also apply change 8 (fee_cpi linkage + generated-order metas for get_fees_with_quote_mint)')
     ap.add_argument('--with-cpi-7', action='store_true',
                     help='also apply change 7 (declare_program! generated CPI clients; see tools/cpi_changes.json)')
     a = ap.parse_args()
@@ -80,6 +82,29 @@ def main():
         apply_mayhem_params_handler(a.source_directory)
     if a.with_cpi_7:
         apply_generated_cpi_clients(a.source_directory)
+    if a.with_fee_8:
+        apply_fee_client_order(a.source_directory)
+
+
+FEE_SUBS = [('src/sell.rs', 'pub(crate) mod fee_cpi;\n', 'pub mod fee_cpi;\n'),
+            ('src/fee_cpi.rs',
+             '        anchor_lang::solana_program::instruction::Instruction {\n            program_id: ctx.program.key(),\n            accounts: ctx.to_account_metas(None),\n            data,\n        }\n',
+             '        let accounts = ctx.to_account_metas(None);\n        anchor_lang::solana_program::instruction::Instruction {\n            program_id: ctx.program.key(),\n            accounts,\n            data,\n        }\n')]
+
+
+def apply_fee_client_order(crate):
+    """Change 8 (window 0x1176e0, pump_fees get_fees_with_quote_mint CPI client): give the
+    client external linkage (pub mod fee_cpi; stops interprocedural constant propagation of
+    is_pump_pool) and compute the account metas before the Instruction literal, the order
+    of Anchor's generated CPI template."""
+    for rel, old, new in FEE_SUBS:
+        p = crate / rel
+        t = p.read_text()
+        if new in t:
+            continue
+        assert t.count(old) == 1, f'{rel}: expected frontier text not found'
+        p.write_text(t.replace(old, new))
+    print('fee client order: applied')
 
 
 def apply_generated_cpi_clients(crate):
