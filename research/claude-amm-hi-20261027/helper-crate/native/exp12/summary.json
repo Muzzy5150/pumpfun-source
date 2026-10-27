@@ -1,0 +1,43 @@
+{
+ "native_base": "native-g3r (this branch, 629/119 native)",
+ "candidate_sha256": "29895f86f9011f515e0c3a8ccb067a016247fa4271c025406c540cea3a0ccfad",
+ "symbols_sha256": "b2e136e159add2a5e9bc6cdbeede6a11eae8f1a73f9c6ba07a8bbb94edb9942e",
+ "normalized_matches": 632,
+ "raw_matches": 119,
+ "unmatched": 153,
+ "delta_vs_branch": [
+  {
+   "original_start": "0x73ef0",
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ]
+  },
+  {
+   "original_start": "0xf2d60",
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ]
+  },
+  {
+   "original_start": "0xf2ed0",
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ]
+  }
+ ]
+}

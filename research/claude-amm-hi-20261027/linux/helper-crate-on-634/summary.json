@@ -1,0 +1,116 @@
+{
+ "build_tag": "linux-exp13",
+ "base_build_tag": "linux-g3r",
+ "base_candidate_sha256": "9d1a23b9ee025470cc60f57622db6812065c4f980819f7631bb6f2ecd1762b29",
+ "artifacts": {
+  "candidate.so": {
+   "sha256": "80a95040c4ca7cfeb1c9d99d872fc0f4b43f97f376f2f464e6db89ded297e412",
+   "bytes": 1304896,
+   "gzip_sha256": "38e4303e22192f6ee05da56a517ba706fa8b48cf82bce5120bfa0ead9bd78e25"
+  },
+  "unstripped.so": {
+   "sha256": "46d08ae4d26c3042253cbd69af3f9f5dc4637968d553bd556a8272e0a65670ca",
+   "bytes": 1831400,
+   "gzip_sha256": "7d19a08fc60fe77e51c986870853dd8dc333e8b7918b5fb117809ca23aa0a88f"
+  }
+ },
+ "measurement": {
+  "candidate_sha256": "80a95040c4ca7cfeb1c9d99d872fc0f4b43f97f376f2f464e6db89ded297e412",
+  "symbols_sha256": "46d08ae4d26c3042253cbd69af3f9f5dc4637968d553bd556a8272e0a65670ca",
+  "reader_sha256": "247700e9930d5e53daf93a50888ae1e5429f74ccb19155e7a205f72ee21d5883",
+  "windows": 785,
+  "normalized_matches": 639,
+  "raw_matches": 128,
+  "unmatched": 146
+ },
+ "base_measurement": {
+  "normalized_matches": 634,
+  "raw_matches": 128,
+  "unmatched": 151
+ },
+ "window_delta": [
+  {
+   "original_start": "0x73ef0",
+   "bytes": 568,
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ],
+   "candidate_symbol": "_ZN18pump_amm_recovered5utils5token14supported_mint17h9916950849020729E"
+  },
+  {
+   "original_start": "0x74648",
+   "bytes": 696,
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ],
+   "candidate_symbol": "_ZN18pump_amm_recovered5utils12transfer_fee13calculate_fee17hee53b0d4968973a1E"
+  },
+  {
+   "original_start": "0x74b80",
+   "bytes": 688,
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ],
+   "candidate_symbol": "_ZN18pump_amm_recovered5utils12transfer_fee17amount_before_fee17ha56c365aeacc6ee7E"
+  },
+  {
+   "original_start": "0xf2d60",
+   "bytes": 368,
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ],
+   "candidate_symbol": "_ZN9token_ext11TransferFee13calculate_fee17h69cd37893cb40043E"
+  },
+  {
+   "original_start": "0xf2ed0",
+   "bytes": 776,
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ],
+   "candidate_symbol": "_ZN9token_ext11TransferFee24calculate_pre_fee_amount17h564683ed607a551fE"
+  }
+ ],
+ "losses": [],
+ "measure_command": "python3 repro/pump_amm/focused-diagnostics-20261026/measure.py --candidate candidate.so --symbols unstripped.so --output measurement.json",
+ "runtime": {
+  "suites": 25,
+  "cases": 17462,
+  "mismatches": 0,
+  "all_pass": true
+ },
+ "runtime_receipts_included": [
+  "boost",
+  "boost_burn",
+  "create",
+  "liquidity",
+  "sweep",
+  "trade_v2"
+ ],
+ "runtime_receipts_note": "All 25 receipts were produced; runtime/summary.json records every receipt sha256. Receipts for suites outside the transfer-fee/mint-policy paths are omitted for size.",
+ "source": "this branch + helper-crate/helper-crate.patch"
+}

@@ -1,0 +1,30 @@
+{
+ "tag": "exp12",
+ "src": "<lane>/out/src/exp12",
+ "command": [
+  "/Users/shawwalters/.cache/solana/v1.44/platform-tools/rust/bin/cargo",
+  "build",
+  "--release",
+  "--target",
+  "sbpf-solana-solana",
+  "--manifest-path",
+  "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/amm-hi/ws/iter/Cargo.toml",
+  "--locked",
+  "--offline"
+ ],
+ "cwd": "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/amm-hi/ws/iter",
+ "returncode": 0,
+ "seconds": 65.6,
+ "env": {
+  "CARGO_HOME": "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/amm-hi/cargo-home",
+  "CARGO_TARGET_DIR": "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/amm-hi/target/native",
+  "RUSTC": "/Users/shawwalters/.cache/solana/v1.44/platform-tools/rust/bin/rustc",
+  "CARGO_TARGET_SBPF_SOLANA_SOLANA_RUSTFLAGS": " -Zremap-cwd-prefix=",
+  "CARGO_BUILD_JOBS": "4"
+ },
+ "extra_env": [],
+ "rustc_sha256": "1f26338cc2cabd0a6057dcbd0528bba262b23ca1296d357a55304ee31d1d9e5a",
+ "strip_sha256": "12415dc01e08e4f606a1a4eac8c197d560c7883161d266312c821bf5db7bf8be",
+ "unstripped_sha256": "b2e136e159add2a5e9bc6cdbeede6a11eae8f1a73f9c6ba07a8bbb94edb9942e",
+ "candidate_sha256": "29895f86f9011f515e0c3a8ccb067a016247fa4271c025406c540cea3a0ccfad"
+}

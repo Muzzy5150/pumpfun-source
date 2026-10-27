@@ -29,8 +29,10 @@ change (parser only); the two dispatch wrappers need change 2's linkage as well.
 
 Moving Token-2022 helpers into a local path crate recovers five more windows in this range:
 0x73ef0 `supported_mint`, 0xf2d60 / 0xf2ed0 native fee math, 0x74648 `calculate_fee` and
-0x74b80 `amount_before_fee` (native 629 → 634 on top of this branch; Linux and runtime status
-in `helper-crate/README.md`). Evidence and controls:
+0x74b80 `amount_before_fee`. Native 629 → 634 on top of this branch; **Linux 634 → 639, raw
+128, no losses** (candidate `80a95040…`, `linux/helper-crate-on-634/`); all 25 suites pass
+(17,462 cases, 0 mismatches). Apply with `git apply -p1 helper-crate/helper-crate.patch`.
+Evidence and controls:
 
 - Original 0x73ef0 reloads the data RefCell borrow flag after calling 0xf28b8, so the callee
   is opaque. In-crate callees (private, `pub`, or `#[inline(never)]`, exp5a/5b) let LLVM infer

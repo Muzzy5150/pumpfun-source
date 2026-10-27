@@ -56,8 +56,13 @@ revision of this packet recovered are already in the 623 frontier (Codex moved t
 ## Helper-crate research (not applied to maintained source)
 
 `helper-crate/` holds a separate, self-contained patch on top of this branch that recovers
-five more windows in this range by moving Token-2022 helpers into a local crate. See
-`helper-crate/README.md` for evidence, measurements and validation status.
+five more windows in this range by moving Token-2022 helpers into a local path crate:
+0x73ef0, 0x74648, 0x74b80, 0xf2d60 and 0xf2ed0. Linux v1.44 candidate
+`80a95040c4ca7cfeb1c9d99d872fc0f4b43f97f376f2f464e6db89ded297e412` measures **639/128**
+(634 → 639, no losses), and all 25 suites pass (17,462 cases, 0 mismatches); artifacts in
+`linux/helper-crate-on-634/`. It is kept as a patch because it adds a crate (a structural
+hypothesis whose name and location the binary does not evidence); see
+`helper-crate/README.md` for the evidence and negative controls.
 
 ## Residual diagnosis for this range
 

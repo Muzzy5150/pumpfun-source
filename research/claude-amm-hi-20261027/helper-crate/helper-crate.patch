@@ -1,0 +1,388 @@
+diff -ruN a/programs/pump-amm/Cargo.lock b/programs/pump-amm/Cargo.lock
+--- a/programs/pump-amm/Cargo.lock	2026-10-27 05:22:03
++++ b/programs/pump-amm/Cargo.lock	2026-10-27 07:06:46
+@@ -1111,6 +1111,7 @@
+ dependencies = [
+  "anchor-lang",
+  "anchor-spl",
++ "token-ext",
+  "uint",
+ ]
+ 
+@@ -2655,6 +2656,10 @@
+ version = "1.13.3"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ checksum = "fd3ca314f692efd6c868f8408f53fe444634a845f96c028b97d35f6a1f79f0ee"
++
++[[package]]
++name = "token-ext"
++version = "0.1.0"
+ 
+ [[package]]
+ name = "toml"
+diff -ruN a/programs/pump-amm/Cargo.toml b/programs/pump-amm/Cargo.toml
+--- a/programs/pump-amm/Cargo.toml	2026-10-27 05:22:03
++++ b/programs/pump-amm/Cargo.toml	2026-10-27 07:06:46
+@@ -25,6 +25,8 @@
+ 
+ uint = { version = "=0.9.5", default-features = false }
+ 
++token-ext = { path = "token-ext" }
++
+ [profile.release]
+ panic = "abort"
+ overflow-checks = true
+diff -ruN a/programs/pump-amm/src/utils/token.rs b/programs/pump-amm/src/utils/token.rs
+--- a/programs/pump-amm/src/utils/token.rs	2026-10-27 06:51:24
++++ b/programs/pump-amm/src/utils/token.rs	2026-10-27 07:06:46
+@@ -175,68 +175,8 @@
+     if info.key() == PUMP_MINT {
+         return true;
+     }
+-    supported_mint_data(&info.to_account_info().data.borrow(), allow_extensions)
++    token_ext::supported_mint_data(&info.to_account_info().data.borrow(), allow_extensions)
+ }
+-
+-fn supported_mint_data(data: &[u8], allow_extensions: bool) -> bool {
+-    if data.len() == 82 {
+-        return true;
+-    }
+-    if data.len() < 167 {
+-        return false;
+-    }
+-    if data[82..165].iter().any(|byte| *byte != 0) || data[165] != 1 {
+-        return false;
+-    }
+-    let tlv = &data[166..];
+-    let mut offset = 0usize;
+-    let mut seen = 0u64;
+-    loop {
+-        let remaining = match tlv.get(offset..) {
+-            Some(remaining) => remaining,
+-            None => return false,
+-        };
+-        if remaining.len() < 2 {
+-            return true;
+-        }
+-        let kind = u16::from_le_bytes(remaining[..2].try_into().unwrap());
+-        if kind == 0 {
+-            return true;
+-        }
+-        if remaining.len() < 4 {
+-            return false;
+-        }
+-        let length = u16::from_le_bytes(remaining[2..4].try_into().unwrap()) as usize;
+-        let entry_size = length + 4;
+-        if entry_size > remaining.len() {
+-            return false;
+-        }
+-        if kind > 26 {
+-            return false;
+-        }
+-        let bit = 1u64 << kind;
+-        if bit & 0x0601_5052 != 0 {
+-            if !allow_extensions { return false; }
+-        } else if bit & 0x000c_0000 == 0 {
+-            return false;
+-        }
+-        if seen & bit != 0 {
+-            return false;
+-        }
+-        match kind {
+-            1 => { if length < 108 { return false; } },
+-            6 => { if length == 0 || remaining[4] != 1 { return false; } },
+-            14 => { if length < 64 || remaining[36..68].iter().any(|byte| *byte != 0) { return false; } },
+-            _ => {},
+-        }
+-        seen |= bit;
+-        offset = match offset.checked_add(entry_size) {
+-            Some(next) => next,
+-            None => return false,
+-        };
+-    }
+-}
+-
+ #[inline(never)]
+ pub fn burn_from_user<'info>(
+     token_program: &Program<'info, Token2022>,
+diff -ruN a/programs/pump-amm/src/utils/transfer_fee.rs b/programs/pump-amm/src/utils/transfer_fee.rs
+--- a/programs/pump-amm/src/utils/transfer_fee.rs	2026-10-27 07:19:54
++++ b/programs/pump-amm/src/utils/transfer_fee.rs	2026-10-27 07:06:46
+@@ -1,25 +1,25 @@
++//! Token-2022 transfer-fee support for pool mints.
++//!
++//! TLV decoding and the fee arithmetic live in the separate `token_ext` crate; the
++//! original program calls them across a crate boundary, and its fee helpers sit
++//! outside the program crate's code. This module selects the record for the current
++//! epoch, maps failures to program errors and performs the harvest CPI.
++//!
++//! Callers pass a `TransferFeeData` obtained from `from_mint` for the quote mint.
+ use crate::*;
+-use anchor_spl::token_2022::spl_token_2022::{
+-    extension::transfer_fee::TransferFee,
+-};
+ 
+-#[derive(Clone, Copy, Debug)]
+-pub struct DecodedTransferFee {
+-    pub epoch: u64,
+-    pub maximum_fee: u64,
+-    pub transfer_fee_basis_points: u16,
+-}
++/// Native copy of a Token-2022 `TransferFee` record: the activation epoch, the
++/// maximum fee and the fee rate in basis points, decoded from the mint's
++/// little-endian TLV payload.
++pub use token_ext::TransferFee as DecodedTransferFee;
+ 
+-impl DecodedTransferFee {
+-    fn spl_fee(&self) -> TransferFee {
+-        TransferFee {
+-            epoch: self.epoch.into(),
+-            maximum_fee: self.maximum_fee.into(),
+-            transfer_fee_basis_points: self.transfer_fee_basis_points.into(),
+-        }
+-    }
+-}
++// Mint decoding entry point used by `from_mint`.
++use token_ext::decode_transfer_fees;
+ 
++/// The transfer fee that applies in the current epoch.
++///
++/// `None` means the mint is not a Token-2022 mint or has no transfer-fee
++/// extension, so no fee is withheld.
+ pub type TransferFeeData = Option<DecodedTransferFee>;
+ 
+ /// Reads the Token-2022 transfer-fee configuration that applies in the current epoch.
+@@ -39,12 +39,12 @@
+ 
+ /// Fee withheld by Token-2022 when `amount` is transferred.
+ ///
+-/// Mints without a transfer-fee extension charge nothing.
++/// Mints without a transfer-fee extension charge nothing; otherwise the
++/// native record computes the ceiling fee capped at its maximum.
+ pub fn calculate_fee(data: &TransferFeeData, amount: u64) -> Result<u64> {
+-    match data {
++    match *data {
+         None => Ok(0),
+         Some(fee) => fee
+-            .spl_fee()
+             .calculate_fee(amount)
+             .ok_or_else(|| error!(PumpAmmError::Overflow)),
+     }
+@@ -58,11 +58,11 @@
+ }
+ 
+ /// Gross amount to send so that `amount` arrives after the transfer fee.
++/// Uses the record's inverse calculation, capped by its maximum fee.
+ pub fn amount_before_fee(data: &TransferFeeData, amount: u64) -> Result<u64> {
+-    match data {
++    match *data {
+         None => Ok(amount),
+         Some(fee) => fee
+-            .spl_fee()
+             .calculate_pre_fee_amount(amount)
+             .ok_or_else(|| error!(PumpAmmError::Overflow)),
+     }
+@@ -84,40 +84,4 @@
+         ),
+         vec![source.clone()],
+     )
+-}
+-
+-/// Extract the epoch fee pair while validating the Token-2022 mint TLV envelope.
+-fn decode_transfer_fees(data: &[u8]) -> std::result::Result<Option<(DecodedTransferFee, DecodedTransferFee)>, ()> {
+-    if data.len() == 82 {
+-        return Ok(None);
+-    }
+-    if data.len() < 167 || data[82..165].iter().any(|byte| *byte != 0) || data[165] != 1 {
+-        return Err(());
+-    }
+-    let mut remaining = &data[166..];
+-    let mut fees = None;
+-    while remaining.len() >= 2 {
+-        let kind = u16::from_le_bytes(remaining[..2].try_into().unwrap());
+-        if kind == 0 {
+-            break;
+-        }
+-        if remaining.len() < 4 {
+-            return Err(());
+-        }
+-        let length = u16::from_le_bytes(remaining[2..4].try_into().unwrap()) as usize;
+-        let value = remaining.get(4..4 + length).ok_or(())?;
+-        if kind == 1 {
+-            if fees.is_some() || length < 108 {
+-                return Err(());
+-            }
+-            let read_fee = |bytes: &[u8]| DecodedTransferFee {
+-                epoch: u64::from_le_bytes(bytes[..8].try_into().unwrap()),
+-                maximum_fee: u64::from_le_bytes(bytes[8..16].try_into().unwrap()),
+-                transfer_fee_basis_points: u16::from_le_bytes(bytes[16..18].try_into().unwrap()),
+-            };
+-            fees = Some((read_fee(&value[72..90]), read_fee(&value[90..108])));
+-        }
+-        remaining = &remaining[4 + length..];
+-    }
+-    Ok(fees)
+ }
+diff -ruN a/programs/pump-amm/token-ext/Cargo.toml b/programs/pump-amm/token-ext/Cargo.toml
+--- a/programs/pump-amm/token-ext/Cargo.toml	1969-12-31 16:00:00
++++ b/programs/pump-amm/token-ext/Cargo.toml	2026-10-27 07:06:46
+@@ -0,0 +1,7 @@
++[package]
++name = "token-ext"
++version = "0.1.0"
++edition = "2021"
++publish = false
++
++[dependencies]
+diff -ruN a/programs/pump-amm/token-ext/src/lib.rs b/programs/pump-amm/token-ext/src/lib.rs
+--- a/programs/pump-amm/token-ext/src/lib.rs	1969-12-31 16:00:00
++++ b/programs/pump-amm/token-ext/src/lib.rs	2026-10-27 07:06:46
+@@ -0,0 +1,148 @@
++//! Allocation-free Token-2022 mint helpers shared by the AMM program crate.
++//!
++//! These functions are called across a crate boundary: the program's callers treat
++//! them as opaque (for example, `supported_mint` reloads the data borrow flag after the
++//! parser returns) and they are linked after the program crate's own code.
++
++/// Whether a mint's account data uses only supported Token-2022 extensions.
++pub fn supported_mint_data(data: &[u8], allow_extensions: bool) -> bool {
++    if data.len() == 82 {
++        return true;
++    }
++    if data.len() < 167 {
++        return false;
++    }
++    if data[82..165].iter().any(|byte| *byte != 0) || data[165] != 1 {
++        return false;
++    }
++    let tlv = &data[166..];
++    let mut offset = 0usize;
++    let mut seen = 0u64;
++    loop {
++        let remaining = match tlv.get(offset..) {
++            Some(remaining) => remaining,
++            None => return false,
++        };
++        if remaining.len() < 2 {
++            return true;
++        }
++        let kind = u16::from_le_bytes(remaining[..2].try_into().unwrap());
++        if kind == 0 {
++            return true;
++        }
++        if remaining.len() < 4 {
++            return false;
++        }
++        let length = u16::from_le_bytes(remaining[2..4].try_into().unwrap()) as usize;
++        let entry_size = length + 4;
++        if entry_size > remaining.len() {
++            return false;
++        }
++        if kind > 26 {
++            return false;
++        }
++        let bit = 1u64 << kind;
++        if bit & 0x0601_5052 != 0 {
++            if !allow_extensions { return false; }
++        } else if bit & 0x000c_0000 == 0 {
++            return false;
++        }
++        if seen & bit != 0 {
++            return false;
++        }
++        match kind {
++            1 => { if length < 108 { return false; } },
++            6 => { if length == 0 || remaining[4] != 1 { return false; } },
++            14 => { if length < 64 || remaining[36..68].iter().any(|byte| *byte != 0) { return false; } },
++            _ => {},
++        }
++        seen |= bit;
++        offset = match offset.checked_add(entry_size) {
++            Some(next) => next,
++            None => return false,
++        };
++    }
++}
++
++/// Native copy of one Token-2022 transfer-fee record.
++#[derive(Clone, Copy, Debug)]
++pub struct TransferFee {
++    pub epoch: u64,
++    pub maximum_fee: u64,
++    pub transfer_fee_basis_points: u16,
++}
++
++impl TransferFee {
++    /// Fee withheld when `amount` is transferred.
++    pub fn calculate_fee(&self, amount: u64) -> Option<u64> {
++        if amount == 0 {
++            return Some(0);
++        }
++        let bps = self.transfer_fee_basis_points as u128;
++        if bps == 0 {
++            Some(0)
++        } else {
++            let numerator = (amount as u128).checked_mul(bps)?;
++            let raw_fee = numerator.checked_add(10000)?.checked_sub(1)?
++                .checked_div(10000)?.try_into().ok()?;
++            Some(core::cmp::min(raw_fee, self.maximum_fee))
++        }
++    }
++
++    /// Amount to send so that `amount` arrives after the fee is withheld.
++    pub fn calculate_pre_fee_amount(&self, amount: u64) -> Option<u64> {
++        let bps = self.transfer_fee_basis_points as u128;
++        match (bps, amount) {
++            (0, _) => Some(amount),
++            (_, 0) => Some(0),
++            (10000, _) => self.maximum_fee.checked_add(amount),
++            _ => {
++                let numerator = (amount as u128).checked_mul(10000)?;
++                let denominator = 10000u128.checked_sub(bps)?;
++                let raw = numerator.checked_add(denominator)?.checked_sub(1)?
++                    .checked_div(denominator)?;
++                if raw.checked_sub(amount as u128)? >= self.maximum_fee as u128 {
++                    amount.checked_add(self.maximum_fee)
++                } else {
++                    u64::try_from(raw).ok()
++                }
++            }
++        }
++    }
++}
++
++/// Extract the epoch fee pair while validating the Token-2022 mint TLV envelope.
++pub fn decode_transfer_fees(data: &[u8]) -> Result<Option<(TransferFee, TransferFee)>, ()> {
++    if data.len() == 82 {
++        return Ok(None);
++    }
++    if data.len() < 167 || data[82..165].iter().any(|byte| *byte != 0) || data[165] != 1 {
++        return Err(());
++    }
++    let mut remaining = &data[166..];
++    let mut fees = None;
++    while remaining.len() >= 2 {
++        let kind = u16::from_le_bytes(remaining[..2].try_into().unwrap());
++        if kind == 0 {
++            break;
++        }
++        if remaining.len() < 4 {
++            return Err(());
++        }
++        let length = u16::from_le_bytes(remaining[2..4].try_into().unwrap()) as usize;
++        let value = remaining.get(4..4 + length).ok_or(())?;
++        if kind == 1 {
++            if fees.is_some() || length < 108 {
++                return Err(());
++            }
++            let read_fee = |bytes: &[u8]| TransferFee {
++                epoch: u64::from_le_bytes(bytes[..8].try_into().unwrap()),
++                maximum_fee: u64::from_le_bytes(bytes[8..16].try_into().unwrap()),
++                transfer_fee_basis_points: u16::from_le_bytes(bytes[16..18].try_into().unwrap()),
++            };
++            fees = Some((read_fee(&value[72..90]), read_fee(&value[90..108])));
++        }
++        remaining = &remaining[4 + length..];
++    }
++    Ok(fees)
++}
