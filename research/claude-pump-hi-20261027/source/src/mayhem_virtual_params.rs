@@ -24,20 +24,20 @@ pub struct SetMayhemVirtualParams<'info> {
     pub token_program: Interface<'info, TokenInterface>,
 }
 
-pub fn execute(ctx: Context<SetMayhemVirtualParams>) -> Result<()> {
-    let vault_amount = ctx.accounts.mayhem_token_vault.amount;
-    let initial_real_token_reserves = ctx.accounts.global.initial_real_token_reserves;
-    let mint = ctx.accounts.mint.key();
+pub(crate) fn execute(ctx: Context<SetMayhemVirtualParams>) -> Result<()> {
     let bc = &mut ctx.accounts.bonding_curve;
     let virtual_token_reserves = bc.virtual_token_reserves;
     let virtual_sol_reserves = bc.virtual_quote_reserves;
-
     let quote_mint = bc.quote_mint;
-    bc.sync_virtual_quote_reserves(initial_real_token_reserves, vault_amount, &quote_mint)?;
+    bc.sync_virtual_quote_reserves(
+        ctx.accounts.global.initial_real_token_reserves,
+        ctx.accounts.mayhem_token_vault.amount,
+        &quote_mint,
+    )?;
 
     let event = UpdateMayhemVirtualParamsEvent {
         timestamp: Clock::get()?.unix_timestamp,
-        mint,
+        mint: ctx.accounts.mint.key(),
         virtual_token_reserves,
         virtual_sol_reserves,
         new_virtual_token_reserves: bc.virtual_token_reserves,
@@ -45,7 +45,7 @@ pub fn execute(ctx: Context<SetMayhemVirtualParams>) -> Result<()> {
         real_token_reserves: bc.real_token_reserves,
         real_sol_reserves: bc.real_quote_reserves,
     };
-    emit!(event.clone());
+    emit!(event);
     emit_cpi!(event);
     Ok(())
 }
@@ -101,7 +101,7 @@ impl BondingCurve {
 }
 
 #[event]
-#[derive(Clone)]
+#[derive(Clone, Copy)]
 pub struct UpdateMayhemVirtualParamsEvent {
     pub timestamp: i64,
     pub mint: Pubkey,

@@ -1,18 +1,19 @@
 {
   "scope": "pump-hi lane: ordinary-source recovery of main-Pump windows 0x101170..0x1ab9b8 on top of the newest published frontier. Not whole-ELF identity.",
-  "frontier_packet": "repro/pump/main-contract-round25-20261027",
-  "frontier_candidate_sha256": "ef31dfd385dfe42b94cda0f12545fc639e12bccd5370ae56b4f1b412766402ab",
-  "frontier_unstripped_sha256": "d36b2984c2607b0f262e9ae82150e5122f4cbf7b64ae5d8fd5c95ca373083ea9",
+  "result": "H4 (changes 1-6)",
+  "frontier_packet": "repro/pump/main-contract-round26-20261027",
+  "frontier_candidate_sha256": "2071d716217fc6b7c71b67cdb9f00ecc39394a89d9afe26b7c60524eccbb2854",
+  "frontier_unstripped_sha256": "c2f9e1638cbb84b4d98bc2eddf56985a917032534864f2c2d1141d001a3cc5b5",
   "frontier_counts": {
-    "normalized": 720,
+    "normalized": 721,
     "raw": 123,
-    "matched_text_bytes": 871992
+    "matched_text_bytes": 874352
   },
   "changed_files_sha256": {
     "src/lib.rs": "81fcb99d08c9b25d9932d6d5b74ce3b3ae887edd7fbef1474cf82831e8586630",
     "src/buy.rs": "475939da28591bf74f9ea2dce585a3af8b4696299dcebfaa8976ff6df2e04157",
     "src/admin_set_idl_authority.rs": "7d62e672f42ec73dd40400d8a883446e18706cdfff5a67ecc7d5bcca825ce0b8",
-    "src/mayhem_virtual_params.rs": "89ae25298e74b36c9c74c5b9c60bbe542b5775fe25e213eda8a795cb59afedc9"
+    "src/mayhem_virtual_params.rs": "5b588cd1d0fbc2c346000e98ff315ba3bd9f5caa3663d870a34c6f4a003a9705"
   },
   "frontier_files_sha256": {
     "src/lib.rs": "acb78a38367a3eadc820ba053d87a5382d5e30ed47b435ef08a857d384d30d4c",
@@ -20,14 +21,14 @@
     "src/admin_set_idl_authority.rs": "d54a5ba66b17018c8d765abe6d38dc7387f70ddf042cd3e10dad8ce013b899a7",
     "src/mayhem_virtual_params.rs": "6eeae687e0f29176d48a4de0d57b0457f5e4fa498c17fd5de0520e162b5677da"
   },
-  "candidate_sha256": "8a45886afb3003205f16b0b085d377dc64f6c478ee6f40cb91be4b815dfaf843",
-  "unstripped_sha256": "3f9b38145fc777c88ec291a8e25a2687193af05d422ad419a156fda505d23ca3",
+  "candidate_sha256": "4cbe303da77b6a4cbdc24302f24b038b86a568fc9568dcd09d4d8621416046e3",
+  "unstripped_sha256": "7854036b36e9f9eec1d5bd8791fb832ab6568ad4f3ae683a86753241171490df",
   "counts": {
     "total": 1035,
     "raw": 125,
-    "normalized": 727,
-    "unmatched": 308,
-    "matched_text_bytes": 890304
+    "normalized": 729,
+    "unmatched": 306,
+    "matched_text_bytes": 895576
   },
   "normalized_gains": [
     "0xcf510",
@@ -36,6 +37,7 @@
     "0x12a4e0",
     "0x12abc8",
     "0x1348c0",
+    "0x137fc0",
     "0x19e3b0"
   ],
   "normalized_losses": [],
@@ -44,11 +46,16 @@
     "0x19b4e0"
   ],
   "raw_losses": [],
-  "elf_evidence": "evidence/elf/r25-727",
-  "identical_builds": [
-    "evidence/builds/r25-lane",
-    "evidence/builds/r25-reproduce"
+  "elf_evidence": "evidence/elf/r26-729",
+  "builds": [
+    "evidence/builds/r26-lane"
   ],
+  "previous_results": {
+    "H3 Round25 727": {
+      "commit": "9c4f06050119d4e8bb90c4caf82bd3e0d986facd",
+      "elf_evidence": "evidence/elf/r25-727"
+    }
+  },
   "whole_elf_equal": false,
   "goal_complete": false
 }
