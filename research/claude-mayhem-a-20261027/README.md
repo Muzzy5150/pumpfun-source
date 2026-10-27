@@ -1,64 +1,113 @@
-# Mayhem lane mayhem-a: buy side, initializer and allocator gap
+# Safe-Rust Mayhem initializer form (artifact-identical) — lane mayhem-a
 
-Current parent: [`research/mayhem-quotes-current-recovery-20261027`](../mayhem-quotes-current-recovery-20261027/README.md)
-(432/441 normalized, 100 raw-local, 9 unmatched windows / 107,952 original text bytes;
-stripped `73dff97e…`, symbols `440b9281…`). The lane rebuilt that parent byte-for-byte
-from its 67 verified source inputs (initializer-current `source.tar.gz` + the
-ownership-composition `sources/qualified.rs` + the sell/quote `overrides/`) with
-`tools/mbuild.py`. Earlier work was done on `mayhem-sizing-panic-recovery`
-(429/441, 100 raw-local); those measurements are kept below as history.
+**Headline: an ordinary safe-Rust source form of the O0193 initializer reproduces the
+current 432-window Mayhem artifacts byte for byte.** It replaces the parent's
+`#[repr(C)]` / `MaybeUninit` / `unsafe { assume_init_ref() }` construction with plain
+Rust and changes no output byte: stripped `73dff97e65535ce7d2552ba6f29f94fe0e08ebd414a51871a81c6cba2d7d6168`
+and symbols `440b92811753dd9af1468f6bf2d0e9139309984de3519a8f9a937babfdb6c903`, identical
+to the parent's published `builds/current` ELFs. **No window count changes** (432/441
+normalized, 100 raw-local, 9 unmatched / 107,952 B). Credit for recovering the O0193
+window itself belongs to
+[`mayhem-initializer-current-recovery-20261027`](../mayhem-initializer-current-recovery-20261027/README.md);
+this packet contributes a more plausible source form for the same bytes.
 
-## Status at a glance
+Parent: [`research/mayhem-quotes-current-recovery-20261027`](../mayhem-quotes-current-recovery-20261027/README.md)
+(rebuilt byte-for-byte in this lane from its 67 verified inputs: initializer-current
+`source.tar.gz` + ownership-composition `sources/qualified.rs` + sell/quote `overrides/`).
 
-| Layer (on the 432 parent) | Normalized | Raw-local | Unmatched | Status |
-| --- | ---: | ---: | ---: | --- |
-| Parent (quotes-current-recovery) | 432/441 | 100 | 9 (107,952 B) | reproduced byte-for-byte |
-| **A: safe-Rust initializer form** | 432/441 | 100 | 9 | **identical stripped + symbol ELF to the parent** |
-| **B: allocator context on 432** | 432/441 | **141** | 9 (107,952 B) | **CONDITIONAL — dead-code compilation context, not recovered source** |
+## The exact source change (only `src/state.rs`; lines 531/532 unchanged)
 
-No new complete original window is added by this packet (O0092, O0093 and O0193
-were closed upstream while this lane worked; this lane's own O0193 recovery is
-reported in Layer A as an alternative source form).
-
-## Layer A — O0193 initializer in plain safe Rust (artifact-identical)
-
-The parent closes O0193 with a `#[repr(C)] struct InitMint { key: MaybeUninit<Pubkey>,
-info: AccountInfo }`, `MaybeUninit::write` and `unsafe { assume_init_ref() }` to force the
-original frame order. This lane independently recovered the same body with ordinary
-safe Rust (`layers/initializer-safe-form/source/src/state.rs`, 29-line patch):
-
-```rust
-#[inline(always)]
-fn initialize_state(mint:&InterfaceAccount<'_, Mint>, params:&crate::GlobalParams, state:&mut MayhemState)->Result<()> { let mut mint_key=Pubkey::default(); let mint=mint.to_account_info(); mint_key=mint.key();
-    ... (lines 530-540 unchanged; Location records 531:43 and 532:32 unchanged)
-pub fn initialize(ctx:Context<crate::InitializeMayhemState>)->Result<()> { initialize_state(&ctx.accounts.mint, &ctx.accounts.global_params, &mut ctx.accounts.mayhem_state) }
+```diff
+--- a/src/state.rs
++++ b/src/state.rs
+@@ -525,12 +525,12 @@
+ 
+ 
+ #[inline(always)]
+-fn initialize_state(mint_key:&Pubkey, params:&crate::GlobalParams, state:&mut MayhemState)->Result<()> {
++fn initialize_state(mint:&InterfaceAccount<'_, Mint>, params:&crate::GlobalParams, state:&mut MayhemState)->Result<()> { let mut mint_key=Pubkey::default(); let mint=mint.to_account_info(); mint_key=mint.key();
+ 
+     let duration_hours=params.field_6 as i64;
+     let now=                 Clock::get().unwrap().unix_timestamp; state.field_8=now as u64;
+     state.end_timestamp=       now+duration_hours*3600;
+-    state.mint=*mint_key;
++    state.mint=mint_key;
+     state.field_56=0;
+     state.field_89=now as u64;
+     state.flag_88=false;
+@@ -544,8 +544,8 @@
+ }
+ 
+ 
+-pub fn initialize(ctx:Context<crate::InitializeMayhemState>)->Result<()> { let mut snapshot=InitMint {key:std::mem::MaybeUninit::uninit(),info:ctx.accounts.mint.to_account_info()}; snapshot.key.write(snapshot.info.key()); initialize_state(unsafe { snapshot.key.assume_init_ref() }, &ctx.accounts.global_params, &mut ctx.accounts.mayhem_state) }
+-#[repr(C)] struct InitMint<'info> { key:std::mem::MaybeUninit<Pubkey>, info:AccountInfo<'info> }
++pub fn initialize(ctx:Context<crate::InitializeMayhemState>)->Result<()> { initialize_state(&ctx.accounts.mint, &ctx.accounts.global_params, &mut ctx.accounts.mayhem_state) }
++
 ```
 
-Built on the 432 parent this produces the **identical stripped ELF `73dff97e…` and
-identical symbol ELF `440b9281…`** (byte-for-byte; `cmp` reports no difference), so it
-is a drop-in replacement with zero output change and no `unsafe`. Why it works (from
-MIR/IR inspection, `tools/mirdump.sh`, `tools/irdump.sh`):
+Full file: `layers/initializer-safe-form/source/src/state.rs`; all 67 input hashes:
+`layers/initializer-safe-form/source-inputs.json` (only `src/state.rs` differs from the
+parent).
 
-- taking `&mut MayhemState` as a helper parameter keeps the key memcpy's destination
-  pointer defined before the overflow check (InstCombine only sinks into an immediate
-  successor), which yields the original's unfolded `r3 = r7+0x160` descending copy and
-  its `xor; jeq X,1` overflow test (published control fast-init-frame-owned-info-a);
-- MIR numbers locals by first use after copy propagation; an SSA key local is replaced
-  by the call temporary created after the AccountInfo clone, while the non-SSA
-  `let mut mint_key = Pubkey::default(); … mint_key = mint.key();` keeps the key local
-  first, giving the original frame order (key deepest, AccountInfo above it, Clock
-  above that). The dead default store is removed by the optimizer.
+## Why this is the more plausible original form
 
-Negative/intermediate controls (all ordinary source; none closes O0193 alone):
-A (early `mint.key()` local) 960 B but frame/copy/overflow differ; B (key read before the
-clone) right frame, wrong copy order; C/D (explicit `&mut *` deref) identical to A;
-E (field_89 between the i128 zeroings — required, otherwise MemCpyOpt merges them into
-a memset); F1/G/H (deferred-init key forms) renumbered like A; K1 (non-SSA key, no
-helper) right frame but copy-out/overflow differ; C1 (non-SSA key inside the parent
-control's helper) only the frame differs; C2 (key passed by value) reverts to the
-control; C4 = Layer A.
+- It is ordinary, idiomatic safe Rust: a private `#[inline(always)]` helper that takes the
+  mint account by reference, derives its `AccountInfo`, reads the key and fills the
+  state. No `unsafe`, `MaybeUninit`, `#[repr(C)]` layout control or snapshot struct is
+  needed; a 2025 Anchor program is far more likely to contain the former than the latter.
+- The two codegen properties the parent forces through layout tricks follow from normal
+  compiler behavior here (checked with MIR/IR dumps, `tools/mirdump.sh`/`irdump.sh`):
+  * passing `&mut MayhemState` into the helper keeps the key copy's destination pointer
+    in the pre-overflow-check block (InstCombine only sinks into an immediate successor),
+    giving the original's unfolded `r3 = r7+0x160` descending copy and `xor; jeq X,1`
+    overflow test;
+  * rustc renumbers MIR locals by first use after copy propagation: an SSA key local is
+    replaced by the later call temporary, but the non-SSA
+    `let mut mint_key = Pubkey::default(); … mint_key = mint.key();` keeps the key as the
+    lower-numbered local, so its alloca is laid out deepest (key, then AccountInfo, then
+    Clock), as in the original. The dead default store is removed by the optimizer.
+- Behavior is identical by construction (identical ELF), so the parent's runtime evidence
+  (6,636 trade and 69 initializer comparisons on `73dff97e…`) applies unchanged.
 
-## Layer B on the 432 parent (CONDITIONAL)
+## Verify (standard library only; no HOME, compiler, VM or network)
+
+```sh
+python3 -I -B research/claude-mayhem-a-20261027/verify.py
+```
+
+It checks that the shipped `layers/initializer-safe-form/artifacts/*.so.gz` equal the
+parent's `builds/current/*.so.gz` byte for byte, that applying `source.patch` to the
+parent's `src/state.rs` reproduces the shipped `source/src/state.rs` exactly (and its
+recorded hash), that the other 66 inputs are unchanged, and that the initializer region
+contains no `unsafe`/`MaybeUninit`/`repr(C)`. It passes under `env -i HOME=<empty dir>`.
+Build record: `layers/initializer-safe-form/builds/recovered/` (command, environment,
+link map, compiler log; `tools/mbuild.py` qualified mixed-SDK recipe).
+
+Controls on the way (ordinary source; none closes O0193 alone): A (early `mint.key()`
+local) 960 B but frame/copy/overflow differ; B (key read before the clone) right frame,
+wrong copy order; C/D (explicit `&mut *` deref) identical to A; E (field_89 between the
+i128 zeroings — needed, otherwise MemCpyOpt merges them into one memset); F1/G/H
+(deferred-init key forms) renumbered like A; K1 (non-SSA key without the helper) right
+frame, copy-out/overflow differ; C1 (non-SSA key inside the parent control's
+`AccountInfo`-taking helper) only the frame differs; C2 (key passed by value) reverts to
+the control; C4 = this form (first measured on the sizing-panic parent at 430/441).
+
+## Secondary: Layer B allocator context on the 432 parent (CONDITIONAL independent reproduction — not a gain)
+
+Main already composes the allocator context with the **complete historical
+`declare_program!` macro**: [`mayhem-historical-macro-current-20261027`](../mayhem-historical-macro-current-20261027/README.md)
+(78dfdbca8; 429-window parent, stripped `ed5b4020…`), the historical composition in
+[`mayhem-initializer-current-recovery-20261027`](../mayhem-initializer-current-recovery-20261027/README.md)
+(430/441, 141 raw-local; stripped `9e0e32a9…`, symbols `a6a4e593…`) and
+[`mayhem-native-current432-composition`](../mayhem-native-current432-composition/README.md)
+(13c846906, shayanel; native Linux, 432/441, 85 native raw-local; stripped `9d6b9032…`).
+This layer is only an independent re-derivation in the hand-rendered, Anchor 1.0.0
+mixed-source form on the qualified 432 parent. **Its 141-raw artifact is not byte-equal
+to any of those** (`2ef6328d…`/`c9abef93…` vs `9e0e32a9…`/`a6a4e593…` and
+`9d6b9032…`/`9874fa10…`): the parents differ (430 vs 432 sources; PR #282 vs qualified
+Legacy Buy), the toolchain differs for the native packet, and the macro form differs
+(rendered parser vs complete historical macro). Its raw-local count must not be added to
+any row.
 
 The same two-file curve-crate change (appended rendered `legacy_event_utils` module +
 `CreateEvent` IDL entry) composed onto the 432 parent (`layers/allocator-context-432/`):
