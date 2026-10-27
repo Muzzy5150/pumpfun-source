@@ -73,6 +73,7 @@ parent).
 
 ```sh
 python3 -I -B research/claude-mayhem-a-20261027/verify.py
+python3 -I -B research/claude-mayhem-a-20261027/test_verify.py   # 4 tamper cases must fail
 ```
 
 It checks that the shipped `layers/initializer-safe-form/artifacts/*.so.gz` equal the
