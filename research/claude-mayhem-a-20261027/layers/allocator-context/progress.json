@@ -1,0 +1,20 @@
+{
+ "original_sha256": "a87fa9f866272514e6acb852b668c4a08aeb173d56c883039991d114d1199bdb",
+ "baseline_symbols_sha256": "2f6e9ad94c07e28d03498b771cc2b25a4e375ca44ae762edc6f91d83e62e1956",
+ "symbols_sha256": "90b64207d062d0a6e4d38d83129bd69a47ae1fa478367f3e13efb53f7da4af8f",
+ "baseline_matches": 429,
+ "matches": 429,
+ "gains": [],
+ "body_losses": [],
+ "baseline_raw_matches": 100,
+ "raw_matches": 139,
+ "raw_losses": [],
+ "positive_direct_edges_before": 4288,
+ "positive_direct_edges_after": 4289,
+ "positive_direct_edge_losses": [],
+ "positive_Source_records_before": 446,
+ "positive_Source_records_after": 446,
+ "positive_Source_record_losses": [],
+ "observed_Source_profile_losses": [],
+ "scope": "All441 original windows; retain every baseline raw/normalized match, positive direct edge, positive Source record and complete observed Source profile. Newly matched O0072 and O0090 callees/data are checked separately."
+}

@@ -1,0 +1,8 @@
+{
+ "returncode": 0,
+ "seconds": 40.2,
+ "source_unchanged": true,
+ "candidate_sha256": "ed5b4020ca2659b427739a384bc7c014e2b192f81cce60d7d9b770d4978f0232",
+ "symbols_sha256": "90b64207d062d0a6e4d38d83129bd69a47ae1fa478367f3e13efb53f7da4af8f",
+ "candidate_bytes": 755104
+}
