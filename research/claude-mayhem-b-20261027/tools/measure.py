@@ -106,7 +106,7 @@ if __name__ == '__main__':
     if '--json' in args:
         i = args.index('--json'); out = args[i + 1]; del args[i:i + 2]
     cand = args[0]
-    base = args[1] if len(args) > 1 else str(L / 'out/spr/symbols.so')
+    base = args[1] if len(args) > 1 else str(L / 'out/q432/symbols.so')
     s = compare(cand, base)
     short = {k: v for k, v in s.items() if k not in ('profile_losses',)}
     print(json.dumps(short, indent=1, default=str)[:6000])
