@@ -97,6 +97,11 @@ def apply_fee_client_order(crate):
     client external linkage (pub mod fee_cpi; stops interprocedural constant propagation of
     is_pump_pool) and compute the account metas before the Instruction literal, the order
     of Anchor's generated CPI template."""
+    fee = (crate / 'src/fee_cpi.rs').read_text()
+    if 'crate::pump_fees::cpi::' in fee and FEE_SUBS[1][1] not in fee and FEE_SUBS[1][2] not in fee:
+        # Round37+: the frontier calls the declare_program!(pump_fees) generated client itself
+        print('fee client order: superseded by the frontier (generated pump_fees client)')
+        return
     for rel, old, new in FEE_SUBS:
         p = crate / rel
         t = p.read_text()
@@ -117,14 +122,23 @@ def apply_generated_cpi_clients(crate):
     root = next(p for p in HERE.parents if (p / 'evidence/original/pump/deployed.so').is_file())
     for dest, src in spec['idls'].items():
         d = crate / dest
+        if d.exists():
+            # Round37 ships idls/pump_fees.json, and composites may carry a derived pump_amm IDL
+            # (e.g. GlobalConfig ending at boost_enabled): never overwrite an existing IDL.
+            same = d.read_bytes() == (root / src).read_bytes()
+            print(f'{dest}: kept the existing copy ({"equal to" if same else "differs from"} {src})')
+            continue
         d.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(root / src, d)
     lib = crate / 'src/lib.rs'
     t = lib.read_text()
-    if not t.endswith(spec['lib_append']):
+    present = set(t.split('\n'))
+    missing = [l for l in spec['lib_append'].split('\n') if l and l not in present]
+    if missing:
+        # Round37+ already declares pump_fees (lib.rs:65); append only what is not declared
         if not t.endswith('\n'):
             t += '\n'
-        lib.write_text(t + spec['lib_append'])
+        lib.write_text(t + '\n'.join(missing) + '\n')
     by_file = {}
     for c in spec['line_replacements']:
         by_file.setdefault(c['file'], []).append(c)

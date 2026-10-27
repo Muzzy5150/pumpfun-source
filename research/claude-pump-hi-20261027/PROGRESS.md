@@ -71,6 +71,20 @@ H3 raw gains are 0x198fe8 and 0x19b4e0. † These are in other claim families or
 - H7 (corrected candidate `r36-cpi4`: change 7 without migrate_v2, plus the collect form, plus change 8): 764/126/972,072, no losses against r36-base or the 762 build, no `Stack offset` warning. Full 44-suite corpus 10,468/10,468, 0 errors, 0 diagnostic mismatches (`evidence/runtime-full-r36-cpi4.json`); migrate_v2 827/827. On the composite i1c (identity recipe) change 8 adds 0x1176e0: 779/135/987,968 (`source-on-i1c.patch`, `evidence/elf/i1c-779-fee8`).
 - Measured on top of the 762 build, same recipe, no normalized or raw losses: `r36-cpi2` (`collect_coin_creator_fee` accounts built inside `if !frozen`) gives 763/126/968,872 (+0x10b0b8). `r36-cpi3` (cpi2 + change 8) gives 764/126/972,072 (+0x10b0b8, +0x1176e0). Both still contain the rejected `migrate_v2` part. They are re-measured without it before any claim (`r36-cpi4`).
 
+## Round37 (origin/main b855ede02, 744/175 published)
+
+- Round37 itself declares `declare_program!(pump_fees)` (lib.rs:65), ships `idls/pump_fees.json` (equal to `evidence/upstream`) and matches 0x1176e0 through the generated `pump_fees::cpi::get_fees_with_quote_mint`. Change 8 is therefore superseded there.
+- `tools/apply_lane_changes.py` is now Round37-aware:
+  - `lib_append` adds only the `declare_program!` lines that are missing, so pump_fees is never declared twice;
+  - an IDL that already exists in the crate is never overwritten, which keeps Round37's `idls/pump_fees.json` and any derived `idls/pump_amm.json` of a composite;
+  - change 8 reports `superseded by the frontier` when `fee_cpi.rs` uses the generated client.
+- Checks of `--with-cpi-7 --with-fee-8`:
+  - on Round37: a single pump_fees declaration (lib.rs:65), pump_amm appended, `pump_fees.json` byte-identical, and a second run changes nothing;
+  - on Round36: the output equals the corpus-validated H7 source (`r36-cpi4`);
+  - on i1c: the output equals `i1c-fee8` (779).
+- Identity recipe (`fastbuild.py`), same-recipe base: Round37 unmodified builds to 749/133/924,472 (+5 identity-recipe windows against the published inventory). Round37 + lane changes + the GlobalConfig boost change gives 775/133/995,984, with 26 gains and no normalized or raw losses. The GlobalConfig boost change duplicates the integration's nearmiss2-03 delivery (0x109488 and siblings), so it was removed from the tool and is not claimed. The exact tool output (`r37-lane2`) is being measured.
+- Runtime evidence for nearmiss2-03, from this lane's independent GlobalConfig-IDL build (`r37-lane`): the `migration` suite passes 228/228. `migrate_v2` is running.
+
 ## Round26 findings
 
 - H4: full public 44-suite corpus passes on `4cbe303d…` (10,468/10,468, 0 diagnostic mismatches; `evidence/runtime-full-r26-lane.json`). `virtual_reserve_sync` also passes on its own (192/192).
