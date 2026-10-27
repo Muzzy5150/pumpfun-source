@@ -25,7 +25,7 @@ mod trade;
 mod create;
 mod boost;
 mod boost_burn;
-mod sweep;
+pub mod sweep;
 mod extend;
 mod collect;
 mod transfer_creator;
@@ -483,3 +483,5 @@ fn quote_transfer_fee(mint: &AccountInfo, amount: u64, inverse: bool) -> Result<
     };
     crate::utils::transfer_fee::calculate_fee(&fee, pre_fee_amount)
 }
+
+pub use trade::{execute_buy, execute_buy_exact_quote, execute_sell};

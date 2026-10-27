@@ -18,7 +18,7 @@ pub struct SweepFees<'info> {
     /// CHECK: validated against configured recipients or creator vault PDA in handler.
     pub recipient: UncheckedAccount<'info>,
     /// CHECK: associated-token address constrained; token CPI validates initialized data.
-    #[account(mut,seeds=[recipient.key().as_ref(),quote_token_program.key().as_ref(),quote_mint.key().as_ref()],bump,seeds::program=associated_token_program.key())]
+    #[account(mut,seeds=[recipient.key().as_ref(),quote_token_program.key().as_ref(),quote_mint.key().as_ref()],bump,seeds::program=associated_token::ID)]
     pub recipient_token_account: UncheckedAccount<'info>,
     pub system_program: Program<'info, System>,
     pub associated_token_program: Program<'info, AssociatedToken>,

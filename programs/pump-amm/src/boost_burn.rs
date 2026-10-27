@@ -1,6 +1,5 @@
 use crate::*;
 use anchor_spl::token_interface::TokenInterface;
-use anchor_spl::token_2022::spl_token_2022::extension::transfer_fee::instruction::harvest_withheld_tokens_to_mint;
 
 #[event_cpi]
 #[derive(Accounts)]
@@ -99,8 +98,11 @@ pub fn execute(ctx: Context<BoostBuyAndBurn>, requested: u64, minimum: u64) -> R
     if a.boost_vault.amount == 0 {
         if has_fee {
             require!(a.quote_mint.to_account_info().is_writable, PumpAmmError::QuoteMintNotWritable);
-            let ix = harvest_withheld_tokens_to_mint(&a.quote_token_program.key(), &a.quote_mint.key(), &[&a.boost_vault.key()])?;
-            anchor_lang::solana_program::program::invoke(&ix, &[a.quote_mint.to_account_info(), a.boost_vault.to_account_info(), a.quote_token_program.to_account_info()])?;
+            crate::utils::transfer_fee::harvest_to_mint(
+                &a.quote_token_program.to_account_info(),
+                &a.quote_mint.to_account_info(),
+                &a.boost_vault.to_account_info(),
+            )?;
         }
         token_interface::close_account(CpiContext::new_with_signer(a.quote_token_program.to_account_info(), token_interface::CloseAccount {
             account: a.boost_vault.to_account_info(), destination: a.authority.to_account_info(), authority: a.boost_vault_authority.to_account_info(),

@@ -1,0 +1,194 @@
+{
+ "build_tag": "linux-g3r",
+ "base_build_tag": "linux-control2",
+ "base_candidate_sha256": "badc94982f2ae20adc2a6be7fd22bba9d900c289de7c3b9e7475847af960ca7d",
+ "artifacts": {
+  "candidate.so": {
+   "sha256": "9d1a23b9ee025470cc60f57622db6812065c4f980819f7631bb6f2ecd1762b29",
+   "bytes": 1304616,
+   "gzip_sha256": "36f61e6f39bf3e9e467b079f42f54be95fcb279590adaf10ac651cb0e4001d59"
+  },
+  "unstripped.so": {
+   "sha256": "2d57130d7476568a4dae053a5b86d9740ea8413c89bb0066042ad899d28cb737",
+   "bytes": 1830856,
+   "gzip_sha256": "ae9b2ffb3d51ed1af318fb11a0b8c46597f54775f4a880bb61eaf41edf13b471"
+  }
+ },
+ "measurement": {
+  "candidate_sha256": "9d1a23b9ee025470cc60f57622db6812065c4f980819f7631bb6f2ecd1762b29",
+  "symbols_sha256": "2d57130d7476568a4dae053a5b86d9740ea8413c89bb0066042ad899d28cb737",
+  "reader_sha256": "247700e9930d5e53daf93a50888ae1e5429f74ccb19155e7a205f72ee21d5883",
+  "windows": 785,
+  "normalized_matches": 634,
+  "raw_matches": 128,
+  "unmatched": 151
+ },
+ "base_measurement": {
+  "normalized_matches": 623,
+  "raw_matches": 128,
+  "unmatched": 162
+ },
+ "window_delta": [
+  {
+   "original_start": "0x74900",
+   "bytes": 640,
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ],
+   "candidate_symbol": "_ZN18pump_amm_recovered5utils12transfer_fee16amount_after_fee17hca89c38a4c4b37b8E"
+  },
+  {
+   "original_start": "0x74e30",
+   "bytes": 1480,
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ],
+   "candidate_symbol": "_ZN18pump_amm_recovered5utils12transfer_fee15harvest_to_mint17h8cfe146e110ed9a8E"
+  },
+  {
+   "original_start": "0x82630",
+   "bytes": 5896,
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ],
+   "candidate_symbol": "_ZN191_$LT$pump_amm_recovered..instructions..admin..create_config..CreateConfig$u20$as$u20$anchor_lang..Accounts$LT$pump_amm_recovered..instructions..admin..create_config..CreateConfigBumps$GT$$GT$12try_accounts28_$u7b$$u7b$closure$u7d$$u7d$17hc350160ceb59aa81E"
+  },
+  {
+   "original_start": "0xc6530",
+   "bytes": 7104,
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ],
+   "candidate_symbol": "_ZN127_$LT$pump_amm_recovered..sweep..SweepFees$u20$as$u20$anchor_lang..Accounts$LT$pump_amm_recovered..sweep..SweepFeesBumps$GT$$GT$12try_accounts17hf5875049a7ab6cb1E"
+  },
+  {
+   "original_start": "0xd1290",
+   "bytes": 7824,
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ],
+   "candidate_symbol": "_ZN269_$LT$pump_amm_recovered..instructions..token_incentives..init_user_volume_accumulator..InitUserVolumeAccumulator$u20$as$u20$anchor_lang..Accounts$LT$pump_amm_recovered..instructions..token_incentives..init_user_volume_accumulator..InitUserVolumeAccumulatorBumps$GT$$GT$12try_accounts28_$u7b$$u7b$closure$u7d$$u7d$17h457639c98ddfce9cE"
+  },
+  {
+   "original_start": "0xe8ae8",
+   "bytes": 1064,
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ],
+   "candidate_symbol": "_ZN18pump_amm_recovered9__private8__global6buy_v217hda1c9ce953304742E"
+  },
+  {
+   "original_start": "0xe8f10",
+   "bytes": 1064,
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ],
+   "candidate_symbol": "_ZN18pump_amm_recovered9__private8__global21buy_exact_quote_in_v217h90a33de5d93b404cE"
+  },
+  {
+   "original_start": "0xe9338",
+   "bytes": 1064,
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ],
+   "candidate_symbol": "_ZN18pump_amm_recovered9__private8__global7sell_v217h7234ac01783a50ffE"
+  },
+  {
+   "original_start": "0xe9b90",
+   "bytes": 1072,
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ],
+   "candidate_symbol": "_ZN18pump_amm_recovered9__private8__global18sweep_protocol_fee17h00e20a617eef0a7bE"
+  },
+  {
+   "original_start": "0xe9fc0",
+   "bytes": 1072,
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ],
+   "candidate_symbol": "_ZN18pump_amm_recovered9__private8__global17sweep_creator_fee17h65b377239cfef121E"
+  },
+  {
+   "original_start": "0xf6eb0",
+   "bytes": 2664,
+   "normalized": [
+    false,
+    true
+   ],
+   "raw": [
+    false,
+    false
+   ],
+   "candidate_symbol": "_ZN10anchor_spl21token_2022_extensions12transfer_fee31harvest_withheld_tokens_to_mint17he642395e306d9be6E"
+  }
+ ],
+ "losses": [],
+ "measure_command": "python3 repro/pump_amm/focused-diagnostics-20261026/measure.py --candidate candidate.so --symbols unstripped.so --output measurement.json",
+ "runtime": {
+  "suites": 25,
+  "cases": 17462,
+  "mismatches": 0,
+  "all_pass": true
+ },
+ "runtime_receipts_included": [
+  "accumulator",
+  "boost",
+  "boost_burn",
+  "create",
+  "liquidity",
+  "sweep",
+  "trade_v2"
+ ],
+ "runtime_receipts_note": "All 25 receipts were produced; runtime/summary.json records every receipt sha256. Receipts for suites not touching this lane's changes are omitted for size."
+}

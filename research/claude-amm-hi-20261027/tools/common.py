@@ -6,7 +6,7 @@ LANE = SP / 'lanes/amm-hi'
 WT = LANE / 'wt'
 sys.path.insert(0, str(WT / 'repro/pump_amm/claim-self-transfer-v144/static-tool'))
 from elf_reader import Elf  # noqa
-FRONT = WT / 'repro/pump_amm/native-fee-cpi-recovery-20261027'
+FRONT = WT / 'repro/pump_amm/account-context-recovery-20261027'
 ORIG = WT / 'evidence/original/pump_amm/deployed.so'
 LO, HI = 0x73ef0, 0xf6eb0
 

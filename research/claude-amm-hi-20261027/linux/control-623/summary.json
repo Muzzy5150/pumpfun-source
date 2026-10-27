@@ -1,0 +1,35 @@
+{
+ "build_tag": "linux-control2",
+ "base_build_tag": "linux-control2",
+ "base_candidate_sha256": "badc94982f2ae20adc2a6be7fd22bba9d900c289de7c3b9e7475847af960ca7d",
+ "artifacts": {
+  "candidate.so": {
+   "sha256": "badc94982f2ae20adc2a6be7fd22bba9d900c289de7c3b9e7475847af960ca7d",
+   "bytes": 1300016,
+   "gzip_sha256": "6b6b43c459d006b688d5650d580cc41aa99770a0be6ee64bfe740107273bcde8"
+  },
+  "unstripped.so": {
+   "sha256": "9c8fc5241a0e14146b843e96c798e5b4094e88ab2bd310e6e69a2bc12a091c9d",
+   "bytes": 1823912,
+   "gzip_sha256": "abcfa75aa4fd917b1c7f6ddd8b5fb8ae1cb4d19182c8b26d81e0e784b14df097"
+  }
+ },
+ "measurement": {
+  "candidate_sha256": "badc94982f2ae20adc2a6be7fd22bba9d900c289de7c3b9e7475847af960ca7d",
+  "symbols_sha256": "9c8fc5241a0e14146b843e96c798e5b4094e88ab2bd310e6e69a2bc12a091c9d",
+  "reader_sha256": "247700e9930d5e53daf93a50888ae1e5429f74ccb19155e7a205f72ee21d5883",
+  "windows": 785,
+  "normalized_matches": 623,
+  "raw_matches": 128,
+  "unmatched": 162
+ },
+ "base_measurement": {
+  "normalized_matches": 623,
+  "raw_matches": 128,
+  "unmatched": 162
+ },
+ "window_delta": [],
+ "losses": [],
+ "measure_command": "python3 repro/pump_amm/focused-diagnostics-20261026/measure.py --candidate candidate.so --symbols unstripped.so --output measurement.json",
+ "note": "Base ELFs omitted: identical (sha256 above) to repro/pump_amm/account-context-recovery-20261027/results/build/candidate.so and unstripped.so."
+}

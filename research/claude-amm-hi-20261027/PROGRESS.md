@@ -1,111 +1,85 @@
-# Lane amm-hi progress (PumpSwap, original windows 0x73ef0 … 0xf6eb0)
+# Lane amm-hi progress (PumpSwap, original windows 0x73ef0 … 0xf6eb0) — final
 
-Continuation notes for any agent resuming this lane. Newest entry last.
+The lane is wound down; the dedicated AMM session owns this range from here. This file is
+the hand-off record: what is shipped, what is researched but not applied, and why every
+other window in the range is still open.
 
-## Baseline
+## Shipped (maintained source, Linux-confirmed on the 623 frontier)
 
-- Frontier: `repro/pump_amm/native-fee-cpi-recovery-20261027`, Linux v1.44 candidate
-  `a4b978ee1ab15dd822a31bc42e85d55e409f4e777f7af671a3197ea175891101`:
-  599/785 normalized, 125 raw, 186 unmatched. My range holds 57 unmatched windows.
-- Native macOS v1.44 build of the same source (`builds/native-base`, sha `837c6ab0…`):
-  594 normalized / 118 raw. The only differences from Linux are five 56-byte
-  `type_id` windows (TypeId hashes depend on the host-specific `-C metadata`) and a
-  few tail raw matches (0xfd098, 0x119460, 0x119b18, 0x11a2f0). None is in my range,
-  so native builds are valid for iterating on my windows; finals are confirmed with
-  the Linux recipe.
+Base `account-context-recovery-20261027` (`badc9498…`, 623/128/162, 727,352 matched bytes).
+This branch: **634 normalized, 128 raw, 151 unmatched, 758,296 matched bytes**, Linux
+candidate `9d1a23b9…` (`linux/g3r-on-623/`). Eleven gains, no losses. All 25 maintained
+suites pass (17,462 cases, 0 mismatches). Windows and causes are in README.md.
 
-## Method
+The three changes, each self-contained and re-appliable:
 
-`tools/nbuild.py --src <root> --tag <t>` stages the frontier workspace recipe
-(`workspace_recipe_v2.py`), builds natively under `sbf_lock.py --slots 6`, strips with
-v1.52 llvm-objcopy and measures with `repro/pump_amm/focused-diagnostics-20261026/measure.py`.
-`tools/cmpmeas.py A B` lists per-window gains/losses. `tools/origins.py` extracts
-Anchor `Source{filename,line}` immediates; `tools/wdiff.py <orig> <symbol>` shows
-normalized instruction diffs; `tools/nearmiss.py` ranks near misses.
+1. Source-coordinate placement (0x74900, 0x82630, 0xd1290): transfer_fee.rs error sites on
+   32/49/57/67, `#[derive(Accounts)]` on create_config.rs:6 and
+   init_user_volume_accumulator.rs:8.
+2. SweepFees and handler linkage (0xc6530, 0xe9b90, 0xe9fc0, 0xe8ae8, 0xe8f10, 0xe9338):
+   `seeds::program = associated_token::ID`; `pub mod sweep`; trailing
+   `pub use trade::{execute_buy, execute_buy_exact_quote, execute_sell}` in lib.rs.
+3. Boost harvest (0x74e30, 0xf6eb0): `utils::transfer_fee::harvest_to_mint` calls
+   anchor_spl's `harvest_withheld_tokens_to_mint`; `boost_burn` calls the helper.
 
-Key finding: nearly every original window that carries an Anchor error-origin record
-(filename length + line immediates in code) is unmatched, because the reconstruction's
-file paths and lines differ. Several windows in my range differ ONLY in those
-immediates.
+Codex's private `amm-sweep-program-context` independently made the same SweepFees seeds
+change (parser only); the two dispatch wrappers need change 2's linkage as well.
 
-## Gains
+## Researched, not applied: helper crate (`helper-crate/`)
 
-### Gain 1 (exp1): six windows, source-coordinate placement only
+Moving Token-2022 helpers into a local path crate recovers five more windows in this range:
+0x73ef0 `supported_mint`, 0xf2d60 / 0xf2ed0 native fee math, 0x74648 `calculate_fee` and
+0x74b80 `amount_before_fee` (native 629 → 634 on top of this branch; Linux and runtime status
+in `helper-crate/README.md`). Evidence and controls:
 
-| Window | Bytes | Function | Original origin |
+- Original 0x73ef0 reloads the data RefCell borrow flag after calling 0xf28b8, so the callee
+  is opaque. In-crate callees (private, `pub`, or `#[inline(never)]`, exp5a/5b) let LLVM infer
+  read-only memory effects and forward the flag (560 vs 568 bytes). A separate crate matches
+  exactly (exp6).
+- 0xf28b8, 0xf2d60, 0xf2ed0 and 0xf31d8 are contiguous between the program crate's last
+  function and anchor_spl's object, each called once from a main-crate wrapper, with no
+  calls (other than compiler-rt) and no data references.
+- The original fee wrappers copy the 24-byte fee record before the call. With spl-style
+  `&self` methods (not `nocapture`) and a by-value match (`match *data { Some(fee) => … }`)
+  the copy and the original frame layout both appear (exp13).
+- Negative controls: by-value `self` methods called directly pass the payload pointer (no
+  copy; exp7/exp8, deduced `readonly`); free functions delegating to methods copy but lose
+  the standalone block layout of 0xf2d60/0xf2ed0 and leave the frame 24 bytes shallower
+  (exp9); a per-package `incremental = true` override for the helper copies but changes
+  0xf2ed0 (exp11); whole-build `CARGO_INCREMENTAL=1` drops 611 → 475 because incremental
+  disables the MIR inliner (exp10).
+- The helper crate's name and location are not evidenced by the binary (no strings).
+
+## Residuals (unmatched windows in 0x73ef0 … 0xf6eb0 after this branch)
+
+| Window | Bytes | Function | Diagnosis |
 | --- | ---: | --- | --- |
-| 0x74900 | 640 | `utils::transfer_fee::amount_after_fee` | transfer_fee.rs:57 |
-| 0x82630 | 5896 | `CreateConfig::try_accounts` | instructions/admin/create_config.rs:6 |
-| 0xd1290 | 7824 | `InitUserVolumeAccumulator::try_accounts` | instructions/token_incentives/init_user_volume_accumulator.rs:8 |
-| 0xe0148 | 1376 | `__idl::__idl_write` | lib.rs:36 (`#[program]`) |
-| 0xe0720 | 1240 | `__idl::__idl_set_buffer` | lib.rs:36 |
-| 0xf23f0 | 728 | `IdlAccount::try_deserialize` | lib.rs:36 |
+| 0x73ef0 | 568 | `utils::token::supported_mint` | Closed by the helper-crate patch (cross-crate parser call). |
+| 0x74128 | 1312 | `utils::transfer_fee::from_mint` | With the helper crate and `Clock::get()` before the `None` check (`Ok(fees.map(…))`, exp14), only the early non-Token-2022 return differs: original stores a zeroed 32-byte `Ok(None)`, ours stores only the tag. Tried an `if/else` expression (exp15a, other branch shape) and a `None`-initialized local (exp15b, stores registers). Open. |
+| 0x74648 | 696 | `utils::transfer_fee::calculate_fee` | Closed by the helper-crate patch. |
+| 0x74b80 | 688 | `utils::transfer_fee::amount_before_fee` | Closed by the helper-crate patch. |
+| 0x92c08 | 5400 | `MigratePoolCoinCreator::try_accounts` | Context layout; Codex `amm-creator-context` reaches 5136 bytes. Not worked here. |
+| 0x94120, 0xeab70, 0xec738 | 5416, 1152, 1152 | SetCoinCreator parser; set/migrate wrappers | Context layout (unboxed accounts); privately recovered by Codex `amm-creator-context`. |
+| 0x9e3b0, 0xa0068 | 7352, 7528 | CreatePool init helpers | Differ only in origin filename length/line (instructions/create_pool.rs:21); privately recovered by Codex `amm-create-pool-module`. |
+| 0xa6c68, 0xea3f0 | 3936, 1272 | ExtendAccount parser/wrapper | `ExtendAccount.account` as owned AccountInfo; privately recovered by Codex `amm-extend-context`. |
+| 0xe31a0 | 3064 | `__global::create_pool` | Wrapper copies a larger context and passes the full Context; follows the CreatePool layout work. |
+| 0xe7648, 0xe7d88 | 1856 | `__global::buy`, `buy_exact_quote_in` | Original passes `&ctx` plus three scalars; our shared legacy-buy handler takes an extra mode argument on the stack. Needs separate handlers or the original signature (Codex legacy-buy area). |
+| 0xaf3b0, 0xb5a90, 0xbd3b0 | 8128 each | LegacyBuy / MultiHop / TradeV2 `try_accounts` closures | Only the origin filename length and line differ: instructions/swap/buy.rs:133, swap/multi_hop_swap.rs:68, swap/trade_v2.rs:31. Requires moving those Accounts structs into the original files at those lines. |
+| 0xb3460, 0xb92c8 | 520 each | error-constructor closures | Same two immediates: buy.rs:409 and multi_hop_swap.rs:941. Follows the module moves above. |
+| 0xd44e0, 0xd4f90 | 728 each | Global/UserVolumeAccumulator `try_deserialize` | Origin state/volume_accumulator.rs:8 and :25. Codex `amm-volume-state-origin` moved the declarations into that file (lines 3/13, not fitted). |
+| 0xf28b8 | 1192 | supported-mint TLV parser (helper crate) | Body differs (ours 1168). Codex's 48 parser variants also missed. Calling convention is right once cross-crate. |
+| 0xf2d60, 0xf2ed0 | 368, 776 | native fee math (helper crate) | Closed by the helper-crate patch (Codex's exact standalone bodies). |
+| 0xf31d8 | 664 | Token-2022 transfer-fee TLV decoder (helper crate) | Body differs (ours 640–656 depending on form); Codex `amm-fee-native-next` variants also missed. |
 
-Native: 594→600 normalized, raw 118→118, no losses. Linux confirmation: pending.
+## Method notes for whoever continues
 
-Files changed (all under `programs/pump-amm/src`):
-- `lib.rs`: the eight module glob imports plus `multi_hop`/`state` merged into one
-  `use {…}` and the blank line before `#[program]` removed, so `#[program]` is on
-  line 36. Lines 22/23 (`declare_program!`) are unchanged.
-- `instructions/admin/create_config.rs`: one blank line removed; `#[derive(Accounts)]` on line 6.
-- `instructions/token_incentives/init_user_volume_accumulator.rs`: explicit imports
-  and a two-line struct doc comment; `#[derive(Accounts)]` on line 8.
-- `utils/transfer_fee.rs`: doc comments and rustfmt-style method chains put the four
-  `error!` sites on the original lines 32/49/57/67. Code is unchanged. Only line 57
-  (0x74900) gains now: 0x74648/0x74b80/0x74128 also need the original 24-byte
-  by-value fee copy and separate callees (0xf2d60/0xf2ed0/0xf31d8), which Codex
-  `work/amm-fee-native-next-20261027` is researching.
-
-### Gain 2 (exp2, exp3): six windows, ATA seeds program and handler linkage
-
-| Window | Bytes | Function | Cause |
-| --- | ---: | --- | --- |
-| 0xc6530 | 7104 | `SweepFees::try_accounts` | `seeds::program` is the ATA program-id constant (original stores `ATokenGP…` via four `lddw`), not `associated_token_program.key()` |
-| 0xe9b90 | 1072 | `__global::sweep_protocol_fee` | shared handler is publicly reachable (`pub mod sweep`) |
-| 0xe9fc0 | 1072 | `__global::sweep_creator_fee` | same |
-| 0xe8ae8 | 1064 | `__global::buy_v2` | `pub use trade::{execute_buy, …}` at the end of lib.rs |
-| 0xe8f10 | 1064 | `__global::buy_exact_quote_in_v2` | same |
-| 0xe9338 | 1064 | `__global::sell_v2` | same |
-
-Mechanism: the crate builds as `cdylib` and `lib`, so publicly reachable functions
-keep external linkage. LLVM then cannot apply argument promotion to the shared
-handler, and the wrapper passes `&Context` (both bump bytes materialized,
-`sth [r10-370], 65535`) exactly as in the original. With a private module the
-handler is internal and gets promoted to `(accounts, event_authority_bump)`.
-The original sweep handler 0x59408 reads only `ctx.accounts` and
-`ctx.bumps.event_authority`, so field count does not explain it; linkage does.
-`pub mod trade` was not used because it would export the dead `trade::execute`.
-Behavior: `Program<AssociatedToken>` is validated during field deserialization,
-before any seeds constraint runs, so the constant program id is equivalent.
-
-Native: 600→606 normalized, raw 118→118, no losses; no symbols added or removed
-(`tools/symdiff.py`), only the targeted bodies resized.
-Files changed: `lib.rs` (`pub mod sweep;`, trailing `pub use trade::{…}`), `sweep.rs` (one constraint).
-
-### Gain 3 (exp4): two windows, Token-2022 harvest through anchor_spl
-
-| Window | Bytes | Function |
-| --- | ---: | --- |
-| 0x74e30 | 1480 | `utils::transfer_fee::harvest_to_mint` (new helper; original sits right after `amount_before_fee`) |
-| 0xf6eb0 | 2664 | `anchor_spl::token_2022_extensions::transfer_fee::harvest_withheld_tokens_to_mint` |
-
-Original evidence: the boost handler 0x1fed8 clones `quote_token_program`, `quote_mint`
-and `boost_vault` AccountInfos and calls 0x74e30, which clones the token program twice
-(CpiContext `program` and `token_program_id`) and the mint once, puts one source clone
-in a heap Vec, and calls 0xf6eb0 (anchor_spl helper → spl builder + `invoke_signed`).
-The reconstruction built the instruction and called `invoke` inline in `boost_burn`.
-Same instruction; account-info list order differs only (`invoke` is order-independent),
-signer seeds empty. Needs the boost runtime suite (pending).
-
-Native: 606→608 normalized, raw unchanged, no losses. Symbols added: exactly the two.
-Files changed: `utils/transfer_fee.rs` (helper appended after `amount_before_fee`),
-`boost_burn.rs` (call site; unused import removed).
-
-## Coordination notes
-
-- Codex root privately recovered (not yet on main) 0x7d780, 0x80a00, 0x84d58,
-  0x87290, 0x908e8, 0x928f8, 0xe1cc0, 0xe41c8, 0xe5ce8 and 0xea8e8 via Accounts
-  field-type layout fixes (`work/amm-account-layout-integration-20261027`,
-  `amm-incentive-context`). Do not duplicate.
-- Codex `amm_v2_creator_helper` is creating `state/volume_accumulator.rs`, which
-  affects 0xd44e0/0xd4f90 (decoders at volume_accumulator.rs:8/25). Avoided so far.
+- `tools/origins.py` lists every Anchor `Source{filename,line}` immediate in both binaries;
+  almost every unmatched window carrying one differs there (plus any real code differences).
+- Publicly reachable handlers keep external linkage (crate types `cdylib` + `lib`); private
+  ones get argument promotion, which changes the `__global` wrapper.
+- Native macOS v1.44 builds match Linux except five TypeId windows and a few tail raw
+  windows outside this range. Cargo's mtime freshness can silently reuse a stale root-crate
+  artifact; `nbuild.py`/`lbuild.py` touch staged sources and assert "Compiling
+  pump-amm-recovered" (`builds/exp5b` was invalid for that reason and is not used).
+- Linux builds mount lane copies of the frontier Cargo home and target at the frontier's
+  container paths; `linux/control-623` shows the recipe reproduces the base byte-for-byte.

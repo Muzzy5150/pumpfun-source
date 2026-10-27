@@ -1,6 +1,5 @@
 //! Static-only reconstruction; fixed-admin positive execution is unvalidated.
 use crate::*;
-
 const FIXED_ADMIN: Pubkey = anchor_lang::solana_program::pubkey!("8LWu7QM2dGR1G8nKDHthckea57bkCzXyBTAKPJUBDHo8");
 
 #[event_cpi]

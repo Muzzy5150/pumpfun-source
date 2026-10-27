@@ -50,10 +50,10 @@ index f4e6eaf89..cdc27f217 100644
  #[derive(Accounts)]
  pub struct InitUserVolumeAccumulator<'info> {
 diff --git a/programs/pump-amm/src/lib.rs b/programs/pump-amm/src/lib.rs
-index ae0a1abe0..52a2d9452 100644
+index f79fec51e..6025f273e 100644
 --- a/programs/pump-amm/src/lib.rs
 +++ b/programs/pump-amm/src/lib.rs
-@@ -25,23 +25,14 @@ mod trade;
+@@ -25,7 +25,7 @@ mod trade;
  mod create;
  mod boost;
  mod boost_burn;
@@ -62,24 +62,7 @@ index ae0a1abe0..52a2d9452 100644
  mod extend;
  mod collect;
  mod transfer_creator;
--use transfer_creator::*;
--use collect::*;
--use extend::*;
--use sweep::*;
--use boost::*;
--use boost_burn::*;
--use create::*;
--use trade::*;
-+use {transfer_creator::*, collect::*, extend::*, sweep::*, boost::*, boost_burn::*, create::*, trade::*, multi_hop::*, state::*};
- use anchor_spl::{token::Token, token_2022::Token2022, token_interface::{self, Mint, TokenAccount}};
--use {multi_hop::*, state::*};
- pub use instructions::admin;
- declare_id!("pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA");
--
- #[program]
- pub mod pump_amm_recovered {
-     use super::*;
-@@ -483,3 +474,5 @@ fn quote_transfer_fee(mint: &AccountInfo, amount: u64, inverse: bool) -> Result<
+@@ -483,3 +483,5 @@ fn quote_transfer_fee(mint: &AccountInfo, amount: u64, inverse: bool) -> Result<
      };
      crate::utils::transfer_fee::calculate_fee(&fee, pre_fee_amount)
  }

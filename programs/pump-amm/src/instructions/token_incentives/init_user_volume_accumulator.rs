@@ -1,5 +1,9 @@
-use crate::*;
+use anchor_lang::prelude::*;
 
+use crate::state::UserVolumeAccumulator;
+
+/// Initializes the selected user's volume accumulator PDA. The user need not
+/// sign; `payer` funds rent only when the account does not exist yet.
 #[event_cpi]
 #[derive(Accounts)]
 pub struct InitUserVolumeAccumulator<'info> {
