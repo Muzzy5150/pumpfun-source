@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "runtime_valid": true,
+  "stack_warnings": [],
+  "recipe": "identity",
+  "triple": "sbpf-solana-solana",
+  "seconds": 45.6,
+  "unstripped": "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/pump-hi/fb2/out-i1c-fee8/unstripped.so",
+  "unstripped_sha256": "88f345dc99b32b605c103fc29f542ed8d5cf8d12ed5e34e31fa6fd22656e8f6a",
+  "candidate_sha256": "ddff3906b69d29f24aeb62eabd485b1972963af9fc29f5e68fba9ae55c93433e"
+}

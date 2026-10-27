@@ -1,0 +1,25 @@
+--- a/src/sell.rs
++++ b/src/sell.rs
+@@ -76,7 +76,7 @@
+ }
+ 
+ #[path="fee_cpi.rs"]
+-pub(crate) mod fee_cpi;
++pub mod fee_cpi;
+ 
+ #[path="util/fee.rs"]
+ pub mod fee_math;
+--- a/src/fee_cpi.rs
++++ b/src/fee_cpi.rs
+@@ -114,9 +114,10 @@
+         data.extend_from_slice(&[154, 237, 138, 92, 162, 2, 162, 187]);
+         AnchorSerialize::serialize(&args, &mut data)
+             .map_err(|_| anchor_lang::error::ErrorCode::InstructionDidNotSerialize)?;
++        let accounts = ctx.to_account_metas(None);
+         anchor_lang::solana_program::instruction::Instruction {
+             program_id: ctx.program.key(),
+-            accounts: ctx.to_account_metas(None),
++            accounts,
+             data,
+         }
+     };

@@ -1,8 +1,8 @@
 {
   "scope": "pump-hi lane: ordinary-source recovery of main-Pump windows 0x101170..0x1ab9b8 on top of the newest published frontier. Not whole-ELF identity.",
-  "result": "H6 (Round36): remaining changes 3,5,6,7. Changes 1,2 (dispatcher order, update_global_authority) and an equivalent of 4 (Anchor transfer_with_seed) are already in Round36.",
-  "adoptable": false,
-  "adoptability_note": "No source-caused losses. The 19 raw differences against the published Round36 inventory also appear when the UNMODIFIED Round36 source is built with the same plain archived builder (evidence/elf/r36-base: 738/126, same 19 windows). Round36 obtains them from its layout-linked recipe (ordered.ld, data-order certificate, target-library profile), so the integration layout step must re-derive the text/data order including the added functions. Same-recipe comparison: base 738/126/900,520; +3,5,6 743/126/908,888 (evidence/elf/r36-noncpi); +3,5,6,7 762/126/964,776.",
+  "result": "H7 (Round36): changes 3, 5, 6, 7 without migrate_v2 (generated clients in migrate, admin_cto incl. the collect_coin_creator_fee accounts-in-branch form) and 8 (fee_cpi). Changes 1, 2 and an equivalent of 4 are already in Round36.",
+  "adoptable": true,
+  "adoptability_note": "Full public 44-suite corpus passes on this exact candidate: 10,468/10,468 cases, 0 errors, 10,464 paired diagnostic-log cases, 0 diagnostic mismatches, 23,834 loader loads (evidence/runtime-full-r36-cpi4.json). Zero \"Stack offset ... exceeded\" warnings in the build log. No normalized or raw losses against the same-recipe base (evidence/elf/r36-base, 738/126/900,520). The 19 raw differences against the published Round36 inventory are recipe-dependent (the unmodified Round36 source shows the same 19 with this builder); integration re-derives the layout.",
   "frontier_packet": "repro/pump/main-contract-round36-20261027",
   "frontier_candidate_sha256": "f8235c432598bd65ee1626c6ce36bb408cdeb761b87058496ee53a57dea6d265",
   "frontier_unstripped_sha256": "9cc0982edb18a9f3af68783efe791c0348e08a4f7de299da0f8ba2cadf4cb8ce",
@@ -16,8 +16,9 @@
     "src/buy.rs": "475939da28591bf74f9ea2dce585a3af8b4696299dcebfaa8976ff6df2e04157",
     "src/mayhem_virtual_params.rs": "5b588cd1d0fbc2c346000e98ff315ba3bd9f5caa3663d870a34c6f4a003a9705",
     "src/migrate.rs": "a634453c934b66eee7fae5563d2d18ea0266a5be6c401e8b9607a69194cb9403",
-    "src/migrate_v2.rs": "9c830a233ac6b742c7f62308f7458976ac568dbff4e558e7e750a4fd435cbdd3",
-    "src/creator/admin_cto.rs": "d1175f96ae55dee4280bca0d44fb75f42f38dd8de9ebcabaeca9bda290e335fa",
+    "src/creator/admin_cto.rs": "91d83b2cc16e635fbbe4543518ce71a99c980314d0a3a5cf56443fb8968f4636",
+    "src/sell.rs": "456831482b16dd0cad4c6da4fddd4039c4fae3eb99e4737b57f83d380d981eb8",
+    "src/fee_cpi.rs": "7c58aa5a9e40b6d285bbec050abcc615f8b485c34e582bcd5107d8c2dc2f1ce7",
     "idls/pump_amm.json": "b7d8c57a4d9c4dd0109a9ab893052352333252d4eedced10ac091d4d66cab89b",
     "idls/pump_fees.json": "6b9fa3eccc6e06273076a47b581f9fcb9e531bb7c3c88acbcd44db55a4002b29"
   },
@@ -26,19 +27,20 @@
     "src/buy.rs": "9d4af64b2adcf7ebc52949a5bae65b58fe6e10751f27cbe7c45dcb82a3d09af8",
     "src/mayhem_virtual_params.rs": "6eeae687e0f29176d48a4de0d57b0457f5e4fa498c17fd5de0520e162b5677da",
     "src/migrate.rs": "fb03bc70b5359b29527fec5f8c5328c2212012bd782a9aabd62f4489fc115db7",
-    "src/migrate_v2.rs": "b557054b667629085d5a284329fec569df376520c17228d84be119f99ebec4c3",
     "src/creator/admin_cto.rs": "b9390f0f0ed1f67e7bd9746357f91e80b16c98ae2a84a6494ad86a6768dfeaf4",
+    "src/sell.rs": "77ee2e493b73895d870b7df426855e47162cc11ca6678cbb422781a1d00e47ef",
+    "src/fee_cpi.rs": "db77bbded616a63571686a05487fa12776fcef9bae55d4da74743944ac0ce404",
     "idls/pump_amm.json": null,
     "idls/pump_fees.json": null
   },
-  "candidate_sha256": "e11320e4c1c2c29feb775182c90d88ea41defcf2015b6f7a907a8c53f8ae8c81",
-  "unstripped_sha256": "af3a7529160d5ff55f8cad5fc08b6c3dbbea856435420973b5401071c016a493",
+  "candidate_sha256": "d875b109fddfb254ecfd06e48e627f40d08d6b81cba676fe21d3a0937ae8179c",
+  "unstripped_sha256": "a0f3aa555a06e16a95512fb3897c26dff3a2ddf362a2f4355aff674604d8ed81",
   "counts": {
     "total": 1035,
     "raw": 126,
-    "normalized": 762,
-    "unmatched": 273,
-    "matched_text_bytes": 964776
+    "normalized": 764,
+    "unmatched": 271,
+    "matched_text_bytes": 972072
   },
   "normalized_gains": [
     "0xea68",
@@ -46,6 +48,7 @@
     "0xca628",
     "0xcf510",
     "0x10a0e0",
+    "0x10b0b8",
     "0x10c0b8",
     "0x10d638",
     "0x10e938",
@@ -58,6 +61,7 @@
     "0x113f00",
     "0x114d48",
     "0x116718",
+    "0x1176e0",
     "0x118360",
     "0x119c50",
     "0x1255a8",
@@ -89,14 +93,28 @@
     "0x1b4088",
     "0x1b40d0"
   ],
-  "elf_evidence": "evidence/elf/r36-762-cpi",
+  "elf_evidence": "evidence/elf/r36-764-cpi4",
   "builds": [
-    "evidence/builds/r36-lane"
+    "evidence/builds/r36-cpi4"
   ],
   "previous_results": {
     "H3 Round25 727": "9c4f06050 (rebased 99f00e182), evidence/elf/r25-727",
     "H4 Round26 729": "475675bf5 (rebased ed6d9819c), evidence/elf/r26-729",
-    "H5 Round26 748": "evidence/elf/r26-748-cpi"
+    "H5 Round26 748": "evidence/elf/r26-748-cpi",
+    "H6 Round36 762 (runtime-invalid, do not adopt)": {
+      "counts": {
+        "total": 1035,
+        "raw": 126,
+        "normalized": 762,
+        "unmatched": 273,
+        "matched_text_bytes": 964776
+      },
+      "candidate_sha256": "e11320e4c1c2c29feb775182c90d88ea41defcf2015b6f7a907a8c53f8ae8c81",
+      "unstripped_sha256": "af3a7529160d5ff55f8cad5fc08b6c3dbbea856435420973b5401071c016a493",
+      "elf": "evidence/elf/r36-762-cpi",
+      "commits": "cbccc4358, 561969f45",
+      "runtime_invalid": "Do not adopt this 762 build: change 7 as applied here puts generated clients into migrate_v2::execute, whose stack offset becomes 4,104 (> 4,096; compiler warning) and 482 of 827 migrate_v2 corpus cases fail with an access violation in stack frame 5. See evidence/runtime-r36-lane-migrate_v2-rejection.json. tools/cpi_changes.json no longer applies the migrate_v2 entries; a corrected candidate replaces this record after its build, measurement and full corpus."
+    }
   },
   "whole_elf_equal": false,
   "goal_complete": false,
@@ -104,5 +122,28 @@
     "r36-base": "evidence/elf/r36-base",
     "r36-noncpi (changes 3,5,6)": "evidence/elf/r36-noncpi"
   },
-  "runtime_invalid": "Do not adopt this 762 build: change 7 as applied here puts generated clients into migrate_v2::execute, whose stack offset becomes 4,104 (> 4,096; compiler warning) and 482 of 827 migrate_v2 corpus cases fail with an access violation in stack frame 5. See evidence/runtime-r36-lane-migrate_v2-rejection.json. tools/cpi_changes.json no longer applies the migrate_v2 entries; a corrected candidate replaces this record after its build, measurement and full corpus."
+  "patch": "source.patch (git apply -p1 on programs/pump of Round36; then copy source/idls/*.json to programs/pump/idls/, which equal evidence/upstream)",
+  "runtime": "evidence/runtime-full-r36-cpi4.json",
+  "on_composite_i1c": {
+    "base": "Pump integration composite i1c (coordinator scratchpad base/i1c/pump), unstripped cf8094709b104e221942e1cfe121fffe5eec1ae96a77ad3eb46c5c8ddd31a495, 778/135/984,768 with the shared fastbuild.py identity recipe. i1c already carries changes 1-7 (from e09aab510) and the 0x10b0b8 form.",
+    "patch": "source-on-i1c.patch (git apply -p1 inside the crate), equivalently tools/apply_on_composite.py (change 8 only applies; the other steps report already)",
+    "candidate_sha256": "ddff3906b69d29f24aeb62eabd485b1972963af9fc29f5e68fba9ae55c93433e",
+    "unstripped_sha256": "88f345dc99b32b605c103fc29f542ed8d5cf8d12ed5e34e31fa6fd22656e8f6a",
+    "counts": {
+      "normalized": 779,
+      "raw": 135,
+      "matched_text_bytes": 987968
+    },
+    "gains_beyond_i1c": [
+      "0x1176e0"
+    ],
+    "losses": [],
+    "raw_gains": [],
+    "raw_losses": [],
+    "stack_offset_warnings": 0,
+    "fastbuild_runtime_valid": true,
+    "elf_evidence": "evidence/elf/i1c-779-fee8",
+    "build": "evidence/builds/i1c-779-fee8",
+    "runtime_note": "Change 8 is runtime-checked on the Round36 candidate above (same two-file source change); the composite itself is validated by the integration session."
+  }
 }
