@@ -13,18 +13,21 @@ diff against the frontier's `programs/pump`, and `tools/apply_lane_changes.py` a
 |---|---:|---:|---:|
 | Round36 primary, unmodified (`evidence/elf/r36-base`) | 738 | 126 | 900,520 |
 | + changes 3, 5, 6 (`evidence/elf/r36-noncpi`) | 743 | 126 | 908,888 |
-| + change 7, generated CPI clients (`evidence/elf/r36-762-cpi`) | **762** | 126 | **964,776** |
+| + change 7 incl. migrate_v2 (`evidence/elf/r36-762-cpi`, **runtime-invalid**) | 762 | 126 | 964,776 |
+| **H7**: + change 7 without migrate_v2, collect form, change 8 (`evidence/elf/r36-764-cpi4`) | **764** | 126 | **972,072** |
 
-**The 762 build is runtime-invalid. Do not adopt it.** In that build, change 7 put the generated `create_pool`/`init_boost`
-clients into `migrate_v2::execute`, and two things followed:
-- The build log warns: `Stack offset of 4104 exceeded max offset of 4096`.
-- 482 of the 827 `pump_migrate_v2_differential` cases fail with `Access violation in stack frame 5`.
+H7 passes the full public 44-suite corpus: 10,468/10,468 cases, 0 errors, 0 diagnostic mismatches
+(`evidence/runtime-full-r36-cpi4.json`). Its build log has no `Stack offset … exceeded` warning.
 
-The changes 3, 5, 6 control matches the original on those cases. Change 7 now leaves `migrate_v2.rs` untouched; the
-three entries are kept under `rejected_not_applied` in `tools/cpi_changes.json`. The evidence is in
-`evidence/runtime-r36-lane-migrate_v2-rejection.json`. A corrected candidate (change 7 without `migrate_v2`, the
-`0x10b0b8` fix and change 8; it measured 764 when it still had the `migrate_v2` part) is being built and run against
-the corpus. From now on, every build log is checked for `Stack offset … exceeded`, and that warning blocks adoption.
+On the Pump integration composite **i1c** (778/135, shared `fastbuild.py` identity recipe), change 8 adds `0x1176e0`, for
+779/135/987,968 with 0 losses and 0 stack warnings (`source-on-i1c.patch`, `evidence/elf/i1c-779-fee8`). i1c already
+contains changes 1–7 from `e09aab510` and the `0x10b0b8` form.
+
+**The 762 build is runtime-invalid.** Change 7 had put the generated `create_pool`/`init_boost` clients into
+`migrate_v2::execute`. The build log warns `Stack offset of 4104 exceeded max offset of 4096`, and 482 of 827
+`pump_migrate_v2_differential` cases fail with `Access violation in stack frame 5`. Change 7 no longer touches
+`migrate_v2.rs`; the entries are kept under `rejected_not_applied` in `tools/cpi_changes.json`, with the evidence in
+`evidence/runtime-r36-lane-migrate_v2-rejection.json`. Every build log is now checked for that warning, and it blocks adoption.
 
 There are no normalized or raw losses against the same-recipe base. The published Round36 inventory reports 145 raw
 because Round36 links with its derived text/data layout (`ordered.ld`, data-order certificate, Linux target-library
@@ -42,14 +45,14 @@ integration must re-derive the layout with the added functions; the source chang
 | 5 | 0x1255a8, 0xcf510 | `SetMayhemVirtualParams`: Global unboxed, `sol_vault_authority` owned `AccountInfo` (1,728-byte accounts value) | re-applied |
 | 6 | 0x137fc0 | crate-private `execute` inlined into the `#[program]` fn, curve snapshot first, sync arguments direct, `Copy` event | re-applied |
 | 7 (`--with-cpi-7`) | 0x10a0e0, 0x10c0b8, 0x10d638, 0x10e938, 0x10fb38, 0x1100f8, 0x110d40, 0x1113c8, 0x112220, 0x1133c8, 0x113f00, 0x114d48, 0x116718, 0x118360, 0x119c50 + helpers 0x163ea8, 0xca628, 0xea68, 0xf130 | `declare_program!(pump_amm)` / `declare_program!(pump_fees)` from the official upstream IDLs (`evidence/upstream`, pump-public-docs `639b87f`; instruction and account discriminators equal the original's), calling the generated clients for create_pool, init_boost, admin_cto_pool, collect_coin_creator_fee, transfer_creator_fees_to_pump_v2 and admin_cto_sharing_config. Spec: `tools/cpi_changes.json`. `collect_coin_creator_fee` builds its accounts inside `if !frozen`, which gains 0x10b0b8. | re-applied, **except `migrate_v2.rs` (rejected: stack overflow, see above)** |
-| 8 (`--with-fee-8`) | 0x1176e0 | `pub mod fee_cpi` (stops interprocedural constant propagation of `is_pump_pool`), and account metas computed before the `Instruction` literal, as in Anchor's generated template | measured +0x1176e0 (764 with 0x10b0b8), runtime pending |
+| 8 (`--with-fee-8`) | 0x1176e0 | `pub mod fee_cpi` (stops interprocedural constant propagation of `is_pump_pool`), and account metas computed before the `Instruction` literal, as in Anchor's generated template | H7: +0x1176e0, full corpus passes; +0x1176e0 on i1c |
 
 Behavior is unchanged by construction:
 - CPIs keep the same instruction data, account metas, signer seeds and program id (`Program<..>` accounts enforce the ids);
 - the buy specializations constant-fold the same code;
 - account types keep the same constraints.
 
-The six-change candidate on Round26 passed the full public 44-suite captured-loader corpus (`RUNTIME.md`). The corpus on the Round36 762 candidate failed in `migrate_v2` (see above). The corrected candidate's full corpus run is pending.
+The six-change candidate on Round26 and the H7 candidate on Round36 pass the full public 44-suite captured-loader corpus (`RUNTIME.md`). The Round36 762 candidate failed in `migrate_v2` (see above).
 
 ## History
 
@@ -59,13 +62,13 @@ The six-change candidate on Round26 passed the full public 44-suite captured-loa
 | H3 (1–5) | Round25 | 727 / 125 | `9c4f06050` | `evidence/elf/r25-727` |
 | H4 (1–6) | Round26 | 729 / 125, full corpus passes | `475675bf5` | `evidence/elf/r26-729` |
 | H5 (1–7) | Round26 | 748 / 125 | `475675bf5` | `evidence/elf/r26-748-cpi` |
-| H6 (3, 5–7) | Round36 | 762 / 126 (same-recipe base 738 / 126) | `cbccc4358`, `561969f45` | `evidence/elf/r36-762-cpi` |
+| H6 (3, 5–7) | Round36 | 762 / 126, **runtime-invalid** (migrate_v2 stack overflow) | `cbccc4358`, `561969f45`, rejected in `e09aab510` | `evidence/elf/r36-762-cpi` |
+| H7 (3, 5–8, collect form) | Round36 / i1c | 764 / 126, full corpus passes; 779 / 135 on i1c | see `PROGRESS.md` | `evidence/elf/r36-764-cpi4`, `evidence/elf/i1c-779-fee8` |
 
 ## Remaining windows in this lane's target list (Round36)
 
 | window | diagnosis |
 |---|---|
-| `0x10b0b8` collect_coin_creator_fee client | The original inlines the accounts' drop glue. A fix building the accounts inside the `if !frozen` block is being measured. |
 | `0x109488` GlobalConfig body | Reached only through the original migrate helper `0x524f0`: `try_borrow_data`, then generated `GlobalConfig::try_deserialize`, then a config flag gating `init_boost`. The candidate gates on `!mayhem` only, so this is a migration behavior recovery. |
 | `0x1557e8` admin_set_idl_authority handler | Holds the account by reference, compares with `system_program.key()`, requires `owner == ID`, reallocs, requires `data_len >= 8`, checks the discriminator, with three Source sites (72/79/90). A rewrite in that form did not yet match. |
 | `0x1367c0` set_params handler | Uses helper `0x3e550` and `lib.rs` Source sites. |
