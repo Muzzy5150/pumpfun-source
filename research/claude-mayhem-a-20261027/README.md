@@ -10,10 +10,12 @@ byte-for-byte in this lane before any change (see [PROGRESS.md](PROGRESS.md)).
 | Layer | Normalized | Raw-local | Unmatched | Status |
 | --- | ---: | ---: | ---: | --- |
 | Parent (sizing-panic-recovery) | 429/441 | 100 | 12 (111,288 B) | reproduced |
-| **Layer B: allocator context** | 429/441 | **139** | 12 (111,288 B) | **CONDITIONAL — see below** |
+| **Layer B: allocator context** | 429/441 | **139** | 12 (111,288 B) | **CONDITIONAL; independent reproduction of an already-published artifact — see below** |
 
-No complete new function window is recovered by this packet so far. The only
-measured gain is the conditional Layer B raw-local gain.
+No complete new function window is recovered by this packet so far. Layer B's
+raw-local gain duplicates the artifact `ed5b4020…` already on main
+(mayhem-control-work-20261027 / mayhem-historical-macro-current-20261027) and must
+not be counted again.
 
 ## Layer B — allocator compilation context (CONDITIONAL)
 
@@ -68,9 +70,37 @@ Artifacts (gzipped, mtime 0) in `layers/allocator-context/artifacts/`:
 | symbols.so | — | `90b64207d062d0a6e4d38d83129bd69a47ae1fa478367f3e13efb53f7da4af8f` |
 
 Runtime: the unchanged 14-suite trade replay of the parent
-(`research/mayhem-sizing-panic-recovery/replay.py`) is run on this candidate;
-results are recorded in `layers/allocator-context/runtime-summary.json` as they
-complete (see PROGRESS.md for the live count).
+(`research/mayhem-sizing-panic-recovery/replay.py`) ran on this exact stripped
+candidate: **14/14 suites, 6,636 comparisons, 13,272 signed transaction records,
+0 checked-field mismatches, 0 normalized-log differences**
+(`layers/allocator-context/runtime-summary.json`; per-suite receipts and logs in
+`layers/allocator-context/runtime/`). Finite local LiteSVM corpus only.
+
+### How this relates to the other allocator packets on main
+
+| Packet | What it shows | Whole-program ELF? |
+| --- | --- | --- |
+| [mayhem-allocator-context](../mayhem-allocator-context/README.md) (startrack3r) | a zeroed `vec!` in the curve crate is a sufficient context for the 328-byte body | older qualified parent only |
+| [mayhem-allocator-parser-provenance](../mayhem-allocator-parser-provenance/README.md) (startrack3r) | the historical event-parser template (rendered, with Anchor 1.0.0 event types) is such a context; the Solana gate reverses it | older parent (428 windows) |
+| [mayhem-historical-framework](../mayhem-historical-framework/README.md) (startrack3r, 0a881f726) | with **consistent historical Anchor c0077c2** runtime/derive/macro/registry versions and the unmodified `declare_program!(pump)`, the curve object's helper is 328 B; the historical gate and a no-event control give 312 B | **no** — the historical-runtime roots fail to compile |
+| [mayhem-control-work-20261027](../mayhem-control-work-20261027/README.md) (Codex, 2ae5b07af) | composes the rendered parser onto the sizing-panic parent: stripped `ed5b4020…`, 429/139, full replay | yes |
+| [mayhem-historical-macro-current-20261027](../mayhem-historical-macro-current-20261027/README.md) | the **complete historical macro** (no hand-rendered parser) on current source reproduces stripped `ed5b4020…` exactly | yes |
+| **this layer** | independent whole-program build and measurement of the same composition | yes |
+
+This layer's stripped ELF is byte-identical to the artifact already published by
+mayhem-control-work-20261027 and reproduced by mayhem-historical-macro-current-20261027
+(`ed5b4020…`); its symbol ELF (`90b64207…`) differs from the latter's (`281c2f67…`) only
+where symbol/string tables name the parser's module. It is therefore an
+**independent reproduction, not a new gain**: the 39 raw-local bodies must not be
+counted twice. Its context is the **Anchor 1.0.0-generated, hand-rendered
+mixed-source form** of the parser-provenance packet (rendered `legacy_event_utils`
+module + `CreateEvent` IDL entry, current Anchor 1.0.0 runtime). It does **not**
+use the historical framework's consistent c0077c2 Anchor inputs, and it does not
+use the complete historical macro. The historical-framework packet strengthens
+the plausibility of the mechanism (the 328-byte body arises under a consistent
+historical Anchor stack) but provides no linked program; this layer and the two
+whole-program packets above provide the linked measurement (raw-local 100 → 139,
+no losses). The label stays **CONDITIONAL / not recovered source**.
 
 Re-measure without rebuilding (from the repository root):
 

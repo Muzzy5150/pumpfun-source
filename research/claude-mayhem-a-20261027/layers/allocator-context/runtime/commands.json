@@ -1,0 +1,277 @@
+{
+  "candidate_sha256": "ed5b4020ca2659b427739a384bc7c014e2b192f81cce60d7d9b770d4978f0232",
+  "runs": [
+    {
+      "family": "buy",
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "-B",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/scripts/mayhem_buy_differential.py",
+        "--candidate",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/builds/alloc-b/candidate.so",
+        "--output",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/runtime/alloc-b/buy.json",
+        "--cases",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/repro/mayhem/twenty/buy-cases.json"
+      ],
+      "returncode": 0,
+      "cases": 486,
+      "mismatches": 0
+    },
+    {
+      "family": "sell",
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "-B",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/scripts/mayhem_sell_differential.py",
+        "--candidate",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/builds/alloc-b/candidate.so",
+        "--output",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/runtime/alloc-b/sell.json"
+      ],
+      "returncode": 0,
+      "cases": 396,
+      "mismatches": 0
+    },
+    {
+      "family": "buy-v2-native",
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "-B",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/scripts/mayhem_buy_v2_differential.py",
+        "--candidate",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/builds/alloc-b/candidate.so",
+        "--output",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/runtime/alloc-b/buy-v2-native.json",
+        "--cases",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/repro/mayhem/twentytwo/buy-v2-cases.json",
+        "--family",
+        "native"
+      ],
+      "returncode": 0,
+      "cases": 613,
+      "mismatches": 0
+    },
+    {
+      "family": "sell-v2-native",
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "-B",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/scripts/mayhem_sell_v2_differential.py",
+        "--candidate",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/builds/alloc-b/candidate.so",
+        "--output",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/runtime/alloc-b/sell-v2-native.json",
+        "--cases",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/repro/mayhem/twentyone/sell-v2-cases.json",
+        "--family",
+        "native"
+      ],
+      "returncode": 0,
+      "cases": 473,
+      "mismatches": 0
+    },
+    {
+      "family": "buy-amm-native",
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "-B",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/scripts/mayhem_pump_swap_differential.py",
+        "--candidate",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/builds/alloc-b/candidate.so",
+        "--output",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/runtime/alloc-b/buy-amm-native.json",
+        "--cases",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/repro/mayhem/twentyfour/buy-pump-swap-cases.json",
+        "--family",
+        "native",
+        "--instruction",
+        "buy_pump_swap"
+      ],
+      "returncode": 0,
+      "cases": 419,
+      "mismatches": 0
+    },
+    {
+      "family": "sell-amm-native",
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "-B",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/scripts/mayhem_pump_swap_differential.py",
+        "--candidate",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/builds/alloc-b/candidate.so",
+        "--output",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/runtime/alloc-b/sell-amm-native.json",
+        "--cases",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/repro/mayhem/twentyfour/sell-pump-swap-cases.json",
+        "--family",
+        "native",
+        "--instruction",
+        "sell_pump_swap"
+      ],
+      "returncode": 0,
+      "cases": 413,
+      "mismatches": 0
+    },
+    {
+      "family": "buy-v2-token",
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "-B",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/scripts/mayhem_buy_v2_differential.py",
+        "--candidate",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/builds/alloc-b/candidate.so",
+        "--output",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/runtime/alloc-b/buy-v2-token.json",
+        "--cases",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/repro/mayhem/twentytwo/buy-v2-cases.json",
+        "--family",
+        "token"
+      ],
+      "returncode": 0,
+      "cases": 613,
+      "mismatches": 0
+    },
+    {
+      "family": "sell-v2-token",
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "-B",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/scripts/mayhem_sell_v2_differential.py",
+        "--candidate",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/builds/alloc-b/candidate.so",
+        "--output",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/runtime/alloc-b/sell-v2-token.json",
+        "--cases",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/repro/mayhem/twentyone/sell-v2-cases.json",
+        "--family",
+        "token"
+      ],
+      "returncode": 0,
+      "cases": 473,
+      "mismatches": 0
+    },
+    {
+      "family": "buy-amm-token",
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "-B",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/scripts/mayhem_pump_swap_differential.py",
+        "--candidate",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/builds/alloc-b/candidate.so",
+        "--output",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/runtime/alloc-b/buy-amm-token.json",
+        "--cases",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/repro/mayhem/twentyfour/buy-pump-swap-cases.json",
+        "--family",
+        "token",
+        "--instruction",
+        "buy_pump_swap"
+      ],
+      "returncode": 0,
+      "cases": 419,
+      "mismatches": 0
+    },
+    {
+      "family": "sell-amm-token",
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "-B",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/scripts/mayhem_pump_swap_differential.py",
+        "--candidate",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/builds/alloc-b/candidate.so",
+        "--output",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/runtime/alloc-b/sell-amm-token.json",
+        "--cases",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/repro/mayhem/twentyfour/sell-pump-swap-cases.json",
+        "--family",
+        "token",
+        "--instruction",
+        "sell_pump_swap"
+      ],
+      "returncode": 0,
+      "cases": 413,
+      "mismatches": 0
+    },
+    {
+      "family": "buy-v2-token22",
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "-B",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/scripts/mayhem_buy_v2_differential.py",
+        "--candidate",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/builds/alloc-b/candidate.so",
+        "--output",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/runtime/alloc-b/buy-v2-token22.json",
+        "--cases",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/repro/mayhem/twentytwo/buy-v2-cases.json",
+        "--family",
+        "token22"
+      ],
+      "returncode": 0,
+      "cases": 613,
+      "mismatches": 0
+    },
+    {
+      "family": "sell-v2-token22",
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "-B",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/scripts/mayhem_sell_v2_differential.py",
+        "--candidate",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/builds/alloc-b/candidate.so",
+        "--output",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/runtime/alloc-b/sell-v2-token22.json",
+        "--cases",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/repro/mayhem/twentyone/sell-v2-cases.json",
+        "--family",
+        "token22"
+      ],
+      "returncode": 0,
+      "cases": 473,
+      "mismatches": 0
+    },
+    {
+      "family": "buy-amm-token22",
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "-B",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/scripts/mayhem_pump_swap_differential.py",
+        "--candidate",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/builds/alloc-b/candidate.so",
+        "--output",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/runtime/alloc-b/buy-amm-token22.json",
+        "--cases",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/repro/mayhem/twentyfour/buy-pump-swap-cases.json",
+        "--family",
+        "token22",
+        "--instruction",
+        "buy_pump_swap"
+      ],
+      "returncode": 0,
+      "cases": 419,
+      "mismatches": 0
+    },
+    {
+      "family": "sell-amm-token22",
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "-B",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/scripts/mayhem_pump_swap_differential.py",
+        "--candidate",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/builds/alloc-b/candidate.so",
+        "--output",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/out/runtime/alloc-b/sell-amm-token22.json",
+        "--cases",
+        "/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/mayhem-a/wt/repro/mayhem/twentyfour/sell-pump-swap-cases.json",
+        "--family",
+        "token22",
+        "--instruction",
+        "sell_pump_swap"
+      ],
+      "returncode": 0,
+      "cases": 413,
+      "mismatches": 0
+    }
+  ]
+}

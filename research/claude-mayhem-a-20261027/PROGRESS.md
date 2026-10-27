@@ -27,8 +27,15 @@ trade-origins-validator parent.
    build alloc-b = parent + appended rendered event-parser module + CreateEvent in the
    curve IDL. 429/441, raw-local 139 (+39), no losses (parent progress.compare passes;
    positive edges 4288→4289, Source 446→446). Stripped ed5b4020…, symbols 90b64207….
-   Runtime: replay in progress at commit time (see runtime-summary.json; 9/14 suites,
-   0 mismatches so far). Repeat build queued (sbf slots busy).
+   Runtime: complete — 14/14 suites, 6,636 comparisons, 13,272 signed records,
+   0 mismatches, 0 normalized-log differences (runtime-summary.json, runtime/).
+   POSITIONING: the stripped ELF ed5b4020… is byte-identical to the artifact already
+   published by research/mayhem-control-work-20261027 (Codex) and reproduced from the
+   complete historical macro by research/mayhem-historical-macro-current-20261027; this
+   layer is an independent reproduction in the hand-rendered Anchor-1.0.0 mixed-source
+   form, NOT a new gain (do not double count). research/mayhem-historical-framework
+   (startrack3r, 0a881f726) shows the 328 B body under consistent historical Anchor
+   c0077c2 inputs but has no whole-program ELF.
 
 ## Per-window residuals (work in progress)
 - O0193 initializer (960 B original; parent 920 B). Best variant `init-k1`
@@ -46,7 +53,8 @@ trade-origins-validator parent.
   projections); (b) the signed-add overflow test is `xor; jeq X,1` in the original (unique
   to O0193 in the whole original binary; every other sadd check, and every reconstruction
   function, uses `xor; and 1; jne X,0`). Next: llc IR-edit experiments (build init-k1-bc).
-- O0092 AMM buy quote (1256 B; parent 1120 B). `native_mint::id()` + selected cap with
+- O0092 AMM buy quote (1256 B; parent 1120 B). [Touched by mayhem-a; the near-miss
+  workflow has two agents on O0092 — this lane stops here to avoid duplication.] `native_mint::id()` + selected cap with
   zero-guarded min (edits/bq_a.py) gives 1176 B, ratio 0.67; the original additionally
   tail-duplicates the cap load/compare into all three quote-mint paths (default/native/
   other). Four further spellings of the min/cap expression canonicalize identically.
