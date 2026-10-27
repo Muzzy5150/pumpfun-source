@@ -1,0 +1,66 @@
+{
+ "candidate_sha256": "2e24158e6e91c4887d9d60d7a19832f18b495f07fb67f733f79b0e848dfbc3db",
+ "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+ "suites": {
+  "creator_collection": {
+   "status": "ok cases=119 loads=238 loader_ok=True"
+  },
+  "creator_collection_v2": {
+   "status": "ok cases=154 loads=308 loader_ok=True"
+  },
+  "admin_cto": {
+   "status": "ok cases=363 loads=726 loader_ok=True"
+  },
+  "legacy_sell_configured_fee": {
+   "status": "ok cases=28 loads=57 loader_ok=True"
+  },
+  "legacy_sell": {
+   "status": "ok cases=115 loads=231 loader_ok=True"
+  },
+  "legacy_buy": {
+   "status": "ok cases=284 loads=569 loader_ok=True"
+  },
+  "sell_v2": {
+   "status": "ok cases=206 loads=413 loader_ok=True"
+  },
+  "buy_v2": {
+   "status": "ok cases=216 loads=433 loader_ok=True"
+  },
+  "buy": {
+   "status": "ok cases=334 loads=669 loader_ok=True"
+  },
+  "sell": {
+   "status": "ok cases=301 loads=603 loader_ok=True"
+  },
+  "fee_sweeps": {
+   "status": "ok cases=504 loads=1512 loader_ok=True"
+  },
+  "nested_create": {
+   "status": "ok cases=48 loads=144 loader_ok=True"
+  },
+  "v3_configured_fee": {
+   "status": "ok cases=372 loads=745 loader_ok=True"
+  },
+  "legacy_cashback": {
+   "status": "ok cases=14 loads=31 loader_ok=True"
+  },
+  "multi_hop_curve_partial": {
+   "status": "ok cases=56 loads=112 loader_ok=True"
+  },
+  "earned_cashback": {
+   "status": "ok cases=61 loads=132 loader_ok=True"
+  },
+  "exact_quote_v3": {
+   "status": "ok cases=352 loads=705 loader_ok=True"
+  },
+  "quote": {
+   "status": "ok cases=130 loads=261 loader_ok=True"
+  }
+ },
+ "total_cases": 3657,
+ "diagnostic_audit": {
+  "coverage": 18,
+  "log_bearing_cases": 3655,
+  "mismatches": 0
+ }
+}

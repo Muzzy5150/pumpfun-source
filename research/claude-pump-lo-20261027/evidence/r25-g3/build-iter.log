@@ -1,0 +1,183 @@
+[sbf_lock] acquired slot after 60s
+   Compiling pump-recovered v0.1.0 (/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad/lanes/pump-lo/iter/source/programs/pump)
+warning: ambiguous glob re-exports
+  --> programs/pump/src/lib.rs:2:9
+   |
+2  | pub use multi_hop_curve::*;
+   |         ^^^^^^^^^^^^^^^^^^ the name `execute` in the value namespace is first re-exported here
+...
+56 | pub use minimum::*;
+   |         ---------- but the name `execute` in the value namespace is also re-exported here
+   |
+   = note: `#[warn(ambiguous_glob_reexports)]` on by default
+
+warning: ambiguous glob re-exports
+  --> programs/pump/src/lib.rs:8:9
+   |
+8  | pub use token_incentives::*;
+   |         ^^^^^^^^^^^^^^^^^^^ the name `claim` in the value namespace is first re-exported here
+...
+14 | pub use cashback::*;
+   |         ----------- but the name `claim` in the value namespace is also re-exported here
+
+warning: unused imports: `TransferChecked`, `self`
+ --> programs/pump/src/sell_v2.rs:2:35
+  |
+2 | use anchor_spl::token_interface::{self,Mint,TokenAccount,TokenInterface,TransferChecked};
+  |                                   ^^^^                                  ^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused imports: `AccountMeta`, `Instruction`, `program::invoke_signed`
+ --> programs/pump/src/create_v2.rs:6:49
+  |
+6 | use anchor_lang::solana_program::{instruction::{Instruction,AccountMeta},program::invoke_signed};
+  |                                                 ^^^^^^^^^^^ ^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `super::*`
+   --> programs/pump/src/create_v2.rs:207:8
+    |
+207 |    use super::*;
+    |        ^^^^^^^^
+
+warning: unused imports: `AccountMeta`, `Instruction`, `program::invoke_signed`
+ --> programs/pump/src/create.rs:3:49
+  |
+3 | use anchor_lang::solana_program::{instruction::{Instruction,AccountMeta},program::invoke_signed};
+  |                                                 ^^^^^^^^^^^ ^^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: ambiguous glob re-exports
+  --> programs/pump/src/lib.rs:44:9
+   |
+44 | pub use admin_cto::*;
+   |         ^^^^^^^^^^^^ the name `FEES` in the value namespace is first re-exported here
+...
+54 | pub use distribution::*;
+   |         --------------- but the name `FEES` in the value namespace is also re-exported here
+
+warning: ambiguous glob re-exports
+  --> programs/pump/src/lib.rs:59:9
+   |
+59 | pub use trade::*;
+   |         ^^^^^^^^ the name `sell` in the value namespace is first re-exported here
+...
+66 | #[program]
+   | ---------- but the name `sell` in the value namespace is also re-exported here
+
+warning: ambiguous glob re-exports
+  --> programs/pump/src/lib.rs:59:9
+   |
+59 | pub use trade::*;
+   |         ^^^^^^^^ the name `buy` in the value namespace is first re-exported here
+...
+66 | #[program]
+   | ---------- but the name `buy` in the value namespace is also re-exported here
+
+warning: ambiguous glob re-exports
+  --> programs/pump/src/lib.rs:62:9
+   |
+62 | pub use quote_control::*;
+   |         ^^^^^^^^^^^^^^^^ the name `initialize_quote_control` in the value namespace is first re-exported here
+...
+66 | #[program]
+   | ---------- but the name `initialize_quote_control` in the value namespace is also re-exported here
+
+warning: ambiguous glob re-exports
+  --> programs/pump/src/lib.rs:62:9
+   |
+62 | pub use quote_control::*;
+   |         ^^^^^^^^^^^^^^^^ the name `add_quote_control_mint` in the value namespace is first re-exported here
+...
+66 | #[program]
+   | ---------- but the name `add_quote_control_mint` in the value namespace is also re-exported here
+
+warning: ambiguous glob re-exports
+  --> programs/pump/src/lib.rs:62:9
+   |
+62 | pub use quote_control::*;
+   |         ^^^^^^^^^^^^^^^^ the name `remove_quote_control_mint` in the value namespace is first re-exported here
+...
+66 | #[program]
+   | ---------- but the name `remove_quote_control_mint` in the value namespace is also re-exported here
+
+warning: ambiguous glob re-exports
+  --> programs/pump/src/lib.rs:62:9
+   |
+62 | pub use quote_control::*;
+   |         ^^^^^^^^^^^^^^^^ the name `set_quote_control_mint_reserves` in the value namespace is first re-exported here
+...
+66 | #[program]
+   | ---------- but the name `set_quote_control_mint_reserves` in the value namespace is also re-exported here
+
+warning: ambiguous glob re-exports
+  --> programs/pump/src/lib.rs:62:9
+   |
+62 | pub use quote_control::*;
+   |         ^^^^^^^^^^^^^^^^ the name `set_quote_control_admin` in the value namespace is first re-exported here
+...
+66 | #[program]
+   | ---------- but the name `set_quote_control_admin` in the value namespace is also re-exported here
+
+warning: ambiguous glob re-exports
+  --> programs/pump/src/lib.rs:62:9
+   |
+62 | pub use quote_control::*;
+   |         ^^^^^^^^^^^^^^^^ the name `set_quote_control_reserves_admin` in the value namespace is first re-exported here
+...
+66 | #[program]
+   | ---------- but the name `set_quote_control_reserves_admin` in the value namespace is also re-exported here
+
+warning: use of deprecated method `anchor_lang::prelude::AccountInfo::<'a>::realloc`: Use AccountInfo::resize() instead
+  --> programs/pump/src/extend_account.rs:43:10
+   |
+43 |     info.realloc(size, false)?;
+   |          ^^^^^^^
+   |
+   = note: `#[warn(deprecated)]` on by default
+
+warning: use of deprecated method `anchor_lang::prelude::AccountInfo::<'a>::realloc`: Use AccountInfo::resize() instead
+  --> programs/pump/src/admin_set_idl_authority.rs:29:17
+   |
+29 |         account.realloc(10240,false)?;
+   |                 ^^^^^^^
+
+warning: use of deprecated method `anchor_lang::prelude::AccountInfo::<'a>::realloc`: Use AccountInfo::resize() instead
+   --> programs/pump/src/trade_types.rs:326:33
+    |
+326 |         curve.to_account_info().realloc(166, false)?;
+    |                                 ^^^^^^^
+
+warning: use of deprecated method `anchor_lang::prelude::AccountInfo::<'a>::realloc`: Use AccountInfo::resize() instead
+  --> programs/pump/src/quote_control/update_quote_control_mints.rs:89:14
+   |
+89 |         info.realloc(new_space, false)?;
+   |              ^^^^^^^
+
+warning: use of deprecated method `anchor_lang::prelude::AccountInfo::<'a>::realloc`: Use AccountInfo::resize() instead
+  --> programs/pump/src/lib.rs:66:1
+   |
+66 | #[program]
+   | ^^^^^^^^^^
+   |
+   = note: this warning originates in the attribute macro `program` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: variable does not need to be mutable
+   --> programs/pump/src/create_v2.rs:203:8
+    |
+203 |    let mut acc_infos=ctx.to_account_infos();
+    |        ----^^^^^^^^^
+    |        |
+    |        help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: constant `CURVE_DISC` is never used
+ --> programs/pump/src/nested_create.rs:8:7
+  |
+8 | const CURVE_DISC: [u8; 8] = [23, 183, 248, 55, 96, 216, 172, 96];
+  |       ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: `pump-recovered` (lib) generated 22 warnings (run `cargo fix --lib -p pump-recovered` to apply 5 suggestions)
+    Finished `release` profile [optimized] target(s) in 51.65s

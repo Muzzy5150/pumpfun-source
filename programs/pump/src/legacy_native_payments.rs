@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 
 #[inline(never)]
-pub(crate) fn ensure_rent_exempt<'info>(
+pub fn ensure_rent_exempt<'info>(
     system_program: &Program<'info, System>,
     payer: &Signer<'info>,
     destination: &AccountInfo<'info>,
@@ -15,7 +15,7 @@ pub(crate) fn ensure_rent_exempt<'info>(
 }
 
 #[inline(never)]
-pub(super) fn transfer<'info>(
+pub fn transfer<'info>(
     system_program: &AccountInfo<'info>,
     payer: &Signer<'info>,
     destination: &AccountInfo<'info>,
