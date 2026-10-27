@@ -1,21 +1,42 @@
 # PumpSwap lane amm-lo: admin, liquidity and legacy-buy windows
 
-Review status: this is an unpromoted historical-baseline proposal. The candidate ELF is not included in this packet, so this review cannot independently recompute its claimed function matches. Rebase and full artifact validation are still required.
+Review status: the first submission omitted the candidate ELFs. This revision is
+rebased onto the current maintained source
+`repro/pump_amm/account-context-recovery-20261027` (candidate `badc9498…`, 623
+windows) and includes both ELFs, their SHA-256 values and the `measure.py` output
+for every claimed result, so the counts can be recomputed independently.
 
 Lane `amm-lo` worked the unmatched PumpSwap windows whose original start lies in
-`0x2288 … 0x3a5a0`. The base is the published frontier
-`repro/pump_amm/native-fee-cpi-recovery-20261027` (candidate `a4b978ee…`).
+`0x2288 … 0x3a5a0`.
 
 | Authenticated Linux v1.44 SBPF build | Normalized | Raw | Unmatched | Matched original text bytes |
 | --- | ---: | ---: | ---: | ---: |
-| Frontier `a4b978ee…` (reproduced exactly by this lane's driver) | 599/785 | 125 | 186 | 663,840 |
-| This lane `03acb5d0…` | **624/785** | **125** | **161** | **688,456** |
+| Current frontier `badc9498…` (account-context-recovery) | 623/785 | 128 | 162 | — |
+| **This lane on that source, `a7aa6bcd…`** (`results/linux-rebased-623/`) | **648/785** | **128** | **137** | +24,616 |
+| Earlier base `a4b978ee…` (native-fee-cpi), reproduced byte-for-byte | 599/785 | 125 | 186 | 663,840 |
+| This lane on that base, `03acb5d0…` (`results/linux-set2/`) | 624/785 | 125 | 161 | 688,456 |
 
-All 599 normalized and all 125 raw matches are preserved; 25 windows are gained.
-Twenty-four lie in this lane's range. One (`0xaf3b0`, an 8,128-byte `LegacyBuy`
-parser instance in the amm-hi range) is matched as a side effect of the same file
-move and is reported here so the other lane does not duplicate it.
-Whole-ELF equality is still false.
+**Net gain over 623: +25 normalized windows (24,616 original text bytes), raw
+unchanged at 128, no normalized or raw window lost.** None of the 25 overlaps the
+623 recovery: every one is unmatched in `badc9498…` (`gain-vs-623.json` lists them
+and the empty overlap set). Twenty-four lie in this lane's range; `0xaf3b0` (an
+8,128-byte `LegacyBuy` parser instance, amm-hi range) is matched as a side effect
+of the same file move. Whole-ELF equality is still false.
+
+Recompute from the packet (repository root, sparse dir
+`repro/pump_amm/claim-self-transfer-v144` needed by the reader):
+
+```sh
+D=research/claude-amm-lo-20261027/results/linux-rebased-623
+gunzip -k $D/candidate.so.gz $D/unstripped.so.gz && (cd $D && shasum -a 256 -c SHA256SUMS)
+python3 repro/pump_amm/focused-diagnostics-20261026/measure.py \
+  --candidate $D/candidate.so --symbols $D/unstripped.so --output /tmp/amm-lo-623.json
+```
+
+Fresh runtime replay of `a7aa6bcd…` with the frontier's `replay_parallel.py`:
+25 suites, 17,462 cases, 35,074 transactions, 35,418 signature fields, **0
+mismatches** (`runtime-summary.json`, `runtime-suites.json`). The `03acb5d0…`
+build passed the same 25 suites with 0 mismatches.
 
 ## Newly matched original windows
 
@@ -58,7 +79,7 @@ bytes or unused operations are used.
 
 ## Changed sources
 
-`source.patch` is against frontier commit `7f940977a` (`a4b978ee…` source):
+`source.patch` is against the maintained source at `fdc55bfc2` (identical to the `badc9498…` canonical source):
 
 - `programs/pump-amm/src/lib.rs` — toggles delegate to their files; `disable` flag
   updates and event borrow; `mod legacy_buy` becomes `use instructions::swap::buy as legacy_buy`.

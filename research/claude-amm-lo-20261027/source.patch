@@ -407,7 +407,7 @@ diff --git a/programs/pump-amm/src/legacy_buy.rs b/programs/pump-amm/src/instruc
 similarity index 98%
 rename from programs/pump-amm/src/legacy_buy.rs
 rename to programs/pump-amm/src/instructions/swap/buy.rs
-index 130647802..cfbba6fb5 100644
+index f71c9617c..433703d54 100644
 --- a/programs/pump-amm/src/legacy_buy.rs
 +++ b/programs/pump-amm/src/instructions/swap/buy.rs
 @@ -1,5 +1,135 @@
@@ -718,14 +718,15 @@ index 130647802..cfbba6fb5 100644
  fn distribute_cashback<'info>(
      remaining_accounts: &[AccountInfo<'info>],
 diff --git a/programs/pump-amm/src/instructions/swap/mod.rs b/programs/pump-amm/src/instructions/swap/mod.rs
-index 902f2351d..9879c0a25 100644
+index 76a3d843a..2e5a36838 100644
 --- a/programs/pump-amm/src/instructions/swap/mod.rs
 +++ b/programs/pump-amm/src/instructions/swap/mod.rs
-@@ -1 +1,2 @@
+@@ -1,2 +1,3 @@
 +pub mod buy;
  pub mod trade_v2;
+ pub mod sell;
 diff --git a/programs/pump-amm/src/legacy_sell.rs b/programs/pump-amm/src/legacy_sell.rs
-index 1eecabd81..20d33c316 100644
+index 54101fd51..e4f9e0f1d 100644
 --- a/programs/pump-amm/src/legacy_sell.rs
 +++ b/programs/pump-amm/src/legacy_sell.rs
 @@ -246,7 +246,7 @@ pub fn execute<'info>(
@@ -738,7 +739,7 @@ index 1eecabd81..20d33c316 100644
      )?;
          if buyback_fee > 0 && dest.data_is_empty() {
 diff --git a/programs/pump-amm/src/lib.rs b/programs/pump-amm/src/lib.rs
-index ae0a1abe0..986cdf666 100644
+index f79fec51e..8c5a803e5 100644
 --- a/programs/pump-amm/src/lib.rs
 +++ b/programs/pump-amm/src/lib.rs
 @@ -8,7 +8,7 @@ mod instructions;
@@ -750,7 +751,7 @@ index ae0a1abe0..986cdf666 100644
  use legacy_buy::*;
  mod legacy_sell;
  use legacy_sell::*;
-@@ -70,16 +70,16 @@ pub mod pump_amm_recovered {
+@@ -61,16 +61,16 @@ pub mod pump_amm_recovered {
      pub fn disable(ctx: Context<AdminGlobal>, disable_create_pool: bool,
          disable_deposit: bool, disable_withdraw: bool,
          disable_buy: bool, disable_sell: bool) -> Result<()> {
@@ -774,7 +775,7 @@ index ae0a1abe0..986cdf666 100644
          emit_cpi!(event);
          Ok(())
      }
-@@ -207,15 +207,11 @@ pub mod pump_amm_recovered {
+@@ -198,15 +198,11 @@ pub mod pump_amm_recovered {
      pub fn admin_cto_pool(ctx:Context<AdminCtoPool>,coin_creator:Pubkey,is_holder_reward:bool,creator_fee_bps:Option<u64>)->Result<()>{creator_reassignment::admin_cto(ctx,coin_creator,is_holder_reward,creator_fee_bps)}
  
      pub fn toggle_mayhem_mode(ctx: Context<AdminGlobal>, enabled: bool) -> Result<()> {
@@ -792,7 +793,7 @@ index ae0a1abe0..986cdf666 100644
      }
  
      pub fn transfer_creator_fees_to_pump(ctx: Context<TransferCreatorFeesToPump>) -> Result<()> { transfer_creator::legacy(ctx) }
-@@ -223,9 +219,7 @@ pub mod pump_amm_recovered {
+@@ -214,9 +210,7 @@ pub mod pump_amm_recovered {
      pub fn transfer_creator_fees_to_pump_v2(ctx: Context<TransferCreatorFeesToPumpV2>) -> Result<()> { transfer_creator::v2(ctx) }
      pub fn migrate_pool_coin_creator(ctx:Context<MigratePoolCoinCreator>)->Result<()>{creator_reassignment::migrate(ctx)}
      pub fn toggle_cashback_enabled(ctx: Context<AdminGlobal>, enabled: bool) -> Result<()> {

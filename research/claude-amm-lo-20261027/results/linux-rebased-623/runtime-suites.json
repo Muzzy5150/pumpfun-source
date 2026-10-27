@@ -1,0 +1,252 @@
+[
+ {
+  "suite": "accumulator",
+  "case_count": 76,
+  "mismatches": [],
+  "transactions": 152,
+  "signatures": 154,
+  "receipt_sha256": "ea1b45ebd69c409bb3d03fed0b21ab372aa5f95d0bacd2f56d16b5b4bc7f76d3",
+  "sidecar_sha256": "0718741ab5419946126229354fd1f9f271e8e7d60009fa0a87260334869b6357",
+  "returncode": 0
+ },
+ {
+  "suite": "admin",
+  "case_count": 8331,
+  "mismatches": [],
+  "transactions": 16662,
+  "signatures": 16662,
+  "receipt_sha256": "741f7290cf840c877a4e506aae05c877507d65ec65c6486c47234f3ab0c9dac6",
+  "sidecar_sha256": "8b990e4323cf5640634bf84f8c5479ba6aba68daecb746f78f548dd80afad034",
+  "returncode": 0
+ },
+ {
+  "suite": "boost",
+  "case_count": 100,
+  "mismatches": [],
+  "transactions": 350,
+  "signatures": 350,
+  "receipt_sha256": "e005649796665218927805e7cce11baae155f63ad69f361932930d823d5ef1e1",
+  "sidecar_sha256": "4344be1d69a0ba052fa98076258db48a8425c9b72ca15a8b6c98b62b837f14d6",
+  "returncode": 0
+ },
+ {
+  "suite": "boost_burn",
+  "case_count": 506,
+  "mismatches": [],
+  "transactions": 1012,
+  "signatures": 1018,
+  "receipt_sha256": "1ca1dce2e6938b6e66bfc1acfb4268fe70796714730f7e007861b50a26261737",
+  "sidecar_sha256": "adf7da3efadd3d178c297e0328f75f2b708ac539e1c1ad0eb0bfd8cf98a4439f",
+  "returncode": 0
+ },
+ {
+  "suite": "buyback",
+  "case_count": 369,
+  "mismatches": [],
+  "transactions": 738,
+  "signatures": 738,
+  "receipt_sha256": "b93ce643a0a00ff818da6afee795e834e4447cdc8fb013097e14866522df65a9",
+  "sidecar_sha256": "da6a1217b1f1b794906eb1bbc5227bed7ebbf4133c41d3b4eb1e23873cf952e9",
+  "returncode": 0
+ },
+ {
+  "suite": "cashback",
+  "case_count": 146,
+  "mismatches": [],
+  "transactions": 292,
+  "signatures": 292,
+  "receipt_sha256": "578b21023bd2fedb796f2ade811fecaf4b4d2f2ef26b59ecafb982aceb34ab77",
+  "sidecar_sha256": "5924a9877a65e356b3cdaf26e5349c36f80a837e4dc0e785e8b7f6a16707d81e",
+  "returncode": 0
+ },
+ {
+  "suite": "collect",
+  "case_count": 148,
+  "mismatches": [],
+  "transactions": 296,
+  "signatures": 296,
+  "receipt_sha256": "7f2f8253e370a9c1ccb7951bee63d562e556f4de99b655c786dd578e78f773e3",
+  "sidecar_sha256": "f9a8ec4101aad3f22e1b2e7f2c0994dc001724b01bf3234e72430eb1b3e993a0",
+  "returncode": 0
+ },
+ {
+  "suite": "create",
+  "case_count": 246,
+  "mismatches": [],
+  "transactions": 492,
+  "signatures": 492,
+  "receipt_sha256": "4c32512c5b4eede43334c0eb5306c491a44ac22f0d52014160d7609c151cfc01",
+  "sidecar_sha256": "fed1102038595c3eecf766359f79024bb682fac9e02bbfeac00ce1eddd0d97dd",
+  "returncode": 0
+ },
+ {
+  "suite": "creator_reassignment",
+  "case_count": 327,
+  "mismatches": [],
+  "transactions": 654,
+  "signatures": 654,
+  "receipt_sha256": "549a10220932a278459dee01af310b8a198325172a4214f99437f84b541f26f0",
+  "sidecar_sha256": "95cc66cc223fc8b4389150f6a5eda6343136b82aeeec7956eec7207a9f5ee5e7",
+  "returncode": 0
+ },
+ {
+  "suite": "creator_reassignment_cto",
+  "case_count": 159,
+  "mismatches": [],
+  "transactions": 318,
+  "signatures": 636,
+  "receipt_sha256": "942927cb557b7a4fcf5a8e466ec9165947e7c264ffcf28a1a001c3a381b6f0b0",
+  "sidecar_sha256": "ccdcd93e0975b24d2cfad4d89259b204831d19360e48f9863a2ec8e258405517",
+  "returncode": 0
+ },
+ {
+  "suite": "extend",
+  "case_count": 317,
+  "mismatches": [],
+  "transactions": 634,
+  "signatures": 634,
+  "receipt_sha256": "83e7b0b87e5124f653b34ec01c92f33f1b8dec611d54c96cd1877d941ba16cef",
+  "sidecar_sha256": "657c0fc5b311346c791d6560a3745eb69431955379066f9a59a8b7adbbd00c8e",
+  "returncode": 0
+ },
+ {
+  "suite": "fee_config",
+  "case_count": 356,
+  "mismatches": [],
+  "transactions": 712,
+  "signatures": 712,
+  "receipt_sha256": "75312d9f8c27484f11cf1b63f51ba9513c7dcb781c8023c2fe30c82665bf057b",
+  "sidecar_sha256": "0d196c29217004638c6695cca8aa4a1fb845eb499f327daf08455a25c5eba455",
+  "returncode": 0
+ },
+ {
+  "suite": "incentives_admin",
+  "case_count": 668,
+  "mismatches": [],
+  "transactions": 1336,
+  "signatures": 1338,
+  "receipt_sha256": "432d721b722cc57f676416833b1dde0444c4c3df7cda8da93cd077d3b12030e5",
+  "sidecar_sha256": "392ed1c5c556af2e3099a857c738c6395f28724e9f63c11759b530df680a53c8",
+  "returncode": 0
+ },
+ {
+  "suite": "incentives_claim",
+  "case_count": 807,
+  "mismatches": [],
+  "transactions": 1614,
+  "signatures": 1616,
+  "receipt_sha256": "df66eb1d502192f0cc755a720c14dce7fc3b3c24d3050e94bff7fbd239116c7d",
+  "sidecar_sha256": "c761221195d41a1a8a09cf230554984ba8f7a500bf0a9c5b78a74ee2e21e252b",
+  "returncode": 0
+ },
+ {
+  "suite": "incentives_sync",
+  "case_count": 222,
+  "mismatches": [],
+  "transactions": 444,
+  "signatures": 444,
+  "receipt_sha256": "516a2b227c372f66d7e60424fb24fac93f77c0b441afe570dfb5083a02500ff2",
+  "sidecar_sha256": "d60d214fa763be27348da2a77945f2284752204e5551abb44dbea9a8bf5e6977",
+  "returncode": 0
+ },
+ {
+  "suite": "legacy_buy",
+  "case_count": 1011,
+  "mismatches": [],
+  "transactions": 2022,
+  "signatures": 2022,
+  "receipt_sha256": "6666b7371df338700bc4b59e6ecc35bf33acbec0e5ff57c3bf75cf7c1f0d0e84",
+  "sidecar_sha256": "bf7eb011d930659492e84f073f371766f464cae998a413821180c374a758d68b",
+  "returncode": 0
+ },
+ {
+  "suite": "legacy_sell",
+  "case_count": 575,
+  "mismatches": [],
+  "transactions": 1150,
+  "signatures": 1150,
+  "receipt_sha256": "63d7d49fe748a7b305c3db3fd98b99bcf5ae865f4c75d57878d1fa3cd80c301b",
+  "sidecar_sha256": "d2fbd0f14ac87a31078aae8540308aac0eafeea1c4c70dcbbe11f0ae0d41fe13",
+  "returncode": 0
+ },
+ {
+  "suite": "liquidity",
+  "case_count": 680,
+  "mismatches": [],
+  "transactions": 1360,
+  "signatures": 1360,
+  "receipt_sha256": "f133ddef7b73381fe7c791473e73017c6b7edf0be32d0c2dc6613bb491b421d0",
+  "sidecar_sha256": "23c9d5e5a654572fc2bb91d765664058edd492a3af945a516400b7f699cb119f",
+  "returncode": 0
+ },
+ {
+  "suite": "migration_create",
+  "case_count": 37,
+  "mismatches": [],
+  "transactions": 74,
+  "signatures": 74,
+  "receipt_sha256": "2e799bcaae7516a022f7340b29a100dc90e40cdb7c6f0286d5d03479207807e6",
+  "sidecar_sha256": "5f75cdcab26acfe3e8ed9609b6535bb98f0c435ff52ac9d59883d637f26dab01",
+  "returncode": 0
+ },
+ {
+  "suite": "multi_hop",
+  "case_count": 735,
+  "mismatches": [],
+  "transactions": 1470,
+  "signatures": 1478,
+  "receipt_sha256": "f197ef9eb296dcea7fcc65a68d8f5ddf1fe521480afbf9e99c8c6616f87743f1",
+  "sidecar_sha256": "e7b26bd6334d06c9339225b9532c3b1d07c70b94cb03e8b51c4218d4e4cc9698",
+  "returncode": 0
+ },
+ {
+  "suite": "reserved",
+  "case_count": 157,
+  "mismatches": [],
+  "transactions": 314,
+  "signatures": 314,
+  "receipt_sha256": "59d1e6845681bf452c66f6651fa0271be96d76cc8e14945ba668fdc065ba101a",
+  "sidecar_sha256": "4d5ac7f34c1dae8410bd6b7661ec940e272f0073e5b0696cbcc9c53f1a3ef846",
+  "returncode": 0
+ },
+ {
+  "suite": "resize",
+  "case_count": 98,
+  "mismatches": [],
+  "transactions": 196,
+  "signatures": 202,
+  "receipt_sha256": "b8407d4371c38a9db391d374100ec6cdae9f3d8fd083b2316c0af1d285b447b5",
+  "sidecar_sha256": "d402fc43a7f4a7d9dbf950523a5748934b2e6c4efc46872c7a5cf5b6e26ace25",
+  "returncode": 0
+ },
+ {
+  "suite": "sweep",
+  "case_count": 254,
+  "mismatches": [],
+  "transactions": 508,
+  "signatures": 508,
+  "receipt_sha256": "f6014970ce75de1c4d704143821df565baa85d78d066e713ba9b227073154454",
+  "sidecar_sha256": "2767a7ba1f164007da9473dc30df2cc8f7ad8ea7fc8011d5d955f73cc8b0665c",
+  "returncode": 0
+ },
+ {
+  "suite": "trade_v2",
+  "case_count": 870,
+  "mismatches": [],
+  "transactions": 1740,
+  "signatures": 1740,
+  "receipt_sha256": "f210b2dbd9866ed8025fb5116e45cf83538135edd9bf9d20a3d13aea648385b8",
+  "sidecar_sha256": "30f948fe7edeea225c78dd4287481a6d88608ba67528f8fb7dd2e3281d7bbfa7",
+  "returncode": 0
+ },
+ {
+  "suite": "transfer_creator",
+  "case_count": 267,
+  "mismatches": [],
+  "transactions": 534,
+  "signatures": 534,
+  "receipt_sha256": "cb328f4d00b2a33f1971519af2e86ebc75ecd9d37133c4d6827d170713b6b721",
+  "sidecar_sha256": "97034ea44365585a1cd4125f76d687bf839870b2e075dea294f4f2590f9c3d5a",
+  "returncode": 0
+ }
+]

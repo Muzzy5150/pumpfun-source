@@ -1,0 +1,49 @@
+{
+ "baseline": {
+  "packet": "repro/pump_amm/account-context-recovery-20261027",
+  "candidate_sha256": "badc94982f2ae20adc2a6be7fd22bba9d900c289de7c3b9e7475847af960ca7d",
+  "normalized": 623,
+  "raw": 128
+ },
+ "lane": {
+  "candidate_sha256": "a7aa6bcd87165615750b1db34cdf51332493e290d73300088d0fba6553d5ba85",
+  "symbols_sha256": "c1c55d0ec692c16c346e81c5889a09ead09a5b035f1e5f8a37d572240d647598",
+  "normalized": 648,
+  "raw": 128,
+  "unmatched": 137
+ },
+ "net_normalized_gain": 25,
+ "normalized_gained": [
+  "0x17960",
+  "0x1b510",
+  "0x1b7c0",
+  "0x1bb00",
+  "0x31710",
+  "0x31918",
+  "0x31b20",
+  "0x31d28",
+  "0x31f30",
+  "0x32138",
+  "0x32340",
+  "0x32548",
+  "0x34370",
+  "0x34578",
+  "0x34780",
+  "0x34988",
+  "0x34b90",
+  "0x34d98",
+  "0x34fa0",
+  "0x37150",
+  "0x39d80",
+  "0x39f88",
+  "0x3a190",
+  "0x3a398",
+  "0xaf3b0"
+ ],
+ "normalized_lost": [],
+ "raw_gained": [],
+ "raw_lost": [],
+ "gained_bytes": 24616,
+ "overlap_with_baseline_recovery": [],
+ "note": "All 25 gains are windows unmatched in the 623 frontier; none overlaps its recovery. 0xaf3b0 lies in the amm-hi address range."
+}
