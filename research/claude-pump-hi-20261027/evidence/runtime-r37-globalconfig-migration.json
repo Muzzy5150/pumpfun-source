@@ -1,0 +1,14 @@
+{
+ "scope": "migration + migrate_v2 suites of the public corpus (tools/run_suites.py; per-suite validate_result passed), on the Round37 lane build that reads the AMM GlobalConfig through the generated 16-field type (independent evidence for the integration nearmiss2-03 change)",
+ "candidate_sha256": "377c18f46a34b2558c5e8f558ca1fbc995ccb7e5453198bb590f5cd39a543af8",
+ "counts": {
+  "migration": 228,
+  "migrate_v2": 827
+ },
+ "loader_receipts": {
+  "migration": 684,
+  "migrate_v2": 2481
+ },
+ "diagnostic_log_cases": 1055,
+ "diagnostic_mismatches": 0
+}
