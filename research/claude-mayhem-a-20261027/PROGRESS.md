@@ -109,3 +109,13 @@ closed upstream).
 - O0077 BuyPumpSwap (9736 B; parent 9024 B): call order and CPI construction differ
   (ratio 0.22); candidate's outlined `math()` helper (merged with buy_v2::math) has no
   original counterpart.
+
+## Queued at hand-off (results land in SP/lanes/mayhem-a/out/builds/<name>/ with measure.json)
+- bv2-b = BuyV2 port with the WSOL/native test moved after the price check (wip/bv2_b.py).
+- bps-a = `#[inline(always)]` on pump_amm_interface::bought_amounts (wip/bps_a.py); chained
+  to start after bv2-b (shared work tree/target), log in out/bps-a.log.
+- For raw-local work on the BuyV2 port, link with wip/ordered-bv2.ld (the parent's
+  ordered.ld with slot 97 re-pointed from buy_v2::handler to
+  pump_interface_v2::buy_v2_handler, as the parent already does for the moved Legacy
+  Buy/Sell and SellV2 handlers): VARIANT_ORDERED=<path> tools/variant.py …
+- Build slots were heavily contended (40+ waiters on the shared sbf lock at hand-off).
