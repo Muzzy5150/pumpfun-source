@@ -1,0 +1,16 @@
+{
+  "frontier": "repro/pump_amm/native-fee-cpi-recovery-20261027",
+  "frontier_candidate_sha256": "a4b978ee1ab15dd822a31bc42e85d55e409f4e777f7af671a3197ea175891101",
+  "candidate_sha256": "5e853b8419b7836af219551b3277040e584c9bae50c2222efcf8a9447337086e",
+  "unstripped_sha256": "dbe8b0bc65d5646b3f87b5988c69ef3d25575af6099e89bce7bbc67614d59068",
+  "candidate_gz_sha256": "0efb15c04b8ff092f7f453f09e203b3d1474a736e1bd385aa22143d474d59af7",
+  "unstripped_gz_sha256": "1c6bab5e3dff101ac9b71f5aee43d707d993c6644f447acddc90467429e0b42b",
+  "measurement": {
+    "windows": 785,
+    "normalized_matches": 600,
+    "raw_matches": 125,
+    "unmatched": 185,
+    "measure_tool": "repro/pump_amm/focused-diagnostics-20261026/measure.py",
+    "reader_sha256": "247700e9930d5e53daf93a50888ae1e5429f74ccb19155e7a205f72ee21d5883"
+  }
+}

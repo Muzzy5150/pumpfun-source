@@ -3,6 +3,30 @@ use crate::curve::fees::AppliedFees;
 use crate::utils::transfer_fee::{self, TransferFeeData};
 
 #[inline(never)]
+pub fn validate_cashback_coin(is_cashback_coin: u8) -> Result<()> {
+    require!(is_cashback_coin == 0, PumpAmmError::CashbackCoinNotSupported);
+    Ok(())
+}
+
+#[inline(never)]
+pub fn validate_buyback_token_account(
+    global_config: &GlobalConfig,
+    token_account: &AccountInfo,
+    quote_mint: &Pubkey,
+    token_program: &Pubkey,
+) -> Result<()> {
+    require_keys_eq!(*token_account.owner, *token_program, PumpAmmError::AccountTypeNotSupported);
+    let owner = {
+        let data = token_account.try_borrow_data()?;
+        let mut data_slice = data.as_ref();
+        let state = TokenAccount::try_deserialize(&mut data_slice)?;
+        require_keys_eq!(state.mint, *quote_mint, PumpAmmError::InvalidQuoteMint);
+        state.owner
+    };
+    global_config.validate_buyback_recipient(&owner, &token_account.key(), quote_mint, token_program)
+}
+
+#[inline(never)]
 pub fn quote_reserves(pool: &Pool, raw_quote_reserves: u64) -> Result<(u64, u64)> {
     let available = pool.available_quote_reserves(raw_quote_reserves)?;
     let effective = pool.effective_quote_reserves(raw_quote_reserves)?;
@@ -21,12 +45,9 @@ pub struct BuyResult {
 
 #[inline(never)]
 fn total_quote(amounts: &[u64; 4]) -> Result<u64> {
-    let amount = amounts[0].checked_add(amounts[1])
-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
-    let amount = amount.checked_add(amounts[2])
-        .ok_or_else(|| error!(PumpAmmError::Overflow))?;
-    amount.checked_add(amounts[3])
-        .ok_or_else(|| error!(PumpAmmError::Overflow))
+    amounts.iter().try_fold(0u64, |total, amount| {
+        total.checked_add(*amount).ok_or_else(|| error!(PumpAmmError::Overflow))
+    })
 }
 
 #[inline(never)]

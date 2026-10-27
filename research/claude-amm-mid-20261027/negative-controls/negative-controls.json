@@ -54,6 +54,18 @@
       "variant": "llc from platform-tools v1.45, v1.46 (LLVM 18.1.7) and v1.47, v1.48 (LLVM 19.1.7) on the same IR",
       "result": "identical to v1.44 output; the residual was IR (source) shaped, not backend-version shaped",
       "kept": false
+    },
+    {
+      "window": "0x51d08 buy_transfers",
+      "variant": "bt1: `a.user_volume_accumulator.user = a.user.key();` instead of copy_from_slice",
+      "result": "no gain; body diverges further (ratio 0.877 vs 0.950 base)",
+      "kept": false
+    },
+    {
+      "window": "0x51d08 buy_transfers",
+      "variant": "bt2: `a.user_volume_accumulator.user = *a.user.key;`",
+      "result": "same as bt1 (ratio 0.877)",
+      "kept": false
     }
   ]
 }

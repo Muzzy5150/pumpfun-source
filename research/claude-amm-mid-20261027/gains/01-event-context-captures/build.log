@@ -1,6 +1,6 @@
-[sbf_lock] acquired slot after 15s
-[sbf_lock] acquired slot after 0s
-   Compiling pump-amm-recovered v0.1.0 (/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/amm-native-fee-cpi-final-20261027/source/programs/pump-amm)
+[sbf_lock] acquired slot after 90s
+[sbf_lock] acquired slot after 10s
+   Compiling pump-amm-recovered v0.1.0 (/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/amm-swap-accounts-final-20261027/source/programs/pump-amm)
 warning: unused import: `crate::PumpAmmError`
  --> programs/pump-amm/src/utils/math.rs:1:5
   |
@@ -48,21 +48,21 @@ warning: use of deprecated method `anchor_lang::prelude::AccountInfo::<'a>::real
     |                   ^^^^^^^
 
 warning: use of deprecated method `anchor_lang::prelude::AccountInfo::<'a>::realloc`: Use AccountInfo::resize() instead
-  --> programs/pump-amm/src/creator_reassignment.rs:59:8
+  --> programs/pump-amm/src/creator_reassignment.rs:74:8
    |
-59 |   info.realloc(287,false)?;
+74 |   info.realloc(287,false)?;
    |        ^^^^^^^
 
 warning: use of deprecated method `anchor_lang::prelude::AccountInfo::<'a>::realloc`: Use AccountInfo::resize() instead
-   --> programs/pump-amm/src/multi_hop.rs:483:19
+   --> programs/pump-amm/src/multi_hop.rs:455:19
     |
-483 |         pool_info.realloc(287, false)?;
+455 |         pool_info.realloc(287, false)?;
     |                   ^^^^^^^
 
 warning: use of deprecated method `anchor_lang::prelude::AccountInfo::<'a>::realloc`: Use AccountInfo::resize() instead
-   --> programs/pump-amm/src/trade.rs:352:19
+   --> programs/pump-amm/src/trade.rs:354:19
     |
-352 |         pool_info.realloc(287,false)?;
+354 |         pool_info.realloc(287,false)?;
     |                   ^^^^^^^
 
 warning: use of deprecated method `anchor_lang::prelude::AccountInfo::<'a>::realloc`: Use AccountInfo::resize() instead
@@ -78,25 +78,25 @@ warning: use of deprecated method `anchor_lang::prelude::AccountInfo::<'a>::real
    |          ^^^^^^^
 
 warning: use of deprecated method `anchor_lang::prelude::AccountInfo::<'a>::realloc`: Use AccountInfo::resize() instead
-  --> programs/pump-amm/src/lib.rs:45:1
+  --> programs/pump-amm/src/lib.rs:36:1
    |
-45 | #[program]
+36 | #[program]
    | ^^^^^^^^^^
    |
    = note: this warning originates in the attribute macro `program` (in Nightly builds, run with -Z macro-backtrace for more info)
 
 warning: unused variable: `pool_quote`
-   --> programs/pump-amm/src/trade.rs:234:9
+   --> programs/pump-amm/src/trade.rs:236:9
     |
-234 |     let pool_quote = if let Some(result) = &buy_result {result.pool_quote_amount_in} else {total_quote};
+236 |     let pool_quote = if let Some(result) = &buy_result {result.pool_quote_amount_in} else {total_quote};
     |         ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_pool_quote`
     |
     = note: `#[warn(unused_variables)]` on by default
 
 warning: unused variable: `buyback_fee`
-   --> programs/pump-amm/src/trade.rs:238:9
+   --> programs/pump-amm/src/trade.rs:240:9
     |
-238 |     let buyback_fee = if mode != 1 {
+240 |     let buyback_fee = if mode != 1 {
     |         ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_buyback_fee`
 
 warning: function `liquidity_total_fees` is never used
@@ -114,9 +114,9 @@ warning: function `number` is never used
    |    ^^^^^^
 
 warning: function `amount_bytes` is never used
-   --> programs/pump-amm/src/multi_hop.rs:404:4
+   --> programs/pump-amm/src/multi_hop.rs:376:4
     |
-404 | fn amount_bytes(n: u64) -> [u8; 8] {
+376 | fn amount_bytes(n: u64) -> [u8; 8] {
     |    ^^^^^^^^^^^^
 
 warning: function `checked64` is never used
@@ -132,10 +132,16 @@ warning: function `execute` is never used
     |        ^^^^^^^
 
 warning: function `transfer` is never used
-   --> programs/pump-amm/src/trade.rs:337:4
+   --> programs/pump-amm/src/trade.rs:339:4
     |
-337 | fn transfer<'info>(program: &AccountInfo<'info>, mint: &InterfaceAccount<'info, Mint>, user: &InterfaceAccount<'info, TokenAccount>, vaul...
+339 | fn transfer<'info>(program: &AccountInfo<'info>, mint: &InterfaceAccount<'info, Mint>, user: &InterfaceAccount<'info, TokenAccount>, vaul...
     |    ^^^^^^^^
 
+Error: A function call in method _ZN18pump_amm_recovered9__private8__global29admin_update_token_incentives17h5bc6c39a8cfada2bE overwrites values in the frame. Please, decrease stack usage or remove parameters from the call.The function call may cause undefined behavior during execution.
+
+Error: A function call in method _ZN18pump_amm_recovered9__private8__global29admin_update_token_incentives17h5bc6c39a8cfada2bE overwrites values in the frame. Please, decrease stack usage or remove parameters from the call.The function call may cause undefined behavior during execution.
+
+Error: A function call in method _ZN18pump_amm_recovered9__private8__global29admin_update_token_incentives17h5bc6c39a8cfada2bE overwrites values in the frame. Please, decrease stack usage or remove parameters from the call.The function call may cause undefined behavior during execution.
+
 warning: `pump-amm-recovered` (lib) generated 21 warnings (run `cargo fix --lib -p pump-amm-recovered` to apply 4 suggestions)
-    Finished `release` profile [optimized] target(s) in 3m 36s
+    Finished `release` profile [optimized] target(s) in 2m 15s

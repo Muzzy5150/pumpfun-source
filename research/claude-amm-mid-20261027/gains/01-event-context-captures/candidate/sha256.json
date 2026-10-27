@@ -1,0 +1,16 @@
+{
+  "frontier": "repro/pump_amm/account-context-recovery-20261027",
+  "frontier_candidate_sha256": "badc94982f2ae20adc2a6be7fd22bba9d900c289de7c3b9e7475847af960ca7d",
+  "candidate_sha256": "a11fbac3b2f5f7279541015a85bf09f00296cf7b26027a82b9fe73b67a69ebd1",
+  "unstripped_sha256": "6627417e3fb9737d9a707486be663ec85651d64c8e45efdb1a59466d3ef27f69",
+  "candidate_gz_sha256": "f714d8203559a50e00cc131057d9232b5c987c7068591f7e8b419c1f4a22a8d4",
+  "unstripped_gz_sha256": "121ef034a7c26fa03d41489901cee2811ec0bea3d0aef98d704b374bfa737e9a",
+  "measurement": {
+    "windows": 785,
+    "normalized_matches": 624,
+    "raw_matches": 128,
+    "unmatched": 161,
+    "measure_tool": "repro/pump_amm/focused-diagnostics-20261026/measure.py",
+    "reader_sha256": "247700e9930d5e53daf93a50888ae1e5429f74ccb19155e7a205f72ee21d5883"
+  }
+}

@@ -39,7 +39,14 @@ def main():
     ap.add_argument('--output', type=Path, required=True)
     ap.add_argument('--target', type=Path, default=L / 'target/linux')
     ap.add_argument('--cargo-home', type=Path, default=L / 'cargo-home')
+    ap.add_argument('--frontier-record', type=Path,
+                    default=Path(__file__).resolve().parents[3] / 'repro/pump_amm/account-context-recovery-20261027/results/build/build-comparison.json' if (Path(__file__).resolve().parents[3] / 'repro').is_dir() else L / 'wt/repro/pump_amm/account-context-recovery-20261027/results/build/build-comparison.json',
+                    help='frontier build record whose container source/CARGO_HOME/target paths are mirrored')
     a = ap.parse_args()
+    global C_SOURCE, C_HOME, C_TARGET
+    rec = json.loads(a.frontier_record.read_text())
+    C_HOME = Path(rec['environment']['CARGO_HOME']); C_TARGET = Path(rec['environment']['CARGO_TARGET_DIR'])
+    C_SOURCE = Path([c for c in rec['command'] if c.endswith('/Cargo.toml')][0]).parent
     out = a.output.resolve(); out.mkdir(parents=True, exist_ok=False)
     for rel, digest in EXPECTED.items():
         assert sha(SDK / rel) == digest, rel
@@ -71,7 +78,8 @@ def main():
                         '--manifest-path', str(C_SOURCE / 'Cargo.toml'), '--locked', '--offline']
     locked = ['python3', str(SP / 'sbf_lock.py'), '--slots', '6', '--name', 'sbf', '--',
               'python3', str(SP / 'sbf_lock.py'), '--slots', '2', '--name', 'podman', '--']
-    record = {'scope': __doc__, 'host_source': str(src), 'container_paths': {'source': str(C_SOURCE), 'cargo_home': str(C_HOME),
+    record = {'scope': __doc__, 'frontier_record': str(a.frontier_record), 'frontier_record_sha256': sha(a.frontier_record),
+              'host_source': str(src), 'container_paths': {'source': str(C_SOURCE), 'cargo_home': str(C_HOME),
               'target': str(C_TARGET), 'sdk': str(SDK)}, 'image': IMAGE, 'command': command, 'environment': env,
               'tool_sha256': {k: sha(SDK / k) for k in EXPECTED}, 'source_sha256': before}
     t0 = time.monotonic()

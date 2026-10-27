@@ -5,7 +5,7 @@ set -euo pipefail
 SP=/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun-source/bf960843-6806-451b-a211-62c8b228d301/scratchpad
 L=$SP/lanes/amm-mid
 SRC=$(cd "$1" && pwd); OUT=$2
-mkdir -p "$OUT"
+mkdir -p "$OUT"; OUT=$(cd "$OUT" && pwd)
 TC=$HOME/.cache/solana/v1.44/platform-tools
 cd "$SRC"
 python3 $SP/sbf_lock.py --slots 6 --name sbf -- env -u RUSTFLAGS -u CARGO_ENCODED_RUSTFLAGS \
