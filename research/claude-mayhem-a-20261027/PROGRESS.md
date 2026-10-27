@@ -119,3 +119,20 @@ closed upstream).
   pump_interface_v2::buy_v2_handler, as the parent already does for the moved Legacy
   Buy/Sell and SellV2 handlers): VARIANT_ORDERED=<path> tools/variant.py …
 - Build slots were heavily contended (40+ waiters on the shared sbf lock at hand-off).
+
+## Post-hand-off results
+- bv2-b (native test moved after the price check): BuyV2 18,464 B (original 18,648),
+  structural ratio 0.74 → 0.80; 432/100, no normalized or raw loss.
+  Remaining large differences: the original runs the retained-bps bounds check before the
+  quote-mint test, and tests Pubkey::default() before WSOL (as in O0095/O0092); several
+  inlined-clone blocks are ordered differently. Next variant bv2-c (wip/bv2_c.py) applies the
+  default-then-native_mint::id() cap test after `retained`, computing `native` after
+  buy_amounts; chained after bps-a.
+- bps-a (`#[inline(always)]` on bought_amounts, mirroring sold_amounts): AMM Buy 9,104 B
+  (original 9,736; parent 9,016); the handler now contains the original's inline Location
+  records pump_amm_interface.rs:403:23 and 404:26 and the extra 104-byte outlined
+  `bought_amounts` section disappears; 432/100, edges 4,314, Source 456, no losses.
+  Structural ratio ~flat (0.55 → 0.53): the remaining differences are the price-check /
+  error idioms (outlined `math()` vs the original's inline name/fmt/From construction) and
+  the CPI account construction (13 memcpy calls in the original). Next: port the AMM Buy
+  price check to the Legacy-Buy closure form and its CPI to the `cpi_result` idiom.
