@@ -1,0 +1,22 @@
+{
+ "candidate_unstripped_sha256": "886c7e6155fc5a1fe8927afa44fc0e5a570843a2a83c41a17ce3df170f32fcce",
+ "normalized": 743,
+ "raw": 145,
+ "matched_text_bytes": 906872,
+ "unmatched": 292,
+ "baseline": {
+  "normalized": 738,
+  "raw": 145,
+  "candidate": "9cc0982edb18a9f3af68783efe791c0348e08a4f7de299da0f8ba2cadf4cb8ce"
+ },
+ "normalized_gains": [
+  "0x340",
+  "0x2a8e8",
+  "0x3b598",
+  "0x3b738",
+  "0x8cc58"
+ ],
+ "normalized_losses": [],
+ "raw_gains": [],
+ "raw_losses": []
+}

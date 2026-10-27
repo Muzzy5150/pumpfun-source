@@ -44,7 +44,7 @@ pub fn execute<'info>(ctx:Context<'_,'_,'_,'info,LegacyBuy<'info>>,input:u64,lim
  require!(!c.complete,PumpError::BondingCurveComplete);
  if exact{require_gt!(limit,0,PumpError::BuyZeroAmount);require_gt!(input,0,PumpError::BuyNotEnoughSolToCoverFees);}else{require_gt!(input,0,PumpError::BuyZeroAmount);}
  if !exact{if !partial{require_gte!(c.real_token_reserves,input,PumpError::NotEnoughTokensToBuy);}}
- if !exact && partial{require_gt!(input.min(c.real_token_reserves),0,PumpError::BuyZeroAmount);}
+ if !exact && partial{let available=input.min(c.real_token_reserves);require_gt!(available,0,PumpError::BuyZeroAmount);}
  let pre_quote=if exact{0}else{crate::legacy_sell::fee_cpi::buy_quote(c,input.min(c.real_token_reserves))?};
  let (initial_protocol_fee,initial_creator_fee,protocol_fee_bps,creator_fee_bps)={let values=crate::legacy_sell::fee_cpi::trade_fees(
   &a.global,&a.bonding_curve,&a.mint,&a.fee_config,&a.fee_program,a.program.as_ref(),if exact{input}else{pre_quote}
@@ -78,4 +78,4 @@ pub fn execute<'info>(ctx:Context<'_,'_,'_,'info,LegacyBuy<'info>>,input:u64,lim
 use crate::legacy_sell::fee_cpi::fee as ceil_fee;
 
 #[path="legacy_native_payments.rs"]
-pub(crate) mod native_payments;
+pub mod native_payments;

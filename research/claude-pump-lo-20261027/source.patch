@@ -1,0 +1,127 @@
+diff --git a/programs/pump/src/buy.rs b/programs/pump/src/buy.rs
+index e2b9af406..95f5c6257 100644
+--- a/programs/pump/src/buy.rs
++++ b/programs/pump/src/buy.rs
+@@ -44,7 +44,7 @@ pub fn execute<'info>(ctx:Context<'_,'_,'_,'info,LegacyBuy<'info>>,input:u64,lim
+  require!(!c.complete,PumpError::BondingCurveComplete);
+  if exact{require_gt!(limit,0,PumpError::BuyZeroAmount);require_gt!(input,0,PumpError::BuyNotEnoughSolToCoverFees);}else{require_gt!(input,0,PumpError::BuyZeroAmount);}
+  if !exact{if !partial{require_gte!(c.real_token_reserves,input,PumpError::NotEnoughTokensToBuy);}}
+- if !exact && partial{require_gt!(input.min(c.real_token_reserves),0,PumpError::BuyZeroAmount);}
++ if !exact && partial{let available=input.min(c.real_token_reserves);require_gt!(available,0,PumpError::BuyZeroAmount);}
+  let pre_quote=if exact{0}else{crate::legacy_sell::fee_cpi::buy_quote(c,input.min(c.real_token_reserves))?};
+  let (initial_protocol_fee,initial_creator_fee,protocol_fee_bps,creator_fee_bps)={let values=crate::legacy_sell::fee_cpi::trade_fees(
+   &a.global,&a.bonding_curve,&a.mint,&a.fee_config,&a.fee_program,a.program.as_ref(),if exact{input}else{pre_quote}
+@@ -78,4 +78,4 @@ pub fn execute<'info>(ctx:Context<'_,'_,'_,'info,LegacyBuy<'info>>,input:u64,lim
+ use crate::legacy_sell::fee_cpi::fee as ceil_fee;
+ 
+ #[path="legacy_native_payments.rs"]
+-pub(crate) mod native_payments;
++pub mod native_payments;
+diff --git a/programs/pump/src/creator/admin_cto.rs b/programs/pump/src/creator/admin_cto.rs
+index 3ff4083b4..4bfdf2f28 100644
+--- a/programs/pump/src/creator/admin_cto.rs
++++ b/programs/pump/src/creator/admin_cto.rs
+@@ -128,7 +128,7 @@ pub fn execute(ctx:Context<AdminCto>,holder:Option<bool>,fee:Option<u64>,new:Opt
+   if collection_native||source_present||a.coin_creator_vault_ata.data_is_empty(){
+    if !collection_native{anchor_spl::associated_token::create_idempotent(CpiContext::new(a.associated_token_program.to_account_info(),anchor_spl::associated_token::Create{payer:a.admin_set_creator_authority.to_account_info(),associated_token:a.current_creator_quote_token_account.to_account_info(),authority:a.current_creator.to_account_info(),mint:a.quote_mint.to_account_info(),system_program:a.system_program.to_account_info(),token_program:a.quote_token_program.to_account_info()}))?;}
+    if collection_native||(source_present&&!source_frozen){
+-    if let Some((collected,quote_mint))=crate::collect_v2::collect(&a.current_creator,a.current_creator_quote_token_account.as_ref(),&a.creator_vault,ctx.bumps.creator_vault,a.creator_vault_quote_token_account.as_ref(),a.quote_mint.decimals,a.quote_mint.as_ref().as_ref(),&a.quote_token_program,&a.system_program)?{
++    if let Some((collected,quote_mint))=crate::collect_v2::collect(&a.current_creator,a.current_creator_quote_token_account.as_ref(),&a.creator_vault,ctx.bumps.creator_vault,a.creator_vault_quote_token_account.as_ref(),a.quote_mint.decimals,a.quote_mint.as_ref().as_ref(),&a.quote_token_program,a.system_program.as_ref())?{
+      let e=CollectCreatorFeeEvent{timestamp:Clock::get()?.unix_timestamp,creator:old,creator_fee:collected,quote_mint};emit!(e.clone());emit_cpi!(e);
+     }
+    }
+diff --git a/programs/pump/src/creator/collect_creator_fee.rs b/programs/pump/src/creator/collect_creator_fee.rs
+index 2df454ea1..7391ee9d5 100644
+--- a/programs/pump/src/creator/collect_creator_fee.rs
++++ b/programs/pump/src/creator/collect_creator_fee.rs
+@@ -16,10 +16,10 @@ pub struct CollectCreatorFeeV2<'info>{
+  pub associated_token_program:Program<'info,anchor_spl::associated_token::AssociatedToken>,
+  pub system_program:Program<'info,System>,
+ }
+-pub(crate) fn collect<'info>(
++pub fn collect<'info>(
+  creator:&AccountInfo<'info>,creator_token_account:&AccountInfo<'info>,creator_vault:&AccountInfo<'info>,
+  creator_vault_bump:u8,creator_vault_token_account:&AccountInfo<'info>,decimals:u8,quote_mint:&AccountInfo<'info>,
+- quote_token_program:&Interface<'info,anchor_spl::token_interface::TokenInterface>,system_program:&Program<'info,System>,
++ quote_token_program:&Interface<'info,anchor_spl::token_interface::TokenInterface>,system_program:&AccountInfo<'info>,
+ )->Result<Option<(u64,Pubkey)>>{
+  require!(*creator.owner!=crate::distribution::FEES,crate::PumpError::UnableToDistributeCreatorVaultMigratedToSharingConfig);
+  if creator.executable{msg!("Creator account is executable, so it cannot receive lamports");return Ok(None);}
+@@ -41,8 +41,8 @@ pub(crate) fn collect<'info>(
+ 
+ pub fn execute(ctx:Context<CollectCreatorFeeV2>)->Result<()>{
+  let a=&ctx.accounts;
+- if let Some((amount,quote_mint))=collect(&a.creator,a.creator_token_account.as_ref(),&a.creator_vault,ctx.bumps.creator_vault,a.creator_vault_token_account.as_ref(),a.quote_mint.decimals,a.quote_mint.as_ref().as_ref(),&a.quote_token_program,&a.system_program)?{
+-  let event=CollectCreatorFeeEvent{timestamp:Clock::get()?.unix_timestamp,creator:a.creator.key(),creator_fee:amount,quote_mint};emit!(event.clone());emit_cpi!(event);
++ if let Some((amount,quote_mint))=collect(&a.creator,a.creator_token_account.as_ref(),&a.creator_vault,ctx.bumps.creator_vault,a.creator_vault_token_account.as_ref(),a.quote_mint.decimals,a.quote_mint.as_ref().as_ref(),&a.quote_token_program,a.system_program.as_ref())?{
++  let event=CollectCreatorFeeEvent{timestamp:Clock::get()?.unix_timestamp,creator:a.creator.key(),creator_fee:amount,quote_mint};emit!(event);emit_cpi!(event);
+  }
+  Ok(())
+ }
+diff --git a/programs/pump/src/legacy_native_payments.rs b/programs/pump/src/legacy_native_payments.rs
+index b2363806b..364c48610 100644
+--- a/programs/pump/src/legacy_native_payments.rs
++++ b/programs/pump/src/legacy_native_payments.rs
+@@ -1,7 +1,7 @@
+ use anchor_lang::prelude::*;
+ 
+ #[inline(never)]
+-pub(crate) fn ensure_rent_exempt<'info>(
++pub fn ensure_rent_exempt<'info>(
+     system_program: &Program<'info, System>,
+     payer: &Signer<'info>,
+     destination: &AccountInfo<'info>,
+@@ -15,7 +15,7 @@ pub(crate) fn ensure_rent_exempt<'info>(
+ }
+ 
+ #[inline(never)]
+-pub(super) fn transfer<'info>(
++pub fn transfer<'info>(
+     system_program: &AccountInfo<'info>,
+     payer: &Signer<'info>,
+     destination: &AccountInfo<'info>,
+diff --git a/programs/pump/src/v2_native_payments.rs b/programs/pump/src/v2_native_payments.rs
+index 0b97c6c8a..4ef9bdf52 100644
+--- a/programs/pump/src/v2_native_payments.rs
++++ b/programs/pump/src/v2_native_payments.rs
+@@ -2,37 +2,15 @@ use anchor_lang::prelude::*;
+ 
+ #[inline(never)]
+ pub(crate) fn ensure_rent_exempt<'info>(
+-    size: usize,
++    _size: usize,
+     system_program: &Program<'info, System>,
+     payer: &Signer<'info>,
+     destination: &AccountInfo<'info>,
+ ) -> Result<()> {
+-    let minimum = Rent::get()?.minimum_balance(size);
++    let minimum = Rent::get()?.minimum_balance(0);
+     if destination.lamports() < minimum {
+-        transfer(system_program.as_ref(), payer, destination, minimum)
++        crate::legacy_buy::native_payments::transfer(system_program.as_ref(), payer, destination, minimum)
+     } else {
+         Ok(())
+     }
+ }
+-
+-#[inline(never)]
+-pub(super) fn transfer<'info>(
+-    system_program: &AccountInfo<'info>,
+-    payer: &Signer<'info>,
+-    destination: &AccountInfo<'info>,
+-    amount: u64,
+-) -> Result<()> {
+-    if amount == 0 {
+-        return Ok(());
+-    }
+-    anchor_lang::system_program::transfer(
+-            CpiContext::new(
+-                system_program.clone(),
+-                anchor_lang::system_program::Transfer {
+-                    from: payer.to_account_info(),
+-                    to: destination.clone(),
+-                },
+-            ),
+-            amount,
+-        )
+-}

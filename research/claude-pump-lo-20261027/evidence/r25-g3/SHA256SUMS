@@ -1,0 +1,4 @@
+e464cbb8322217ebbd66ef8bc3abdf1311378736b051f831d3dc8932f9330ac7  g3/candidate.so
+b5ed5c32d4d48dd04c5d1e97837c72d646d1f5d83a47ae0c8aacdc254d43940b  g3/unstripped.so
+e464cbb8322217ebbd66ef8bc3abdf1311378736b051f831d3dc8932f9330ac7  g3-fast/candidate.so
+b5ed5c32d4d48dd04c5d1e97837c72d646d1f5d83a47ae0c8aacdc254d43940b  g3-fast/unstripped.so
