@@ -1,0 +1,124 @@
+{
+ "candidate_sha256": "2ef6328d429dfe2cc99fec477398db59f386d81cd379584d4a41e151b65d90a5",
+ "parent": "research/mayhem-quotes-current-recovery-20261027 (73dff97e\u2026)",
+ "harness": "research/mayhem-sizing-panic-recovery/replay.py (unchanged); work/test-env python 3.12 + solders 0.27.1; local LiteSVM fixtures only",
+ "suites": 14,
+ "cases": 6636,
+ "signed_transactions": 13272,
+ "mismatches": 0,
+ "normalized_log_differences": 0,
+ "rows": [
+  {
+   "family": "buy",
+   "cases": 486,
+   "signed_transactions": 972,
+   "successful_original_cases": 187,
+   "mismatches": 0,
+   "normalized_log_differences": 0
+  },
+  {
+   "family": "sell",
+   "cases": 396,
+   "signed_transactions": 792,
+   "successful_original_cases": 134,
+   "mismatches": 0,
+   "normalized_log_differences": 0
+  },
+  {
+   "family": "buy-v2-native",
+   "cases": 613,
+   "signed_transactions": 1226,
+   "successful_original_cases": 284,
+   "mismatches": 0,
+   "normalized_log_differences": 0
+  },
+  {
+   "family": "sell-v2-native",
+   "cases": 473,
+   "signed_transactions": 946,
+   "successful_original_cases": 176,
+   "mismatches": 0,
+   "normalized_log_differences": 0
+  },
+  {
+   "family": "buy-amm-native",
+   "cases": 419,
+   "signed_transactions": 838,
+   "successful_original_cases": 163,
+   "mismatches": 0,
+   "normalized_log_differences": 0
+  },
+  {
+   "family": "sell-amm-native",
+   "cases": 413,
+   "signed_transactions": 826,
+   "successful_original_cases": 176,
+   "mismatches": 0,
+   "normalized_log_differences": 0
+  },
+  {
+   "family": "buy-v2-token",
+   "cases": 613,
+   "signed_transactions": 1226,
+   "successful_original_cases": 210,
+   "mismatches": 0,
+   "normalized_log_differences": 0
+  },
+  {
+   "family": "sell-v2-token",
+   "cases": 473,
+   "signed_transactions": 946,
+   "successful_original_cases": 121,
+   "mismatches": 0,
+   "normalized_log_differences": 0
+  },
+  {
+   "family": "buy-amm-token",
+   "cases": 419,
+   "signed_transactions": 838,
+   "successful_original_cases": 164,
+   "mismatches": 0,
+   "normalized_log_differences": 0
+  },
+  {
+   "family": "sell-amm-token",
+   "cases": 413,
+   "signed_transactions": 826,
+   "successful_original_cases": 177,
+   "mismatches": 0,
+   "normalized_log_differences": 0
+  },
+  {
+   "family": "buy-v2-token22",
+   "cases": 613,
+   "signed_transactions": 1226,
+   "successful_original_cases": 210,
+   "mismatches": 0,
+   "normalized_log_differences": 0
+  },
+  {
+   "family": "sell-v2-token22",
+   "cases": 473,
+   "signed_transactions": 946,
+   "successful_original_cases": 121,
+   "mismatches": 0,
+   "normalized_log_differences": 0
+  },
+  {
+   "family": "buy-amm-token22",
+   "cases": 419,
+   "signed_transactions": 838,
+   "successful_original_cases": 0,
+   "mismatches": 0,
+   "normalized_log_differences": 0
+  },
+  {
+   "family": "sell-amm-token22",
+   "cases": 413,
+   "signed_transactions": 826,
+   "successful_original_cases": 0,
+   "mismatches": 0,
+   "normalized_log_differences": 0
+  }
+ ]
+}

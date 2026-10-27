@@ -1,23 +1,81 @@
 # Mayhem lane mayhem-a: buy side, initializer and allocator gap
 
-Parent: [`research/mayhem-sizing-panic-recovery`](../mayhem-sizing-panic-recovery/README.md)
-(429/441 normalized, 100 raw-local, 12 unmatched windows / 111,288 original text bytes;
-stripped `f4f6a368…`, symbols `2f6e9ad9…`). Both parent artifacts were rebuilt
-byte-for-byte in this lane before any change (see [PROGRESS.md](PROGRESS.md)).
+Current parent: [`research/mayhem-quotes-current-recovery-20261027`](../mayhem-quotes-current-recovery-20261027/README.md)
+(432/441 normalized, 100 raw-local, 9 unmatched windows / 107,952 original text bytes;
+stripped `73dff97e…`, symbols `440b9281…`). The lane rebuilt that parent byte-for-byte
+from its 67 verified source inputs (initializer-current `source.tar.gz` + the
+ownership-composition `sources/qualified.rs` + the sell/quote `overrides/`) with
+`tools/mbuild.py`. Earlier work was done on `mayhem-sizing-panic-recovery`
+(429/441, 100 raw-local); those measurements are kept below as history.
 
 ## Status at a glance
 
-| Layer | Normalized | Raw-local | Unmatched | Status |
+| Layer (on the 432 parent) | Normalized | Raw-local | Unmatched | Status |
 | --- | ---: | ---: | ---: | --- |
-| Parent (sizing-panic-recovery) | 429/441 | 100 | 12 (111,288 B) | reproduced |
-| **Layer B: allocator context** | 429/441 | **139** | 12 (111,288 B) | **CONDITIONAL; independent reproduction of an already-published artifact — see below** |
+| Parent (quotes-current-recovery) | 432/441 | 100 | 9 (107,952 B) | reproduced byte-for-byte |
+| **A: safe-Rust initializer form** | 432/441 | 100 | 9 | **identical stripped + symbol ELF to the parent** |
+| **B: allocator context on 432** | 432/441 | **141** | 9 (107,952 B) | **CONDITIONAL — dead-code compilation context, not recovered source** |
 
-No complete new function window is recovered by this packet so far. Layer B's
-raw-local gain duplicates the artifact `ed5b4020…` already on main
-(mayhem-control-work-20261027 / mayhem-historical-macro-current-20261027) and must
-not be counted again.
+No new complete original window is added by this packet (O0092, O0093 and O0193
+were closed upstream while this lane worked; this lane's own O0193 recovery is
+reported in Layer A as an alternative source form).
 
-## Layer B — allocator compilation context (CONDITIONAL)
+## Layer A — O0193 initializer in plain safe Rust (artifact-identical)
+
+The parent closes O0193 with a `#[repr(C)] struct InitMint { key: MaybeUninit<Pubkey>,
+info: AccountInfo }`, `MaybeUninit::write` and `unsafe { assume_init_ref() }` to force the
+original frame order. This lane independently recovered the same body with ordinary
+safe Rust (`layers/initializer-safe-form/source/src/state.rs`, 29-line patch):
+
+```rust
+#[inline(always)]
+fn initialize_state(mint:&InterfaceAccount<'_, Mint>, params:&crate::GlobalParams, state:&mut MayhemState)->Result<()> { let mut mint_key=Pubkey::default(); let mint=mint.to_account_info(); mint_key=mint.key();
+    ... (lines 530-540 unchanged; Location records 531:43 and 532:32 unchanged)
+pub fn initialize(ctx:Context<crate::InitializeMayhemState>)->Result<()> { initialize_state(&ctx.accounts.mint, &ctx.accounts.global_params, &mut ctx.accounts.mayhem_state) }
+```
+
+Built on the 432 parent this produces the **identical stripped ELF `73dff97e…` and
+identical symbol ELF `440b9281…`** (byte-for-byte; `cmp` reports no difference), so it
+is a drop-in replacement with zero output change and no `unsafe`. Why it works (from
+MIR/IR inspection, `tools/mirdump.sh`, `tools/irdump.sh`):
+
+- taking `&mut MayhemState` as a helper parameter keeps the key memcpy's destination
+  pointer defined before the overflow check (InstCombine only sinks into an immediate
+  successor), which yields the original's unfolded `r3 = r7+0x160` descending copy and
+  its `xor; jeq X,1` overflow test (published control fast-init-frame-owned-info-a);
+- MIR numbers locals by first use after copy propagation; an SSA key local is replaced
+  by the call temporary created after the AccountInfo clone, while the non-SSA
+  `let mut mint_key = Pubkey::default(); … mint_key = mint.key();` keeps the key local
+  first, giving the original frame order (key deepest, AccountInfo above it, Clock
+  above that). The dead default store is removed by the optimizer.
+
+Negative/intermediate controls (all ordinary source; none closes O0193 alone):
+A (early `mint.key()` local) 960 B but frame/copy/overflow differ; B (key read before the
+clone) right frame, wrong copy order; C/D (explicit `&mut *` deref) identical to A;
+E (field_89 between the i128 zeroings — required, otherwise MemCpyOpt merges them into
+a memset); F1/G/H (deferred-init key forms) renumbered like A; K1 (non-SSA key, no
+helper) right frame but copy-out/overflow differ; C1 (non-SSA key inside the parent
+control's helper) only the frame differs; C2 (key passed by value) reverts to the
+control; C4 = Layer A.
+
+## Layer B on the 432 parent (CONDITIONAL)
+
+The same two-file curve-crate change (appended rendered `legacy_event_utils` module +
+`CreateEvent` IDL entry) composed onto the 432 parent (`layers/allocator-context-432/`):
+432/441 normalized (no gain, no loss), **raw-local 100 → 141** (the 39 bodies below plus
+O0166 and O0194, which now align because the parent's initializer already has the
+original 960-byte size), positive direct edges 4,314 → 4,315, Source records 456 → 456,
+no losses (parent `progress.compare()`). Stripped `2ef6328d429dfe2cc99fec477398db59f386d81cd379584d4a41e151b65d90a5`
+(755,392 B), symbols `c9abef9305d27417d566e8d5cae323d921275c01c518b1362c937b9bf044aab9`
+(gzipped in `layers/allocator-context-432/artifacts/`). Full unchanged 14-suite replay on
+this exact stripped ELF: **6,636 comparisons, 13,272 signed records, 0 mismatches, 0
+normalized-log differences** (`layers/allocator-context-432/runtime-summary.json`).
+This exact qualified-432 composition is not on main (the native Linux composition
+`mayhem-native-current432-composition` reports 432/85 native and keeps the historical
+430/141 separate). Everything said below about the mechanism, its dead-code nature and
+its CONDITIONAL status applies unchanged.
+
+## Layer B — allocator compilation context (CONDITIONAL; first measured on the 429 parent)
 
 **This layer is not claimed as recovered source.** It composes, onto the parent,
 the mixed-source diagnostic of

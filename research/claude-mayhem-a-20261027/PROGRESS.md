@@ -22,7 +22,25 @@ trade-origins-validator parent.
   with a clean curve crate.
 - Mac-only SDK reproduces 427/441 (loses O0236/O0337 only) — used only for orientation.
 
-## Verified results
+## Current parent (re-based)
+research/mayhem-quotes-current-recovery-20261027: 432/441, 100 raw-local, 9 unmatched
+(107,952 B); stripped 73dff97e…, symbols 440b9281… — rebuilt byte-for-byte in this lane
+(tree b/v4 = initializer-current source.tar.gz + ownership-composition sources/qualified.rs
++ sell-current and quotes-current overrides; all 67 source hashes verified).
+Remaining owned windows: O0083 BuyV2, O0081 Legacy Buy, O0077 AMM Buy (O0092/O0093/O0193
+closed upstream).
+
+## Results on the 432 parent
+- Layer A (safe-Rust O0193 form, layers/initializer-safe-form): byte-identical stripped and
+  symbol ELF to the parent (73dff97e…/440b9281…); replaces the parent's MaybeUninit/unsafe/
+  repr(C) form. No count change.
+- Layer B-432 (CONDITIONAL allocator context, layers/allocator-context-432): 432/441,
+  raw-local 141 (+41), edges 4314→4315, Source 456→456, no losses; stripped 2ef6328d…,
+  symbols c9abef93…; 14/14 replay, 6,636 comparisons, 0 mismatches, 0 log differences.
+- BuyV2 (O0083) port into pump_interface_v2.rs (edits/bv2_a.py, WIP, not committed as a gain):
+  18,344 B vs 18,648 original (parent 7,688), structural ratio 0.31 → 0.74, 432/100 kept.
+
+## Verified results (history, 429 parent)
 1. Layer B allocator context — CONDITIONAL (not recovered source; see README):
    build alloc-b = parent + appended rendered event-parser module + CreateEvent in the
    curve IDL. 429/441, raw-local 139 (+39), no losses (parent progress.compare passes;

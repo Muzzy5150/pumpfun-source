@@ -1,0 +1,29 @@
+diff -ruN v4/programs/mayhem/src/state.rs init-v4c4/programs/mayhem/src/state.rs
+--- a/src/state.rs	2026-10-27 11:43:57
++++ b/src/state.rs	2026-10-27 11:46:58
+@@ -525,12 +525,12 @@
+ 
+ 
+ #[inline(always)]
+-fn initialize_state(mint_key:&Pubkey, params:&crate::GlobalParams, state:&mut MayhemState)->Result<()> {
++fn initialize_state(mint:&InterfaceAccount<'_, Mint>, params:&crate::GlobalParams, state:&mut MayhemState)->Result<()> { let mut mint_key=Pubkey::default(); let mint=mint.to_account_info(); mint_key=mint.key();
+ 
+     let duration_hours=params.field_6 as i64;
+     let now=                 Clock::get().unwrap().unix_timestamp; state.field_8=now as u64;
+     state.end_timestamp=       now+duration_hours*3600;
+-    state.mint=*mint_key;
++    state.mint=mint_key;
+     state.field_56=0;
+     state.field_89=now as u64;
+     state.flag_88=false;
+@@ -544,8 +544,8 @@
+ }
+ 
+ 
+-pub fn initialize(ctx:Context<crate::InitializeMayhemState>)->Result<()> { let mut snapshot=InitMint {key:std::mem::MaybeUninit::uninit(),info:ctx.accounts.mint.to_account_info()}; snapshot.key.write(snapshot.info.key()); initialize_state(unsafe { snapshot.key.assume_init_ref() }, &ctx.accounts.global_params, &mut ctx.accounts.mayhem_state) }
+-#[repr(C)] struct InitMint<'info> { key:std::mem::MaybeUninit<Pubkey>, info:AccountInfo<'info> }
++pub fn initialize(ctx:Context<crate::InitializeMayhemState>)->Result<()> { initialize_state(&ctx.accounts.mint, &ctx.accounts.global_params, &mut ctx.accounts.mayhem_state) }
++
+ 
+ 
+ 
