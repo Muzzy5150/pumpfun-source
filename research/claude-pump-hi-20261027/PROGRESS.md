@@ -82,8 +82,8 @@ H3 raw gains are 0x198fe8 and 0x19b4e0. † These are in other claim families or
   - on Round37: a single pump_fees declaration (lib.rs:65), pump_amm appended, `pump_fees.json` byte-identical, and a second run changes nothing;
   - on Round36: the output equals the corpus-validated H7 source (`r36-cpi4`);
   - on i1c: the output equals `i1c-fee8` (779).
-- Identity recipe (`fastbuild.py`), same-recipe base: Round37 unmodified builds to 749/133/924,472 (+5 identity-recipe windows against the published inventory). Round37 + lane changes + the GlobalConfig boost change gives 775/133/995,984, with 26 gains and no normalized or raw losses. The GlobalConfig boost change duplicates the integration's nearmiss2-03 delivery (0x109488 and siblings), so it was removed from the tool and is not claimed. The exact tool output (`r37-lane2`) is being measured.
-- Runtime evidence for nearmiss2-03, from this lane's independent GlobalConfig-IDL build (`r37-lane`): the `migration` suite passes 228/228. `migrate_v2` is running.
+- Identity recipe (`fastbuild.py`), same-recipe base: Round37 unmodified builds to 749/133/924,472 (+5 identity-recipe windows against the published inventory). Round37 + lane changes + the GlobalConfig boost change gives 775/133/995,984, with 26 gains and no normalized or raw losses. The GlobalConfig boost change duplicates the integration's nearmiss2-03 delivery (0x109488 and siblings), so it was removed from the tool and is not claimed. The exact tool output (`--with-cpi-7 --with-fee-8`, `evidence/elf/r37-774-lane`) gives **774/133/992,824**: 25 gains against the same-recipe base (`evidence/elf/r37-749-base`), 0 normalized and 0 raw losses, `stack_warnings=[]`.
+- Runtime evidence for nearmiss2-03, from this lane's independent GlobalConfig-IDL build (`r37-lane`, candidate `377c18f4…`): `migration` 228/228 and `migrate_v2` 827/827 pass per-suite validation. The paired diagnostic audit finds 1,055 log cases and 0 mismatches (`evidence/runtime-r37-globalconfig-migration.json`).
 
 ## Round26 findings
 
