@@ -19,12 +19,6 @@
    "new": " pump_amm::cpi::create_pool(CpiContext::new_with_signer(am.clone(),cpi_accounts,&[pas]),0,base,quote,creator,mayhem,pump_amm::types::OptionBool(a.bonding_curve.is_cashback_coin),pump_amm::types::OptionU64(a.bonding_curve.creator_fee_bps),pump_amm::types::OptionBool(a.bonding_curve.can_edit_creator_fee),pump_amm::types::OptionBool(a.bonding_curve.is_holder_reward))?;"
   },
   {
-   "file": "src/migrate.rs",
-   "line_hint": 61,
-   "old": " if !mayhem{require!(ctx.remaining_accounts.len()>=2,PumpError::NotEnoughRemainingAccounts);let boost=&ctx.remaining_accounts[0];let vault=&ctx.remaining_accounts[1];let top=rent.minimum_balance(165).saturating_sub(vault.lamports());if top>0{call(&sys,&[(&user,true,true),(&pa,false,true)],{let mut v=2u32.to_le_bytes().to_vec();v.extend_from_slice(&top.to_le_bytes());v},&[])?;}call(&am,&[(&pool,false,true),(&cfg,false,false),(&pa,true,true),(&mint,false,false),(&wsol,false,false),(&pb,false,true),(&pq,false,true),(boost,false,false),(vault,false,true),(&tok,false,false),(&sys,false,false),(&ata,false,false),(&ev,false,false),(&am,false,false)],vec![140,233,33,94,132,90,194,143],&[pas])?;}",
-   "new": " if !mayhem{require!(ctx.remaining_accounts.len()>=2,PumpError::NotEnoughRemainingAccounts);let boost=&ctx.remaining_accounts[0];let vault=&ctx.remaining_accounts[1];let top=rent.minimum_balance(165).saturating_sub(vault.lamports());if top>0{call(&sys,&[(&user,true,true),(&pa,false,true)],{let mut v=2u32.to_le_bytes().to_vec();v.extend_from_slice(&top.to_le_bytes());v},&[])?;}pump_amm::cpi::init_boost(CpiContext::new_with_signer(am.clone(),pump_amm::cpi::accounts::InitBoost{pool:pool.clone(),global_config:cfg.clone(),creator:pa.clone(),base_mint:mint.clone(),quote_mint:wsol.clone(),pool_base_token_account:pb.clone(),pool_quote_token_account:pq.clone(),boost_vault_authority:boost.clone(),boost_vault:vault.clone(),quote_token_program:tok.clone(),system_program:sys.clone(),associated_token_program:ata.clone(),event_authority:ev.clone(),program:am.clone()},&[pas]))?;}"
-  },
-  {
    "file": "src/migrate_v2.rs",
    "line_hint": 71,
    "old": " let creator=a.bonding_curve.creator;let mut data=vec![233,146,209,142,207,104,64,188];data.extend_from_slice(&0u16.to_le_bytes());data.extend_from_slice(&base.to_le_bytes());data.extend_from_slice(&quote.to_le_bytes());data.extend_from_slice(creator.as_ref());data.push(mayhem as u8);data.push(a.bonding_curve.is_cashback_coin as u8);data.extend_from_slice(&a.bonding_curve.creator_fee_bps.to_le_bytes());data.push(a.bonding_curve.can_edit_creator_fee as u8);data.push(a.bonding_curve.is_holder_reward as u8);",
@@ -35,12 +29,6 @@
    "line_hint": 72,
    "old": " call(&am,&[(&pool,false,true),(&cfg,false,false),(&pa,true,true),(&base_mint,false,false),(&wsol,false,false),(&lp,false,true),(&tmpb,false,true),(&tmpq,false,true),(&ulp,false,true),(&pb,false,true),(&pq,false,true),(&sys,false,false),(&t22,false,false),(&tok,false,false),(&qt,false,false),(&ata,false,false),(&ev,false,false),(&am,false,false)],data,&[pas])?;",
    "new": " pump_amm::cpi::create_pool(CpiContext::new_with_signer(am.clone(),cpi_accounts,&[pas]),0,base,quote,creator,mayhem,pump_amm::types::OptionBool(a.bonding_curve.is_cashback_coin),pump_amm::types::OptionU64(a.bonding_curve.creator_fee_bps),pump_amm::types::OptionBool(a.bonding_curve.can_edit_creator_fee),pump_amm::types::OptionBool(a.bonding_curve.is_holder_reward))?;"
-  },
-  {
-   "file": "src/migrate_v2.rs",
-   "line_hint": 73,
-   "old": " if !mayhem{require!(ctx.remaining_accounts.len()>=2,PumpError::NotEnoughRemainingAccounts);let boost=&ctx.remaining_accounts[0];let vault=&ctx.remaining_accounts[1];let top=rent.minimum_balance(quote_account_size(&wsol)?).saturating_sub(vault.lamports());if top>0{call(&sys,&[(&user,true,true),(&pa,false,true)],{let mut v=2u32.to_le_bytes().to_vec();v.extend_from_slice(&top.to_le_bytes());v},&[])?;}call(&am,&[(&pool,false,true),(&cfg,false,false),(&pa,true,true),(&base_mint,false,false),(&wsol,false,false),(&pb,false,true),(&pq,false,true),(boost,false,false),(vault,false,true),(&qt,false,false),(&sys,false,false),(&ata,false,false),(&ev,false,false),(&am,false,false)],vec![140,233,33,94,132,90,194,143],&[pas])?;}",
-   "new": " if !mayhem{require!(ctx.remaining_accounts.len()>=2,PumpError::NotEnoughRemainingAccounts);let boost=&ctx.remaining_accounts[0];let vault=&ctx.remaining_accounts[1];let top=rent.minimum_balance(quote_account_size(&wsol)?).saturating_sub(vault.lamports());if top>0{call(&sys,&[(&user,true,true),(&pa,false,true)],{let mut v=2u32.to_le_bytes().to_vec();v.extend_from_slice(&top.to_le_bytes());v},&[])?;}pump_amm::cpi::init_boost(CpiContext::new_with_signer(am.clone(),pump_amm::cpi::accounts::InitBoost{pool:pool.clone(),global_config:cfg.clone(),creator:pa.clone(),base_mint:base_mint.clone(),quote_mint:wsol.clone(),pool_base_token_account:pb.clone(),pool_quote_token_account:pq.clone(),boost_vault_authority:boost.clone(),boost_vault:vault.clone(),quote_token_program:qt.clone(),system_program:sys.clone(),associated_token_program:ata.clone(),event_authority:ev.clone(),program:am.clone()},&[pas]))?;}"
   },
   {
    "file": "src/creator/admin_cto.rs",
@@ -95,6 +83,18 @@
    "line_hint": 152,
    "old": "  invoke_signed(&Instruction{program_id:AMM,accounts,data},&[a.admin_set_creator_authority.to_account_info(),a.amm_global_config.to_account_info(),a.pool.to_account_info(),a.pool_authority.to_account_info(),a.system_program.to_account_info(),a.pump_amm_event_authority.to_account_info(),a.pump_amm.to_account_info()],&[poolseeds])?;",
    "new": "  crate::pump_amm::cpi::admin_cto_pool(CpiContext::new_with_signer(a.pump_amm.to_account_info(),cpi_accounts,signer_seeds),target,holder,fee)?;"
+  }
+ ],
+ "substring_replacements": [
+  {
+   "file": "src/migrate.rs",
+   "old": "call(&am,&[(&pool,false,true),(&cfg,false,false),(&pa,true,true),(&mint,false,false),(&wsol,false,false),(&pb,false,true),(&pq,false,true),(boost,false,false),(vault,false,true),(&tok,false,false),(&sys,false,false),(&ata,false,false),(&ev,false,false),(&am,false,false)],vec![140,233,33,94,132,90,194,143],&[pas])?",
+   "new": "pump_amm::cpi::init_boost(CpiContext::new_with_signer(am.clone(),pump_amm::cpi::accounts::InitBoost{pool:pool.clone(),global_config:cfg.clone(),creator:pa.clone(),base_mint:mint.clone(),quote_mint:wsol.clone(),pool_base_token_account:pb.clone(),pool_quote_token_account:pq.clone(),boost_vault_authority:boost.clone(),boost_vault:vault.clone(),quote_token_program:tok.clone(),system_program:sys.clone(),associated_token_program:ata.clone(),event_authority:ev.clone(),program:am.clone()},&[pas]))?"
+  },
+  {
+   "file": "src/migrate_v2.rs",
+   "old": "call(&am,&[(&pool,false,true),(&cfg,false,false),(&pa,true,true),(&base_mint,false,false),(&wsol,false,false),(&pb,false,true),(&pq,false,true),(boost,false,false),(vault,false,true),(&qt,false,false),(&sys,false,false),(&ata,false,false),(&ev,false,false),(&am,false,false)],vec![140,233,33,94,132,90,194,143],&[pas])?",
+   "new": "pump_amm::cpi::init_boost(CpiContext::new_with_signer(am.clone(),pump_amm::cpi::accounts::InitBoost{pool:pool.clone(),global_config:cfg.clone(),creator:pa.clone(),base_mint:base_mint.clone(),quote_mint:wsol.clone(),pool_base_token_account:pb.clone(),pool_quote_token_account:pq.clone(),boost_vault_authority:boost.clone(),boost_vault:vault.clone(),quote_token_program:qt.clone(),system_program:sys.clone(),associated_token_program:ata.clone(),event_authority:ev.clone(),program:am.clone()},&[pas]))?"
   }
  ]
 }

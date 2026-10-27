@@ -1,60 +1,102 @@
 {
   "scope": "pump-hi lane: ordinary-source recovery of main-Pump windows 0x101170..0x1ab9b8 on top of the newest published frontier. Not whole-ELF identity.",
-  "result": "H4 (changes 1-6)",
-  "frontier_packet": "repro/pump/main-contract-round26-20261027",
-  "frontier_candidate_sha256": "2071d716217fc6b7c71b67cdb9f00ecc39394a89d9afe26b7c60524eccbb2854",
-  "frontier_unstripped_sha256": "c2f9e1638cbb84b4d98bc2eddf56985a917032534864f2c2d1141d001a3cc5b5",
+  "result": "H6 (Round36): remaining changes 3,5,6,7. Changes 1,2 (dispatcher order, update_global_authority) and an equivalent of 4 (Anchor transfer_with_seed) are already in Round36.",
+  "adoptable": false,
+  "adoptability_note": "19 raw byte-equal matches of Round36 are lost (normalized matches retained). See PROGRESS.md for the split measurement.",
+  "frontier_packet": "repro/pump/main-contract-round36-20261027",
+  "frontier_candidate_sha256": "f8235c432598bd65ee1626c6ce36bb408cdeb761b87058496ee53a57dea6d265",
+  "frontier_unstripped_sha256": "9cc0982edb18a9f3af68783efe791c0348e08a4f7de299da0f8ba2cadf4cb8ce",
   "frontier_counts": {
-    "normalized": 721,
-    "raw": 123,
-    "matched_text_bytes": 874352
+    "normalized": 738,
+    "raw": 145,
+    "matched_text_bytes": 900520
   },
   "changed_files_sha256": {
-    "src/lib.rs": "81fcb99d08c9b25d9932d6d5b74ce3b3ae887edd7fbef1474cf82831e8586630",
+    "src/lib.rs": "8367bf6154b9368ed56801c651404ca3719275f80087aa4b8826bacbd26e4708",
     "src/buy.rs": "475939da28591bf74f9ea2dce585a3af8b4696299dcebfaa8976ff6df2e04157",
-    "src/admin_set_idl_authority.rs": "7d62e672f42ec73dd40400d8a883446e18706cdfff5a67ecc7d5bcca825ce0b8",
-    "src/mayhem_virtual_params.rs": "5b588cd1d0fbc2c346000e98ff315ba3bd9f5caa3663d870a34c6f4a003a9705"
+    "src/mayhem_virtual_params.rs": "5b588cd1d0fbc2c346000e98ff315ba3bd9f5caa3663d870a34c6f4a003a9705",
+    "src/migrate.rs": "a634453c934b66eee7fae5563d2d18ea0266a5be6c401e8b9607a69194cb9403",
+    "src/migrate_v2.rs": "9c830a233ac6b742c7f62308f7458976ac568dbff4e558e7e750a4fd435cbdd3",
+    "src/creator/admin_cto.rs": "d1175f96ae55dee4280bca0d44fb75f42f38dd8de9ebcabaeca9bda290e335fa",
+    "idls/pump_amm.json": "b7d8c57a4d9c4dd0109a9ab893052352333252d4eedced10ac091d4d66cab89b",
+    "idls/pump_fees.json": "6b9fa3eccc6e06273076a47b581f9fcb9e531bb7c3c88acbcd44db55a4002b29"
   },
   "frontier_files_sha256": {
-    "src/lib.rs": "acb78a38367a3eadc820ba053d87a5382d5e30ed47b435ef08a857d384d30d4c",
+    "src/lib.rs": "29ad97f5823ad451b14bfcd9d6dfad0652063ffebaf7192e465f4d14c91b1d84",
     "src/buy.rs": "9d4af64b2adcf7ebc52949a5bae65b58fe6e10751f27cbe7c45dcb82a3d09af8",
-    "src/admin_set_idl_authority.rs": "d54a5ba66b17018c8d765abe6d38dc7387f70ddf042cd3e10dad8ce013b899a7",
-    "src/mayhem_virtual_params.rs": "6eeae687e0f29176d48a4de0d57b0457f5e4fa498c17fd5de0520e162b5677da"
+    "src/mayhem_virtual_params.rs": "6eeae687e0f29176d48a4de0d57b0457f5e4fa498c17fd5de0520e162b5677da",
+    "src/migrate.rs": "fb03bc70b5359b29527fec5f8c5328c2212012bd782a9aabd62f4489fc115db7",
+    "src/migrate_v2.rs": "b557054b667629085d5a284329fec569df376520c17228d84be119f99ebec4c3",
+    "src/creator/admin_cto.rs": "b9390f0f0ed1f67e7bd9746357f91e80b16c98ae2a84a6494ad86a6768dfeaf4",
+    "idls/pump_amm.json": null,
+    "idls/pump_fees.json": null
   },
-  "candidate_sha256": "4cbe303da77b6a4cbdc24302f24b038b86a568fc9568dcd09d4d8621416046e3",
-  "unstripped_sha256": "7854036b36e9f9eec1d5bd8791fb832ab6568ad4f3ae683a86753241171490df",
+  "candidate_sha256": "e11320e4c1c2c29feb775182c90d88ea41defcf2015b6f7a907a8c53f8ae8c81",
+  "unstripped_sha256": "af3a7529160d5ff55f8cad5fc08b6c3dbbea856435420973b5401071c016a493",
   "counts": {
     "total": 1035,
-    "raw": 125,
-    "normalized": 729,
-    "unmatched": 306,
-    "matched_text_bytes": 895576
+    "raw": 126,
+    "normalized": 762,
+    "unmatched": 273,
+    "matched_text_bytes": 964776
   },
   "normalized_gains": [
+    "0xea68",
+    "0xf130",
+    "0xca628",
     "0xcf510",
-    "0x11b758",
+    "0x10a0e0",
+    "0x10c0b8",
+    "0x10d638",
+    "0x10e938",
+    "0x10fb38",
+    "0x1100f8",
+    "0x110d40",
+    "0x1113c8",
+    "0x112220",
+    "0x1133c8",
+    "0x113f00",
+    "0x114d48",
+    "0x116718",
+    "0x118360",
+    "0x119c50",
     "0x1255a8",
     "0x12a4e0",
     "0x12abc8",
-    "0x1348c0",
     "0x137fc0",
-    "0x19e3b0"
+    "0x163ea8"
   ],
   "normalized_losses": [],
-  "raw_gains": [
-    "0x198fe8",
-    "0x19b4e0"
+  "raw_gains": [],
+  "raw_losses": [
+    "0xa7e0",
+    "0x18a3b0",
+    "0x18a4d8",
+    "0x194998",
+    "0x194ae0",
+    "0x197508",
+    "0x1991e0",
+    "0x19a758",
+    "0x19a8a0",
+    "0x1a0f68",
+    "0x1a2340",
+    "0x1a6370",
+    "0x1a6940",
+    "0x1ab220",
+    "0x1ab730",
+    "0x1b3220",
+    "0x1b38c0",
+    "0x1b4088",
+    "0x1b40d0"
   ],
-  "raw_losses": [],
-  "elf_evidence": "evidence/elf/r26-729",
+  "elf_evidence": "evidence/elf/r36-762-cpi",
   "builds": [
-    "evidence/builds/r26-lane"
+    "evidence/builds/r36-lane"
   ],
   "previous_results": {
-    "H3 Round25 727": {
-      "commit": "9c4f06050119d4e8bb90c4caf82bd3e0d986facd",
-      "elf_evidence": "evidence/elf/r25-727"
-    }
+    "H3 Round25 727": "9c4f06050 (rebased 99f00e182), evidence/elf/r25-727",
+    "H4 Round26 729": "475675bf5 (rebased ed6d9819c), evidence/elf/r26-729",
+    "H5 Round26 748": "evidence/elf/r26-748-cpi"
   },
   "whole_elf_equal": false,
   "goal_complete": false

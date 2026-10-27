@@ -32,6 +32,7 @@ def main():
     shutil.copytree(frontier / 'primary', src)
     for rel, digest in rec['changed_files_sha256'].items():
         assert sha(P / 'source' / rel) == digest, rel
+        (src / rel).parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(P / 'source' / rel, src / rel)
     sys.path.insert(0, str(frontier / 'inputs/scripts'))
     path = frontier / 'inputs/scripts/pump_build_verified.py'

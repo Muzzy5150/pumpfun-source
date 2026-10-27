@@ -6,7 +6,7 @@ SP=/private/tmp/claude-501/-Users-shawwalters-Documents-Codex-2026-10-24-pumpfun
 L=$SP/lanes/pump-hi
 WT=$L/wt
 name=$1; src=$2
-packet=${3:-$WT/repro/pump/main-contract-round26-20261027}
+packet=${3:-$WT/repro/pump/main-contract-round36-20261027}
 out=$WT/work/$name
 rm -rf "$out"
 cd "$WT"
