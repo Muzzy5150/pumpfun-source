@@ -1,0 +1,16 @@
+{
+ "scope": "pump-mid lane candidate = Round26 primary + patches/02 + patches/03 (see README).",
+ "base_round": "repro/pump/main-contract-round26-20261027",
+ "changed_files": {
+  "src/mayhem_virtual_params.rs": {
+   "base_sha256": "6eeae687e0f29176d48a4de0d57b0457f5e4fa498c17fd5de0520e162b5677da",
+   "sha256": "c6afe31750f9336b203b7d0cf74e2968b027e9a01e1fbe7ffd2619897e402fec"
+  },
+  "src/multi_hop_curve_swap.rs": {
+   "base_sha256": "f1e05d9576fd94a6052c27f5a3b39be2b1bcf4fc38285847b76bc5cc5537f53b",
+   "sha256": "4528da4ad79d67a648f8f6bed474e4516e0bed0e23501896521ae73437b02f21"
+  }
+ },
+ "candidate_sha256": "b120fa20eea758a3ac82c0898ff4e4abe37ad549b28dd87c964d40bcd653e148",
+ "unstripped_sha256": "dfe2e5d6ca1d1b4709d683e3780733bd7d48d8a077b99fccc86d567e74d8442b"
+}
