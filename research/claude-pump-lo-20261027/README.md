@@ -10,8 +10,10 @@ integration session's `score.py`. Whole-ELF identity remains false.
 
 | build | recipe | normalized | raw | matched text bytes |
 |---|---|---|---|---|
-| Round36 (`9cc0982e…` unstripped), reproduced byte-for-byte by `tools/r36_build.py` | official Round36 (Linux v1.44 SBF libs, text order, data-order certificate) | 738 | 145 | 900,520 |
-| **Round36 + p02–p04 + p06** (`886c7e61…`) — `evidence/r36-g5` | same official recipe | **743** | 145 | **906,872** |
+| Round37 (`1a4b0664…` unstripped), reproduced byte-for-byte by `tools/r36_build.py` | official Round36/37 recipe (Linux v1.44 SBF libs, text order, data-order certificate) | 744 | 175 | 924,192 |
+| **Round37 + p02–p04 + p06** (`9e6eb914…`) — `evidence/r37-g6` (this branch) | same official recipe, 0 stack warnings | **749** | 175 | **930,544** |
+| Round36 (`9cc0982e…`), reproduced byte-for-byte | same official recipe | 738 | 145 | 900,520 |
+| Round36 + p02–p04 + p06 (`886c7e61…`) — `evidence/r36-g5` | same official recipe, 0 stack warnings | 743 | 145 | 906,872 |
 | integration composite i1c (`cf809470…`) | harness `identity` (Linux v1.44 `sbpf-solana-solana` libs) | 778 | 135 | 984,768 |
 | **i1c + p06** (`20dd0332…`) — `evidence/i1c-p06` | same `identity` recipe, 0 stack warnings | **779** | 135 | **987,752** |
 
@@ -54,17 +56,19 @@ No normalized window and no raw window is lost in either comparison.
 * **0x3b598 (p04).** Byte-identical to 0x3b738 except for one leading argument that the body never
   reads (`minimum_balance(0)`); all three original callers pass 0 in r2, as the V2 callers pass `size = 0`.
 
-## Changed files (vs Round36 maintained source on this branch)
+## Changed files (vs Round37 maintained source on this branch)
 
 `programs/pump/src/buy.rs`, `programs/pump/src/legacy_native_payments.rs`,
 `programs/pump/src/v2_native_payments.rs`, `programs/pump/src/creator/collect_creator_fee.rs`,
-`programs/pump/src/creator/admin_cto.rs` (call site of the collector only; p01 is already in Round36).
+`programs/pump/src/creator/admin_cto.rs` (call site of the collector only; p01 is already in Round36/37).
 Full copies in `changed/`, unified diff in `source.patch`, and idempotent re-applicable scripts in
 `patches/p01…p06` (each asserts its anchors; `p05` is not used — see negative controls). For the
 integration composite, `evidence/i1c-p06/patch-vs-i1c.diff` is the only delta (p06).
 
 ## Builds and artifacts
 
+* `evidence/r37-g6/`: the same official recipe on Round37 + patches (this branch's source); the
+  wrapper again reproduces the published Round37 hashes (`r37base` lines in `SHA256SUMS`).
 * `evidence/r36-g5/`: official Round36 recipe (`tools/r36_build.py`: ordinary cache build, identity
   build with `identity-text.ld`, fresh data-order certificate, final build with `text-order.ld` and the
   certificate, Linux v1.44 SBF target-library profile). The same wrapper reproduces Round36's published
@@ -78,6 +82,8 @@ re-measured without rebuilding.
 
 ## Runtime differential (original vs candidate, captured upgradeable loader)
 
+`evidence/r37-g6/differential/SUMMARY.json` (Round37 official-recipe candidate: 20 suites / 4,136 cases,
+0 mismatches; diagnostic audit 4,134 log-bearing cases, 0 mismatches),
 `evidence/r36-g5/differential/SUMMARY.json` (Round36 official-recipe candidate: 18 suites / 3,657 cases,
 0 mismatches; diagnostic audit 3,655 log-bearing cases, 0 mismatches) and
 `evidence/r25-g3/differential/SUMMARY.json` (Round25 candidate, 17 suites / 3,503 cases, 0 mismatches,
@@ -93,6 +99,11 @@ the repository's `pump_diagnostic_audit`.
   inline in the call fixes the frame (`p05`) but moves the `system_program` load first; a `let` with
   `a.mint.key().as_ref()` does not borrow-check (E0716); `&a.mint.key().to_bytes()` fixes frame and load
   order but copies the key with four loads then four stores instead of the original's paired memcpy.
+* **0x3a7b8 `set_metaplex_creator` handler (3552 B), 418/419 instructions.** With the event emitted by
+  reference (`emit!(e); emit_cpi!(e);`, as for 0x2a8e8) the body has the original length and every
+  instruction but one: in the `emit_cpi!` invoke-failure path the original reloads the spilled
+  data-`Rc` pointer (`ldxdw r3,[r10-88]`) before the error-value loads, the candidate two slots later.
+  Not caused by the `ctx.accounts` alias (control `sync2`). Not adopted until exact.
 * **0x3cd50 `prepare_bonding_curve` (1280 B).** The original tests the funding Result tag before
   `current_size > 165`, re-materializes tag 2 and returns the funding value on both skip edges (payload
   register flows through, single exit). Controls: preserve-result (size-first), `and_then`, `match`,
@@ -106,13 +117,13 @@ the repository's `pump_diagnostic_audit`.
 ```sh
 # official Round36 recipe on this branch's maintained source (needs the Linux v1.44 SBF libraries)
 python3 research/claude-pump-lo-20261027/tools/r36_build.py --prepare-cache --root . \
-  --packet repro/pump/main-contract-round36-20261027 --source-directory programs/pump \
+  --packet repro/pump/main-contract-round37-20261027 --source-directory programs/pump \
   --output work/pump-lo-g5 --dependency-cache work/pump-lo-depcache \
   --target-library-directory ~/.cache/solana/v1.44-linux-probe/platform-tools/rust/lib/rustlib/sbf-solana-solana/lib
-python3 research/claude-pump-lo-20261027/tools/measure.py . repro/pump/main-contract-round36-20261027 work/pump-lo-g5/unstripped.so
+python3 research/claude-pump-lo-20261027/tools/measure.py . repro/pump/main-contract-round37-20261027 work/pump-lo-g5/unstripped.so
 # re-measure archived artifacts without building
-gzip -dc research/claude-pump-lo-20261027/evidence/r36-g5/unstripped.so.gz > /tmp/g5.so
-python3 research/claude-pump-lo-20261027/tools/measure.py . repro/pump/main-contract-round36-20261027 /tmp/g5.so
+gzip -dc research/claude-pump-lo-20261027/evidence/r37-g6/unstripped.so.gz > /tmp/g6.so
+python3 research/claude-pump-lo-20261027/tools/measure.py . repro/pump/main-contract-round37-20261027 /tmp/g6.so
 # apply to another round's / composite's maintained source
 for p in research/claude-pump-lo-20261027/patches/p0[1-46]*.py; do python3 $p <crate-dir>; done
 ```

@@ -5,7 +5,7 @@ Each entry: base, lane commit, unstripped sha256, gained / lost windows (hex sta
 
 ## Entries
 
-### 1. Round36 official recipe — commit 3311aff01
+### 1. Round36 official recipe — commit 3311aff01 (rebased onto Round37 as 7b350e34b)
 - base: Round36 (`repro/pump/main-contract-round36-20261027`, 738/145, unstripped 9cc0982e…; reproduced
   byte-for-byte from its archived primary by `tools/r36_build.py`)
 - patches: p02, p03, p04, p06 (p01 already in Round36)
@@ -16,7 +16,18 @@ Each entry: base, lane commit, unstripped sha256, gained / lost windows (hex sta
 - runtime: 18 suites / 3,657 cases, 0 mismatches; diagnostic audit 3,655 log-bearing, 0 mismatches
 - evidence: `evidence/r36-g5/`
 
-### 2. Integration composite i1c (identity recipe) — commit 3311aff01 (patch p06)
+### 3. Round37 official recipe — commit 7b350e34b (rebased source, unchanged patches)
+- base: Round37 (`repro/pump/main-contract-round37-20261027`, 744/175, unstripped 1a4b0664…; reproduced
+  byte-for-byte from its archived primary by `tools/r36_build.py`)
+- patches: p02, p03, p04, p06 (p01 already in Round37)
+- unstripped `9e6eb914567433262b4fdb8cf01a24dabda7e1c361a2ac692bf4b4e0f63e6112`,
+  candidate `19d90a81ecad9ccdc03cad16a6ff1f47e841c81a19ba0913c4c8f3400eb7a7b3`
+- result 749/175, matched text 930,544 B
+- gained: 0x340, 0x2a8e8, 0x3b598, 0x3b738, 0x8cc58 · lost: none · raw lost: none · stack warnings: 0
+- runtime: 20 suites / 4,136 cases, 0 mismatches; diagnostic audit 4,134 log-bearing, 0 mismatches
+- evidence: `evidence/r37-g6/`
+
+### 2. Integration composite i1c (identity recipe) — commit 7b350e34b (patch p06)
 - base: i1c 778/135, unstripped cf8094709b104e221942e1cfe121fffe5eec1ae96a77ad3eb46c5c8ddd31a495
 - delta: p06 only (`evidence/i1c-p06/patch-vs-i1c.diff`); p03/p04 are already in i1c verbatim, p02 as
   `let amount=…`
@@ -48,6 +59,9 @@ Each entry: base, lane commit, unstripped sha256, gained / lost windows (hex sta
 | 0x2a8e8 | cv1 (`quote_token_program` as &AccountInfo, system_program unpromoted) | worse: argument shapes swapped |
 | | cv2 (export collect, `system_program: &AccountInfo`) | prologue matches; extra event copy remains |
 | | cv3 (= p06, + `emit!(event)` without clone) | **matches** |
+| all `emit!(x.clone())` | global by-reference emit (40 sites) on i1c+p06 | 779, no gain, no loss (not adopted) |
+| 0x3a7b8 sync | by-reference emit | 3552 B, 418/419 (one reload in the CPI error path) |
+| | + no `ctx.accounts` alias (sync2) | unchanged 418/419 |
 
 ## Resume notes
 
