@@ -216,6 +216,10 @@ def verify_documents(l31, l32):
     require_equal(insertions, EXPECTED_INSERTIONS, "diagnostic insertion census")
     return {
         "verified": True,
+        # Compatibility keys consumed by the independent L32 packet verifier.
+        "pairs": EXPECTED_CASES,
+        "candidate_insert_only": len(changed_paths),
+        "unexpected_count": 0,
         "suites": EXPECTED_SUITES,
         "cases": EXPECTED_CASES,
         "original_log_sequences_changed": 0,
