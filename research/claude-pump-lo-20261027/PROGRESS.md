@@ -44,6 +44,15 @@ Each entry: base, lane commit, unstripped sha256, gained / lost windows (hex sta
 - runtime: 17 suites / 3,503 cases, 0 mismatches · evidence: `evidence/r25-g3/`
 - p01 (0x29518) was integrated into Round36 verbatim; p02–p04 into the integration composite.
 
+## Restart status (2026-10-27 ~21:45, after the 20:43 /tmp wipe)
+- Worktree recreated on `claude/pump-lo-20261027` at `fbf3d7392`; `61f126052` adds the stdlib `verify.py`.
+- Baseline now: Pump session genuine composite `deliveries/integ-genuine-r37-04` = 806/165 (unstripped
+  5a13b87f…, candidate 4e9f82da…), reproduced byte-for-byte with `harness/fastbuild.py` (identity recipe,
+  runtime_valid, 0 stack warnings) and scored with `harness/score.py --baseline base/round37/inventory.json`.
+  It already contains this lane's p02–p04/p06 gains (0x340, 0x2a8e8, 0x3b598, 0x3b738, 0x8cc58).
+- Awaiting the coordinator's confirmed `targets/libinst.json` set (26 of 35 still unmatched in the
+  composite); read-only identification via `tools/ident.py` (callers/callees/constants per window).
+
 ## Experiment log (negative controls and partial results)
 
 | target | variant | result |
