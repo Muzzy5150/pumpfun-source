@@ -1,12 +1,11 @@
 {
- "base": "claude-mayhem-work/mayhem-env/parent-433 (cp4: stripped c1f25d01, symbols 73c28d5e)",
- "candidate_sha256": "ebf8618f4cf8b1602aa15b1809e557c2c9f7c8759ffe219157eff416d80b59fd",
- "symbols_sha256": "22eecafd8a0797ce1f8d9b50a5a3d8f0f807585ff57f45edb12104ae5a8e7396",
- "source_patch_sha256": "09475e5440eb53f241481bc5dd3c564c2162cee78996a84963ed7a8d67452246",
- "matched": 433,
+ "base": "claude-mayhem-work/mayhem-env/parent-434 (cp4 + O0073: stripped e0d0d0c3, symbols 828751f9); source.patch also applies to parent-433",
+ "candidate_sha256": "8e8a25f926f24594692fd0a53135d81666bb623c1a53135b93a2b873e746624a",
+ "symbols_sha256": "c78f70390ae691a5a3e19192629d85230c8a904ef966044241d6067c46365431",
+ "source_patch_sha256": "9d1e2f3d8c9ee91e60d88dfac430a59a53f8e50177332cca2f7748793b3230ad",
+ "matched": 434,
  "raw": 100,
  "unmatched": [
-  "O0073",
   "O0076",
   "O0077",
   "O0079",
@@ -16,6 +15,6 @@
   "O0084"
  ],
  "sell_v2_handler_bytes": [
-  17896
+  17912
  ]
 }

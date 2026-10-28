@@ -94,3 +94,18 @@ Source (`ir/spec*.json`, real builds):
 - Next: emit IR for w14 and w17 and diff them with `llc` to find which IR difference moves the construction region. It may be the extended lifetime of the `&[seeds]` temporary, or the placement of the new error block.
 - **Late `virtual_sol_reserves` load:** v13 (inline read on top of v12) scored 530 against 470, still negative. Retry after the cap-order fix (pump-lo).
 - **CPI construction region:** the account clone order (accounts-struct field offsets 176, 96, 24, 32, 80, 88, 40, 120, …, 72, 168, 176) equals the original's. The remaining differences there are register and stack scheduling.
+
+## w23: post-CPI result drop order (2026-10-27 ~22:50) — committed
+
+- **IR diff w14 vs w17** (normalized names): the functions differ only in block order. w17 moves the error-construction block to right after the call. The CPI construction IR is identical, so the machine differences there come from register allocation and block order.
+- **No-JumpThreading diagnosis:** v14 scores 564 and w20 scores 666, both worse, so JumpThreading as in our default build matches the original.
+- **w23 / w24:** the CPI `Result` is bound inside a block expression that ends right after the error is built (`if is_ok` and `match` versions are identical).
+  - O0084: **17,912 bytes, 468 lines**; the post-CPI region takes the original shape.
+  - 434/441, 100 raw-local, 4,370 edges, 470 Source records, no losses, 0 `Stack offset` warnings.
+  - 7/7 SellV2 Source records equal; trade suites 6,636 cases, 0 mismatches, 0 non-compute log differences.
+  - Stripped `8e8a25f926f24594692fd0a53135d81666bb623c1a53135b93a2b873e746624a`, symbols `c78f70390ae691a5a3e19192629d85230c8a904ef966044241d6067c46365431`.
+- **Remaining post-CPI difference:** the original spills and reloads r8 on the Ok path (`ldxdw r8, [r10-1808]; ja @14848`); ours does not. This is register allocation.
+- **Next targets:**
+  - the event tail (original 15,240–16,700: field load order for the `SellEvent` tuple, including a 29-line block moved from 16,248 to 16,704);
+  - the 10,000–11,000 CPI account-array copy order;
+  - the late `vs` load, after pump-lo's cap reorder.

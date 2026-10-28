@@ -4,7 +4,7 @@ Lane `pump-mid`, on the Mayhem **433** parent: `claude-mayhem-work/mayhem-env/pa
 Target: O0084 `sell_v2_handler` (original `0x26db8` / 159,160, 18,096 bytes).
 
 **No window is gained** and nothing is lost:
-- 433/441 normalized and 100 raw-local are preserved;
+- 434/441 normalized (on parent-434) and 100 raw-local are preserved;
 - positive direct-call edges and Source records are unchanged (`measure/`);
 - there are no `Stack offset` warnings.
 
@@ -15,7 +15,8 @@ The packet ships one behaviour-neutral source change that moves O0084 measurably
 | Original | 18,096 | 1 | 0 |
 | 433 parent | 17,960 | 0.7887 | 906 |
 | 433 + v01 (price before scaled) | 17,888 | 0.8687 | 544 |
-| 433 + `source.patch` (v14) | 17,896 | 0.8853 | **469** |
+| 433/434 + v14 | 17,896 | 0.8853 | 469 |
+| **434 + `source.patch` (w23)** | **17,912** | **0.8872** | **468** |
 
 "Masked" means the `r10` frame offsets, registers, call and lddw immediates and branch displacements are all masked (`tools/irx.py`). It is a progress gauge only; matching is decided by the repository normalizer in `measure/`.
 
@@ -36,6 +37,20 @@ v01 detail:
 - The 14 trade suites pass: **6,636 cases, 0 mismatches, 0 non-compute log differences**.
 - The rebuilt function equals the `llc` output of the parent IR with `umul.with.overflow` sunk below the `vt == 0` branch (IR experiment `i1`).
 - The original therefore tests `virtual_token_reserves == 0` before multiplying `reference * tolerance`.
+
+## Post-CPI result drop (w23)
+
+The original builds the `PumpCpiFailed` AnchorError first and drops the CPI's `Err` payload afterwards. Ours (`if sell_v2(…).is_ok()`) dropped the `Result` at the end of the `if` condition, before building the error.
+
+**w23 fixes this** by binding the `Result` inside a block that ends right after the error is built: `{ let outcome = sell_v2(…); if outcome.is_ok() { Ok(()) } else { Err(error!(..)) } }`.
+- The call's `&[seeds]` temporary still dies at the end of the call statement, so the CPI account-info construction keeps v14's code.
+- The post-CPI region now has the original shape: `mov r7, r0; mov r6, r1`, then the error built, then the drop.
+
+**Diagnosis behind it.** The w14 and w17 IR differ only in block order: the error-construction block moves directly after the call. The construction-region code is identical in IR, so the machine-code changes there are register allocation following block order.
+- Every form that extends the `&[seeds]` temporary's lifetime (`match` / `if let` / `map_err` on the call, w17–w19) or names the signer (w20–w22) perturbs it.
+- With MIR JumpThreading off (diagnosis only), v14 scores 564 and w20 scores 666, so the original was built with JumpThreading behaving as ours does.
+
+The packet now ships the w23 build on **parent-434**: 434/441, 100 raw-local, no losses, 0 `Stack offset` warnings, 7/7 Source records equal to the original. `source.patch` applies unchanged to parent-433 and parent-434.
 
 ## IR-level findings (llc from the same v1.54 toolchain; `ir/exps*.py`)
 
@@ -82,6 +97,6 @@ HOME=$(mktemp -d) python3 -B research/claude-pump-mid-mayhem-o0084/verify.py
 ```
 
 `verify.py` uses only the standard library and the repository's `research/mayhem-provider-sharing/reader.py`. It checks the artifact hashes and the patch hash.
-It recomputes 433 normalized and 100 raw-local windows from `artifacts/symbols.so.gz`, the 8 unmatched windows, and the 17,896-byte SellV2 body, and compares all of them with `CLAIM.json`.
+It recomputes 434 normalized and 100 raw-local windows from `artifacts/symbols.so.gz`, the 7 unmatched windows, and the 17,912-byte SellV2 body, and compares all of them with `CLAIM.json`.
 The 14 per-suite outputs (61 MB) are kept out of the packet; `runtime/suite-output-SHA256SUMS` binds them.
 `tools/irx.py` (IR surgery and scoring) and `tools/var.py` (parallel source variants) are the lane tools; `ir/` holds every experiment spec.

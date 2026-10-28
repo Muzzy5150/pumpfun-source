@@ -3,7 +3,7 @@
     "/Users/shawwalters/Documents/Codex/2026-10-24/claude-mayhem-work/mayhem-b/build/layout-lane-linux-target2-sysroot/bin/cargo",
     "rustc",
     "--manifest-path",
-    "/Users/shawwalters/Documents/Codex/2026-10-24/claude-mayhem-work/pm-o84/roots/pm-o84-v14/programs/mayhem/Cargo.toml",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/claude-mayhem-work/pm-o84/roots/pm-o84-w23/programs/mayhem/Cargo.toml",
     "--release",
     "--target",
     "sbpf-solana-solana",
@@ -16,9 +16,9 @@
     "--remap-path-prefix=src/=programs/mayhem-program/src/",
     "--remap-path-prefix=src/account_wrapper.rs=src/account_wrapper.rs",
     "-Clinker=/Users/shawwalters/Documents/Codex/2026-10-24/claude-mayhem-work/mayhem-b/build/qualified/linker.py",
-    "-Clink-arg=-Map=/Users/shawwalters/Documents/Codex/2026-10-24/claude-mayhem-work/mayhem-b/out/builds/pm-o84-v14/clean.map"
+    "-Clink-arg=-Map=/Users/shawwalters/Documents/Codex/2026-10-24/claude-mayhem-work/mayhem-b/out/builds/pm-o84-w23/clean.map"
   ],
-  "cwd": "/Users/shawwalters/Documents/Codex/2026-10-24/claude-mayhem-work/pm-o84/roots/pm-o84-v14",
+  "cwd": "/Users/shawwalters/Documents/Codex/2026-10-24/claude-mayhem-work/pm-o84/roots/pm-o84-w23",
   "environment_overrides": {
     "RUSTC": "/Users/shawwalters/Documents/Codex/2026-10-24/claude-mayhem-work/mayhem-b/build/layout-lane-linux-target2-sysroot/bin/rustc",
     "RUSTDOC": "/Users/shawwalters/Documents/Codex/2026-10-24/claude-mayhem-work/mayhem-b/build/layout-lane-linux-target2-sysroot/bin/rustdoc",
@@ -41,8 +41,8 @@
     "src/checked_program.rs": "fbf8eeaec04bc5ac5534b4a375f221fd8c3787a9a443e63d332ecc0a6395b7fb",
     "src/lib.rs": "b1dce2e8eb32515f782a96d9dca7fed9a282b226e41879bad5152d9e207144ef",
     "src/state.rs": "9031f3c39aab144efac4e41510c2b24de0427b4856b8eeaca26b234b3ebcfaad",
-    "src/instructions/pump_interface_v2.rs": "3d54f31d36aebdfdef0de849bcd1caeaace00b4099ce87a25cb8df3aff592027",
-    "src/instructions/fee_recipients.rs": "aa37caaae36f21fadf48b033866ff1a7529b4fb5f123c8ea7f40c73a2b650172",
+    "src/instructions/pump_interface_v2.rs": "68465b8441a8053d08b1fdda5e3f25abf473f53e8321c6210477d622c658ddd7",
+    "src/instructions/fee_recipients.rs": "53fe2d868fa469f88bb15db09f5c05931ef4ba0a443a984f3a8bff1b53569a1a",
     "src/instructions/buy_v2.rs": "b0092515fa54e29536198c4d94106da0888855e35eac4bd2fb11c9a8c384e6b7",
     "src/instructions/sell_pump_swap.rs": "673b183a4d22c2925bdc53ac75308df597523237061cdad0fed461cb17982861",
     "src/instructions/sell_v2.rs": "d019d4a3e578641d45884613369fea767f28582c0a7e9c1de2fe8f096247e9a9",
