@@ -9,7 +9,7 @@ Coordinate-only, nearmiss, identity and libinst families belong to the "Main pum
 ### Gain 1 — patches 02, 03 (measured on Round25, committed on Round26)
 
 - Base round: Round26 (`repro/pump/main-contract-round26-20261027`, origin/main `0212e1d54`), 721 normalized / 123 raw.
-- Lane commit: `4fa246a9bb7d0aba098af73ca0f484ac4d1a5310`.
+- Lane commit: `b975a696d` (rebased onto Round36; originally `4fa246a9b` on Round26).
 - Unstripped sha256: `dfe2e5d6ca1d1b4709d683e3780733bd7d48d8a077b99fccc86d567e74d8442b`.
 - Stripped sha256: `b120fa20eea758a3ac82c0898ff4e4abe37ad549b28dd87c964d40bcd653e148`.
 - Result: 724 normalized / 123 raw, 879,784 text bytes.
@@ -37,3 +37,16 @@ Coordinate-only, nearmiss, identity and libinst families belong to the "Main pum
 
 - 0xcd3d8 SetMayhemVirtualParams::try_accounts: 8,472 vs 8,504 bytes after patch 03.
   - Only the associated-token constraint region differs: the original keeps a 32-byte copy of `token_program.key()`.
+
+## Restart after the 20:43 machine reboot (2026-10-27 ~21:45)
+
+- Scratch (`/private/tmp/...`) was wiped. The branch survived (`e0ebe1e6e`).
+  Analysis tools live in this packet's `tools/`. Builds now use the Pump session's durable harness
+  `claude-pump-work/harness/fastbuild.py`: the identity recipe (Linux v1.44 `sbpf-solana-solana` target libraries),
+  with the internal slot lock on the shared `claude-pump-work/locks` pool.
+- Integration status: patch 02 (CurveHop operand order, 0xdd700) and the patch 03 layout windows
+  (0xcf510 and 0x1255a8; integrated with `Interface<TokenInterface>` kept) are already in the Pump composite.
+- Baseline now: `claude-pump-work/deliveries/integ-genuine-r37-04/src`, 806 / 165 against `base/round37/inventory.json`.
+  - Fastbuild reproduced unstripped `5a13b87f89d0a18232a7b5d6a3146871cd21d75469c3fd7a0ef886cea06e911b`.
+  - `runtime_valid` is true, with no stack warnings.
+- Next: wait for the coordinator's confirmed slice (`targets/nearmiss.json` + a chosen set), then report only gains beyond the composite.
