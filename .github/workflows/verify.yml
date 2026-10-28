@@ -393,6 +393,11 @@ jobs:
             commands: |
               python -I -B research/claude-pump-integration-20261027/verify_round37_12.py
               python -I -B research/claude-pump-integration-20261027/test_round37_12.py
+          - suite: pump-l32-log-drift
+            commands: |
+              python -I -B research/claude-pump-integration-20261027/r37-layout-32/runtime-review/retained_vs_fresh.py
+              python -I -B research/claude-pump-integration-20261027/r37-layout-32/runtime-review/test_retained_vs_fresh.py
+              python -O -I -B research/claude-pump-integration-20261027/r37-layout-32/runtime-review/test_retained_vs_fresh.py
           - suite: pump-1
             commands: |
               python -B research/pump-typeid-reference-proof/verify.py
