@@ -1,0 +1,32 @@
+--- a/src/incentives.rs	2026-10-27 21:53:42
++++ b/src/incentives.rs	2026-10-27 22:07:28
+@@ -50,13 +50,14 @@
+     day_number: u64,
+     token_supply_per_day: u64,
+ ) -> Result<()> {
++    let mint = ctx.accounts.mint.key();
+     let timestamp = Clock::get()?.unix_timestamp;
+     crate::token_incentives::volume_accumulator::update_schedule(
+         &mut ctx.accounts.global_volume_accumulator,
+         start_time,
+         end_time,
+         seconds_in_a_day,
+-        &ctx.accounts.mint.key(),
++        &mint,
+         day_number,
+         token_supply_per_day,
+         timestamp,
+@@ -66,11 +67,11 @@
+         end_time,
+         day_number,
+         token_supply_per_day,
+-        mint: ctx.accounts.mint.key(),
++        mint,
+         seconds_in_a_day,
+         timestamp,
+     };
+-    emit!(event.clone());
++    emit!(event);
+     emit_cpi!(event);
+     msg!(
+         "GlobalVolumeAccumulator={:?}",
