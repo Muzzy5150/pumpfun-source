@@ -393,6 +393,12 @@ jobs:
             commands: |
               python -I -B research/claude-pump-integration-20261027/verify_round37_12.py
               python -I -B research/claude-pump-integration-20261027/test_round37_12.py
+          - suite: pump-l32-signed-runtime
+            commands: |
+              python -I -B research/claude-pump-integration-20261027/r37-layout-32/runtime-review/audit_saved_runtime.py
+              python -I -B research/claude-pump-integration-20261027/r37-layout-32/runtime-review/test_audit_saved_runtime.py
+              python -O -I -B research/claude-pump-integration-20261027/r37-layout-32/runtime-review/test_audit_saved_runtime.py
+              git diff --exit-code -- research/claude-pump-integration-20261027/r37-layout-32
           - suite: pump-1
             commands: |
               python -B research/pump-typeid-reference-proof/verify.py
