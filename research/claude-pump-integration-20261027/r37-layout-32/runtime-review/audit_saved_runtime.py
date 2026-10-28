@@ -1,231 +1,322 @@
 #!/usr/bin/env python3
-"""Portable, read-only audit of the saved L32 paired runtime outcomes."""
+"""Hermetic, read-only audit of the retained L32 signed runtime evidence."""
+from __future__ import annotations
+
+from collections import Counter
 from pathlib import Path
 import base64
-import collections
+import difflib
 import gzip
 import hashlib
-import importlib.util
 import json
-import sys
+import re
 
-if not __debug__:
-    raise SystemExit('optimized Python disables assertion gates; rerun without -O')
-sys.dont_write_bytecode = True
 
-from solders.transaction import VersionedTransaction
+class VerificationError(RuntimeError):
+    """The saved evidence failed a fail-closed verification rule."""
+
 
 HERE = Path(__file__).resolve().parent
-P = HERE.parent
-ROOT = next(path for path in P.parents if (path / 'evidence/original/pump/deployed.so').is_file())
-ORACLE_DIR = ROOT / 'repro/pump/main-contract-round47-20261027/ordinary-logs'
-sys.path.insert(0, str(ORACLE_DIR))
-spec = importlib.util.spec_from_file_location('ordered_log_audit', ORACLE_DIR / 'audit.py')
-oracle = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(oracle)
+PACKAGE = HERE.parent
+ROOT = next((p for p in PACKAGE.parents if (p / "evidence/original/pump/deployed.so").is_file()), None)
+if ROOT is None:
+    raise VerificationError("repository root containing the captured Pump executable was not found")
+
+PUMP = "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"
+ORIGINAL = "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d"
+CANDIDATE = "45c5af2485f6d8138b471cbd6b56e0bf59135dcefea15f055d6387b4f1ac0bca"
+RECEIPT = "1699fc200680b6bd0e36592eab2805b434cb3eb255c2e7193f6af4b8b9c67aab"
+EXPECTED_CASES = 10_468
+EXPECTED_SUITES = 44
+EXPECTED_FAMILIES = Counter({
+    "source_file_path_only": 52,
+    "missing_creator_non_system_notice": 5,
+    "missing_canonical_pool_notice": 3,
+    "ordinary_message_order": 6,
+    "missing_creator_quote_frozen_notice": 9,
+})
+NOTICE_FAMILIES = {
+    "Program log: Creator is not a system-owned wallet; fees left in the vaults":
+        "missing_creator_non_system_notice",
+    "Program log: No canonical pump pool for this mint; curve only":
+        "missing_canonical_pool_notice",
+    "Program log: Creator quote token account is frozen; fees left in the vaults":
+        "missing_creator_quote_frozen_notice",
+}
+COMPUTE = re.compile(r"^Program \S+ consumed \d+ of \d+ compute units$")
+SOURCE = re.compile(r"((?:[A-Za-z0-9_.-]+/)+[A-Za-z0-9_.-]+\.rs):\d+(?::\d+)?")
+SOURCE_FILE = re.compile(r"(?:[A-Za-z0-9_.-]+/)+[A-Za-z0-9_.-]+\.rs:<source>")
+LOG_KEYS = {"logs", "relevant_logs"}
+COMPUTE_KEYS = {"compute_units", "compute_units_consumed"}
 
 
-def require(condition, message):
+def require(condition: bool, message: str) -> None:
     if not condition:
-        raise RuntimeError(message)
+        raise VerificationError(message)
 
 
-def sha(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def sha256(path: Path) -> str:
+    require(path.is_file() and not path.is_symlink(), f"missing, non-regular, or linked input: {path}")
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-doc = json.loads(gzip.decompress((P / 'full.json.gz').read_bytes()))
-original = sha(ROOT / 'evidence/original/pump/deployed.so')
-candidate = sha(P / 'candidate.so')
-require(doc['original_sha256'] == original, 'original executable binding mismatch')
-require(doc['candidate_sha256'] == candidate, 'candidate executable binding mismatch')
-require(len(doc['suites']) == 44 and doc['case_count'] == 10468, 'unexpected corpus scope')
-
-counts = collections.Counter()
-log_families = collections.Counter()
-differences = []
-state_differences = []
-case_transaction_hashes = set()
-nested_outcome_transaction_hashes = set()
-all_outcome_transaction_hashes = set()
-all_corpus_transaction_hashes = set()
-PUMP = oracle.PUMP
+def _unique_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise VerificationError(f"duplicate JSON object key: {key!r}")
+        result[key] = value
+    return result
 
 
-def normalize(value, key=''):
-    if key in ('logs', 'relevant_logs'):
-        require(isinstance(value, list) and all(isinstance(line, str) for line in value), 'invalid logs')
-        return oracle.norm(value)
+def read_document(path: Path):
+    require(path.is_file() and not path.is_symlink(), f"missing, non-regular, or linked receipt: {path}")
+    try:
+        raw = path.read_bytes()
+        decoded = gzip.decompress(raw) if raw[:2] == b"\x1f\x8b" else raw
+        return json.loads(decoded, object_pairs_hook=_unique_object)
+    except VerificationError:
+        raise
+    except Exception as exc:
+        raise VerificationError(f"cannot decode {path}: {exc}") from exc
+
+
+def index_pairs(suites):
+    require(isinstance(suites, dict), "suites is not an object")
+    rows = {}
+
+    def walk(value, path):
+        if isinstance(value, dict):
+            if isinstance(value.get("original"), dict) and isinstance(value.get("candidate"), dict):
+                require(path not in rows, f"duplicate case identity: {path}")
+                rows[path] = value
+                return
+            for key, child in value.items():
+                walk(child, f"{path}/{key}")
+        elif isinstance(value, list):
+            for index, child in enumerate(value):
+                walk(child, f"{path}/{index}")
+
+    for suite, value in suites.items():
+        walk(value, suite)
+    return rows
+
+
+def normalized_structure(value, expected_hash: str):
+    """Retain all structured behavior and replace only the checked Pump executable."""
     if isinstance(value, dict):
-        return {key: normalize(child, key) for key, child in value.items()
-                if key not in ('compute_units', 'compute_units_consumed')}
+        return {
+            key: normalized_structure(child, expected_hash)
+            for key, child in value.items()
+            if key not in LOG_KEYS and key not in COMPUTE_KEYS
+        }
     if isinstance(value, list):
-        return [normalize(child) for child in value]
+        return [normalized_structure(child, expected_hash) for child in value]
+    if isinstance(value, str) and value == expected_hash:
+        return "<checked-pump-executable>"
     return value
 
 
-def verify_transaction(encoded):
-    raw = base64.b64decode(encoded, validate=True)
-    results = VersionedTransaction.from_bytes(raw).verify_with_results()
-    require(bool(results) and all(results), 'transaction signature verification failed')
+def normalized_logs(lines):
+    require(isinstance(lines, list) and all(isinstance(line, str) for line in lines),
+            "logs must be a list of strings")
+    return [SOURCE.sub(r"\1:<source>", line) for line in lines if not COMPUTE.fullmatch(line)]
+
+
+def outer_pump_logs(lines):
+    lines = normalized_logs(lines)
+    begin = next((index for index, line in enumerate(lines)
+                  if line.startswith(f"Program {PUMP} invoke [")), None)
+    if begin is None:
+        return None
+    depth = 0
+    for index in range(begin, len(lines)):
+        line = lines[index]
+        if line.startswith(f"Program {PUMP} invoke ["):
+            depth += 1
+        elif line == f"Program {PUMP} success" or line.startswith(f"Program {PUMP} failed:"):
+            depth -= 1
+            require(depth >= 0, "Pump invocation nesting underflow")
+            if depth == 0:
+                return lines[begin:index + 1]
+    raise VerificationError("unterminated outer Pump invocation")
+
+
+def classify_logs(original, candidate, context: str):
+    if original == candidate:
+        return None
+    original_without_files = [SOURCE_FILE.sub("<source-file>:<source>", line) for line in original]
+    candidate_without_files = [SOURCE_FILE.sub("<source-file>:<source>", line) for line in candidate]
+    if original_without_files == candidate_without_files:
+        return "source_file_path_only"
+
+    operations = [op for op in difflib.SequenceMatcher(
+        a=original, b=candidate, autojunk=False
+    ).get_opcodes() if op[0] != "equal"]
+    if len(operations) == 1:
+        operation, left_start, left_end, right_start, right_end = operations[0]
+        if operation == "delete" and left_end == left_start + 1 and right_start == right_end:
+            family = NOTICE_FAMILIES.get(original[left_start])
+            if family:
+                return family
+    if Counter(original) == Counter(candidate):
+        return "ordinary_message_order"
+    raise VerificationError(f"{context}: unclassified ordered-log difference")
+
+
+def _transaction_type():
+    try:
+        from solders.transaction import VersionedTransaction
+    except Exception as exc:
+        raise VerificationError("pinned dependency solders is required for signature verification") from exc
+    return VersionedTransaction
+
+
+def verify_transaction(encoded: str, context: str, transaction_type=None):
+    transaction_type = transaction_type or _transaction_type()
+    try:
+        raw = base64.b64decode(encoded, validate=True)
+        transaction = transaction_type.from_bytes(raw)
+        checks = transaction.verify_with_results()
+    except Exception as exc:
+        raise VerificationError(f"{context}: invalid serialized transaction: {exc}") from exc
+    require(checks and all(checks), f"{context}: signature verification failed")
+    require(bytes(transaction) == raw, f"{context}: transaction decode is not byte-stable")
     return hashlib.sha256(raw).hexdigest()
 
 
-def outcome_signatures(value, nested=False):
+def transactions(value, path=""):
     if isinstance(value, dict):
         for key, child in value.items():
-            if key == 'transaction_base64':
-                digest = verify_transaction(child)
-                counts['outcome_transaction_occurrences'] += 1
-                all_outcome_transaction_hashes.add(digest)
-                if nested:
-                    counts['nested_outcome_transaction_occurrences'] += 1
-                    nested_outcome_transaction_hashes.add(digest)
-                else:
-                    counts['case_transaction_occurrences'] += 1
-                    case_transaction_hashes.add(digest)
+            child_path = f"{path}/{key}"
+            if key == "transaction_base64":
+                require(isinstance(child, str), f"{child_path}: transaction is not base64 text")
+                yield child_path, child
             else:
-                outcome_signatures(child, True)
-    elif isinstance(value, list):
-        for child in value:
-            outcome_signatures(child, True)
-
-
-def corpus_signatures(value):
-    if isinstance(value, dict):
-        for key, child in value.items():
-            if key == 'transaction_base64':
-                counts['corpus_transaction_occurrences'] += 1
-                all_corpus_transaction_hashes.add(verify_transaction(child))
-            else:
-                corpus_signatures(child)
-    elif isinstance(value, list):
-        for child in value:
-            corpus_signatures(child)
-
-
-def without_logs(value):
-    if isinstance(value, dict):
-        return {key: without_logs(child) for key, child in value.items()
-                if key not in ('logs', 'relevant_logs')}
-    if isinstance(value, list):
-        return [without_logs(child) for child in value]
-    return value
-
-
-def walk(value, path):
-    if isinstance(value, dict):
-        if isinstance(value.get('original'), dict) and isinstance(value.get('candidate'), dict):
-            original_outcome, candidate_outcome = value['original'], value['candidate']
-            counts['pairs'] += 1
-            normalized_original = normalize(original_outcome)
-            normalized_candidate = normalize(candidate_outcome)
-            if 'program_sha256' in normalized_original:
-                require(normalized_original['program_sha256'][PUMP] == original,
-                        f'{path}: original program binding mismatch')
-                require(normalized_candidate['program_sha256'][PUMP] == candidate,
-                        f'{path}: candidate program binding mismatch')
-                normalized_original['program_sha256'] = dict(normalized_original['program_sha256'])
-                normalized_candidate['program_sha256'] = dict(normalized_candidate['program_sha256'])
-                normalized_original['program_sha256'][PUMP] = '<checked-pump-artifact>'
-                normalized_candidate['program_sha256'][PUMP] = '<checked-pump-artifact>'
-                counts['checked_pair_program_maps'] += 1
-            if normalized_original != normalized_candidate:
-                differences.append({
-                    'path': path,
-                    'keys': sorted(key for key in normalized_original.keys() | normalized_candidate.keys()
-                                   if normalized_original.get(key) != normalized_candidate.get(key)),
-                })
-            if without_logs(normalized_original) != without_logs(normalized_candidate):
-                state_differences.append(path)
-            left = oracle.scope(oracle.norm(original_outcome['logs']))
-            right = oracle.scope(oracle.norm(candidate_outcome['logs']))
-            if left is not None or right is not None:
-                counts['main_log_pairs'] += 1
-                if left != right:
-                    kind, _ = oracle.classify(left or [], right or [])
-                    log_families[kind] += 1
-            outcome_signatures(original_outcome)
-            outcome_signatures(candidate_outcome)
-            return
-        for key, child in value.items():
-            walk(child, path + '/' + key)
+                yield from transactions(child, child_path)
     elif isinstance(value, list):
         for index, child in enumerate(value):
-            walk(child, path + '/' + str(index))
+            yield from transactions(child, f"{path}/{index}")
 
 
-for suite_name, suite in doc['suites'].items():
-    require(suite.get('candidate_sha256', candidate) == candidate,
-            f'{suite_name}: candidate hash mismatch')
-    require(suite.get('original_sha256', original) == original,
-            f'{suite_name}: original hash mismatch')
-    walk(suite, suite_name)
-corpus_signatures(doc['suites'])
+def program_hashes(value, path=""):
+    if isinstance(value, dict):
+        for key, child in value.items():
+            child_path = f"{path}/{key}"
+            if key in ("executed_program_sha256", "candidate_sha256", "original_sha256"):
+                yield child_path, child
+            elif key == "program_sha256" and isinstance(child, dict) and PUMP in child:
+                yield f"{child_path}/{PUMP}", child[PUMP]
+            yield from program_hashes(child, child_path)
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            yield from program_hashes(child, f"{path}/{index}")
 
-require(counts['pairs'] == 10468, 'paired-case count mismatch')
-require(not state_differences, 'state differences found')
-require(without_logs(normalize({'after': {'a': {'lamports': 1}}, 'logs': []})) !=
-        without_logs(normalize({'after': {'a': {'lamports': 2}}, 'logs': []})),
-        'lamport mutation control failed')
-require(without_logs(normalize({'events': ['a'], 'logs': []})) !=
-        without_logs(normalize({'events': ['b'], 'logs': []})),
-        'event mutation control failed')
-require(oracle.norm(['Program log: x']) != oracle.norm(['Program log: y']),
-        'log mutation control failed')
 
-accounting = {
-    'direct_case_outcome_fields': {
-        'occurrences': counts['case_transaction_occurrences'],
-        'distinct': len(case_transaction_hashes),
-        'definition': 'transaction_base64 directly on each paired original/candidate outcome',
-    },
-    'nested_transactions_inside_outcomes': {
-        'occurrences': counts['nested_outcome_transaction_occurrences'],
-        'distinct': len(nested_outcome_transaction_hashes),
-        'definition': 'nested transaction_base64 fields inside paired outcomes',
-    },
-    'all_transactions_inside_outcomes': {
-        'occurrences': counts['outcome_transaction_occurrences'],
-        'distinct': len(all_outcome_transaction_hashes),
-        'definition': 'direct plus nested transaction fields inside paired outcomes',
-    },
-    'all_serialized_transactions_in_corpus': {
-        'occurrences': counts['corpus_transaction_occurrences'],
-        'distinct': len(all_corpus_transaction_hashes),
-        'definition': 'every transaction_base64, including calibration/setup records outside paired outcomes',
-    },
-}
-expected = {
-    'direct_case_outcome_fields': (18268, 2407),
-    'nested_transactions_inside_outcomes': (16, 2),
-    'all_transactions_inside_outcomes': (18284, 2409),
-    'all_serialized_transactions_in_corpus': (18343, 2411),
-}
-for name, (occurrences, distinct) in expected.items():
-    require(accounting[name]['occurrences'] == occurrences, f'{name}: occurrence mismatch')
-    require(accounting[name]['distinct'] == distinct, f'{name}: distinct mismatch')
+def audit(document, transaction_type=None):
+    require(document.get("original_sha256") == ORIGINAL, "receipt original digest changed")
+    require(document.get("candidate_sha256") == CANDIDATE, "receipt candidate digest changed")
+    require(document.get("case_count") == EXPECTED_CASES, "receipt case count changed")
+    suites = document.get("suites")
+    require(isinstance(suites, dict) and len(suites) == EXPECTED_SUITES, "receipt suite count changed")
+    require(not document.get("mismatches"), "recorded mismatch list is nonempty")
+    require(not document.get("diagnostics", {}).get("mismatches"), "diagnostic mismatch list is nonempty")
+    rows = index_pairs(suites)
+    require(len(rows) == EXPECTED_CASES, f"paired case census is {len(rows)}")
 
-report = {
-    'status': 'state_equal_with_unresolved_log_differences',
-    'scope': 'All saved paired outcomes and serialized signatures independently rechecked; no build or VM replay.',
-    'counts': dict(counts),
-    'transaction_accounting': accounting,
-    'state_differences': state_differences,
-    'all_observed_pair_differences': differences,
-    'ordered_main_log_difference_families': dict(log_families),
-    'non_filename_log_differences': sum(
-        value for key, value in log_families.items() if key != 'source_file_path_only'),
-    'normalization': [
-        'compute-unit fields and consumption lines excluded',
-        'source line and column coordinates normalized, filenames preserved',
-        'Pump artifact hashes checked separately; all other loaded hashes preserved',
-    ],
-    'original_sha256': original,
-    'candidate_sha256': candidate,
-    'full_receipt_sha256': sha(P / 'full.json.gz'),
-    'audit_sha256': sha(Path(__file__)),
-}
-(HERE / 'L32-RUNTIME-REVIEW.json').write_text(json.dumps(report, indent=2) + '\n')
-print(json.dumps({key: value for key, value in report.items()
-                  if key != 'all_observed_pair_differences'}, indent=2))
+    counts = Counter()
+    families = Counter()
+    distinct = set()
+    top_level = set()
+    nested = []
+    transaction_type = transaction_type or _transaction_type()
+    for path, row in rows.items():
+        original = row["original"]
+        candidate = row["candidate"]
+        require(normalized_structure(original, ORIGINAL) == normalized_structure(candidate, CANDIDATE),
+                f"{path}: structured behavior differs")
+
+        for side, outcome, expected in (
+            ("original", original, ORIGINAL), ("candidate", candidate, CANDIDATE),
+        ):
+            seen_hash = False
+            for hash_path, digest in program_hashes(outcome):
+                if digest in (ORIGINAL, CANDIDATE):
+                    require(digest == expected, f"{path}/{side}{hash_path}: executable identity swapped")
+                    seen_hash = True
+            if seen_hash:
+                counts["outcomes_with_checked_program_hash"] += 1
+
+            for tx_path, encoded in transactions(outcome):
+                digest = verify_transaction(encoded, f"{path}/{side}{tx_path}", transaction_type)
+                counts["signed_transaction_occurrences_reverified"] += 1
+                distinct.add(digest)
+                if tx_path == "/transaction_base64":
+                    top_level.add(digest)
+                    counts["top_level_signed_transaction_occurrences"] += 1
+                else:
+                    nested.append({"case": path, "side": side, "field": tx_path, "sha256": digest})
+
+        left = outer_pump_logs(original.get("logs", []))
+        right = outer_pump_logs(candidate.get("logs", []))
+        if left is None and right is None:
+            counts["neither_invokes_main"] += 1
+        else:
+            require(left is not None and right is not None, f"{path}: only one outcome invokes Pump")
+            counts["main_log_pairs"] += 1
+            family = classify_logs(left, right, path)
+            if family is None:
+                counts["equal_main_sequences"] += 1
+            else:
+                families[family] += 1
+
+    require(counts["signed_transaction_occurrences_reverified"] == 18_284,
+            "recursive signed transaction occurrence count changed")
+    require(len(distinct) == 2_409, "recursive distinct transaction count changed")
+    require(counts["top_level_signed_transaction_occurrences"] == 18_268,
+            "top-level signed transaction occurrence count changed")
+    require(len(top_level) == 2_407, "top-level distinct transaction count changed")
+    require(len(nested) == 16 and len({row["sha256"] for row in nested}) == 2,
+            "nested bootstrap transaction scope changed")
+    require(counts["main_log_pairs"] == 10_456,
+            f"main invocation pair count changed: {counts['main_log_pairs']}")
+    require(families == EXPECTED_FAMILIES, f"ordered-log family census changed: {dict(families)}")
+    require(sum(value for key, value in families.items() if key != "source_file_path_only") == 23,
+            "non-filename residual log count changed")
+
+    return {
+        "verified": True,
+        "scope": "retained offline receipts; no VM replay or live-chain access",
+        "suites": EXPECTED_SUITES,
+        "cases": EXPECTED_CASES,
+        "signed_transaction_occurrences_reverified": 18_284,
+        "distinct_signed_transactions": 2_409,
+        "top_level_transaction_occurrences": 18_268,
+        "top_level_distinct_transactions": 2_407,
+        "nested_bootstrap_transactions": nested,
+        "ordered_log_families": dict(sorted(families.items())),
+        "non_filename_log_differences": 23,
+        "filename_only_log_differences": 52,
+        "structured_mismatches": 0,
+        "normalization": [
+            "exact compute-unit scalar fields and consumption lines excluded",
+            "source line and column coordinates normalized; filenames preserved",
+            "checked original/candidate Pump executable substitution only",
+        ],
+        "original_sha256": ORIGINAL,
+        "candidate_sha256": CANDIDATE,
+        "full_receipt_sha256": RECEIPT,
+    }
+
+
+def verify():
+    receipt = PACKAGE / "full.json.gz"
+    require(sha256(ROOT / "evidence/original/pump/deployed.so") == ORIGINAL,
+            "captured original executable digest changed")
+    require(sha256(PACKAGE / "candidate.so") == CANDIDATE, "packaged candidate digest changed")
+    require(sha256(receipt) == RECEIPT, "retained full receipt digest changed")
+    return audit(read_document(receipt))
+
+
+if __name__ == "__main__":
+    print(json.dumps(verify(), indent=2, sort_keys=True))
