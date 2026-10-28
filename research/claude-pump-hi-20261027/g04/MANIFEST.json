@@ -1,0 +1,12 @@
+{
+ "base": "claude-pump-work/base/g04/pump (806/165, unstripped 5a13b87f89d0a18232a7b5d6a3146871cd21d75469c3fd7a0ef886cea06e911b; reproduced bit-for-bit by fastbuild.py identity)",
+ "apply": "cd <copy of base/g04/pump> && git apply -p1 source-on-g04.patch  (equivalently tools/apply_migrate_v2_accounts.py)",
+ "patch_sha256": "5009b661250ef9cf2436cbabc5a2a1a3635ab7fc0ed26ebfd0505aaad54758c8",
+ "recipe": "claude-pump-work/harness/fastbuild.py identity; runtime_valid true; stack_warnings []",
+ "gains_beyond_g04": [
+  "0xd5af0",
+  "0x12ba48"
+ ],
+ "counts": "808/165/1,069,560 (g04 806/165)",
+ "change": "H10: MigrateV2 #[event_cpi] + bonding_curve constraint in original evaluation order; migrate_v2.rs keeps 191 lines"
+}
