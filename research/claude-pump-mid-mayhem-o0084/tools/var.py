@@ -26,6 +26,7 @@ def run(v):
     base = f"{P}/{v.get('base', 'root')}"
     os.makedirs(root, exist_ok=True)
     subprocess.run(['rsync', '-a', '--delete', '--exclude', '.git', base + '/', root + '/'], check=True)
+    subprocess.run(['chmod', '-R', 'u+w', root], check=True)
     for f, old, new in v.get('reps', []):
         p = f'{root}/programs/mayhem/{f}'; s = open(p).read()
         if s.count(old) != 1:
@@ -39,7 +40,7 @@ def run(v):
         return label, {'error': 'build failed', 'log': log}
     stack = 'Stack offset' in open(out + '/stderr', errors='ignore').read()
     sc = score_elf(out + '/symbols.so')
-    m = subprocess.run([PY, '-B', B + '/measure.py', out + '/symbols.so', f'{MW}/mayhem-b/out/builds/pm-o84-1/symbols.so', '--json', f'{P}/out/{label}-measure.json'], capture_output=True, text=True)
+    m = subprocess.run([PY, '-B', B + '/measure.py', out + '/symbols.so', v.get('measure_base', f'{MW}/mayhem-b/out/builds/pm-o84-1/symbols.so'), '--json', f'{P}/out/{label}-measure.json'], capture_output=True, text=True)
     mj = json.load(open(f'{P}/out/{label}-measure.json'))
     return label, {'bytes': sc[0], 'pos': sc[1], 'ratio': sc[2], 'difflines': sc[3], 'stack_warning': stack,
                    'gains': mj['gains'], 'losses': mj['body_losses'] + mj['raw_losses'] + mj['edge_losses'] + mj['source_losses'],

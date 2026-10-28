@@ -65,3 +65,32 @@ Source (`ir/spec*.json`, real builds):
    - Then retry the late `vs` load.
    - Also try TECHNIQUES §7, the address-taken `native` flag, on the post-CPI native/token dispatch.
 3. CPI and event tail regions (see README).
+
+## Composition on 434 and post-CPI experiments (2026-10-27 ~22:40)
+
+**Composed on 434.** `source.patch` (v14) applied to `mayhem-env/parent-434` (cp4 + O0073, rebuilt here to `e0d0d0c3…` / `828751f9…`):
+- result: 434/441, 100 raw-local, 4,370 edges, 470 Source records, **no losses**, 0 `Stack offset` warnings;
+- O0084: 17,896 bytes, **469** masked lines (unchanged from 433);
+- hashes: stripped `30da05619050e81ddde80caeedae795df7dcb6bbccd37f70d7c7bbe7dbcbdfcb`, symbols `632fa065f63711b9cebe9f8b79842495b3cb8d44667435bf20eb6edce977b514`;
+- record: `measure/measure-v14-on-434.json`.
+
+**Post-CPI region (original 14376–14900): diagnosed, not closed.**
+- In the original, the handler keeps the CPI `Result` (r7/r6) and builds the `PumpCpiFailed` AnchorError first. Only then (14800–14832) does it drop the CPI's `Err` payload.
+- Ours (`if sell_v2(…).is_ok() {…} else {…}`) drops the `Result` at the end of the `if` condition, before building the error.
+- Forms that keep the `Result` until after the error exactly fix this region, but every one tried also perturbs the CPI account-info construction just before the call. None beats v14's 469:
+
+| Variant | Form | Bytes | Lines |
+| --- | --- | ---: | ---: |
+| w15 | `let outcome = sell_v2(…); if outcome.is_ok()` | 18,336 | 771 |
+| w16 | `let outcome = sell_v2(…); match outcome` | 18,336 | 771 |
+| w17 | `match sell_v2(…) { Ok(())=>Ok(()), Err(_)=>Err(error!(…)) }` | 17,960 | 696 (construction region at 3400–3700 reordered) |
+| w18 | `if let Ok(()) = sell_v2(…)` (edition 2021 keeps scrutinee temporaries) | 17,960 | 696 |
+| w19 | `.map_err(\|_\| error!(…))` | 17,960 | 696 |
+| w20 | named `signer` + named `CpiContext` + match | 17,960 | 527 (post-CPI fixed; last three clones 72/168/176 rescheduled) |
+| w21 | named `signer` + if | 17,936 | 589 |
+| w22 | named `signer` + inline context + match | 17,960 | 527 |
+
+- Interpretation: the original keeps both the inline `&[seeds]` temporary (no named signer) and a match-like extended-lifetime `Result`. The combination tried in w17 reorders a large block.
+- Next: emit IR for w14 and w17 and diff them with `llc` to find which IR difference moves the construction region. It may be the extended lifetime of the `&[seeds]` temporary, or the placement of the new error block.
+- **Late `virtual_sol_reserves` load:** v13 (inline read on top of v12) scored 530 against 470, still negative. Retry after the cap-order fix (pump-lo).
+- **CPI construction region:** the account clone order (accounts-struct field offsets 176, 96, 24, 32, 80, 88, 40, 120, …, 72, 168, 176) equals the original's. The remaining differences there are register and stack scheduling.

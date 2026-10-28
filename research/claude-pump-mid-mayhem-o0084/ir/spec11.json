@@ -1,0 +1,36 @@
+[
+ {
+  "label": "pm-o84-w19",
+  "base": "roots/pm-o84-w14",
+  "reps": [
+   [
+    "src/instructions/pump_interface_v2.rs",
+    " let cpi_result:Result<()> = if crate::pump_v2::cpi::sell_v2(CpiContext::new_with_signer(",
+    " let cpi_result:Result<()> = crate::pump_v2::cpi::sell_v2(CpiContext::new_with_signer("
+   ],
+   [
+    "src/instructions/pump_interface_v2.rs",
+    ",&[seeds]),input,minimum).is_ok() { Ok(()) } else { Err(error!(BuyError::PumpCpiFailed)) };",
+    ",&[seeds]),input,minimum).map_err(|_| error!(BuyError::PumpCpiFailed));"
+   ]
+  ],
+  "measure_base": "/Users/shawwalters/Documents/Codex/2026-10-24/claude-mayhem-work/mayhem-b/out/builds/pm-o84-b434/symbols.so"
+ },
+ {
+  "label": "pm-o84-w20",
+  "base": "roots/pm-o84-w14",
+  "reps": [
+   [
+    "src/instructions/pump_interface_v2.rs",
+    " let cpi_result:Result<()> = if crate::pump_v2::cpi::sell_v2(CpiContext::new_with_signer(",
+    " let signer=[seeds];let cpi_context=CpiContext::new_with_signer("
+   ],
+   [
+    "src/instructions/pump_interface_v2.rs",
+    ",&[seeds]),input,minimum).is_ok() { Ok(()) } else { Err(error!(BuyError::PumpCpiFailed)) };",
+    ",&signer); let cpi_result:Result<()> = match crate::pump_v2::cpi::sell_v2(cpi_context,input,minimum) { Ok(()) => Ok(()), Err(_) => Err(error!(BuyError::PumpCpiFailed)) };"
+   ]
+  ],
+  "measure_base": "/Users/shawwalters/Documents/Codex/2026-10-24/claude-mayhem-work/mayhem-b/out/builds/pm-o84-b434/symbols.so"
+ }
+]
