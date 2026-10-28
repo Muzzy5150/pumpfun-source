@@ -109,3 +109,15 @@ Source (`ir/spec*.json`, real builds):
   - the event tail (original 15,240–16,700: field load order for the `SellEvent` tuple, including a 29-line block moved from 16,248 to 16,704);
   - the 10,000–11,000 CPI account-array copy order;
   - the late `vs` load, after pump-lo's cap reorder.
+
+### Event-tail observation for the next step (w23, not yet acted on)
+
+The event-tuple `if native {…} else {…}` field loads come out in a different order (original 15,224–15,700 vs w23 15,040–15,530).
+
+| Arm | Original order | w23 order |
+| --- | --- | --- |
+| native | `global_params` +80/+72, then `mayhem_state` +48/+40, then `bonding_curve` +96/+80 | `mayhem_state` first, then `global_params`, then `bonding_curve` +80/+96 |
+| non-native | `global_params` +96/+88, then the quote vault amount (`[a+56]+104`), then state, then curve, then quote-mint key words 24/16/8/0 | vault amount first, then global, then key words 8/16/24/0 |
+
+- The original follows the source statement order of each arm; ours reorders.
+- Next: emit IR for w23 and check whether rustc's IR keeps the source order. If it does, the reorder comes from scheduling, possibly from loads shared with the event construction after the tuple. Then try per-arm bindings or the TECHNIQUES §7 address-taken `native` flag.
