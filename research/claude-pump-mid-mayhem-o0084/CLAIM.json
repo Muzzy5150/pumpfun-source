@@ -1,8 +1,8 @@
 {
  "base": "claude-mayhem-work/mayhem-env/parent-434 (cp4 + O0073: stripped e0d0d0c3, symbols 828751f9); source.patch also applies to parent-433",
- "candidate_sha256": "8e8a25f926f24594692fd0a53135d81666bb623c1a53135b93a2b873e746624a",
- "symbols_sha256": "c78f70390ae691a5a3e19192629d85230c8a904ef966044241d6067c46365431",
- "source_patch_sha256": "9d1e2f3d8c9ee91e60d88dfac430a59a53f8e50177332cca2f7748793b3230ad",
+ "candidate_sha256": "d27e0e73eb78d63823a70ae71cc54a335627380dba4f4cf56f8558b10bcdfbc2",
+ "symbols_sha256": "6df08c94eb520857910842cde32927380f4e8a15918579e92279dfc7cd64c499",
+ "source_patch_sha256": "4b9a7d5b56e9b5de68ddb8a280063e07fbf6c3fdde1130e3d9027f2fe947300e",
  "matched": 434,
  "raw": 100,
  "unmatched": [
@@ -15,6 +15,6 @@
   "O0084"
  ],
  "sell_v2_handler_bytes": [
-  17912
+  17944
  ]
 }

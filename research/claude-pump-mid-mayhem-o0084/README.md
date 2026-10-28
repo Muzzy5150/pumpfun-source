@@ -1,6 +1,6 @@
-# Mayhem O0084 SellV2: price-check order and IR-proven residual causes
+# Mayhem O0084 SellV2: price-check order, signer-seed order and IR-proven residual causes
 
-Lane `pump-mid`, on the Mayhem **433** parent: `claude-mayhem-work/mayhem-env/parent-433`, cp4 (stripped `c1f25d01…`, symbols `73c28d5e…`).
+Lane `pump-mid` (continued by lane `mayhem-o84`), on the Mayhem **434** parent: `claude-mayhem-work/mayhem-env/parent-434` (cp4 + O0073; stripped `e0d0d0c3…`, symbols `828751f9…`). The first steps were measured on parent-433 (cp4, stripped `c1f25d01…`, symbols `73c28d5e…`); `source.patch` applies unchanged to both.
 Target: O0084 `sell_v2_handler` (original `0x26db8` / 159,160, 18,096 bytes).
 
 **No window is gained** and nothing is lost:
@@ -16,13 +16,16 @@ The packet ships one behaviour-neutral source change that moves O0084 measurably
 | 433 parent | 17,960 | 0.7887 | 906 |
 | 433 + v01 (price before scaled) | 17,888 | 0.8687 | 544 |
 | 433/434 + v14 | 17,896 | 0.8853 | 469 |
-| **434 + `source.patch` (w23)** | **17,912** | **0.8872** | **468** |
+| 434 + w23 (CPI `Result` bound in a block) | 17,912 | 0.8872 | 468 |
+| **434 + `source.patch` (x02: v14 + signer seeds inline after the account struct)** | **17,944** | **0.9312** | **280** |
 
 "Masked" means the `r10` frame offsets, registers, call and lddw immediates and branch displacements are all masked (`tools/irx.py`). It is a progress gauge only; matching is decided by the repository normalizer in `measure/`.
 
-## Source change (`source.patch`, git-applyable from the parent-433 root)
+## Source change (`source.patch`, git-applyable from the parent-434 root)
 
-The change has three parts, made in the price-check closure. Line count and every Source record are preserved; v14's 7 O0084 Source records equal the original's.
+**Signer seeds (x02, lane mayhem-o84).** The original reads `ctx.bumps.sol_vault` after the 26 `AccountInfo` clones, right before the account struct is copied into the `CpiContext` (original offset 10,016). The patch therefore drops the named `bump`/`seeds` locals (the line is left empty) and passes `&[&[b"sol-vault",&[ctx.bumps.sol_vault]]]` inline as `new_with_signer`'s third argument. This closes the whole 10,000–11,000 account-array copy region (468 → 280 lines). The CPI keeps v14's `if sell_v2(…).is_ok() {…} else {…}` form; see PROGRESS.md for the other forms.
+
+The price-check part has three changes, made in the closure. Line count and every Source record are preserved; the 7 O0084 Source records equal the original's.
 
 1. Compute `price` (the `checked_div`) before the scaled multiply. This is v01, described next.
 2. `let delta = match reference.checked_mul(tolerance_bps as u128) { Some(scaled) => scaled / 10_000, None => return Err(MathOverflow) };`
@@ -50,7 +53,7 @@ The original builds the `PumpCpiFailed` AnchorError first and drops the CPI's `E
 - Every form that extends the `&[seeds]` temporary's lifetime (`match` / `if let` / `map_err` on the call, w17–w19) or names the signer (w20–w22) perturbs it.
 - With MIR JumpThreading off (diagnosis only), v14 scores 564 and w20 scores 666, so the original was built with JumpThreading behaving as ours does.
 
-The packet now ships the w23 build on **parent-434**: 434/441, 100 raw-local, no losses, 0 `Stack offset` warnings, 7/7 Source records equal to the original. `source.patch` applies unchanged to parent-433 and parent-434.
+The packet shipped the w23 build on **parent-434**: 434/441, 100 raw-local, no losses, 0 `Stack offset` warnings, 7/7 Source records equal to the original. `source.patch` applies unchanged to parent-433 and parent-434.
 
 ## IR-level findings (llc from the same v1.54 toolchain; `ir/exps*.py`)
 
@@ -82,21 +85,22 @@ The rustc-emitted IR, compiled with `llc -O3 -mtriple=sbf -mcpu=generic -relocat
 | --- | --- |
 | 256–1430 | Price-check layout is now the original's. What remains is the `vs` load placement (finding 3; v13 = v14 plus an inline read scores 530) and register reloads of `reference.lo` |
 | 1890–3710 | Cap selection and the inlined `sell_amounts`. In the original, the `retained_reserve_bps > 10000` check and the raw `vs * balance / (vt + balance)` come first, and the default/WSOL cap selection comes after the raw quote. In our IR the selection (`%.sink` 104/184) precedes `sell_amounts`. Likely fix: select the cap inside `sell_amounts` after the raw output, which changes a helper shared with Legacy Sell, so coordinate with pump-lo. The original loads the quote-mint key words and the global-params base (`+8`, then `96`/`176`) before the default/WSOL comparisons; ours compares first and folds the offsets to `104`/`184`. `sell_amounts` is in `state.rs`, shared with Legacy Sell (pump-lo); it is **not** modified here. |
-| 4736, 10016–10872 | CPI construction and post-CPI reload/accounting blocks (31–39-line insertions and deletions) |
+| 4736, 10016–10872 | CPI construction: **closed by x02** (signer seeds evaluated after the account struct) |
+| 14384–14832 | Post-CPI: the original keeps the CPI `Result` in r7/r6, builds `PumpCpiFailed`, then drops the `Err` payload; x02 drops it first (14 lines). Forms that move the drop rescheduled the clone region (PROGRESS.md) |
 | 14120–16700 | Event and record-sell tail: block order of error and `unwrap_failed` paths |
 
 ## Reproduce
 
 ```sh
-# parent: cp -R claude-mayhem-work/mayhem-env/parent-433 ROOT && git -C ROOT apply research/claude-pump-mid-mayhem-o0084/source.patch
+# parent: cp -R claude-mayhem-work/mayhem-env/parent-434 ROOT && chmod -R u+w ROOT && git -C ROOT apply research/claude-pump-mid-mayhem-o0084/source.patch
 python3 claude-mayhem-work/sbf_lock.py --slots 6 --name sbf -- \
-  python3 claude-mayhem-work/mayhem-b/build/build_lane.py pm-o84-v14 ROOT pm-o84
-python3 -B claude-mayhem-work/mayhem-b/build/measure.py mayhem-b/out/builds/pm-o84-v14/symbols.so <433 symbols.so>
+  python3 claude-mayhem-work/mayhem-b/build/build_lane.py o84-x02e ROOT o84-a
+python3 -B claude-mayhem-work/mayhem-b/build/measure.py mayhem-b/out/builds/o84-x02e/symbols.so <434 symbols.so>
 REPO/work/test-env/bin/python -B claude-mayhem-work/mayhem-b/build/run_trades.py <worktree> candidate.so OUTDIR 3
 HOME=$(mktemp -d) python3 -B research/claude-pump-mid-mayhem-o0084/verify.py
 ```
 
 `verify.py` uses only the standard library and the repository's `research/mayhem-provider-sharing/reader.py`. It checks the artifact hashes and the patch hash.
-It recomputes 434 normalized and 100 raw-local windows from `artifacts/symbols.so.gz`, the 7 unmatched windows, and the 17,912-byte SellV2 body, and compares all of them with `CLAIM.json`.
+It recomputes 434 normalized and 100 raw-local windows from `artifacts/symbols.so.gz`, the 7 unmatched windows, and the 17,944-byte SellV2 body, and compares all of them with `CLAIM.json`.
 The 14 per-suite outputs (61 MB) are kept out of the packet; `runtime/suite-output-SHA256SUMS` binds them.
-`tools/irx.py` (IR surgery and scoring) and `tools/var.py` (parallel source variants) are the lane tools; `ir/` holds every experiment spec.
+`tools/irx.py` (IR surgery and scoring) and `tools/var.py` (parallel source variants) are the lane tools; `tools/o84/` holds the continuation lane's copies (race-free `var.py`, `pack.py` packet refresher, `regions.py`/`hunks.py`/`dis.py` diff views, `fx.py`/`irnorm.py` IR extraction and normalization); `ir/` holds every experiment spec (`ir/o84-s*.json` for the continuation).

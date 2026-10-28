@@ -121,3 +121,26 @@ The event-tuple `if native {…} else {…}` field loads come out in a different
 
 - The original follows the source statement order of each arm; ours reorders.
 - Next: emit IR for w23 and check whether rustc's IR keeps the source order. If it does, the reorder comes from scheduling, possibly from loads shared with the event construction after the tuple. Then try per-arm bindings or the TECHNIQUES §7 address-taken `native` flag.
+
+## Lane mayhem-o84 (continuation, 2026-10-27 ~22:40)
+
+Scratch: `claude-mayhem-work/o84/` (base `base-w23` = parent-434 + w23 patch; variant runner `tools/o84/var.py`, now race-free per build slot; packet refresher `tools/o84/pack.py`). Specs: `ir/o84-s*.json`.
+
+### x02: signer seeds evaluated after the CPI account struct — committed
+
+- **Finding.** The original reads `ctx.bumps.sol_vault` (Context `+34`, via the spilled ctx pointer `[r10-1792]`) at **10,016**, after all 26 `AccountInfo` clones and right before the struct copy into the `CpiContext`; it then builds `[b"sol-vault", &[bump]]` and the one-element signer slice there (10,024–10,096). w23 built the seeds at 3,096–3,176, before the clones (the named `bump`/`seeds` locals). This is the same evaluation-order gap as the main repository's `mayhem-signer-seed-order` packet found for Legacy Sell.
+- **Source change.** Drop the `let bump=…;let seeds=…;` line (left empty, so line count and Source records are unchanged) and pass `&[&[b"sol-vault",&[ctx.bumps.sol_vault]]]` inline as the third argument of `CpiContext::new_with_signer`, with v14's `if sell_v2(…).is_ok() {Ok(())} else {Err(error!(…))}` form.
+- **Result:** O0084 **17,944 bytes, 280 masked lines** (w23: 17,912 / 468). The whole 10,000–11,000 account-array copy region (124 lines) now matches; 434/441, 100 raw-local, 4,370 edges, 470 Source records, no losses, 0 `Stack offset` warnings, 7/7 SellV2 Source records equal. Trade suites: 14 families, 6,636 cases, 0 mismatches, 0 non-compute log differences. Stripped `d27e0e73…`, symbols `6df08c94…`.
+
+| Variant | Post-CPI form (all with inline seeds) | Bytes | Lines |
+| --- | --- | ---: | ---: |
+| x01 | w23 block: `{let outcome=sell_v2(…); if outcome.is_ok() …}` | 17,992 | 348 (clone region 9,000–9,900 rescheduled; post-CPI right except `jeq`/`jne` direction) |
+| **x02** | **v14: `if sell_v2(…).is_ok() {Ok(())} else {Err(error!(…))}`** | **17,944** | **280** |
+| x03 / y05 | `match` / `if let Ok(())` | 18,024 | 404 |
+| y01 / y02 / y08 | `.map_err(\|_\| error!(…))` (bound or `?`), `.or_else` | 18,024 | 404 |
+| y03 / y06 | `if let Err(_) = … { return Err(…) }` / `match` with return | 17,912 | 501 |
+| y04 | `let outcome=…; if outcome.is_err() { return … }` | 18,048 | 441 |
+| y07 | `let outcome=…; let cpi_result = if outcome.is_ok() …` | 18,264 | 664 |
+
+- x02 remaining by region: 0–2,000: 37 (price check), 2,000–4,000: 105 (`sell_amounts` cap selection, pump-lo's), 6,000–9,999: 18, 14,000: 14 (post-CPI `Result` drop order), 15,000–16,999: 100 (event tail), 17,000: 2.
+- IR (x01 vs x02, `tools/o84/irnorm.py`): the two functions differ only in the order of the inlined `drop_in_place::<Result<(), Error>>` blocks and the `PumpCpiFailed` construction block. Block order alone moves the register allocation of the clone region.
