@@ -91,9 +91,14 @@ H3 raw gains are 0x198fe8 and 0x19b4e0. † These are in other claim families or
   - `rent: Sysvar<Rent>` was tested and rejected: it loses 0x12850 (`Sysvar<T>::try_accounts`).
   - On r37g4 + H8 + H9: **789/165/1,044,192**, no losses, no stack warnings.
   - Full corpus for the shipped source: 43 suites on the identity build, plus tokenkeg_two_curve on an archived build of the same source. 44/44 suites, 10,468 cases, 0 errors, 0 diagnostic mismatches.
-- Body-only fix for 0xa0070 (coordinate-bound helper, lib.rs 2428/2430): `buy_quote` computes the u128 numerator first and takes the denominator with u128 `checked_sub`.
-  - On the r37L2 layout composite the remaining diff against the window is only the Source coordinates (line and filename length).
-  - Patch: `r37g4/body-only/buy_quote-on-r37L2.patch`, for the layout integrator. No gain on its own, no losses.
+- Body-only fixes for the original lib.rs helper cluster (lib.rs 2428–2554). They are coordinate-bound and are delivered as `r37g4/body-only/fee_cpi-on-r37L2.patch`, which applies to both r37L2 and r37g8 and keeps fee_cpi.rs's line count.
+  - 0xa0070 `buy_quote` (1,224 B): compute the u128 numerator first and the denominator with u128 `checked_sub`. On r37L2 the remaining diff is only the coordinates (lib.rs:2428/2430 against fee_cpi.rs:10/11, filename length 24 against 28).
+  - 0xa08f8 `market_cap` (760 B): `(supply*vqr).checked_div(vtr).ok_or_else(|| error!(DivisionByZero))` in place of a leading `require!`. The original jumps forward to its error block and falls through into the computation. The remaining diff is only the coordinates (lib.rs:2481). `trade::buy_fee_market_cap` is an identical duplicate; the original has one shared function.
+- Analysis of the rest of the cluster, for the integrator. None of these exists as a separate function in the candidate; the handlers compute them inline.
+  - 0xa0538 `sell_quote(curve, amount) -> Result<u128>`: the denominator is u128 vtr + amount, the `require!(den != 0, DivisionByZero)` is at lib.rs:2454, and the result is amount·vqr/den. Callers: 0x5b3b0, sell_v2 0x144508, trade_v3 0x14a8a8, legacy sell 0x152888.
+  - 0xa0bf0 apply-buy: checked vtr−=t, rtr−=t, vqr+=q, rqr+=q, with Overflow at lib.rs:2496/2501/2506/2511. Callers: 0x5b3b0, 0x83c00, buy_v2 0x13b9b8/0x13f630.
+  - 0xa13e0 apply-sell (lib.rs 2520–2535). Callers: 0x5b3b0, sell_v2, trade_v3.
+  - 0xa1bd8 fee accrual (lib.rs 2550/2554). It reads curve +0x9a and global +0x418, computes x·bps/10 000 and adds it into curve +0x78/+0x70.
 - Leads:
   - 0xcd3d8 (SetMayhemVirtualParams::try_accounts): with `token_program` as `Program<Token2022>`, or as `Interface` without the address constraint, the original has no ConstraintAddress. That gives 8,472 B against the original's 8,504 B, with normalized-instruction similarity 0.98. The original copies `token_program.key()` into a second 32-byte temporary before the token-program `memcmp`, which accounts for the 32-byte larger frame and 4 more instructions.
   - 0xcd3d8 negative controls: explicit `event_authority` with `program: Program<PumpRecovered>` loses the wrappers (0xcf510, 0x1255a8, 0x137fc0). Dropping `associated_token::token_program` gives 8,168 B, ratio 0.43, and 13 raw losses. `Program<Token2022>` and an address-free `Interface` are equivalent (8,472 B, 0.514).

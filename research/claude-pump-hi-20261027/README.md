@@ -7,7 +7,22 @@ guard pins it to the frontier package. The changed files ship under `source/`, `
 diff against the frontier's `programs/pump`, and `tools/apply_lane_changes.py` applies every change idempotently
 (content-addressed) to later rounds.
 
-## Current result: Round36 (see `RESULT.json`, `PROGRESS.md`)
+## Current result: r37g4 upper body set (`r37g4/`, `PROGRESS.md` H8–H10)
+
+The base is the Pump integration composite r37g4: 785/164, shared `fastbuild.py` identity recipe. Unmodified, it rebuilds bit-for-bit to `71fd74ad…`.
+
+| change | windows gained | evidence |
+|---|---|---|
+| H8: `required_quote_account_len` slice walk (`#[inline(never)]`, `tlv.get(cursor..)?`, try_into u16 reads) | 0x17c0f0 (raw) | byte-identical when compiled in isolation (`tools/mini_cmp.py`) |
+| H9: anchor-lang feature `allow-missing-optionals` | 0xc5650 `DistributeFeeToHolders::try_accounts` | the original builds AccountNotEnoughKeys twice, not three times |
+| H10: `#[event_cpi]` on MigrateV2, plus its bonding_curve constraint in the original evaluation order | 0xd5af0 `MigrateV2::try_accounts`, 0x12ba48 `__global::migrate_v2` | line count of migrate_v2.rs unchanged |
+
+**789/165/1,044,192 on r37g4, with no losses and zero stack-offset warnings.** The full 44-suite corpus passes: 10,468 cases, 0 errors, 0 diagnostic mismatches. Of these, tokenkeg_two_curve runs on an archived build of the same source.
+
+- Delivery: `r37g4/source-on-r37g4.patch` (`git apply -p1` in base/r37g4/pump), gzipped ELFs, score, runtime summary, and a stdlib `verify.py` that passes with an empty HOME.
+- Body-only fixes for the coordinate-bound lib.rs helper cluster (0xa0070 `buy_quote`, 0xa08f8 `market_cap`): `r37g4/body-only/fee_cpi-on-r37L2.patch`. After it, only Source coordinates differ.
+
+## Earlier result: Round36 (see `RESULT.json`)
 
 | build (same plain archived builder for all rows) | normalized | raw | matched text bytes |
 |---|---:|---:|---:|
