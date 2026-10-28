@@ -15,8 +15,5 @@
   "0xc5650": "Cargo.toml: anchor-lang feature allow-missing-optionals. Original DistributeFeeToHolders::try_accounts builds AccountNotEnoughKeys twice, not three times: an empty account list for the optional holder_rewards_token_account yields None. Behaviour: omitting trailing optional accounts now gives None instead of error 3005, as the original does.",
   "0xd5af0": "src/migrate_v2.rs MigrateV2: #[event_cpi] replaces the explicit UncheckedAccount event_authority/program, and the bonding_curve constraint is written in the original evaluation order (quote_mint==bc.quote_mint || (bc.quote_mint==default && quote_mint==native)); three combined field lines are split so migrate_v2.rs keeps 170 lines",
   "0x12ba48": "__global::migrate_v2 dispatcher wrapper (libinst/libnear family), closed by the same MigrateV2 layout; reported for dedupe"
- },
- "body_only": {
-  "0xa0070": "body-only/buy_quote-on-r37L2.patch: buy_quote computes the u128 numerator first and the denominator with u128 checked_sub, as the original does. On the r37L2 layout composite the remaining diff against 0xa0070 is only its Source coordinates (lib.rs 2428/2430, filename length 24) \u2014 for the layout integrator; no gain by itself and no losses."
  }
 }

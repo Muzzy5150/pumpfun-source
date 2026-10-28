@@ -20,7 +20,7 @@ The base is the Pump integration composite r37g4: 785/164, shared `fastbuild.py`
 **789/165/1,044,192 on r37g4, with no losses and zero stack-offset warnings.** The full 44-suite corpus passes: 10,468 cases, 0 errors, 0 diagnostic mismatches. Of these, tokenkeg_two_curve runs on an archived build of the same source.
 
 - Delivery: `r37g4/source-on-r37g4.patch` (`git apply -p1` in base/r37g4/pump), gzipped ELFs, score, runtime summary, and a stdlib `verify.py` that passes with an empty HOME.
-- Body-only fixes for the coordinate-bound lib.rs helper cluster (0xa0070 `buy_quote`, 0xa08f8 `market_cap`): `r37g4/body-only/fee_cpi-on-r37L2.patch`. After it, only Source coordinates differ.
+- The lib.rs helper cluster (0xa0070, 0xa0538, 0xa08f8, 0xa0bf0, 0xa13e0, 0xa1bd8) is covered by the Codex Round37 packets on origin/main (curve-price, marketcap-checked, curve-apply, curve-fee-accrual).
 
 ## Earlier result: Round36 (see `RESULT.json`)
 

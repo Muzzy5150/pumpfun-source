@@ -107,6 +107,14 @@ H3 raw gains are 0x198fe8 and 0x19b4e0. † These are in other claim families or
   - With that change the function is 1,200 B (original 1,192 B) and the only remaining differences are loop layout and register assignment: the original spills the cursor where this one spills the TLV base.
 - 0x109488 remains open on r37g4 because the GlobalConfig IDL change (nearmiss2-03) is not in r37g4. Per the coordinator's dedupe it is left to that delivery.
 
+## g04 baseline (806/165, unstripped 5a13b87f…)
+
+- g04 does not contain H10: its MigrateV2 still has the explicit UncheckedAccount event fields and the if/else constraint. `tools/apply_migrate_v2_accounts.py` re-applies H10 idempotently and keeps the 191 lines of migrate_v2.rs.
+- On g04 it measures **808/165**, gains 0xd5af0 and 0x12ba48, no losses, `runtime_valid` true, no stack warnings. The unmodified g04 rebuilds bit-for-bit (`5a13b87f…`). The corpus is running.
+- Dedupe with the Codex Round37 series on origin/main:
+  - pump-round37-marketcap-checked (0xa08f8) and pump-round37-curve-price (0xa0070, 0xa0538) cover the same source forms as this lane's body-only `fee_cpi` patch, which is withdrawn.
+  - pump-round37-curve-apply (0xa0bf0, 0xa13e0) and pump-round37-curve-fee-accrual (0xa1bd8) cover the rest of the lib.rs helper cluster.
+
 ## Round37 (origin/main b855ede02, 744/175 published)
 
 - Round37 itself declares `declare_program!(pump_fees)` (lib.rs:65), ships `idls/pump_fees.json` (equal to `evidence/upstream`) and matches 0x1176e0 through the generated `pump_fees::cpi::get_fees_with_quote_mint`. Change 8 is therefore superseded there.
