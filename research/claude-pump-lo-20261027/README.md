@@ -115,6 +115,8 @@ the repository's `pump_diagnostic_audit`.
 ## Reproduce
 
 ```sh
+# stdlib-only check of every archived ELF and its measurement (works with an empty HOME)
+HOME=$(mktemp -d) python3 -B research/claude-pump-lo-20261027/verify.py
 # official Round36 recipe on this branch's maintained source (needs the Linux v1.44 SBF libraries)
 python3 research/claude-pump-lo-20261027/tools/r36_build.py --prepare-cache --root . \
   --packet repro/pump/main-contract-round37-20261027 --source-directory programs/pump \
