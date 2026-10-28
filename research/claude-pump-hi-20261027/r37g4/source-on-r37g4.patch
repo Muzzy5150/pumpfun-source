@@ -1,0 +1,44 @@
+--- a/src/migrate_v2.rs
++++ b/src/migrate_v2.rs
+@@ -84,26 +84,26 @@
+  required_quote_account_len(&a.try_borrow_data()?).ok_or_else(||ProgramError::InvalidAccountData.into())
+ }
+ 
++#[inline(never)]
+ pub fn required_quote_account_len(data:&[u8])->Option<usize>{
+  let mut size=170usize;
+  if data.len()==82{return Some(size)}
+  if data.len()<167 || data[82..165].iter().any(|byte|*byte!=0) || data[165]!=1{return None}
+- let mut cursor=166usize;
+- let mut seen=0u32;
+- while data.len()-cursor>=2 {
+-  let kind=u16::from_le_bytes([data[cursor],data[cursor+1]]);
+-  if kind==0{break}
+-  if data.len()-cursor<4{return None}
+-  let length=u16::from_le_bytes([data[cursor+2],data[cursor+3]]) as usize;
+-  cursor=cursor.checked_add(4)?.checked_add(length)?;
+-  if cursor>data.len(){return None}
+-  let payload=match kind {1=>8,9=>0,14=>1,26=>0,_=>continue};
+-  let mask=1u32<<kind;
+-  if seen&mask!=0{return None}
+-  seen|=mask;
+-  size=size.checked_add(4)?.checked_add(payload)?;
++ let tlv=&data[166..];
++ let mut cursor=0usize;let mut seen=0u64;
++ loop{
++  let rest=tlv.get(cursor..)?;
++  if rest.len()<2{return Some(size)}
++  let kind=u16::from_le_bytes(rest[..2].try_into().unwrap());
++  if kind==0{return Some(size)}
++  if rest.len()<4{return None}
++  let end=u16::from_le_bytes(rest[2..4].try_into().unwrap()) as usize+4;
++  if end>rest.len(){return None}
++  if let Some(payload)=match kind {1=>Some(8usize),9=>Some(0),14=>Some(1),26=>Some(0),_=>None}{
++   let mask=1u64<<kind;
++   if seen&mask==0{size=size.checked_add(4)?.checked_add(payload)?;seen|=mask;}}
++  cursor=cursor.checked_add(end)?;
+  }
+- Some(size)
+ }
+ fn amount(a:&AccountInfo)->Result<u64>{Ok(u64::from_le_bytes(a.try_borrow_data()?[64..72].try_into().unwrap()))}
+ fn quote_amount(a:&AccountInfo)->Result<u64>{let d=a.try_borrow_data()?;let t=TokenAccount::try_deserialize(&mut &d[..])?;Ok(t.amount)}

@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "runtime_valid": true,
+  "stack_warnings": [],
+  "recipe": "identity",
+  "triple": "sbpf-solana-solana",
+  "seconds": 20.0,
+  "unstripped": "/Users/shawwalters/Documents/Codex/2026-10-24/claude-mayhem-work/pump-hi/out/len1/unstripped.so",
+  "unstripped_sha256": "5186abed5390e5bbfa31b926a33d9d4f74686f040f298b847c9da21998b9a2ab",
+  "candidate_sha256": "6f01e2cee4ea19bc4af23533eac214bd4369cab51e0e9ea25340fc4e0898a4f2"
+}

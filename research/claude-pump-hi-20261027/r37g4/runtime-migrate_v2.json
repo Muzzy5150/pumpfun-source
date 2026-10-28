@@ -1,0 +1,12 @@
+{
+ "scope": "migrate_v2 suite of the public corpus (tools/run_suites.py, captured loader, unchanged harness); the only caller of required_quote_account_len is migrate_v2 (quote_account_size)",
+ "candidate_sha256": "6f01e2cee4ea19bc4af23533eac214bd4369cab51e0e9ea25340fc4e0898a4f2",
+ "report_sha256": "00d4624172621e25c4a0328a0bde0999dc0e34e46f4eb586dbdb5c5e217bad0d",
+ "case_count": 827,
+ "errors": [],
+ "diagnostic_log_cases": 827,
+ "diagnostic_mismatches": 0,
+ "counts": {
+  "migrate_v2": 827
+ }
+}

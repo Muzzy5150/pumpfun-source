@@ -71,6 +71,19 @@ H3 raw gains are 0x198fe8 and 0x19b4e0. † These are in other claim families or
 - H7 (corrected candidate `r36-cpi4`: change 7 without migrate_v2, plus the collect form, plus change 8): 764/126/972,072, no losses against r36-base or the 762 build, no `Stack offset` warning. Full 44-suite corpus 10,468/10,468, 0 errors, 0 diagnostic mismatches (`evidence/runtime-full-r36-cpi4.json`); migrate_v2 827/827. On the composite i1c (identity recipe) change 8 adds 0x1176e0: 779/135/987,968 (`source-on-i1c.patch`, `evidence/elf/i1c-779-fee8`).
 - Measured on top of the 762 build, same recipe, no normalized or raw losses: `r36-cpi2` (`collect_coin_creator_fee` accounts built inside `if !frozen`) gives 763/126/968,872 (+0x10b0b8). `r36-cpi3` (cpi2 + change 8) gives 764/126/972,072 (+0x10b0b8, +0x1176e0). Both still contain the rejected `migrate_v2` part. They are re-measured without it before any claim (`r36-cpi4`).
 
+## r37g4 restart (upper body set, 24 windows; base r37g4 785/164)
+
+- Environment: after the 20:43 reboot, durable scratch lives in `claude-mayhem-work/pump-hi/` (fastbuild work, trials, outputs). `fastbuild.py` (identity) rebuilt the unmodified r37g4 bit-for-bit (`71fd74ad…`).
+- **H8: 0x17c0f0 (`required_quote_account_len`, 744 B)**. The helper becomes `#[inline(never)]` and walks the TLV with `loop { let rest = tlv.get(cursor..)?; ... }`. kind and length are read through `u16::from_le_bytes(rest[..2].try_into().unwrap())`, which gives the original's single `ldxh`. Known kinds go through an `Option` payload match with a u64 `seen` bitset, so duplicates are skipped exactly as in the original; the frontier returned None for them. The line count of migrate_v2.rs is unchanged.
+  - Compiled in isolation (`tools/mini_cmp.py`), the function is byte-identical to the original window.
+  - Full build on r37g4: **786/165/1,012,168**, gains 0x17c0f0 (normalized and raw), no losses, `runtime_valid` true, no stack warnings.
+  - Runtime: migrate_v2 suite 827/827, 0 errors, 0 diagnostic mismatches.
+  - Delivery: `r37g4/` with a patch against base/r37g4/pump, ELFs, score and a stdlib `verify.py`.
+- 0x17bc48 (`quote_extensions_supported`) is in progress.
+  - Its loop is unswitched on `allow_token_extensions` unless the TransferHook program-id check is a pre-unrolled helper over `&[u8; 32]`. A helper `fn(&[u8;32]) -> bool { k.iter().all(..) }` with a single caller gets inlined after its own simplification, so the loop is never unswitched.
+  - With that change the function is 1,200 B (original 1,192 B) and the only remaining differences are loop layout and register assignment: the original spills the cursor where this one spills the TLV base.
+- 0x109488 remains open on r37g4 because the GlobalConfig IDL change (nearmiss2-03) is not in r37g4. Per the coordinator's dedupe it is left to that delivery.
+
 ## Round37 (origin/main b855ede02, 744/175 published)
 
 - Round37 itself declares `declare_program!(pump_fees)` (lib.rs:65), ships `idls/pump_fees.json` (equal to `evidence/upstream`) and matches 0x1176e0 through the generated `pump_fees::cpi::get_fees_with_quote_mint`. Change 8 is therefore superseded there.
