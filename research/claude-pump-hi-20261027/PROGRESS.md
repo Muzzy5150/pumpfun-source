@@ -163,6 +163,15 @@ fn create_pool<'info>(ctx:&Context<'_,'_,'_,'info,MigrateV2<'info>>,base:u64,quo
   - migrate_v2 and migration suites first: 1,055 cases, 0 mismatches.
   - Full corpus: 43 suites on the identity build (10,448 cases) plus tokenkeg_two_curve on an archived build (20 cases). 0 errors, 0 diagnostic mismatches.
 
+## L06-904 compose (for the Pump session's PR)
+
+- This is base/L06/pump plus the H11 patch plus pump-big-lo gain01 (`72a31c585:…/gain01-set_creator/source.patch`, set_creator.rs). Both patches applied cleanly with `git apply -p1`.
+- Result: 904/165/1,246,688; gains exactly {0x38fc0, 0x3a7b8, 0x43ea0, 0x47e28, 0x502f0}, with no losses and no stack warnings.
+  - unstripped `1fb409bb6f1be6a9da4a0f0744b62db271bfa45bb02c51bd1b465c56d129f9d6`
+  - stripped `4e23b5ae865ede92836d6302f9663b673ceef82169c038c87fa43c9e9f904b03`
+- Corpus: 44/44 suites, 10,468 cases, 0 errors, 0 diagnostic mismatches. tokenkeg_two_curve ran on archived build `2b586a07…`.
+- Package: `L06-904/`, with the combined patch, ELFs, score, runtime summary, MANIFEST crediting both lanes, and verify.py.
+
 ## g04 baseline (806/165, unstripped 5a13b87f…)
 
 - g04 does not contain H10: its MigrateV2 still has the explicit UncheckedAccount event fields and the if/else constraint. `tools/apply_migrate_v2_accounts.py` re-applies H10 idempotently and keeps the 191 lines of migrate_v2.rs.

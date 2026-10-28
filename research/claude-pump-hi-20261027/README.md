@@ -7,7 +7,13 @@ guard pins it to the frontier package. The changed files ship under `source/`, `
 diff against the frontier's `programs/pump`, and `tools/apply_lane_changes.py` applies every change idempotently
 (content-addressed) to later rounds.
 
-## Latest delivery: L06 (`L06/`)
+## Compose for the Pump session: L06-904 (`L06-904/`)
+
+This applies H11 (`L06/`) and pump-big-lo gain01 (set_creator) to base/L06/pump.
+- **904/165**: gains 0x38fc0, 0x3a7b8, 0x43ea0, 0x47e28 and 0x502f0. No losses, no stack warnings.
+- Full 44-suite corpus: 10,468 cases, 0 mismatches.
+
+## Latest lane delivery: L06 (`L06/`)
 
 `L06/source-on-L06.patch` applies with `git apply -p1` in a copy of base/L06/pump. It turns the migrate_v2 and migrate pool creation into standalone helpers that call the generated `pump_amm::cpi::create_pool` from a `move` closure taking the signer seeds, and adds `base_token_program`.
 - **902/165/1,237,000**: gains 0x502f0, 0x43ea0 and 0x47e28 over L06's 899/165. No losses, no stack warnings.

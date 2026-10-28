@@ -1,0 +1,55 @@
+{
+ "compose": "L06-904: base/L06/pump + pump-hi H11 + pump-big-lo gain01",
+ "base": "claude-pump-work/base/L06/pump (899/165, unstripped 7bc1563b4965a9632d3362b271fe1e63ced8cb4eceda3a7aaa58fc86a025ee5e; rebuilt bit-for-bit by fastbuild.py identity)",
+ "apply": "cd <fresh copy of base/L06/pump> && git apply -p1 source-on-L06.patch",
+ "patch_sha256": "d35bb67c41e37452566fbf4af0959f789b9020bbd58c4e6142b78be65be099fc",
+ "patch_files": [
+  "src/migrate.rs",
+  "src/migrate_v2.rs",
+  "src/set_creator.rs"
+ ],
+ "credits": {
+  "pump-hi (claude/pump-hi-20261027)": {
+   "commit": "e1f2933e2",
+   "patch": "research/claude-pump-hi-20261027/L06/source-on-L06.patch",
+   "patch_sha256": "40b6ad2c063386fee374ed311c071b94ffb53ea0071476be7116cac4ce1e0037",
+   "windows": [
+    "0x43ea0",
+    "0x47e28",
+    "0x502f0"
+   ],
+   "files": [
+    "src/migrate.rs",
+    "src/migrate_v2.rs"
+   ]
+  },
+  "pump-big-lo (claude/pump-big-lo-20261027)": {
+   "commits": [
+    "6ff2f8238",
+    "72a31c585"
+   ],
+   "patch": "research/claude-pump-big-lo-20261027/gain01-set_creator/source.patch",
+   "patch_sha256": "26024c019e3155e817af5fcb66ced87c0448ef6439a58eebcba5a4349ea63fcf",
+   "windows": [
+    "0x38fc0",
+    "0x3a7b8"
+   ],
+   "files": [
+    "src/set_creator.rs"
+   ]
+  }
+ },
+ "recipe": "claude-pump-work/harness/fastbuild.py identity (hybrid144 rustc, Linux v1.44 sbpf target libs); runtime_valid true; stack_warnings []; build.log has no 'exceeded max offset' line",
+ "counts": "904/165/1,246,688 (L06 899/165)",
+ "gains_beyond_L06": [
+  "0x38fc0",
+  "0x3a7b8",
+  "0x43ea0",
+  "0x47e28",
+  "0x502f0"
+ ],
+ "losses": [],
+ "unstripped_sha256": "1fb409bb6f1be6a9da4a0f0744b62db271bfa45bb02c51bd1b465c56d129f9d6",
+ "candidate_sha256": "4e23b5ae865ede92836d6302f9663b673ceef82169c038c87fa43c9e9f904b03",
+ "runtime": "runtime-corpus.json"
+}
