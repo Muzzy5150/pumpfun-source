@@ -121,6 +121,31 @@ frame (`let index = &[..]`) lowers O0076's alignment (0.53 -> 0.28 normalized ra
 - A phi of the two loaded values gives 8,464 bytes and 949 slots.
 - So the branch form helps, but it is not sufficient.
 
+**Where the trader residual sits (2026-10-27, after cp4)**
+
+The original O0076 entry spills `ctx.accounts` immediately: `ldxdw r2,[r1+8]; stxdw [r10-632]`. It also tail-duplicates the native-mint compare diamonds (624-760) and puts the require! error block (232-616) right after the first compare segment. The limit is a select diamond, `mov r2,176; jne native; mov r2,232`, followed by `ldxdw [accounts+r2+344]`.
+
+**What llc on rustc IR shows** (`tools/irexp/lim.py`, `tools/bindiff.py`):
+- With an IR-level **branch** on `native` and a phi of 176/232 in a separate join (pre)header block:
+  - the first 92 instructions match;
+  - whole-body ratio 0.908 (versus 0.28 now);
+  - what remains is register assignment (IV in r8 rather than r7) and one IV reload at the latch.
+- An IR **select** of 176/232, with 344 kept separate in either GEP order, changes nothing (990 slots). The block boundary is what matters, not the offset form.
+- Permuting the trader field and remaining-pointer loads inside the join did not help (877+ slots).
+
+**Why the branch does not come from ordinary source**
+
+After InstCombine sinks the two loads into a load of a phi of GEPs, SimplifyCFG's `foldTwoEntryPHINode` folds any empty diamond into a select. That happens unless the join has more than 2 phis, the branch carries weights, or the diamond is not simple.
+
+Source forms tried, none of which leaves a branch (O0076 stays 8,464-8,696 bytes, ratio 0.28):
+- the accounts reference;
+- trader/ata/program bindings in both orders;
+- `#[inline(always)]` on the trader method;
+- a mut-assign limit;
+- a helper taking `&Account<GlobalParams>` or `&GlobalParams`;
+- a closure;
+- the limit computed inside the loop, as a statement or as the sweepable argument (this one is worse: 8,672-8,696 bytes).
+
 ## Findings reused upstream / for other lanes
 
 1. Inline vs end placement of `unwrap_failed` (O0082/O0084/O0093): a fused `reserve >
@@ -132,6 +157,54 @@ frame (`let index = &[..]`) lowers O0076's alignment (0.53 -> 0.28 normalized ra
    gives 904 bytes / 23 diff slots under the qualified recipe (the original loads
    current_time inside each native arm and puts the non-native arm first). Computing
    `last` before `Clock::get()` (on line 46) did not help (904 bytes, 37 slots).
+
+## O0079 SellPumpSwap (work in progress, no gain yet)
+
+**Baseline (cp4).** The handler is 8,088 bytes against the original 17,312. With registers and frame offsets masked, the ratio is 0.285 (`tools/hunks.py LABEL O0079 regs`).
+
+**What the original shows:**
+- 21 + 2 **inline AccountInfo copies**: Rc strong-count increments with abort-on-overflow, and fields copied in struct order. The candidate instead makes out-of-line `<AccountInfo as Clone>::clone` calls. Only close_account's 3 copies and emit_cpi's 1 copy are real clone calls in the original.
+- **No memcpy before the CPI**: the accounts struct is built in place.
+- **`native` is computed late**: its WSOL compares come after sell_quote (2016-2136), not at handler entry.
+- **effective_quote has one error block**: the i128 overflow and the try_from failure both jump to one MathOverflow conversion at 864.
+- **Price math order**: price first (`__multi3`, `__udivti3`), then `checked_mul` (2x `__multi3`), then delta (`__udivti3`).
+- **Seed descriptors come late**: they are built after most copies (about 8,544), as in Legacy Sell.
+
+**Source steps** (spec generator `tools/mk_o0079.py`, batches m1-m7; 433 kept, no losses in every variant):
+
+| Variant | Bytes | Masked ratio |
+|---|---|---|
+| copies through a non-inline helper (not inlined) | 8,088 | n/a |
+| `#[inline(always)]` copy helper `info<T: AsRef<AccountInfo>>` | 16,296 | 0.24 |
+| + `native`/`native_accounting` moved after sell_quote; inline(always) `price_check(vt,vs,reference,tol) -> Result<(),MayhemError>` computing price before `checked_mul` (m6-pc2) | 16,376 | 0.293 |
+| + one `?` for effective_quote: `checked_add(..).and_then(\|q\| u64::try_from(q).ok()).ok_or(MayhemError::MathOverflow)?` (m7a) | 16,824 | 0.628 |
+| + accounts struct literal written inside `CpiContext::new_with_signer(..)`, with no `let accounts` (m7b) | 17,728 | 0.709 |
+| + inline sell seeds `&[&[b"sol-vault",&[ctx.bumps.sol_vault]]]` (m7c, best) | 17,816 | **0.717** |
+
+**Remaining differences in m7c:**
+- The MathOverflow conversion block is placed early. It needs to come after the price check, without its own From<AnchorError>.
+- Copy interleaving and the position of the seed construction (a 1,872-byte region).
+- Error and event tail placement (about 15,000-16,000).
+
+**Error-conversion detail.** The original's two MayhemError conversions share one From<AnchorError> tail. The effective_quote block at 864 stores code 2. The price-check block at 2424 loads a variable code from a slot preset to 2 after validate_quote. In m7c the effective_quote conversion is constant-folded (`stw 6002`, `stb 2`) and keeps its own tail, adding 216 bytes. So in the original both conversions most likely meet in one IR-level conversion site, with a phi on the code, before constant folding. The source shape that does this is still to be found.
+
+## Sell side handed off (2026-10-27 ~21:50)
+
+O0082 Legacy Sell is now owned by **pump-lo** (`pl-`) and O0084 SellV2 by **pump-mid** (`pm-`). This lane keeps O0076 and O0079.
+
+**Shared helper.** My `src/state.rs` `sell_amounts` edit is in the cp2-cp4 overrides. It is the zero-check idiom, `vs.checked_sub(output).and_then(|d| if d == 0 { None } else { Some(..) })`, with the unwrap at 398:90. It is shared by Legacy Sell and SellV2. Upstream `mayhem-sell-checked-value-price` uses a `?` closure with the same effect, and swapping it in changes neither window.
+
+**Composition results on cp4** (batch `u1`; 433 kept, no losses):
+
+| Variant | O0082 bytes (original 12,992) | O0082 ratio | O0084 |
+|---|---|---|---|
+| cp4 (sell_amounts idiom only) | 13,008 | 0.328 | 17,960 / 0.287 |
+| + value pricing (`mayhem-sell-checked-value-price` pump_interface hunks) | 12,864 | 0.332 | unchanged |
+| + inline seeds (`mayhem-legacy-sell-seed-lifetime`) | 12,952 | 0.530 | unchanged |
+| + value pricing + inline seeds | 12,848 | **0.538** | unchanged |
+| + their sell_amounts closure as well | 12,848 | 0.538 | unchanged |
+
+Specs: `tools/irexp/` does not cover these. The generator is `out/specs/mk_u1.py` in the durable lane dir, copied to `tools/mk_u1.py`.
 
 ## Negative controls (beyond those above)
 
