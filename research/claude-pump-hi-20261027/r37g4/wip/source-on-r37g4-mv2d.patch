@@ -1,0 +1,83 @@
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -16,7 +16,7 @@
+ custom-panic = []
+ [dependencies]
+ spl-type-length-value = { version = "=0.7.0", default-features = false }
+-anchor-lang = {version = "=0.31.1", features = ["event-cpi", "init-if-needed"]}
++anchor-lang = {version = "=0.31.1", features = ["event-cpi", "init-if-needed", "allow-missing-optionals"]}
+ anchor-spl = { version = "=0.31.1", features = ["token_2022", "associated_token", "metadata"] }
+ [profile.release]
+ panic = "abort"
+--- a/src/migrate_v2.rs
++++ b/src/migrate_v2.rs
+@@ -2,6 +2,7 @@
+ use anchor_lang::Event;
+ use anchor_spl::{token_interface::{Mint,TokenAccount,TokenInterface},token_2022::Token2022,associated_token::AssociatedToken};
+ use anchor_lang::solana_program::{instruction::{Instruction,AccountMeta},program::invoke_signed,program_error::ProgramError};
++#[event_cpi]
+ #[derive(Accounts)]
+ pub struct MigrateV2<'info>{
+  #[account(seeds=[b"global"],bump,has_one=withdraw_authority @ PumpError::NotAuthorized)]pub global:Box<Account<'info,Global>>,
+@@ -9,7 +10,7 @@
+  #[account(mut)]pub withdraw_authority:UncheckedAccount<'info>,
+  pub base_mint:Box<InterfaceAccount<'info,Mint>>,
+  pub quote_mint:Box<InterfaceAccount<'info,Mint>>,
+- #[account(mut,seeds=[b"bonding-curve",base_mint.key().as_ref()],bump,constraint=(if bonding_curve.quote_mint==Pubkey::default(){quote_mint.key()==anchor_spl::token::spl_token::native_mint::ID}else{quote_mint.key()==bonding_curve.quote_mint}) @ PumpError::MintDoesNotMatchBondingCurve)]pub bonding_curve:Box<Account<'info,crate::trade_types::BondingCurve>>,
++ #[account(mut,seeds=[b"bonding-curve",base_mint.key().as_ref()],bump,constraint=quote_mint.key()==bonding_curve.quote_mint||(bonding_curve.quote_mint==Pubkey::default()&&quote_mint.key()==anchor_spl::token::spl_token::native_mint::ID) @ PumpError::MintDoesNotMatchBondingCurve)]pub bonding_curve:Box<Account<'info,crate::trade_types::BondingCurve>>,
+  #[account(mut,associated_token::mint=base_mint,associated_token::authority=bonding_curve,associated_token::token_program=base_token_program)]pub associated_base_bonding_curve:Box<InterfaceAccount<'info,TokenAccount>>,
+  /// CHECK: canonical quote ATA.
+  #[account(mut,seeds=[bonding_curve.key().as_ref(),quote_token_program.key().as_ref(),quote_mint.key().as_ref()],bump,seeds::program=associated_token_program.key())]pub associated_quote_bonding_curve:UncheckedAccount<'info>,
+@@ -40,10 +41,6 @@
+  pub pump_amm_event_authority:UncheckedAccount<'info>,
+  /// CHECK: constrained sysvar address.
+  #[account(address=anchor_lang::solana_program::sysvar::rent::ID)]pub rent:UncheckedAccount<'info>,
+- /// CHECK: canonical event PDA.
+- #[account(seeds=[b"__event_authority"],bump)]pub event_authority:UncheckedAccount<'info>,
+- /// CHECK: forwarded event CPI program account.
+- pub program:UncheckedAccount<'info>,
+ }
+ fn call<'a>(program:&AccountInfo<'a>,accounts:&[(&AccountInfo<'a>,bool,bool)],data:Vec<u8>,seeds:&[&[&[u8]]])->Result<()>{let ix=Instruction{program_id:*program.key,accounts:accounts.iter().map(|(a,s,w)|if *w{AccountMeta::new(*a.key,*s)}else{AccountMeta::new_readonly(*a.key,*s)}).collect(),data};let mut infos:Vec<AccountInfo>=accounts.iter().map(|(a,_,_)|(*a).clone()).collect();infos.push(program.clone());invoke_signed(&ix,&infos,seeds)?;Ok(())}
+ fn create_associated_account<'a>(program:&AccountInfo<'a>,payer:&AccountInfo<'a>,destination:&AccountInfo<'a>,authority:&AccountInfo<'a>,mint:&AccountInfo<'a>,system:&AccountInfo<'a>,token:&AccountInfo<'a>,extra:Option<&AccountInfo<'a>>,seeds:&[&[&[u8]]])->Result<()>{
+@@ -84,26 +81,26 @@
+  required_quote_account_len(&a.try_borrow_data()?).ok_or_else(||ProgramError::InvalidAccountData.into())
+ }
+ 
++#[inline(never)]
+ pub fn required_quote_account_len(data:&[u8])->Option<usize>{
+  let mut size=170usize;
+  if data.len()==82{return Some(size)}
+  if data.len()<167 || data[82..165].iter().any(|byte|*byte!=0) || data[165]!=1{return None}
+- let mut cursor=166usize;
+- let mut seen=0u32;
+- while data.len()-cursor>=2 {
+-  let kind=u16::from_le_bytes([data[cursor],data[cursor+1]]);
+-  if kind==0{break}
+-  if data.len()-cursor<4{return None}
+-  let length=u16::from_le_bytes([data[cursor+2],data[cursor+3]]) as usize;
+-  cursor=cursor.checked_add(4)?.checked_add(length)?;
+-  if cursor>data.len(){return None}
+-  let payload=match kind {1=>8,9=>0,14=>1,26=>0,_=>continue};
+-  let mask=1u32<<kind;
+-  if seen&mask!=0{return None}
+-  seen|=mask;
+-  size=size.checked_add(4)?.checked_add(payload)?;
++ let tlv=&data[166..];
++ let mut cursor=0usize;let mut seen=0u64;
++ loop{
++  let rest=tlv.get(cursor..)?;
++  if rest.len()<2{return Some(size)}
++  let kind=u16::from_le_bytes(rest[..2].try_into().unwrap());
++  if kind==0{return Some(size)}
++  if rest.len()<4{return None}
++  let end=u16::from_le_bytes(rest[2..4].try_into().unwrap()) as usize+4;
++  if end>rest.len(){return None}
++  if let Some(payload)=match kind {1=>Some(8usize),9=>Some(0),14=>Some(1),26=>Some(0),_=>None}{
++   let mask=1u64<<kind;
++   if seen&mask==0{size=size.checked_add(4)?.checked_add(payload)?;seen|=mask;}}
++  cursor=cursor.checked_add(end)?;
+  }
+- Some(size)
+ }
+ fn amount(a:&AccountInfo)->Result<u64>{Ok(u64::from_le_bytes(a.try_borrow_data()?[64..72].try_into().unwrap()))}
+ fn quote_amount(a:&AccountInfo)->Result<u64>{let d=a.try_borrow_data()?;let t=TokenAccount::try_deserialize(&mut &d[..])?;Ok(t.amount)}
