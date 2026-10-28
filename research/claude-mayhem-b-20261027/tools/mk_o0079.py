@@ -105,3 +105,23 @@ specs = [{'label': 'm7a-eq2', 'reps': [setlines(with_helper_ai(merge(base6, EQ2)
          {'label': 'm7d-inl', 'reps': [setlines(with_helper_ai(merge(base6, INL)))], 'windows': W}]
 json.dump(specs, open(D + '/out/specs/m7.json', 'w'), indent=1)
 print('m7', len(specs))
+
+best = merge(base6, EQ2, INLS)   # = m7c
+def var79(lines79, extra=None, helper67=None):
+    d = merge(best, {79: lines79})
+    if extra: d = merge(d, extra)
+    d = with_helper_ai(d)
+    if helper67:
+        d[66] = d[66] + ' ' + helper67
+    return d
+EQ3 = ' let effective_quote:u64=(a.pool_quote_token_account.amount as i128).checked_add(a.pool.virtual_quote_reserves).and_then(|q|q.try_into().ok()).ok_or(MayhemError::MathOverflow)?;'
+EQ5 = ' let effective_quote=u64::try_from((a.pool_quote_token_account.amount as i128).checked_add(a.pool.virtual_quote_reserves).ok_or(MayhemError::MathOverflow)?).or(Err(MayhemError::MathOverflow))?;'
+QH = "#[inline(always)] fn effective_quote(amount:u64,virtual_quote:i128)->core::result::Result<u64,MayhemError> { let q=(amount as i128).checked_add(virtual_quote).ok_or(MayhemError::MathOverflow)?; u64::try_from(q).map_err(|_|MayhemError::MathOverflow) }"
+EQH = ' let effective_quote=effective_quote(a.pool_quote_token_account.amount,a.pool.virtual_quote_reserves)?;'
+PCE = dict(PC2); PCE[67] = PC2[67].replace('->core::result::Result<(),MayhemError> {', '->Result<()> {').replace('return Err(MayhemError::MathOverflow);', 'return Err(MayhemError::MathOverflow.into());').replace('return Err(MayhemError::PumpCpiSlippage);', 'return Err(MayhemError::PumpCpiSlippage.into());')
+specs = [{'label': 'm8a-eq3', 'reps': [setlines(var79(EQ3))], 'windows': W},
+         {'label': 'm8b-eq5', 'reps': [setlines(var79(EQ5))], 'windows': W},
+         {'label': 'm8c-qhelper', 'reps': [setlines(var79(EQH, helper67=QH))], 'windows': W},
+         {'label': 'm8d-pc-anchor', 'reps': [setlines(var79(EQ2[79], extra={67: PCE[67]}))], 'windows': W}]
+json.dump(specs, open(D + '/out/specs/m8.json', 'w'), indent=1)
+print('m8', len(specs))

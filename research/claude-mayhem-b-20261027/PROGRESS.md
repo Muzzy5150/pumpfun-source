@@ -188,6 +188,28 @@ Source forms tried, none of which leaves a branch (O0076 stays 8,464-8,696 bytes
 
 **Error-conversion detail.** The original's two MayhemError conversions share one From<AnchorError> tail. The effective_quote block at 864 stores code 2. The price-check block at 2424 loads a variable code from a slot preset to 2 after validate_quote. In m7c the effective_quote conversion is constant-folded (`stw 6002`, `stb 2`) and keeps its own tail, adding 216 bytes. So in the original both conversions most likely meet in one IR-level conversion site, with a phi on the code, before constant folding. The source shape that does this is still to be found.
 
+### O0079 round 2 (2026-10-27, after the coordinator's tail hints)
+
+**Shared tail.** Both the original and the candidate already share **one** From<AnchorError> tail; the difference is layout.
+- Original: the price-check conversion (code loaded from the slot preset to 2) falls through into the tail, at 2,768. The effective_quote conversion (constant 2, at 864, after the delta division) jumps to it.
+- m7c: the effective_quote conversion owns the tail (1,096) and sits before the delta `__udivti3`. The price-check conversion jumps back into it.
+- With two `?` (`try_from(..ok_or()?).map_err()?`), the effective_quote conversion moves right after validate_trade (masked ratio 0.595).
+
+**m8 results:**
+
+| Variant | Masked ratio |
+|---|---|
+| `.and_then(\|q\| q.try_into().ok())` (m8a) | 0.7165 (same as m7c) |
+| `.or(Err(..))?` with two `?` (m8b) | 0.585 |
+| inline(always) `effective_quote(amount, virtual_quote) -> Result<u64, MayhemError>` plus one `?` (m8c, best) | **0.7192** |
+| price_check returning anchor `Result<()>` (m8d) | 0.686 |
+
+**Next:** the layout looks branch-weight driven. `checked_*` carry `unlikely`; `try_from` does not. Check in llc with `!prof` edits on the m8c IR which weights put the delta block before the effective_quote conversion and give the tail to the price-check conversion.
+
+### O0076 round 2
+
+Moving the limit computation to be the last statement before the loop, with or without the bindings and the accounts reference (t6), still yields `select(520, 576)`, at 8,464-8,496 bytes and ratio 0.28. So an empty join block merged into the loop header does not explain the original branch either.
+
 ## Sell side handed off (2026-10-27 ~21:50)
 
 O0082 Legacy Sell is now owned by **pump-lo** (`pl-`) and O0084 SellV2 by **pump-mid** (`pm-`). This lane keeps O0076 and O0079.
