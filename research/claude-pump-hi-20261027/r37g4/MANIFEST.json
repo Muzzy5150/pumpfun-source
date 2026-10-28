@@ -1,10 +1,15 @@
 {
  "base": "claude-pump-work/base/r37g4/pump (785/164, unstripped 71fd74ad8c6c45ba9fd0ae30041ffda71d1022262d414ef5ddbea5c7e372b21e; reproduced bit-for-bit by fastbuild.py identity before this change)",
- "apply": "cd <copy of base/r37g4/pump> && git apply -p1 source-on-r37g4.patch  (equivalently tools/apply_tlv.py --only len)",
- "patch_sha256": "7c1d04005eaa44d05cb9bfd145a1b5839206f0b0a5440c7682b0554452f64369",
+ "apply": "cd <copy of base/r37g4/pump> && git apply -p1 source-on-r37g4.patch",
+ "patch_sha256": "a98bc9741e7eb9ec534cfed437b6da40089195dc6bf5e99f341112c56ca2dc41",
  "recipe": "claude-pump-work/harness/fastbuild.py, identity recipe (sbpf-solana-solana, Linux v1.44 target libraries); runtime_valid true, stack_warnings []",
  "gains_beyond_r37g4": [
-  "0x17c0f0"
+  "0x17c0f0",
+  "0xc5650"
  ],
- "counts": "786/165/1,012,168 (r37g4 785/164)"
+ "counts": "787/165/1,019,512 (r37g4 785/164)",
+ "changes": {
+  "0x17c0f0": "src/migrate_v2.rs required_quote_account_len: #[inline(never)] slice walk (see PROGRESS.md H8)",
+  "0xc5650": "Cargo.toml: anchor-lang feature allow-missing-optionals. Original DistributeFeeToHolders::try_accounts builds AccountNotEnoughKeys twice, not three times: an empty account list for the optional holder_rewards_token_account yields None. Behaviour: omitting trailing optional accounts now gives None instead of error 3005, as the original does."
+ }
 }

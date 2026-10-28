@@ -79,6 +79,14 @@ H3 raw gains are 0x198fe8 and 0x19b4e0. † These are in other claim families or
   - Full build on r37g4: **786/165/1,012,168**, gains 0x17c0f0 (normalized and raw), no losses, `runtime_valid` true, no stack warnings.
   - Runtime: migrate_v2 suite 827/827, 0 errors, 0 diagnostic mismatches.
   - Delivery: `r37g4/` with a patch against base/r37g4/pump, ELFs, score and a stdlib `verify.py`.
+- **H9: 0xc5650 (`DistributeFeeToHolders::try_accounts`, 7,344 B)** comes from the anchor-lang feature `allow-missing-optionals` (Cargo.toml).
+  - The original builds AccountNotEnoughKeys (0xbbd) twice in that function; the frontier builds it three times. The extra one is the empty-list error for the optional `holder_rewards_token_account`, which the feature turns into `None` (anchor-lang `Option<T>::try_accounts`).
+  - On r37g4 + H8 it measures **787/165/1,019,512** (+0xc5650 normalized), no losses, no stack warnings.
+  - Runtime: 43 public suites, 10,448 cases, 0 errors, 0 diagnostic mismatches. quote_control was re-run with an in-repo candidate path, because that harness rejects paths outside the repository. tokenkeg_two_curve needs an archived-builder build report and is run on an archived build of the same source.
+  - Behaviour note: a transaction that omits trailing optional accounts now gets `None` instead of error 3005, as in the original.
+- Leads:
+  - 0xcd3d8 (SetMayhemVirtualParams::try_accounts): with `token_program` as `Program<Token2022>`, or as `Interface` without the address constraint, the original has no ConstraintAddress. That gives 8,472 B against the original's 8,504 B, with normalized-instruction similarity 0.98. The original copies `token_program.key()` into a second 32-byte temporary before the token-program `memcmp`, which accounts for the 32-byte larger frame and 4 more instructions.
+  - 0xd5af0 (MigrateV2::try_accounts, normalized similarity 0.87): the error-name order suggests `rent: Sysvar<Rent>` and `#[event_cpi]` `event_authority`/`program` in the original.
 - 0x17bc48 (`quote_extensions_supported`) is in progress.
   - Its loop is unswitched on `allow_token_extensions` unless the TransferHook program-id check is a pre-unrolled helper over `&[u8; 32]`. A helper `fn(&[u8;32]) -> bool { k.iter().all(..) }` with a single caller gets inlined after its own simplification, so the loop is never unswitched.
   - With that change the function is 1,200 B (original 1,192 B) and the only remaining differences are loop layout and register assignment: the original spills the cursor where this one spills the TLV base.

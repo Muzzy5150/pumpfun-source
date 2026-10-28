@@ -1,3 +1,14 @@
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -16,7 +16,7 @@
+ custom-panic = []
+ [dependencies]
+ spl-type-length-value = { version = "=0.7.0", default-features = false }
+-anchor-lang = {version = "=0.31.1", features = ["event-cpi", "init-if-needed"]}
++anchor-lang = {version = "=0.31.1", features = ["event-cpi", "init-if-needed", "allow-missing-optionals"]}
+ anchor-spl = { version = "=0.31.1", features = ["token_2022", "associated_token", "metadata"] }
+ [profile.release]
+ panic = "abort"
 --- a/src/migrate_v2.rs
 +++ b/src/migrate_v2.rs
 @@ -84,26 +84,26 @@

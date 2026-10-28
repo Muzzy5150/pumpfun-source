@@ -1,10 +1,11 @@
 {
- "candidate_sha256": "5186abed5390e5bbfa31b926a33d9d4f74686f040f298b847c9da21998b9a2ab",
- "normalized": 786,
+ "candidate_sha256": "966036b52132eb469d9e2e9541a9889ead83bcb54ffb383b9492c68bbd8af749",
+ "normalized": 787,
  "raw": 165,
  "total": 1035,
- "matched_text_bytes": 1012168,
+ "matched_text_bytes": 1019512,
  "gains": [
+  "0xc5650",
   "0x17c0f0"
  ],
  "losses": [],
