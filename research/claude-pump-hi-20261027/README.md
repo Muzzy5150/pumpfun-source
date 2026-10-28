@@ -7,6 +7,12 @@ guard pins it to the frontier package. The changed files ship under `source/`, `
 diff against the frontier's `programs/pump`, and `tools/apply_lane_changes.py` applies every change idempotently
 (content-addressed) to later rounds.
 
+## Latest delivery: g04 (`g04/`)
+
+`g04/source-on-g04.patch` re-applies H10 (MigrateV2), which g04 lacks, to base/g04/pump.
+- **808/165/1,069,560**: gains 0xd5af0 and 0x12ba48, no losses, no stack warnings.
+- Full 44-suite corpus: 10,468 cases, 0 mismatches.
+
 ## Current result: r37g4 upper body set (`r37g4/`, `PROGRESS.md` H8–H10)
 
 The base is the Pump integration composite r37g4: 785/164, shared `fastbuild.py` identity recipe. Unmodified, it rebuilds bit-for-bit to `71fd74ad…`.

@@ -28,7 +28,21 @@ ELFs, SHA-256 and score output are under `evidence/elf/<name>/`.
 
 H3 raw gains are 0x198fe8 and 0x19b4e0. † These are in other claim families or lanes and are gained by this lane's SetMayhemVirtualParams layout change; they are reported for dedupe.
 
-## State for a continuation agent
+## State for a continuation agent (after the 20:43 reboot)
+
+- Baseline: `claude-pump-work/base/g04/pump` (806/165). Measure with `claude-pump-work/harness/fastbuild.py`, which uses the identity recipe and the shared lock pool, and with `score.py --baseline base/g04/inventory.json`.
+- Durable scratch lives in `claude-mayhem-work/pump-hi/`: `fb/` is the fastbuild work dir, plus `trials/`, `out/` and `mini/` for isolated compiles. The lane worktree is under SP and is rebuilt from this branch.
+- Tools:
+  - `tools/apply_tlv.py` (H8), `tools/apply_migrate_v2_accounts.py` (H10), `tools/apply_lane_changes.py` (changes 3, 5–8, Round37-aware).
+  - `tools/mini_cmp.py` compiles a helper in isolation and compares it with a window, which is useful for call-free helpers.
+  - `tools/fb_record.py` and `tools/run_suites.py` run the corpus on fastbuild outputs. Copy the candidate under `wt/work/`, because quote_control requires an in-repo path. tokenkeg_two_curve needs an archived build: `tools/build.py --packet repro/pump/main-contract-round37-20261027`.
+- Open body-hi windows:
+  - 0xcd3d8: an early second copy of `token_program.key()` in the original.
+  - 0x17bc48: the original spills the cursor where this build spills the TLV base.
+  - The coordinate-bound handler bodies belong to the layout integrator.
+  - The lib.rs helper cluster is covered by the Codex packets.
+
+## State for a continuation agent (pre-reboot, historical)
 
 - Frontier: Round25 (`repro/pump/main-contract-round25-20261027`, 720/123/871,992). Rebase before every commit, because Codex and the Pump session publish rounds frequently.
 - Scope: only the `targets/body-rest.json` windows in this address range. They live in the coordinator scratchpad `…/bfdcc76c-…/scratchpad/targets/`. Skip coord, nearmiss, identity and libinst.
@@ -110,7 +124,9 @@ H3 raw gains are 0x198fe8 and 0x19b4e0. † These are in other claim families or
 ## g04 baseline (806/165, unstripped 5a13b87f…)
 
 - g04 does not contain H10: its MigrateV2 still has the explicit UncheckedAccount event fields and the if/else constraint. `tools/apply_migrate_v2_accounts.py` re-applies H10 idempotently and keeps the 191 lines of migrate_v2.rs.
-- On g04 it measures **808/165**, gains 0xd5af0 and 0x12ba48, no losses, `runtime_valid` true, no stack warnings. The unmodified g04 rebuilds bit-for-bit (`5a13b87f…`). The corpus is running.
+- On g04 it measures **808/165/1,069,560**, gains 0xd5af0 and 0x12ba48, no losses, `runtime_valid` true, no stack warnings. The unmodified g04 rebuilds bit-for-bit (`5a13b87f…`).
+- Full corpus for the shipped g04 source: 43 suites on the identity build, plus tokenkeg_two_curve on an archived build of the same source. 44/44 suites, 10,468 cases, 0 errors, 0 diagnostic mismatches.
+- Delivery: `g04/`, with `source-on-g04.patch`, ELFs, score, runtime summary and a stdlib `verify.py`.
 - Dedupe with the Codex Round37 series on origin/main:
   - pump-round37-marketcap-checked (0xa08f8) and pump-round37-curve-price (0xa0070, 0xa0538) cover the same source forms as this lane's body-only `fee_cpi` patch, which is withdrawn.
   - pump-round37-curve-apply (0xa0bf0, 0xa13e0) and pump-round37-curve-fee-accrual (0xa1bd8) cover the rest of the lib.rs helper cluster.
