@@ -17,7 +17,9 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = next(p for p in HERE.parents if (p / 'evidence/original/pump/deployed.so').is_file())
 CLAIMS = {0x17c0f0: (744, 'required_quote_account_len', True),
-          0xc5650: (7344, 'DistributeFeeToHolders$u20$as$u20$anchor_lang..Accounts', False)}
+          0xc5650: (7344, 'DistributeFeeToHolders$u20$as$u20$anchor_lang..Accounts', False),
+          0xd5af0: (23608, 'MigrateV2$u20$as$u20$anchor_lang..Accounts', False),
+          0x12ba48: (1072, '8__global10migrate_v2', False)}
 PATCH_SHA256 = None  # filled below from MANIFEST.json
 
 
@@ -88,8 +90,8 @@ def main():
         print(f'{hex(addr)}: {hits[0][0][:70]} matches ({"raw" if raw else "normalized"}, {n} B)')
     assert hashlib.sha256((HERE / 'source-on-r37g4.patch').read_bytes()).hexdigest() == manifest['patch_sha256'], 'patch changed'
     rt = json.loads((HERE / 'runtime-corpus.json').read_text())
-    assert rt['candidate_sha256'] == rt['candidate_sha256_quote_control'] == sums['candidate.so']
-    assert not rt['errors'] and rt['diagnostic_mismatches'] == 0 and rt['suites'] >= 43
+    assert rt['candidate_sha256'] == sums['candidate.so']
+    assert not rt['errors'] and rt['diagnostic_mismatches'] == 0 and rt['suites'] == 44 and rt['case_count'] == 10468
     print('verified:', summary['normalized'], '/', summary['raw'], 'gains', summary['gains'])
 
 

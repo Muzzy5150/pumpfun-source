@@ -4,8 +4,8 @@
   "stack_warnings": [],
   "recipe": "identity",
   "triple": "sbpf-solana-solana",
-  "seconds": 22.8,
-  "unstripped": "/Users/shawwalters/Documents/Codex/2026-10-24/claude-mayhem-work/pump-hi/out/amo1/unstripped.so",
-  "unstripped_sha256": "966036b52132eb469d9e2e9541a9889ead83bcb54ffb383b9492c68bbd8af749",
-  "candidate_sha256": "f6338ca8362cde9de80479ea6c985926b4276bd76780fef055d12911b4c2a11a"
+  "seconds": 39.6,
+  "unstripped": "/Users/shawwalters/Documents/Codex/2026-10-24/claude-mayhem-work/pump-hi/out/mv2e/unstripped.so",
+  "unstripped_sha256": "3b6b93d552900518c3377c1c112157a5af6bec27dd4ed5eb984181bc8153e0ff",
+  "candidate_sha256": "bd01529378cf4928ac2e5cb238f0c25390f3c792b3613ee996d8e7484e03ba78"
 }

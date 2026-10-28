@@ -1,0 +1,17 @@
+--- a/src/fee_cpi.rs
++++ b/src/fee_cpi.rs
+@@ -5,11 +5,11 @@
+ 
+ /// Checked normal-buy quote calculation precedes the fee CPI.
+ pub fn buy_quote(curve: &BondingCurve, amount: u64) -> Result<u128> {
+-    let denominator = curve.virtual_token_reserves.checked_sub(amount)
++    let numerator = u128::from(amount) * u128::from(curve.virtual_quote_reserves);
++    let denominator = u128::from(curve.virtual_token_reserves).checked_sub(u128::from(amount))
+         .ok_or_else(|| error!(crate::PumpError::Overflow))?;
+     require!(denominator != 0, crate::PumpError::DivisionByZero);
+-    Ok(u128::from(amount) * u128::from(curve.virtual_quote_reserves)
+-        / u128::from(denominator) + 1)
++    Ok(numerator / denominator + 1)
+ }
+ 
+ /// Shared fee query and accounting. Account clones are created here before

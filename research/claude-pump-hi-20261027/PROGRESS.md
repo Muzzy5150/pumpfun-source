@@ -84,9 +84,19 @@ H3 raw gains are 0x198fe8 and 0x19b4e0. † These are in other claim families or
   - On r37g4 + H8 it measures **787/165/1,019,512** (+0xc5650 normalized), no losses, no stack warnings.
   - Runtime: 43 public suites, 10,448 cases, 0 errors, 0 diagnostic mismatches. quote_control was re-run with an in-repo candidate path, because that harness rejects paths outside the repository. tokenkeg_two_curve needs an archived-builder build report and is run on an archived build of the same source.
   - Behaviour note: a transaction that omits trailing optional accounts now gets `None` instead of error 3005, as in the original.
+- **H10: 0xd5af0 (`MigrateV2::try_accounts`, 23,608 B), with 0x12ba48 (`__global::migrate_v2`, 1,072 B; libinst/libnear family, reported for dedupe)**. Two changes to migrate_v2.rs:
+  1. `#[event_cpi]` replaces the explicit `event_authority`/`program` UncheckedAccount fields. The generated owned AccountInfo pair gives the original struct layout, which matches the dispatcher wrapper as well.
+  2. The bonding_curve constraint uses the original's evaluation order: `quote_mint.key()==bonding_curve.quote_mint||(bonding_curve.quote_mint==Pubkey::default()&&quote_mint.key()==native_mint::ID)`. The original compares against `bonding_curve.quote_mint` first, then against the default key, then against native. The frontier's `if/else` compared against the default first. The two are equivalent for any account that deserializes as a Mint.
+  - Three combined field lines are split one per line, so migrate_v2.rs keeps its 170 lines and later Source lines do not move.
+  - `rent: Sysvar<Rent>` was tested and rejected: it loses 0x12850 (`Sysvar<T>::try_accounts`).
+  - On r37g4 + H8 + H9: **789/165/1,044,192**, no losses, no stack warnings.
+  - Full corpus for the shipped source: 43 suites on the identity build, plus tokenkeg_two_curve on an archived build of the same source. 44/44 suites, 10,468 cases, 0 errors, 0 diagnostic mismatches.
+- Body-only fix for 0xa0070 (coordinate-bound helper, lib.rs 2428/2430): `buy_quote` computes the u128 numerator first and takes the denominator with u128 `checked_sub`.
+  - On the r37L2 layout composite the remaining diff against the window is only the Source coordinates (line and filename length).
+  - Patch: `r37g4/body-only/buy_quote-on-r37L2.patch`, for the layout integrator. No gain on its own, no losses.
 - Leads:
   - 0xcd3d8 (SetMayhemVirtualParams::try_accounts): with `token_program` as `Program<Token2022>`, or as `Interface` without the address constraint, the original has no ConstraintAddress. That gives 8,472 B against the original's 8,504 B, with normalized-instruction similarity 0.98. The original copies `token_program.key()` into a second 32-byte temporary before the token-program `memcmp`, which accounts for the 32-byte larger frame and 4 more instructions.
-  - 0xd5af0 (MigrateV2::try_accounts, normalized similarity 0.87): the error-name order suggests `rent: Sysvar<Rent>` and `#[event_cpi]` `event_authority`/`program` in the original.
+  - 0xcd3d8 negative controls: explicit `event_authority` with `program: Program<PumpRecovered>` loses the wrappers (0xcf510, 0x1255a8, 0x137fc0). Dropping `associated_token::token_program` gives 8,168 B, ratio 0.43, and 13 raw losses. `Program<Token2022>` and an address-free `Interface` are equivalent (8,472 B, 0.514).
 - 0x17bc48 (`quote_extensions_supported`) is in progress.
   - Its loop is unswitched on `allow_token_extensions` unless the TransferHook program-id check is a pre-unrolled helper over `&[u8; 32]`. A helper `fn(&[u8;32]) -> bool { k.iter().all(..) }` with a single caller gets inlined after its own simplification, so the loop is never unswitched.
   - With that change the function is 1,200 B (original 1,192 B) and the only remaining differences are loop layout and register assignment: the original spills the cursor where this one spills the TLV base.
