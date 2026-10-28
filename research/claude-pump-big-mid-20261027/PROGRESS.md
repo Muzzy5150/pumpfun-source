@@ -89,3 +89,27 @@ the 86 windows of `targets/r4-{pumpquote,quotectl,coordbody,plainbody}.json`.
     differences remain.
   - So a source form that keeps the transfer path above the 2 % cold limit is still needed (the original's
     branch hints).
+
+## Next steps (exact, for a continuation)
+
+1. 0x6a8a8 add_quote_control_mint (WIP patch `wip/0x6a8a8-add_quote_control_mint-WIP.patch`, apply on top of gain01):
+   lazy Overflow error + `saturating_sub`/`if diff > 0` keep every line; ratio 0.65 (5848 B vs 6328).
+   - Blocker: the transfer-path clones are cold call sites (inline remark cost 60 vs threshold 45). The path
+     frequency is validate? x overflow x space? x (new_space > data_len) x Rent? x (diff>0, 62.5 %) ~ 1.95 %, just
+     under the 2 % ColdCallSiteRelFreq.
+   - The original must keep one more branch biased (most likely the checked_add `unlikely` hint).
+   - Next: generate copies of the handler that differ only in the overflow/`?` forms (let-else, explicit
+     overflowing_add, MIR-visible `checked_add` match); count out-of-line `AccountInfo::clone` calls in the IR;
+     llc-compare each with tools/irvariants.py.
+   - Then fix the frame-slot differences (space() sret at -0xe0 in the original).
+2. 0x75308 claim_token_incentives / 0x859b0 (3 sites): first classify each emit_cpi!/`?` error edge with
+   `git show 67a1705f8:research/claude-pump-big-lo-20261027/tools/errpath.py`.
+   - Apply big-lo's `return Ok(())` drop-tree rule only on data-first edges.
+   - Confirm no regression of 0x662c8 0x66fa8 0x67c38 0x6c160 0x79bc0 0x7a6c0 0x1348c0 0x135d60 0x137fc0.
+3. 0x7c720 update_schedule: the original's sites are volume_accumulator.rs 297-394 and g04's are 151-198, so
+   the body is structurally different. Start from tools/skel.py 0x7c720 (calls end_day twice, has an extra
+   `unwrap_failed`).
+4. Remaining large bodies (0x6fef8, 0x6cd78, 0x72810, 0x859b0, 0x7f010, 0x83c00, 0x65238): use tools/skel.py and
+   tools/callers.py first. Apply the gain01 rule to any block-order-only residual: check whether the IR block
+   order makes the right block the fall-through of the conditional branch, because SBF block placement keeps
+   ISel fall-throughs.

@@ -1,0 +1,34 @@
+--- a/src/quote_control/update_quote_control_mints.rs
++++ b/src/quote_control/update_quote_control_mints.rs
+@@ -64,17 +64,17 @@
+     let quote_control = &mut ctx.accounts.quote_control;
+     quote_control.validate_new_mint(&quote_mint)?;
+ 
+-    let new_len = quote_control
++    let new_len = match quote_control
+         .mints
+         .len()
+-        .checked_add(1)
+-        .ok_or(error!(PumpError::Overflow))?;
++        .checked_add(1) { Some(new_len) => new_len,
++        None => return Err(error!(PumpError::Overflow)) };
+     let new_space = QuoteControl::space(new_len)?;
+     let info = quote_control.to_account_info();
+     if new_space > info.data_len() {
+         let required = Rent::get()?.minimum_balance(new_space);
+-        let lamports = info.lamports();
+-        if required > lamports {
++        let lamports_diff = required.saturating_sub(info.lamports());
++        if lamports_diff > 0 {
+             transfer(
+                 CpiContext::new(
+                     ctx.accounts.system_program.to_account_info(),
+@@ -83,7 +83,7 @@
+                         to: info.clone(),
+                     },
+                 ),
+-                required - lamports,
++                lamports_diff,
+             )?;
+         }
+         info.realloc(new_space, false)?;
