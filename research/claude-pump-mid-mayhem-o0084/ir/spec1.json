@@ -1,0 +1,17 @@
+[
+ {"label": "pm-o84-v01", "reps": [["src/instructions/pump_interface_v2.rs",
+   " let scaled=reference.checked_mul(tolerance_bps as u128);\n let price=(vs*1_000_000_000_000_000u128).checked_div(vt).ok_or(MayhemError::MathOverflow)?;\n",
+   " let price=(vs*1_000_000_000_000_000u128).checked_div(vt).ok_or(MayhemError::MathOverflow)?;\n let scaled=reference.checked_mul(tolerance_bps as u128);\n"]]},
+ {"label": "pm-o84-v02", "reps": [["src/instructions/pump_interface_v2.rs",
+   " let vt=c.virtual_token_reserves as u128;let vs=c.virtual_sol_reserves as u128;\n",
+   " let vt=c.virtual_token_reserves as u128;\n"],
+   ["src/instructions/pump_interface_v2.rs",
+   " let price=(vs*1_000_000_000_000_000u128).checked_div(vt)",
+   " let price=(c.virtual_sol_reserves as u128*1_000_000_000_000_000u128).checked_div(vt)"]]},
+ {"label": "pm-o84-v03", "reps": [["src/instructions/pump_interface_v2.rs",
+   " let vt=c.virtual_token_reserves as u128;let vs=c.virtual_sol_reserves as u128;\n",
+   " let vt=c.virtual_token_reserves as u128;\n"],
+   ["src/instructions/pump_interface_v2.rs",
+   " let scaled=reference.checked_mul(tolerance_bps as u128);\n let price=(vs*1_000_000_000_000_000u128).checked_div(vt).ok_or(MayhemError::MathOverflow)?;\n",
+   " let price=(c.virtual_sol_reserves as u128*1_000_000_000_000_000u128).checked_div(vt).ok_or(MayhemError::MathOverflow)?;\n let scaled=reference.checked_mul(tolerance_bps as u128);\n"]]}
+]

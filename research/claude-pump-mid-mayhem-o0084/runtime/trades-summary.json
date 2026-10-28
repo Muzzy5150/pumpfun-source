@@ -1,0 +1,149 @@
+{
+  "candidate": "/Users/shawwalters/Documents/Codex/2026-10-24/claude-mayhem-work/mayhem-b/out/builds/pm-o84-v01/candidate.so",
+  "runs": [
+    {
+      "family": "buy",
+      "returncode": 0,
+      "expected_cases": 486,
+      "cases": 486,
+      "mismatches": 0,
+      "noncompute_log_diffs": 0,
+      "log_compared": 486,
+      "signed_transactions": 972
+    },
+    {
+      "family": "sell",
+      "returncode": 0,
+      "expected_cases": 396,
+      "cases": 396,
+      "mismatches": 0,
+      "noncompute_log_diffs": 0,
+      "log_compared": 396,
+      "signed_transactions": 792
+    },
+    {
+      "family": "buy-v2-native",
+      "returncode": 0,
+      "expected_cases": 613,
+      "cases": 613,
+      "mismatches": 0,
+      "noncompute_log_diffs": 0,
+      "log_compared": 613,
+      "signed_transactions": 1226
+    },
+    {
+      "family": "sell-v2-native",
+      "returncode": 0,
+      "expected_cases": 473,
+      "cases": 473,
+      "mismatches": 0,
+      "noncompute_log_diffs": 0,
+      "log_compared": 473,
+      "signed_transactions": 946
+    },
+    {
+      "family": "buy-amm-native",
+      "returncode": 0,
+      "expected_cases": 419,
+      "cases": 419,
+      "mismatches": 0,
+      "noncompute_log_diffs": 0,
+      "log_compared": 419,
+      "signed_transactions": 838
+    },
+    {
+      "family": "sell-amm-native",
+      "returncode": 0,
+      "expected_cases": 413,
+      "cases": 413,
+      "mismatches": 0,
+      "noncompute_log_diffs": 0,
+      "log_compared": 413,
+      "signed_transactions": 826
+    },
+    {
+      "family": "buy-v2-token",
+      "returncode": 0,
+      "expected_cases": 613,
+      "cases": 613,
+      "mismatches": 0,
+      "noncompute_log_diffs": 0,
+      "log_compared": 613,
+      "signed_transactions": 1226
+    },
+    {
+      "family": "sell-v2-token",
+      "returncode": 0,
+      "expected_cases": 473,
+      "cases": 473,
+      "mismatches": 0,
+      "noncompute_log_diffs": 0,
+      "log_compared": 473,
+      "signed_transactions": 946
+    },
+    {
+      "family": "buy-amm-token",
+      "returncode": 0,
+      "expected_cases": 419,
+      "cases": 419,
+      "mismatches": 0,
+      "noncompute_log_diffs": 0,
+      "log_compared": 419,
+      "signed_transactions": 838
+    },
+    {
+      "family": "sell-amm-token",
+      "returncode": 0,
+      "expected_cases": 413,
+      "cases": 413,
+      "mismatches": 0,
+      "noncompute_log_diffs": 0,
+      "log_compared": 413,
+      "signed_transactions": 826
+    },
+    {
+      "family": "buy-v2-token22",
+      "returncode": 0,
+      "expected_cases": 613,
+      "cases": 613,
+      "mismatches": 0,
+      "noncompute_log_diffs": 0,
+      "log_compared": 613,
+      "signed_transactions": 1226
+    },
+    {
+      "family": "sell-v2-token22",
+      "returncode": 0,
+      "expected_cases": 473,
+      "cases": 473,
+      "mismatches": 0,
+      "noncompute_log_diffs": 0,
+      "log_compared": 473,
+      "signed_transactions": 946
+    },
+    {
+      "family": "buy-amm-token22",
+      "returncode": 0,
+      "expected_cases": 419,
+      "cases": 419,
+      "mismatches": 0,
+      "noncompute_log_diffs": 0,
+      "log_compared": 419,
+      "signed_transactions": 838
+    },
+    {
+      "family": "sell-amm-token22",
+      "returncode": 0,
+      "expected_cases": 413,
+      "cases": 413,
+      "mismatches": 0,
+      "noncompute_log_diffs": 0,
+      "log_compared": 413,
+      "signed_transactions": 826
+    }
+  ],
+  "total_cases": 6636,
+  "total_mismatches": 0,
+  "total_noncompute_log_diffs": 0,
+  "all_ok": true
+}

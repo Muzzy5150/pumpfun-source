@@ -1,0 +1,24 @@
+[
+ {
+  "label": "pm-o84-v07",
+  "base": "root",
+  "reps": [
+   [
+    "src/instructions/pump_interface_v2.rs",
+    " let price_check:std::result::Result<(),MayhemError> = (|| {\n let scaled=reference.checked_mul(tolerance_bps as u128);\n let price=(vs*1_000_000_000_000_000u128).checked_div(vt).ok_or(MayhemError::MathOverflow)?;\n let delta=scaled.ok_or(MayhemError::MathOverflow)?/10_000;\n let low=reference.checked_sub(delta).ok_or(MayhemError::MathOverflow)?;\n let high=reference.checked_add(delta).ok_or(MayhemError::MathOverflow)?;\n if price<low||price>high{return Err(MayhemError::PumpCpiSlippage);}\n Ok(())\n })();price_check?;\n",
+    " let price=(vs*1_000_000_000_000_000u128).checked_div(vt).ok_or(MayhemError::MathOverflow)?;\n let scaled=reference.checked_mul(tolerance_bps as u128).ok_or(MayhemError::MathOverflow)?;\n let delta=scaled/10_000;\n let low=reference.checked_sub(delta).ok_or(MayhemError::MathOverflow)?;\n let high=reference.checked_add(delta).ok_or(MayhemError::MathOverflow)?;\n if price<low||price>high{return Err(MayhemError::PumpCpiSlippage.into());}\n"
+   ]
+  ]
+ },
+ {
+  "label": "pm-o84-v08",
+  "base": "root",
+  "reps": [
+   [
+    "src/instructions/pump_interface_v2.rs",
+    " let price_check:std::result::Result<(),MayhemError> = (|| {\n let scaled=reference.checked_mul(tolerance_bps as u128);\n let price=(vs*1_000_000_000_000_000u128).checked_div(vt).ok_or(MayhemError::MathOverflow)?;\n let delta=scaled.ok_or(MayhemError::MathOverflow)?/10_000;\n let low=reference.checked_sub(delta).ok_or(MayhemError::MathOverflow)?;\n let high=reference.checked_add(delta).ok_or(MayhemError::MathOverflow)?;\n if price<low||price>high{return Err(MayhemError::PumpCpiSlippage);}\n Ok(())\n })();price_check?;\n",
+    " let price_check:std::result::Result<(),MayhemError> = (|| {\n let price=(vs*1_000_000_000_000_000u128).checked_div(vt).ok_or(MayhemError::MathOverflow)?;\n let scaled=reference.checked_mul(tolerance_bps as u128).ok_or(MayhemError::MathOverflow)?;\n let delta=scaled/10_000;\n let low=reference.checked_sub(delta).ok_or(MayhemError::MathOverflow)?;\n let high=reference.checked_add(delta).ok_or(MayhemError::MathOverflow)?;\n if price<low||price>high{Err(MayhemError::PumpCpiSlippage)}else{Ok(())}\n })();price_check?;\n"
+   ]
+  ]
+ }
+]

@@ -1,0 +1,45 @@
+[
+ {
+  "label": "pm-o84-v04",
+  "base": "roots/pm-o84-v01",
+  "reps": [
+   [
+    "src/instructions/pump_interface_v2.rs",
+    " let scaled=reference.checked_mul(tolerance_bps as u128);\n let delta=scaled.ok_or(MayhemError::MathOverflow)?/10_000;\n",
+    " let scaled=reference.checked_mul(tolerance_bps as u128).ok_or(MayhemError::MathOverflow)?;\n let delta=scaled/10_000;\n"
+   ]
+  ]
+ },
+ {
+  "label": "pm-o84-v05",
+  "base": "roots/pm-o84-v01",
+  "reps": [
+   [
+    "src/instructions/pump_interface_v2.rs",
+    " let scaled=reference.checked_mul(tolerance_bps as u128);\n let delta=scaled.ok_or(MayhemError::MathOverflow)?/10_000;\n",
+    " let scaled=reference.checked_mul(tolerance_bps as u128).ok_or(MayhemError::MathOverflow)?;\n let delta=scaled/10_000;\n"
+   ],
+   [
+    "src/instructions/pump_interface_v2.rs",
+    " let high=reference.checked_add(delta).ok_or(MayhemError::MathOverflow)?;\n",
+    " let Some(high)=reference.checked_add(delta) else {return Err(MayhemError::MathOverflow)};\n"
+   ]
+  ]
+ },
+ {
+  "label": "pm-o84-v06",
+  "base": "roots/pm-o84-v01",
+  "reps": [
+   [
+    "src/instructions/pump_interface_v2.rs",
+    " let scaled=reference.checked_mul(tolerance_bps as u128);\n let delta=scaled.ok_or(MayhemError::MathOverflow)?/10_000;\n",
+    " let scaled=reference.checked_mul(tolerance_bps as u128).ok_or(MayhemError::MathOverflow)?;\n let delta=scaled/10_000;\n"
+   ],
+   [
+    "src/instructions/pump_interface_v2.rs",
+    " let high=reference.checked_add(delta).ok_or(MayhemError::MathOverflow)?;\n",
+    " let high=match reference.checked_add(delta){Some(h)=>h,None=>return Err(MayhemError::MathOverflow)};\n"
+   ]
+  ]
+ }
+]
