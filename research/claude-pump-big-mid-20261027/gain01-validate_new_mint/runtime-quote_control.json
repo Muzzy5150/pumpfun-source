@@ -1,0 +1,29 @@
+{
+ "report_sha256": "a4393bb0edd9c7f69761c1a91569883aff44b1e3fb1a2709a5299cc9ee5900f9",
+ "candidate_sha256": "73ceea96b8a08ca082576b194cab4c63990271de4d984c61c4dd9f55a484ab0c",
+ "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+ "suites": 1,
+ "suites_requested": 1,
+ "case_count": 507,
+ "expected_cases": 507,
+ "errors": [],
+ "diagnostic_log_cases": 507,
+ "diagnostic_mismatches": 0,
+ "counts": {
+  "quote_control": 507
+ },
+ "expected": {
+  "quote_control": 507
+ },
+ "bound_files_sha256": {
+  "candidate.so": "73ceea96b8a08ca082576b194cab4c63990271de4d984c61c4dd9f55a484ab0c",
+  "deployed.so": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "pump_with_captured_loader.py": "4eb9d65c8e54b39b2e991f1cff6068a28bd2d5c1a33601225d3608eb5e82863e",
+  "pump_captured_loader.py": "8d51ba5feab9e74f67fb80f5827222308d45a36022151bc77ad076c401f65067",
+  "pump_validate_parallel.py": "6d923544160ac4850bc04910d2e5955e3a49c0e2623b498ab6da89a513851375",
+  "pump_validate_all.py": "1bd1b16a37a0b4eb27d7de00e6a9d088c420acd71cabce77ae941a7a0bccfa45",
+  "pump_diagnostic_audit.py": "0343c70e4f9c7860ad392f0a8bd10d90ac94fe17bb2ba5bfd49a45683edbe343",
+  "pump_quote_control_fresh_differential.py": "5d6139ee50f1d8ba87d14344a281b3031fea42a9362f06d3b3ba124971049333"
+ },
+ "runner": "tools/run_suites.py (pump-hi runner) via tools/rt.py; REPO/work/test-env/bin/python (3.12, solders 0.27.1)"
+}

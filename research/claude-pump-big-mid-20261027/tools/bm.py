@@ -65,6 +65,8 @@ def build(src, label, ir=False, rustc_args=(), work=None):
         for ll in (work / 'target-identity').glob('sbpf-solana-solana/release/deps/pump_recovered*.ll'):
             ll.unlink()
     res = fastbuild.build(Path(src), work, out, quiet=True)
+    # snapshot the exact staged workspace that was compiled (sources only), for runtime build binding
+    subprocess.run(['rsync', '-a', '--exclude', 'target', str(work / 'ws') + '/', str(out / 'ws') + '/'], check=True)
     if extra:
         for ll in (work / 'target-identity').glob('sbpf-solana-solana/release/deps/pump_recovered*.ll'):
             shutil.move(str(ll), str(out / 'pump.ll'))

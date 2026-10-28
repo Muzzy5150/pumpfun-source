@@ -6,22 +6,23 @@ Scores are `harness/score.py --baseline base/g04/inventory.json`; only gains bey
 
 ## Scope
 
-Windows (`claude-pump-work/targets/big-mid.json`), after the 21:5x scope change:
+Windows (`claude-pump-work/targets/big-mid.json`) after the coordinator's 22:1x/22:2x corrections: 11 windows.
+Off-limits: 0x746a8/0x76a28/0x77940 (pump-big-lo, emit_cpi! family), 0x98af0 (already matched in L06), and
+the 86 windows of `targets/r4-{pumpquote,quotectl,coordbody,plainbody}.json`.
 
 | window | bytes | identity (from original callers/callees) | status |
 |---|---|---|---|
+| 0x68bd8 | 3488 | QuoteControl::validate_new_mint | **matched: gain01** |
 | 0x6fef8 | 9176 | set_reserved_fee_recipients body | open |
 | 0x859b0 | 8944 | buy-side post-trade helper (TradeEvent / PostCompleteBuyEvent), callers 0x147ba0, 0x1489f8 | open |
 | 0x6cd78 | 8544 | sell.rs body (called by 0x152888) | open |
 | 0x72810 | 7832 | sweep_fees body (sweep_protocol_fee + sweep_creator_fee) | open |
-| 0x6a8a8 | 6328 | add_quote_control_mint | open |
+| 0x6a8a8 | 6328 | add_quote_control_mint | in progress |
 | 0x7c720 | 6312 | volume_accumulator::update_schedule (called by 0x746a8) | open |
 | 0x75308 | 5920 | claim_token_incentives body | open |
-| 0x98af0 | 5464 | Global::set_buyback_fee_recipients (Codex buyback-values packet recovers it) | open |
 | 0x7f010 | 3544 | shared validation helper (callers 0x147ba0, 0x1489f8, 0x14a8a8) | open |
 | 0x83c00 | 3440 | trade_v3.rs:691 buy-side helper | open |
-| 0x65238, 0x68bd8 | | moved to the Pump session's round-4 lanes | dropped |
-| 0x746a8, 0x76a28, 0x77940 | | moved to pump-big-lo (emit_cpi! error-path family) | handed off |
+| 0x65238 | 3192 | pump_quote.rs:406-415 helper (called by 0x65eb0) | open |
 
 ## Tools (tools/)
 
@@ -57,3 +58,34 @@ Windows (`claude-pump-work/targets/big-mid.json`), after the 21:5x scope change:
    its invoke_signed check is `jeq ok; ja err` (Ok block not the IR successor at ISel), where we get `jne err`.
    Source form still open: the original must avoid the shared drop-tree node for the three exits (e.g. no
    locals live across all of them, or a different exit nesting).
+
+## gain01: 0x68bd8 validate_new_mint (807 on g04, 900 on L06)
+
+- Change: `require_eq!(self.mints.iter().position(|entry| entry.mint == *mint).is_some(), false, ..)` in place of
+  `self.contains(mint)` (one line, no Source line moves). Directory `gain01-validate_new_mint/`.
+- IR proof: the g04 IR with only the return block moved right after the `require_gt!` check block reproduces
+  0x68bd8 exactly with llc (ir-experiments/0x68bd8/vnmexp4.py scans every position; only that one matches).
+  Branch weights do not change the layout.
+- Mechanism (general, worth reusing): `BPFInstrInfo::analyzeBranch` cannot analyze conditional branches.
+  - MachineBlockPlacement therefore pre-merges every conditional-branch block with its fall-through block in
+    the initial (IR) order. The IR block creation order (rustc creates an LLVM block at the first terminator
+    reference while codegenning MIR in reverse postorder) fixes those fall-throughs.
+  - Here the MIR-inlined `is_some` gives `switchInt(discriminant) -> [1: error, 0: next, otherwise: unreachable]`,
+    so the error chain is codegenned first and creates the return block right after the `require_gt!` check.
+- Variant search (tools/irvariants.py compiles copies in the real crate and llc-compares each, ignoring only Source
+  lines): call-site `position().is_some()` and an `Option<usize>` helper + `.is_some()` match; `contains` via
+  any/find/for/index/#[inline]/#[inline(always)]/matches!/!is_none and explicit if/return/scope tails do not.
+- Runtime: quote_control 507/507, 0 errors, 0 diagnostic mismatches; full corpus recorded in the gain directory.
+
+## 0x6a8a8 add_quote_control_mint (in progress)
+
+- `.ok_or(error!(Overflow))?` builds the error eagerly. The original builds it lazily
+  (`ok_or_else`/`match` give identical code here).
+- The original computes `required.saturating_sub(lamports)` and branches `if diff > 0`. With these two edits:
+  0.49 → 0.65, 5848 B vs 6328.
+- Remaining: the three AccountInfo clones for the transfer CPI are not inlined. The inline remarks show cold
+  call sites (cost 60 > ColdCallSiteThreshold 45).
+  - Diagnostic only: with `-inline-cold-callsite-threshold=100` the body grows to 6344 B and the frame-slot
+    differences remain.
+  - So a source form that keeps the transfer path above the 2 % cold limit is still needed (the original's
+    branch hints).

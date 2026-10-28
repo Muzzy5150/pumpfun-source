@@ -1,0 +1,11 @@
+--- a/src/quote_control/state.rs
++++ b/src/quote_control/state.rs
+@@ -75,7 +75,7 @@
+             PumpError::QuoteMintNotEligibleForWhitelist
+         );
+         require_eq!(
+-            self.contains(mint),
++            self.mints.iter().position(|entry| entry.mint == *mint).is_some(),
+             false,
+             PumpError::QuoteMintAlreadyWhitelisted
+         );

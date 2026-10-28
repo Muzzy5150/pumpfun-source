@@ -149,7 +149,9 @@ class IRFunc:
             self.blocks.insert(self.idx(before), b)
 
     def text(self):
-        return self.header + '\n' + '\n'.join('\n'.join(b[1]) for b in self.blocks) + '\n}\n'
+        t = self.header + '\n' + '\n'.join('\n'.join(b[1]) for b in self.blocks) + '\n}\n'
+        # numbered values must appear in order; name them so blocks can be reordered
+        return re.sub(r'%(\d+)\b', lambda m: '%v' + m.group(1), t)
 
     def write(self, path):
         Path(path).write_text(self.pre + self.text() + self.post)

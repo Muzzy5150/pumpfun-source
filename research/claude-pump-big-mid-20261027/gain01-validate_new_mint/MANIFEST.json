@@ -1,0 +1,28 @@
+{
+ "lane": "pump-big-mid",
+ "base": "claude-pump-work/base/g04 (806/165, unstripped 5a13b87f89d0a18232a7b5d6a3146871cd21d75469c3fd7a0ef886cea06e911b)",
+ "windows": {
+  "0x68bd8": {
+   "bytes": 3488,
+   "symbol_needle": "12QuoteControl17validate_new_mint17",
+   "function": "quote_control::state::QuoteControl::validate_new_mint"
+  }
+ },
+ "result_on_g04": "807 normalized / 165 raw, gain 0x68bd8, no losses",
+ "result_on_L06": "900 normalized / 165 raw (L06 base 899), gain 0x68bd8, no losses",
+ "patch": "source.patch (git apply -p1 inside a copy of base/g04/pump; applies unchanged to base/L06/pump)",
+ "patch_sha256": "15fa7cbb5ec00fbb0201cc27053cdfb91cafce94f9e443bfc3575d2c4584a62f",
+ "elf_sha256": {
+  "candidate.so": "73ceea96b8a08ca082576b194cab4c63990271de4d984c61c4dd9f55a484ab0c",
+  "unstripped.so": "2998b92ce26866f94ced2cbe72799dc7de05f281f74c5c9bcf5796fc0f76ad55"
+ },
+ "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+ "builder": "claude-pump-work/harness/fastbuild.py, identity recipe (hybrid144 rustc 1.79, Linux v1.44 sbpf target libs)",
+ "runtime_valid": true,
+ "stack_warnings": [],
+ "runtime": [
+  "runtime-quote_control.json",
+  "runtime-corpus44.json"
+ ],
+ "runtime_note": "tools/rt.py stages the stripped ELF and the exact compiled fastbuild workspace inside the worktree and runs tools/run_suites.py (pump-hi runner) --suites all --workers 3; tokenkeg_two_curve is bound to that workspace through scripts/build_source_manifest.py"
+}

@@ -1,0 +1,10 @@
+{
+ "ok": true,
+ "runtime_valid": true,
+ "stack_warnings": [],
+ "recipe": "identity",
+ "triple": "sbpf-solana-solana",
+ "seconds": 13.2,
+ "unstripped_sha256": "2998b92ce26866f94ced2cbe72799dc7de05f281f74c5c9bcf5796fc0f76ad55",
+ "candidate_sha256": "73ceea96b8a08ca082576b194cab4c63990271de4d984c61c4dd9f55a484ab0c"
+}
