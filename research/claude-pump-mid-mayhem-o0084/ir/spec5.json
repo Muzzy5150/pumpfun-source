@@ -1,0 +1,24 @@
+[
+ {
+  "label": "pm-o84-v11",
+  "base": "roots/pm-o84-v10",
+  "reps": [
+   [
+    "src/instructions/pump_interface_v2.rs",
+    " let high=reference.checked_add(delta).ok_or(MayhemError::MathOverflow)?;\n if price<low||price>high{return Err(MayhemError::PumpCpiSlippage);}\n",
+    " match reference.checked_add(delta){Some(high)=>if price<low||price>high{return Err(MayhemError::PumpCpiSlippage);},None=>return Err(MayhemError::MathOverflow)}\n"
+   ]
+  ]
+ },
+ {
+  "label": "pm-o84-v12",
+  "base": "roots/pm-o84-v10",
+  "reps": [
+   [
+    "src/instructions/pump_interface_v2.rs",
+    " let high=reference.checked_add(delta).ok_or(MayhemError::MathOverflow)?;\n if price<low||price>high{return Err(MayhemError::PumpCpiSlippage);}\n",
+    " let high=match reference.checked_add(delta){Some(high)=>high,None=>return Err(MayhemError::MathOverflow)};\n if price<low||price>high{return Err(MayhemError::PumpCpiSlippage);}\n"
+   ]
+  ]
+ }
+]

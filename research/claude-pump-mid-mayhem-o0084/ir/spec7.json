@@ -1,0 +1,13 @@
+[
+ {
+  "label": "pm-o84-v14",
+  "base": "root",
+  "reps": [
+   [
+    "src/instructions/pump_interface_v2.rs",
+    " let scaled=reference.checked_mul(tolerance_bps as u128);\n let price=(vs*1_000_000_000_000_000u128).checked_div(vt).ok_or(MayhemError::MathOverflow)?;\n let delta=scaled.ok_or(MayhemError::MathOverflow)?/10_000;\n let low=reference.checked_sub(delta).ok_or(MayhemError::MathOverflow)?;\n let high=reference.checked_add(delta).ok_or(MayhemError::MathOverflow)?;\n",
+    " let price=(vs*1_000_000_000_000_000u128).checked_div(vt).ok_or(MayhemError::MathOverflow)?;\n let delta=match reference.checked_mul(tolerance_bps as u128){Some(scaled)=>scaled/10_000,\n None=>return Err(MayhemError::MathOverflow)};\n let low=reference.checked_sub(delta).ok_or(MayhemError::MathOverflow)?;\n let high=match reference.checked_add(delta){Some(high)=>high,None=>return Err(MayhemError::MathOverflow)};\n"
+   ]
+  ]
+ }
+]

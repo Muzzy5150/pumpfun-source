@@ -1,5 +1,5 @@
 {
- "candidate_symbols_sha256": "acc5bd5e311bac8b92f4e99f8f1ca6dce5681514c8185f1ef1c2f7555e3f6a19",
+ "candidate_symbols_sha256": "22eecafd8a0797ce1f8d9b50a5a3d8f0f807585ff57f45edb12104ae5a8e7396",
  "statuses": {
   "normalized_only": 333,
   "raw_local_match": 100,
@@ -26,7 +26,7 @@
   "source_before": 467,
   "source_after": 467
  },
- "candidate_text_bytes": 686920,
+ "candidate_text_bytes": 686928,
  "candidate_functions": 446,
  "gains": [],
  "body_losses": [],

@@ -12,9 +12,13 @@
 | Step | O0084 bytes | Masked lines | Windows | Losses |
 | --- | ---: | ---: | --- | --- |
 | 433 parent | 17,960 | 906 | 433 / 100 raw | — |
-| v01: price before scaled (`source.patch`) | 17,888 | 544 | 433 / 100 raw | none |
+| v01: price before scaled | 17,888 | 544 | 433 / 100 raw | none |
+| **v14: v01 + `match` forms keeping core's `unlikely` hints (`source.patch`)** | **17,896** | **469** | 433 / 100 raw | none |
 
-- v01 trade suites: 14 suites, 6,636 cases, 0 mismatches, 0 non-compute log differences.
+- Trade suites for v01 and v14: each 14 suites, 6,636 cases, 0 mismatches, 0 non-compute log differences.
+- v14's 7 O0084 Source records equal the original's.
+- v12 (same code minus one line) shifted two records, so it was rejected in favour of v14.
+- The change is disjoint from O0073's `fee_recipients.rs` edit, so composing with PR #397 is a file-level union.
 - **Shared helpers:** `state.rs` (`sell_amounts`, shared with Legacy Sell / pump-lo) is NOT changed. Only `pump_interface_v2.rs` (`sell_v2_handler`) changes.
 
 ## Experiments (all no-loss; masked lines on O0084)
@@ -46,11 +50,18 @@ Source (`ir/spec*.json`, real builds):
 | v06 | v04 + `match` on `checked_add` | 544 |
 | v07 | no closure | 606 |
 | v08 | closure with `if/else` return | 545 |
+| v09 | `.map(\|s\| s/10_000)` | 775 |
+| v10 | `match` with division in the Some arm | 537 |
+| v11 | v10 + `match` on `checked_add` with the comparison in the arm | 470 |
+| v12 | v10 + `match` on `checked_add` | 470 (line shift) |
+| v13 | v12 + inline `vs` read | 530 |
+| **v14** | **v12 with the line count preserved** | **469** |
 
 ## Next steps
 
-1. Find a source form that keeps core's `unlikely` hint on `checked_mul` and `checked_add`, i.e. one whose Option Some arm is non-empty when SimplifyCFG runs (target: IR n1).
-   - Then compare how the original Legacy Sell (O0082) and BuyV2 keep theirs.
-   - Coordinate with pump-lo, since the same mechanism probably governs O0082's checked arithmetic.
-2. Combine the late `vs` load (v03 form) with that fix, then attack the cap-selection order: load the quote-mint key words and the global-params base before the default/WSOL comparisons.
+1. Done in v14: the `match` forms keep the hints. pump-lo may want the same form for O0082's checked arithmetic.
+2. Cap-selection order. The original selects the cap after the bps check and the raw quote.
+   - This probably needs the cap chosen inside `sell_amounts`, which is shared with Legacy Sell; coordinate with pump-lo.
+   - Then retry the late `vs` load.
+   - Also try TECHNIQUES §7, the address-taken `native` flag, on the post-CPI native/token dispatch.
 3. CPI and event tail regions (see README).

@@ -1,0 +1,24 @@
+[
+ {
+  "label": "pm-o84-v09",
+  "base": "roots/pm-o84-v01",
+  "reps": [
+   [
+    "src/instructions/pump_interface_v2.rs",
+    " let scaled=reference.checked_mul(tolerance_bps as u128);\n let delta=scaled.ok_or(MayhemError::MathOverflow)?/10_000;\n",
+    " let delta=reference.checked_mul(tolerance_bps as u128).map(|scaled|scaled/10_000).ok_or(MayhemError::MathOverflow)?;\n"
+   ]
+  ]
+ },
+ {
+  "label": "pm-o84-v10",
+  "base": "roots/pm-o84-v01",
+  "reps": [
+   [
+    "src/instructions/pump_interface_v2.rs",
+    " let scaled=reference.checked_mul(tolerance_bps as u128);\n let delta=scaled.ok_or(MayhemError::MathOverflow)?/10_000;\n",
+    " let delta=match reference.checked_mul(tolerance_bps as u128){Some(scaled)=>scaled/10_000,None=>return Err(MayhemError::MathOverflow)};\n"
+   ]
+  ]
+ }
+]

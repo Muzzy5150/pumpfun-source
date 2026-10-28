@@ -1,12 +1,17 @@
 --- a/programs/mayhem/src/instructions/pump_interface_v2.rs
 +++ b/programs/mayhem/src/instructions/pump_interface_v2.rs
-@@ -557,8 +557,8 @@
+@@ -557,11 +557,11 @@
   let c=&a.bonding_curve;
   let vt=c.virtual_token_reserves as u128;let vs=c.virtual_sol_reserves as u128;
   let price_check:std::result::Result<(),MayhemError> = (|| {
 - let scaled=reference.checked_mul(tolerance_bps as u128);
   let price=(vs*1_000_000_000_000_000u128).checked_div(vt).ok_or(MayhemError::MathOverflow)?;
-+ let scaled=reference.checked_mul(tolerance_bps as u128);
-  let delta=scaled.ok_or(MayhemError::MathOverflow)?/10_000;
+- let delta=scaled.ok_or(MayhemError::MathOverflow)?/10_000;
++ let delta=match reference.checked_mul(tolerance_bps as u128){Some(scaled)=>scaled/10_000,
++ None=>return Err(MayhemError::MathOverflow)};
   let low=reference.checked_sub(delta).ok_or(MayhemError::MathOverflow)?;
-  let high=reference.checked_add(delta).ok_or(MayhemError::MathOverflow)?;
+- let high=reference.checked_add(delta).ok_or(MayhemError::MathOverflow)?;
++ let high=match reference.checked_add(delta){Some(high)=>high,None=>return Err(MayhemError::MathOverflow)};
+  if price<low||price>high{return Err(MayhemError::PumpCpiSlippage);}
+  Ok(())
+  })();price_check?;
