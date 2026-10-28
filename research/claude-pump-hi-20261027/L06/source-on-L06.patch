@@ -1,0 +1,54 @@
+--- a/src/migrate.rs
++++ b/src/migrate.rs
+@@ -283,8 +283,8 @@
+  // Allocate quote funding from signer PDA into native token account.
+  move_lamports(&curve,&tmpq,quote)?;
+  call(&tok,&[(&tmpq,false,true),(&a.rent.to_account_info(),false,false),(&curve,false,false)],vec![17],&[])?;
+- let creator=a.bonding_curve.creator;let cpi_accounts=pump_amm::cpi::accounts::CreatePool{pool:pool.clone(),global_config:cfg.clone(),creator:pa.clone(),base_mint:mint.clone(),quote_mint:wsol.clone(),lp_mint:lp.clone(),user_base_token_account:tmpb.clone(),user_quote_token_account:tmpq.clone(),user_pool_token_account:ulp.clone(),pool_base_token_account:pb.clone(),pool_quote_token_account:pq.clone(),system_program:sys.clone(),token_2022_program:t22.clone(),base_token_program:base_tok.clone(),quote_token_program:tok.clone(),associated_token_program:ata.clone(),event_authority:ev.clone(),program:am.clone()};
+- pump_amm::cpi::create_pool(CpiContext::new_with_signer(am.clone(),cpi_accounts,&[pas]),0,base,quote,creator,mayhem,pump_amm::types::OptionBool(a.bonding_curve.is_cashback_coin),pump_amm::types::OptionU64(a.bonding_curve.creator_fee_bps),pump_amm::types::OptionBool(a.bonding_curve.can_edit_creator_fee),pump_amm::types::OptionBool(a.bonding_curve.is_holder_reward))?;
++ create_pool(&ctx,base,
++  quote)?;
+  if !mayhem && (ctx.remaining_accounts.len()==2 || native_payments::boost_enabled(&cfg)) {
+   require!(ctx.remaining_accounts.len()==2,PumpError::NotEnoughRemainingAccounts);
+   let boost=&ctx.remaining_accounts[0];let vault=&ctx.remaining_accounts[1];
+@@ -332,3 +332,16 @@
+  let data=a.pool_authority_mint_account.try_borrow_data()?;
+  TokenAccount::try_deserialize_unchecked(&mut &data[..])
+ }
++
++// Original: standalone pool-creation helper (window 0x43ea0) calling the generated pump_amm client.
++fn create_pool<'info>(ctx:&Context<'_,'_,'_,'info,Migrate<'info>>,base:u64,quote:u64)->Result<()>{
++ let bump=ctx.bumps.pool_authority;let a=&ctx.accounts;
++ let create=move |signer_seeds:&[&[&[u8]];1]|pump_amm::cpi::create_pool(CpiContext::new_with_signer(a.pump_amm.to_account_info(),pump_amm::cpi::accounts::CreatePool{pool:a.pool.to_account_info(),global_config:a.amm_global_config.to_account_info(),creator:a.pool_authority.to_account_info(),base_mint:a.mint.to_account_info(),quote_mint:a.wsol_mint.to_account_info(),lp_mint:a.lp_mint.to_account_info(),user_base_token_account:a.pool_authority_mint_account.to_account_info(),user_quote_token_account:a.pool_authority_wsol_account.to_account_info(),user_pool_token_account:a.user_pool_token_account.to_account_info(),pool_base_token_account:a.pool_base_token_account.to_account_info(),pool_quote_token_account:a.pool_quote_token_account.to_account_info(),system_program:a.system_program.to_account_info(),token_2022_program:a.token_2022_program.to_account_info(),base_token_program:base_token_program(a.mint.as_ref().as_ref(),&a.token_program,&a.token_2022_program),quote_token_program:a.token_program.to_account_info(),associated_token_program:a.associated_token_program.to_account_info(),event_authority:a.pump_amm_event_authority.to_account_info(),program:a.pump_amm.to_account_info()},signer_seeds),0,base,quote,a.bonding_curve.creator,a.bonding_curve.is_mayhem_mode,pump_amm::types::OptionBool(a.bonding_curve.is_cashback_coin),pump_amm::types::OptionU64(a.bonding_curve.creator_fee_bps),pump_amm::types::OptionBool(a.bonding_curve.can_edit_creator_fee),pump_amm::types::OptionBool(a.bonding_curve.is_holder_reward));
++ create(&[&[b"pool-authority",a.mint.key().as_ref(),&[bump]]])
++}
++
++// Original: the base mint's token program, chosen by the mint owner (window 0x47e28).
++#[inline(never)]
++fn base_token_program<'info>(mint:&AccountInfo<'info>,token_program:&AccountInfo<'info>,token_2022_program:&AccountInfo<'info>)->AccountInfo<'info>{
++ if *mint.to_account_info().owner==anchor_spl::token::ID{token_program.to_account_info()}else{token_2022_program.to_account_info()}
++}
+--- a/src/migrate_v2.rs
++++ b/src/migrate_v2.rs
+@@ -324,8 +324,8 @@
+ 
+ 
+  let base=pool_authority_mint_token_account(a)?.amount;let quote=quote_amount(&tmpq)?.checked_sub(quote_before).ok_or_else(||error!(PumpError::Overflow))?;
+- let creator=a.bonding_curve.creator;let mut data=vec![233,146,209,142,207,104,64,188];data.extend_from_slice(&0u16.to_le_bytes());data.extend_from_slice(&base.to_le_bytes());data.extend_from_slice(&quote.to_le_bytes());data.extend_from_slice(creator.as_ref());data.push(mayhem as u8);data.push(a.bonding_curve.is_cashback_coin as u8);data.extend_from_slice(&a.bonding_curve.creator_fee_bps.to_le_bytes());data.push(a.bonding_curve.can_edit_creator_fee as u8);data.push(a.bonding_curve.is_holder_reward as u8);
+- call(&am,&[(&pool,false,true),(&cfg,false,false),(&pa,true,true),(&base_mint,false,false),(&wsol,false,false),(&lp,false,true),(&tmpb,false,true),(&tmpq,false,true),(&ulp,false,true),(&pb,false,true),(&pq,false,true),(&sys,false,false),(&t22,false,false),(&tok,false,false),(&qt,false,false),(&ata,false,false),(&ev,false,false),(&am,false,false)],data,&[pas])?;
++ create_pool(&ctx,base,
++  quote)?;
+  if !mayhem && (ctx.remaining_accounts.len()==2 || crate::migrate::native_payments::boost_enabled(&cfg)) {
+   require!(ctx.remaining_accounts.len()==2,PumpError::NotEnoughRemainingAccounts);
+   let boost=&ctx.remaining_accounts[0];let vault=&ctx.remaining_accounts[1];
+@@ -387,3 +387,10 @@
+ fn close_token_account<'info>(a:&MigrateV2<'info>,account:&AccountInfo<'info>,signer_seeds:&[&[&[u8]]],token_program:&AccountInfo<'info>)->Result<()>{
+  anchor_spl::token_2022::close_account(CpiContext::new_with_signer(token_program.clone(),anchor_spl::token_2022::CloseAccount{account:account.clone(),destination:a.withdraw_authority.to_account_info(),authority:a.pool_authority.to_account_info()},signer_seeds))
+ }
++
++// Original: standalone pool-creation helper (window 0x502f0) calling the generated pump_amm client.
++fn create_pool<'info>(ctx:&Context<'_,'_,'_,'info,MigrateV2<'info>>,base:u64,quote:u64)->Result<()>{
++ let bump=ctx.bumps.pool_authority;let a=&ctx.accounts;
++ let create=move |signer_seeds:&[&[&[u8]];1]|pump_amm::cpi::create_pool(CpiContext::new_with_signer(a.pump_amm.to_account_info(),pump_amm::cpi::accounts::CreatePool{pool:a.pool.to_account_info(),global_config:a.amm_global_config.to_account_info(),creator:a.pool_authority.to_account_info(),base_mint:a.base_mint.to_account_info(),quote_mint:a.quote_mint.to_account_info(),lp_mint:a.lp_mint.to_account_info(),user_base_token_account:a.pool_authority_mint_account.to_account_info(),user_quote_token_account:a.pool_authority_quote_account.to_account_info(),user_pool_token_account:a.user_pool_token_account.to_account_info(),pool_base_token_account:a.pool_base_token_account.to_account_info(),pool_quote_token_account:a.pool_quote_token_account.to_account_info(),system_program:a.system_program.to_account_info(),token_2022_program:a.token_2022_program.to_account_info(),base_token_program:a.base_token_program.to_account_info(),quote_token_program:a.quote_token_program.to_account_info(),associated_token_program:a.associated_token_program.to_account_info(),event_authority:a.pump_amm_event_authority.to_account_info(),program:a.pump_amm.to_account_info()},signer_seeds),0,base,quote,a.bonding_curve.creator,a.bonding_curve.is_mayhem_mode,pump_amm::types::OptionBool(a.bonding_curve.is_cashback_coin),pump_amm::types::OptionU64(a.bonding_curve.creator_fee_bps),pump_amm::types::OptionBool(a.bonding_curve.can_edit_creator_fee),pump_amm::types::OptionBool(a.bonding_curve.is_holder_reward));
++ create(&[&[b"pool-authority",a.base_mint.key().as_ref(),&[bump]]])
++}

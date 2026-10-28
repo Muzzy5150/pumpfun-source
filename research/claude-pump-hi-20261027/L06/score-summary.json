@@ -1,0 +1,15 @@
+{
+ "candidate_sha256": "6844f8d6026bd3d896ef161e5a4028ba2ce7abfbfd2aca0c5719fbb7b610c225",
+ "normalized": 902,
+ "raw": 165,
+ "total": 1035,
+ "matched_text_bytes": 1237000,
+ "gains": [
+  "0x43ea0",
+  "0x47e28",
+  "0x502f0"
+ ],
+ "losses": [],
+ "raw_gains": [],
+ "raw_losses": []
+}

@@ -1,0 +1,11 @@
+{
+ "ok": true,
+ "runtime_valid": true,
+ "stack_warnings": [],
+ "recipe": "identity",
+ "triple": "sbpf-solana-solana",
+ "seconds": 13.6,
+ "unstripped": "elf/unstripped.so.gz (gunzip)",
+ "unstripped_sha256": "6844f8d6026bd3d896ef161e5a4028ba2ce7abfbfd2aca0c5719fbb7b610c225",
+ "candidate_sha256": "33a7c58e3c61c1117b63d89b84de9daba578749fa031d6c53546e74c8dc41221"
+}

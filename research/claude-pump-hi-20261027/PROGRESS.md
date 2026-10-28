@@ -25,22 +25,29 @@ ELFs, SHA-256 and score output are under `evidence/elf/<name>/`.
 | H6 | **Round36** | see the commit that adds this row | `af3a7529160d5ff55f8cad5fc08b6c3dbbea856435420973b5401071c016a493` (`e11320e4c1c2c29feb775182c90d88ea41defcf2015b6f7a907a8c53f8ae8c81`) | **762 / 126 / 964,776** | 0xea68, 0xf130, 0xca628, 0xcf510, 0x10a0e0, 0x10c0b8, 0x10d638, 0x10e938, 0x10fb38, 0x1100f8, 0x110d40, 0x1113c8, 0x112220, 0x1133c8, 0x113f00, 0x114d48, 0x116718, 0x118360, 0x119c50, 0x1255a8, 0x12a4e0, 0x12abc8, 0x137fc0, 0x163ea8 | **normalized: none. Raw: none vs a same-recipe base**. Against the published inventory, 19 raw are recipe-dependent (0xa7e0, 0x18a3b0, 0x18a4d8, 0x194998, 0x194ae0, 0x197508, 0x1991e0, 0x19a758, 0x19a8a0, 0x1a0f68, 0x1a2340, 0x1a6370, 0x1a6940, 0x1ab220, 0x1ab730, 0x1b3220, 0x1b38c0, 0x1b4088, 0x1b40d0); see the control |
 | H7 | **Round36** (same-recipe base 738/126) | see the commit that adds this row | `a0f3aa555a06e16a95512fb3897c26dff3a2ddf362a2f4355aff674604d8ed81` (`d875b109fddfb254ecfd06e48e627f40d08d6b81cba676fe21d3a0937ae8179c`) | **764 / 126 / 972,072**, full corpus passes, 0 stack warnings | H6 set + 0x10b0b8 (collect_coin_creator_fee accounts inside `if !frozen`) + 0x1176e0 (change 8) | none (migrate_v2 part of change 7 removed) |
 | H7 on i1c | Pump composite **i1c** (778/135/984,768, identity recipe) | same commit | `88f345dc99b32b605c103fc29f542ed8d5cf8d12ed5e34e31fa6fd22656e8f6a` (`ddff3906b69d29f24aeb62eabd485b1972963af9fc29f5e68fba9ae55c93433e`) | **779 / 135 / 987,968**, 0 stack warnings | beyond i1c: 0x1176e0 | none |
+| H11 | **L06** (899/165, identity recipe) | see the commit that adds this row (`L06/`) | `6844f8d6026bd3d896ef161e5a4028ba2ce7abfbfd2aca0c5719fbb7b610c225` (`33a7c58e3c61c1117b63d89b84de9daba578749fa031d6c53546e74c8dc41221`) | **902 / 165 / 1,237,000**, full corpus passes (44/44, 10,468 cases), 0 stack warnings | 0x502f0 (migrate_v2 create_pool helper), 0x43ea0 (migrate create_pool helper), 0x47e28 (base_token_program; Pump-session plainbody window, parked there) | none |
 
 H3 raw gains are 0x198fe8 and 0x19b4e0. † These are in other claim families or lanes and are gained by this lane's SetMayhemVirtualParams layout change; they are reported for dedupe.
 
-## State for a continuation agent (after the 20:43 reboot)
+## State for a continuation agent (big-lo upper half, base L06)
 
-- Baseline: `claude-pump-work/base/g04/pump` (806/165). Measure with `claude-pump-work/harness/fastbuild.py`, which uses the identity recipe and the shared lock pool, and with `score.py --baseline base/g04/inventory.json`.
-- Durable scratch lives in `claude-mayhem-work/pump-hi/`: `fb/` is the fastbuild work dir, plus `trials/`, `out/` and `mini/` for isolated compiles. The lane worktree is under SP and is rebuilt from this branch.
+- Assignment: the big-lo windows with start > 0x3a7b8 (16 handler bodies, 0x3b8d8 … 0x5b3b0). `big-lo/NOTES.md` has the window map.
+- Baseline: `claude-pump-work/base/L06/pump` (899/165). It rebuilds bit-for-bit (`7bc1563b…`).
+  - Measure with `claude-pump-work/harness/fastbuild.py` and `score.py --baseline base/L06/inventory.json`.
+  - Deliver patches that `git apply -p1` cleanly in a copy of `base/L06/pump`.
+- L06 has layout padding (blank lines) that puts every Source site on its original line.
+  - Never change the line number of an existing line.
+  - Replace an N-line statement with N lines, and append new helpers after the last line of the file.
+- Durable scratch is `claude-mayhem-work/pump-hi/` (`fb/`, `trials/`, `out/`, `mini/`).
+  - `mini/exp.py NAME EDIT.py --win 0xADDR:SYMREGEX` copies L06, applies an edit script, builds, scores and compares windows. Edit scripts are in `mini/ed/`.
+  - `mini/cmpw.py` gives similarity with and without stack offsets and registers.
+- Delivered: H11 (`L06/`), 902/165. Open next, at the coordinator's request:
+  - 0x43060, 0x4eb28 and 0x52660, using pump-big-lo's `?` error-path rule.
+  - 0x43060 is the migrate v1 quote funding: `sub_lamports`/`add_lamports` plus a hand-built 3-account SyncNative `invoke`. As a helper it reaches noreg 0.975 (`mini/ed/wq1.py`). The original reloads the account pointers from `&Migrate` after each call, while this build keeps them in registers.
+- Parked by the coordinator (r4 plainbody): 0xcd3d8, 0x17bc48.
 - Tools:
-  - `tools/apply_tlv.py` (H8), `tools/apply_migrate_v2_accounts.py` (H10), `tools/apply_lane_changes.py` (changes 3, 5–8, Round37-aware).
-  - `tools/mini_cmp.py` compiles a helper in isolation and compares it with a window, which is useful for call-free helpers.
-  - `tools/fb_record.py` and `tools/run_suites.py` run the corpus on fastbuild outputs. Copy the candidate under `wt/work/`, because quote_control requires an in-repo path. tokenkeg_two_curve needs an archived build: `tools/build.py --packet repro/pump/main-contract-round37-20261027`.
-- Open body-hi windows:
-  - 0xcd3d8: an early second copy of `token_program.key()` in the original.
-  - 0x17bc48: the original spills the cursor where this build spills the TLV base.
-  - The coordinate-bound handler bodies belong to the layout integrator.
-  - The lib.rs helper cluster is covered by the Codex packets.
+  - `tools/fb_record.py` and `tools/run_suites.py` run the corpus. The candidate must sit under `wt/work/`.
+  - tokenkeg_two_curve needs an archived build: `tools/build.py --packet repro/pump/main-contract-round37-20261027`, run under `SP/sbf_lock.py`.
 
 ## State for a continuation agent (pre-reboot, historical)
 
@@ -120,6 +127,41 @@ H3 raw gains are 0x198fe8 and 0x19b4e0. † These are in other claim families or
   - Its loop is unswitched on `allow_token_extensions` unless the TransferHook program-id check is a pre-unrolled helper over `&[u8; 32]`. A helper `fn(&[u8;32]) -> bool { k.iter().all(..) }` with a single caller gets inlined after its own simplification, so the loop is never unswitched.
   - With that change the function is 1,200 B (original 1,192 B) and the only remaining differences are loop layout and register assignment: the original spills the cursor where this one spills the TLV base.
 - 0x109488 remains open on r37g4 because the GlobalConfig IDL change (nearmiss2-03) is not in r37g4. Per the coordinator's dedupe it is left to that delivery.
+
+## L06: create_pool helpers (H11, 899 → 902/165)
+
+- The original's migrate_v2 execute (0x49888) and migrate execute (0x3fb70) call standalone pool-creation helpers.
+  - 0x502f0 (8,704 B) is the migrate_v2 helper and 0x43ea0 (8,448 B) is the migrate helper.
+  - Each takes `(ctx: &Context<…>, base, quote)` and calls the generated `pump_amm::cpi::create_pool`, which is 0x10c0b8.
+- Matched form (behaviour unchanged):
+
+```rust
+fn create_pool<'info>(ctx:&Context<'_,'_,'_,'info,MigrateV2<'info>>,base:u64,quote:u64)->Result<()>{
+ let bump=ctx.bumps.pool_authority;let a=&ctx.accounts;
+ let create=move |signer_seeds:&[&[&[u8]];1]|pump_amm::cpi::create_pool(CpiContext::new_with_signer(a.pump_amm.to_account_info(),pump_amm::cpi::accounts::CreatePool{…18 accounts in IDL order…},signer_seeds),0,base,quote,a.bonding_curve.creator,a.bonding_curve.is_mayhem_mode,OptionBool(..),OptionU64(..),OptionBool(..),OptionBool(..));
+ create(&[&[b"pool-authority",a.base_mint.key().as_ref(),&[bump]]])
+}
+```
+
+- The frame fixes the seeds construction. Allocas appear in reverse MIR-local order, so the original's layout (low to high) is signer array, seeds array, mint key temp, bump array, then CpiContext. That order requires:
+  - the seeds to be built in a call argument with `key()` inline, so the mint temp comes after the seeds array;
+  - the CpiContext to be created after them, which happens inside a closure body.
+- What the variants measured:
+
+| variant | result |
+|---|---|
+| `let mint=…` before `let signer=…` (cp5/cpL1) | mint lands below signer; noreg 0.787 |
+| seeds inline in `new_with_signer` (cpL2) | seeds evaluated after the clones; 0.757 |
+| `&key().to_bytes()` inline (cpL3) | slot order correct, but 4 loads before 4 stores instead of the interleaved key memcpy |
+| non-`move` closure (cpL4/cpL8) | exact frame, but precise captures load the bonding_curve and quote_mint boxes early; noreg 0.84 |
+| `move` closure, `let bump` first (cpL6) | **exact**; `pub` and `#[inline(never)]` are not needed (cpL6a/b/c) |
+
+- The migrate (v1) helper is identical except for `base_token_program:base_token_program(a.mint.as_ref().as_ref(),&a.token_program,&a.token_2022_program)`.
+- That callee is window 0x47e28: `#[inline(never)] fn base_token_program(mint,token_program,token_2022_program:&AccountInfo)->AccountInfo`, returning `token_program` when `*mint.to_account_info().owner==anchor_spl::token::ID` and `token_2022_program` otherwise. It replaces L06's `mint.owner==tok.key` selection, which is equivalent because `token_program` is address-checked.
+- Call sites: `create_pool(&ctx,base,` / `quote)?;` replaces the 2-line hand-built CPI in each execute, so line counts are unchanged.
+- Runtime:
+  - migrate_v2 and migration suites first: 1,055 cases, 0 mismatches.
+  - Full corpus: 43 suites on the identity build (10,448 cases) plus tokenkeg_two_curve on an archived build (20 cases). 0 errors, 0 diagnostic mismatches.
 
 ## g04 baseline (806/165, unstripped 5a13b87f…)
 

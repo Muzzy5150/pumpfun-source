@@ -1,0 +1,14 @@
+{
+ "base": "claude-pump-work/base/L06/pump (899/165, unstripped 7bc1563b4965a9632d3362b271fe1e63ced8cb4eceda3a7aaa58fc86a025ee5e; reproduced bit-for-bit by fastbuild.py identity in this lane)",
+ "apply": "cd <copy of base/L06/pump> && git apply -p1 source-on-L06.patch",
+ "patch_sha256": "40b6ad2c063386fee374ed311c071b94ffb53ea0071476be7116cac4ce1e0037",
+ "recipe": "claude-pump-work/harness/fastbuild.py identity; runtime_valid true; stack_warnings []; build.log has no 'exceeded max offset' line",
+ "gains_beyond_L06": [
+  "0x43ea0",
+  "0x47e28",
+  "0x502f0"
+ ],
+ "counts": "902/165/1,237,000 (L06 899/165)",
+ "change": "H11: migrate_v2 and migrate create_pool helpers (the generated pump_amm client called from a move closure that takes the pool-authority signer seeds), plus base_token_program (mint owner == spl_token::ID ? token_program : token_2022_program). Each execute keeps its line count: the CPI is now a 2-line helper call, and the helpers are appended after the last existing line.",
+ "notes": "0x47e28 is in the Pump session's r4-plainbody list. It matched as a side effect of 0x43ea0, which calls it, and the coordinator has asked that session to park it."
+}
