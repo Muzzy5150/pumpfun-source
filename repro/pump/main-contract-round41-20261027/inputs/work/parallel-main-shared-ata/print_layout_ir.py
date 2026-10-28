@@ -1,0 +1,5 @@
+from pathlib import Path
+import os,json,subprocess,hashlib
+W=Path(__file__).resolve().parent;B=W/'build05';O=W/'type-layout-ir';O.mkdir(exist_ok=False);plan=json.loads((B/'build-plan.json').read_text());main=next(x for x in plan['invocations']if x['package_name']=='pump-recovered' and 'cdylib'in x['target_kind']);record=json.loads((B/'build-attempt.json').read_text());env=os.environ.copy();env.update(record['environment']);env.update(main['env']);env['PUMP_SOURCE_WRAPPER_LOG']=str(O/'wrapper.jsonl');env['CARGO_TARGET_DIR']=str(O/'target');args=list(main['args']);args[args.index('--emit=dep-info,link')]='--emit=llvm-ir';args[args.index('--out-dir')+1]=str(O);args.append('-Zprint-type-sizes');cmd=[main['program'],*args];(O/'command.json').write_text(json.dumps({'command':cmd,'cwd':main['cwd'],'environment_overrides':{k:env[k]for k in set(record['environment'])|set(main['env'])}},indent=2)+'\n')
+with (O/'log').open('w')as f:r=subprocess.run(cmd,cwd=main['cwd'],env=env,stdout=f,stderr=subprocess.STDOUT)
+(O/'status.json').write_text(json.dumps({'returncode':r.returncode,'diagnostic_only':True,'original_build_unchanged':True},indent=2)+'\n');print(r.returncode)

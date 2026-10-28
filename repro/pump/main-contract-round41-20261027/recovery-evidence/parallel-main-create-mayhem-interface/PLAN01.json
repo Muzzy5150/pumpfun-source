@@ -1,0 +1,81 @@
+{
+  "scope": "Main-owned client/CPI interface only; no Mayhem implementation/binary investigated or changed.",
+  "baseline": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round22-source/programs/pump",
+  "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-create-mayhem-interface/source01",
+  "create_v2_sha256": "76ca5a9f00aa63ab0dd5e125c4f61bced7fb8ca076ab409437c9c2c39fc43bcc",
+  "original_functions": {
+    "caller": "0x8a530/4840B",
+    "cpi": "0x118b50/4352B",
+    "metas": "0x11a4f8/2072B",
+    "infos": "0x11ad10/2632B"
+  },
+  "account_order": [
+    {
+      "name": "payer",
+      "source": "user",
+      "signer": true,
+      "writable": true
+    },
+    {
+      "name": "global_params",
+      "source": "global_params",
+      "signer": false,
+      "writable": false
+    },
+    {
+      "name": "mint_authority",
+      "source": "mint_authority",
+      "signer": true,
+      "writable": false
+    },
+    {
+      "name": "sol_vault",
+      "source": "sol_vault",
+      "signer": false,
+      "writable": true
+    },
+    {
+      "name": "mint",
+      "source": "mint",
+      "signer": false,
+      "writable": false
+    },
+    {
+      "name": "token_vault",
+      "source": "mayhem_token_vault",
+      "signer": false,
+      "writable": true
+    },
+    {
+      "name": "mayhem_state",
+      "source": "mayhem_state",
+      "signer": false,
+      "writable": true
+    },
+    {
+      "name": "system_program",
+      "source": "system_program",
+      "signer": false,
+      "writable": false
+    },
+    {
+      "name": "token_program",
+      "source": "token_program",
+      "signer": false,
+      "writable": false
+    },
+    {
+      "name": "associated_token_program",
+      "source": "associated_token_program",
+      "signer": false,
+      "writable": false
+    }
+  ],
+  "primary_templates": {
+    "/Users/shawwalters/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anchor-syn-0.31.2/src/codegen/program/cpi.rs": "ae959edd4067e0297fe06dcd9ddbd6819da6c7b787126538f8cd246bc296ed83",
+    "/Users/shawwalters/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anchor-syn-0.31.2/src/codegen/accounts/__cpi_client_accounts.rs": "f85c3ad78248492a4d3bae2574e42a06d134c49d9ca5c7bfe146e23da0fb08e8"
+  },
+  "input_changes": [
+    "src/create_v2.rs only; manifest/lock unchanged"
+  ]
+}

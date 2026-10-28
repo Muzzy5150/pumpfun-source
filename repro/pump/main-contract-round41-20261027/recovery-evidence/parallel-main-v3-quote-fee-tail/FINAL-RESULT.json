@@ -1,0 +1,80 @@
+{
+  "scope": "Accept the original minimum-sized transfer-fee payload prefix, retaining full declared TLV validation.",
+  "source": "source01",
+  "base": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-v3-quote-validation-order/source01",
+  "changed_files": [
+    "src/trade_v3.rs"
+  ],
+  "source_sha256": "d65f4dbde66ec68f5653ff30b2034a6fe615b60572d59b05f905dc792c5d6f01",
+  "candidate_sha256": "7288d0dcc6de0a565c81b7a3c587065c9c651cf4df1ac425f18a1cc09c458a86",
+  "unstripped_sha256": "69dde346722432a35b708de94f8df79e17f0c7795870bc9238a725ac5159ab43",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "signed_cases": 1291,
+  "case_counts": {
+    "tail-boundaries9": 9,
+    "oversized18": 18,
+    "cost-order8": 8,
+    "quote-order22": 22,
+    "buyback-order16": 16,
+    "buyback-post8": 8,
+    "buyback-prefix7": 7,
+    "buyback-protocol4": 4,
+    "buyback54": 54,
+    "v3-order": 18,
+    "v3-focused": 18,
+    "v3-extensions": 126,
+    "v3-continuation": 42,
+    "v3-post-fees": 80,
+    "v3-native-buyback": 18,
+    "v3-token-buyback": 12,
+    "v3-crossing": 16,
+    "v3-matrix": 12,
+    "price-divisible": 12,
+    "price-boundaries": 12,
+    "v3-precedence": 36,
+    "multihop-native": 56,
+    "multihop-two-curve": 20,
+    "v3-configured": 372,
+    "sell-v2-guards": 32,
+    "sell-v2-atas": 25,
+    "sell-v2-prepare": 12,
+    "v3-supply": 16,
+    "v3-zero-reserve": 4,
+    "sell-v2": 206
+  },
+  "diagnostic_log_bearing_cases": 1291,
+  "diagnostic_mismatches": 0,
+  "invocation_mismatches": 0,
+  "new_cases": 27,
+  "counterexamples_fixed": 18,
+  "original_rule": "Type1 payload length >=108; decode only108-byte prefix and advance by whole declared length.",
+  "tested_payload_lengths": [
+    107,
+    108,
+    109,
+    111,
+    112,
+    116
+  ],
+  "semantics": "Preserves the accepted single quote snapshot, V3 buyback behavior and first-cost order. Rejects short/duplicate/malformed later TLVs; trailing bytes within a declared type1 payload are tolerated.",
+  "inventory": {
+    "normalized": 708,
+    "raw": 123,
+    "delta_vs_round21": {
+      "raw": {
+        "gains": [],
+        "losses": []
+      },
+      "normalized": {
+        "gains": [],
+        "losses": []
+      }
+    }
+  },
+  "limitations": [
+    "No new normalized/raw window; full ELF remains unequal.",
+    "Source coordinates and compute use are omitted from diagnostics."
+  ],
+  "patch": "quote-fee-tail.patch",
+  "build_receipt": "build01/build-comparison.json"
+}

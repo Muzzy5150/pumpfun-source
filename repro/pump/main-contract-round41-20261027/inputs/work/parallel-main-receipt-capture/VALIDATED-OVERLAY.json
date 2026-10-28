@@ -1,0 +1,82 @@
+{
+  "status": "validated but inactive",
+  "baseline_manifest": "work/parallel-main-integration/unified-main-corpus-round25.json",
+  "baseline_manifest_sha256": "133f7f0d44be0513a15f370e165f0d5b19a0a4f2b38430258cc6c97d3847a42c",
+  "attribution_idl_sha256": "7616681ea557975f9f623ac211080f22a93060781eaf4765b0a488d980997207",
+  "overlay": "work/parallel-main-receipt-capture/validated-future-corpus.json",
+  "overlay_sha256": "c31398a1eed2ad9a450ccb38ff8bb66acc9932462063c171cc7988fe06f11853",
+  "candidate_sha256": "ef31dfd385dfe42b94cda0f12545fc639e12bccd5370ae56b4f1b412766402ab",
+  "cases": 1434,
+  "signed_transactions_verified": 2868,
+  "loader_records": 2871,
+  "all_existing_original_candidate_result_fields_identical": true,
+  "new_cases": 0,
+  "shared_files_modified": false,
+  "source_or_transaction_expression_changes": false,
+  "replacement_suites": [
+    {
+      "group": "additional",
+      "name": "buyback_recipients_100",
+      "cases": 100,
+      "original": "work/parallel-main-buyback-recipients/check_remaining.py",
+      "private": "work/parallel-main-receipt-capture/instrumented/work/parallel-main-buyback-recipients/check_remaining.py"
+    },
+    {
+      "group": "full",
+      "name": "volume",
+      "cases": 66,
+      "original": "scripts/pump_validate_volume.py",
+      "private": "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_volume.py"
+    },
+    {
+      "group": "full",
+      "name": "administration",
+      "cases": 93,
+      "original": "scripts/pump_validate_admin.py",
+      "private": "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_admin.py"
+    },
+    {
+      "group": "full",
+      "name": "authority",
+      "cases": 59,
+      "original": "scripts/pump_validate_authority.py",
+      "private": "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_authority.py"
+    },
+    {
+      "group": "full",
+      "name": "configuration",
+      "cases": 351,
+      "original": "scripts/pump_validate_config_admin.py",
+      "private": "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_config_admin.py"
+    },
+    {
+      "group": "full",
+      "name": "buy",
+      "cases": 334,
+      "original": "scripts/pump_validate_buy.py",
+      "private": "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_buy.py"
+    },
+    {
+      "group": "full",
+      "name": "sell",
+      "cases": 301,
+      "original": "scripts/pump_validate_sell.py",
+      "private": "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_sell.py"
+    },
+    {
+      "group": "full",
+      "name": "quote",
+      "cases": 130,
+      "original": "scripts/pump_validate_quote.py",
+      "private": "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_quote.py"
+    }
+  ],
+  "full_retention_audit": "R25-RETENTION.json",
+  "full_retention_audit_sha256": "e83bd0234922a85ad001d9b5f21fa5b9f8e1e0b10ca9d43e7e4eb43e3ff2fa88",
+  "baseline_total_pairs": 16770,
+  "baseline_retained_pairs": 15336,
+  "covered_missing_pairs": 1434,
+  "validation": "R25-VALIDATION.json",
+  "validation_sha256": "47fac5098c3aa3cc462de1d2955f0aa72c59ef65218003586a34f1a3dcf02a50",
+  "excluded_attempt": "run01/REJECTED.json"
+}

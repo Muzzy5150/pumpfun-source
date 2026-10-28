@@ -1,0 +1,32 @@
+{
+  "original_handler": "0x1557e8",
+  "original_bytes": 5704,
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "length_guard": {
+    "data_len_call": "0x1562f8",
+    "branch": "0x156300",
+    "success_condition": "unsigned data_len > 7",
+    "failure_block": "0x156400..0x1565a0",
+    "error": 6010
+  },
+  "discriminator_read": {
+    "call": "0x156328",
+    "api": "AccountInfo::try_borrow_data",
+    "preserved": true
+  },
+  "header_deserialize_read": {
+    "borrow_flag_check": "0x156728..0x156748",
+    "borrow_flag_increment": "0x156748..0x156750",
+    "deserialize_call": "0x156798",
+    "release": "0x1567f8..0x156808",
+    "api_inference": "RefCell::borrow, supported by direct RefCell borrow-flag access and panic_already_mutably_borrowed tail"
+  },
+  "header_serialize_write": {
+    "borrow_flag_zero_check": "0x156860..0x156870",
+    "set_exclusive_borrow": "0x156878, writes -1",
+    "serialize_call": "0x1568d0",
+    "release": "0x1568f0..0x156900",
+    "api_inference": "RefCell::borrow_mut, supported by exclusive borrow flag and panic_already_borrowed tail"
+  },
+  "panic_path_limit": "These are static API/CFG facts. The normal signed instruction fixtures do not construct internal RefCell borrow conflicts and do not directly execute those panic paths."
+}

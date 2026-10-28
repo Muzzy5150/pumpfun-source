@@ -1,0 +1,38 @@
+{
+  "status": "ready for root R26 gate integration",
+  "module": "work/parallel-main-receipt-verifier/receipt_verifier.py",
+  "cli": "work/parallel-main-receipt-verifier/verify_receipts.py",
+  "api": "verify_reports(full_path, additional_path, idl_path, *, root, candidate_sha256=None, expected_total=None, substitution_path=None) -> dict",
+  "source_sha256": {
+    "receipt_verifier.py": "d534cb7e5364d3ec50ea6183ce6b1b9cc0f0b9b8b055f0cc053e7206c4b40838",
+    "verify_receipts.py": "f6b0899be3d175543132ded0ac57f540c6254aa9d369277173a861c3613c6abd"
+  },
+  "full_R25_with_substitutions": {
+    "report": "r25-complete.json",
+    "sha256": "883333dddd506ea7e5485eeffc12518d8fe11ec9770be8544762f646874cbaa2",
+    "candidate_sha256": "ef31dfd385dfe42b94cda0f12545fc639e12bccd5370ae56b4f1b412766402ab",
+    "counts": {
+      "paired_rows": 16770,
+      "substituted_pairs": 1434,
+      "verified_result_objects": 33540,
+      "fully_backed_pairs": 16770,
+      "distinct_signed_transactions": 3681,
+      "distinct_transaction_pairs": 3681
+    },
+    "main_attribution": {
+      "known_main_instruction": 33384,
+      "unknown_or_malformed_main_instruction": 128,
+      "main_not_invoked": 28
+    },
+    "substitution_suites": 8,
+    "preexisting_fields_preserved": true
+  },
+  "integrity_controls": {
+    "report": "INTEGRITY-CONTROLS.json",
+    "sha256": "1dc9304c96aa7c6e99ffb687e8d203803c884f929bb34582ebad661927145bed",
+    "positive": 2,
+    "negative": 6
+  },
+  "transactions_generated_or_executed_by_verifier": 0,
+  "R26_runtime_gate_run": false
+}

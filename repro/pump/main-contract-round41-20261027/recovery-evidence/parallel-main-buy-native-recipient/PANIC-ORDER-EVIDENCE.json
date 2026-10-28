@@ -1,0 +1,700 @@
+[
+  {
+    "case": {
+      "name": "buy_v2_False_False_15000",
+      "kind": "buy_v2",
+      "token_quote": false,
+      "account_mutations": {
+        "global": {
+          "u64": [
+            [
+              997,
+              15000
+            ]
+          ]
+        }
+      }
+    },
+    "original": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/lib.rs:1939:14:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    },
+    "before": {
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": []
+    },
+    "after": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/buy_v2.rs:125:38:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    }
+  },
+  {
+    "case": {
+      "name": "buy_v2_False_False_20000",
+      "kind": "buy_v2",
+      "token_quote": false,
+      "account_mutations": {
+        "global": {
+          "u64": [
+            [
+              997,
+              20000
+            ]
+          ]
+        }
+      }
+    },
+    "original": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/lib.rs:1939:14:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    },
+    "before": {
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": []
+    },
+    "after": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/buy_v2.rs:125:38:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    }
+  },
+  {
+    "case": {
+      "name": "buy_v2_False_False_18446744073709551615",
+      "kind": "buy_v2",
+      "token_quote": false,
+      "account_mutations": {
+        "global": {
+          "u64": [
+            [
+              997,
+              18446744073709551615
+            ]
+          ]
+        }
+      }
+    },
+    "original": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/lib.rs:1939:14:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    },
+    "before": {
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": []
+    },
+    "after": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/buy_v2.rs:125:38:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    }
+  },
+  {
+    "case": {
+      "name": "buy_v2_True_False_15000",
+      "kind": "buy_v2",
+      "token_quote": true,
+      "account_mutations": {
+        "global": {
+          "u64": [
+            [
+              997,
+              15000
+            ]
+          ]
+        }
+      }
+    },
+    "original": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/lib.rs:1939:14:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    },
+    "before": {
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": []
+    },
+    "after": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/buy_v2.rs:125:38:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    }
+  },
+  {
+    "case": {
+      "name": "buy_v2_True_False_20000",
+      "kind": "buy_v2",
+      "token_quote": true,
+      "account_mutations": {
+        "global": {
+          "u64": [
+            [
+              997,
+              20000
+            ]
+          ]
+        }
+      }
+    },
+    "original": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/lib.rs:1939:14:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    },
+    "before": {
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": []
+    },
+    "after": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/buy_v2.rs:125:38:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    }
+  },
+  {
+    "case": {
+      "name": "buy_v2_True_False_18446744073709551615",
+      "kind": "buy_v2",
+      "token_quote": true,
+      "account_mutations": {
+        "global": {
+          "u64": [
+            [
+              997,
+              18446744073709551615
+            ]
+          ]
+        }
+      }
+    },
+    "original": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/lib.rs:1939:14:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    },
+    "before": {
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": []
+    },
+    "after": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/buy_v2.rs:125:38:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    }
+  },
+  {
+    "case": {
+      "name": "buy_exact_quote_in_v2_False_False_10001",
+      "kind": "buy_exact_quote_in_v2",
+      "token_quote": false,
+      "account_mutations": {
+        "global": {
+          "u64": [
+            [
+              997,
+              10001
+            ]
+          ]
+        }
+      }
+    },
+    "original": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/lib.rs:1939:14:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    },
+    "before": {
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": []
+    },
+    "after": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/buy_v2.rs:125:38:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    }
+  },
+  {
+    "case": {
+      "name": "buy_exact_quote_in_v2_False_False_15000",
+      "kind": "buy_exact_quote_in_v2",
+      "token_quote": false,
+      "account_mutations": {
+        "global": {
+          "u64": [
+            [
+              997,
+              15000
+            ]
+          ]
+        }
+      }
+    },
+    "original": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/lib.rs:1939:14:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    },
+    "before": {
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": []
+    },
+    "after": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/buy_v2.rs:125:38:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    }
+  },
+  {
+    "case": {
+      "name": "buy_exact_quote_in_v2_False_False_20000",
+      "kind": "buy_exact_quote_in_v2",
+      "token_quote": false,
+      "account_mutations": {
+        "global": {
+          "u64": [
+            [
+              997,
+              20000
+            ]
+          ]
+        }
+      }
+    },
+    "original": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/lib.rs:1939:14:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    },
+    "before": {
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": []
+    },
+    "after": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/buy_v2.rs:125:38:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    }
+  },
+  {
+    "case": {
+      "name": "buy_exact_quote_in_v2_False_False_18446744073709551615",
+      "kind": "buy_exact_quote_in_v2",
+      "token_quote": false,
+      "account_mutations": {
+        "global": {
+          "u64": [
+            [
+              997,
+              18446744073709551615
+            ]
+          ]
+        }
+      }
+    },
+    "original": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/lib.rs:1936:45:\nbuyback fee is at most protocol_fee: TryFromIntError(())"
+      ]
+    },
+    "before": {
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6025))))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]"
+      ],
+      "panic": []
+    },
+    "after": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/buy_v2.rs:124:54:\nbuyback fee is at most protocol_fee: TryFromIntError(())"
+      ]
+    }
+  },
+  {
+    "case": {
+      "name": "buy_exact_quote_in_v2_True_False_10001",
+      "kind": "buy_exact_quote_in_v2",
+      "token_quote": true,
+      "account_mutations": {
+        "global": {
+          "u64": [
+            [
+              997,
+              10001
+            ]
+          ]
+        }
+      }
+    },
+    "original": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/lib.rs:1939:14:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    },
+    "before": {
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": []
+    },
+    "after": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/buy_v2.rs:125:38:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    }
+  },
+  {
+    "case": {
+      "name": "buy_exact_quote_in_v2_True_False_15000",
+      "kind": "buy_exact_quote_in_v2",
+      "token_quote": true,
+      "account_mutations": {
+        "global": {
+          "u64": [
+            [
+              997,
+              15000
+            ]
+          ]
+        }
+      }
+    },
+    "original": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/lib.rs:1939:14:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    },
+    "before": {
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": []
+    },
+    "after": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/buy_v2.rs:125:38:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    }
+  },
+  {
+    "case": {
+      "name": "buy_exact_quote_in_v2_True_False_20000",
+      "kind": "buy_exact_quote_in_v2",
+      "token_quote": true,
+      "account_mutations": {
+        "global": {
+          "u64": [
+            [
+              997,
+              20000
+            ]
+          ]
+        }
+      }
+    },
+    "original": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/lib.rs:1939:14:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    },
+    "before": {
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": []
+    },
+    "after": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/buy_v2.rs:125:38:\nbuyback_fee never exceeds protocol_fee"
+      ]
+    }
+  },
+  {
+    "case": {
+      "name": "buy_exact_quote_in_v2_True_False_18446744073709551615",
+      "kind": "buy_exact_quote_in_v2",
+      "token_quote": true,
+      "account_mutations": {
+        "global": {
+          "u64": [
+            [
+              997,
+              18446744073709551615
+            ]
+          ]
+        }
+      }
+    },
+    "original": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/lib.rs:1936:45:\nbuyback fee is at most protocol_fee: TryFromIntError(())"
+      ]
+    },
+    "before": {
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6025))))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]"
+      ],
+      "panic": []
+    },
+    "after": {
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))",
+      "calls": [
+        "Program pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ invoke [2]",
+        "Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]",
+        "Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2]"
+      ],
+      "panic": [
+        "Program log: panicked at programs/pump/src/buy_v2.rs:124:54:\nbuyback fee is at most protocol_fee: TryFromIntError(())"
+      ]
+    }
+  }
+]

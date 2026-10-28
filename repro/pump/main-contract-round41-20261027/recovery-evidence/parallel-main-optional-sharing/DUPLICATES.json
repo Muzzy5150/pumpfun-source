@@ -1,0 +1,362 @@
+{
+  "raw_cases": 246,
+  "unique_observable_fixtures": 216,
+  "intra_suite_duplicates": [
+    {
+      "case": "buy_v2_False_length_114",
+      "duplicate_of": "buy_v2_False_valid"
+    },
+    {
+      "case": "buy_v2_False_status_1",
+      "duplicate_of": "buy_v2_False_valid"
+    },
+    {
+      "case": "buy_v2_False_admin_revoked_0",
+      "duplicate_of": "buy_v2_False_valid"
+    },
+    {
+      "case": "buy_v2_False_shares_count_1",
+      "duplicate_of": "buy_v2_False_valid"
+    },
+    {
+      "case": "buy_v2_False_share_bps_10000",
+      "duplicate_of": "buy_v2_False_valid"
+    },
+    {
+      "case": "buy_v2_True_length_114",
+      "duplicate_of": "buy_v2_True_valid"
+    },
+    {
+      "case": "buy_v2_True_status_1",
+      "duplicate_of": "buy_v2_True_valid"
+    },
+    {
+      "case": "buy_v2_True_admin_revoked_0",
+      "duplicate_of": "buy_v2_True_valid"
+    },
+    {
+      "case": "buy_v2_True_shares_count_1",
+      "duplicate_of": "buy_v2_True_valid"
+    },
+    {
+      "case": "buy_v2_True_share_bps_10000",
+      "duplicate_of": "buy_v2_True_valid"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_length_114",
+      "duplicate_of": "buy_exact_quote_in_v2_False_valid"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_status_1",
+      "duplicate_of": "buy_exact_quote_in_v2_False_valid"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_admin_revoked_0",
+      "duplicate_of": "buy_exact_quote_in_v2_False_valid"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_shares_count_1",
+      "duplicate_of": "buy_exact_quote_in_v2_False_valid"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_share_bps_10000",
+      "duplicate_of": "buy_exact_quote_in_v2_False_valid"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_length_114",
+      "duplicate_of": "buy_exact_quote_in_v2_True_valid"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_status_1",
+      "duplicate_of": "buy_exact_quote_in_v2_True_valid"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_admin_revoked_0",
+      "duplicate_of": "buy_exact_quote_in_v2_True_valid"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_shares_count_1",
+      "duplicate_of": "buy_exact_quote_in_v2_True_valid"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_share_bps_10000",
+      "duplicate_of": "buy_exact_quote_in_v2_True_valid"
+    },
+    {
+      "case": "sell_v2_False_length_114",
+      "duplicate_of": "sell_v2_False_valid"
+    },
+    {
+      "case": "sell_v2_False_status_1",
+      "duplicate_of": "sell_v2_False_valid"
+    },
+    {
+      "case": "sell_v2_False_admin_revoked_0",
+      "duplicate_of": "sell_v2_False_valid"
+    },
+    {
+      "case": "sell_v2_False_shares_count_1",
+      "duplicate_of": "sell_v2_False_valid"
+    },
+    {
+      "case": "sell_v2_False_share_bps_10000",
+      "duplicate_of": "sell_v2_False_valid"
+    },
+    {
+      "case": "sell_v2_True_length_114",
+      "duplicate_of": "sell_v2_True_valid"
+    },
+    {
+      "case": "sell_v2_True_status_1",
+      "duplicate_of": "sell_v2_True_valid"
+    },
+    {
+      "case": "sell_v2_True_admin_revoked_0",
+      "duplicate_of": "sell_v2_True_valid"
+    },
+    {
+      "case": "sell_v2_True_shares_count_1",
+      "duplicate_of": "sell_v2_True_valid"
+    },
+    {
+      "case": "sell_v2_True_share_bps_10000",
+      "duplicate_of": "sell_v2_True_valid"
+    }
+  ],
+  "overlap_with_accepted_trade_corpus": [
+    {
+      "case": "buy_v2_False_empty",
+      "existing": [
+        {
+          "suite": "regression",
+          "case": "buy_v2_False_False_500000000"
+        },
+        {
+          "suite": "regression",
+          "case": "trailing_False_[]"
+        },
+        {
+          "suite": "regression",
+          "case": "context_quote_mint_False_{'bytes': [[0, 0]]}"
+        },
+        {
+          "suite": "order",
+          "case": "buy_v2_False_valid_valid"
+        },
+        {
+          "suite": "recipients",
+          "case": "buy_v2_False_False_primary_control"
+        },
+        {
+          "suite": "waiver",
+          "case": "buy_v2-token-False-control"
+        }
+      ]
+    },
+    {
+      "case": "buy_v2_True_empty",
+      "existing": [
+        {
+          "suite": "regression",
+          "case": "buy_v2_True_False_500000000"
+        },
+        {
+          "suite": "regression",
+          "case": "trailing_True_[]"
+        },
+        {
+          "suite": "regression",
+          "case": "context_quote_mint_True_{'bytes': [[0, 0]]}"
+        },
+        {
+          "suite": "order",
+          "case": "buy_v2_True_valid_valid"
+        },
+        {
+          "suite": "recipients",
+          "case": "buy_v2_True_False_primary_control"
+        },
+        {
+          "suite": "waiver",
+          "case": "buy_v2-token-True-control"
+        }
+      ]
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_empty",
+      "existing": [
+        {
+          "suite": "regression",
+          "case": "buy_exact_quote_in_v2_False_False_500000000"
+        },
+        {
+          "suite": "regression",
+          "case": "trailing_False_[]"
+        },
+        {
+          "suite": "order",
+          "case": "buy_exact_quote_in_v2_False_valid_valid"
+        },
+        {
+          "suite": "recipients",
+          "case": "buy_exact_quote_in_v2_False_False_primary_control"
+        },
+        {
+          "suite": "waiver",
+          "case": "buy_exact_quote_in_v2-token-False-control"
+        }
+      ]
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_empty",
+      "existing": [
+        {
+          "suite": "regression",
+          "case": "buy_exact_quote_in_v2_True_False_500000000"
+        },
+        {
+          "suite": "regression",
+          "case": "trailing_True_[]"
+        },
+        {
+          "suite": "order",
+          "case": "buy_exact_quote_in_v2_True_valid_valid"
+        },
+        {
+          "suite": "recipients",
+          "case": "buy_exact_quote_in_v2_True_False_primary_control"
+        },
+        {
+          "suite": "waiver",
+          "case": "buy_exact_quote_in_v2-token-True-control"
+        }
+      ]
+    },
+    {
+      "case": "sell_v2_False_empty",
+      "existing": [
+        {
+          "suite": "regression",
+          "case": "native"
+        },
+        {
+          "suite": "regression",
+          "case": "mut_quote_mint_False_{'bytes': [[0, 0]]}"
+        },
+        {
+          "suite": "regression",
+          "case": "context_base_mint_{'bytes': [[0, 0]]}"
+        },
+        {
+          "suite": "regression",
+          "case": "volume_zero_user"
+        },
+        {
+          "suite": "regression",
+          "case": "curve_length_166"
+        },
+        {
+          "suite": "regression",
+          "case": "configured_fee_False_0"
+        },
+        {
+          "suite": "sell-expanded",
+          "case": "False_valid_valid"
+        },
+        {
+          "suite": "recipients",
+          "case": "sell_v2_False_False_primary_control"
+        },
+        {
+          "suite": "waiver",
+          "case": "sell_v2-token-False-control"
+        }
+      ]
+    },
+    {
+      "case": "sell_v2_False_valid",
+      "existing": [
+        {
+          "suite": "regression",
+          "case": "sharing_data_unrelated_creator"
+        }
+      ]
+    },
+    {
+      "case": "sell_v2_False_length_114",
+      "existing": [
+        {
+          "suite": "regression",
+          "case": "sharing_data_unrelated_creator"
+        }
+      ]
+    },
+    {
+      "case": "sell_v2_False_status_1",
+      "existing": [
+        {
+          "suite": "regression",
+          "case": "sharing_data_unrelated_creator"
+        }
+      ]
+    },
+    {
+      "case": "sell_v2_False_admin_revoked_0",
+      "existing": [
+        {
+          "suite": "regression",
+          "case": "sharing_data_unrelated_creator"
+        }
+      ]
+    },
+    {
+      "case": "sell_v2_False_shares_count_1",
+      "existing": [
+        {
+          "suite": "regression",
+          "case": "sharing_data_unrelated_creator"
+        }
+      ]
+    },
+    {
+      "case": "sell_v2_False_share_bps_10000",
+      "existing": [
+        {
+          "suite": "regression",
+          "case": "sharing_data_unrelated_creator"
+        }
+      ]
+    },
+    {
+      "case": "sell_v2_True_empty",
+      "existing": [
+        {
+          "suite": "regression",
+          "case": "token"
+        },
+        {
+          "suite": "regression",
+          "case": "mut_quote_mint_True_{'bytes': [[0, 0]]}"
+        },
+        {
+          "suite": "regression",
+          "case": "configured_fee_True_0"
+        },
+        {
+          "suite": "sell-expanded",
+          "case": "True_valid_valid"
+        },
+        {
+          "suite": "recipients",
+          "case": "sell_v2_True_False_primary_control"
+        },
+        {
+          "suite": "waiver",
+          "case": "sell_v2-token-True-control"
+        }
+      ]
+    }
+  ],
+  "new_unique_observable_fixtures": 209,
+  "method": "Same signedtransaction bytes and fulloriginalpost-stateaccountsnapshot. SharingConfig isnotmutated, soitsinputdata/ownerarepreserved. Comparedallacceptedquote-helpertradearchives;Sweepinstructiondiscriminatorsdiffer."
+}

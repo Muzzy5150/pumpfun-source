@@ -1,0 +1,13 @@
+short-compound-{'owner': 'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA'} [] ['Program log: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA', 'Program log: 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P']
+short-compound-{'wrong': 'system_program'} [] ['Program log: GYLyvG7M1bK75pXjKi2KvLWT9XPHucubWrHvQRJnqdBb', 'Program log: 11111111111111111111111111111111']
+short-compound-{'readonly': 'account'} [] []
+short-compound-{'unsigned': 'user'} [] []
+BondingCurve-zero-lamports [] []
+BondingCurve-zero-threshold [] []
+Global-zero-lamports [] []
+Global-zero-threshold [] []
+GlobalVolumeAccumulator-zero-lamports [] []
+GlobalVolumeAccumulator-zero-threshold [] []
+UserVolumeAccumulator-zero-lamports [] []
+UserVolumeAccumulator-zero-threshold [] []
+{'cases': 12, 'mismatches': 0, 'diagnostic_mismatches': 0}

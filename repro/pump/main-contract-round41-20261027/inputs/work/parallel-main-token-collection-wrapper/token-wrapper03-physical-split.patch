@@ -1,0 +1,42 @@
+--- a/src/creator/collect_creator_fee.rs
++++ b/src/creator/collect_creator_fee.rs
+@@ -35,7 +35,7 @@
+  if amount==0{msg!("No creator fee to collect");return Ok(None);}
+  let creator_key=creator.key();let bump=[creator_vault_bump];let seeds:&[&[u8]]=&[b"creator-vault",creator_key.as_ref(),&bump];
+  if native{transfer_native(system_program.as_ref(),creator_vault,creator,amount,&[seeds])?;}
+- else{anchor_spl::token_interface::transfer_checked(CpiContext::new_with_signer(quote_token_program.to_account_info(),anchor_spl::token_interface::TransferChecked{from:creator_vault_token_account.clone(),mint:quote_mint.clone(),to:creator_token_account.clone(),authority:creator_vault.clone()},&[seeds]),amount,decimals)?;}
++ else{transfer_tokens(quote_token_program,creator_vault_token_account,creator_token_account,creator_vault,decimals,quote_mint,amount,&[seeds])?;}
+  Ok(Some((amount,if native{Pubkey::default()}else{quote_mint.key()})))
+ }
+ 
+@@ -51,6 +51,19 @@
+  )
+ }
+ 
++pub fn transfer_tokens<'info>(
++ token_program:&Interface<'info,anchor_spl::token_interface::TokenInterface>,
++ source:&AccountInfo<'info>,destination:&AccountInfo<'info>,authority:&AccountInfo<'info>,
++ decimals:u8,mint:&AccountInfo<'info>,amount:u64,signer_seeds:&[&[&[u8]];1],
++)->Result<()>{
++ if amount==0{return Ok(());}
++ anchor_spl::token_interface::transfer_checked(
++  CpiContext::new_with_signer(token_program.to_account_info(),anchor_spl::token_interface::TransferChecked{
++   from:source.clone(),to:destination.clone(),authority:authority.clone(),mint:mint.clone(),
++  },signer_seeds),amount,decimals,
++ )
++}
++
+ pub fn execute(ctx:Context<CollectCreatorFeeV2>)->Result<()>{
+  let a=&ctx.accounts;
+  if let Some((amount,quote_mint))=collect(&a.creator,a.creator_token_account.as_ref(),&a.creator_vault,ctx.bumps.creator_vault,a.creator_vault_token_account.as_ref(),a.quote_mint.decimals,a.quote_mint.as_ref().as_ref(),&a.quote_token_program,&a.system_program)?{
+--- a/src/creator/distribute_creator_fee_v2.rs
++++ b/src/creator/distribute_creator_fee_v2.rs
+@@ -25,7 +25,7 @@
+    if needs_initialize{
+     anchor_spl::associated_token::create(CpiContext::new(a.associated_token_program.to_account_info(),anchor_spl::associated_token::Create{payer:a.payer.to_account_info(),associated_token:ata.clone(),authority:recipient.clone(),mint:a.quote_mint.to_account_info(),system_program:a.system_program.to_account_info(),token_program:a.quote_token_program.to_account_info()}))?;
+    }
+-   if amount>0{anchor_spl::token_interface::transfer_checked(CpiContext::new_with_signer(a.quote_token_program.to_account_info(),anchor_spl::token_interface::TransferChecked{from:a.creator_vault_quote_token_account.to_account_info(),mint:a.quote_mint.to_account_info(),to:ata.clone(),authority:a.creator_vault.to_account_info()},&[seeds]),amount,a.quote_mint.decimals)?;}
++   crate::collect_v2::transfer_tokens(&a.quote_token_program,a.creator_vault_quote_token_account.as_ref(),ata,&a.creator_vault,a.quote_mint.decimals,a.quote_mint.as_ref().as_ref(),amount,&[seeds])?;
+    distributed=distributed.checked_add(amount).ok_or(error!(PumpError::Overflow))?;
+   }
+  }

@@ -1,0 +1,38 @@
+{
+  "case_count": 66,
+  "strict_cases": 66,
+  "suites": [
+    {
+      "name": "sell-v2-split",
+      "cases": 24,
+      "script": "work/parallel-main-legacy-buyback-split/probe-sell-v2-boundary.py",
+      "script_sha256": "096d6462d8d223862a0debf06890c74f1d9ea3b4038531a58b59e6ec2aed97f0",
+      "command": [
+        "work/test-env/bin/python",
+        "work/parallel-main-legacy-buyback-split/probe-sell-v2-boundary.py",
+        "--candidate",
+        "CANDIDATE",
+        "--output",
+        "sell-v2-split.json.gz"
+      ],
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-sell-v2-split.json.gz",
+      "archive_sha256": "bf3a95e1fd9fc4bc0733b1a70727a3096e834681f609fc190e45cb6a4c6ebb71"
+    },
+    {
+      "name": "sell-v2-thresholds",
+      "cases": 42,
+      "script": "work/parallel-main-sell-v2-buyback-accounting/probe-payment-thresholds.py",
+      "script_sha256": "4bea8b8a9732aa02a7df09adf751d3e33487a6e9112035d57d051054d6decc8a",
+      "command": [
+        "work/test-env/bin/python",
+        "work/parallel-main-sell-v2-buyback-accounting/probe-payment-thresholds.py",
+        "--candidate",
+        "CANDIDATE",
+        "--output",
+        "sell-v2-thresholds.json.gz"
+      ],
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-sell-v2-thresholds.json.gz",
+      "archive_sha256": "3f46719a80367f3dbfcd97dc0dd274cced7a22a192b21f4e3ebecb0db46cd880"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "original_helper": {
+    "start": "0x3b738",
+    "bytes": 416,
+    "signature": "Result<()> out; &Program<System>; &Signer; &AccountInfo creator vault",
+    "behavior": "Rent::get()?.minimum_balance(0); if lamports below minimum, transfer full minimum from user to creator vault; else Ok(())"
+  },
+  "legacy_call_sites": {
+    "buy": "0x14d790",
+    "buy_exact_sol_in": "0x1512b0",
+    "sell": "0x1538b0"
+  },
+  "typed_layout_both_contexts": {
+    "creator_vault": 704,
+    "system_program": 992,
+    "user": 984
+  },
+  "layout_evidence": "layout.ll against frozen Round23 rlib; duplicate offset functions were folded into aliases",
+  "preserved_other_original_caller": {
+    "site": "0x28490",
+    "function": "0x22a10",
+    "note": "creation parser; unmodified"
+  },
+  "before_probe": "before-vault-rent02.json.gz",
+  "before_case_count": 63,
+  "before_differences": 13,
+  "earlier_probe_limitation": "Original common fixture recreated a zero-lamport vault with default10000000lamports; the45case first probe validly demonstrates6positive-balance differences. Corrected local fixture moves default creation before mutations."
+}

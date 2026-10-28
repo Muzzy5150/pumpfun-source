@@ -1,0 +1,226 @@
+{
+  "buy_fee_1": {
+    "original": {
+      "error": null,
+      "system_transfers_in_order": [
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "HNE93wA6iKsAUJdMNusoqSCTyKXLvmt8qZPE235KHqkt",
+          "lamports": 890880
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "HNE93wA6iKsAUJdMNusoqSCTyKXLvmt8qZPE235KHqkt",
+          "lamports": 42
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "DVtP3csJxif14jEnZv82vcK3mevC4MNEApbksz5hNF4Q",
+          "lamports": 13980
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "5YxQFdt3Tr9zJLvkFccqXVUwhdTWJQc1fFg2YPbxvxeD",
+          "lamports": 66
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "62qc2CNXwrYqQScmEdiZFFAnJR262PxWEuNQtxfafNgV",
+          "lamports": 67
+        }
+      ]
+    },
+    "candidate": {
+      "error": null,
+      "system_transfers_in_order": [
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "HNE93wA6iKsAUJdMNusoqSCTyKXLvmt8qZPE235KHqkt",
+          "lamports": 42
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "DVtP3csJxif14jEnZv82vcK3mevC4MNEApbksz5hNF4Q",
+          "lamports": 13980
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "5YxQFdt3Tr9zJLvkFccqXVUwhdTWJQc1fFg2YPbxvxeD",
+          "lamports": 66
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "62qc2CNXwrYqQScmEdiZFFAnJR262PxWEuNQtxfafNgV",
+          "lamports": 67
+        }
+      ]
+    }
+  },
+  "buy_zero_fee_1": {
+    "original": {
+      "error": null,
+      "system_transfers_in_order": [
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "DVtP3csJxif14jEnZv82vcK3mevC4MNEApbksz5hNF4Q",
+          "lamports": 13980
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "5YxQFdt3Tr9zJLvkFccqXVUwhdTWJQc1fFg2YPbxvxeD",
+          "lamports": 66
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "62qc2CNXwrYqQScmEdiZFFAnJR262PxWEuNQtxfafNgV",
+          "lamports": 67
+        }
+      ]
+    },
+    "candidate": {
+      "error": null,
+      "system_transfers_in_order": [
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "DVtP3csJxif14jEnZv82vcK3mevC4MNEApbksz5hNF4Q",
+          "lamports": 13980
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "5YxQFdt3Tr9zJLvkFccqXVUwhdTWJQc1fFg2YPbxvxeD",
+          "lamports": 66
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "62qc2CNXwrYqQScmEdiZFFAnJR262PxWEuNQtxfafNgV",
+          "lamports": 67
+        }
+      ]
+    }
+  },
+  "buy_cashback_1": {
+    "original": {
+      "error": null,
+      "system_transfers_in_order": [
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "2fQS9EcdPMTMSH53vbbPVZcHLR3oLgKCRqV7jnbNkGHq",
+          "lamports": 42
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "DVtP3csJxif14jEnZv82vcK3mevC4MNEApbksz5hNF4Q",
+          "lamports": 13980
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "5YxQFdt3Tr9zJLvkFccqXVUwhdTWJQc1fFg2YPbxvxeD",
+          "lamports": 66
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "62qc2CNXwrYqQScmEdiZFFAnJR262PxWEuNQtxfafNgV",
+          "lamports": 67
+        }
+      ]
+    },
+    "candidate": {
+      "error": null,
+      "system_transfers_in_order": [
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "2fQS9EcdPMTMSH53vbbPVZcHLR3oLgKCRqV7jnbNkGHq",
+          "lamports": 42
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "DVtP3csJxif14jEnZv82vcK3mevC4MNEApbksz5hNF4Q",
+          "lamports": 13980
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "5YxQFdt3Tr9zJLvkFccqXVUwhdTWJQc1fFg2YPbxvxeD",
+          "lamports": 66
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "62qc2CNXwrYqQScmEdiZFFAnJR262PxWEuNQtxfafNgV",
+          "lamports": 67
+        }
+      ]
+    }
+  },
+  "buy_exact_sol_in_fee_1": {
+    "original": {
+      "error": null,
+      "system_transfers_in_order": [
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "HNE93wA6iKsAUJdMNusoqSCTyKXLvmt8qZPE235KHqkt",
+          "lamports": 890880
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "HNE93wA6iKsAUJdMNusoqSCTyKXLvmt8qZPE235KHqkt",
+          "lamports": 1481482
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "DVtP3csJxif14jEnZv82vcK3mevC4MNEApbksz5hNF4Q",
+          "lamports": 493827159
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "5YxQFdt3Tr9zJLvkFccqXVUwhdTWJQc1fFg2YPbxvxeD",
+          "lamports": 2345679
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "62qc2CNXwrYqQScmEdiZFFAnJR262PxWEuNQtxfafNgV",
+          "lamports": 2345680
+        }
+      ]
+    },
+    "candidate": {
+      "error": null,
+      "system_transfers_in_order": [
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "HNE93wA6iKsAUJdMNusoqSCTyKXLvmt8qZPE235KHqkt",
+          "lamports": 1481482
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "DVtP3csJxif14jEnZv82vcK3mevC4MNEApbksz5hNF4Q",
+          "lamports": 493827159
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "5YxQFdt3Tr9zJLvkFccqXVUwhdTWJQc1fFg2YPbxvxeD",
+          "lamports": 2345679
+        },
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "62qc2CNXwrYqQScmEdiZFFAnJR262PxWEuNQtxfafNgV",
+          "lamports": 2345680
+        }
+      ]
+    }
+  },
+  "sell_fee_1": {
+    "original": {
+      "error": null,
+      "system_transfers_in_order": [
+        {
+          "from": "DY7kCKMuBLWhgtTzqUatnURbGeNbNks2uumKf1cqCjrp",
+          "to": "HNE93wA6iKsAUJdMNusoqSCTyKXLvmt8qZPE235KHqkt",
+          "lamports": 890880
+        }
+      ]
+    },
+    "candidate": {
+      "error": null,
+      "system_transfers_in_order": []
+    }
+  }
+}

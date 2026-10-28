@@ -1,0 +1,28 @@
+{
+  "scope": "61 new direct Pump distribution cases after dedup against the full R32 direct distribution corpus and62 additional regressions.",
+  "script": "work/parallel-main-distribution-pending-fees/probe_pending.py",
+  "script_sha256": "9460daeeb6c994cb0c84c25cb4eab87f18e8e9f01250cdef330dd94a79fec441",
+  "arguments": [
+    "--candidate",
+    "CANDIDATE",
+    "--cases-file",
+    "work/parallel-main-distribution-pending-fees/incremental-cases.json",
+    "--output",
+    "OUTPUT.json.gz"
+  ],
+  "extra_inputs": {
+    "work/parallel-main-distribution-pending-fees/incremental-cases.json": "06159355b90ee0c6e92b60033eaeb5c40341c9331377315a4a124215a95e6ce9",
+    "scripts/pump_creator_distribution_differential.py": "24bbff55fb54cb53c913fb4c059efa65965b537c78e6ab04f923027c61e4e738",
+    "scripts/fees_sharing_update_differential.py": "21ec993ac86f364a58bfb9073d991bb83aba100cc91c6eaa6d4a3adf48216ffe",
+    "scripts/fees_sharing_create_differential.py": "8ebf122a3177147de9484537acee97c7dff589bd2ed6cc388f07bd6886451898",
+    "scripts/fees_donation_create_differential.py": "610e3296d912dde1e4f7c071416b81a204095ff3aafe4a4e318ee48411a46b87",
+    "scripts/fees_admin_differential.py": "30ae2037e1bb4288f5fca5a7f1ee4dbf7e59ad8170857113f58e302d65ea3003",
+    "scripts/pump_validate_admin.py": "bcb7ea8f10be236910823c5320f03a1b339f64fe6ef90ff36e0e7ef07238c2e8"
+  },
+  "case_count": 61,
+  "before_mismatch_count": 24,
+  "after_mismatch_count": 0,
+  "full_focused_cases": 72,
+  "validated_candidate_sha256": "54854ba28834fc888cd0c016dd7b55f21f42a976a7098f9e18ce1486b7556c1c",
+  "validated_report_sha256": "2d52891e3b7a68c01c39ea32f23db5411b1dc509fcb36cccf91546ab9f08b87b"
+}

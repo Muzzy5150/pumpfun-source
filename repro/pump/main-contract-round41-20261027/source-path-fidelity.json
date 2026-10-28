@@ -1,0 +1,394 @@
+{
+  "scope": "Measure filename agreement in paired main-Pump diagnostics; no line masking claims.",
+  "before_sha256": "a981b9754cc99c5c0fc36403efe85085cafa3e5cf2f613e156258288e67c5f4f",
+  "after_sha256": "900c8180379a353456c8dccc45997c49f4e3b4b8c4e962d372be44e559cb1035",
+  "before": {
+    "counts": {
+      "paired_source_messages": 2007,
+      "equal_filename": 1839,
+      "equal_complete_location": 190
+    },
+    "path_pairs": [
+      {
+        "original": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "candidate": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "count": 507
+      },
+      {
+        "original": "programs/pump/src/trade_v3.rs",
+        "candidate": "programs/pump/src/trade_v3.rs",
+        "count": 292
+      },
+      {
+        "original": "programs/pump/src/quote_control/state.rs",
+        "candidate": "programs/pump/src/quote_control/state.rs",
+        "count": 201
+      },
+      {
+        "original": "programs/pump/src/create_v2.rs",
+        "candidate": "programs/pump/src/create_v2.rs",
+        "count": 175
+      },
+      {
+        "original": "programs/pump/src/lib.rs",
+        "candidate": "programs/pump/src/lib.rs",
+        "count": 163
+      },
+      {
+        "original": "programs/pump/src/buy_v2.rs",
+        "candidate": "programs/pump/src/buy_v2.rs",
+        "count": 70
+      },
+      {
+        "original": "programs/pump/src/extend_account.rs",
+        "candidate": "programs/pump/src/extend_account.rs",
+        "count": 68
+      },
+      {
+        "original": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+        "candidate": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+        "count": 55
+      },
+      {
+        "original": "programs/pump/src/util/fee.rs",
+        "candidate": "programs/pump/src/util/fee.rs",
+        "count": 51
+      },
+      {
+        "original": "programs/pump/src/creator/admin_cto.rs",
+        "candidate": "programs/pump/src/creator/admin_cto.rs",
+        "count": 48
+      },
+      {
+        "original": "programs/pump/src/util/fee.rs",
+        "candidate": "programs/pump/src/trade_v3.rs",
+        "count": 45
+      },
+      {
+        "original": "programs/pump/src/fee_recipient.rs",
+        "candidate": "programs/pump/src/fee_recipient.rs",
+        "count": 38
+      },
+      {
+        "original": "programs/pump/src/creator/distribute_creator_fees.rs",
+        "candidate": "programs/pump/src/distribution.rs",
+        "count": 35
+      },
+      {
+        "original": "programs/pump/src/migrate_v2.rs",
+        "candidate": "programs/pump/src/migrate_v2.rs",
+        "count": 32
+      },
+      {
+        "original": "programs/pump/src/sell_v2.rs",
+        "candidate": "programs/pump/src/sell_v2.rs",
+        "count": 31
+      },
+      {
+        "original": "programs/pump/src/lib.rs",
+        "candidate": "programs/pump/src/trade_v3.rs",
+        "count": 28
+      },
+      {
+        "original": "programs/pump/src/buy.rs",
+        "candidate": "programs/pump/src/buy.rs",
+        "count": 24
+      },
+      {
+        "original": "programs/pump/src/admin_set_idl_authority.rs",
+        "candidate": "programs/pump/src/admin_set_idl_authority.rs",
+        "count": 16
+      },
+      {
+        "original": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+        "candidate": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+        "count": 14
+      },
+      {
+        "original": "programs/pump/src/creator/migrate_bonding_curve_creator.rs",
+        "candidate": "programs/pump/src/creator/migrate_bonding_curve_creator.rs",
+        "count": 14
+      },
+      {
+        "original": "programs/pump/src/fee_recipient.rs",
+        "candidate": "programs/pump/src/lib.rs",
+        "count": 14
+      },
+      {
+        "original": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+        "candidate": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+        "count": 13
+      },
+      {
+        "original": "programs/pump/src/multi_hop_curve_swap.rs",
+        "candidate": "programs/pump/src/multi_hop_curve_swap.rs",
+        "count": 12
+      },
+      {
+        "original": "programs/pump/src/migrate.rs",
+        "candidate": "programs/pump/src/migrate.rs",
+        "count": 10
+      },
+      {
+        "original": "programs/pump/src/set_reserved_fee_recipients.rs",
+        "candidate": "programs/pump/src/lib.rs",
+        "count": 9
+      },
+      {
+        "original": "programs/pump/src/buy_v2.rs",
+        "candidate": "programs/pump/src/trade_v3.rs",
+        "count": 6
+      },
+      {
+        "original": "programs/pump/src/sweep_fees.rs",
+        "candidate": "programs/pump/src/sweep_fees.rs",
+        "count": 5
+      },
+      {
+        "original": "programs/pump/src/sell.rs",
+        "candidate": "programs/pump/src/lib.rs",
+        "count": 5
+      },
+      {
+        "original": "programs/pump/src/pump_quote.rs",
+        "candidate": "programs/pump/src/create_v2.rs",
+        "count": 5
+      },
+      {
+        "original": "programs/pump/src/buy_v2.rs",
+        "candidate": "programs/pump/src/sell_v2.rs",
+        "count": 4
+      },
+      {
+        "original": "programs/pump/src/extend_account.rs",
+        "candidate": "programs/pump/src/trade_types.rs",
+        "count": 3
+      },
+      {
+        "original": "programs/pump/src/lib.rs",
+        "candidate": "programs/pump/src/multi_hop_curve_swap.rs",
+        "count": 3
+      },
+      {
+        "original": "programs/pump/src/lib.rs",
+        "candidate": "programs/pump/src/buy.rs",
+        "count": 3
+      },
+      {
+        "original": "programs/pump/src/creator/set_creator.rs",
+        "candidate": "programs/pump/src/set_creator.rs",
+        "count": 2
+      },
+      {
+        "original": "programs/pump/src/creator/set_metaplex_creator.rs",
+        "candidate": "programs/pump/src/set_creator.rs",
+        "count": 2
+      },
+      {
+        "original": "programs/pump/src/sell.rs",
+        "candidate": "programs/pump/src/buy.rs",
+        "count": 2
+      },
+      {
+        "original": "programs/pump/src/trade_v3.rs",
+        "candidate": "programs/pump/src/multi_hop_curve_swap.rs",
+        "count": 2
+      }
+    ]
+  },
+  "after": {
+    "counts": {
+      "paired_source_messages": 2007,
+      "equal_filename": 1852,
+      "equal_complete_location": 190
+    },
+    "path_pairs": [
+      {
+        "original": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "candidate": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "count": 507
+      },
+      {
+        "original": "programs/pump/src/trade_v3.rs",
+        "candidate": "programs/pump/src/trade_v3.rs",
+        "count": 292
+      },
+      {
+        "original": "programs/pump/src/quote_control/state.rs",
+        "candidate": "programs/pump/src/quote_control/state.rs",
+        "count": 201
+      },
+      {
+        "original": "programs/pump/src/create_v2.rs",
+        "candidate": "programs/pump/src/create_v2.rs",
+        "count": 175
+      },
+      {
+        "original": "programs/pump/src/lib.rs",
+        "candidate": "programs/pump/src/lib.rs",
+        "count": 163
+      },
+      {
+        "original": "programs/pump/src/buy_v2.rs",
+        "candidate": "programs/pump/src/buy_v2.rs",
+        "count": 70
+      },
+      {
+        "original": "programs/pump/src/extend_account.rs",
+        "candidate": "programs/pump/src/extend_account.rs",
+        "count": 68
+      },
+      {
+        "original": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+        "candidate": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+        "count": 55
+      },
+      {
+        "original": "programs/pump/src/util/fee.rs",
+        "candidate": "programs/pump/src/util/fee.rs",
+        "count": 51
+      },
+      {
+        "original": "programs/pump/src/creator/admin_cto.rs",
+        "candidate": "programs/pump/src/creator/admin_cto.rs",
+        "count": 48
+      },
+      {
+        "original": "programs/pump/src/util/fee.rs",
+        "candidate": "programs/pump/src/trade_v3.rs",
+        "count": 45
+      },
+      {
+        "original": "programs/pump/src/fee_recipient.rs",
+        "candidate": "programs/pump/src/fee_recipient.rs",
+        "count": 38
+      },
+      {
+        "original": "programs/pump/src/creator/distribute_creator_fees.rs",
+        "candidate": "programs/pump/src/distribution.rs",
+        "count": 35
+      },
+      {
+        "original": "programs/pump/src/migrate_v2.rs",
+        "candidate": "programs/pump/src/migrate_v2.rs",
+        "count": 32
+      },
+      {
+        "original": "programs/pump/src/sell_v2.rs",
+        "candidate": "programs/pump/src/sell_v2.rs",
+        "count": 31
+      },
+      {
+        "original": "programs/pump/src/lib.rs",
+        "candidate": "programs/pump/src/trade_v3.rs",
+        "count": 28
+      },
+      {
+        "original": "programs/pump/src/buy.rs",
+        "candidate": "programs/pump/src/buy.rs",
+        "count": 24
+      },
+      {
+        "original": "programs/pump/src/admin_set_idl_authority.rs",
+        "candidate": "programs/pump/src/admin_set_idl_authority.rs",
+        "count": 16
+      },
+      {
+        "original": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+        "candidate": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+        "count": 14
+      },
+      {
+        "original": "programs/pump/src/creator/migrate_bonding_curve_creator.rs",
+        "candidate": "programs/pump/src/creator/migrate_bonding_curve_creator.rs",
+        "count": 14
+      },
+      {
+        "original": "programs/pump/src/fee_recipient.rs",
+        "candidate": "programs/pump/src/lib.rs",
+        "count": 14
+      },
+      {
+        "original": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+        "candidate": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+        "count": 13
+      },
+      {
+        "original": "programs/pump/src/multi_hop_curve_swap.rs",
+        "candidate": "programs/pump/src/multi_hop_curve_swap.rs",
+        "count": 12
+      },
+      {
+        "original": "programs/pump/src/migrate.rs",
+        "candidate": "programs/pump/src/migrate.rs",
+        "count": 10
+      },
+      {
+        "original": "programs/pump/src/set_reserved_fee_recipients.rs",
+        "candidate": "programs/pump/src/set_reserved_fee_recipients.rs",
+        "count": 9
+      },
+      {
+        "original": "programs/pump/src/buy_v2.rs",
+        "candidate": "programs/pump/src/trade_v3.rs",
+        "count": 6
+      },
+      {
+        "original": "programs/pump/src/sweep_fees.rs",
+        "candidate": "programs/pump/src/sweep_fees.rs",
+        "count": 5
+      },
+      {
+        "original": "programs/pump/src/sell.rs",
+        "candidate": "programs/pump/src/lib.rs",
+        "count": 5
+      },
+      {
+        "original": "programs/pump/src/pump_quote.rs",
+        "candidate": "programs/pump/src/create_v2.rs",
+        "count": 5
+      },
+      {
+        "original": "programs/pump/src/buy_v2.rs",
+        "candidate": "programs/pump/src/sell_v2.rs",
+        "count": 4
+      },
+      {
+        "original": "programs/pump/src/extend_account.rs",
+        "candidate": "programs/pump/src/trade_types.rs",
+        "count": 3
+      },
+      {
+        "original": "programs/pump/src/lib.rs",
+        "candidate": "programs/pump/src/multi_hop_curve_swap.rs",
+        "count": 3
+      },
+      {
+        "original": "programs/pump/src/lib.rs",
+        "candidate": "programs/pump/src/buy.rs",
+        "count": 3
+      },
+      {
+        "original": "programs/pump/src/creator/set_creator.rs",
+        "candidate": "programs/pump/src/creator/set_creator.rs",
+        "count": 2
+      },
+      {
+        "original": "programs/pump/src/creator/set_metaplex_creator.rs",
+        "candidate": "programs/pump/src/creator/set_metaplex_creator.rs",
+        "count": 2
+      },
+      {
+        "original": "programs/pump/src/sell.rs",
+        "candidate": "programs/pump/src/buy.rs",
+        "count": 2
+      },
+      {
+        "original": "programs/pump/src/trade_v3.rs",
+        "candidate": "programs/pump/src/multi_hop_curve_swap.rs",
+        "count": 2
+      }
+    ]
+  },
+  "whole_elf_equal": false
+}

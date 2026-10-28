@@ -1,0 +1,93 @@
+{
+  "scope": "Replace the old36-case migration addition with465 unique grouped inputs; existing migration suites stay intact.",
+  "suites": [
+    {
+      "group": "additional",
+      "name": "migration_config_group_01",
+      "script": "work/parallel-main-migration-payment-fix/probe-migration-group.py",
+      "args": [
+        "--group",
+        "1"
+      ],
+      "cases": 59
+    },
+    {
+      "group": "additional",
+      "name": "migration_config_group_02",
+      "script": "work/parallel-main-migration-payment-fix/probe-migration-group.py",
+      "args": [
+        "--group",
+        "2"
+      ],
+      "cases": 58
+    },
+    {
+      "group": "additional",
+      "name": "migration_config_group_03",
+      "script": "work/parallel-main-migration-payment-fix/probe-migration-group.py",
+      "args": [
+        "--group",
+        "3"
+      ],
+      "cases": 58
+    },
+    {
+      "group": "additional",
+      "name": "migration_config_group_04",
+      "script": "work/parallel-main-migration-payment-fix/probe-migration-group.py",
+      "args": [
+        "--group",
+        "4"
+      ],
+      "cases": 58
+    },
+    {
+      "group": "additional",
+      "name": "migration_config_group_05",
+      "script": "work/parallel-main-migration-payment-fix/probe-migration-group.py",
+      "args": [
+        "--group",
+        "5"
+      ],
+      "cases": 58
+    },
+    {
+      "group": "additional",
+      "name": "migration_config_group_06",
+      "script": "work/parallel-main-migration-payment-fix/probe-migration-group.py",
+      "args": [
+        "--group",
+        "6"
+      ],
+      "cases": 58
+    },
+    {
+      "group": "additional",
+      "name": "migration_config_group_07",
+      "script": "work/parallel-main-migration-payment-fix/probe-migration-group.py",
+      "args": [
+        "--group",
+        "7"
+      ],
+      "cases": 58
+    },
+    {
+      "group": "additional",
+      "name": "migration_config_group_08",
+      "script": "work/parallel-main-migration-payment-fix/probe-migration-group.py",
+      "args": [
+        "--group",
+        "8"
+      ],
+      "cases": 58
+    }
+  ],
+  "counts": {
+    "full": 0,
+    "additional": 465
+  },
+  "definition_sha256": {
+    "work/parallel-main-migration-payment-fix/MIGRATION-CASE-GROUPS02.json": "edc906ea4658912d7cf5547add4c44c90d78cf76ec076a324b2f7f09fe07952f",
+    "work/parallel-main-migration-payment-fix/probe-migration-group.py": "2d353e507b06cd2afb5ebaae0b4475647183f836589045a0bfbd8cb173253800"
+  }
+}

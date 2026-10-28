@@ -1,0 +1,5 @@
+reversed_range_before_start TransactionErrorInstructionError((0, Fieldless(ProgramFailedToComplete))) TransactionErrorInstructionError((0, Fieldless(ProgramFailedToComplete))) []
+valid_range_before_start_control None None []
+reversed_range_zero_supply_control None None []
+expired_active_range_control TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(6036)))) TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(6036)))) []
+{'cases': 4, 'mismatches': [], 'diagnostic_mismatches': 0}

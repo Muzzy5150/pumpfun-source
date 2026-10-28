@@ -21,8 +21,10 @@ pub fn execute(ctx:Context<SyncUserVolumeAccumulator>)->Result<()> {
         if before>0 {
             let event=SyncUserVolumeAccumulatorEvent{user:ctx.accounts.user.key(),total_claimed_tokens_before:before,total_claimed_tokens_after:0,timestamp};
             emit!(event.clone());emit_cpi!(event);
+            return Ok(());
         }
     }
+    msg!("No changes in accumulator for user={}", ctx.accounts.user.key());
     Ok(())
 }
 #[event]

@@ -20,9 +20,9 @@ python research/main-pump-parallel-checkpoint-20261027/verify.py --extract /tmp/
 
 Extraction does not execute any included source. `MANIFEST.json` records all 5,201 files and their hashes, plus omitted active/generated files and the snapshot timestamp. Ongoing work after that timestamp remains separate until the next checkpoint.
 
-`REMAINING-WORK.json` assigns all 219 unmatched Round40 windows to three parallel lanes, with initial source attribution and cross-cutting completion requirements. The later update receipts record completed Round16 and creation validation; the original snapshot retains its exact capture-time state.
+`REMAINING-WORK.json` assigns all 218 unmatched Round41 windows to three parallel lanes, with initial source attribution and cross-cutting completion requirements. The later update receipts record completed Round16 and creation validation; the original snapshot retains its exact capture-time state.
 
-The maintained source has since advanced to [Round40](../../repro/pump/main-contract-round40-20261027/README.md), with 816/1,035 matched windows and the complete validation recorded there. This archive retains its original capture-time contents.
+The maintained source has since advanced to [Round41](../../repro/pump/main-contract-round41-20261027/README.md), with 817/1,035 matched windows and the complete validation recorded there. This archive retains its original capture-time contents.
 
 [Later main-Pump follow-up research](follow-up-round18/README.md) preserves additional creation, V2-transfer and V3-fee work, including negative and pending variants. Its separate manifest and verifier retain the captured state without promoting those variants.
 
@@ -59,3 +59,5 @@ The maintained source has since advanced to [Round40](../../repro/pump/main-cont
 [Round39 follow-up research](follow-up-round39/README.md) preserves selected main-contract source, data-layout, receipt and provenance research files. Its independent manifest records the captured files; unpromoted trials are not selected by inclusion.
 
 [Round40 follow-up research](follow-up-round40/README.md) preserves selected main-contract source, data-layout, receipt and provenance research files. Its independent manifest records the captured files; unpromoted trials are not selected by inclusion.
+
+[Round41 follow-up research](follow-up-round41/README.md) preserves selected main-contract source, data-layout, receipt and provenance research files. Its independent manifest records the captured files; unpromoted trials are not selected by inclusion.

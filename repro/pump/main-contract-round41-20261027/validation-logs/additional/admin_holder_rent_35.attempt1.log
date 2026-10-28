@@ -1,0 +1,36 @@
+{"case": "native-source-0-destination-0", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-source-0-destination-1", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-source-0-destination-890879", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-source-0-destination-890880", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-source-0-destination-890881", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-source-890880-destination-0", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-source-890880-destination-1", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-source-890880-destination-890879", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-source-890880-destination-890880", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-source-890880-destination-890881", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-source-1000000-destination-0", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-source-1000000-destination-1", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-source-1000000-destination-890879", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-source-1000000-destination-890880", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-source-1000000-destination-890881", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "payer-0-destination-0", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "diff": []}
+{"case": "payer-0-destination-1", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "diff": []}
+{"case": "payer-0-destination-890879", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "diff": []}
+{"case": "payer-0-destination-890880", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "payer-1-destination-0", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "diff": []}
+{"case": "payer-1-destination-1", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "diff": []}
+{"case": "payer-1-destination-890879", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "diff": []}
+{"case": "payer-1-destination-890880", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "payer-890879-destination-0", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "diff": []}
+{"case": "payer-890879-destination-1", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "diff": []}
+{"case": "payer-890879-destination-890879", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(1))))", "diff": []}
+{"case": "payer-890879-destination-890880", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "payer-890880-destination-0", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "payer-890880-destination-1", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "payer-890880-destination-890879", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "payer-890880-destination-890880", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "payer-1000000-destination-0", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "payer-1000000-destination-1", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "payer-1000000-destination-890879", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "payer-1000000-destination-890880", "original_error": null, "candidate_error": null, "diff": []}
+{"case_count": 35, "mismatches": []}

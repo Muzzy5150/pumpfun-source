@@ -1,0 +1,1232 @@
+[
+  {
+    "case": "buy_v2_False_empty",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_valid",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_False_system_owned",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_False_wrong_discriminator",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_0",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_1",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_7",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_8",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_9",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_10",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_11",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_42",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_74",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_75",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_76",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_77",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_79",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_80",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_100",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_112",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_113",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_length_114",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_False_status_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_False_status_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_False_status_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_status_255",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_admin_revoked_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_False_admin_revoked_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_False_admin_revoked_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_admin_revoked_255",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_shares_count_0",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_shares_count_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_False_shares_count_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_shares_count_3",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_shares_count_10",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_False_share_bps_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_False_share_bps_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_False_share_bps_10000",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_False_share_bps_65535",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_False_mint_zero",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_False_admin_zero",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_True_empty",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_valid",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_True_system_owned",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_True_wrong_discriminator",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_0",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_1",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_7",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_8",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_9",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_10",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_11",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_42",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_74",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_75",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_76",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_77",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_79",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_80",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_100",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_112",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_113",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_length_114",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_True_status_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_True_status_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_True_status_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_status_255",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_admin_revoked_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_True_admin_revoked_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_True_admin_revoked_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_admin_revoked_255",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_shares_count_0",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_shares_count_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_True_shares_count_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_shares_count_3",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_shares_count_10",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_v2_True_share_bps_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_True_share_bps_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_True_share_bps_10000",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_True_share_bps_65535",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_True_mint_zero",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_v2_True_admin_zero",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_empty",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_valid",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_system_owned",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_wrong_discriminator",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_0",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_1",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_7",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_8",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_9",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_10",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_11",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_42",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_74",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_75",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_76",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_77",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_79",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_80",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_100",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_112",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_113",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_length_114",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_status_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_status_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_status_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_status_255",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_admin_revoked_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_admin_revoked_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_admin_revoked_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_admin_revoked_255",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_shares_count_0",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_shares_count_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_shares_count_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_shares_count_3",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_shares_count_10",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_share_bps_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_share_bps_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_share_bps_10000",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_share_bps_65535",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_mint_zero",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_False_admin_zero",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_empty",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_valid",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_system_owned",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_wrong_discriminator",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_0",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_1",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_7",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_8",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_9",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_10",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_11",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_42",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_74",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_75",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_76",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_77",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_79",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_80",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_100",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_112",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_113",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_length_114",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_status_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_status_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_status_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_status_255",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_admin_revoked_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_admin_revoked_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_admin_revoked_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_admin_revoked_255",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_shares_count_0",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_shares_count_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_shares_count_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_shares_count_3",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_shares_count_10",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_share_bps_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_share_bps_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_share_bps_10000",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_share_bps_65535",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_mint_zero",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "buy_exact_quote_in_v2_True_admin_zero",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_False_empty",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_valid",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_False_system_owned",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_False_wrong_discriminator",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_0",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_1",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_7",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_8",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_9",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_10",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_11",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_42",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_74",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_75",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_76",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_77",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_79",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_80",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_100",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_112",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_113",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_length_114",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_False_status_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_False_status_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_False_status_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_status_255",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_admin_revoked_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_False_admin_revoked_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_False_admin_revoked_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_admin_revoked_255",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_shares_count_0",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_shares_count_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_False_shares_count_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_shares_count_3",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_shares_count_10",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_False_share_bps_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_False_share_bps_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_False_share_bps_10000",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_False_share_bps_65535",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_False_mint_zero",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_False_admin_zero",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_True_empty",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_valid",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_True_system_owned",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_True_wrong_discriminator",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_0",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_1",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_7",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_8",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_9",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_10",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_11",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_42",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_74",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_75",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_76",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_77",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_79",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_80",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_100",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_112",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_113",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_length_114",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_True_status_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_True_status_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_True_status_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_status_255",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_admin_revoked_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_True_admin_revoked_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_True_admin_revoked_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_admin_revoked_255",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_shares_count_0",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_shares_count_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_True_shares_count_2",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_shares_count_3",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_shares_count_10",
+    "error": null,
+    "share_count": 0
+  },
+  {
+    "case": "sell_v2_True_share_bps_0",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_True_share_bps_1",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_True_share_bps_10000",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_True_share_bps_65535",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_True_mint_zero",
+    "error": null,
+    "share_count": 1
+  },
+  {
+    "case": "sell_v2_True_admin_zero",
+    "error": null,
+    "share_count": 1
+  }
+]

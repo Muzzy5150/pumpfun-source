@@ -1,0 +1,483 @@
+{
+  "candidate_sha256": "de703e0f50d6b056fb52ae764fe15947f4af1b0182187cc6a3424fe8e5b9d23a",
+  "suite_workers": 3,
+  "reuse_receipts": [
+    {
+      "name": "native_completion_62",
+      "source": "work/parallel-main-trading-third/final-validation/native_completion_62.json.gz",
+      "sha256": "834cd548c01a1f0dbd26ba4f49abb46ad72612a88e47d749c47925c3cb2c6bcf"
+    },
+    {
+      "name": "v3_post_edges_27",
+      "source": "work/parallel-main-trading-third/final-validation/v3_post_edges_27.json.gz",
+      "sha256": "54e0a70eb8cc36f84a8bd1be8d4b1c20c6bc03b98a53944d7e604a3b9c8db38b"
+    },
+    {
+      "name": "v3_post_fees_32",
+      "source": "work/parallel-main-trading-third/final-validation/v3_post_fees_32.json.gz",
+      "sha256": "d1dd48294b568ee601caa60ffe297a35b2bdf4696d26c5a7a5f1ddceeed105dd"
+    },
+    {
+      "name": "v3_post_state_12",
+      "source": "work/parallel-main-trading-third/final-validation/v3_post_state_12.json.gz",
+      "sha256": "fe78660227cfbf7bab15f6d62f0a9b05259cc020778411ae0d7d9ead74a8d422"
+    },
+    {
+      "name": "new_v2_66",
+      "source": "work/parallel-main-trading-third/final-validation/new_v2_66.json.gz",
+      "sha256": "6ddad8166349413b7437d5e3bcf4caffe261f7cc116799dab65f913d61d97674"
+    },
+    {
+      "name": "new_v2_fees_151",
+      "source": "work/parallel-main-trading-third/final-validation/new_v2_fees_151.json.gz",
+      "sha256": "31ce53efcd0ed4822bac17294ed65e2519d7f707a78c6e2b6a669272e81b3acc"
+    },
+    {
+      "name": "new_route_holder_64",
+      "source": "work/parallel-main-trading-third/final-validation/new_route_holder_64.json.gz",
+      "sha256": "9e5800d22d5110fe49a39af04ffea15116d4693d47a1e02e7f86c0382d235078"
+    },
+    {
+      "name": "unknown_tlv_50",
+      "source": "work/parallel-main-trading-third/unknown-tlv-04.json.gz",
+      "sha256": "1f5e86d5921ec0e281977ed8ba119724d8903069d3a3a67f20082e305a2ef61c"
+    },
+    {
+      "name": "extension_order_68",
+      "source": "work/parallel-main-trading-third/extension-order-04.json.gz",
+      "sha256": "1938f45784b5745eebcd16c2497adb993c1f6efa1a5faf7a7d7b4a2baf83e45f"
+    }
+  ],
+  "suite_count": 35,
+  "case_count": 4132,
+  "suites": [
+    {
+      "name": "buy_v2",
+      "returncode": 0,
+      "case_count": 216,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_buy_v2_differential.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/buy_v2.json.gz"
+      ]
+    },
+    {
+      "name": "buy_v3",
+      "returncode": 0,
+      "case_count": 334,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_validate_buy.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/buy_v3.json.gz",
+        "--source-directory",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/source-v4/programs/pump"
+      ]
+    },
+    {
+      "name": "buyback_allocation_54",
+      "returncode": 0,
+      "case_count": 54,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/probe_buyback_allocation.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/buyback_allocation_54.json.gz"
+      ]
+    },
+    {
+      "name": "completion_92",
+      "returncode": 0,
+      "case_count": 92,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-next/compare_saved_completions.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/completion_92.json.gz"
+      ]
+    },
+    {
+      "name": "completion_edges_27",
+      "returncode": 0,
+      "case_count": 27,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-next/probe_completion_edges.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/completion_edges_27.json.gz",
+        "--compute-unit-limit",
+        "600000"
+      ]
+    },
+    {
+      "name": "completion_fuzz_120",
+      "returncode": 0,
+      "case_count": 120,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-next/fuzz_completion.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/completion_fuzz_120.json.gz"
+      ]
+    },
+    {
+      "name": "context_failures_24",
+      "returncode": 0,
+      "case_count": 24,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-next/probe_context_failures.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/context_failures_24.json.gz"
+      ]
+    },
+    {
+      "name": "creator_gate_120",
+      "returncode": 0,
+      "case_count": 120,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-next/verify_creator_gate.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/creator_gate_120.json.gz"
+      ]
+    },
+    {
+      "name": "exact_quote_v3",
+      "returncode": 0,
+      "case_count": 352,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_exact_quote_differential.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/exact_quote_v3.json.gz"
+      ]
+    },
+    {
+      "name": "extension_order_68",
+      "returncode": 0,
+      "case_count": 68,
+      "mismatches": [],
+      "reused": true
+    },
+    {
+      "name": "legacy_buy",
+      "returncode": 0,
+      "case_count": 284,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_legacy_buy_differential.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/legacy_buy.json.gz"
+      ]
+    },
+    {
+      "name": "legacy_sell",
+      "returncode": 0,
+      "case_count": 115,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_legacy_sell_differential.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/legacy_sell.json.gz"
+      ]
+    },
+    {
+      "name": "legacy_sell_configured",
+      "returncode": 0,
+      "case_count": 28,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_legacy_sell_configured_fee_differential.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/legacy_sell_configured.json.gz"
+      ]
+    },
+    {
+      "name": "native_completion_62",
+      "returncode": 0,
+      "case_count": 62,
+      "mismatches": [],
+      "reused": true
+    },
+    {
+      "name": "native_quote_3",
+      "returncode": 0,
+      "case_count": 3,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-next/probe_native_quote.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/native_quote_3.json.gz"
+      ]
+    },
+    {
+      "name": "native_route_56",
+      "returncode": 0,
+      "case_count": 56,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/repro/pump/native-curve-partial-fortyeight/harness/pump_multi_hop_curve_differential.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/native_route_56.json.gz"
+      ]
+    },
+    {
+      "name": "new_route_holder_64",
+      "returncode": 0,
+      "case_count": 64,
+      "mismatches": [],
+      "reused": true
+    },
+    {
+      "name": "new_v2_66",
+      "returncode": 0,
+      "case_count": 66,
+      "mismatches": [],
+      "reused": true
+    },
+    {
+      "name": "new_v2_fees_151",
+      "returncode": 0,
+      "case_count": 151,
+      "mismatches": [],
+      "reused": true
+    },
+    {
+      "name": "old_fences_46",
+      "returncode": 0,
+      "case_count": 46,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading/probe_remaining_fences.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/old_fences_46.json.gz"
+      ]
+    },
+    {
+      "name": "origin_kinds_38",
+      "returncode": 0,
+      "case_count": 38,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/probe_origin_kinds.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/origin_kinds_38.json.gz"
+      ]
+    },
+    {
+      "name": "quote_origins_12",
+      "returncode": 0,
+      "case_count": 12,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-next/probe_quote_origins.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/quote_origins_12.json.gz"
+      ]
+    },
+    {
+      "name": "quote_v3",
+      "returncode": 0,
+      "case_count": 130,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_validate_quote.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/quote_v3.json.gz",
+        "--source-directory",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/source-v4/programs/pump"
+      ]
+    },
+    {
+      "name": "selector_72",
+      "returncode": 0,
+      "case_count": 72,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-next/probe_quote_selector.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/selector_72.json.gz"
+      ]
+    },
+    {
+      "name": "sell_v2",
+      "returncode": 0,
+      "case_count": 206,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_sell_v2_differential.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/sell_v2.json.gz"
+      ]
+    },
+    {
+      "name": "sell_v3",
+      "returncode": 0,
+      "case_count": 301,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_validate_sell.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/sell_v3.json.gz",
+        "--source-directory",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/source-v4/programs/pump"
+      ]
+    },
+    {
+      "name": "token_extension_edges_416",
+      "returncode": 0,
+      "case_count": 416,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/probe_extension_edges.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/token_extension_edges_416.json.gz"
+      ]
+    },
+    {
+      "name": "token_extensions_36",
+      "returncode": 0,
+      "case_count": 36,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/probe_extensions.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/token_extensions_36.json.gz"
+      ]
+    },
+    {
+      "name": "two_curve_20",
+      "returncode": 0,
+      "case_count": 20,
+      "mismatches": []
+    },
+    {
+      "name": "unknown_tlv_50",
+      "returncode": 0,
+      "case_count": 50,
+      "mismatches": [],
+      "reused": true
+    },
+    {
+      "name": "v3_configured",
+      "returncode": 0,
+      "case_count": 372,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_v3_configured_fee_differential.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/v3_configured.json.gz"
+      ]
+    },
+    {
+      "name": "v3_extensions",
+      "returncode": 0,
+      "case_count": 126,
+      "mismatches": [],
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_v3_token_extensions_differential.py",
+        "--candidate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/build-adapter-04/candidate.so",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-trading-third/final-validation-parallel-02/v3_extensions.json.gz"
+      ]
+    },
+    {
+      "name": "v3_post_edges_27",
+      "returncode": 0,
+      "case_count": 27,
+      "mismatches": [],
+      "reused": true
+    },
+    {
+      "name": "v3_post_fees_32",
+      "returncode": 0,
+      "case_count": 32,
+      "mismatches": [],
+      "reused": true
+    },
+    {
+      "name": "v3_post_state_12",
+      "returncode": 0,
+      "case_count": 12,
+      "mismatches": [],
+      "reused": true
+    }
+  ],
+  "failed_suites": []
+}

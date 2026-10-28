@@ -1,0 +1,56 @@
+{
+  "status": "Validated original-backed IDL account borrowing/System-key entry successor",
+  "source_sha256": "fef1c9607e0f6887558bb084cffd320c3ced6f59ddb93166dd9a71eed640b723",
+  "candidate_sha256": "786166880dca6be0218531878ddf181dd69a2bae5534ec1debea78b8fafa3fb3",
+  "unstripped_sha256": "f72ce38c9a89a3fbd5f46d834690e0b2f66b5e6765a601aad8ca8f1f5ce1e4f2",
+  "build_receipt_sha256": "f7435ff289676a6120cd98412d200ec0f0ec8d4d69acfaa84445189a01d4eef7",
+  "patch_sha256": "3d3c9292d7af41c387dac4b6828dc357b2e9c7a527fd638a49779077fbfaa81e",
+  "prior_manifest_sha256": "28602ba819e1632ec1519a21eee2fe1ad58091ef31ce594482c24291402bb46a",
+  "changes": [
+    "Borrow ctx.accounts.idl_account instead of cloning before owner validation.",
+    "Compare account owner against the typed and validated System program key."
+  ],
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 734,
+    "unmatched": 301
+  },
+  "delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "handler": {
+    "original_bytes": 5704,
+    "previous_candidate_bytes": 6096,
+    "candidate_bytes": 5632,
+    "normalized_equal": false
+  },
+  "retained_helper": {
+    "original": "0x19e3b0",
+    "bytes": 896,
+    "normalized_equal": true,
+    "direct_callee_relations_verified": 13
+  },
+  "runtime": {
+    "cases": 197,
+    "verified_transactions": 394,
+    "verified_signatures": 784,
+    "diagnostic_mismatches": 0,
+    "invocation_order_mismatches": 0,
+    "new_test_inputs": 0
+  },
+  "limits": [
+    "No new normalized or raw windows gained; all prior734/121identity-layout matches retained.",
+    "The surrounding5632Bhandler remains unmatched to original5704B.",
+    "This is an evidenced source-ownership/key-access successor, not a claim that smaller means exact.",
+    "No new incremental test count; existing171 plus prior26 controls were reused.",
+    "Full original ELF equality remains false."
+  ]
+}

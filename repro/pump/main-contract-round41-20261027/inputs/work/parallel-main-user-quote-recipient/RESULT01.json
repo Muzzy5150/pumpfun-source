@@ -1,0 +1,254 @@
+{
+  "status": "validated nested borrowed recipient quote-payment increment for parent composition",
+  "base": "sealed owned-payment/source02",
+  "candidate_sha256": "8d116d76adac95db13594b6c505c0ccbae2e597a0d0663aba3e9e31c1d76ec44",
+  "unstripped_sha256": "26681b9de77d0d33430b041286eef448b2370a0497676d7d2cf9b5bd7ec37a41",
+  "build_receipt_sha256": "9cfef0991deba2418b009e37fe75bfb7b9ce6e05268c0115eb5e8ba91d88cc00",
+  "source_hashes": {
+    "src/lib.rs": "b19a14ca58c9846b252e2b809e15906dd048b642207fa51114df9a40848e85b3",
+    "src/buy_v2.rs": "cb5b346793daa13dee2683a475a2f7dfebe7c5cb8ada7329fa77dba02e7b0483"
+  },
+  "patch_sha256": "32de52ccc8a42cc16fdd4b760061d6fccfd1f64bcb101e33603cc62ac3a440d1",
+  "inventory": {
+    "total": 1035,
+    "raw": 124,
+    "normalized": 733,
+    "unmatched": 302
+  },
+  "window_sets": {
+    "normalized_matches": {
+      "gains": [
+        "0x8d108"
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "new_actual_exact_bodies": {
+    "0x97bf0": 704,
+    "0x8d108": 1216
+  },
+  "newly_matching_window": "0x8d108",
+  "preserved_actual_exact_bodies": {
+    "0x97930": 704,
+    "0x8df98": 1208,
+    "0x97eb0": 864,
+    "0x8da98": 1280
+  },
+  "callees": [
+    {
+      "source_original": "0x97bf0",
+      "source_candidate": "0xbb890",
+      "offset": 88,
+      "original_target": "0x1ac500",
+      "candidate_target": "0x195ee8",
+      "bytes": 40,
+      "matching_symbols": [
+        "_ZN4core6option13unwrap_failed17h2b22848a3f32bcb7E"
+      ]
+    },
+    {
+      "source_original": "0x97bf0",
+      "source_candidate": "0xbb890",
+      "offset": 136,
+      "original_target": "0x8d108",
+      "candidate_target": "0xbb3d0",
+      "bytes": 1216,
+      "matching_symbols": [
+        "_ZN14pump_recovered19user_quote_payments25transfer_native_recipient17hb81e8584158c8dc6E"
+      ]
+    },
+    {
+      "source_original": "0x97bf0",
+      "source_candidate": "0xbb890",
+      "offset": 632,
+      "original_target": "0x91ef0",
+      "candidate_target": "0x5e0c0",
+      "bytes": 2352,
+      "matching_symbols": [
+        "_ZN14pump_recovered7sell_v221quote_token_transfers21transfer_quote_tokens17hc044e5bd10fbf9c3E"
+      ]
+    },
+    {
+      "source_original": "0x97bf0",
+      "source_candidate": "0xbb890",
+      "offset": 696,
+      "original_target": "0x1ac500",
+      "candidate_target": "0x195ee8",
+      "bytes": 40,
+      "matching_symbols": [
+        "_ZN4core6option13unwrap_failed17h2b22848a3f32bcb7E"
+      ]
+    },
+    {
+      "source_original": "0x8d108",
+      "source_candidate": "0xbb3d0",
+      "offset": 1160,
+      "original_target": "0x19e090",
+      "candidate_target": "0x186a88",
+      "bytes": 800,
+      "matching_symbols": [
+        "_ZN11anchor_lang14system_program8transfer17h6e716b5d4cc7ca2eE"
+      ]
+    },
+    {
+      "source_original": "0x97930",
+      "source_candidate": "0xba8b0",
+      "offset": 88,
+      "original_target": "0x1ac500",
+      "candidate_target": "0x195ee8",
+      "bytes": 40,
+      "matching_symbols": [
+        "_ZN4core6option13unwrap_failed17h2b22848a3f32bcb7E"
+      ]
+    },
+    {
+      "source_original": "0x97930",
+      "source_candidate": "0xba8b0",
+      "offset": 136,
+      "original_target": "0x8df98",
+      "candidate_target": "0xba3f8",
+      "bytes": 1208,
+      "matching_symbols": [
+        "_ZN14pump_recovered19user_quote_payments15transfer_native17h7ad249fecab419edE"
+      ]
+    },
+    {
+      "source_original": "0x97930",
+      "source_candidate": "0xba8b0",
+      "offset": 632,
+      "original_target": "0x91ef0",
+      "candidate_target": "0x5e0c0",
+      "bytes": 2352,
+      "matching_symbols": [
+        "_ZN14pump_recovered7sell_v221quote_token_transfers21transfer_quote_tokens17hc044e5bd10fbf9c3E"
+      ]
+    },
+    {
+      "source_original": "0x97930",
+      "source_candidate": "0xba8b0",
+      "offset": 696,
+      "original_target": "0x1ac500",
+      "candidate_target": "0x195ee8",
+      "bytes": 40,
+      "matching_symbols": [
+        "_ZN4core6option13unwrap_failed17h2b22848a3f32bcb7E"
+      ]
+    },
+    {
+      "source_original": "0x8df98",
+      "source_candidate": "0xba3f8",
+      "offset": 1152,
+      "original_target": "0x19e090",
+      "candidate_target": "0x186a88",
+      "bytes": 800,
+      "matching_symbols": [
+        "_ZN11anchor_lang14system_program8transfer17h6e716b5d4cc7ca2eE"
+      ]
+    },
+    {
+      "source_original": "0x97eb0",
+      "source_candidate": "0xbb070",
+      "offset": 96,
+      "original_target": "0x1ac500",
+      "candidate_target": "0x195ee8",
+      "bytes": 40,
+      "matching_symbols": [
+        "_ZN4core6option13unwrap_failed17h2b22848a3f32bcb7E"
+      ]
+    },
+    {
+      "source_original": "0x97eb0",
+      "source_candidate": "0xbb070",
+      "offset": 144,
+      "original_target": "0x8da98",
+      "candidate_target": "0xbab70",
+      "bytes": 1280,
+      "matching_symbols": [
+        "_ZN14pump_recovered19user_quote_payments21transfer_native_owned17hb3658fe07626349cE"
+      ]
+    },
+    {
+      "source_original": "0x97eb0",
+      "source_candidate": "0xbb070",
+      "offset": 664,
+      "original_target": "0x91ef0",
+      "candidate_target": "0x5e0c0",
+      "bytes": 2352,
+      "matching_symbols": [
+        "_ZN14pump_recovered7sell_v221quote_token_transfers21transfer_quote_tokens17hc044e5bd10fbf9c3E"
+      ]
+    },
+    {
+      "source_original": "0x97eb0",
+      "source_candidate": "0xbb070",
+      "offset": 856,
+      "original_target": "0x1ac500",
+      "candidate_target": "0x195ee8",
+      "bytes": 40,
+      "matching_symbols": [
+        "_ZN4core6option13unwrap_failed17h2b22848a3f32bcb7E"
+      ]
+    },
+    {
+      "source_original": "0x8da98",
+      "source_candidate": "0xbab70",
+      "offset": 1112,
+      "original_target": "0x19e090",
+      "candidate_target": "0x186a88",
+      "bytes": 800,
+      "matching_symbols": [
+        "_ZN11anchor_lang14system_program8transfer17h6e716b5d4cc7ca2eE"
+      ]
+    }
+  ],
+  "runtime": {
+    "case_count": 1275,
+    "suite_counts": {
+      "buy-v2": 216,
+      "v3-extensions": 126,
+      "v3-continuation": 42,
+      "v3-configured": 372,
+      "v3-native-buyback": 18,
+      "v3-token-buyback": 12,
+      "v3-crossing": 16,
+      "v3-matrix": 12,
+      "v3-post-fees": 80,
+      "price-divisible": 12,
+      "price-boundaries": 12,
+      "v3-order": 18,
+      "buyback-order16": 16,
+      "buyback-post8": 8,
+      "buyback-prefix7": 7,
+      "buyback-protocol4": 4,
+      "buyback54": 54,
+      "cost-order8": 8,
+      "quote-order22": 22,
+      "owned-order48": 48,
+      "payment-order64": 64,
+      "creator-rent108": 108
+    },
+    "all_signatures_verified": true,
+    "transaction_bytes_identical": true,
+    "strict_fixture_mismatches": [],
+    "diagnostic_mismatches": [],
+    "invocation_sequence_mismatches": [],
+    "explicit_owned_zero_and_failure_cases": 48,
+    "zero_fee_creator_cpi_absence_proved_cases": 24,
+    "positive_fee_creator_cpi_presence_proved_cases": 24,
+    "recipient_order_cases": 64,
+    "no_zero_recipient_cpis": true,
+    "protocol_before_buyback": true
+  },
+  "limits": [
+    "Full original ELF identity remains false.",
+    "Common original Location objects prove shared source spans but not the exact original generic implementation; earlier generic control remains negative and frozen in parallel-main-user-quote-generic.",
+    "New concrete API preserves typed Signer and nested borrowed UncheckedAccount; exact original source names are unknown.",
+    "The former97bf0 duplicate match now has its own matching native callee; the8e450 alias retains its earlier caveat.",
+    "Other legacy direct callers of0x8da98 and MultiHop direct caller of0x8df98 remain unrefactored.",
+    "Root composite must complete its own full validation."
+  ]
+}

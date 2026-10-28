@@ -1,0 +1,312 @@
+{
+  "status": "passed",
+  "scope": "Ordered outermost main-Pump invocation logs, including all nested CPI, event and return logs. No VM replay.",
+  "normalization": [
+    "Exclude compute-unit consumption lines.",
+    "Normalize source line and column numbers only; preserve filenames."
+  ],
+  "acceptance": "Zero non-filename mismatches. Source-filename mismatches remain counted and reported as unresolved provenance.",
+  "counts": {
+    "paired_cases": 18110,
+    "raw_log_bearing_pairs": 18106,
+    "main_invocation_pairs": 18089,
+    "equal_main_sequences": 17438,
+    "mismatched_main_sequences": 651,
+    "no_raw_logs": 4,
+    "neither_invokes_main": 17
+  },
+  "families": {
+    "source_file_path_only": 651
+  },
+  "families_by_suite": {
+    "buy": {
+      "source_file_path_only": 29
+    },
+    "sell": {
+      "source_file_path_only": 2
+    },
+    "quote": {
+      "source_file_path_only": 4
+    },
+    "creator_distribution": {
+      "source_file_path_only": 14
+    },
+    "minimum_distribution": {
+      "source_file_path_only": 21
+    },
+    "set_params": {
+      "source_file_path_only": 14
+    },
+    "exact_quote_v3": {
+      "source_file_path_only": 5
+    },
+    "legacy_sell": {
+      "source_file_path_only": 3
+    },
+    "sell_v2": {
+      "source_file_path_only": 4
+    },
+    "migration": {
+      "source_file_path_only": 1
+    },
+    "v3_configured_fee": {
+      "source_file_path_only": 39
+    },
+    "legacy_buy": {
+      "source_file_path_only": 4
+    },
+    "migrate_v2": {
+      "source_file_path_only": 2
+    },
+    "nested_create": {
+      "source_file_path_only": 5
+    },
+    "multi_hop_curve_partial": {
+      "source_file_path_only": 5
+    },
+    "legacy_cashback": {
+      "source_file_path_only": 3
+    },
+    "token_extension_edges_416": {
+      "source_file_path_only": 56
+    },
+    "fee_market_cap": {
+      "source_file_path_only": 36
+    },
+    "new_v2_fees_151": {
+      "source_file_path_only": 6
+    },
+    "v3_fee_config_boundaries_144": {
+      "source_file_path_only": 15
+    },
+    "v3_extensions": {
+      "source_file_path_only": 6
+    },
+    "completion_fuzz_120": {
+      "source_file_path_only": 8
+    },
+    "creator_gate_120": {
+      "source_file_path_only": 6
+    },
+    "completion_92": {
+      "source_file_path_only": 8
+    },
+    "sharing_config_78": {
+      "source_file_path_only": 3
+    },
+    "selector_72": {
+      "source_file_path_only": 3
+    },
+    "extension_order_68": {
+      "source_file_path_only": 32
+    },
+    "distribution_regressions_62": {
+      "source_file_path_only": 33
+    },
+    "native_completion_62": {
+      "source_file_path_only": 31
+    },
+    "buyback_allocation_54": {
+      "source_file_path_only": 6
+    },
+    "unknown_tlv_50": {
+      "source_file_path_only": 20
+    },
+    "old_fences_46": {
+      "source_file_path_only": 3
+    },
+    "token_extensions_36": {
+      "source_file_path_only": 2
+    },
+    "v3_precedence_36": {
+      "source_file_path_only": 2
+    },
+    "completion_edges_27": {
+      "source_file_path_only": 8
+    },
+    "context_failures_24": {
+      "source_file_path_only": 3
+    },
+    "sweep_order": {
+      "source_file_path_only": 4
+    },
+    "v3_waiver_order": {
+      "source_file_path_only": 4
+    },
+    "sell_v2_prepare_12": {
+      "source_file_path_only": 1
+    },
+    "creator_owner_6": {
+      "source_file_path_only": 4
+    },
+    "distribution_custom_rent_6": {
+      "source_file_path_only": 3
+    },
+    "legacy_buyback_creator-order": {
+      "source_file_path_only": 2
+    },
+    "v3_buyback_probe": {
+      "source_file_path_only": 12
+    },
+    "v3_buyback_probe_order": {
+      "source_file_path_only": 8
+    },
+    "v3_buyback_probe_post": {
+      "source_file_path_only": 8
+    },
+    "v3_buyback_probe_payment_prefix": {
+      "source_file_path_only": 2
+    },
+    "v3_buyback_probe_protocol_overflow": {
+      "source_file_path_only": 1
+    },
+    "quote_fee_tail_1_22": {
+      "source_file_path_only": 11
+    },
+    "quote_fee_tail_2_18": {
+      "source_file_path_only": 9
+    },
+    "quote_fee_tail_3_9": {
+      "source_file_path_only": 3
+    },
+    "mixed_tlv_1_18": {
+      "source_file_path_only": 6
+    },
+    "legacy_creator_vault_rent_63": {
+      "source_file_path_only": 6
+    },
+    "nested_vault_diagnostics_32": {
+      "source_file_path_only": 20
+    },
+    "nested_pool_links_10": {
+      "source_file_path_only": 9
+    },
+    "nested_comparison_matrix": {
+      "source_file_path_only": 53
+    },
+    "distinct_precedence": {
+      "source_file_path_only": 3
+    },
+    "legacy_sell_cashback_order_22": {
+      "source_file_path_only": 10
+    },
+    "nested_chain_tail_boundaries": {
+      "source_file_path_only": 2
+    },
+    "ata_authority_content": {
+      "source_file_path_only": 4
+    },
+    "distribution_pending_fees": {
+      "source_file_path_only": 20
+    },
+    "creator_collection_rent": {
+      "source_file_path_only": 4
+    }
+  },
+  "examples": {
+    "source_file_path_only": [
+      {
+        "file": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-captured-full.json.gz",
+        "row": "buy/cases/113",
+        "ordinal": 683,
+        "family": "source_file_path_only",
+        "changes": [
+          {
+            "operation": "replace",
+            "original_index": 2,
+            "candidate_index": 2,
+            "original": [
+              "Program log: AnchorError thrown in programs/pump/src/lib.rs:<source>. Error Code: DivisionByZero. Error Number: 6026. Error Message: Division by zero."
+            ],
+            "candidate": [
+              "Program log: AnchorError thrown in programs/pump/src/trade_v3.rs:<source>. Error Code: DivisionByZero. Error Number: 6026. Error Message: Division by zero."
+            ]
+          }
+        ],
+        "original_logs": [
+          "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P invoke [1]",
+          "Program log: Instruction: BuyV3",
+          "Program log: AnchorError thrown in programs/pump/src/lib.rs:<source>. Error Code: DivisionByZero. Error Number: 6026. Error Message: Division by zero.",
+          "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P failed: custom program error: 0x178a"
+        ],
+        "candidate_logs": [
+          "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P invoke [1]",
+          "Program log: Instruction: BuyV3",
+          "Program log: AnchorError thrown in programs/pump/src/trade_v3.rs:<source>. Error Code: DivisionByZero. Error Number: 6026. Error Message: Division by zero.",
+          "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P failed: custom program error: 0x178a"
+        ]
+      },
+      {
+        "file": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-captured-full.json.gz",
+        "row": "buy/cases/114",
+        "ordinal": 684,
+        "family": "source_file_path_only",
+        "changes": [
+          {
+            "operation": "replace",
+            "original_index": 2,
+            "candidate_index": 2,
+            "original": [
+              "Program log: AnchorError thrown in programs/pump/src/lib.rs:<source>. Error Code: Overflow. Error Number: 6024. Error Message: Overflow."
+            ],
+            "candidate": [
+              "Program log: AnchorError thrown in programs/pump/src/trade_v3.rs:<source>. Error Code: Overflow. Error Number: 6024. Error Message: Overflow."
+            ]
+          }
+        ],
+        "original_logs": [
+          "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P invoke [1]",
+          "Program log: Instruction: BuyV3",
+          "Program log: AnchorError thrown in programs/pump/src/lib.rs:<source>. Error Code: Overflow. Error Number: 6024. Error Message: Overflow.",
+          "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P failed: custom program error: 0x1788"
+        ],
+        "candidate_logs": [
+          "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P invoke [1]",
+          "Program log: Instruction: BuyV3",
+          "Program log: AnchorError thrown in programs/pump/src/trade_v3.rs:<source>. Error Code: Overflow. Error Number: 6024. Error Message: Overflow.",
+          "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P failed: custom program error: 0x1788"
+        ]
+      },
+      {
+        "file": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-captured-full.json.gz",
+        "row": "buy/cases/115",
+        "ordinal": 685,
+        "family": "source_file_path_only",
+        "changes": [
+          {
+            "operation": "replace",
+            "original_index": 2,
+            "candidate_index": 2,
+            "original": [
+              "Program log: AnchorError thrown in programs/pump/src/lib.rs:<source>. Error Code: Overflow. Error Number: 6024. Error Message: Overflow."
+            ],
+            "candidate": [
+              "Program log: AnchorError thrown in programs/pump/src/trade_v3.rs:<source>. Error Code: Overflow. Error Number: 6024. Error Message: Overflow."
+            ]
+          }
+        ],
+        "original_logs": [
+          "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P invoke [1]",
+          "Program log: Instruction: BuyV3",
+          "Program log: AnchorError thrown in programs/pump/src/lib.rs:<source>. Error Code: Overflow. Error Number: 6024. Error Message: Overflow.",
+          "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P failed: custom program error: 0x1788"
+        ],
+        "candidate_logs": [
+          "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P invoke [1]",
+          "Program log: Instruction: BuyV3",
+          "Program log: AnchorError thrown in programs/pump/src/trade_v3.rs:<source>. Error Code: Overflow. Error Number: 6024. Error Message: Overflow.",
+          "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P failed: custom program error: 0x1788"
+        ]
+      }
+    ]
+  },
+  "source_sha256": {
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-captured-full.json.gz": "900c8180379a353456c8dccc45997c49f4e3b4b8c4e962d372be44e559cb1035",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-captured-additional.json.gz": "338090cd072a41ec59d53927f09e3c610c0b6820e759d4425bfe069f0b66bd2c"
+  },
+  "mismatches_sha256": "61b664e45a4843250d64b47eb5aacb8dd35814a9815c0378460ae1ec9cc9f72f",
+  "implementation_sha256": {
+    "audit.py": "73a52113cea55e5dca318d72af191bc2e5bc854db93a0a6ad359f647766dee63",
+    "paired_receipt_reader.py": "622f4b59eafe9d59620ddf515864f0c753b2573ee47e4207f3e38c81a62fea19"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "counts": {
+    "total": 1035,
+    "raw": 165,
+    "normalized": 816,
+    "unmatched": 219
+  },
+  "window_delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "location_delta": {
+    "before_counts": {
+      "shape_recognized_pairs": 108,
+      "same_filename": 104,
+      "same_filename_line_column": 85
+    },
+    "after_counts": {
+      "shape_recognized_pairs": 108,
+      "same_filename": 106,
+      "same_filename_line_column": 85
+    },
+    "newly_bound": [],
+    "unbound": [],
+    "filename_gains": [
+      "0x1bde98",
+      "0x1bde80"
+    ],
+    "filename_losses": [],
+    "complete_gains": [],
+    "complete_losses": []
+  },
+  "candidate_sha256": "edc504c7867dd2ff697221e5d9835a10ee7c7bb1061e923323d79aa914b3a84a",
+  "unstripped_sha256": "adc201e625cba27efe35f2ddb27f2456c64390f83fa1c8c5b223adc88d924ba4",
+  "expected_two_filename_fixes": true,
+  "full_original_identity": false,
+  "runtime_cases": 1572,
+  "runtime_suites": 9,
+  "retention_sha256": "fec23f2013a7758b074599ac8bec723d51ac6eff86aed8c64b1557f012b9ee73",
+  "source_hashes_unchanged": true,
+  "paired_result_counts": {
+    "paired_rows": 1572,
+    "verified_result_objects": 3144,
+    "fully_backed_pairs": 1572,
+    "distinct_signed_transactions": 470,
+    "distinct_transaction_pairs": 470
+  },
+  "helper_proof_sha256": "64cf55b2a464517c3ebb9f3beb97951b20e556386dd62816eb256784492e0c5b",
+  "prior_source_manifest_sha256": "b0f01f3702d6dce4b495c4890111ef7f1089e95644b560614d92f494240662d9",
+  "evidence_scope": "One private build and1572 existing paired cases. Twofilenamefields improved; no complete Location/code-window gain. Not selected into maintained source.",
+  "input_sha256": {
+    "work/parallel-main-owned-quote-placement/STAGED.json": "35eb00cd5d16762a48acb3425460f8440d0259346b37cb9559f05870f2622d6f",
+    "work/parallel-main-owned-quote-placement/owned-quote-placement.patch": "977d5bb76e533200dc0a560798edabe630eccb62dd7a616f5ccc7b6a253f5bbb",
+    "work/parallel-main-owned-quote-placement/build01/build-comparison.json": "ffa8362dc3471f924fc64446b0bb6b31edc96473eddeb2d42b3cf6cb6322aa36",
+    "work/parallel-main-owned-quote-placement/build01/normalized-inventory.json": "64c83ea8f27e76c8c5399d9b1d56340bc7b84435ec3fe1d3bc61b36314d5adbd",
+    "work/parallel-main-owned-quote-placement/baseline-frontier.json": "010941f669a9c0b1c75d688fef81a08ac0c858408ec3bcc5d487a627520d1460",
+    "work/parallel-main-owned-quote-placement/baseline-locations.json": "a226fb2a8619707f4a9ab3663a6bb3cb1b1f351f0689b30820546aecc632a6e4",
+    "work/parallel-main-owned-quote-placement/frontier.json": "a4f1a6534cf213175216a9e250c8b68fafc492bb96fbe07e52a02ffc938354cd",
+    "work/parallel-main-owned-quote-placement/locations.json": "e3f854a145cec8f6b0d9dc40fbd71cb7870e4658541b9807467abd381e7768d7",
+    "work/parallel-main-owned-quote-placement/runtime-manifest.json": "5980f4d30050dd9ca763e80b49c7973c46753bed4ff5b4cbb511c88e346e5fb6",
+    "work/parallel-main-owned-quote-placement/runtime01/state.json": "de16b049f6014184d468f88657a28dbc5a42be7d76d785f793b47a57ddc20321",
+    "work/parallel-main-owned-quote-placement/runtime01/full.json.gz": "0428c8031a66f197e6d8375691abf62ed4b0e766503f46a992ea5f8e640d869b",
+    "work/parallel-main-owned-quote-placement/runtime01/additional.json.gz": "fc33a334f53596e943023e64ff07f784e5d212db643aa931600ee664e3c15665",
+    "work/parallel-main-owned-quote-placement/retention01.json": "fec23f2013a7758b074599ac8bec723d51ac6eff86aed8c64b1557f012b9ee73",
+    "work/parallel-main-owned-quote-placement/HELPER-CALLS.json": "64cf55b2a464517c3ebb9f3beb97951b20e556386dd62816eb256784492e0c5b"
+  }
+}

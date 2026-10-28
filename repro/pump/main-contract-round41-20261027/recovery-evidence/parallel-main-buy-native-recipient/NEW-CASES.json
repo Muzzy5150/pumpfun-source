@@ -1,0 +1,13 @@
+{
+  "new_case_count": 64,
+  "script": "work/parallel-main-buy-native-recipient/probe-payment-order.py",
+  "script_sha256": "ea3dbec2c3d393c94a62a756006fdaf81f4b72f7021ef4e61513bed0ee828ad3",
+  "dependencies": {
+    "work/parallel-main-buy-native-recipient/probe-payment-order.py": "ea3dbec2c3d393c94a62a756006fdaf81f4b72f7021ef4e61513bed0ee828ad3",
+    "work/parallel-main-buy-v2-order/buy_fixture.py": "7d55d23b4b84b8b818a610ee80cf50f4c32adac392b05f1de448bc61d0ef66d5",
+    "scripts/pump_trade_fixture.py": "9ee647c928070734fe700929b87d4016f76ec244c873e6f484318b5212aea1e1",
+    "work/parallel-main-loader-optimized/pump_captured_loader.py": "844decb7fd4ffe0eaa2ff6243433c7290c478083320cfcdf5bd35debeb2e4858"
+  },
+  "cli": "work/test-env/bin/python work/parallel-main-buy-native-recipient/probe-payment-order.py --candidate CANDIDATE --output OUTPUT.json.gz",
+  "loader": "optimized captured loader installed inside script; no outer wrapper required"
+}

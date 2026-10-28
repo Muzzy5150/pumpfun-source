@@ -1,0 +1,31 @@
+--- a/programs/pump/src/migrate_v2.rs
++++ b/programs/pump/src/migrate_v2.rs
+@@ -46,6 +46,19 @@
+  pub program:UncheckedAccount<'info>,
+ }
+ fn call<'a>(program:&AccountInfo<'a>,accounts:&[(&AccountInfo<'a>,bool,bool)],data:Vec<u8>,seeds:&[&[&[u8]]])->Result<()>{let ix=Instruction{program_id:*program.key,accounts:accounts.iter().map(|(a,s,w)|if *w{AccountMeta::new(*a.key,*s)}else{AccountMeta::new_readonly(*a.key,*s)}).collect(),data};let mut infos:Vec<AccountInfo>=accounts.iter().map(|(a,_,_)|(*a).clone()).collect();infos.push(program.clone());invoke_signed(&ix,&infos,seeds)?;Ok(())}
++fn create_associated_account<'a>(program:&AccountInfo<'a>,payer:&AccountInfo<'a>,destination:&AccountInfo<'a>,authority:&AccountInfo<'a>,mint:&AccountInfo<'a>,system:&AccountInfo<'a>,token:&AccountInfo<'a>,extra:Option<&AccountInfo<'a>>,seeds:&[&[&[u8]]])->Result<()>{
++ let mut accounts=vec![AccountMeta::new(*payer.key,true),AccountMeta::new(*destination.key,false),AccountMeta::new_readonly(*authority.key,false),AccountMeta::new_readonly(*mint.key,false),AccountMeta::new_readonly(*system.key,false),AccountMeta::new_readonly(*token.key,false)];
++ if let Some(extra)=extra{accounts.push(AccountMeta::new_readonly(*extra.key,false));}
++ let ix=Instruction{program_id:*program.key,accounts,data:vec![1]};
++ if let Some(extra)=extra {
++  let infos=[payer.clone(),destination.clone(),authority.clone(),mint.clone(),system.clone(),token.clone(),extra.clone()];
++  invoke_signed(&ix,&infos,seeds)?;
++ } else {
++  let infos=[payer.clone(),destination.clone(),authority.clone(),mint.clone(),system.clone(),token.clone()];
++  invoke_signed(&ix,&infos,seeds)?;
++ }
++ Ok(())
++}
+ fn move_lamports(from:&AccountInfo,to:&AccountInfo,n:u64)->Result<()>{let l=from.lamports().checked_sub(n).ok_or(ProgramError::ArithmeticOverflow)?;let r=to.lamports().checked_add(n).ok_or(ProgramError::ArithmeticOverflow)?;**from.try_borrow_mut_lamports()?=l;**to.try_borrow_mut_lamports()?=r;Ok(())}
+ fn quote_extensions(a:&AccountInfo)->Result<Vec<u16>>{
+  use anchor_spl::token_2022::spl_token_2022::{extension::{StateWithExtensions,BaseStateWithExtensions},state::Mint};
+@@ -102,7 +115,7 @@
+  // Original transfers migration liquidity to its signer PDA before paying CPI rents.
+  if native{move_lamports(&curve,&pa,fee)?;}else if fee>0{call(&sys,&[(&user,true,true),(&pa,false,true)],{let mut v=2u32.to_le_bytes().to_vec();v.extend_from_slice(&fee.to_le_bytes());v},&[])?;}
+  let quote_preexisting=*tmpq.owner==a.quote_token_program.key() && tmpq.data_len()>0;
+- for (dest,wallet,m,tp) in [(&pb,&pool,&base_mint,&tok),(&pq,&pool,&wsol,&qt),(&tmpb,&pa,&base_mint,&tok),(&tmpq,&pa,&wsol,&qt)]{if native{call(&ata,&[(&pa,true,true),(dest,false,true),(wallet,false,false),(m,false,false),(&sys,false,false),(tp,false,false),(&curve,false,false)],vec![1],&[pas])?;}else{call(&ata,&[(&user,true,true),(dest,false,true),(wallet,false,false),(m,false,false),(&sys,false,false),(tp,false,false)],vec![1],&[])?;}}
++ for (dest,wallet,m,tp) in [(&pb,&pool,&base_mint,&tok),(&pq,&pool,&wsol,&qt),(&tmpb,&pa,&base_mint,&tok),(&tmpq,&pa,&wsol,&qt)]{if native{create_associated_account(&ata,&pa,dest,wallet,m,&sys,tp,Some(&curve),&[pas])?;}else{create_associated_account(&ata,&user,dest,wallet,m,&sys,tp,None,&[])?;}}
+ 
+  let quote_before=quote_amount(&tmpq)?;
+  if base>0{let mut transfer=vec![12];transfer.extend_from_slice(&base.to_le_bytes());transfer.push(a.base_mint.decimals);call(&tok,&[(&cb,false,true),(&base_mint,false,false),(&tmpb,false,true),(&curve,true,false)],transfer,&[cs])?;}

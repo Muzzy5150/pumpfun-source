@@ -1,0 +1,50 @@
+{
+  "status": "Validated exact-size logs and zero-cost rent CPI order; no normalized gain",
+  "source_sha256": "a833e5eaa3e18d9abaa914c560fca853644063495de6f2a1dc4192ea1dafec60",
+  "patch_sha256": "126c6e691e8c145ca2144bd96c368a6e28c663d699b1a530ce14a03a7eb9271f",
+  "candidate_sha256": "51177896e3d2b241a3c240c6674820fe3d5c7063d38b2aefeff317d1df6cc75a",
+  "unstripped_sha256": "c9c18d4becbc793301a5804c4867a8f68f27933402858306b345a0c3f0f4a11c",
+  "build_receipt_sha256": "ae15e2937ec53d0e29e5ef15794e59ceae7b8e9063641a4e8366c30a11a19a7f",
+  "inventory": {
+    "total": 1035,
+    "raw": 119,
+    "normalized": 733,
+    "unmatched": 302
+  },
+  "complete_window_delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "body": {
+    "original_start": "0x3b8d8",
+    "original_bytes": 5240,
+    "candidate_bytes": 4832,
+    "normalized_equal": false
+  },
+  "runtime": {
+    "cases": 320,
+    "existing_inputs_with_stronger_log_oracle": 308,
+    "distinct_incremental_inputs": 12,
+    "new_inputs_default_rent": 4,
+    "new_inputs_zero_cost_rent": 8,
+    "verified_transactions": 640,
+    "verified_signatures": 1254,
+    "diagnostic_mismatches": 0,
+    "invocation_order_mismatches": 0,
+    "original_log_counterexamples": 8,
+    "original_zero_rent_CPI_counterexamples": 8
+  },
+  "limits": [
+    "The zero-cost Rent cases explicitly configure local SVM sysvar parameters; no claim about captured mainnet Rent values.",
+    "Original handler remains unmatched; all733 normalized/119 raw identity-layout matches are retained without new matching windows.",
+    "Shared extension CLI/source and frozen R34 inputs remain untouched.",
+    "The 308 existing inputs are strengthened through a new overlay; only12 are additional distinct inputs.",
+    "Full original ELF identity remains false."
+  ]
+}

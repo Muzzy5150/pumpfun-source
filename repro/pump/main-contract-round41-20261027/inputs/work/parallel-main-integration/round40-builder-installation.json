@@ -1,0 +1,131 @@
+{
+  "status": "installed",
+  "scope": "Additive SBPF support, old SBF default retained; activate only after R39 is published",
+  "review_sha256": "53e3dfa6158adf2fff3b9fd7c6036745c073b3b83afd2469962f2ca0e275b9f1",
+  "files": [
+    {
+      "file": "scripts/pump_build_verified.py",
+      "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-tooling/activation-scripts/pump_build_verified.py",
+      "old_sha256": "ecd7a059c743861bc2d36c6c9e1a6c4b4fbdad037a37fadd78d2542edea7caef",
+      "new_sha256": "d8a63fb5ed15db3525a93ff98203e9f6821b3e1b44e689ca2db3e576acdc4e5c"
+    },
+    {
+      "file": "scripts/pump_target_library_profile.py",
+      "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-tooling/activation-scripts/pump_target_library_profile.py",
+      "old_sha256": "25456c533d738225f6867bc535d3272c1834ee8b5f42cffe764ad615c741bccd",
+      "new_sha256": "f997a891051ee84aec6f0bc22270425213880a4b1ef358774f015b08e0c9a605"
+    },
+    {
+      "file": "scripts/pump_dependency_cache.py",
+      "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-tooling/activation-scripts/pump_dependency_cache.py",
+      "old_sha256": "0a441dc0042528d0164beab860f5d93d01616e183d5e2dd59f8c11e34dad33ca",
+      "new_sha256": "6ac18c9fd98e010850bdeef0211a58840696064bd664e5ea3f35960a94f4b9ed"
+    },
+    {
+      "file": "scripts/pump_data_order.py",
+      "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-tooling/activation-scripts/pump_data_order.py",
+      "old_sha256": "7c02897baacca2db0d0e47919300d46a45398384c6fea2d2f3a79f02750d4ef2",
+      "new_sha256": "275bd1ded0f949aee08901e4a82fe209417fe3477aadac31a60f68a710de12ea"
+    },
+    {
+      "file": "scripts/pump_linux_v144_sbpf_libraries.json",
+      "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-tooling/activation-scripts/pump_linux_v144_sbpf_libraries.json",
+      "old_sha256": null,
+      "new_sha256": "7e2461b5ec54416d6b64508af1e2677f63afd83d35e9a3eeae6ca877ae879f1e"
+    },
+    {
+      "file": "scripts/pump_linux_v144_sbf_libraries.json",
+      "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-tooling/activation-scripts/pump_linux_v144_sbf_libraries.json",
+      "old_sha256": "55f0957e17eba608657207d4962122c3ac778d7be194b3fd4ededa6448e91fc6",
+      "new_sha256": "55f0957e17eba608657207d4962122c3ac778d7be194b3fd4ededa6448e91fc6"
+    },
+    {
+      "file": "scripts/pump_derive_data_order.py",
+      "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-tooling/activation-scripts/pump_derive_data_order.py",
+      "old_sha256": "0d6c3ce0acb8397e5ab8a018b4d9f9fa7df22453988f2463e6fe8774134739af",
+      "new_sha256": "0d6c3ce0acb8397e5ab8a018b4d9f9fa7df22453988f2463e6fe8774134739af"
+    },
+    {
+      "file": "scripts/pump_text_layout.py",
+      "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-tooling/activation-scripts/pump_text_layout.py",
+      "old_sha256": "fa5ddf72272e847d23f9481175b64ab464425eaed1c1fdd0d747f2cfa1193d25",
+      "new_sha256": "a8f57b4edb31237010a32371e8d6893b684eeedae75d642b2c2985b6d0bcefc9"
+    },
+    {
+      "file": "scripts/pump_text_layout_linker.py",
+      "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-tooling/activation-scripts/pump_text_layout_linker.py",
+      "old_sha256": "b5a3dba004827c2ea355be1147901737bf4b7f7b4132ffa58c00a305de5dea00",
+      "new_sha256": "b5a3dba004827c2ea355be1147901737bf4b7f7b4132ffa58c00a305de5dea00"
+    },
+    {
+      "file": "scripts/pump_text_layout_rustc.py",
+      "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-tooling/activation-scripts/pump_text_layout_rustc.py",
+      "old_sha256": "c4e84469d80d668ea85f53e9a203d7aaa5e8d186439a3eb7e1c030f8c74c5873",
+      "new_sha256": "c4e84469d80d668ea85f53e9a203d7aaa5e8d186439a3eb7e1c030f8c74c5873"
+    },
+    {
+      "file": "scripts/pump_text_layout_default.ld",
+      "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-tooling/activation-scripts/pump_text_layout_default.ld",
+      "old_sha256": "5e8370b9380f55411d827721e2e43c8cfd1eac71d1383e20b938397bc0bd82c3",
+      "new_sha256": "5e8370b9380f55411d827721e2e43c8cfd1eac71d1383e20b938397bc0bd82c3"
+    },
+    {
+      "file": "scripts/pump_compare_function_bytes.py",
+      "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-tooling/activation-scripts/pump_compare_function_bytes.py",
+      "old_sha256": "43fa359dce1e398f820df445d534e0912ac5f181f1ea15e13a5267b53105b075",
+      "new_sha256": "43fa359dce1e398f820df445d534e0912ac5f181f1ea15e13a5267b53105b075"
+    },
+    {
+      "file": "scripts/pump_quote_control_function_match.py",
+      "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-tooling/activation-scripts/pump_quote_control_function_match.py",
+      "old_sha256": "28ad656012f8fbcd41ed1726e9345ee76f6249992bf28c91c4b9202479d3e94e",
+      "new_sha256": "28ad656012f8fbcd41ed1726e9345ee76f6249992bf28c91c4b9202479d3e94e"
+    },
+    {
+      "file": "scripts/build_source_manifest.py",
+      "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-tooling/activation-scripts/build_source_manifest.py",
+      "old_sha256": "bbcf5081f99cc911af108216dee430ac15721c16159406490beb7671e4b14a8b",
+      "new_sha256": "bbcf5081f99cc911af108216dee430ac15721c16159406490beb7671e4b14a8b"
+    },
+    {
+      "file": "scripts/pump_physical_source_wrapper.py",
+      "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-tooling/activation-scripts/pump_physical_source_wrapper.py",
+      "old_sha256": "d959fe0074fafe7f310a8f40051ce87f795b1e81b104a38dfe57086efa6bae1b",
+      "new_sha256": "d959fe0074fafe7f310a8f40051ce87f795b1e81b104a38dfe57086efa6bae1b"
+    }
+  ],
+  "generators": {
+    "update_local_pump_readme_round40.py": "79b403a8fdf50492fd4809c7a8d84593e36d9c0c9c3190122362cee325f6b710",
+    "prepare_round40_layout.py": "d2b705aa16a8152af803d5002970888fb7400bc4ae4331cdda024617fdc659dd",
+    "launch_round40.py": "3a9f92a8c28b4ce6d7e3b84e5567a380eb7842595c7439a8ecdc61eae44ea73d",
+    "run_round40_full.py": "e2319442d004dcb359b205ed203aaa7ff4a71ad9fede86179803d6be668444fd",
+    "run_snapshot_round40.py": "f44707382ffbd803927aa22194f18b40b040794c629a85fe2d50cf2234787a12",
+    "write_round40_readme.py": "d712e64eb5c7c4958f97cb46b1e7f1c1051bed2eb1b5b118640eb721968216bc",
+    "prepare_round40_metadata.py": "52a8ddaf5bb16a1b733ee52e3ca07c95a41de0ffc2b591cc8844838518030bab",
+    "admit_and_launch_round40.py": "3aec0841905efdc3b951e6f6dc28227acb66788b6857ca477f67b0219578b720",
+    "publish_when_ready_round40.py": "da7b305079af3b9202398269b6089d941f33a095ebb8a7ab73a250dafb1ee074",
+    "promote_round40.py": "8c164fc7a45f3fb927d017722bd976b20c64ca2258adbaae264df2647898c2a5",
+    "update_round40_queue.py": "41f5dc0a0ee093b089a51f4fd84da071c3a92034478199063e1cb572f4b9423b",
+    "finish_round40.py": "1960b0b48f0e881644f804740d748c9514c2303f094522a659528cb415d139bd",
+    "publish_round40.py": "b1e792097950d00399ba3e2f87311a880927c3bdcd52150ef8d1a992c782c782",
+    "package_round40.py": "59c482653094de99432af30fb9c3871c33a6b4b8a1deb4fca55e6b9e89fb1fb7",
+    "review_round40_packaging.py": "b915f0beab8557a01a3104be0a7097550265ce74ae78a47993ee29fa3ca4b293",
+    "freeze_round40.py": "c6f953952cdf3c500f9160e54bfbfaa36e1c2b9d2db576f7b99e1129c2d5127b",
+    "snapshot_round40_followup.py": "4e4c8b24c66b5337a703dfc73d37edb4aed9dda9d56b36e7f8a0eb99c5ef644b"
+  },
+  "source_selection": "Requires separately reviewed round40-draft-plan.json; this script does not select source or create a checkpoint.",
+  "activation_plan_sha256": "9630ae866ac721c06897abf97789ce6b93d20c44c8c7394d1a8350d6fcfc584b",
+  "prior_publication_sha256": "d99d61c412aea139a5415fe0acac98686fca114019b1bcb4720115f9801d38e0",
+  "post_install_controller_corrections": {
+    "freeze_round40.py": {
+      "before_sha256": "0145398415edd521c0ee1b43e206b093c5e25d82fa67291d951b31fd56d0a79f",
+      "after_sha256": "c6f953952cdf3c500f9160e54bfbfaa36e1c2b9d2db576f7b99e1129c2d5127b",
+      "reason": "Update intentional installed helper hashes before validating retained corpus inputs"
+    },
+    "admit_and_launch_round40.py": {
+      "before_sha256": "5fb9a6fc06fb66c49025606a8678b3f52aa66c0b46e6890569bb86323af3ff39",
+      "after_sha256": "3aec0841905efdc3b951e6f6dc28227acb66788b6857ca477f67b0219578b720",
+      "reason": "Use activated public builder path in admitted configuration"
+    }
+  }
+}

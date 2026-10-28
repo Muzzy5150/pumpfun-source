@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "scope": "Independent pure/static admission review; no SDK copy or compilation.",
+  "checks": [
+    "Actual builder target, flag and output expressions pass default, SBF and SBPF cases",
+    "Legacy cache context and key are identical for the same inputs; SBPF selects its own metadata, flag and admitted artifacts; cross-target, main, build, fingerprint and path traversal inputs are rejected",
+    "Both exact 25-library sets and native compiler/Cargo hashes are bound; independently reconstructed data identities equal sealed SBF/SBPF receipts; the implementation binds both profile specifications"
+  ],
+  "qualification": "Pure/static and read-only receipt review only. The additive builder still requires its own cold producer, cached parity and fresh certificates; earlier literal-transformed SBPF receipts do not qualify this implementation.",
+  "compatibility": "The old SBF specification, default target and cache context are unchanged. Implementation hashes change, so old data-order certificates are intentionally stale and must not be reused.",
+  "inputs_sha256": {
+    "work/parallel-main-live-frontier-review/additive-profile-support/additive-profile.patch": "eb0d577b9e79b9e033fa5a87fa54e5c89f4a02620402bfaa27f72c0aa7d91ff2",
+    "work/parallel-main-live-frontier-review/additive-profile-support/STAGED.json": "ea0ea6eac9a7600f43e8046cc628794597c1e7bda634604b9ab6639ba51e947f",
+    "work/parallel-main-live-frontier-review/additive-profile-support/test_additive_profile.py": "b195c6d1ca473d5b3e1da63da5ed0de6360307617aa974843761ee9301ff1c2b",
+    "work/parallel-main-live-frontier-review/additive-profile-support/scripts/pump_build_verified.py": "d8a63fb5ed15db3525a93ff98203e9f6821b3e1b44e689ca2db3e576acdc4e5c",
+    "work/parallel-main-live-frontier-review/additive-profile-support/scripts/pump_dependency_cache.py": "6ac18c9fd98e010850bdeef0211a58840696064bd664e5ea3f35960a94f4b9ed",
+    "work/parallel-main-live-frontier-review/additive-profile-support/scripts/pump_target_library_profile.py": "f997a891051ee84aec6f0bc22270425213880a4b1ef358774f015b08e0c9a605",
+    "work/parallel-main-live-frontier-review/additive-profile-support/scripts/pump_data_order.py": "275bd1ded0f949aee08901e4a82fe209417fe3477aadac31a60f68a710de12ea",
+    "work/parallel-main-live-frontier-review/additive-profile-support/scripts/pump_linux_v144_sbf_libraries.json": "55f0957e17eba608657207d4962122c3ac778d7be194b3fd4ededa6448e91fc6",
+    "work/parallel-main-live-frontier-review/additive-profile-support/scripts/pump_linux_v144_sbpf_libraries.json": "7e2461b5ec54416d6b64508af1e2677f63afd83d35e9a3eeae6ca877ae879f1e"
+  },
+  "archive_followup": "Existing Round38 packager and finisher intentionally hardcode SBF; SBPF adoption needs a new reviewed packaging path that copies the SBPF specification, generalizes profile queries and derives fresh certificates. This does not require changing a running SBF checkpoint."
+}

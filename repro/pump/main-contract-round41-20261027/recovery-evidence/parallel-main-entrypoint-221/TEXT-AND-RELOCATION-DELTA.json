@@ -1,0 +1,242 @@
+{
+  "scope": "Classify the candidate-to-candidate text/data delta without changing either ELF.",
+  "before_sha256": "2e2e5dbd8f72cc86c2801c911ab9844ee6582b8576ed1c251a419d171de19157",
+  "after_sha256": "d29ddb0f360f2a3c48a2d0d3f3c804d8c444cb5660c1cfd969d633cabfcd1638",
+  "normalized_function_groups_equal": true,
+  "function_count": 940,
+  "ambiguity_groups": [
+    {
+      "old": [
+        1414032,
+        1415368
+      ],
+      "new": [
+        1415376,
+        1416712
+      ],
+      "names": [
+        "_ZN11anchor_lang5error5Error11with_values17h<hash>E"
+      ]
+    },
+    {
+      "old": [
+        8568,
+        4528,
+        7232
+      ],
+      "new": [
+        4528,
+        7232,
+        8568
+      ],
+      "names": [
+        "_ZN11anchor_lang5error5Error11with_values17h<hash>E"
+      ]
+    },
+    {
+      "old": [
+        1418048,
+        1418512
+      ],
+      "new": [
+        1418048,
+        1418512
+      ],
+      "names": [
+        "_ZN11anchor_lang8Lamports12add_lamports17h<hash>E"
+      ]
+    },
+    {
+      "old": [
+        1428368,
+        74256,
+        72552,
+        74056,
+        73672
+      ],
+      "new": [
+        1428368,
+        72552,
+        74256,
+        73672,
+        74056
+      ],
+      "names": [
+        "_ZN99_$LT$anchor_lang..accounts..account..Account$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h<hash>E"
+      ]
+    },
+    {
+      "old": [
+        73872,
+        73120
+      ],
+      "new": [
+        73872,
+        73120
+      ],
+      "names": [
+        "_ZN99_$LT$anchor_lang..accounts..account..Account$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h<hash>E"
+      ]
+    },
+    {
+      "old": [
+        36664,
+        1419848
+      ],
+      "new": [
+        36664,
+        1419848
+      ],
+      "names": [
+        "_ZN11anchor_lang8accounts7account16Account$LT$T$GT$8try_from17h<hash>E"
+      ]
+    },
+    {
+      "old": [
+        42192,
+        42056
+      ],
+      "new": [
+        42192,
+        42056
+      ],
+      "names": [
+        "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h<hash>E"
+      ]
+    },
+    {
+      "old": [
+        42080,
+        42216
+      ],
+      "new": [
+        42216,
+        42080
+      ],
+      "names": [
+        "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h<hash>E"
+      ]
+    },
+    {
+      "old": [
+        42696,
+        42400
+      ],
+      "new": [
+        42696,
+        42400
+      ],
+      "names": [
+        "_ZN45_$LT$T$u20$as$u20$alloc..string..ToString$GT$9to_string17h<hash>E"
+      ]
+    },
+    {
+      "old": [
+        1349880,
+        1350040
+      ],
+      "new": [
+        1349880,
+        1350040
+      ],
+      "names": [
+        "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h<hash>E"
+      ]
+    }
+  ],
+  "moved_functions": 3,
+  "text_delta_is_permutation_and_translated_or_equivalent_callee_operands": true,
+  "alternate_normalized_equivalent_calls": [
+    {
+      "old_caller": 945056,
+      "new_caller": 945056,
+      "offset": 10840,
+      "old_target": 1418048,
+      "new_target": 1418512,
+      "old_names": [
+        "_ZN11anchor_lang8Lamports12add_lamports17h8637335aae928708E"
+      ],
+      "new_names": [
+        "_ZN11anchor_lang8Lamports12add_lamports17h8ebe42cdd4ab6905E"
+      ]
+    },
+    {
+      "old_caller": 945056,
+      "new_caller": 945056,
+      "offset": 12424,
+      "old_target": 1418512,
+      "new_target": 1418048,
+      "old_names": [
+        "_ZN11anchor_lang8Lamports12add_lamports17ha72fe6cb8570b19eE"
+      ],
+      "new_names": [
+        "_ZN11anchor_lang8Lamports12add_lamports17h0b434b5ca74dcdacE"
+      ]
+    },
+    {
+      "old_caller": 1020824,
+      "new_caller": 1020824,
+      "offset": 7712,
+      "old_target": 1418512,
+      "new_target": 1418048,
+      "old_names": [
+        "_ZN11anchor_lang8Lamports12add_lamports17ha72fe6cb8570b19eE"
+      ],
+      "new_names": [
+        "_ZN11anchor_lang8Lamports12add_lamports17h0b434b5ca74dcdacE"
+      ]
+    },
+    {
+      "old_caller": 1020824,
+      "new_caller": 1020824,
+      "offset": 8144,
+      "old_target": 1418512,
+      "new_target": 1418048,
+      "old_names": [
+        "_ZN11anchor_lang8Lamports12add_lamports17ha72fe6cb8570b19eE"
+      ],
+      "new_names": [
+        "_ZN11anchor_lang8Lamports12add_lamports17h0b434b5ca74dcdacE"
+      ]
+    },
+    {
+      "old_caller": 963584,
+      "new_caller": 963584,
+      "offset": 10464,
+      "old_target": 1418512,
+      "new_target": 1418048,
+      "old_names": [
+        "_ZN11anchor_lang8Lamports12add_lamports17ha72fe6cb8570b19eE"
+      ],
+      "new_names": [
+        "_ZN11anchor_lang8Lamports12add_lamports17h0b434b5ca74dcdacE"
+      ]
+    },
+    {
+      "old_caller": 984928,
+      "new_caller": 984928,
+      "offset": 14120,
+      "old_target": 1418512,
+      "new_target": 1418048,
+      "old_names": [
+        "_ZN11anchor_lang8Lamports12add_lamports17ha72fe6cb8570b19eE"
+      ],
+      "new_names": [
+        "_ZN11anchor_lang8Lamports12add_lamports17h0b434b5ca74dcdacE"
+      ]
+    }
+  ],
+  "relocations_are_exact_translated_multiset_under_one_assignment": true,
+  "relocations_equal_by_logical_function_group_and_local_offset": true,
+  "changed_data_bytes_are_only_the_17_restored_line_fields": true,
+  "instruction_counts": {
+    "translated_direct_calls": 10708,
+    "unchanged_nontext_lddw": 7762,
+    "translated_text_addresses": 116,
+    "normalized_equivalent_alternate_callee_calls": 6
+  },
+  "limits": [
+    "Logical grouping uses equal normalized bodies, canonical symbol names and archive/member identity with compiler hashes removed. Calls to alternate equal-body instances are recorded separately; this is bounded code classification, not an exact graph-identity proof.",
+    "This does not establish original whole-ELF identity or original object allocation extents."
+  ]
+}

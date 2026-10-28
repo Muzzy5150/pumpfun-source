@@ -1,0 +1,82 @@
+{
+  "status": "passed",
+  "scope": "Private R38-plus-constructor build and1756 targeted paired executions; eligible for root integration, not a published whole-contract checkpoint.",
+  "source": "work/parallel-main-trade-event-constructor/source02",
+  "patch": "work/parallel-main-trade-event-constructor/constructor-r38.patch",
+  "candidate_sha256": "ad5ac067bf3e0cbee4d4c9b417efde3b13b87f8ad92106933ca8c1cc9c6aea33",
+  "unstripped_sha256": "97d57c6c3b9f5d9c66f10ab7d625729cad7ac8536073721028c1e39b1ea8fd13",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "counts": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 744,
+    "unmatched": 291
+  },
+  "normalized_gains": [],
+  "normalized_losses": [],
+  "raw_layout": "identity-order only; compare to R38 identity121, not ordered final175",
+  "runtime": {
+    "case_count": 1756,
+    "suite_count": 37,
+    "receipt_counts": {
+      "paired_rows": 1756,
+      "verified_result_objects": 3512,
+      "fully_backed_pairs": 1756,
+      "distinct_signed_transactions": 383,
+      "distinct_transaction_pairs": 383
+    },
+    "new_state_inputs": 1,
+    "incremental_case_count": 1,
+    "incremental_metrics": [
+      101,
+      202,
+      303,
+      1699999900
+    ]
+  },
+  "helper": {
+    "start": "0x98f60",
+    "bytes": 1744,
+    "original_bytes": 1800,
+    "exact": false,
+    "callers": [
+      {
+        "name": "_ZN14pump_recovered15multi_hop_curve7execute17hb8732b1986323614E",
+        "start": "0x1cd90",
+        "site": "0x247a0"
+      },
+      {
+        "name": "_ZN14pump_recovered5trade4sell17hc657cefb4bd357cfE",
+        "start": "0x9ac00",
+        "site": "0x9c9f8"
+      }
+    ]
+  },
+  "secondary_matrix": {
+    "cases": 8,
+    "baseline_differences": 0,
+    "candidate_differences": 0,
+    "interpretation": "Four explicit/default quote controls reach events; four mayhem states fail6108 beforeevents. No additional new coverage claimed."
+  },
+  "limits": [
+    "No full18109-case integration run or reproduction set is claimed.",
+    "Original constructor remains56B longer; no exact helper match.",
+    "Historical construction of all synthetic states is not proved.",
+    "Original Rust function name/signature and original compiler identity remain unresolved."
+  ],
+  "evidence_sha256": {
+    "work/parallel-main-trade-event-constructor/R38-REVIEW02.json": "242250751a8c25897b7d791a04bed18499945e815b62fce8985a2f09847bf150",
+    "work/parallel-main-trade-event-constructor/R38-DEDUP02.json": "a2cf82e8e222b7ca51a61bad50ac83c706f1f6123a492c84c7e7e075f378f702",
+    "work/parallel-main-trade-event-constructor/r38-future-corpus-fragment.json": "48c8dbdb75e110f7f3dca8d91691ffb8085a2fb1fae88a0c999f74a392e31e08",
+    "work/parallel-main-trade-event-constructor/constructor-r38.patch": "1686abc297b8dc2d043d756b155d2ad9570444ebcef9ac0dbd98d3d792b2cb1e",
+    "work/parallel-main-trade-event-constructor/build02/build-comparison.json": "d697cc169c2da0e70b5d5fb4276ac3ca9ff8cafb0524bb9a3f2617deefcad4f1",
+    "work/parallel-main-trade-event-constructor/build02/normalized-inventory.json": "bd2ee7a681671256b6df6f68cb411f4b05105df09d6ba4314ec580dd65ed66e5",
+    "work/parallel-main-trade-event-constructor/targeted02/state.json": "2f87c101d7e8d7c61395d26151ede8862590abb55e4bcb6aeecee1d9b6627b93",
+    "work/parallel-main-trade-event-constructor/retention02.json": "924868122782dfaa0fb1417a4e8bf3cf92cba9961718e1c41320e46b26de5373",
+    "work/parallel-main-trade-event-constructor/incremental02.json.gz": "99a136c05cf2d0d76eab47fc12940fe889e375a6d5b36c15c4729c56e13dcb6f",
+    "work/parallel-main-trade-event-constructor/incremental02.loader.json": "39560b1e5a361a102577620bfc624f1febf7b60f9c8d2648d729ae09d89bd615",
+    "work/parallel-main-trade-event-constructor/secondary02.json.gz": "d8e13a8db8596558c1798e2dc0734e1346ed2044938509fd75729ae8adc98b86",
+    "work/parallel-main-trade-event-constructor/secondary02.loader.json": "531899ce4f54258b4d68b6505abbdcc0f2e8e8324da262e03474e5b57c6658b6",
+    "work/parallel-main-trade-event-constructor/candidate-helper02.asm": "8b65c8a7464b7403693e5b32c85eb80f7cbc37de7e4925d6c4962e1a5668103b"
+  }
+}

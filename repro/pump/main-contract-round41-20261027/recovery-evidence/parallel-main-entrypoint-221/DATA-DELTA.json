@@ -1,0 +1,954 @@
+{
+  "scope": "Before frozen R29 ordered2.3.0 vs rederived ordered2.2.1 from same primary source.",
+  "sections": {
+    ".text": {
+      "before_bytes": 1699328,
+      "after_bytes": 1699328,
+      "different_positions_in_overlap": 1499,
+      "length_delta": 0,
+      "equal": false,
+      "before_sha256": "418a64e2e6750d6507e48ad86a23171ba4fb7578e0fe310fcdd74de9510d6317",
+      "after_sha256": "9352a29c219f5fbe859f498d67401c15e18207a48725ee741666ebde7f646139"
+    },
+    ".rodata": {
+      "before_bytes": 31743,
+      "after_bytes": 31743,
+      "different_positions_in_overlap": 0,
+      "length_delta": 0,
+      "equal": true,
+      "before_sha256": "67ee6ae3817cde7a6ae64f25ac8ee1a2fd1b25edfba08f5f5ce50dbb3287a635",
+      "after_sha256": "67ee6ae3817cde7a6ae64f25ac8ee1a2fd1b25edfba08f5f5ce50dbb3287a635"
+    },
+    ".data.rel.ro": {
+      "before_bytes": 11528,
+      "after_bytes": 11528,
+      "different_positions_in_overlap": 17,
+      "length_delta": 0,
+      "equal": false,
+      "before_sha256": "00b4e20dcfbaab7256c032d2b62eacae48d8a15c959c6c06bf7e8c3e076bb278",
+      "after_sha256": "11830cbea41032bfb643260d2e9d66dabe680da846eb981a1dd88f9dcb46685a"
+    },
+    ".dynamic": {
+      "before_bytes": 176,
+      "after_bytes": 176,
+      "different_positions_in_overlap": 0,
+      "length_delta": 0,
+      "equal": true,
+      "before_sha256": "ae92412f372704721fbe4ae41faa94523e59850500a2de3ed07e86e056956fc3",
+      "after_sha256": "ae92412f372704721fbe4ae41faa94523e59850500a2de3ed07e86e056956fc3"
+    },
+    ".dynsym": {
+      "before_bytes": 456,
+      "after_bytes": 456,
+      "different_positions_in_overlap": 0,
+      "length_delta": 0,
+      "equal": true,
+      "before_sha256": "af01c635670f8533ef72b9518a021c7ebfa7b1e88e8f97f099822d0533b33404",
+      "after_sha256": "af01c635670f8533ef72b9518a021c7ebfa7b1e88e8f97f099822d0533b33404"
+    },
+    ".dynstr": {
+      "before_bytes": 288,
+      "after_bytes": 288,
+      "different_positions_in_overlap": 0,
+      "length_delta": 0,
+      "equal": true,
+      "before_sha256": "50ae62e312b3b3d5dc1723204e19c84db5fbb7303cd6ff6c26b0eff5e4705cc7",
+      "after_sha256": "50ae62e312b3b3d5dc1723204e19c84db5fbb7303cd6ff6c26b0eff5e4705cc7"
+    },
+    ".rel.dyn": {
+      "before_bytes": 92992,
+      "after_bytes": 92992,
+      "different_positions_in_overlap": 10,
+      "length_delta": 0,
+      "equal": false,
+      "before_sha256": "7d6dbda15c7df1dd83875cda6f2487b6a1c68b2099a4f1a8f410f35f4e06761c",
+      "after_sha256": "b64d66a8e4c643ead1daa90b628945731c9888188f2ae3309f10d9ef3ff069e1"
+    }
+  },
+  "window_sets": {
+    "normalized_matches": {
+      "gained": [],
+      "lost": []
+    },
+    "raw_match": {
+      "gained": [],
+      "lost": []
+    }
+  },
+  "typed_locations": {
+    "before": 46,
+    "after": 63,
+    "gained": [
+      {
+        "address": 1831920,
+        "before": {
+          "file_pointer": {
+            "site": 1739552,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 374,
+          "column": 5
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739552,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 323,
+          "column": 5
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1831920,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 323,
+          "column": 5
+        }
+      },
+      {
+        "address": 1831944,
+        "before": {
+          "file_pointer": {
+            "site": 1739576,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 377,
+          "column": 5
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739576,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 326,
+          "column": 5
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1831944,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 326,
+          "column": 5
+        }
+      },
+      {
+        "address": 1831968,
+        "before": {
+          "file_pointer": {
+            "site": 1739600,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 390,
+          "column": 5
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739600,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 339,
+          "column": 5
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1831968,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 339,
+          "column": 5
+        }
+      },
+      {
+        "address": 1831992,
+        "before": {
+          "file_pointer": {
+            "site": 1739624,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 394,
+          "column": 5
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739624,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 343,
+          "column": 5
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1831992,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 343,
+          "column": 5
+        }
+      },
+      {
+        "address": 1832016,
+        "before": {
+          "file_pointer": {
+            "site": 1739648,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 398,
+          "column": 5
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739648,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 347,
+          "column": 5
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1832016,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 347,
+          "column": 5
+        }
+      },
+      {
+        "address": 1832040,
+        "before": {
+          "file_pointer": {
+            "site": 1739672,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 404,
+          "column": 5
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739672,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 353,
+          "column": 5
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1832040,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 353,
+          "column": 5
+        }
+      },
+      {
+        "address": 1832064,
+        "before": {
+          "file_pointer": {
+            "site": 1739696,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 407,
+          "column": 5
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739696,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 356,
+          "column": 5
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1832064,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 356,
+          "column": 5
+        }
+      },
+      {
+        "address": 1832088,
+        "before": {
+          "file_pointer": {
+            "site": 1739720,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 410,
+          "column": 5
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739720,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 359,
+          "column": 5
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1832088,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 359,
+          "column": 5
+        }
+      },
+      {
+        "address": 1832112,
+        "before": {
+          "file_pointer": {
+            "site": 1739744,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 414,
+          "column": 5
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739744,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 363,
+          "column": 5
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1832112,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 363,
+          "column": 5
+        }
+      },
+      {
+        "address": 1832136,
+        "before": {
+          "file_pointer": {
+            "site": 1739768,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 418,
+          "column": 5
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739768,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 367,
+          "column": 5
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1832136,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 367,
+          "column": 5
+        }
+      },
+      {
+        "address": 1832160,
+        "before": {
+          "file_pointer": {
+            "site": 1739792,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 427,
+          "column": 15
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739792,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 376,
+          "column": 15
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1832160,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 376,
+          "column": 15
+        }
+      },
+      {
+        "address": 1832184,
+        "before": {
+          "file_pointer": {
+            "site": 1739816,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 427,
+          "column": 5
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739816,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 376,
+          "column": 5
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1832184,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 376,
+          "column": 5
+        }
+      },
+      {
+        "address": 1832208,
+        "before": {
+          "file_pointer": {
+            "site": 1739840,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 428,
+          "column": 5
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739840,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 377,
+          "column": 5
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1832208,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 377,
+          "column": 5
+        }
+      },
+      {
+        "address": 1832232,
+        "before": {
+          "file_pointer": {
+            "site": 1739864,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 432,
+          "column": 5
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739864,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 381,
+          "column": 5
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1832232,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 381,
+          "column": 5
+        }
+      },
+      {
+        "address": 1832256,
+        "before": {
+          "file_pointer": {
+            "site": 1739888,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 471,
+          "column": 9
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739888,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 420,
+          "column": 9
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1832256,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 420,
+          "column": 9
+        }
+      },
+      {
+        "address": 1832280,
+        "before": {
+          "file_pointer": {
+            "site": 1739912,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 477,
+          "column": 13
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739912,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 426,
+          "column": 13
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1832280,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 426,
+          "column": 13
+        }
+      },
+      {
+        "address": 1832304,
+        "before": {
+          "file_pointer": {
+            "site": 1739936,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 480,
+          "column": 35
+        },
+        "after": {
+          "file_pointer": {
+            "site": 1739936,
+            "relocation_type": 8,
+            "target": 1724045,
+            "raw": "000000008d4e1a00"
+          },
+          "file": {
+            "address": 1724045,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 429,
+          "column": 35
+        },
+        "original": {
+          "file_pointer": {
+            "site": 1832304,
+            "relocation_type": 8,
+            "target": 1817803,
+            "raw": "00000000cbbc1b00"
+          },
+          "file": {
+            "address": 1817803,
+            "bytes": 10,
+            "sha256": "b1a35a68f14e696205874893c07fd24fdb88882b47c23cc0e0c80a30c7d53759",
+            "utf8": "src/lib.rs"
+          },
+          "line": 429,
+          "column": 35
+        }
+      }
+    ],
+    "lost": []
+  },
+  "before_candidate_sha256": "6791b39c866bae8c1c3ceb6f1b9786e2ad2a8c7adfb7b7c75ce00c474569efd1",
+  "after_candidate_sha256": "ba53207d0f84c65b40f55015465ce3c8a9007a0228fd85718aa325f9f14170f4"
+}

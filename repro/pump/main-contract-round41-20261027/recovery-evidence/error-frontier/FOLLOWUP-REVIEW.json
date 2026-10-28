@@ -1,0 +1,20 @@
+{
+  "scope": "Read-only signed follow-up of unobserved original error codes; no source change",
+  "results": [
+    {
+      "report": "continuity-before01.json.gz",
+      "sha256": "babaf78ff7b7b4a7e1d49ed04a997ad06fd49ddceff1daae1dbb7ab8b7e4b26a",
+      "cases": 8,
+      "mismatches": 0
+    },
+    {
+      "report": "chain-tails-before01.json.gz",
+      "sha256": "954faa014cbaec724eb5e6045a4b8e637178c3d371e5b8da4cc8638f685daffe",
+      "cases": 23,
+      "mismatches": 0
+    }
+  ],
+  "continuity_limit": "All six mutated source/destination mint cases fail in captured AMM before Pump CPI; two controls invoke Pump. No main reachability or source fix established.",
+  "chain_tail_coverage": "23 direct main CreateV2 cases exercise6101/6109 short tails, mixed curve/pool positions and competing eligibility checks. Original/candidate diagnostics, CPI traces, state and outcomes all agree.",
+  "no_source_sites": "The listed unused historical codes6008/6009/6016/6018/6040/6047/6049/6056/6079/6081 have no observed AnchorError-number store outside common enum code in the original scan. This is not a proof of global unreachability."
+}

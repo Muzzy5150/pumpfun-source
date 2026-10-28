@@ -1,0 +1,12 @@
+{
+  "scope": "Portable patch for the current private R37 physical split; only generated in memory, no integration files edited. Runtime qualification remains on source03 before transplant.",
+  "input_hashes": {
+    "src/creator/collect_creator_fee.rs": "291d885d92ac869992b3deddc1b96b7fde159e95bbcc54f9166895abe5ed34cc",
+    "src/creator/distribute_creator_fee_v2.rs": "3156245a97c12697943b04e09e4a82c6e9c494102a90d6c8be9a843e4eb69d03"
+  },
+  "output_hashes": {
+    "src/creator/collect_creator_fee.rs": "95ca7828e58f6cce51b13609f20e89daf32dedd9a844d10da66b20ab0f3a5378",
+    "src/creator/distribute_creator_fee_v2.rs": "53d4ab712bac537bc0a2d836bde8727d2dba0cb60842f02a959bbc3045f6dd80"
+  },
+  "patch_sha256": "bc2377fa26dbce8a5116a949eb815b9558df4101497bd79e7992f520e1abc357"
+}

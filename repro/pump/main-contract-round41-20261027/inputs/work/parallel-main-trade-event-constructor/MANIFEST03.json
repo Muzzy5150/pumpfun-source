@@ -1,0 +1,12 @@
+{
+  "RESULT03.json": "34f6f3688bb58046dd858c632da9b8a4a065ab7e70ec6aab4202df6f8a6aeea7",
+  "prepare03.py": "8d158b27002ebc285aa7e31634b537c85970d55233312dbc021db57661ef6cd7",
+  "run03.py": "b400be77846ad98438a08701dd936ce0fcf6de23719531899a76e53c62b0473c",
+  "finish03.py": "3a1b4f079d9bcb1c0b2a2986e11af584bcc80cc37a7e44e7e88bbde72ebb2273",
+  "EAGER-COPY03.json": "0cdbfad57618c975fb914dcf6efdc9f6aa479f9b14260cd068d83b4f512d3a42",
+  "eager-copy03.patch": "ce6be1a2e5f119a420552dec0ce934366ad268685f52350a2d104776be24490d",
+  "constructor-r38-eager.patch": "c307260c14bdded2f2ced328e2d6aba8dbcdc24bd401b80ab761e182db5edaaa",
+  "source03/src/trade_types.rs": "035b70d39527c3253e6b94db1925aec0b6a7bf24e4144d932d9949e63685544c",
+  "source03/src/trade_v3.rs": "665be799a9f535a46f59a88d277aef1bb35e89851ff31e418b23462b7143d572",
+  "source03/src/multi_hop_curve_swap.rs": "e6a6a362708c486410a00ea8400368abbf7a2ec02cecfeed96cf932579529269"
+}

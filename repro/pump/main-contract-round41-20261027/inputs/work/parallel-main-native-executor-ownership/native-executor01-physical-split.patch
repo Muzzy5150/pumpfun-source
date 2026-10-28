@@ -1,0 +1,81 @@
+--- a/src/distribution.rs
++++ b/src/distribution.rs
+@@ -57,8 +57,7 @@
+  let rent=Rent::get()?;
+  let (transfers,minimum_distributable,_,available)=get_distribution_amounts(&rent,&a.sharing_config.shareholders,ctx.remaining_accounts,&a.creator_vault)?;
+  let eligible=available>=minimum_distributable;let mut distributed=0u64;
+- let bump=[ctx.bumps.creator_vault];let seeds:&[&[u8]]=&[b"creator-vault",a.bonding_curve.creator.as_ref(),&bump];
+- if eligible{distributed=crate::distribution::execute_native_distribution(transfers,ctx.remaining_accounts,&a.creator_vault,&a.system_program,seeds)?;}
++ if eligible{distributed=crate::distribution::execute_native_distribution(&a.sharing_config,&a.creator_vault,&a.system_program,ctx.remaining_accounts,&transfers,ctx.bumps.creator_vault)?;}
+  let event=DistributeCreatorFeesEvent{timestamp:Clock::get()?.unix_timestamp,mint:a.mint.key(),bonding_curve:a.bonding_curve.key(),sharing_config:a.sharing_config.key(),admin:a.sharing_config.admin,shareholders:a.sharing_config.shareholders.clone(),distributed,quote_mint:Pubkey::default()};if eligible{emit!(event.clone());emit_cpi!(event.clone());}Ok(event)
+ }
+ 
+@@ -83,17 +82,9 @@
+ }
+ 
+ 
+-fn execute_native_distribution<'info>(
+- transfers:Vec<(u64,u64)>,recipients:&[AccountInfo<'info>],creator_vault:&AccountInfo<'info>,
+- system_program:&Program<'info,System>,seeds:&[&[u8]],
+-)->Result<u64>{
+- let mut distributed=0u64;
+- for ((amount,_),recipient) in transfers.into_iter().zip(recipients){
+-  crate::collect_v2::transfer_native(system_program.as_ref(),creator_vault,recipient,amount,&[seeds])?;
+-  distributed=distributed.checked_add(amount).ok_or(error!(PumpError::Overflow))?;
+- }
+- Ok(distributed)
+-}
++#[path="creator/distribute_creator_fees.rs"]
++mod native_distribution;
++pub(crate) use native_distribution::execute_native_distribution;
+ 
+ pub(crate) fn get_distribution_amounts<'info>(rent:&Rent,shares:&[Shareholder],recipients:&[AccountInfo<'info>],creator_vault:&AccountInfo<'info>)->Result<(Vec<(u64,u64)>,u64,u64,u64)>{
+  let reserve=rent.minimum_balance(0);
+--- a/src/creator/distribute_creator_fee_v2.rs
++++ b/src/creator/distribute_creator_fee_v2.rs
+@@ -14,7 +14,7 @@
+   let rent=Rent::get()?;
+   let (transfers,minimum_distributable,_,available)=get_distribution_amounts(&rent,&a.sharing_config.shareholders,ctx.remaining_accounts,&a.creator_vault)?;
+   eligible=available>=minimum_distributable;
+-  if eligible{distributed=crate::distribution::execute_native_distribution(transfers,ctx.remaining_accounts,&a.creator_vault,&a.system_program,seeds)?;}
++  if eligible{distributed=crate::distribution::execute_native_distribution(&a.sharing_config,&a.creator_vault,&a.system_program,ctx.remaining_accounts,&transfers,ctx.bumps.creator_vault)?;}
+  }else{
+   let data=a.creator_vault_quote_token_account.try_borrow_data()?;
+   let source=anchor_spl::token_interface::TokenAccount::try_deserialize(&mut data.as_ref())?;drop(data);
+--- /dev/null
++++ b/src/creator/distribute_creator_fees.rs
+@@ -0,0 +1,34 @@
++use anchor_lang::prelude::*;
++use crate::{distribution::SharingConfig, PumpError};
++
++pub(crate) fn execute_native_distribution<'info>(
++    sharing_config: &Account<'info, SharingConfig>,
++    creator_vault: &AccountInfo<'info>,
++    system_program: &Program<'info, System>,
++    remaining_accounts: &[AccountInfo<'info>],
++    transfers: &[(u64, u64)],
++    bump: u8,
++) -> Result<u64> {
++    let sharing_config_key = sharing_config.key();
++    let creator_vault = creator_vault.to_account_info();
++    let mut distributed = 0u64;
++    for (index, _) in sharing_config.shareholders.iter().enumerate() {
++        let recipient = remaining_accounts
++            .get(index)
++            .ok_or_else(|| error!(PumpError::NotEnoughRemainingAccounts))?;
++        let amount = transfers[index].0;
++        let bump = [bump];
++        let seeds: &[&[u8]] = &[b"creator-vault", sharing_config_key.as_ref(), &bump];
++        crate::collect_v2::transfer_native(
++            system_program.as_ref(),
++            &creator_vault,
++            recipient,
++            amount,
++            &[seeds],
++        )?;
++        distributed = distributed
++            .checked_add(amount)
++            .ok_or_else(|| error!(PumpError::Overflow))?;
++    }
++    Ok(distributed)
++}

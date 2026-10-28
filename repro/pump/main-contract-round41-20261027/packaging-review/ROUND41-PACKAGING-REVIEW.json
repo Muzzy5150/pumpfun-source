@@ -1,0 +1,47 @@
+{
+  "status": "approved",
+  "scripts_sha256": {
+    "package_round41.py": "e7ba5561d66bc346a97791a93fd2fa8b8947f6e688608ba58aeee0e728620940",
+    "finish_round41.py": "4620de6a78ae072fa4935714f17888ecefc89be8872d0d894f4f3391ead70bf6",
+    "write_round41_readme.py": "18bfb31389408d232e2416a3bd2215bd2a65acb842f7f8cfd995fbff0a44a4d8"
+  },
+  "profile_records": [
+    {
+      "name": "build-round41-identity",
+      "receipt_sha256": "e2de41aeee5feb492f42d7cce2e4e81e1eed51e1b48b516108778826b4450794"
+    },
+    {
+      "name": "build-round41",
+      "receipt_sha256": "694e25b2bf1847cb05a519e8b239d99b214d53957696997aece5fb68624ce323"
+    }
+  ],
+  "actual_data_transform": "passed",
+  "frozen_counts": {
+    "full": 10468,
+    "additional": 7642
+  },
+  "suites": 205,
+  "case_additions": {
+    "new_cases": 1,
+    "new_suite_count": 1,
+    "components": [
+      {
+        "group": "additional",
+        "name": "claim_cashback_v2_program_guard",
+        "script": "work/parallel-main-cashback-v2-api/probe_guard_regression.py",
+        "new_cases": 1
+      }
+    ]
+  },
+  "archive_support_sha256": "595e622529ea9fd5615c5704ca8d5cf20b08b9464377ad94f3717f708e1b0107",
+  "reviewed": [
+    "fixed-role explicit-path archive replay",
+    "fresh archive identity -> new certificate -> final and both ELF hashes",
+    "four final builds plus two identity receipts",
+    "pure and combined recipes retained separately",
+    "full frozen suite membership/paired counts/script receipts",
+    "same-input308 extension suite remains identical to R40",
+    "all prior normalized windows retained"
+  ],
+  "limits": "Full combined runtime and fresh archive reproduction remain mandatory before publication."
+}

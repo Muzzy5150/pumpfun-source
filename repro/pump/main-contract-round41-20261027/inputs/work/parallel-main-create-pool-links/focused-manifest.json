@@ -1,0 +1,7 @@
+[
+  {
+    "name": "pool_vault_links",
+    "script": "work/parallel-main-create-pool-links/probe_pool_links_strict.py",
+    "count": 10
+  }
+]

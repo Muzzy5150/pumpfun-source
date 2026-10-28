@@ -1,0 +1,68 @@
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -571,4 +571,41 @@
+             token_program, from, to, authority, quote_decimals, quote_mint, amount, &[],
+         )
+     }
+-}
++    #[inline(never)]
++    pub fn transfer_native_owned<'info>(
++        system_program: &AccountInfo<'info>,
++        payer: &Signer<'info>,
++        destination: AccountInfo<'info>,
++        amount: u64,
++    ) -> Result<()> {
++        anchor_lang::system_program::transfer(
++            CpiContext::new(system_program.clone(), anchor_lang::system_program::Transfer {
++                from: payer.to_account_info(),
++                to: destination.clone(),
++            }), amount,
++        )
++    }
++
++    #[inline(never)]
++    pub fn transfer_from_user_owned<'info>(
++        native: bool,
++        system_program: &AccountInfo<'info>,
++        payer: &Signer<'info>,
++        destination: AccountInfo<'info>,
++        amount: u64,
++        token_program: &Interface<'info, TokenInterface>,
++        quote_decimals: u8,
++        quote_mint: &AccountInfo<'info>,
++        quote_source: Option<&AccountInfo<'info>>,
++        quote_destination: Option<&AccountInfo<'info>>,
++    ) -> Result<()> {
++        if native { return transfer_native_owned(system_program, payer, destination, amount); }
++        let from = quote_source.unwrap();
++        let to = quote_destination.unwrap();
++        let authority = payer.to_account_info();
++        crate::sell_v2::quote_token_transfers::transfer_quote_tokens(
++            token_program, from, to, authority, quote_decimals, quote_mint, amount, &[],
++        )
++    }
++
++}
+--- a/src/buy_v2.rs
++++ b/src/buy_v2.rs
+@@ -108,12 +108,14 @@
+  let bbps=if c.is_mayhem_mode{0}else{a.global.buyback_basis_points};
+  let cashback_coin=c.is_cashback_coin;
+  if cf>0 && !cashback_coin{native_payments::ensure_rent_exempt(0,&a.system_program,&a.user,&a.creator_vault)?;}
+- if native{
+-  let to=if cashback_coin{a.user_volume_accumulator.to_account_info()}else{a.creator_vault.to_account_info()};
+-  if cf>0{anchor_lang::system_program::transfer(CpiContext::new(a.system_program.to_account_info(),anchor_lang::system_program::Transfer{from:a.user.to_account_info(),to}),cf)?;}
+- }else{
+-  let to=if cashback_coin{a.associated_user_volume_accumulator.to_account_info()}else{a.associated_creator_vault.to_account_info()};
+-  if cf>0{token_interface::transfer_checked(CpiContext::new(a.quote_token_program.to_account_info(),TransferChecked{from:a.associated_quote_user.to_account_info(),mint:a.quote_mint.to_account_info(),to,authority:a.user.to_account_info()}),cf,a.quote_mint.decimals)?;}
++ if cf>0 {
++  let creator_destination=if cashback_coin{a.user_volume_accumulator.to_account_info()}else{a.creator_vault.to_account_info()};
++  let creator_quote_destination=if native{None}else if cashback_coin{Some(a.associated_user_volume_accumulator.as_ref())}else{Some(a.associated_creator_vault.as_ref())};
++  crate::user_quote_payments::transfer_from_user_owned(
++   native,a.system_program.as_ref(),&a.user,creator_destination,cf,&a.quote_token_program,
++   a.quote_mint.decimals,a.quote_mint.as_ref().as_ref(),
++   if native{None}else{Some(a.associated_quote_user.as_ref())},creator_quote_destination,
++  )?;
+  }
+  if cashback_coin{crate::token_incentives::volume_accumulator::record_cashback_earned(&mut a.user_volume_accumulator,cf,native)?;}
+  crate::trade::user_quote_payments::transfer_from_user(

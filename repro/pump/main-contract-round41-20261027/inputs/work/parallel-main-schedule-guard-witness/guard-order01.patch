@@ -1,0 +1,24 @@
+--- a/src/token_incentives/volume_accumulator.rs
++++ b/src/token_incentives/volume_accumulator.rs
+@@ -173,10 +173,6 @@
+         }
+     }
+     if token_supply_per_day > 0 {
+-        require!(
+-            timestamp <= accumulator.end_time,
+-            PumpError::SupplyUpdateForFinishedRange
+-        );
+         // The capture has separate supply paths before and after start_time.
+         // Keep the zero-day path explicit: each path calls the shared end-day
+         // worker and owns its own range-validation/assignment blocks.
+@@ -191,6 +187,10 @@
+                 }
+             }
+         } else {
++            require!(
++                timestamp <= accumulator.end_time,
++                PumpError::SupplyUpdateForFinishedRange
++            );
+             let current = current_day(accumulator, timestamp);
+             let end = end_day(accumulator);
+             if day_number < 30 {

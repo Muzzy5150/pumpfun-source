@@ -1,0 +1,11 @@
+{
+  "FIX-RESULT02.json": "8ace2a479bdce1bca83a4070a21c8b48f8c9657e024210f87f1d1e5c47b549af",
+  "FIX-RETENTION02.json": "356c3a095f0fd68b4d450abd718c15c2d590017f39c80ff46ea262a1c01356ef",
+  "FIX-RAW-LOGS02.json": "d8493c1fd29e960120968c1b6dcab32da45f0af0693c7fcdf0f94c8425708d1d",
+  "FIX-BUILD-PLAN02.json": "bf230ef0e2247d798eafc1694df7dc5148d9c77d3f45de3ccb044f5cc92edd18",
+  "run_fix02.py": "162a5edda5f068f36cbbe940b6761183d8543f060091fa32ef16e1bf1d3c1333",
+  "finish_fix02.py": "8bb22a5f80e1277de964a97f49b7474d8b3d4f90868c91c1ab051212901e2f98",
+  "combined-cashback-fix.patch": "3cb7ccc2b7e858a6e5acfc99c15674f98a561e26709e4c0c337d72b4381b06b1",
+  "V1-CFG-PROOF.json": "e6c7f8c5586a759c9a15cb91314f5832f45d914070de508233a454956b947763",
+  "source03/src/token_incentives/claim_token_incentives.rs": "23cfb84b5d1dda8acd6521e3034732e0d0079c640155a8f2460a7f16754910b2"
+}

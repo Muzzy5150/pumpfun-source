@@ -1,0 +1,9 @@
+from pathlib import Path
+import json,hashlib,sys,gzip
+P=Path(__file__).resolve().parent;R=P.parents[1];sys.path.insert(0,str(R/'scripts'));sys.path.insert(0,str(R/'work/parallel-main-v3-buyback-assert'));from pump_diagnostic_audit import audit;from audit_invocations import audit_invocations
+state=json.loads((P/'runs03/regression-state.json').read_text());assert len(state)==26 and all(v['returncode']==0 for v in state.values());suites={}
+for k,v in state.items():
+ b=Path(v['output']).read_bytes();suites[k]=json.loads(gzip.decompress(b)if b[:2]==b'\x1f\x8b'else b)
+diag=audit(suites);assert not diag['mismatches'];inv={k:audit_invocations(v)for k,v in suites.items()};assert not any(v['mismatches']for v in inv.values())
+(P/'diagnostics03.json').write_text(json.dumps(diag,indent=2)+'\n');(P/'invocations03.json').write_text(json.dumps(inv,indent=2)+'\n');sha=lambda f:hashlib.sha256(f.read_bytes()).hexdigest();counts={k:v.get('case_count',len(v.get('cases',[])))for k,v in suites.items()};assert sum(counts.values())==1234
+result={'source':'source03','build':'build03','status':'verified structural trial, not promoted','source_sha256':sha(P/'source03/src/trade_v3.rs'),'candidate_sha256':sha(P/'build03/candidate.so'),'unstripped_sha256':sha(P/'build03/unstripped.so'),'signed_cases':sum(counts.values()),'case_counts':counts,'diagnostic_mismatches':0,'invocation_mismatches':0,'helper':{'original_bytes':2120,'candidate_bytes':2008,'different_slots':258},'sum_helper':{'original_bytes':656,'candidate_bytes':656,'different_slots':1},'pre_fee_helper':{'original_bytes':688,'candidate_bytes':688,'different_slots':7},'inventory':{'normalized':708,'raw':123,'gains':[],'losses':[]},'next':'No full-body gain. Preserve real helper structure and separately test evidenced u8 mayhem ABI if further control is worthwhile.'};(P/'RESULT03.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

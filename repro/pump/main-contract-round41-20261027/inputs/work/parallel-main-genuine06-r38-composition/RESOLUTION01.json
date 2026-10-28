@@ -1,0 +1,20 @@
+{
+  "scope": "Private source merge only; unbuilt",
+  "resolutions": [
+    {
+      "file": "src/migrate_v2.rs",
+      "action": "Genuine06 API-helper block plus preserved R38 PumpError::QuoteMintNotWritable; local duplicate enum remains absent",
+      "source_conflict_sha256": "e0d2db561b629bd62cc146f16d3e48c2728c0d8d857c97431d03d106d2974752",
+      "result_sha256": "e56041d507daf546eadfc59ad5bfb0c93fab9019a19cb8f2a89179bc550a4cd2"
+    },
+    {
+      "file": "src/trade_v3.rs",
+      "action": "Preserved complete Genuine06 sell prefix/accounting and suffix; replaced only event literal with exact validatedR38 constructor block",
+      "source_prefix_unchanged": true,
+      "source_suffix_unchanged": true,
+      "constructor_source_sha256": "3427362691e6246a0fe5a321fa3dc7d0ad97940fe85f4f8d1350987a735e3440",
+      "replaced_event_literal_sha256": "747b7dacadeec0a52d37523b1db48cca070e15fb1d0f86790ed62777c14b96b4",
+      "result_sha256": "ca734ceb3e3a639a321253f29e8beaa3ce5f5fe5a1373652b9b6369f48d42f45"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "cache_key": "fdf6441ce812bf7050ae2af8ca0708104ae04c5dedd4b610613364f964b41e29",
+  "cache_manifest_sha256": "2cc57b597b4359e023c60a4743fe34b86ec142d58b98a0aeccff8a8686474fb0",
+  "recorded_manifest_sha256": "2cc57b597b4359e023c60a4743fe34b86ec142d58b98a0aeccff8a8686474fb0",
+  "external_payload_files": 541,
+  "forbidden_payload_files": [],
+  "main_names": [
+    "pump-recovered",
+    "pump_recovered"
+  ],
+  "same_source_clean_cached_parity": "DIRECT-TRAIT-PARITY.json",
+  "registry_home": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-create-sizing/build-direct-trait/cargo-home",
+  "fresh_main_recorded": true
+}

@@ -1,0 +1,9 @@
+{
+  "base_manifest_sha256": "5605d9c5d71551b1ad14d7784c14a8a0b88baf2a8c469762e82fb1e31a186e96",
+  "supplemental_files": {
+    "COST-OBSERVATION.json": "a16394547ae569c85ed2426ab3302d945c7c2acab9845f07065c12403f44a3e6",
+    "ARCHIVE-FLOW.md": "ac77867efae2ae5a5f7c5ea41e89944f3856ded2520637f491eba24fb4be2859"
+  },
+  "implementation_unchanged": true,
+  "archive_flow_executed": false
+}

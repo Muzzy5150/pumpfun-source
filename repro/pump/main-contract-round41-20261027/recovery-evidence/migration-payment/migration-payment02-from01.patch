@@ -1,0 +1,26 @@
+--- a/src/migrate.rs
++++ b/src/migrate.rs
+@@ -58,8 +58,8 @@
+  call(&tok,&[(&tmpq,false,true),(&a.rent.to_account_info(),false,false),(&curve,false,false)],vec![17],&[])?;
+  let creator=a.bonding_curve.creator;let mut data=vec![233,146,209,142,207,104,64,188];data.extend_from_slice(&0u16.to_le_bytes());data.extend_from_slice(&base.to_le_bytes());data.extend_from_slice(&quote.to_le_bytes());data.extend_from_slice(creator.as_ref());data.push(mayhem as u8);data.push(a.bonding_curve.is_cashback_coin as u8);data.extend_from_slice(&a.bonding_curve.creator_fee_bps.to_le_bytes());data.push(a.bonding_curve.can_edit_creator_fee as u8);data.push(a.bonding_curve.is_holder_reward as u8);
+  call(&am,&[(&pool,false,true),(&cfg,false,false),(&pa,true,true),(&mint,false,false),(&wsol,false,false),(&lp,false,true),(&tmpb,false,true),(&tmpq,false,true),(&ulp,false,true),(&pb,false,true),(&pq,false,true),(&sys,false,false),(&t22,false,false),(&base_tok,false,false),(&tok,false,false),(&ata,false,false),(&ev,false,false),(&am,false,false)],data,&[pas])?;
+- if !mayhem && (ctx.remaining_accounts.len()>=2 || native_payments::boost_enabled(&cfg)) {
+-  require!(ctx.remaining_accounts.len()>=2,PumpError::NotEnoughRemainingAccounts);
++ if !mayhem && (ctx.remaining_accounts.len()==2 || native_payments::boost_enabled(&cfg)) {
++  require!(ctx.remaining_accounts.len()==2,PumpError::NotEnoughRemainingAccounts);
+   let boost=&ctx.remaining_accounts[0];let vault=&ctx.remaining_accounts[1];
+   let funding=Rent::get()?.minimum_balance(165);
+   native_payments::transfer_native(a.system_program.as_ref(),&a.user,&a.pool_authority,funding)?;
+--- a/src/migrate_v2.rs
++++ b/src/migrate_v2.rs
+@@ -126,8 +126,8 @@
+  let base=amount(&tmpb)?;let quote=quote_amount(&tmpq)?.checked_sub(quote_before).ok_or_else(||error!(PumpError::Overflow))?;
+  let creator=a.bonding_curve.creator;let mut data=vec![233,146,209,142,207,104,64,188];data.extend_from_slice(&0u16.to_le_bytes());data.extend_from_slice(&base.to_le_bytes());data.extend_from_slice(&quote.to_le_bytes());data.extend_from_slice(creator.as_ref());data.push(mayhem as u8);data.push(a.bonding_curve.is_cashback_coin as u8);data.extend_from_slice(&a.bonding_curve.creator_fee_bps.to_le_bytes());data.push(a.bonding_curve.can_edit_creator_fee as u8);data.push(a.bonding_curve.is_holder_reward as u8);
+  call(&am,&[(&pool,false,true),(&cfg,false,false),(&pa,true,true),(&base_mint,false,false),(&wsol,false,false),(&lp,false,true),(&tmpb,false,true),(&tmpq,false,true),(&ulp,false,true),(&pb,false,true),(&pq,false,true),(&sys,false,false),(&t22,false,false),(&tok,false,false),(&qt,false,false),(&ata,false,false),(&ev,false,false),(&am,false,false)],data,&[pas])?;
+- if !mayhem && (ctx.remaining_accounts.len()>=2 || crate::migrate::native_payments::boost_enabled(&cfg)) {
+-  require!(ctx.remaining_accounts.len()>=2,PumpError::NotEnoughRemainingAccounts);
++ if !mayhem && (ctx.remaining_accounts.len()==2 || crate::migrate::native_payments::boost_enabled(&cfg)) {
++  require!(ctx.remaining_accounts.len()==2,PumpError::NotEnoughRemainingAccounts);
+   let boost=&ctx.remaining_accounts[0];let vault=&ctx.remaining_accounts[1];
+   let initial_balance=pa.lamports();let boost_rent=Rent::get()?;
+   let funding=boost_rent.minimum_balance(quote_account_size(&wsol)?);

@@ -1,0 +1,65 @@
+--- a/programs/pump/src/migrate_v2.rs
++++ b/programs/pump/src/migrate_v2.rs
+@@ -47,8 +47,51 @@
+ }
+ fn call<'a>(program:&AccountInfo<'a>,accounts:&[(&AccountInfo<'a>,bool,bool)],data:Vec<u8>,seeds:&[&[&[u8]]])->Result<()>{let ix=Instruction{program_id:*program.key,accounts:accounts.iter().map(|(a,s,w)|if *w{AccountMeta::new(*a.key,*s)}else{AccountMeta::new_readonly(*a.key,*s)}).collect(),data};let mut infos:Vec<AccountInfo>=accounts.iter().map(|(a,_,_)|(*a).clone()).collect();infos.push(program.clone());invoke_signed(&ix,&infos,seeds)?;Ok(())}
+ fn move_lamports(from:&AccountInfo,to:&AccountInfo,n:u64)->Result<()>{let l=from.lamports().checked_sub(n).ok_or(ProgramError::ArithmeticOverflow)?;let r=to.lamports().checked_add(n).ok_or(ProgramError::ArithmeticOverflow)?;**from.try_borrow_mut_lamports()?=l;**to.try_borrow_mut_lamports()?=r;Ok(())}
+-fn quote_extensions(a:&AccountInfo)->Result<Vec<anchor_spl::token_2022::spl_token_2022::extension::ExtensionType>>{use anchor_spl::token_2022::spl_token_2022::{extension::{StateWithExtensions,BaseStateWithExtensions},state::Mint};if *a.owner!=anchor_spl::token_2022::ID{return Ok(vec![])}let d=a.try_borrow_data()?;Ok(StateWithExtensions::<Mint>::unpack(&d)?.get_extension_types()?)}
+-fn quote_account_size(a:&AccountInfo)->Result<usize>{use anchor_spl::token_2022::spl_token_2022::{extension::ExtensionType,state::Account};if *a.owner!=anchor_spl::token_2022::ID{return Ok(165)}let types=quote_extensions(a)?;let mut required=ExtensionType::get_required_init_account_extensions(&types);required.push(ExtensionType::ImmutableOwner);Ok(ExtensionType::try_calculate_account_len::<Account>(&required)?)}
++fn quote_extensions(a:&AccountInfo)->Result<Vec<u16>>{
++ use anchor_spl::token_2022::spl_token_2022::{extension::{StateWithExtensions,BaseStateWithExtensions},state::Mint};
++ if *a.owner!=anchor_spl::token_2022::ID{return Ok(vec![])}
++ let d=a.try_borrow_data()?;
++ let parsed=StateWithExtensions::<Mint>::unpack(&d)?;
++ let tlv=parsed.get_tlv_data();
++ let mut cursor=0usize;
++ let mut types=Vec::new();
++ while tlv.len()-cursor>=2 {
++  let kind=u16::from_le_bytes([tlv[cursor],tlv[cursor+1]]);
++  if kind==0{break}
++  if tlv.len()-cursor<4{return Err(ProgramError::InvalidAccountData.into())}
++  let length=u16::from_le_bytes([tlv[cursor+2],tlv[cursor+3]]) as usize;
++  cursor=cursor.checked_add(4).and_then(|v|v.checked_add(length)).ok_or(ProgramError::InvalidAccountData)?;
++  if cursor>tlv.len(){return Err(ProgramError::InvalidAccountData.into())}
++  types.push(kind);
++ }
++ Ok(types)
++}
++fn quote_account_size(a:&AccountInfo)->Result<usize>{
++ if *a.owner!=anchor_spl::token_2022::ID{return Ok(165)}
++ required_quote_account_len(&a.try_borrow_data()?).ok_or_else(||ProgramError::InvalidAccountData.into())
++}
++
++pub fn required_quote_account_len(data:&[u8])->Option<usize>{
++ let mut size=170usize;
++ if data.len()==82{return Some(size)}
++ if data.len()<167 || data[82..165].iter().any(|byte|*byte!=0) || data[165]!=1{return None}
++ let mut cursor=166usize;
++ let mut seen=0u32;
++ while data.len()-cursor>=2 {
++  let kind=u16::from_le_bytes([data[cursor],data[cursor+1]]);
++  if kind==0{break}
++  if data.len()-cursor<4{return None}
++  let length=u16::from_le_bytes([data[cursor+2],data[cursor+3]]) as usize;
++  cursor=cursor.checked_add(4)?.checked_add(length)?;
++  if cursor>data.len(){return None}
++  let payload=match kind {1=>8,9=>0,14=>1,26=>0,_=>continue};
++  let mask=1u32<<kind;
++  if seen&mask!=0{return None}
++  seen|=mask;
++  size=size.checked_add(4)?.checked_add(payload)?;
++ }
++ Some(size)
++}
+ fn amount(a:&AccountInfo)->Result<u64>{Ok(u64::from_le_bytes(a.try_borrow_data()?[64..72].try_into().unwrap()))}
+ fn quote_amount(a:&AccountInfo)->Result<u64>{let d=a.try_borrow_data()?;let t=TokenAccount::try_deserialize(&mut &d[..])?;Ok(t.amount)}
+ pub fn execute<'info>(ctx:Context<'_, '_, '_, 'info,MigrateV2<'info>>)->Result<()>{
+@@ -72,7 +115,7 @@
+  call(&am,&[(&pool,false,true),(&cfg,false,false),(&pa,true,true),(&base_mint,false,false),(&wsol,false,false),(&lp,false,true),(&tmpb,false,true),(&tmpq,false,true),(&ulp,false,true),(&pb,false,true),(&pq,false,true),(&sys,false,false),(&t22,false,false),(&tok,false,false),(&qt,false,false),(&ata,false,false),(&ev,false,false),(&am,false,false)],data,&[pas])?;
+  if !mayhem{require!(ctx.remaining_accounts.len()>=2,PumpError::NotEnoughRemainingAccounts);let boost=&ctx.remaining_accounts[0];let vault=&ctx.remaining_accounts[1];let top=rent.minimum_balance(quote_account_size(&wsol)?).saturating_sub(vault.lamports());if top>0{call(&sys,&[(&user,true,true),(&pa,false,true)],{let mut v=2u32.to_le_bytes().to_vec();v.extend_from_slice(&top.to_le_bytes());v},&[])?;}call(&am,&[(&pool,false,true),(&cfg,false,false),(&pa,true,true),(&base_mint,false,false),(&wsol,false,false),(&pb,false,true),(&pq,false,true),(boost,false,false),(vault,false,true),(&qt,false,false),(&sys,false,false),(&ata,false,false),(&ev,false,false),(&am,false,false)],vec![140,233,33,94,132,90,194,143],&[pas])?;}
+  call(&tok,&[(&tmpb,false,true),(&wa,false,true),(&pa,true,false)],vec![9],&[pas])?;
+- if !quote_preexisting{if quote_extensions(&wsol)?.contains(&anchor_spl::token_2022::spl_token_2022::extension::ExtensionType::TransferFeeConfig){if !wsol.is_writable{return err!(MigrateV2Error::QuoteMintNotWritable)}call(&qt,&[(&wsol,false,true),(&tmpq,false,true)],vec![26,4],&[])?;}
++ if !quote_preexisting{if quote_extensions(&wsol)?.contains(&1){if !wsol.is_writable{return err!(MigrateV2Error::QuoteMintNotWritable)}call(&qt,&[(&wsol,false,true),(&tmpq,false,true)],vec![26,4],&[])?;}
+  call(&qt,&[(&tmpq,false,true),(&wa,false,true),(&pa,true,false)],vec![9],&[pas])?;}
+  let burn_amount=amount(&ulp)?;anchor_spl::token_2022::burn(CpiContext::new_with_signer(t22.clone(),anchor_spl::token_2022::Burn{mint:lp.clone(),from:ulp.clone(),authority:pa.clone()},&[pas]),burn_amount)?;call(&t22,&[(&ulp,false,true),(&wa,false,true),(&pa,true,false)],vec![9],&[pas])?;
+  refund_pool_authority(a,ctx.bumps.pool_authority,&wa,pa.lamports())?;

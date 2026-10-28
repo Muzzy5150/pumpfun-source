@@ -1,0 +1,68 @@
+{
+  "scope": "Focused unchanged claim worker/contexts and compound failure/CPI validation for original single-event-account ABI",
+  "counts": {
+    "full": 0,
+    "additional": 528
+  },
+  "definition_sha256": {
+    "work/parallel-main-integration/claim_grid_cli.py": "591464744af3d60c4c47f60a2c4972a101784cc93113c93ff0466957d44d0f9d",
+    "work/parallel-main-incentives-next/probe_claim_program_precedence.py": "8283b3fecd361068d958e5f1dc15742d4960a2f3ac821117a6c5bc473844beb3",
+    "work/parallel-main-incentives-next/probe_claim_incentive_mint.py": "63de33fb483fc17369e22f1faf3a88e5e88d965e16ad6fa6baa864dcdd800c2f",
+    "work/parallel-main-incentives-next/probe_claim_empty_log.py": "0bb1d6a4af768bf038d78a4ac6955029a30eaad635ec175cda8f86c0c1c95ba4",
+    "scripts/pump_claim_boundary_differential.py": "64ac11c4d7b880960e18df83c589abaf67be6d42e1afdae8b4ab59d718ab107d",
+    "scripts/pump_claim_panic_differential.py": "0970a875ab9991e195b951c81d18b24a5e01a0a8631dc7cb5e6a6672183ac199",
+    "work/parallel-main-claim-boundary-review/probe-compound.py": "b894fdae85384c57680b3b37eed68ee94529a02e71c6c2eda774a57356f0025b",
+    "work/parallel-main-incentives-next/probe_claim_accounts_v2.py": "d2b7ea8fa5980f5df8f9f4c0918d47cc2a629663c351594b89972aa0b46a7a4c"
+  },
+  "suites": [
+    {
+      "group": "additional",
+      "name": "claim_grid_132",
+      "script": "work/parallel-main-integration/claim_grid_cli.py",
+      "cases": 132,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "claim_program_precedence_20",
+      "script": "work/parallel-main-incentives-next/probe_claim_program_precedence.py",
+      "cases": 20,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "claim_mint_6",
+      "script": "work/parallel-main-incentives-next/probe_claim_incentive_mint.py",
+      "cases": 6,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "claim_zero_log_4",
+      "script": "work/parallel-main-incentives-next/probe_claim_empty_log.py",
+      "cases": 4,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "incentive_claim",
+      "script": "scripts/pump_claim_boundary_differential.py",
+      "cases": 334,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "claim_panic_diagnostics",
+      "script": "scripts/pump_claim_panic_differential.py",
+      "cases": 2,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "claim_compound_30",
+      "script": "work/parallel-main-claim-boundary-review/probe-compound.py",
+      "cases": 30,
+      "args": []
+    }
+  ]
+}

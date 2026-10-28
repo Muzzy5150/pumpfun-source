@@ -1,0 +1,128 @@
+{
+  "status": "passed",
+  "scope": "Fresh-dependency frozen-R39 source under additive SBPF; cached main and all-producer-outputs-unavailable main independently reproduce both ELF hashes. Main Rust may change for a later consumer; dependency-manifest context must remain identical.",
+  "fresh_main": true,
+  "main_cache_files": 0,
+  "cache_files": 541,
+  "cache_key": "cc75395a3c1f178105d500df5cc825f8696f42c21fd51a1d70bbd0aaac03ce9f",
+  "manifest_sha256": "3a0f72ffc445fe5929f0963350885734de7061390326e2671fdce1919861104c",
+  "cache_root": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/external-cache",
+  "registry_home": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/cold-producer01/cargo-home",
+  "clean_build_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/cold-producer01",
+  "cached_build_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/cached-consumer01",
+  "clean_build_report_sha256": "41f92c9e8472c912bfcfa6006ed37ede9e26143103b59282e61cf771f046cf56",
+  "cached_build_report_sha256": "20ad8a28683114079dbf5ae35065f4683e920807d13b3437b273d335d87d71c2",
+  "profile_context": {
+    "name": "linux-v1.44-sbpf",
+    "target": "sbpf-solana-solana",
+    "profile_spec_sha256": "7e2461b5ec54416d6b64508af1e2677f63afd83d35e9a3eeae6ca877ae879f1e",
+    "native_sdk_manifest_sha256": "9688cfa0061dd0ed27384698603848f847a70869a6f2ca1b4b4ec0d77cc043da",
+    "prepared_sdk_manifest_sha256": "a06465edb97a6dbd9b7c5368056d0f91f913132ff7c28383d85071055a92e7bc",
+    "target_libraries": {
+      "libcore-52876eb403c2f847.rlib": "85972d2c6f6b4eabb34b7c9d5cb04aa216723d9ac35f050a7c219d6f9d65f5e7",
+      "libgetopts-70e39e4d407d9f9d.rlib": "322d8fbd80f1ffbc186abb461f85a1f845eb54cc23b1d9ebbfebecd2cf9e1c62",
+      "liblibc-6e7ddecf4e3040fb.rlib": "804d80ef515b2d75e435bd5908ffdd98c62fdb962942c8254fa92e472f33f042",
+      "libtest-080eee5a22e558c4.rlib": "8f82444d4c8591a90c63af2e41e51d8f74d4cfbab43da83cde196bfc6787bd36",
+      "libsysroot-b6b213ae1df94df5.rlib": "c1a9183a76386cbaf604b48211008c219afdaae6757f846733950d046936ba82",
+      "libaddr2line-e6aeb2e4b400d273.rlib": "db16f788fbc9049a1c694876c9c8e52335640be0e667ef9c871d545e05b007d9",
+      "libmemchr-014ff96e10cd0668.rlib": "bb996019425342176ba13e5b060a193f725fea5956346a025eaa1a0bd05e5dbe",
+      "libminiz_oxide-35c9473c472b3826.rlib": "8c54b094181013ae29d72455f0c2e14807c2d24865df470f1d00d7d1a20254b8",
+      "libstd_detect-ec5d45a0e20fae33.rlib": "25f93d04b12d269e870666aa97bb47727203b533316932a8dee0966f3bb1d942",
+      "liballoc-f3c66a8de450488e.rlib": "679a55ef942aab47fc69da32765e782a28d71d0edc544ba4367589722bd69d94",
+      "libstd-b21c434e0a696890.rlib": "43c13aedf385aed42c3c7c97d13e7cc89979203e72fd87857c93c395e5fd4efa",
+      "libcfg_if-ea0575808b373f94.rlib": "17a2996b3d25d5ff035e6ecae7b29ccdeb5fe4ade59ffe80eda70bae6d321452",
+      "libpanic_abort-103d29f0ede7c858.rlib": "e4c090de50a06b9ccd0d0ad3e5f0bc0389155277b3dc25ca1c268c3975f3bfb6",
+      "libunwind-411a1a08afc96e48.rlib": "089468bfa405b742e86b418b7d3c795a74d2d123539bc0b3d16144cee8f25101",
+      "librustc_std_workspace_std-e66af626521502ee.rlib": "7b7f3c944172d447f899f8a140b7eb3ca02b5ae045d083e18df381433712781d",
+      "libcompiler_builtins-c45c2ded080d9668.rlib": "10fc7b8628875a6d330dcd5aea94852ec9f31ed85009a20dcf98e93f36894e86",
+      "librustc_std_workspace_core-0d013a368a425fcf.rlib": "22634be6b5115c40acfb7ca250eb9677a27aa1062531a99240fa60ada36bec88",
+      "libobject-f88c80390b2ba95c.rlib": "7584eea0c9862c5e5e354d35c60a0e3be42aa2ab1d82292b98532614460bbf85",
+      "libadler-a1ecf6226fab4e4c.rlib": "eb6633b603230abf871ea94dc06141f493d31bb7b5db4469a85cc9212428a0dc",
+      "librustc_std_workspace_alloc-43985c5bf5cb3cc1.rlib": "d1f708aea3212a8723daed54851c6f08b2ac875f2a85ec6f6cad667848622558",
+      "libgimli-e8cd2ed6ba81ed3d.rlib": "59337ec33e3c65422b2984247708c1668cee45e6c017d7cbee9d510c9db9bbc5",
+      "libpanic_unwind-0c092adc710fd79f.rlib": "02c687c95a570afb23e971ee45dfe7f26358081ca3f01843859f1dc50be7e4a6",
+      "libhashbrown-acc155a66701b798.rlib": "9c916224d6f42d506323dc0fa78e3ba8a6d05feab3f8a7e99ae78093e45bbbda",
+      "libproc_macro-b0e8b13964190326.rlib": "896b9e3be0e2071c42ab1ff580801ce33ffff34d6bb7f1c7fa66ac601f5a448c",
+      "libunicode_width-e11e6d0a5e02b016.rlib": "5bb7b96f1afdd9da91efb1e9b6e71d805d87804f17006560757030f194faed13"
+    },
+    "empty_directories": [
+      "self-contained"
+    ]
+  },
+  "normalized_delta": {
+    "normalized_gains": [
+      "0xce50",
+      "0x188cc8",
+      "0x19a1a0",
+      "0x1a8e28",
+      "0x1ab9b8"
+    ],
+    "normalized_losses": [],
+    "raw_gains": [
+      "0xce50",
+      "0x188cc8",
+      "0x1891d8",
+      "0x189340",
+      "0x189488",
+      "0x1895e8",
+      "0x18de90",
+      "0x18e568",
+      "0x199ac0",
+      "0x19a1a0",
+      "0x1a8e28",
+      "0x1a9128",
+      "0x1ab9b8",
+      "0x1b31d8",
+      "0x1b38b0",
+      "0x1b38c0",
+      "0x1b4088",
+      "0x1b40d0"
+    ],
+    "raw_losses": [],
+    "candidate": {
+      "total": 1035,
+      "normalized": 811,
+      "raw": 165,
+      "unmatched": 224,
+      "matched_text_bytes": 1070592
+    }
+  },
+  "producer_target_unavailable_control": {
+    "status": "passed",
+    "producer_target_absent_before_control": true,
+    "consumer_finished_while_producer_target_absent": true,
+    "producer_target_restored": true,
+    "all_producer_outputs_parked": [
+      "build-attempt.json",
+      "build-comparison.json",
+      "build.log",
+      "candidate.so",
+      "normalized-inventory.json",
+      "physical-source-calls.jsonl",
+      "profile-sdk",
+      "source",
+      "target",
+      "target-library-profile-files.json",
+      "unstripped.so"
+    ],
+    "producer_complete_hash_inventory_restored": true,
+    "consumer_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/producer-unavailable-consumer01",
+    "consumer_report_sha256": "775e955673faf4368ee54b693d18e0dca0016d5173bdaf138c3e43a9bf52d704"
+  },
+  "source_manifest": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/PLAN01.json",
+  "source_manifest_sha256": "70feea7e6a1dc9bd0b4d30acfafbde2389da35938c77a731ace76ac95f888d77",
+  "state_sha256": "61893a57b3a808fb426c8d6cf192fe9d53a76517d37f73552a4b7fcf41a1629e",
+  "producer_before_sha256": "bfaa95da2dd75fab0c10a4f5d49f8bfd6dbc130c573ce640fc7a5b23bc1b82a5",
+  "producer_after_sha256": "bfaa95da2dd75fab0c10a4f5d49f8bfd6dbc130c573ce640fc7a5b23bc1b82a5",
+  "source_proof_sha256": "5810fc4f562ead69216a7e31c13efac71a67fbfd7913630871ec6261498f3b02",
+  "elf_hashes": {
+    "candidate.so": {
+      "clean": "b56a60a9672213dabfb2e0fdc5e3525dc9313985e604aa4e1007aa753d383b13",
+      "cached": "b56a60a9672213dabfb2e0fdc5e3525dc9313985e604aa4e1007aa753d383b13"
+    },
+    "unstripped.so": {
+      "clean": "54a0116c7dce6aeaafdfe7c888aa33d91377ec529d8dba6dde5f65a71e245e48",
+      "cached": "54a0116c7dce6aeaafdfe7c888aa33d91377ec529d8dba6dde5f65a71e245e48"
+    }
+  }
+}

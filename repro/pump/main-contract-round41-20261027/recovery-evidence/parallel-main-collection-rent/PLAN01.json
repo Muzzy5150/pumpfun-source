@@ -1,0 +1,19 @@
+{
+  "scope": "Main native creator collection recipient-rent floor recovery",
+  "baseline": "work/parallel-main-integration/round32-source/programs/pump",
+  "changed": {
+    "src/lib.rs": {
+      "before": "b19a14ca58c9846b252e2b809e15906dd048b642207fa51114df9a40848e85b3",
+      "after": "9c6c151c7d735caf72364b06f4ea965bf00ddcb03e96045331fd035237dbeeef"
+    },
+    "src/creator/collect_creator_fee.rs": {
+      "before": "a74c2e8510f77ab43622d6a11e494a296942310426aa2514836381b2021509e9",
+      "after": "a00ed6655a289ac407f6164a3f6777f34a73799dd2277e64af89c30e6f32ce14"
+    }
+  },
+  "original_helper": "0x2b490/2696B",
+  "original_floor": "0x2bce0\u20130x2bd60: saturating recipient lamports+available versus Rent::minimum_balance(recipient data length)",
+  "original_message": "0x1b6a20: Creator account does not have enough rent-exemption lamports",
+  "before_confirmed": "Both legacy and V2native with available1, recipient lamports0/1 returnsuccess; original skips transfer/event, R32 pays/emits. Exact threshold890879+1 passes both.",
+  "profile": "linux-v1.44-sbf"
+}

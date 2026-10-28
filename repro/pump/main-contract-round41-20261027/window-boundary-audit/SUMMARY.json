@@ -1,0 +1,96 @@
+{
+  "scope": "Read-only completeness audit of Pump's inferred windows; not symbol recovery.",
+  "inputs": {
+    "evidence/original/pump/deployed.so": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+    "repro/reconstruction-status-2026-10-26/functions.tsv": "fb2c0a47514567d65eb45c1e268dacd5291e4659bb7dceb575a767dc20bcaff8",
+    "work/parallel-main-window-boundary-audit/audit.py": "a9764f20f039de2e75660de14d9a224da718ed99654869af1691a821ac2bcc00",
+    "work/pump-reserve-byte-recovery/inventory_current.py": "06c47748e46303bfc952b36fe9a6c3a44d62508d1341d8197e03788d625ad7e5",
+    "scripts/pump_compare_function_bytes.py": "43fa359dce1e398f820df445d534e0912ac5f181f1ea15e13a5267b53105b075",
+    "scripts/pump_quote_control_function_match.py": "28ad656012f8fbcd41ed1726e9345ee76f6249992bf28c91c4b9202479d3e94e",
+    "repro/layered-passes/pass-25/pump-current-evidence/analysis/full-before-after-inventory.json.gz": "ce5dedf24d29ab1971c92eac9f6010cbf125753e3496fcef03812218475477ff",
+    "repro/layered-passes/pass-25/pump-current-evidence/inner-manifest.json": "98c49ab1a0aaad83f51224df4aa44bbfb36308f53e8351dbed51298b87fdc67a",
+    "work/pump-admin-cto-error-batch-build/elf_reader.py": "247700e9930d5e53daf93a50888ae1e5429f74ccb19155e7a205f72ee21d5883",
+    "work/pump-admin-cto-error-batch-build/layer_inventory.py": "03802cf1847e810ad425dfd77a558f56b6914b4f45770eda3548b70b89c2ae98"
+  },
+  "text": {
+    "start": 288,
+    "end": 1792496,
+    "bytes": 1792208,
+    "sha256": "37cc788bba53d0d90446ea0795463dae60713f14af11902bccd678281f36ec6a",
+    "instruction_count": 215873,
+    "lddw_continuation_slots": 8153
+  },
+  "executable_segments": [
+    {
+      "offset": 288,
+      "address": 288,
+      "file_bytes": 1792208,
+      "memory_bytes": 1792208,
+      "alignment": 8
+    }
+  ],
+  "coverage": {
+    "windows": 1035,
+    "sum_window_bytes": 1792208,
+    "gaps": [],
+    "overlaps": [],
+    "errors": []
+  },
+  "evidence_counts": {
+    "relative_direct_calls": 10591,
+    "unique_relative_direct_call_targets": 905,
+    "defined_symbol_call_relocations": 1,
+    "indirect_calls": 144,
+    "text_pointer_relocations": 121,
+    "data_pointer_relocations": 158,
+    "unique_pointer_targets": 137,
+    "relocation_types": {
+      "8": 5877,
+      "10": 270
+    }
+  },
+  "elf_entrypoint": 1404464,
+  "function_symbols": [
+    {
+      "name": "custom_panic",
+      "start": 1405624,
+      "end": 1405824,
+      "size": 200,
+      "section_index": 1,
+      "window_end": 1405824
+    },
+    {
+      "name": "entrypoint",
+      "start": 1404464,
+      "end": 1404904,
+      "size": 440,
+      "section_index": 1,
+      "window_end": 1404904
+    }
+  ],
+  "producer_check": {
+    "fixed_table_equals_historical_ledger": true,
+    "files": {
+      "work/pump-admin-cto-error-batch-build/elf_reader.py": {
+        "observed_sha256": "247700e9930d5e53daf93a50888ae1e5429f74ccb19155e7a205f72ee21d5883",
+        "published_sha256": "247700e9930d5e53daf93a50888ae1e5429f74ccb19155e7a205f72ee21d5883",
+        "equal": true
+      },
+      "work/pump-admin-cto-error-batch-build/layer_inventory.py": {
+        "observed_sha256": "03802cf1847e810ad425dfd77a558f56b6914b4f45770eda3548b70b89c2ae98",
+        "published_sha256": "03802cf1847e810ad425dfd77a558f56b6914b4f45770eda3548b70b89c2ae98",
+        "equal": true
+      }
+    }
+  },
+  "missing_evidenced_boundaries": [],
+  "unsupported_window_starts": [],
+  "invalid_call_targets": [],
+  "invalid_branch_targets": [],
+  "cross_window_branch_count": 0,
+  "nonterminal_window_ends": 152,
+  "nonterminal_ends_with_inferred_noreturn_callee": 152,
+  "nonterminal_ends_with_reachable_fallthrough": 0,
+  "raw_unrelocated_text_pointer_count": 0,
+  "conclusion": "No missing, overlapping, or contradicted boundary was found in the checked static evidence. The1035windows remain inferred entries-to-next-entry ranges, not proven historical Rust function extents. Indirect-call target completeness remains unresolved."
+}

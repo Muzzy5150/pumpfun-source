@@ -1,0 +1,95 @@
+{
+  "scope": "Linear symbolic register tracking for account-field load order; check against disassembly before edits.",
+  "original": [
+    {
+      "instruction_offset": "0x8",
+      "account_offset": "0x120"
+    },
+    {
+      "instruction_offset": "0xb8",
+      "account_offset": "0x100"
+    },
+    {
+      "instruction_offset": "0x1c0",
+      "account_offset": "0xe0"
+    },
+    {
+      "instruction_offset": "0x2d0",
+      "account_offset": "0x130"
+    },
+    {
+      "instruction_offset": "0x3e0",
+      "account_offset": "0x58"
+    },
+    {
+      "instruction_offset": "0x4f8",
+      "account_offset": "0x140"
+    },
+    {
+      "instruction_offset": "0x610",
+      "account_offset": "0x128"
+    },
+    {
+      "instruction_offset": "0x728",
+      "account_offset": "0x138"
+    },
+    {
+      "instruction_offset": "0x858",
+      "account_offset": "0x108"
+    },
+    {
+      "instruction_offset": "0x960",
+      "account_offset": "0x110"
+    },
+    {
+      "instruction_offset": "0xa60",
+      "account_offset": "0x118"
+    }
+  ],
+  "candidate": [
+    {
+      "instruction_offset": "0x8",
+      "account_offset": "0x120"
+    },
+    {
+      "instruction_offset": "0xb8",
+      "account_offset": "0x100"
+    },
+    {
+      "instruction_offset": "0x1d0",
+      "account_offset": "0x128"
+    },
+    {
+      "instruction_offset": "0x2d0",
+      "account_offset": "0xe0"
+    },
+    {
+      "instruction_offset": "0x3e0",
+      "account_offset": "0x130"
+    },
+    {
+      "instruction_offset": "0x4f0",
+      "account_offset": "0x58"
+    },
+    {
+      "instruction_offset": "0x600",
+      "account_offset": "0x140"
+    },
+    {
+      "instruction_offset": "0x718",
+      "account_offset": "0x138"
+    },
+    {
+      "instruction_offset": "0x840",
+      "account_offset": "0x108"
+    },
+    {
+      "instruction_offset": "0x980",
+      "account_offset": "0x110"
+    },
+    {
+      "instruction_offset": "0xa90",
+      "account_offset": "0x118"
+    }
+  ]
+}

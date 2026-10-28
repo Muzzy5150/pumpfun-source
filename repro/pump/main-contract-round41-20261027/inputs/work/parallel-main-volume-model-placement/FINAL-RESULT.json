@@ -1,0 +1,159 @@
+{
+  "status": "validated_volume_declaration_placement",
+  "base": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round36-source/programs/pump",
+  "source_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-volume-model-placement/source01",
+  "changed_files": {
+    "src/volume_sync.rs": "6ed1f053f6b318d7cb27cbaa723f88917e87e757df0d5035d00b6b40c29ce699",
+    "src/lib.rs": "29ad97f5823ad451b14bfcd9d6dfad0652063ffebaf7192e465f4d14c91b1d84",
+    "src/token_incentives/volume_accumulator.rs": "74ce194da5e7217f473916b9302b5524e60b253b0e892ab78f20c5040060ead1"
+  },
+  "patch": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-volume-model-placement/placement.patch",
+  "patch_sha256": "f0ecf05bac2d787735180c9ae683ce0a6523f615acea06effadadab154b14154",
+  "compiled_variants": 1,
+  "build_candidate_sha256": "ca05f42ce35ad0243de0977737fe035259d3fc03e0b530b4e7f944f59b84f9f4",
+  "build_unstripped_sha256": "364f4237ff25b534182cf4a4e9801dddbae530ac269bc5fe1aae920385cb02dd",
+  "fresh_main": true,
+  "data_progress": {
+    "before": {
+      "shape_recognized_pairs": 102,
+      "same_filename": 94,
+      "same_filename_line_column": 84
+    },
+    "after": {
+      "shape_recognized_pairs": 102,
+      "same_filename": 96,
+      "same_filename_line_column": 84
+    },
+    "new_filepath_matches": [
+      "0x1bdfc8",
+      "0x1be0c0"
+    ],
+    "lost_filepath_matches": [],
+    "new_complete_fields": [],
+    "lost_complete_fields": [],
+    "0x1bdfc8": {
+      "original_address": "0x1bdfc8",
+      "candidate_address": "0x1a92a0",
+      "original": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 8,
+        "column": 1,
+        "length": 56,
+        "pointer": "0x1b70ea"
+      },
+      "candidate": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 4,
+        "column": 1,
+        "length": 56,
+        "pointer": "0x1a199b"
+      },
+      "uses": [
+        {
+          "original_function": "0x101448",
+          "candidate_function": "0xc8578",
+          "offset": 40
+        }
+      ]
+    },
+    "0x1be0c0": {
+      "original_address": "0x1be0c0",
+      "candidate_address": "0x1a9398",
+      "original": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 19,
+        "column": 1,
+        "length": 56,
+        "pointer": "0x1b70ea"
+      },
+      "candidate": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 15,
+        "column": 1,
+        "length": 56,
+        "pointer": "0x1a199b"
+      },
+      "uses": [
+        {
+          "original_function": "0x101ef8",
+          "candidate_function": "0xc9028",
+          "offset": 40
+        }
+      ]
+    }
+  },
+  "function_sets": {
+    "R35_identity": {
+      "normalized_matches": {
+        "before": 737,
+        "after": 737,
+        "gains": [],
+        "losses": []
+      },
+      "raw_match": {
+        "before": 121,
+        "after": 121,
+        "gains": [],
+        "losses": []
+      }
+    },
+    "R35_selected": {
+      "normalized_matches": {
+        "before": 737,
+        "after": 737,
+        "gains": [],
+        "losses": []
+      },
+      "raw_match": {
+        "before": 145,
+        "after": 121,
+        "gains": [],
+        "losses": [
+          "0xa7e0",
+          "0x18a3b0",
+          "0x18a4d8",
+          "0x18a888",
+          "0x18de90",
+          "0x18e568",
+          "0x194998",
+          "0x194ae0",
+          "0x197508",
+          "0x1991e0",
+          "0x19a758",
+          "0x19a8a0",
+          "0x1a0f68",
+          "0x1a2340",
+          "0x1a6370",
+          "0x1a6940",
+          "0x1ab220",
+          "0x1ab730",
+          "0x1b31d8",
+          "0x1b3220",
+          "0x1b38b0",
+          "0x1b38c0",
+          "0x1b4088",
+          "0x1b40d0"
+        ]
+      }
+    }
+  },
+  "raw_comparison_limit": "Identity raw121 is unchanged versus R35 identity. This build has no source-specific ordering; selected R35 has145 raw. No claim of selected-order raw parity.",
+  "runtime": {
+    "suites": 10,
+    "cases": 1508,
+    "new_case_definitions": 0,
+    "diagnostic_log_cases": 1508,
+    "diagnostic_mismatches": [],
+    "CPI_order_pairs": 1508,
+    "CPI_order_mismatches": [],
+    "verified_result_objects": 3016,
+    "distinct_signed_transactions": 478,
+    "fully_backed_pairs": 1508
+  },
+  "source_body_field_order_and_derives_preserved": true,
+  "R36_cashback_and_reader_placements_preserved": true,
+  "source_coordinates_forced": false,
+  "scope": "Main Pump only; no shared source or tooling changes.",
+  "recommended_next_step": "Compose the narrow three-file patch into the next frozen source and derive fresh text/data recipes before full qualification.",
+  "whole_original_identity": false
+}

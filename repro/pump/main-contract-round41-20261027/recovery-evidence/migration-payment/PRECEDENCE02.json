@@ -1,0 +1,3014 @@
+{
+  "counts": {
+    "earlier_captured_AMM_failure": 234,
+    "success": 153,
+    "main_exact_two_gate": 42
+  },
+  "cases": 429,
+  "rows": [
+    {
+      "case": "legacy_0_0_owner_system",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "legacy_0_0_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "legacy_0_0_owner_token",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "legacy_0_0_bad_discriminator",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_0_0_length_0",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_0_0_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_0_0_length_8",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_0_0_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_0_0_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_0_0_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_0_0_length_939",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_0_0_length_940",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "legacy_0_0_length_941",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "legacy_0_0_length_948",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "legacy_0_0_bool_417_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_0_0_bool_417_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_0_0_bool_642_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_0_0_bool_939_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_0_0_bool_939_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_0_0_bool_940_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_0_0_bool_940_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_0_0_extra_zero",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "legacy_0_0_extra_nonzero",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "legacy_0_0_extra_32",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "legacy_0_1_owner_system",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "legacy_0_1_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "legacy_0_1_owner_token",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "legacy_0_1_bad_discriminator",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_0_1_length_0",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_0_1_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_0_1_length_8",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_0_1_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_0_1_length_907",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_0_1_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_0_1_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_0_1_length_939",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_0_1_length_940",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_0_1_length_941",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_0_1_length_948",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_0_1_bool_417_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_0_1_bool_417_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_0_1_bool_642_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_0_1_bool_939_0",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_0_1_bool_939_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_0_1_bool_939_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_0_1_bool_940_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_0_1_bool_940_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_0_1_extra_zero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_0_1_extra_nonzero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_0_1_extra_32",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_1_0_owner_system",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "legacy_1_0_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "legacy_1_0_owner_token",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "legacy_1_0_bad_discriminator",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_1_0_length_0",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_1_0_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_1_0_length_8",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_1_0_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_1_0_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_1_0_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_1_0_length_939",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_1_0_length_940",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "legacy_1_0_length_941",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "legacy_1_0_length_948",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "legacy_1_0_bool_417_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_1_0_bool_417_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_1_0_bool_642_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_1_0_bool_939_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_1_0_bool_939_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_1_0_bool_940_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_1_0_bool_940_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_1_0_extra_zero",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "legacy_1_0_extra_nonzero",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "legacy_1_0_extra_32",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "legacy_1_1_owner_system",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "legacy_1_1_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "legacy_1_1_owner_token",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "legacy_1_1_bad_discriminator",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_1_1_length_0",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_1_1_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_1_1_length_8",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_1_1_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_1_1_length_907",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_1_1_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_1_1_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_1_1_length_939",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_1_1_length_940",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_1_1_length_941",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_1_1_length_948",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_1_1_bool_417_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_1_1_bool_417_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_1_1_bool_642_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_1_1_bool_939_0",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_1_1_bool_939_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_1_1_bool_939_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_1_1_bool_940_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_1_1_bool_940_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_1_1_extra_zero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_1_1_extra_nonzero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_1_1_extra_32",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_2_0_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "legacy_2_0_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_2_0_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_2_0_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "legacy_2_0_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "legacy_2_0_length_948",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "legacy_2_0_extra_zero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "legacy_2_0_extra_nonzero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "legacy_2_0_extra_32",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "legacy_2_1_owner_system",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "legacy_2_1_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "legacy_2_1_owner_token",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "legacy_2_1_bad_discriminator",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_2_1_length_0",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_2_1_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_2_1_length_8",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_2_1_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "legacy_2_1_length_907",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_2_1_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_2_1_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_2_1_length_939",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_2_1_length_940",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_2_1_length_941",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_2_1_length_948",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_2_1_bool_417_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_2_1_bool_417_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_2_1_bool_642_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_2_1_bool_939_0",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_2_1_bool_939_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_2_1_bool_939_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_2_1_bool_940_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_2_1_bool_940_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "legacy_2_1_extra_zero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_2_1_extra_nonzero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_2_1_extra_32",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_0_0_owner_system",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_native_0_0_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_native_0_0_owner_token",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_native_0_0_bad_discriminator",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_0_0_length_0",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_0_0_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_0_0_length_8",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_0_0_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_0_0_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_0_0_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_0_0_length_939",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_0_0_length_940",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_native_0_0_length_941",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_native_0_0_length_948",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_native_0_0_bool_417_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_0_0_bool_417_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_0_0_bool_642_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_0_0_bool_939_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_0_0_bool_939_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_0_0_bool_940_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_0_0_bool_940_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_0_0_extra_zero",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_native_0_0_extra_nonzero",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_native_0_0_extra_32",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_native_0_1_owner_system",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_native_0_1_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_native_0_1_owner_token",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_native_0_1_bad_discriminator",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_0_1_length_0",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_0_1_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_0_1_length_8",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_0_1_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_0_1_length_907",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_0_1_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_0_1_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_0_1_length_939",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_0_1_length_940",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_0_1_length_941",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_0_1_length_948",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_0_1_bool_417_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_0_1_bool_417_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_0_1_bool_642_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_0_1_bool_939_0",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_0_1_bool_939_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_0_1_bool_939_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_0_1_bool_940_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_0_1_bool_940_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_0_1_extra_zero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_0_1_extra_nonzero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_0_1_extra_32",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_1_0_owner_system",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_native_1_0_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_native_1_0_owner_token",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_native_1_0_bad_discriminator",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_1_0_length_0",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_1_0_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_1_0_length_8",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_1_0_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_1_0_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_1_0_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_1_0_length_939",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_1_0_length_940",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_native_1_0_length_941",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_native_1_0_length_948",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_native_1_0_bool_417_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_1_0_bool_417_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_1_0_bool_642_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_1_0_bool_939_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_1_0_bool_939_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_1_0_bool_940_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_1_0_bool_940_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_1_0_extra_zero",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_native_1_0_extra_nonzero",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_native_1_0_extra_32",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_native_1_1_owner_system",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_native_1_1_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_native_1_1_owner_token",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_native_1_1_bad_discriminator",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_1_1_length_0",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_1_1_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_1_1_length_8",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_1_1_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_1_1_length_907",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_1_1_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_1_1_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_1_1_length_939",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_1_1_length_940",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_1_1_length_941",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_1_1_length_948",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_1_1_bool_417_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_1_1_bool_417_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_1_1_bool_642_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_1_1_bool_939_0",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_1_1_bool_939_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_1_1_bool_939_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_1_1_bool_940_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_1_1_bool_940_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_1_1_extra_zero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_1_1_extra_nonzero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_1_1_extra_32",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_0_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_native_2_0_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_2_0_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_2_0_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_0_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_0_length_948",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_0_extra_zero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_0_extra_nonzero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_0_extra_32",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_1_owner_system",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_native_2_1_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_native_2_1_owner_token",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_native_2_1_bad_discriminator",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_2_1_length_0",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_2_1_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_2_1_length_8",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_2_1_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_native_2_1_length_907",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_1_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_1_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_1_length_939",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_1_length_940",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_1_length_941",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_1_length_948",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_1_bool_417_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_2_1_bool_417_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_2_1_bool_642_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_2_1_bool_939_0",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_1_bool_939_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_2_1_bool_939_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_2_1_bool_940_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_2_1_bool_940_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_native_2_1_extra_zero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_1_extra_nonzero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_2_1_extra_32",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_0_0_owner_system",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_token_0_0_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_token_0_0_owner_token",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_token_0_0_bad_discriminator",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_0_0_length_0",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_0_0_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_0_0_length_8",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_0_0_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_0_0_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_0_0_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_0_0_length_939",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_0_0_length_940",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_token_0_0_length_941",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_token_0_0_length_948",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_token_0_0_bool_417_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_0_0_bool_417_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_0_0_bool_642_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_0_0_bool_939_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_0_0_bool_939_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_0_0_bool_940_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_0_0_bool_940_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_0_0_extra_zero",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_token_0_0_extra_nonzero",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_token_0_0_extra_32",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_token_0_1_owner_system",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_token_0_1_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_token_0_1_owner_token",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_token_0_1_bad_discriminator",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_0_1_length_0",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_0_1_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_0_1_length_8",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_0_1_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_0_1_length_907",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_0_1_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_0_1_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_0_1_length_939",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_0_1_length_940",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_0_1_length_941",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_0_1_length_948",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_0_1_bool_417_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_0_1_bool_417_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_0_1_bool_642_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_0_1_bool_939_0",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_0_1_bool_939_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_0_1_bool_939_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_0_1_bool_940_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_0_1_bool_940_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_0_1_extra_zero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_0_1_extra_nonzero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_0_1_extra_32",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_1_0_owner_system",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_token_1_0_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_token_1_0_owner_token",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_token_1_0_bad_discriminator",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_1_0_length_0",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_1_0_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_1_0_length_8",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_1_0_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_1_0_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_1_0_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_1_0_length_939",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_1_0_length_940",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_token_1_0_length_941",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_token_1_0_length_948",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_token_1_0_bool_417_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_1_0_bool_417_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_1_0_bool_642_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_1_0_bool_939_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_1_0_bool_939_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_1_0_bool_940_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_1_0_bool_940_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_1_0_extra_zero",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_token_1_0_extra_nonzero",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_token_1_0_extra_32",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_token_1_1_owner_system",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_token_1_1_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_token_1_1_owner_token",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_token_1_1_bad_discriminator",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_1_1_length_0",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_1_1_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_1_1_length_8",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_1_1_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_1_1_length_907",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_1_1_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_1_1_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_1_1_length_939",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_1_1_length_940",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_1_1_length_941",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_1_1_length_948",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_1_1_bool_417_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_1_1_bool_417_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_1_1_bool_642_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_1_1_bool_939_0",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_1_1_bool_939_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_1_1_bool_939_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_1_1_bool_940_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_1_1_bool_940_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_1_1_extra_zero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_1_1_extra_nonzero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_1_1_extra_32",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_0_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_token_2_0_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_2_0_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_2_0_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_0_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_0_length_948",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_0_extra_zero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_0_extra_nonzero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_0_extra_32",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 1,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_1_owner_system",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_token_2_1_owner_pump",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_token_2_1_owner_token",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3007))))"
+    },
+    {
+      "case": "v2_token_2_1_bad_discriminator",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_2_1_length_0",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_2_1_length_7",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_2_1_length_8",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_2_1_length_906",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(InvalidAccountData)))"
+    },
+    {
+      "case": "v2_token_2_1_length_907",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_1_length_908",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_1_length_938",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_1_length_939",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_1_length_940",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_1_length_941",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_1_length_948",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_1_bool_417_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_2_1_bool_417_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_2_1_bool_642_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_2_1_bool_939_0",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_1_bool_939_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_2_1_bool_939_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_2_1_bool_940_2",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_2_1_bool_940_255",
+      "classification": "earlier_captured_AMM_failure",
+      "first_failed_program": "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Fieldless(BorshIoError)))"
+    },
+    {
+      "case": "v2_token_2_1_extra_zero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_1_extra_nonzero",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_2_1_extra_32",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_actual_count_3_enabled_0_mayhem_0",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_actual_count_3_enabled_0_mayhem_1",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_actual_count_3_enabled_1_mayhem_0",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "legacy_actual_count_3_enabled_1_mayhem_1",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_actual_count_4_enabled_0_mayhem_0",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_actual_count_4_enabled_0_mayhem_1",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "legacy_actual_count_4_enabled_1_mayhem_0",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "legacy_actual_count_4_enabled_1_mayhem_1",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_actual_count_3_enabled_0_mayhem_0",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_actual_count_3_enabled_0_mayhem_1",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_actual_count_3_enabled_1_mayhem_0",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_native_actual_count_3_enabled_1_mayhem_1",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_actual_count_4_enabled_0_mayhem_0",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_actual_count_4_enabled_0_mayhem_1",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_native_actual_count_4_enabled_1_mayhem_0",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_native_actual_count_4_enabled_1_mayhem_1",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_actual_count_3_enabled_0_mayhem_0",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_actual_count_3_enabled_0_mayhem_1",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_actual_count_3_enabled_1_mayhem_0",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_token_actual_count_3_enabled_1_mayhem_1",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_actual_count_4_enabled_0_mayhem_0",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_actual_count_4_enabled_0_mayhem_1",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    },
+    {
+      "case": "v2_token_actual_count_4_enabled_1_mayhem_0",
+      "classification": "main_exact_two_gate",
+      "first_failed_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+      "boost_cpi_count": 0,
+      "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6027))))"
+    },
+    {
+      "case": "v2_token_actual_count_4_enabled_1_mayhem_1",
+      "classification": "success",
+      "first_failed_program": null,
+      "boost_cpi_count": 0,
+      "error": null
+    }
+  ],
+  "limit": "Earlier captured-AMM failures establish end-to-end precedence, not direct execution of the later Pump config decoder."
+}

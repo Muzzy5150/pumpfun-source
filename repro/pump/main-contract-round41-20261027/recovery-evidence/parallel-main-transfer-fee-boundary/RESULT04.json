@@ -1,0 +1,153 @@
+{
+  "status": "validated isolated companion increment for parent composition; source02 remains frozen",
+  "baseline": "accepted source02 built from frozen Round28",
+  "source_hashes": {
+    "baseline": "source02 (accepted pre-fee)",
+    "source": "source04",
+    "after_sha256": {
+      "src/trade_v3.rs": "00ded72a3c775145641c8ff9d8af739f25303487fcc05c2c03d93831dfc3e85e",
+      "src/v3_native_transfer_fee.rs": "81047d109f5cffabdb13795c67003eb34e8285708d68d7594485c0bfc55b9b75"
+    },
+    "pre_fee_body": "unchanged from accepted source02; confirmed exact by complete-window comparison"
+  },
+  "candidate_sha256": "842e7526cac4a94584b93289dc986a85671acf43b9ff9e0467f8e51c0bf88527",
+  "unstripped_sha256": "b1e56aa3e3c31824c5de1d43a8be7260688fedb88defac32e677cc4385183a04",
+  "build_receipt_sha256": "13950a816f27561a9988be43f827b83f207ec2f1ed19bdf1e33077504c06b849",
+  "inventory": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 725,
+    "unmatched": 310
+  },
+  "gains_over_source02": {
+    "normalized_matches": {
+      "gains": [
+        "0x17c3d8"
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "exact_helpers": {
+    "0x17c3d8": 368,
+    "0x17c548": 776
+  },
+  "callees": [
+    {
+      "caller": "0x17c3d8",
+      "offset": 128,
+      "original": "0x1b55c8",
+      "candidate": "0x19e1a0",
+      "matches": [
+        {
+          "start": 1696160,
+          "symbol": "__multi3",
+          "raw_sha256": "face056642083fcc15c6737f1910030a4b59b6a78a4fa523f142dc0f28635762",
+          "operands": []
+        }
+      ]
+    },
+    {
+      "caller": "0x17c3d8",
+      "offset": 320,
+      "original": "0x1b4088",
+      "candidate": "0x19e300",
+      "matches": [
+        {
+          "start": 1696512,
+          "symbol": "__udivti3",
+          "raw_sha256": "4c7fdcb05ebe6e9644f6f82174ae7b33ccc28be551a89726b8118724d242175e",
+          "operands": [
+            {
+              "offset": 24,
+              "kind": "direct-call",
+              "target": 1690792
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "caller": "0x17c548",
+      "offset": 272,
+      "original": "0x1b55c8",
+      "candidate": "0x19e1a0",
+      "matches": [
+        {
+          "start": 1696160,
+          "symbol": "__multi3",
+          "raw_sha256": "face056642083fcc15c6737f1910030a4b59b6a78a4fa523f142dc0f28635762",
+          "operands": []
+        }
+      ]
+    },
+    {
+      "caller": "0x17c548",
+      "offset": 456,
+      "original": "0x1b4088",
+      "candidate": "0x19e300",
+      "matches": [
+        {
+          "start": 1696512,
+          "symbol": "__udivti3",
+          "raw_sha256": "4c7fdcb05ebe6e9644f6f82174ae7b33ccc28be551a89726b8118724d242175e",
+          "operands": [
+            {
+              "offset": 24,
+              "kind": "direct-call",
+              "target": 1690792
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "runtime": {
+    "counts": {
+      "extensions": 126,
+      "buy-v2": 216,
+      "two-curve": 20,
+      "sell-v2": 206
+    },
+    "total": 568,
+    "signatures_verified": true,
+    "transaction_payload_identity": true,
+    "fixture_mismatches": [],
+    "diagnostic_audit": {
+      "scope": "Compare captured Pump error payloads, preserving account names and operands.\n\nThis audits paired logs already present in a differential receipt. It excludes\nsource file/line coordinates, compute usage, and cases without paired logs.\nIt therefore strengthens the bounded oracle, not its input-space coverage.\n",
+      "coverage": {
+        "extensions": 126,
+        "buy-v2": 216,
+        "two-curve": 20,
+        "sell-v2": 206
+      },
+      "log_bearing_cases": 568,
+      "mismatches": []
+    },
+    "invocation_sequences": {
+      "extensions": {
+        "cases": 126,
+        "mismatches": []
+      },
+      "buy-v2": {
+        "cases": 216,
+        "mismatches": []
+      },
+      "two-curve": {
+        "cases": 20,
+        "mismatches": []
+      },
+      "sell-v2": {
+        "cases": 206,
+        "mismatches": []
+      }
+    }
+  },
+  "limits": [
+    "Full ELF equality remains false.",
+    "Validation is bounded to the recorded V3, V2 and two-curve cases; parent composite must receive full regression/build checks."
+  ]
+}

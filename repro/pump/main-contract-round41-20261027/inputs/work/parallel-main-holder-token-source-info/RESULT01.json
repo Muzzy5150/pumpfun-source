@@ -1,0 +1,60 @@
+{
+  "status": "Validated holder token-source AccountInfo lifetime recovery",
+  "baseline": "work/parallel-main-holder-native-api/source01",
+  "files": {
+    "src/creator/distribute_fee_to_holders.rs": "9a3605ac6e7ab685227f70682a2884129efd31e2db8f1f32067794cee8b3088f"
+  },
+  "patch_sha256": "8be1d1a44efb286d2213db78c5e5c2fbfac4350c5e397a165f0abe5e691a71e2",
+  "candidate_sha256": "b6afb9650e6de0f5465d828dae0188a5dff30b370d15839f774f0e43a2c8f796",
+  "unstripped_sha256": "2e4d396e3e5c4ee9179dae01a1a437ec782cfbaeb6fe4fc1de4d49bfd5b2ee2c",
+  "build_receipt_sha256": "ab68ec6cf47b5c80b70e84ac06fd27b581bfa4b54d8d0b372fcec215e11250e2",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 739,
+    "unmatched": 296
+  },
+  "complete_match_delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "handler": {
+    "original_start": "0x34558",
+    "original_bytes": 14512,
+    "baseline_bytes": 13848,
+    "candidate_start": "0x4dfb8",
+    "candidate_bytes": 14152,
+    "normalized_equal": false
+  },
+  "scope": "Only retain an owned token-source AccountInfo after ATA creation and before amount checking, then clone it into the unchanged TransferChecked fields. Preserve all prior ATA/native changes, checks and field order.",
+  "runtime": {
+    "case_counts": {
+      "distribution": 298,
+      "minimum": 181,
+      "regressions": 62,
+      "rent": 6,
+      "pending": 72,
+      "quote_gate": 18,
+      "holder": 649
+    },
+    "cases": 1286,
+    "mismatches": 0,
+    "strict_diagnostics": 0,
+    "invocation_mismatches": 0,
+    "distinct_transactions": 287,
+    "new_coverage": 0
+  },
+  "static_evidence_sha256": "0824ae95b567977c12944835bebbfe82acca656405f3bb01d4136721defff6ac",
+  "original_source_lifetime_proof_sha256": "ba5163982017367a342409d01c6a1729671d618e34e6747c810916f7b78abacb",
+  "limits": [
+    "No full handler/ELF identity claim unless the handler record explicitly reports equality.",
+    "No final text/data order recipe qualification.",
+    "Only existing frozen test fixtures executed; no new owner-mutation cases introduced."
+  ]
+}

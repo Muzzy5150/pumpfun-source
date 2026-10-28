@@ -1,0 +1,122 @@
+{
+  "status": "passed",
+  "scope": "Read-only artifact replay of the fixed main-Pump data-order transformation.\n\nThis is not fresh source/build admission. The admitted certificate is preserved;\nits absolute paths are never edited or followed to bypass archive relocation.\n",
+  "fresh_admission": false,
+  "certificate_paths_rewritten": false,
+  "original_certificate_sha256": "76c023ffc555a4bac8c5dda847761888f946974027430b5cdcaaf1bae292d27f",
+  "bindings_sha256": "29131e6c887a0a6a6f6ef6a9fd97d9a0e735cd0209a1a227e07d910baf9f81cd",
+  "artifacts": {
+    "original_elf": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/evidence/original/pump/deployed.so",
+      "sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+      "bytes": 10485715
+    },
+    "baseline_elf": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/repro/pump/main-contract-round41-20261027/layout-proof/baseline.so",
+      "sha256": "fcc876fba7451c10d94d192cc29d5467de7ecda6e1da6aa450288372f3ec6505",
+      "bytes": 2685992
+    },
+    "baseline_map": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/repro/pump/main-contract-round41-20261027/layout-proof/baseline.map",
+      "sha256": "ca18b376c3d2c0362f4e4fb47581c3168bab95eaacaa92aceed212289ad5483e",
+      "bytes": 2289477
+    },
+    "final_elf": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/repro/pump/main-contract-round41-20261027/unstripped.so",
+      "sha256": "8f8db4faaa749deaf3821a192e30eb345f79b3b472344e6df6e26fa9b916da5f",
+      "bytes": 2685992
+    },
+    "final_map": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/repro/pump/main-contract-round41-20261027/data-order/initial-final.map",
+      "sha256": "a92f1062c1c086bbee44675896f49b4442d090398df6e5e8921ab09d9b05d596",
+      "bytes": 2267427
+    },
+    "admitted_certificate": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/repro/pump/main-contract-round41-20261027/data-order/admitted-certificate.json",
+      "sha256": "76c023ffc555a4bac8c5dda847761888f946974027430b5cdcaaf1bae292d27f",
+      "bytes": 811139
+    }
+  },
+  "roles": {
+    "baseline": [
+      {
+        "role": "borsh_array_location",
+        "original": 1825072,
+        "owner": 1053768,
+        "bytes": 1640,
+        "offset": 1616,
+        "footprint": 24,
+        "candidate": 1839384,
+        "candidate_owner": 794728,
+        "data_index": 19,
+        "input_owner": "pump_recovered.pump_recovered.955fc3b7209cdbaa-cgu.0.rcgu.o",
+        "input_section": ".data.rel.ro..L__unnamed_384"
+      },
+      {
+        "role": "debug_argument_table",
+        "original": 1825096,
+        "owner": 68640,
+        "bytes": 88,
+        "offset": 56,
+        "footprint": 32,
+        "candidate": 1839352,
+        "candidate_owner": 77160,
+        "data_index": 18,
+        "input_owner": "pump_recovered.pump_recovered.955fc3b7209cdbaa-cgu.0.rcgu.o",
+        "input_section": ".data.rel.ro..L__unnamed_52"
+      }
+    ],
+    "final": [
+      {
+        "role": "borsh_array_location",
+        "original": 1825072,
+        "owner": 1053768,
+        "bytes": 1640,
+        "offset": 1616,
+        "footprint": 24,
+        "candidate": 1839352,
+        "candidate_owner": 885248,
+        "data_index": 18,
+        "input_owner": "pump_recovered.pump_recovered.955fc3b7209cdbaa-cgu.0.rcgu.o",
+        "input_section": ".data.rel.ro..L__unnamed_384"
+      },
+      {
+        "role": "debug_argument_table",
+        "original": 1825096,
+        "owner": 68640,
+        "bytes": 88,
+        "offset": 56,
+        "footprint": 32,
+        "candidate": 1839376,
+        "candidate_owner": 67952,
+        "data_index": 19,
+        "input_owner": "pump_recovered.pump_recovered.955fc3b7209cdbaa-cgu.0.rcgu.o",
+        "input_section": ".data.rel.ro..L__unnamed_52"
+      }
+    ]
+  },
+  "transformation": {
+    "status": "passed",
+    "counts": {
+      "moved_.text": 1033,
+      "moved_.data.rel.ro": 2,
+      "branches_checked": 22142,
+      "calls_checked": 11112,
+      "lddw_checked": 8214,
+      "data_pointers_checked": 632,
+      "data_scalars_checked": 784,
+      "relocations_checked": 6179
+    },
+    "all_allocated_bytes_checked": true,
+    "all_other_file_bytes_checked": true,
+    "baseline_sha256": "fcc876fba7451c10d94d192cc29d5467de7ecda6e1da6aa450288372f3ec6505",
+    "candidate_sha256": "8f8db4faaa749deaf3821a192e30eb345f79b3b472344e6df6e26fa9b916da5f"
+  },
+  "tracked_typeid_equality_checked": false,
+  "whole_original_elf_identity": false,
+  "limits": [
+    "This independently replays archived artifact roles and full-file transformation; it does not re-run source/compiler/cache admission.",
+    "The unchanged admitted certificate remains provenance. New compilation must derive a fresh certificate from a fresh identity build.",
+    "Whole original allocation extents and original toolchain provenance remain unproved."
+  ]
+}

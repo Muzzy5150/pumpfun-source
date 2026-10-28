@@ -1,0 +1,21 @@
+{
+  "scope": "Only28 distinct claim compound failure/CPI inputs; existing498 claim executions remain in their suites.",
+  "counts": {
+    "full": 0,
+    "additional": 28
+  },
+  "definition_sha256": {
+    "work/parallel-main-claim-boundary-review/probe-compound-new.py": "da27870982f1556eb3d2d022534c89640ce21020103b478de75d60b70ec7ed31",
+    "work/parallel-main-claim-boundary-review/probe-compound.py": "b894fdae85384c57680b3b37eed68ee94529a02e71c6c2eda774a57356f0025b",
+    "work/parallel-main-claim-boundary-review/DEDUPLICATED-COMPOUND01.json": "17634b4e380e7724af3332967510925f3c63ffa2a5ac82fb08f4d578614bb99c"
+  },
+  "suites": [
+    {
+      "group": "additional",
+      "name": "claim_event_cpi_compound_28",
+      "script": "work/parallel-main-claim-boundary-review/probe-compound-new.py",
+      "cases": 28,
+      "args": []
+    }
+  ]
+}

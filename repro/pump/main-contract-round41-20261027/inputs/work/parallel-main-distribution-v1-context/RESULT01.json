@@ -1,0 +1,69 @@
+{
+  "status": "validated isolated V1 event ownership recovery; ready for next-wave integration review",
+  "baseline_packet": "work/parallel-main-distribution-context/MANIFEST02.json",
+  "baseline_manifest_sha256": "62a890dde57c997324ef6836d85c23f97100923928ce6b2133585df6d3301f9c",
+  "source_file": "work/parallel-main-distribution-v1-context/source01/src/distribution.rs",
+  "source_sha256": "b1ef5583a0aee56b7c2e76c49f12384bbd1dda01daa0256702415e39778a228b",
+  "baseline_source_sha256": "b862f3757c6051e4c71439f2e097250a9cf9491239f095a7a4206fc8bfb3eb09",
+  "patch_sha256": "74bf760637c1ebd1e84ecec67f2b39294be2ac0fa3369cb713c6b0a79fbf65b5",
+  "candidate_sha256": "5c19e60427ac10372aaa86456482f22058fb5c42aefeba6945b9b0d64cddad27",
+  "unstripped_sha256": "9734567fd52c12f1fb90e11c43ba536516750304e6027b9d6a447e3fa14ea96c",
+  "build_receipt_sha256": "00bbd6ddd8fd04821c2e68418718b44f9a94997f88aa41b4b4e41cd40c5eb165",
+  "change": "Only DistributeCreatorFees.event_authority: UncheckedAccount to owned AccountInfo.",
+  "original_evidence": {
+    "parser": "0xc1d58/7256B",
+    "owned_clone": "0xc22c0..0xc24c0, after System and before self Program: advance48B slice; increment both Rc counts; retain full AccountInfo fields.",
+    "missing_account_error": "0xc2850 names event_authority, paired with3005 (AccountNotEnoughKeys) at0xc2820.",
+    "wrapper_context": "0x131220 copies0x1e8-byte tail plus24-byte head, total512B."
+  },
+  "wrapper": {
+    "original_start": "0x131128",
+    "bytes": 1472,
+    "normalized_equal": true,
+    "raw_equal": false
+  },
+  "parser": {
+    "original_start": "0xc1d58",
+    "original_bytes": 7256,
+    "candidate_bytes": 7080,
+    "normalized_equal": false
+  },
+  "inventory": {
+    "total": 1035,
+    "raw": 119,
+    "normalized": 735,
+    "unmatched": 300
+  },
+  "complete_match_delta": {
+    "normalized_matches": {
+      "gains": [
+        "0x131128"
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "runtime": {
+    "case_counts": {
+      "distribution": 298,
+      "minimum": 181,
+      "regressions": 62,
+      "rent": 6,
+      "pending": 72
+    },
+    "cases": 619,
+    "mismatches": 0,
+    "strict_diagnostic_mismatches": 0,
+    "invocation_order_mismatches": 0,
+    "distinct_transactions_reverified": 104
+  },
+  "limitations": [
+    "V1 parser remains nonexact.",
+    "No new input-space coverage or behavior change is claimed.",
+    "Raw sets use unordered identity builds; a combined source requires fresh layout qualification.",
+    "Canonical/shared/frozen source and original/companion binaries were not changed."
+  ]
+}

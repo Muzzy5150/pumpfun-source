@@ -1,0 +1,3278 @@
+{
+  "scope": "Read-only inventory of original main-Pump instruction evidence in a sealed checkpoint.\n\nNo transactions are generated or executed. Literal signed transaction counts are\nseparate from repeated corpus rows and observable-receipt fingerprints. Missing\nserialized transactions may be attributed only from main-program-scoped logs.\n",
+  "checkpoint": "repro/pump/main-contract-round23-20261027",
+  "main_program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+  "candidate_sha256": "d9fd8f1ec1d7bb6e06ea8ee221609c0275d52057ff6ef59087aa402db956a813",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "inputs_sha256": {
+    "repro/pump/main-contract-round23-20261027/full.json.gz": "337340a6dba5f9f1d3e576e13d091c03394b981a934e0bce23ef48d26e1d739e",
+    "repro/pump/main-contract-round23-20261027/additional.json.gz": "c0a10e3e89098c9d08ca5a011c85feecf3c267ea0aebe9dacda7dd3f42c1a1a7",
+    "repro/pump/main-contract-round23-20261027/inputs/work/parallel-main-integration/unified-main-corpus-round23.json": "df1e7695ee26bd2315a35a9f55ca3baca9e913ae289ce53b3838163613e6b0b3",
+    "evidence/upstream/pump.json": "7616681ea557975f9f623ac211080f22a93060781eaf4765b0a488d980997207",
+    "evidence/dispatch-map.json": "609e4795d796aeed61c7e6d8853407264362166afd05bd9d76687ed673ecc2f9",
+    "evidence/original/pump/capture.json": "ffb53e71ce9cbee60df91e54cc1d677527a6eeb5806cb8d68e525af698744110",
+    "repro/pump/main-contract-round23-20261027/CHECKPOINT.json": "303f95069e46a427f16db42eca56cf01a92acdce0469330143a1821258282540",
+    "repro/pump/main-contract-round23-20261027/MANIFEST.json": "f457d4d295423ee0d545762e3024bfe617ed3e7d2cf5c751e85be8d3a585348a",
+    "work/parallel-main-instruction-coverage/audit.py": "34b2687d245fe8aebd09a474025677d4f589cb9049a678f7b47d666f7472c90d"
+  },
+  "summary": {
+    "idl_families": 56,
+    "families_with_any_reached_case": 56,
+    "families_with_successful_transactions": 56,
+    "families_error_only": 0,
+    "families_absent": 0,
+    "families_with_signed_byte_reached_cases": 43,
+    "families_with_signed_byte_success_cases": 41,
+    "families_with_transaction_backed_instruction_bytes": 44,
+    "families_with_transaction_backed_success": 43,
+    "transaction_backed_error_only_families": 1,
+    "paired_corpus_rows": 16260,
+    "serialized_signed_case_rows": 14826,
+    "case_rows_without_serialized_transactions": 1434,
+    "distinct_signed_transactions": 2952,
+    "distinct_observable_receipts": 13857,
+    "case_rows_with_no_family_attribution": 78,
+    "bootstrap_records_not_counted": 8
+  },
+  "corpora": [
+    {
+      "group": "full",
+      "archive": "repro/pump/main-contract-round23-20261027/full.json.gz",
+      "sha256": "337340a6dba5f9f1d3e576e13d091c03394b981a934e0bce23ef48d26e1d739e",
+      "declared_cases": 10468,
+      "paired_rows": 10468,
+      "suites": 44
+    },
+    {
+      "group": "additional",
+      "archive": "repro/pump/main-contract-round23-20261027/additional.json.gz",
+      "sha256": "c0a10e3e89098c9d08ca5a011c85feecf3c267ea0aebe9dacda7dd3f42c1a1a7",
+      "declared_cases": 5792,
+      "paired_rows": 5792,
+      "suites": 116
+    }
+  ],
+  "coverage_definitions": {
+    "reached": "A main-scoped Instruction log names the IDL family, or a decoded main top-level instruction is at/before the failing instruction index (all decoded instructions on successful transactions).",
+    "success": "The original transaction error field is null and the family was reached. Earlier successful invocations in failed transactions are counted separately.",
+    "signed_byte": "Main instruction data is encoded directly in a serialized top-level transaction; signatures reverified offline. CPI receipt byte evidence is counted separately and requires a reverified signed outer transaction. Logs alone are not counted as instruction bytes.",
+    "distinct_observable_receipt": "Hash of original outcome excluding logs/compute/signature summary fields; includes available signed bytes, state snapshots, errors, events and inner instructions. Not proof of unique complete initial states.",
+    "bootstrap": "Setup bootstrap transactions are inventoried separately and excluded from tested-family counts.",
+    "limits": "No path/branch completeness or live-chain acceptance claim. Most literal transactions repeat across state variants. Family counts never sum to unique test-space coverage."
+  },
+  "families": [
+    {
+      "name": "add_quote_control_mint",
+      "discriminator": "020e3d8aaa8e0e5f",
+      "coverage": "success_and_error",
+      "any_case_rows": 209,
+      "reached_case_rows": 209,
+      "successful_transaction_rows": 53,
+      "failed_transaction_rows": 156,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 209,
+      "signed_byte_reached_case_rows": 209,
+      "signed_byte_success_rows": 53,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 209,
+      "transaction_backed_success_rows": 53,
+      "distinct_signed_transactions": 73,
+      "distinct_signed_instruction_data": 19,
+      "distinct_observable_receipts": 209,
+      "observed_successful_main_invocations": 53,
+      "observed_failed_main_invocations": 156,
+      "suites": [
+        "full/quote_control"
+      ],
+      "harness_scripts": [
+        "scripts/pump_quote_control_fresh_differential.py"
+      ],
+      "examples": {
+        "success": [
+          "full/quote_control/results/51",
+          "full/quote_control/results/53",
+          "full/quote_control/results/55"
+        ],
+        "error": [
+          "full/quote_control/results/65",
+          "full/quote_control/results/67",
+          "full/quote_control/results/69"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "add_quote_mint",
+      "discriminator": "6f79153828185ed1",
+      "coverage": "success_and_error",
+      "any_case_rows": 63,
+      "reached_case_rows": 63,
+      "successful_transaction_rows": 2,
+      "failed_transaction_rows": 61,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 0,
+      "signed_byte_reached_case_rows": 0,
+      "signed_byte_success_rows": 0,
+      "log_only_case_rows": 63,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 0,
+      "transaction_backed_success_rows": 0,
+      "distinct_signed_transactions": 0,
+      "distinct_signed_instruction_data": 0,
+      "distinct_observable_receipts": 21,
+      "observed_successful_main_invocations": 2,
+      "observed_failed_main_invocations": 61,
+      "suites": [
+        "full/configuration"
+      ],
+      "harness_scripts": [
+        "scripts/pump_validate_config_admin.py"
+      ],
+      "examples": {
+        "success": [
+          "full/configuration/cases/52",
+          "full/configuration/cases/55"
+        ],
+        "error": [
+          "full/configuration/cases/0",
+          "full/configuration/cases/1",
+          "full/configuration/cases/2"
+        ],
+        "log_only": [
+          "full/configuration/cases/0",
+          "full/configuration/cases/1",
+          "full/configuration/cases/2"
+        ]
+      }
+    },
+    {
+      "name": "admin_cto",
+      "discriminator": "7d7ed6864de5bc59",
+      "coverage": "success_and_error",
+      "any_case_rows": 529,
+      "reached_case_rows": 529,
+      "successful_transaction_rows": 232,
+      "failed_transaction_rows": 297,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 529,
+      "signed_byte_reached_case_rows": 529,
+      "signed_byte_success_rows": 232,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 529,
+      "transaction_backed_success_rows": 232,
+      "distinct_signed_transactions": 140,
+      "distinct_signed_instruction_data": 28,
+      "distinct_observable_receipts": 529,
+      "observed_successful_main_invocations": 232,
+      "observed_failed_main_invocations": 297,
+      "suites": [
+        "additional/accounts_zero_payout",
+        "additional/cto_context_34",
+        "additional/cto_edges",
+        "additional/cto_fees",
+        "additional/cto_frozen",
+        "additional/cto_rent",
+        "full/admin_cto"
+      ],
+      "harness_scripts": [
+        "scripts/pump_admin_cto_differential.py",
+        "work/parallel-main-accounts/admin_cto_zero_token_payout.py",
+        "work/parallel-main-admin-cto-rent/probe_cto_fees.py",
+        "work/parallel-main-admin-cto-rent/probe_cto_rent.py",
+        "work/parallel-main-cto-frozen/check_edges.py",
+        "work/parallel-main-cto-frozen/check_frozen.py",
+        "work/parallel-main-integration/cto_regressions.py"
+      ],
+      "examples": {
+        "success": [
+          "full/admin_cto/cases/0",
+          "full/admin_cto/cases/2",
+          "full/admin_cto/cases/4"
+        ],
+        "error": [
+          "full/admin_cto/cases/1",
+          "full/admin_cto/cases/3",
+          "full/admin_cto/cases/5"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "admin_set_idl_authority",
+      "discriminator": "08d960e79068c005",
+      "coverage": "success_and_error",
+      "any_case_rows": 169,
+      "reached_case_rows": 169,
+      "successful_transaction_rows": 51,
+      "failed_transaction_rows": 118,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 169,
+      "signed_byte_reached_case_rows": 169,
+      "signed_byte_success_rows": 51,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 169,
+      "transaction_backed_success_rows": 51,
+      "distinct_signed_transactions": 37,
+      "distinct_signed_instruction_data": 8,
+      "distinct_observable_receipts": 143,
+      "observed_successful_main_invocations": 55,
+      "observed_failed_main_invocations": 114,
+      "suites": [
+        "full/idl_authority"
+      ],
+      "harness_scripts": [
+        "scripts/pump_idl_authority_differential.py"
+      ],
+      "examples": {
+        "success": [
+          "full/idl_authority/cases/0",
+          "full/idl_authority/cases/4",
+          "full/idl_authority/cases/5"
+        ],
+        "error": [
+          "full/idl_authority/cases/1",
+          "full/idl_authority/cases/2",
+          "full/idl_authority/cases/3"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "admin_update_token_incentives",
+      "discriminator": "d10b7357d5177ccc",
+      "coverage": "success_and_error",
+      "any_case_rows": 1445,
+      "reached_case_rows": 1445,
+      "successful_transaction_rows": 506,
+      "failed_transaction_rows": 939,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 1445,
+      "signed_byte_reached_case_rows": 1445,
+      "signed_byte_success_rows": 506,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 1445,
+      "transaction_backed_success_rows": 506,
+      "distinct_signed_transactions": 416,
+      "distinct_signed_instruction_data": 391,
+      "distinct_observable_receipts": 562,
+      "observed_successful_main_invocations": 506,
+      "observed_failed_main_invocations": 939,
+      "suites": [
+        "additional/admin_context_299",
+        "additional/scheduler_577",
+        "full/incentive_schedule"
+      ],
+      "harness_scripts": [
+        "scripts/pump_incentive_schedule_differential.py",
+        "scripts/pump_incentives_admin_differential.py",
+        "work/parallel-main-incentives/check-scheduler-final.py"
+      ],
+      "examples": {
+        "success": [
+          "full/incentive_schedule/cases/0",
+          "full/incentive_schedule/cases/3",
+          "full/incentive_schedule/cases/4"
+        ],
+        "error": [
+          "full/incentive_schedule/cases/1",
+          "full/incentive_schedule/cases/2",
+          "full/incentive_schedule/cases/5"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "buy",
+      "discriminator": "66063d1201daebea",
+      "coverage": "success_and_error",
+      "any_case_rows": 243,
+      "reached_case_rows": 242,
+      "successful_transaction_rows": 173,
+      "failed_transaction_rows": 69,
+      "encoded_but_unreached_rows": 1,
+      "signed_byte_case_rows": 243,
+      "signed_byte_reached_case_rows": 242,
+      "signed_byte_success_rows": 173,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 243,
+      "transaction_backed_success_rows": 173,
+      "distinct_signed_transactions": 55,
+      "distinct_signed_instruction_data": 46,
+      "distinct_observable_receipts": 232,
+      "observed_successful_main_invocations": 173,
+      "observed_failed_main_invocations": 69,
+      "suites": [
+        "additional/creator_gate_120",
+        "additional/fee_market_cap",
+        "additional/fee_waiver_27",
+        "additional/fee_waiver_crossing_36",
+        "additional/legacy_buyback_legacy-boundary",
+        "additional/legacy_buyback_order_8",
+        "additional/legacy_partial_zero_8",
+        "additional/legacy_rent_12",
+        "additional/legacy_user_authority_4",
+        "additional/legacy_user_owner_8",
+        "additional/legacy_zero_buyback_8",
+        "additional/recipient_order_144",
+        "additional/trade_optional_bool_115",
+        "full/legacy_buy",
+        "full/legacy_cashback"
+      ],
+      "harness_scripts": [
+        "scripts/pump_legacy_buy_differential.py",
+        "scripts/pump_legacy_cashback_differential.py",
+        "work/parallel-main-buyback-split/probe-legacy-boundary.py",
+        "work/parallel-main-fee-waiver/crossing.py",
+        "work/parallel-main-global-fee-waiver/probe-v2.py",
+        "work/parallel-main-integration/recovered_fee_market_probes.py",
+        "work/parallel-main-integration/recovered_recipient_probes.py",
+        "work/parallel-main-integration/recovered_trade_probes.py",
+        "work/parallel-main-legacy-buy-next/probe_buyback_order.py",
+        "work/parallel-main-legacy-buy-next/probe_partial_zero.py",
+        "work/parallel-main-legacy-buy-next/probe_rent_available.py",
+        "work/parallel-main-legacy-buy-next/probe_zero_buyback.py",
+        "work/parallel-main-legacy-context/probe_user_authority.py",
+        "work/parallel-main-legacy-context/probe_user_owner.py",
+        "work/parallel-main-trading-next/verify_creator_gate.py"
+      ],
+      "examples": {
+        "success": [
+          "full/legacy_buy/cases/4",
+          "full/legacy_buy/cases/5",
+          "full/legacy_buy/cases/6"
+        ],
+        "error": [
+          "full/legacy_buy/cases/0",
+          "full/legacy_buy/cases/1",
+          "full/legacy_buy/cases/2"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "buy_exact_quote_in_v2",
+      "discriminator": "c2ab1c46684d5b2f",
+      "coverage": "success_and_error",
+      "any_case_rows": 611,
+      "reached_case_rows": 611,
+      "successful_transaction_rows": 280,
+      "failed_transaction_rows": 331,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 611,
+      "signed_byte_reached_case_rows": 611,
+      "signed_byte_success_rows": 280,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 611,
+      "transaction_backed_success_rows": 280,
+      "distinct_signed_transactions": 94,
+      "distinct_signed_instruction_data": 39,
+      "distinct_observable_receipts": 546,
+      "observed_successful_main_invocations": 280,
+      "observed_failed_main_invocations": 331,
+      "suites": [
+        "additional/buy_v2_order_130",
+        "additional/creator_gate_120",
+        "additional/fee_market_cap",
+        "additional/fee_waiver_27",
+        "additional/fee_waiver_crossing_36",
+        "additional/new_v2_66",
+        "additional/new_v2_fees_151",
+        "additional/origin_kinds_38",
+        "additional/recipient_order_144",
+        "additional/trade_optional_bool_115",
+        "additional/v2_creator_rent_80",
+        "additional/v2_curve_rent_8",
+        "additional/v2_guards_200",
+        "additional/v2_payment_panic_order_64",
+        "additional/v2_zero_fee_8",
+        "full/buy_v2",
+        "full/earned_cashback"
+      ],
+      "harness_scripts": [
+        "scripts/pump_buy_v2_differential.py",
+        "scripts/pump_earned_cashback_differential.py",
+        "work/parallel-main-buy-native-recipient/probe-payment-order.py",
+        "work/parallel-main-buy-v2-order/probe.py",
+        "work/parallel-main-fee-waiver/crossing.py",
+        "work/parallel-main-global-fee-waiver/probe-v2.py",
+        "work/parallel-main-integration/recovered_fee_market_probes.py",
+        "work/parallel-main-integration/recovered_recipient_probes.py",
+        "work/parallel-main-integration/recovered_rent_probes.py",
+        "work/parallel-main-integration/recovered_trade_probes.py",
+        "work/parallel-main-trading-next/verify_creator_gate.py",
+        "work/parallel-main-trading-third/probe_origin_kinds.py",
+        "work/parallel-main-trading/fee_corpus.py",
+        "work/parallel-main-trading/probe_v2.py",
+        "work/parallel-main-v2-helpers/curve-rent-probe.py",
+        "work/parallel-main-v2-helpers/fee-zero-probe.py"
+      ],
+      "examples": {
+        "success": [
+          "full/buy_v2/cases/14",
+          "full/buy_v2/cases/15",
+          "full/buy_v2/cases/18"
+        ],
+        "error": [
+          "full/buy_v2/cases/12",
+          "full/buy_v2/cases/13",
+          "full/buy_v2/cases/16"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "buy_exact_quote_in_v3",
+      "discriminator": "e1f7501ed5b38488",
+      "coverage": "success_and_error",
+      "any_case_rows": 969,
+      "reached_case_rows": 969,
+      "successful_transaction_rows": 553,
+      "failed_transaction_rows": 416,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 969,
+      "signed_byte_reached_case_rows": 969,
+      "signed_byte_success_rows": 553,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 969,
+      "transaction_backed_success_rows": 553,
+      "distinct_signed_transactions": 257,
+      "distinct_signed_instruction_data": 194,
+      "distinct_observable_receipts": 928,
+      "observed_successful_main_invocations": 553,
+      "observed_failed_main_invocations": 416,
+      "suites": [
+        "additional/context_failures_24",
+        "additional/creator_gate_120",
+        "additional/mixed_tlv_1_18",
+        "additional/native_quote_3",
+        "additional/origin_kinds_38",
+        "additional/quote_fee_tail_1_22",
+        "additional/quote_fee_tail_2_18",
+        "additional/quote_fee_tail_3_9",
+        "additional/quote_origins_12",
+        "additional/selector_72",
+        "additional/trade_optional_bool_115",
+        "additional/unknown_tlv_50",
+        "additional/v3_buyback_probe",
+        "additional/v3_buyback_probe_order",
+        "additional/v3_buyback_probe_post",
+        "additional/v3_context_39",
+        "additional/v3_continuation_tiers_12",
+        "additional/v3_crossing_matrix",
+        "additional/v3_extensions",
+        "additional/v3_fee_config_boundaries_144",
+        "additional/v3_mint_curve_18",
+        "additional/v3_native_buyback_18",
+        "additional/v3_net_budget",
+        "additional/v3_post_edges_27",
+        "additional/v3_post_fees_32",
+        "additional/v3_post_state_12",
+        "additional/v3_precedence_36",
+        "additional/v3_token_buyback_12",
+        "additional/v3_user_constraints_12",
+        "additional/v3_waived_crossing",
+        "additional/v3_waiver",
+        "additional/v3_waiver_order",
+        "full/exact_quote_v3",
+        "full/v3_configured_fee"
+      ],
+      "harness_scripts": [
+        "scripts/pump_exact_quote_differential.py",
+        "scripts/pump_v3_configured_fee_differential.py",
+        "scripts/pump_v3_token_extensions_differential.py",
+        "work/parallel-main-global-fee-waiver/probe-v3.py",
+        "work/parallel-main-integration/recovered_trade_probes.py",
+        "work/parallel-main-trading-contexts/probe_v3_context.py",
+        "work/parallel-main-trading-next/probe_context_failures.py",
+        "work/parallel-main-trading-next/probe_native_quote.py",
+        "work/parallel-main-trading-next/probe_quote_origins.py",
+        "work/parallel-main-trading-next/probe_quote_selector.py",
+        "work/parallel-main-trading-next/probe_v3_post_edges.py",
+        "work/parallel-main-trading-next/probe_v3_post_fees_cli.py",
+        "work/parallel-main-trading-next/probe_v3_post_state.py",
+        "work/parallel-main-trading-next/verify_creator_gate.py",
+        "work/parallel-main-trading-third/probe_origin_kinds.py",
+        "work/parallel-main-trading-third/probe_unknown_tlv.py",
+        "work/parallel-main-v3-buyback-assert/probe-order.py",
+        "work/parallel-main-v3-buyback-assert/probe-post.py",
+        "work/parallel-main-v3-buyback-assert/probe.py",
+        "work/parallel-main-v3-fee-waiver/probe-crossing-matrix.py",
+        "work/parallel-main-v3-fee-waiver/probe-order.py",
+        "work/parallel-main-v3-fee-waiver/probe-waived-crossing.py",
+        "work/parallel-main-v3-fee-wrapper/probe-config-boundaries.py",
+        "work/parallel-main-v3-fee-wrapper/probe-continuation-tiers.py",
+        "work/parallel-main-v3-helpers/probe_precedence_extended.py",
+        "work/parallel-main-v3-net-budget/probe.py",
+        "work/parallel-main-v3-quote-fee-tail/probe-boundaries.py",
+        "work/parallel-main-v3-quote-scanner/probe-tlv-shapes.py",
+        "work/parallel-main-v3-quote-validation-order/probe-oversized.py",
+        "work/parallel-main-v3-quote-validation-order/probe.py",
+        "work/parallel-main-v3-user-constraints/probe.py",
+        "work/parallel-main-v3-user-constraints/probe_buyback.py",
+        "work/parallel-main-v3-user-constraints/probe_buyback_token.py",
+        "work/parallel-main-v3-user-constraints/probe_v2.py"
+      ],
+      "examples": {
+        "success": [
+          "full/exact_quote_v3/cases/13",
+          "full/exact_quote_v3/cases/16",
+          "full/exact_quote_v3/cases/19"
+        ],
+        "error": [
+          "full/exact_quote_v3/cases/0",
+          "full/exact_quote_v3/cases/1",
+          "full/exact_quote_v3/cases/2"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "buy_exact_sol_in",
+      "discriminator": "38fc74089edfcd5f",
+      "coverage": "success_and_error",
+      "any_case_rows": 277,
+      "reached_case_rows": 276,
+      "successful_transaction_rows": 169,
+      "failed_transaction_rows": 107,
+      "encoded_but_unreached_rows": 1,
+      "signed_byte_case_rows": 277,
+      "signed_byte_reached_case_rows": 276,
+      "signed_byte_success_rows": 169,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 277,
+      "transaction_backed_success_rows": 169,
+      "distinct_signed_transactions": 53,
+      "distinct_signed_instruction_data": 43,
+      "distinct_observable_receipts": 252,
+      "observed_successful_main_invocations": 169,
+      "observed_failed_main_invocations": 107,
+      "suites": [
+        "additional/creator_gate_120",
+        "additional/fee_market_cap",
+        "additional/fee_waiver_27",
+        "additional/fee_waiver_crossing_36",
+        "additional/legacy_buyback_legacy-boundary",
+        "additional/legacy_buyback_order_8",
+        "additional/legacy_partial_zero_8",
+        "additional/legacy_rent_12",
+        "additional/legacy_zero_buyback_8",
+        "additional/origin_kinds_38",
+        "additional/recipient_order_144",
+        "additional/trade_optional_bool_115",
+        "full/legacy_buy",
+        "full/legacy_cashback"
+      ],
+      "harness_scripts": [
+        "scripts/pump_legacy_buy_differential.py",
+        "scripts/pump_legacy_cashback_differential.py",
+        "work/parallel-main-buyback-split/probe-legacy-boundary.py",
+        "work/parallel-main-fee-waiver/crossing.py",
+        "work/parallel-main-global-fee-waiver/probe-v2.py",
+        "work/parallel-main-integration/recovered_fee_market_probes.py",
+        "work/parallel-main-integration/recovered_recipient_probes.py",
+        "work/parallel-main-integration/recovered_trade_probes.py",
+        "work/parallel-main-legacy-buy-next/probe_buyback_order.py",
+        "work/parallel-main-legacy-buy-next/probe_partial_zero.py",
+        "work/parallel-main-legacy-buy-next/probe_rent_available.py",
+        "work/parallel-main-legacy-buy-next/probe_zero_buyback.py",
+        "work/parallel-main-trading-next/verify_creator_gate.py",
+        "work/parallel-main-trading-third/probe_origin_kinds.py"
+      ],
+      "examples": {
+        "success": [
+          "full/legacy_buy/cases/28",
+          "full/legacy_buy/cases/29",
+          "full/legacy_buy/cases/30"
+        ],
+        "error": [
+          "full/legacy_buy/cases/20",
+          "full/legacy_buy/cases/21",
+          "full/legacy_buy/cases/22"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "buy_v2",
+      "discriminator": "b817ee6167c5d33d",
+      "coverage": "success_and_error",
+      "any_case_rows": 595,
+      "reached_case_rows": 595,
+      "successful_transaction_rows": 307,
+      "failed_transaction_rows": 288,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 595,
+      "signed_byte_reached_case_rows": 595,
+      "signed_byte_success_rows": 307,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 595,
+      "transaction_backed_success_rows": 307,
+      "distinct_signed_transactions": 108,
+      "distinct_signed_instruction_data": 42,
+      "distinct_observable_receipts": 550,
+      "observed_successful_main_invocations": 307,
+      "observed_failed_main_invocations": 288,
+      "suites": [
+        "additional/buy_v2_order_130",
+        "additional/creator_gate_120",
+        "additional/fee_market_cap",
+        "additional/fee_waiver_27",
+        "additional/fee_waiver_crossing_36",
+        "additional/new_v2_66",
+        "additional/new_v2_fees_151",
+        "additional/recipient_order_144",
+        "additional/trade_optional_bool_115",
+        "additional/v2_creator_rent_80",
+        "additional/v2_curve_rent_8",
+        "additional/v2_guards_200",
+        "additional/v2_payment_panic_order_64",
+        "additional/v2_zero_fee_8",
+        "full/buy_v2",
+        "full/earned_cashback"
+      ],
+      "harness_scripts": [
+        "scripts/pump_buy_v2_differential.py",
+        "scripts/pump_earned_cashback_differential.py",
+        "work/parallel-main-buy-native-recipient/probe-payment-order.py",
+        "work/parallel-main-buy-v2-order/probe.py",
+        "work/parallel-main-fee-waiver/crossing.py",
+        "work/parallel-main-global-fee-waiver/probe-v2.py",
+        "work/parallel-main-integration/recovered_fee_market_probes.py",
+        "work/parallel-main-integration/recovered_recipient_probes.py",
+        "work/parallel-main-integration/recovered_rent_probes.py",
+        "work/parallel-main-integration/recovered_trade_probes.py",
+        "work/parallel-main-trading-next/verify_creator_gate.py",
+        "work/parallel-main-trading/fee_corpus.py",
+        "work/parallel-main-trading/probe_v2.py",
+        "work/parallel-main-v2-helpers/curve-rent-probe.py",
+        "work/parallel-main-v2-helpers/fee-zero-probe.py"
+      ],
+      "examples": {
+        "success": [
+          "full/buy_v2/cases/1",
+          "full/buy_v2/cases/2",
+          "full/buy_v2/cases/3"
+        ],
+        "error": [
+          "full/buy_v2/cases/0",
+          "full/buy_v2/cases/4",
+          "full/buy_v2/cases/8"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "buy_v3",
+      "discriminator": "07051dc4f5176550",
+      "coverage": "success_and_error",
+      "any_case_rows": 1007,
+      "reached_case_rows": 1007,
+      "successful_transaction_rows": 701,
+      "failed_transaction_rows": 306,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 608,
+      "signed_byte_reached_case_rows": 608,
+      "signed_byte_success_rows": 410,
+      "log_only_case_rows": 399,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 608,
+      "transaction_backed_success_rows": 410,
+      "distinct_signed_transactions": 106,
+      "distinct_signed_instruction_data": 54,
+      "distinct_observable_receipts": 928,
+      "observed_successful_main_invocations": 701,
+      "observed_failed_main_invocations": 306,
+      "suites": [
+        "additional/context_failures_24",
+        "additional/creator_gate_120",
+        "additional/mixed_tlv_1_18",
+        "additional/native_quote_3",
+        "additional/origin_kinds_38",
+        "additional/quote_fee_tail_1_22",
+        "additional/quote_fee_tail_2_18",
+        "additional/quote_fee_tail_3_9",
+        "additional/quote_origins_12",
+        "additional/selector_72",
+        "additional/trade_optional_bool_115",
+        "additional/unknown_tlv_50",
+        "additional/v3_buy_boundaries_28",
+        "additional/v3_buyback_probe",
+        "additional/v3_buyback_probe_cost_order",
+        "additional/v3_buyback_probe_order",
+        "additional/v3_buyback_probe_post",
+        "additional/v3_context_39",
+        "additional/v3_continuation_42",
+        "additional/v3_continuation_tiers_12",
+        "additional/v3_crossing_matrix",
+        "additional/v3_extensions",
+        "additional/v3_fee_config_boundaries_144",
+        "additional/v3_mint_curve_18",
+        "additional/v3_native_buyback_18",
+        "additional/v3_post_ceil_boundaries",
+        "additional/v3_post_ceil_divisible",
+        "additional/v3_post_fees_80",
+        "additional/v3_precedence_36",
+        "additional/v3_token_buyback_12",
+        "additional/v3_user_constraints_12",
+        "additional/v3_waived_crossing",
+        "additional/v3_waiver",
+        "additional/v3_waiver_order",
+        "full/buy",
+        "full/quote",
+        "full/v3_configured_fee"
+      ],
+      "harness_scripts": [
+        "scripts/pump_v3_configured_fee_differential.py",
+        "scripts/pump_v3_token_extensions_differential.py",
+        "scripts/pump_validate_buy.py",
+        "scripts/pump_validate_quote.py",
+        "work/parallel-main-global-fee-waiver/probe-v3.py",
+        "work/parallel-main-integration/recovered_trade_probes.py",
+        "work/parallel-main-trading-contexts/probe_v3_buy_boundaries.py",
+        "work/parallel-main-trading-contexts/probe_v3_context.py",
+        "work/parallel-main-trading-contexts/probe_v3_continuation.py",
+        "work/parallel-main-trading-contexts/probe_v3_post_fees.py",
+        "work/parallel-main-trading-next/probe_context_failures.py",
+        "work/parallel-main-trading-next/probe_native_quote.py",
+        "work/parallel-main-trading-next/probe_quote_origins.py",
+        "work/parallel-main-trading-next/probe_quote_selector.py",
+        "work/parallel-main-trading-next/verify_creator_gate.py",
+        "work/parallel-main-trading-third/probe_origin_kinds.py",
+        "work/parallel-main-trading-third/probe_unknown_tlv.py",
+        "work/parallel-main-v3-accounting-boundary/probe-cost-order.py",
+        "work/parallel-main-v3-buyback-assert/probe-order.py",
+        "work/parallel-main-v3-buyback-assert/probe-post.py",
+        "work/parallel-main-v3-buyback-assert/probe.py",
+        "work/parallel-main-v3-fee-waiver/probe-crossing-matrix.py",
+        "work/parallel-main-v3-fee-waiver/probe-order.py",
+        "work/parallel-main-v3-fee-waiver/probe-waived-crossing.py",
+        "work/parallel-main-v3-fee-wrapper/probe-config-boundaries.py",
+        "work/parallel-main-v3-fee-wrapper/probe-continuation-tiers.py",
+        "work/parallel-main-v3-helpers/probe_precedence_extended.py",
+        "work/parallel-main-v3-post-ceil/probe-boundaries.py",
+        "work/parallel-main-v3-post-ceil/probe.py",
+        "work/parallel-main-v3-quote-fee-tail/probe-boundaries.py",
+        "work/parallel-main-v3-quote-scanner/probe-tlv-shapes.py",
+        "work/parallel-main-v3-quote-validation-order/probe-oversized.py",
+        "work/parallel-main-v3-quote-validation-order/probe.py",
+        "work/parallel-main-v3-user-constraints/probe.py",
+        "work/parallel-main-v3-user-constraints/probe_buyback.py",
+        "work/parallel-main-v3-user-constraints/probe_buyback_token.py",
+        "work/parallel-main-v3-user-constraints/probe_v2.py"
+      ],
+      "examples": {
+        "success": [
+          "full/buy/cases/0",
+          "full/buy/cases/1",
+          "full/buy/cases/2"
+        ],
+        "error": [
+          "full/buy/cases/113",
+          "full/buy/cases/114",
+          "full/buy/cases/115"
+        ],
+        "log_only": [
+          "full/buy/cases/0",
+          "full/buy/cases/1",
+          "full/buy/cases/2"
+        ]
+      }
+    },
+    {
+      "name": "claim_cashback",
+      "discriminator": "253a237ebe35e4c5",
+      "coverage": "success_and_error",
+      "any_case_rows": 41,
+      "reached_case_rows": 41,
+      "successful_transaction_rows": 14,
+      "failed_transaction_rows": 27,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 41,
+      "signed_byte_reached_case_rows": 41,
+      "signed_byte_success_rows": 14,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 41,
+      "transaction_backed_success_rows": 14,
+      "distinct_signed_transactions": 7,
+      "distinct_signed_instruction_data": 1,
+      "distinct_observable_receipts": 38,
+      "observed_successful_main_invocations": 14,
+      "observed_failed_main_invocations": 27,
+      "suites": [
+        "additional/cashback_program_6",
+        "full/cashback"
+      ],
+      "harness_scripts": [
+        "scripts/pump_cashback_differential.py",
+        "work/parallel-main-cashback-program/check_program.py"
+      ],
+      "examples": {
+        "success": [
+          "full/cashback/cases/0",
+          "full/cashback/cases/1",
+          "full/cashback/cases/2"
+        ],
+        "error": [
+          "full/cashback/cases/3",
+          "full/cashback/cases/4",
+          "full/cashback/cases/10"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "claim_cashback_v2",
+      "discriminator": "7af3cc415e741d37",
+      "coverage": "success_and_error",
+      "any_case_rows": 248,
+      "reached_case_rows": 248,
+      "successful_transaction_rows": 107,
+      "failed_transaction_rows": 141,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 248,
+      "signed_byte_reached_case_rows": 248,
+      "signed_byte_success_rows": 107,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 248,
+      "transaction_backed_success_rows": 107,
+      "distinct_signed_transactions": 41,
+      "distinct_signed_instruction_data": 1,
+      "distinct_observable_receipts": 240,
+      "observed_successful_main_invocations": 107,
+      "observed_failed_main_invocations": 141,
+      "suites": [
+        "additional/cashback_program_6",
+        "full/cashback"
+      ],
+      "harness_scripts": [
+        "scripts/pump_cashback_differential.py",
+        "work/parallel-main-cashback-program/check_program.py"
+      ],
+      "examples": {
+        "success": [
+          "full/cashback/cases/33",
+          "full/cashback/cases/34",
+          "full/cashback/cases/35"
+        ],
+        "error": [
+          "full/cashback/cases/36",
+          "full/cashback/cases/37",
+          "full/cashback/cases/43"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "claim_token_incentives",
+      "discriminator": "1004471ccc01281b",
+      "coverage": "success_and_error",
+      "any_case_rows": 498,
+      "reached_case_rows": 498,
+      "successful_transaction_rows": 277,
+      "failed_transaction_rows": 221,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 498,
+      "signed_byte_reached_case_rows": 498,
+      "signed_byte_success_rows": 277,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 498,
+      "transaction_backed_success_rows": 277,
+      "distinct_signed_transactions": 15,
+      "distinct_signed_instruction_data": 1,
+      "distinct_observable_receipts": 496,
+      "observed_successful_main_invocations": 277,
+      "observed_failed_main_invocations": 221,
+      "suites": [
+        "additional/claim_grid_132",
+        "additional/claim_mint_6",
+        "additional/claim_program_precedence_20",
+        "additional/claim_zero_log_4",
+        "full/claim_panic_diagnostics",
+        "full/incentive_claim"
+      ],
+      "harness_scripts": [
+        "scripts/pump_claim_boundary_differential.py",
+        "scripts/pump_claim_panic_differential.py",
+        "work/parallel-main-incentives-next/probe_claim_empty_log.py",
+        "work/parallel-main-incentives-next/probe_claim_incentive_mint.py",
+        "work/parallel-main-incentives-next/probe_claim_program_precedence.py",
+        "work/parallel-main-integration/claim_grid_cli.py"
+      ],
+      "examples": {
+        "success": [
+          "full/incentive_claim/cases/0",
+          "full/incentive_claim/cases/1",
+          "full/incentive_claim/cases/2"
+        ],
+        "error": [
+          "full/incentive_claim/cases/24",
+          "full/incentive_claim/cases/25",
+          "full/incentive_claim/cases/50"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "close_user_volume_accumulator",
+      "discriminator": "f945a4da9667548a",
+      "coverage": "success_and_error",
+      "any_case_rows": 37,
+      "reached_case_rows": 37,
+      "successful_transaction_rows": 15,
+      "failed_transaction_rows": 22,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 0,
+      "signed_byte_reached_case_rows": 0,
+      "signed_byte_success_rows": 0,
+      "log_only_case_rows": 37,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 0,
+      "transaction_backed_success_rows": 0,
+      "distinct_signed_transactions": 0,
+      "distinct_signed_instruction_data": 0,
+      "distinct_observable_receipts": 23,
+      "observed_successful_main_invocations": 15,
+      "observed_failed_main_invocations": 22,
+      "suites": [
+        "full/volume"
+      ],
+      "harness_scripts": [
+        "scripts/pump_validate_volume.py"
+      ],
+      "examples": {
+        "success": [
+          "full/volume/cases/29",
+          "full/volume/cases/34",
+          "full/volume/cases/35"
+        ],
+        "error": [
+          "full/volume/cases/30",
+          "full/volume/cases/31",
+          "full/volume/cases/32"
+        ],
+        "log_only": [
+          "full/volume/cases/29",
+          "full/volume/cases/30",
+          "full/volume/cases/31"
+        ]
+      }
+    },
+    {
+      "name": "collect_creator_fee",
+      "discriminator": "1416567bc61cdb84",
+      "coverage": "success_and_error",
+      "any_case_rows": 123,
+      "reached_case_rows": 123,
+      "successful_transaction_rows": 40,
+      "failed_transaction_rows": 83,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 123,
+      "signed_byte_reached_case_rows": 123,
+      "signed_byte_success_rows": 40,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 123,
+      "transaction_backed_success_rows": 40,
+      "distinct_signed_transactions": 14,
+      "distinct_signed_instruction_data": 2,
+      "distinct_observable_receipts": 114,
+      "observed_successful_main_invocations": 40,
+      "observed_failed_main_invocations": 83,
+      "suites": [
+        "additional/creator_owner_6",
+        "full/creator_collection"
+      ],
+      "harness_scripts": [
+        "scripts/pump_creator_collect_differential.py",
+        "work/parallel-main-creator-owner/check_owner.py"
+      ],
+      "examples": {
+        "success": [
+          "full/creator_collection/cases/0",
+          "full/creator_collection/cases/1",
+          "full/creator_collection/cases/2"
+        ],
+        "error": [
+          "full/creator_collection/cases/7",
+          "full/creator_collection/cases/8",
+          "full/creator_collection/cases/9"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "collect_creator_fee_v2",
+      "discriminator": "cf118af204221338",
+      "coverage": "success_and_error",
+      "any_case_rows": 156,
+      "reached_case_rows": 156,
+      "successful_transaction_rows": 60,
+      "failed_transaction_rows": 96,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 156,
+      "signed_byte_reached_case_rows": 156,
+      "signed_byte_success_rows": 60,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 156,
+      "transaction_backed_success_rows": 60,
+      "distinct_signed_transactions": 52,
+      "distinct_signed_instruction_data": 1,
+      "distinct_observable_receipts": 146,
+      "observed_successful_main_invocations": 60,
+      "observed_failed_main_invocations": 96,
+      "suites": [
+        "additional/creator_owner_6",
+        "full/creator_collection_v2"
+      ],
+      "harness_scripts": [
+        "scripts/pump_creator_collect_v2_differential.py",
+        "work/parallel-main-creator-owner/check_owner.py"
+      ],
+      "examples": {
+        "success": [
+          "full/creator_collection_v2/cases/0",
+          "full/creator_collection_v2/cases/1",
+          "full/creator_collection_v2/cases/2"
+        ],
+        "error": [
+          "full/creator_collection_v2/cases/6",
+          "full/creator_collection_v2/cases/13",
+          "full/creator_collection_v2/cases/14"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "create",
+      "discriminator": "181ec828051c0777",
+      "coverage": "success_and_error",
+      "any_case_rows": 85,
+      "reached_case_rows": 83,
+      "successful_transaction_rows": 32,
+      "failed_transaction_rows": 51,
+      "encoded_but_unreached_rows": 2,
+      "signed_byte_case_rows": 85,
+      "signed_byte_reached_case_rows": 83,
+      "signed_byte_success_rows": 32,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 85,
+      "transaction_backed_success_rows": 32,
+      "distinct_signed_transactions": 55,
+      "distinct_signed_instruction_data": 17,
+      "distinct_observable_receipts": 84,
+      "observed_successful_main_invocations": 32,
+      "observed_failed_main_invocations": 51,
+      "suites": [
+        "full/legacy_create"
+      ],
+      "harness_scripts": [
+        "scripts/pump_create_differential.py"
+      ],
+      "examples": {
+        "success": [
+          "full/legacy_create/cases/0",
+          "full/legacy_create/cases/2",
+          "full/legacy_create/cases/3"
+        ],
+        "error": [
+          "full/legacy_create/cases/1",
+          "full/legacy_create/cases/6",
+          "full/legacy_create/cases/9"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "create_v2",
+      "discriminator": "d6904cec5f8b31b4",
+      "coverage": "success_and_error",
+      "any_case_rows": 517,
+      "reached_case_rows": 517,
+      "successful_transaction_rows": 239,
+      "failed_transaction_rows": 278,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 517,
+      "signed_byte_reached_case_rows": 517,
+      "signed_byte_success_rows": 239,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 517,
+      "transaction_backed_success_rows": 239,
+      "distinct_signed_transactions": 141,
+      "distinct_signed_instruction_data": 60,
+      "distinct_observable_receipts": 467,
+      "observed_successful_main_invocations": 239,
+      "observed_failed_main_invocations": 278,
+      "suites": [
+        "additional/ancestor_boundaries_68",
+        "additional/trade_optional_bool_115",
+        "full/create_control",
+        "full/create_v2",
+        "full/nested_create"
+      ],
+      "harness_scripts": [
+        "scripts/pump_create_control_differential.py",
+        "scripts/pump_create_nested_differential.py",
+        "scripts/pump_create_quote_differential.py",
+        "work/parallel-main-create-frontier/probe_ancestor_boundaries.py",
+        "work/parallel-main-integration/recovered_trade_probes.py"
+      ],
+      "examples": {
+        "success": [
+          "full/create_v2/cases/0",
+          "full/create_v2/cases/1",
+          "full/create_v2/cases/2"
+        ],
+        "error": [
+          "full/create_v2/cases/3",
+          "full/create_v2/cases/9",
+          "full/create_v2/cases/10"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "distribute_creator_fees",
+      "discriminator": "a572670079cef751",
+      "coverage": "success_and_error",
+      "any_case_rows": 164,
+      "reached_case_rows": 164,
+      "successful_transaction_rows": 84,
+      "failed_transaction_rows": 80,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 164,
+      "signed_byte_reached_case_rows": 164,
+      "signed_byte_success_rows": 84,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 164,
+      "transaction_backed_success_rows": 84,
+      "distinct_signed_transactions": 24,
+      "distinct_signed_instruction_data": 1,
+      "distinct_observable_receipts": 134,
+      "observed_successful_main_invocations": 84,
+      "observed_failed_main_invocations": 80,
+      "suites": [
+        "additional/distribution_regressions_62",
+        "additional/sharing_config_78",
+        "full/creator_distribution"
+      ],
+      "harness_scripts": [
+        "scripts/pump_creator_distribution_differential.py",
+        "work/parallel-main-decode-envelope/probe_sharing_config.py",
+        "work/parallel-main-integration/distribution_regressions.py"
+      ],
+      "examples": {
+        "success": [
+          "full/creator_distribution/cases/0",
+          "full/creator_distribution/cases/1",
+          "full/creator_distribution/cases/2"
+        ],
+        "error": [
+          "full/creator_distribution/cases/3",
+          "full/creator_distribution/cases/7",
+          "full/creator_distribution/cases/8"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "distribute_creator_fees_v2",
+      "discriminator": "ffcb134ff444089f",
+      "coverage": "success_and_error",
+      "any_case_rows": 229,
+      "reached_case_rows": 229,
+      "successful_transaction_rows": 94,
+      "failed_transaction_rows": 135,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 229,
+      "signed_byte_reached_case_rows": 229,
+      "signed_byte_success_rows": 94,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 229,
+      "transaction_backed_success_rows": 94,
+      "distinct_signed_transactions": 61,
+      "distinct_signed_instruction_data": 2,
+      "distinct_observable_receipts": 199,
+      "observed_successful_main_invocations": 94,
+      "observed_failed_main_invocations": 135,
+      "suites": [
+        "additional/distribution_regressions_62",
+        "additional/sharing_config_78",
+        "full/creator_distribution"
+      ],
+      "harness_scripts": [
+        "scripts/pump_creator_distribution_differential.py",
+        "work/parallel-main-decode-envelope/probe_sharing_config.py",
+        "work/parallel-main-integration/distribution_regressions.py"
+      ],
+      "examples": {
+        "success": [
+          "full/creator_distribution/cases/125",
+          "full/creator_distribution/cases/126",
+          "full/creator_distribution/cases/127"
+        ],
+        "error": [
+          "full/creator_distribution/cases/128",
+          "full/creator_distribution/cases/132",
+          "full/creator_distribution/cases/133"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "distribute_fee_to_holders",
+      "discriminator": "623691610246ad2b",
+      "coverage": "success_and_error",
+      "any_case_rows": 649,
+      "reached_case_rows": 649,
+      "successful_transaction_rows": 286,
+      "failed_transaction_rows": 363,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 649,
+      "signed_byte_reached_case_rows": 649,
+      "signed_byte_success_rows": 286,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 649,
+      "transaction_backed_success_rows": 286,
+      "distinct_signed_transactions": 182,
+      "distinct_signed_instruction_data": 14,
+      "distinct_observable_receipts": 635,
+      "observed_successful_main_invocations": 286,
+      "observed_failed_main_invocations": 363,
+      "suites": [
+        "full/holder_distribution"
+      ],
+      "harness_scripts": [
+        "scripts/pump_holder_distribution_differential.py"
+      ],
+      "examples": {
+        "success": [
+          "full/holder_distribution/cases/0",
+          "full/holder_distribution/cases/1",
+          "full/holder_distribution/cases/2"
+        ],
+        "error": [
+          "full/holder_distribution/cases/5",
+          "full/holder_distribution/cases/6",
+          "full/holder_distribution/cases/7"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "extend_account",
+      "discriminator": "ea66c2cb96483ee5",
+      "coverage": "success_and_error",
+      "any_case_rows": 276,
+      "reached_case_rows": 276,
+      "successful_transaction_rows": 116,
+      "failed_transaction_rows": 160,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 276,
+      "signed_byte_reached_case_rows": 276,
+      "signed_byte_success_rows": 116,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 276,
+      "transaction_backed_success_rows": 116,
+      "distinct_signed_transactions": 14,
+      "distinct_signed_instruction_data": 2,
+      "distinct_observable_receipts": 243,
+      "observed_successful_main_invocations": 132,
+      "observed_failed_main_invocations": 144,
+      "suites": [
+        "full/extension"
+      ],
+      "harness_scripts": [
+        "scripts/pump_extend_differential.py"
+      ],
+      "examples": {
+        "success": [
+          "full/extension/cases/3",
+          "full/extension/cases/4",
+          "full/extension/cases/5"
+        ],
+        "error": [
+          "full/extension/cases/0",
+          "full/extension/cases/1",
+          "full/extension/cases/2"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "get_minimum_distributable_fee",
+      "discriminator": "75e17fca865f4423",
+      "coverage": "success_and_error",
+      "any_case_rows": 232,
+      "reached_case_rows": 232,
+      "successful_transaction_rows": 125,
+      "failed_transaction_rows": 107,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 232,
+      "signed_byte_reached_case_rows": 232,
+      "signed_byte_success_rows": 125,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 232,
+      "transaction_backed_success_rows": 125,
+      "distinct_signed_transactions": 17,
+      "distinct_signed_instruction_data": 1,
+      "distinct_observable_receipts": 182,
+      "observed_successful_main_invocations": 125,
+      "observed_failed_main_invocations": 107,
+      "suites": [
+        "additional/distribution_custom_rent_6",
+        "additional/distribution_regressions_62",
+        "additional/sharing_config_78",
+        "full/minimum_distribution"
+      ],
+      "harness_scripts": [
+        "scripts/pump_minimum_fee_differential.py",
+        "work/parallel-main-decode-envelope/probe_sharing_config.py",
+        "work/parallel-main-integration/distribution_regressions.py",
+        "work/parallel-main-minimum-audit/rent-probe.py"
+      ],
+      "examples": {
+        "success": [
+          "full/minimum_distribution/cases/0",
+          "full/minimum_distribution/cases/1",
+          "full/minimum_distribution/cases/2"
+        ],
+        "error": [
+          "full/minimum_distribution/cases/25",
+          "full/minimum_distribution/cases/26",
+          "full/minimum_distribution/cases/27"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "init_user_volume_accumulator",
+      "discriminator": "5e06ca73ff60e8b7",
+      "coverage": "success_and_error",
+      "any_case_rows": 29,
+      "reached_case_rows": 29,
+      "successful_transaction_rows": 14,
+      "failed_transaction_rows": 15,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 0,
+      "signed_byte_reached_case_rows": 0,
+      "signed_byte_success_rows": 0,
+      "log_only_case_rows": 29,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 0,
+      "transaction_backed_success_rows": 0,
+      "distinct_signed_transactions": 0,
+      "distinct_signed_instruction_data": 0,
+      "distinct_observable_receipts": 20,
+      "observed_successful_main_invocations": 14,
+      "observed_failed_main_invocations": 15,
+      "suites": [
+        "full/volume"
+      ],
+      "harness_scripts": [
+        "scripts/pump_validate_volume.py"
+      ],
+      "examples": {
+        "success": [
+          "full/volume/cases/0",
+          "full/volume/cases/5",
+          "full/volume/cases/6"
+        ],
+        "error": [
+          "full/volume/cases/1",
+          "full/volume/cases/2",
+          "full/volume/cases/3"
+        ],
+        "log_only": [
+          "full/volume/cases/0",
+          "full/volume/cases/1",
+          "full/volume/cases/2"
+        ]
+      }
+    },
+    {
+      "name": "initialize",
+      "discriminator": "afaf6d1f0d989bed",
+      "coverage": "success_and_error",
+      "any_case_rows": 37,
+      "reached_case_rows": 37,
+      "successful_transaction_rows": 7,
+      "failed_transaction_rows": 30,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 37,
+      "signed_byte_reached_case_rows": 37,
+      "signed_byte_success_rows": 7,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 37,
+      "transaction_backed_success_rows": 7,
+      "distinct_signed_transactions": 11,
+      "distinct_signed_instruction_data": 2,
+      "distinct_observable_receipts": 37,
+      "observed_successful_main_invocations": 7,
+      "observed_failed_main_invocations": 30,
+      "suites": [
+        "full/global_init"
+      ],
+      "harness_scripts": [
+        "scripts/pump_global_init_differential.py"
+      ],
+      "examples": {
+        "success": [
+          "full/global_init/cases/0",
+          "full/global_init/cases/1",
+          "full/global_init/cases/2"
+        ],
+        "error": [
+          "full/global_init/cases/3",
+          "full/global_init/cases/4",
+          "full/global_init/cases/5"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "initialize_quote_control",
+      "discriminator": "ef49f5add1b15442",
+      "coverage": "success_and_error",
+      "any_case_rows": 11,
+      "reached_case_rows": 11,
+      "successful_transaction_rows": 6,
+      "failed_transaction_rows": 5,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 11,
+      "signed_byte_reached_case_rows": 11,
+      "signed_byte_success_rows": 6,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 11,
+      "transaction_backed_success_rows": 6,
+      "distinct_signed_transactions": 7,
+      "distinct_signed_instruction_data": 1,
+      "distinct_observable_receipts": 9,
+      "observed_successful_main_invocations": 6,
+      "observed_failed_main_invocations": 5,
+      "suites": [
+        "full/quote_control"
+      ],
+      "harness_scripts": [
+        "scripts/pump_quote_control_fresh_differential.py"
+      ],
+      "examples": {
+        "success": [
+          "full/quote_control/results/0",
+          "full/quote_control/results/1",
+          "full/quote_control/results/2"
+        ],
+        "error": [
+          "full/quote_control/results/3",
+          "full/quote_control/results/6",
+          "full/quote_control/results/7"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "migrate",
+      "discriminator": "9beae792ec9ea21e",
+      "coverage": "success_and_error",
+      "any_case_rows": 299,
+      "reached_case_rows": 299,
+      "successful_transaction_rows": 151,
+      "failed_transaction_rows": 148,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 299,
+      "signed_byte_reached_case_rows": 299,
+      "signed_byte_success_rows": 151,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 299,
+      "transaction_backed_success_rows": 151,
+      "distinct_signed_transactions": 55,
+      "distinct_signed_instruction_data": 1,
+      "distinct_observable_receipts": 298,
+      "observed_successful_main_invocations": 152,
+      "observed_failed_main_invocations": 147,
+      "suites": [
+        "additional/accounts_contexts",
+        "additional/legacy_token22_27",
+        "additional/migrate_prepare",
+        "additional/root_legacy_layouts",
+        "full/migration"
+      ],
+      "harness_scripts": [
+        "scripts/pump_migrate_differential.py",
+        "work/parallel-main-accounts/account_context_probe.py",
+        "work/parallel-main-context2/migration_partial_layouts.py",
+        "work/parallel-main-migrate-prepare/probe_migrate_prepare.py",
+        "work/parallel-main-migration-contexts/token22-verify.py"
+      ],
+      "examples": {
+        "success": [
+          "full/migration/cases/0",
+          "full/migration/cases/3",
+          "full/migration/cases/8"
+        ],
+        "error": [
+          "full/migration/cases/1",
+          "full/migration/cases/2",
+          "full/migration/cases/4"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "migrate_bonding_curve_creator",
+      "discriminator": "577c34bf3426d6e8",
+      "coverage": "success_and_error",
+      "any_case_rows": 139,
+      "reached_case_rows": 139,
+      "successful_transaction_rows": 25,
+      "failed_transaction_rows": 114,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 139,
+      "signed_byte_reached_case_rows": 139,
+      "signed_byte_success_rows": 25,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 139,
+      "transaction_backed_success_rows": 25,
+      "distinct_signed_transactions": 13,
+      "distinct_signed_instruction_data": 1,
+      "distinct_observable_receipts": 131,
+      "observed_successful_main_invocations": 25,
+      "observed_failed_main_invocations": 114,
+      "suites": [
+        "full/creator_migration"
+      ],
+      "harness_scripts": [
+        "scripts/pump_creator_migration_differential.py"
+      ],
+      "examples": {
+        "success": [
+          "full/creator_migration/cases/0",
+          "full/creator_migration/cases/4",
+          "full/creator_migration/cases/5"
+        ],
+        "error": [
+          "full/creator_migration/cases/1",
+          "full/creator_migration/cases/2",
+          "full/creator_migration/cases/3"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "migrate_v2",
+      "discriminator": "bbcb121fceedfe29",
+      "coverage": "success_and_error",
+      "any_case_rows": 1089,
+      "reached_case_rows": 1089,
+      "successful_transaction_rows": 477,
+      "failed_transaction_rows": 612,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 1089,
+      "signed_byte_reached_case_rows": 1089,
+      "signed_byte_success_rows": 477,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 1089,
+      "transaction_backed_success_rows": 477,
+      "distinct_signed_transactions": 168,
+      "distinct_signed_instruction_data": 1,
+      "distinct_observable_receipts": 1086,
+      "observed_successful_main_invocations": 477,
+      "observed_failed_main_invocations": 612,
+      "suites": [
+        "additional/curve_boundaries_64",
+        "additional/migrate_v2_prepare",
+        "additional/migration_balances",
+        "additional/migration_headers",
+        "additional/root_account_origins",
+        "additional/root_v2_bool_layouts",
+        "additional/root_v2_layouts",
+        "full/migrate_v2"
+      ],
+      "harness_scripts": [
+        "scripts/pump_migrate_v2_differential.py",
+        "work/parallel-main-context2/migration_v2_decoder_boundaries.py",
+        "work/parallel-main-context2/migration_v2_partial_layouts.py",
+        "work/parallel-main-curve-layouts/curve-boundary-probe.py",
+        "work/parallel-main-migrate-v2-prepare/probe_prepare.py",
+        "work/parallel-main-migration-preexisting/check_balances.py",
+        "work/parallel-main-migration-quote-reader/check_headers.py",
+        "work/parallel-main-origins/compare_origins.py"
+      ],
+      "examples": {
+        "success": [
+          "full/migrate_v2/cases/0",
+          "full/migrate_v2/cases/3",
+          "full/migrate_v2/cases/8"
+        ],
+        "error": [
+          "full/migrate_v2/cases/1",
+          "full/migrate_v2/cases/2",
+          "full/migrate_v2/cases/4"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "multi_hop_curve_swap",
+      "discriminator": "e19a7516d756f667",
+      "coverage": "success_and_error",
+      "any_case_rows": 1071,
+      "reached_case_rows": 1071,
+      "successful_transaction_rows": 550,
+      "failed_transaction_rows": 521,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 0,
+      "signed_byte_reached_case_rows": 0,
+      "signed_byte_success_rows": 0,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 1071,
+      "cpi_receipt_success_rows": 550,
+      "transaction_backed_instruction_byte_rows": 1071,
+      "transaction_backed_success_rows": 550,
+      "distinct_signed_transactions": 0,
+      "distinct_signed_instruction_data": 0,
+      "distinct_observable_receipts": 1003,
+      "observed_successful_main_invocations": 687,
+      "observed_failed_main_invocations": 384,
+      "suites": [
+        "additional/buyback_allocation_54",
+        "additional/completion_92",
+        "additional/completion_edges_27",
+        "additional/completion_fuzz_120",
+        "additional/extension_order_68",
+        "additional/multihop_validity_flags",
+        "additional/native_completion_62",
+        "additional/new_route_holder_64",
+        "additional/old_fences_46",
+        "additional/token_extension_edges_416",
+        "additional/token_extensions_36",
+        "additional/unknown_tlv_50",
+        "full/multi_hop_curve_partial",
+        "full/tokenkeg_two_curve"
+      ],
+      "harness_scripts": [
+        "repro/pump/native-curve-partial-fortyeight/harness/pump_multi_hop_curve_differential.py",
+        "scripts/pump_tokenkeg_two_curve_differential.py",
+        "work/parallel-main-trading-next/compare_saved_completions.py",
+        "work/parallel-main-trading-next/fuzz_completion.py",
+        "work/parallel-main-trading-next/probe_completion_edges.py",
+        "work/parallel-main-trading-next/probe_native_completion.py",
+        "work/parallel-main-trading-third/probe_buyback_allocation.py",
+        "work/parallel-main-trading-third/probe_extension_edges.py",
+        "work/parallel-main-trading-third/probe_extension_order.py",
+        "work/parallel-main-trading-third/probe_extensions.py",
+        "work/parallel-main-trading-third/probe_unknown_tlv.py",
+        "work/parallel-main-trading/probe_remaining_fences.py",
+        "work/parallel-main-trading/route_probe.py",
+        "work/parallel-main-v3-validity/probe_multihop_flags.py"
+      ],
+      "examples": {
+        "success": [
+          "full/multi_hop_curve_partial/cases/4",
+          "full/multi_hop_curve_partial/cases/5",
+          "full/multi_hop_curve_partial/cases/6"
+        ],
+        "error": [
+          "full/multi_hop_curve_partial/cases/1",
+          "full/multi_hop_curve_partial/cases/2",
+          "full/multi_hop_curve_partial/cases/3"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "remove_quote_control_mint",
+      "discriminator": "df07fd1a51a5daa6",
+      "coverage": "success_and_error",
+      "any_case_rows": 65,
+      "reached_case_rows": 65,
+      "successful_transaction_rows": 10,
+      "failed_transaction_rows": 55,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 65,
+      "signed_byte_reached_case_rows": 65,
+      "signed_byte_success_rows": 10,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 65,
+      "transaction_backed_success_rows": 10,
+      "distinct_signed_transactions": 23,
+      "distinct_signed_instruction_data": 6,
+      "distinct_observable_receipts": 65,
+      "observed_successful_main_invocations": 10,
+      "observed_failed_main_invocations": 55,
+      "suites": [
+        "full/quote_control"
+      ],
+      "harness_scripts": [
+        "scripts/pump_quote_control_fresh_differential.py"
+      ],
+      "examples": {
+        "success": [
+          "full/quote_control/results/197",
+          "full/quote_control/results/204",
+          "full/quote_control/results/337"
+        ],
+        "error": [
+          "full/quote_control/results/57",
+          "full/quote_control/results/64",
+          "full/quote_control/results/71"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "remove_quote_mint",
+      "discriminator": "b141df2658d19e9b",
+      "coverage": "success_and_error",
+      "any_case_rows": 63,
+      "reached_case_rows": 63,
+      "successful_transaction_rows": 4,
+      "failed_transaction_rows": 59,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 0,
+      "signed_byte_reached_case_rows": 0,
+      "signed_byte_success_rows": 0,
+      "log_only_case_rows": 63,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 0,
+      "transaction_backed_success_rows": 0,
+      "distinct_signed_transactions": 0,
+      "distinct_signed_instruction_data": 0,
+      "distinct_observable_receipts": 20,
+      "observed_successful_main_invocations": 4,
+      "observed_failed_main_invocations": 59,
+      "suites": [
+        "full/configuration"
+      ],
+      "harness_scripts": [
+        "scripts/pump_validate_config_admin.py"
+      ],
+      "examples": {
+        "success": [
+          "full/configuration/cases/98",
+          "full/configuration/cases/99",
+          "full/configuration/cases/109"
+        ],
+        "error": [
+          "full/configuration/cases/63",
+          "full/configuration/cases/64",
+          "full/configuration/cases/65"
+        ],
+        "log_only": [
+          "full/configuration/cases/63",
+          "full/configuration/cases/64",
+          "full/configuration/cases/65"
+        ]
+      }
+    },
+    {
+      "name": "sell",
+      "discriminator": "33e685a4017f83ad",
+      "coverage": "success_and_error",
+      "any_case_rows": 270,
+      "reached_case_rows": 270,
+      "successful_transaction_rows": 147,
+      "failed_transaction_rows": 123,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 270,
+      "signed_byte_reached_case_rows": 270,
+      "signed_byte_success_rows": 147,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 270,
+      "transaction_backed_success_rows": 147,
+      "distinct_signed_transactions": 41,
+      "distinct_signed_instruction_data": 11,
+      "distinct_observable_receipts": 234,
+      "observed_successful_main_invocations": 147,
+      "observed_failed_main_invocations": 123,
+      "suites": [
+        "additional/accounts_contexts",
+        "additional/creator_gate_120",
+        "additional/fee_market_cap",
+        "additional/fee_waiver_27",
+        "additional/legacy_buyback_creator-order",
+        "additional/legacy_buyback_legacy-boundary",
+        "additional/legacy_buyback_low-lamports",
+        "additional/legacy_buyback_partial-balance",
+        "additional/legacy_buyback_thresholds",
+        "additional/legacy_sell_rent_12",
+        "additional/legacy_user_authority_4",
+        "additional/legacy_user_owner_8",
+        "additional/recipient_order_144",
+        "full/legacy_sell",
+        "full/legacy_sell_configured_fee"
+      ],
+      "harness_scripts": [
+        "scripts/pump_legacy_sell_configured_fee_differential.py",
+        "scripts/pump_legacy_sell_differential.py",
+        "work/parallel-main-accounts/account_context_probe.py",
+        "work/parallel-main-buyback-split/probe-legacy-boundary.py",
+        "work/parallel-main-global-fee-waiver/probe-v2.py",
+        "work/parallel-main-integration/recovered_fee_market_probes.py",
+        "work/parallel-main-integration/recovered_recipient_probes.py",
+        "work/parallel-main-legacy-buyback-split/probe-sell-creator-order02.py",
+        "work/parallel-main-legacy-buyback-split/probe-sell-low-lamports.py",
+        "work/parallel-main-legacy-buyback-split/probe-sell-partial-balance.py",
+        "work/parallel-main-legacy-buyback-split/probe-sell-payment-thresholds.py",
+        "work/parallel-main-legacy-context/probe_user_authority.py",
+        "work/parallel-main-legacy-context/probe_user_owner.py",
+        "work/parallel-main-legacy-sell-rent/probe_sell_rent.py",
+        "work/parallel-main-trading-next/verify_creator_gate.py"
+      ],
+      "examples": {
+        "success": [
+          "full/legacy_sell/cases/0",
+          "full/legacy_sell/cases/4",
+          "full/legacy_sell/cases/6"
+        ],
+        "error": [
+          "full/legacy_sell/cases/1",
+          "full/legacy_sell/cases/2",
+          "full/legacy_sell/cases/3"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "sell_v2",
+      "discriminator": "5df6823ce7e940b2",
+      "coverage": "success_and_error",
+      "any_case_rows": 470,
+      "reached_case_rows": 470,
+      "successful_transaction_rows": 225,
+      "failed_transaction_rows": 245,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 470,
+      "signed_byte_reached_case_rows": 470,
+      "signed_byte_success_rows": 225,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 470,
+      "transaction_backed_success_rows": 225,
+      "distinct_signed_transactions": 67,
+      "distinct_signed_instruction_data": 19,
+      "distinct_observable_receipts": 436,
+      "observed_successful_main_invocations": 226,
+      "observed_failed_main_invocations": 244,
+      "suites": [
+        "additional/creator_gate_120",
+        "additional/fee_market_cap",
+        "additional/fee_waiver_27",
+        "additional/recipient_order_144",
+        "additional/sell_v2_atas_25",
+        "additional/sell_v2_buyback_32",
+        "additional/sell_v2_buyback_sell-v2-split",
+        "additional/sell_v2_buyback_sell-v2-thresholds",
+        "additional/sell_v2_prepare_12",
+        "full/earned_cashback",
+        "full/sell_v2"
+      ],
+      "harness_scripts": [
+        "scripts/pump_earned_cashback_differential.py",
+        "scripts/pump_sell_v2_differential.py",
+        "work/parallel-main-global-fee-waiver/probe-v2.py",
+        "work/parallel-main-integration/recovered_fee_market_probes.py",
+        "work/parallel-main-integration/recovered_recipient_probes.py",
+        "work/parallel-main-legacy-buyback-split/probe-sell-v2-boundary.py",
+        "work/parallel-main-sell-v2-buyback-accounting/probe-payment-thresholds.py",
+        "work/parallel-main-sell-v2-buyback/probe-atas.py",
+        "work/parallel-main-sell-v2-buyback/probe-expanded.py",
+        "work/parallel-main-sell-v2-buyback/probe-prepare.py",
+        "work/parallel-main-trading-next/verify_creator_gate.py"
+      ],
+      "examples": {
+        "success": [
+          "full/sell_v2/cases/0",
+          "full/sell_v2/cases/3",
+          "full/sell_v2/cases/4"
+        ],
+        "error": [
+          "full/sell_v2/cases/1",
+          "full/sell_v2/cases/2",
+          "full/sell_v2/cases/15"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "sell_v3",
+      "discriminator": "1c92de7726c469d5",
+      "coverage": "success_and_error",
+      "any_case_rows": 779,
+      "reached_case_rows": 779,
+      "successful_transaction_rows": 529,
+      "failed_transaction_rows": 250,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 413,
+      "signed_byte_reached_case_rows": 413,
+      "signed_byte_success_rows": 253,
+      "log_only_case_rows": 366,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 413,
+      "transaction_backed_success_rows": 253,
+      "distinct_signed_transactions": 38,
+      "distinct_signed_instruction_data": 13,
+      "distinct_observable_receipts": 746,
+      "observed_successful_main_invocations": 530,
+      "observed_failed_main_invocations": 249,
+      "suites": [
+        "additional/context_failures_24",
+        "additional/creator_gate_120",
+        "additional/mixed_tlv_1_18",
+        "additional/native_quote_3",
+        "additional/origin_kinds_38",
+        "additional/quote_fee_tail_1_22",
+        "additional/quote_fee_tail_2_18",
+        "additional/quote_fee_tail_3_9",
+        "additional/quote_origins_12",
+        "additional/selector_72",
+        "additional/unknown_tlv_50",
+        "additional/v3_buyback_probe",
+        "additional/v3_buyback_probe_order",
+        "additional/v3_buyback_probe_payment_prefix",
+        "additional/v3_buyback_probe_protocol_overflow",
+        "additional/v3_context_39",
+        "additional/v3_extensions",
+        "additional/v3_fee_config_boundaries_144",
+        "additional/v3_mint_curve_18",
+        "additional/v3_native_buyback_18",
+        "additional/v3_precedence_36",
+        "additional/v3_sell_supply_16",
+        "additional/v3_sell_zero_reserve_4",
+        "additional/v3_token_buyback_12",
+        "additional/v3_user_constraints_12",
+        "additional/v3_waiver",
+        "additional/v3_waiver_order",
+        "full/quote",
+        "full/sell",
+        "full/v3_configured_fee"
+      ],
+      "harness_scripts": [
+        "scripts/pump_v3_configured_fee_differential.py",
+        "scripts/pump_v3_token_extensions_differential.py",
+        "scripts/pump_validate_quote.py",
+        "scripts/pump_validate_sell.py",
+        "work/parallel-main-global-fee-waiver/probe-v3.py",
+        "work/parallel-main-trading-contexts/probe_v3_context.py",
+        "work/parallel-main-trading-next/probe_context_failures.py",
+        "work/parallel-main-trading-next/probe_native_quote.py",
+        "work/parallel-main-trading-next/probe_quote_origins.py",
+        "work/parallel-main-trading-next/probe_quote_selector.py",
+        "work/parallel-main-trading-next/verify_creator_gate.py",
+        "work/parallel-main-trading-third/probe_origin_kinds.py",
+        "work/parallel-main-trading-third/probe_unknown_tlv.py",
+        "work/parallel-main-v3-buyback-assert/probe-order.py",
+        "work/parallel-main-v3-buyback-assert/probe-payment-prefix.py",
+        "work/parallel-main-v3-buyback-assert/probe-protocol-overflow.py",
+        "work/parallel-main-v3-buyback-assert/probe.py",
+        "work/parallel-main-v3-fee-waiver/probe-order.py",
+        "work/parallel-main-v3-fee-wrapper/probe-config-boundaries.py",
+        "work/parallel-main-v3-helpers/probe_precedence_extended.py",
+        "work/parallel-main-v3-net-budget/probe-sell-supply.py",
+        "work/parallel-main-v3-quote-fee-tail/probe-boundaries.py",
+        "work/parallel-main-v3-quote-scanner/probe-tlv-shapes.py",
+        "work/parallel-main-v3-quote-validation-order/probe-oversized.py",
+        "work/parallel-main-v3-quote-validation-order/probe.py",
+        "work/parallel-main-v3-sell-supply/probe-zero-reserve.py",
+        "work/parallel-main-v3-user-constraints/probe.py",
+        "work/parallel-main-v3-user-constraints/probe_buyback.py",
+        "work/parallel-main-v3-user-constraints/probe_buyback_token.py",
+        "work/parallel-main-v3-user-constraints/probe_v2.py"
+      ],
+      "examples": {
+        "success": [
+          "full/sell/cases/0",
+          "full/sell/cases/1",
+          "full/sell/cases/2"
+        ],
+        "error": [
+          "full/sell/cases/7",
+          "full/sell/cases/161",
+          "full/sell/cases/162"
+        ],
+        "log_only": [
+          "full/sell/cases/0",
+          "full/sell/cases/1",
+          "full/sell/cases/2"
+        ]
+      }
+    },
+    {
+      "name": "set_creator",
+      "discriminator": "fe94ff70cf8eaaa5",
+      "coverage": "success_and_error",
+      "any_case_rows": 258,
+      "reached_case_rows": 258,
+      "successful_transaction_rows": 130,
+      "failed_transaction_rows": 128,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 258,
+      "signed_byte_reached_case_rows": 258,
+      "signed_byte_success_rows": 130,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 258,
+      "transaction_backed_success_rows": 130,
+      "distinct_signed_transactions": 19,
+      "distinct_signed_instruction_data": 4,
+      "distinct_observable_receipts": 242,
+      "observed_successful_main_invocations": 130,
+      "observed_failed_main_invocations": 128,
+      "suites": [
+        "additional/accounts_contexts",
+        "full/set_creator"
+      ],
+      "harness_scripts": [
+        "scripts/pump_set_creator_differential.py",
+        "work/parallel-main-accounts/account_context_probe.py"
+      ],
+      "examples": {
+        "success": [
+          "full/set_creator/cases/0",
+          "full/set_creator/cases/1",
+          "full/set_creator/cases/3"
+        ],
+        "error": [
+          "full/set_creator/cases/2",
+          "full/set_creator/cases/13",
+          "full/set_creator/cases/14"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "set_max_curve_depth",
+      "discriminator": "209a98db8e6cdaa5",
+      "coverage": "success_and_error",
+      "any_case_rows": 21,
+      "reached_case_rows": 21,
+      "successful_transaction_rows": 7,
+      "failed_transaction_rows": 14,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 0,
+      "signed_byte_reached_case_rows": 0,
+      "signed_byte_success_rows": 0,
+      "log_only_case_rows": 21,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 0,
+      "transaction_backed_success_rows": 0,
+      "distinct_signed_transactions": 0,
+      "distinct_signed_instruction_data": 0,
+      "distinct_observable_receipts": 15,
+      "observed_successful_main_invocations": 7,
+      "observed_failed_main_invocations": 14,
+      "suites": [
+        "full/administration"
+      ],
+      "harness_scripts": [
+        "scripts/pump_validate_admin.py"
+      ],
+      "examples": {
+        "success": [
+          "full/administration/cases/63",
+          "full/administration/cases/64",
+          "full/administration/cases/74"
+        ],
+        "error": [
+          "full/administration/cases/65",
+          "full/administration/cases/66",
+          "full/administration/cases/67"
+        ],
+        "log_only": [
+          "full/administration/cases/63",
+          "full/administration/cases/64",
+          "full/administration/cases/65"
+        ]
+      }
+    },
+    {
+      "name": "set_mayhem_virtual_params",
+      "discriminator": "3da9bcbf99952a61",
+      "coverage": "success_and_error",
+      "any_case_rows": 192,
+      "reached_case_rows": 192,
+      "successful_transaction_rows": 141,
+      "failed_transaction_rows": 51,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 1,
+      "signed_byte_reached_case_rows": 1,
+      "signed_byte_success_rows": 0,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 191,
+      "cpi_receipt_success_rows": 141,
+      "transaction_backed_instruction_byte_rows": 192,
+      "transaction_backed_success_rows": 141,
+      "distinct_signed_transactions": 1,
+      "distinct_signed_instruction_data": 1,
+      "distinct_observable_receipts": 192,
+      "observed_successful_main_invocations": 141,
+      "observed_failed_main_invocations": 51,
+      "suites": [
+        "full/virtual_reserve_sync"
+      ],
+      "harness_scripts": [
+        "scripts/pump_virtual_reserve_differential.py"
+      ],
+      "examples": {
+        "success": [
+          "full/virtual_reserve_sync/cases/0",
+          "full/virtual_reserve_sync/cases/1",
+          "full/virtual_reserve_sync/cases/2"
+        ],
+        "error": [
+          "full/virtual_reserve_sync/cases/73",
+          "full/virtual_reserve_sync/cases/75",
+          "full/virtual_reserve_sync/cases/85"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "set_metaplex_creator",
+      "discriminator": "8a60aed93055c5f6",
+      "coverage": "success_and_error",
+      "any_case_rows": 253,
+      "reached_case_rows": 253,
+      "successful_transaction_rows": 130,
+      "failed_transaction_rows": 123,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 253,
+      "signed_byte_reached_case_rows": 253,
+      "signed_byte_success_rows": 130,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 253,
+      "transaction_backed_success_rows": 130,
+      "distinct_signed_transactions": 13,
+      "distinct_signed_instruction_data": 2,
+      "distinct_observable_receipts": 234,
+      "observed_successful_main_invocations": 130,
+      "observed_failed_main_invocations": 123,
+      "suites": [
+        "additional/accounts_contexts",
+        "full/set_creator"
+      ],
+      "harness_scripts": [
+        "scripts/pump_set_creator_differential.py",
+        "work/parallel-main-accounts/account_context_probe.py"
+      ],
+      "examples": {
+        "success": [
+          "full/set_creator/cases/257",
+          "full/set_creator/cases/258",
+          "full/set_creator/cases/260"
+        ],
+        "error": [
+          "full/set_creator/cases/259",
+          "full/set_creator/cases/270",
+          "full/set_creator/cases/271"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "set_params",
+      "discriminator": "1beab2349302bb8d",
+      "coverage": "success_and_error",
+      "any_case_rows": 175,
+      "reached_case_rows": 175,
+      "successful_transaction_rows": 46,
+      "failed_transaction_rows": 129,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 175,
+      "signed_byte_reached_case_rows": 175,
+      "signed_byte_success_rows": 46,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 175,
+      "transaction_backed_success_rows": 46,
+      "distinct_signed_transactions": 140,
+      "distinct_signed_instruction_data": 117,
+      "distinct_observable_receipts": 170,
+      "observed_successful_main_invocations": 46,
+      "observed_failed_main_invocations": 129,
+      "suites": [
+        "additional/root_account_origins",
+        "full/set_params"
+      ],
+      "harness_scripts": [
+        "scripts/pump_set_params_differential.py",
+        "work/parallel-main-origins/compare_origins.py"
+      ],
+      "examples": {
+        "success": [
+          "full/set_params/cases/0",
+          "full/set_params/cases/28",
+          "full/set_params/cases/29"
+        ],
+        "error": [
+          "full/set_params/cases/1",
+          "full/set_params/cases/2",
+          "full/set_params/cases/3"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "set_quote_control_admin",
+      "discriminator": "3e4fa1d3a5aad6d2",
+      "coverage": "success_and_error",
+      "any_case_rows": 21,
+      "reached_case_rows": 21,
+      "successful_transaction_rows": 4,
+      "failed_transaction_rows": 17,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 21,
+      "signed_byte_reached_case_rows": 21,
+      "signed_byte_success_rows": 4,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 21,
+      "transaction_backed_success_rows": 4,
+      "distinct_signed_transactions": 18,
+      "distinct_signed_instruction_data": 4,
+      "distinct_observable_receipts": 21,
+      "observed_successful_main_invocations": 4,
+      "observed_failed_main_invocations": 17,
+      "suites": [
+        "full/quote_control"
+      ],
+      "harness_scripts": [
+        "scripts/pump_quote_control_fresh_differential.py"
+      ],
+      "examples": {
+        "success": [
+          "full/quote_control/results/9",
+          "full/quote_control/results/13",
+          "full/quote_control/results/17"
+        ],
+        "error": [
+          "full/quote_control/results/10",
+          "full/quote_control/results/11",
+          "full/quote_control/results/12"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "set_quote_control_mint_reserves",
+      "discriminator": "74dc6b53bf2c2049",
+      "coverage": "success_and_error",
+      "any_case_rows": 180,
+      "reached_case_rows": 180,
+      "successful_transaction_rows": 27,
+      "failed_transaction_rows": 153,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 180,
+      "signed_byte_reached_case_rows": 180,
+      "signed_byte_success_rows": 27,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 180,
+      "transaction_backed_success_rows": 27,
+      "distinct_signed_transactions": 60,
+      "distinct_signed_instruction_data": 15,
+      "distinct_observable_receipts": 180,
+      "observed_successful_main_invocations": 27,
+      "observed_failed_main_invocations": 153,
+      "suites": [
+        "full/quote_control"
+      ],
+      "harness_scripts": [
+        "scripts/pump_quote_control_fresh_differential.py"
+      ],
+      "examples": {
+        "success": [
+          "full/quote_control/results/192",
+          "full/quote_control/results/194",
+          "full/quote_control/results/196"
+        ],
+        "error": [
+          "full/quote_control/results/52",
+          "full/quote_control/results/54",
+          "full/quote_control/results/56"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "set_quote_control_reserves_admin",
+      "discriminator": "a1c3dea5e165c03e",
+      "coverage": "success_and_error",
+      "any_case_rows": 21,
+      "reached_case_rows": 21,
+      "successful_transaction_rows": 7,
+      "failed_transaction_rows": 14,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 21,
+      "signed_byte_reached_case_rows": 21,
+      "signed_byte_success_rows": 7,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 21,
+      "transaction_backed_success_rows": 7,
+      "distinct_signed_transactions": 18,
+      "distinct_signed_instruction_data": 4,
+      "distinct_observable_receipts": 21,
+      "observed_successful_main_invocations": 7,
+      "observed_failed_main_invocations": 14,
+      "suites": [
+        "full/quote_control"
+      ],
+      "harness_scripts": [
+        "scripts/pump_quote_control_fresh_differential.py"
+      ],
+      "examples": {
+        "success": [
+          "full/quote_control/results/30",
+          "full/quote_control/results/31",
+          "full/quote_control/results/34"
+        ],
+        "error": [
+          "full/quote_control/results/32",
+          "full/quote_control/results/33",
+          "full/quote_control/results/36"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "set_reserved_fee_recipients",
+      "discriminator": "6faca2e87259d58e",
+      "coverage": "success_and_error",
+      "any_case_rows": 64,
+      "reached_case_rows": 64,
+      "successful_transaction_rows": 12,
+      "failed_transaction_rows": 52,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 24,
+      "signed_byte_reached_case_rows": 24,
+      "signed_byte_success_rows": 0,
+      "log_only_case_rows": 40,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 24,
+      "transaction_backed_success_rows": 0,
+      "distinct_signed_transactions": 9,
+      "distinct_signed_instruction_data": 1,
+      "distinct_observable_receipts": 30,
+      "observed_successful_main_invocations": 12,
+      "observed_failed_main_invocations": 52,
+      "suites": [
+        "additional/root_account_origins",
+        "full/authority"
+      ],
+      "harness_scripts": [
+        "scripts/pump_validate_authority.py",
+        "work/parallel-main-origins/compare_origins.py"
+      ],
+      "examples": {
+        "success": [
+          "full/authority/cases/19",
+          "full/authority/cases/25",
+          "full/authority/cases/34"
+        ],
+        "error": [
+          "full/authority/cases/20",
+          "full/authority/cases/21",
+          "full/authority/cases/22"
+        ],
+        "log_only": [
+          "full/authority/cases/19",
+          "full/authority/cases/20",
+          "full/authority/cases/21"
+        ]
+      }
+    },
+    {
+      "name": "set_virtual_quote_reserves",
+      "discriminator": "6587bf6809581460",
+      "coverage": "success_and_error",
+      "any_case_rows": 51,
+      "reached_case_rows": 51,
+      "successful_transaction_rows": 11,
+      "failed_transaction_rows": 40,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 0,
+      "signed_byte_reached_case_rows": 0,
+      "signed_byte_success_rows": 0,
+      "log_only_case_rows": 51,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 0,
+      "transaction_backed_success_rows": 0,
+      "distinct_signed_transactions": 0,
+      "distinct_signed_instruction_data": 0,
+      "distinct_observable_receipts": 15,
+      "observed_successful_main_invocations": 11,
+      "observed_failed_main_invocations": 40,
+      "suites": [
+        "full/configuration"
+      ],
+      "harness_scripts": [
+        "scripts/pump_validate_config_admin.py"
+      ],
+      "examples": {
+        "success": [
+          "full/configuration/cases/126",
+          "full/configuration/cases/136",
+          "full/configuration/cases/141"
+        ],
+        "error": [
+          "full/configuration/cases/127",
+          "full/configuration/cases/128",
+          "full/configuration/cases/129"
+        ],
+        "log_only": [
+          "full/configuration/cases/126",
+          "full/configuration/cases/127",
+          "full/configuration/cases/128"
+        ]
+      }
+    },
+    {
+      "name": "sweep_creator_fee",
+      "discriminator": "20f6bf3408c949ba",
+      "coverage": "success_and_error",
+      "any_case_rows": 246,
+      "reached_case_rows": 246,
+      "successful_transaction_rows": 102,
+      "failed_transaction_rows": 144,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 246,
+      "signed_byte_reached_case_rows": 246,
+      "signed_byte_success_rows": 102,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 246,
+      "transaction_backed_success_rows": 102,
+      "distinct_signed_transactions": 44,
+      "distinct_signed_instruction_data": 1,
+      "distinct_observable_receipts": 232,
+      "observed_successful_main_invocations": 104,
+      "observed_failed_main_invocations": 142,
+      "suites": [
+        "additional/sweep_default_quote",
+        "additional/sweep_order",
+        "additional/sweep_rent",
+        "full/fee_sweeps"
+      ],
+      "harness_scripts": [
+        "scripts/pump_fee_sweep_differential.py",
+        "work/parallel-main-sweep-prepare/probe_native_reserve.py",
+        "work/parallel-main-sweep-prepare/probe_prepare_edges.py",
+        "work/parallel-main-sweep-quote-predicate/probe_default_quote.py"
+      ],
+      "examples": {
+        "success": [
+          "full/fee_sweeps/cases/0",
+          "full/fee_sweeps/cases/1",
+          "full/fee_sweeps/cases/2"
+        ],
+        "error": [
+          "full/fee_sweeps/cases/5",
+          "full/fee_sweeps/cases/6",
+          "full/fee_sweeps/cases/7"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "sweep_protocol_fee",
+      "discriminator": "0830be07b644b7e5",
+      "coverage": "success_and_error",
+      "any_case_rows": 298,
+      "reached_case_rows": 298,
+      "successful_transaction_rows": 126,
+      "failed_transaction_rows": 172,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 298,
+      "signed_byte_reached_case_rows": 298,
+      "signed_byte_success_rows": 126,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 298,
+      "transaction_backed_success_rows": 126,
+      "distinct_signed_transactions": 65,
+      "distinct_signed_instruction_data": 1,
+      "distinct_observable_receipts": 284,
+      "observed_successful_main_invocations": 129,
+      "observed_failed_main_invocations": 169,
+      "suites": [
+        "additional/sweep_default_quote",
+        "additional/sweep_order",
+        "additional/sweep_rent",
+        "full/fee_sweeps"
+      ],
+      "harness_scripts": [
+        "scripts/pump_fee_sweep_differential.py",
+        "work/parallel-main-sweep-prepare/probe_native_reserve.py",
+        "work/parallel-main-sweep-prepare/probe_prepare_edges.py",
+        "work/parallel-main-sweep-quote-predicate/probe_default_quote.py"
+      ],
+      "examples": {
+        "success": [
+          "full/fee_sweeps/cases/222",
+          "full/fee_sweeps/cases/223",
+          "full/fee_sweeps/cases/224"
+        ],
+        "error": [
+          "full/fee_sweeps/cases/227",
+          "full/fee_sweeps/cases/228",
+          "full/fee_sweeps/cases/229"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "sync_user_volume_accumulator",
+      "discriminator": "561fc057a3574fee",
+      "coverage": "success_and_error",
+      "any_case_rows": 333,
+      "reached_case_rows": 333,
+      "successful_transaction_rows": 288,
+      "failed_transaction_rows": 45,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 333,
+      "signed_byte_reached_case_rows": 333,
+      "signed_byte_success_rows": 288,
+      "log_only_case_rows": 0,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 333,
+      "transaction_backed_success_rows": 288,
+      "distinct_signed_transactions": 13,
+      "distinct_signed_instruction_data": 2,
+      "distinct_observable_receipts": 194,
+      "observed_successful_main_invocations": 288,
+      "observed_failed_main_invocations": 45,
+      "suites": [
+        "full/volume_sync"
+      ],
+      "harness_scripts": [
+        "scripts/pump_volume_sync_differential.py"
+      ],
+      "examples": {
+        "success": [
+          "full/volume_sync/cases/0",
+          "full/volume_sync/cases/1",
+          "full/volume_sync/cases/2"
+        ],
+        "error": [
+          "full/volume_sync/cases/3",
+          "full/volume_sync/cases/6",
+          "full/volume_sync/cases/225"
+        ],
+        "log_only": []
+      }
+    },
+    {
+      "name": "toggle_cashback_enabled",
+      "discriminator": "7367e0ffbd5956c3",
+      "coverage": "success_and_error",
+      "any_case_rows": 21,
+      "reached_case_rows": 21,
+      "successful_transaction_rows": 2,
+      "failed_transaction_rows": 19,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 0,
+      "signed_byte_reached_case_rows": 0,
+      "signed_byte_success_rows": 0,
+      "log_only_case_rows": 21,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 0,
+      "transaction_backed_success_rows": 0,
+      "distinct_signed_transactions": 0,
+      "distinct_signed_instruction_data": 0,
+      "distinct_observable_receipts": 13,
+      "observed_successful_main_invocations": 2,
+      "observed_failed_main_invocations": 19,
+      "suites": [
+        "full/administration"
+      ],
+      "harness_scripts": [
+        "scripts/pump_validate_admin.py"
+      ],
+      "examples": {
+        "success": [
+          "full/administration/cases/42",
+          "full/administration/cases/60"
+        ],
+        "error": [
+          "full/administration/cases/43",
+          "full/administration/cases/44",
+          "full/administration/cases/45"
+        ],
+        "log_only": [
+          "full/administration/cases/42",
+          "full/administration/cases/43",
+          "full/administration/cases/44"
+        ]
+      }
+    },
+    {
+      "name": "toggle_create_v2",
+      "discriminator": "1cffe6f0ac6bcbab",
+      "coverage": "success_and_error",
+      "any_case_rows": 21,
+      "reached_case_rows": 21,
+      "successful_transaction_rows": 2,
+      "failed_transaction_rows": 19,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 0,
+      "signed_byte_reached_case_rows": 0,
+      "signed_byte_success_rows": 0,
+      "log_only_case_rows": 21,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 0,
+      "transaction_backed_success_rows": 0,
+      "distinct_signed_transactions": 0,
+      "distinct_signed_instruction_data": 0,
+      "distinct_observable_receipts": 13,
+      "observed_successful_main_invocations": 2,
+      "observed_failed_main_invocations": 19,
+      "suites": [
+        "full/administration"
+      ],
+      "harness_scripts": [
+        "scripts/pump_validate_admin.py"
+      ],
+      "examples": {
+        "success": [
+          "full/administration/cases/0",
+          "full/administration/cases/18"
+        ],
+        "error": [
+          "full/administration/cases/1",
+          "full/administration/cases/2",
+          "full/administration/cases/3"
+        ],
+        "log_only": [
+          "full/administration/cases/0",
+          "full/administration/cases/1",
+          "full/administration/cases/2"
+        ]
+      }
+    },
+    {
+      "name": "toggle_mayhem_mode",
+      "discriminator": "01096fd0641fffa3",
+      "coverage": "success_and_error",
+      "any_case_rows": 21,
+      "reached_case_rows": 21,
+      "successful_transaction_rows": 2,
+      "failed_transaction_rows": 19,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 0,
+      "signed_byte_reached_case_rows": 0,
+      "signed_byte_success_rows": 0,
+      "log_only_case_rows": 21,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 0,
+      "transaction_backed_success_rows": 0,
+      "distinct_signed_transactions": 0,
+      "distinct_signed_instruction_data": 0,
+      "distinct_observable_receipts": 13,
+      "observed_successful_main_invocations": 2,
+      "observed_failed_main_invocations": 19,
+      "suites": [
+        "full/administration"
+      ],
+      "harness_scripts": [
+        "scripts/pump_validate_admin.py"
+      ],
+      "examples": {
+        "success": [
+          "full/administration/cases/21",
+          "full/administration/cases/39"
+        ],
+        "error": [
+          "full/administration/cases/22",
+          "full/administration/cases/23",
+          "full/administration/cases/24"
+        ],
+        "log_only": [
+          "full/administration/cases/21",
+          "full/administration/cases/22",
+          "full/administration/cases/23"
+        ]
+      }
+    },
+    {
+      "name": "update_buyback_config",
+      "discriminator": "fbe0ab92a01a71e9",
+      "coverage": "success_and_error",
+      "any_case_rows": 156,
+      "reached_case_rows": 156,
+      "successful_transaction_rows": 16,
+      "failed_transaction_rows": 140,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 0,
+      "signed_byte_reached_case_rows": 0,
+      "signed_byte_success_rows": 0,
+      "log_only_case_rows": 156,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 0,
+      "transaction_backed_success_rows": 0,
+      "distinct_signed_transactions": 0,
+      "distinct_signed_instruction_data": 0,
+      "distinct_observable_receipts": 23,
+      "observed_successful_main_invocations": 16,
+      "observed_failed_main_invocations": 140,
+      "suites": [
+        "additional/buyback_recipients_100",
+        "full/configuration"
+      ],
+      "harness_scripts": [
+        "scripts/pump_validate_config_admin.py",
+        "work/parallel-main-buyback-recipients/check_remaining.py"
+      ],
+      "examples": {
+        "success": [
+          "full/configuration/cases/177",
+          "full/configuration/cases/187",
+          "full/configuration/cases/192"
+        ],
+        "error": [
+          "full/configuration/cases/178",
+          "full/configuration/cases/179",
+          "full/configuration/cases/180"
+        ],
+        "log_only": [
+          "full/configuration/cases/177",
+          "full/configuration/cases/178",
+          "full/configuration/cases/179"
+        ]
+      }
+    },
+    {
+      "name": "update_creator_fee_config",
+      "discriminator": "3dafa0f9424288af",
+      "coverage": "success_and_error",
+      "any_case_rows": 62,
+      "reached_case_rows": 62,
+      "successful_transaction_rows": 14,
+      "failed_transaction_rows": 48,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 0,
+      "signed_byte_reached_case_rows": 0,
+      "signed_byte_success_rows": 0,
+      "log_only_case_rows": 62,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 0,
+      "transaction_backed_success_rows": 0,
+      "distinct_signed_transactions": 0,
+      "distinct_signed_instruction_data": 0,
+      "distinct_observable_receipts": 24,
+      "observed_successful_main_invocations": 14,
+      "observed_failed_main_invocations": 48,
+      "suites": [
+        "full/configuration"
+      ],
+      "harness_scripts": [
+        "scripts/pump_validate_config_admin.py"
+      ],
+      "examples": {
+        "success": [
+          "full/configuration/cases/233",
+          "full/configuration/cases/248",
+          "full/configuration/cases/249"
+        ],
+        "error": [
+          "full/configuration/cases/234",
+          "full/configuration/cases/235",
+          "full/configuration/cases/236"
+        ],
+        "log_only": [
+          "full/configuration/cases/233",
+          "full/configuration/cases/234",
+          "full/configuration/cases/235"
+        ]
+      }
+    },
+    {
+      "name": "update_global_authority",
+      "discriminator": "e3b54ac4d01561d5",
+      "coverage": "success_and_error",
+      "any_case_rows": 38,
+      "reached_case_rows": 38,
+      "successful_transaction_rows": 12,
+      "failed_transaction_rows": 26,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 19,
+      "signed_byte_reached_case_rows": 19,
+      "signed_byte_success_rows": 6,
+      "log_only_case_rows": 19,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 19,
+      "transaction_backed_success_rows": 6,
+      "distinct_signed_transactions": 13,
+      "distinct_signed_instruction_data": 2,
+      "distinct_observable_receipts": 32,
+      "observed_successful_main_invocations": 12,
+      "observed_failed_main_invocations": 26,
+      "suites": [
+        "additional/authority_19",
+        "full/authority"
+      ],
+      "harness_scripts": [
+        "scripts/pump_validate_authority.py",
+        "work/parallel-main-coverage/capture_authority_receipts.py"
+      ],
+      "examples": {
+        "success": [
+          "full/authority/cases/0",
+          "full/authority/cases/6",
+          "full/authority/cases/15"
+        ],
+        "error": [
+          "full/authority/cases/1",
+          "full/authority/cases/2",
+          "full/authority/cases/3"
+        ],
+        "log_only": [
+          "full/authority/cases/0",
+          "full/authority/cases/1",
+          "full/authority/cases/2"
+        ]
+      }
+    },
+    {
+      "name": "update_holder_reward_config",
+      "discriminator": "e1fc4204c723ec10",
+      "coverage": "success_and_error",
+      "any_case_rows": 56,
+      "reached_case_rows": 56,
+      "successful_transaction_rows": 13,
+      "failed_transaction_rows": 43,
+      "encoded_but_unreached_rows": 0,
+      "signed_byte_case_rows": 0,
+      "signed_byte_reached_case_rows": 0,
+      "signed_byte_success_rows": 0,
+      "log_only_case_rows": 56,
+      "cpi_receipt_case_rows": 0,
+      "cpi_receipt_success_rows": 0,
+      "transaction_backed_instruction_byte_rows": 0,
+      "transaction_backed_success_rows": 0,
+      "distinct_signed_transactions": 0,
+      "distinct_signed_instruction_data": 0,
+      "distinct_observable_receipts": 17,
+      "observed_successful_main_invocations": 13,
+      "observed_failed_main_invocations": 43,
+      "suites": [
+        "full/configuration"
+      ],
+      "harness_scripts": [
+        "scripts/pump_validate_config_admin.py"
+      ],
+      "examples": {
+        "success": [
+          "full/configuration/cases/295",
+          "full/configuration/cases/305",
+          "full/configuration/cases/310"
+        ],
+        "error": [
+          "full/configuration/cases/296",
+          "full/configuration/cases/297",
+          "full/configuration/cases/298"
+        ],
+        "log_only": [
+          "full/configuration/cases/295",
+          "full/configuration/cases/296",
+          "full/configuration/cases/297"
+        ]
+      }
+    }
+  ],
+  "gaps": {
+    "absent": [],
+    "error_only": [],
+    "no_serialized_signed_byte_evidence": [
+      "add_quote_mint",
+      "close_user_volume_accumulator",
+      "init_user_volume_accumulator",
+      "multi_hop_curve_swap",
+      "remove_quote_mint",
+      "set_max_curve_depth",
+      "set_virtual_quote_reserves",
+      "toggle_cashback_enabled",
+      "toggle_create_v2",
+      "toggle_mayhem_mode",
+      "update_buyback_config",
+      "update_creator_fee_config",
+      "update_holder_reward_config"
+    ],
+    "no_transaction_backed_instruction_bytes": [
+      "add_quote_mint",
+      "close_user_volume_accumulator",
+      "init_user_volume_accumulator",
+      "remove_quote_mint",
+      "set_max_curve_depth",
+      "set_virtual_quote_reserves",
+      "toggle_cashback_enabled",
+      "toggle_create_v2",
+      "toggle_mayhem_mode",
+      "update_buyback_config",
+      "update_creator_fee_config",
+      "update_holder_reward_config"
+    ],
+    "transaction_backed_error_only": [
+      "set_reserved_fee_recipients"
+    ],
+    "no_serialized_success_evidence": [
+      "add_quote_mint",
+      "close_user_volume_accumulator",
+      "init_user_volume_accumulator",
+      "multi_hop_curve_swap",
+      "remove_quote_mint",
+      "set_max_curve_depth",
+      "set_mayhem_virtual_params",
+      "set_reserved_fee_recipients",
+      "set_virtual_quote_reserves",
+      "toggle_cashback_enabled",
+      "toggle_create_v2",
+      "toggle_mayhem_mode",
+      "update_buyback_config",
+      "update_creator_fee_config",
+      "update_holder_reward_config"
+    ]
+  },
+  "unknown_main_discriminators": [
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "",
+      "case_rows": 12
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "ea",
+      "case_rows": 4
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "ea66",
+      "case_rows": 4
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "ea66c2",
+      "case_rows": 4
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "ea66c2cb",
+      "case_rows": 4
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "ea66c2cb96",
+      "case_rows": 4
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "ea66c2cb9648",
+      "case_rows": 4
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "ea66c2cb96483e",
+      "case_rows": 4
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "56",
+      "case_rows": 1
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "561f",
+      "case_rows": 1
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "561fc0",
+      "case_rows": 1
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "561fc057",
+      "case_rows": 1
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "561fc057a3",
+      "case_rows": 1
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "561fc057a357",
+      "case_rows": 1
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "561fc057a3574f",
+      "case_rows": 1
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "1beab2349302bb",
+      "case_rows": 1
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "08d960e79068c0",
+      "case_rows": 1
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "181ec828051c07",
+      "case_rows": 1
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "af",
+      "case_rows": 1
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "afaf6d1f0d989b",
+      "case_rows": 1
+    },
+    {
+      "kind": "invalid_short_discriminator",
+      "discriminator": "d10b7357d5177c",
+      "case_rows": 3
+    }
+  ],
+  "unmapped_main_log_names": {},
+  "missing_transaction_byte_harnesses": [
+    {
+      "script": "scripts/pump_validate_admin.py",
+      "case_rows": 93,
+      "families": [
+        "set_max_curve_depth",
+        "toggle_cashback_enabled",
+        "toggle_create_v2",
+        "toggle_mayhem_mode"
+      ]
+    },
+    {
+      "script": "scripts/pump_validate_authority.py",
+      "case_rows": 59,
+      "families": [
+        "set_reserved_fee_recipients",
+        "update_global_authority"
+      ]
+    },
+    {
+      "script": "scripts/pump_validate_buy.py",
+      "case_rows": 334,
+      "families": [
+        "buy_v3"
+      ]
+    },
+    {
+      "script": "scripts/pump_validate_config_admin.py",
+      "case_rows": 351,
+      "families": [
+        "add_quote_mint",
+        "remove_quote_mint",
+        "set_virtual_quote_reserves",
+        "update_buyback_config",
+        "update_creator_fee_config",
+        "update_holder_reward_config"
+      ]
+    },
+    {
+      "script": "scripts/pump_validate_quote.py",
+      "case_rows": 130,
+      "families": [
+        "buy_v3",
+        "sell_v3"
+      ]
+    },
+    {
+      "script": "scripts/pump_validate_sell.py",
+      "case_rows": 301,
+      "families": [
+        "sell_v3"
+      ]
+    },
+    {
+      "script": "scripts/pump_validate_volume.py",
+      "case_rows": 66,
+      "families": [
+        "close_user_volume_accumulator",
+        "init_user_volume_accumulator"
+      ]
+    },
+    {
+      "script": "work/parallel-main-buyback-recipients/check_remaining.py",
+      "case_rows": 100,
+      "families": [
+        "update_buyback_config"
+      ]
+    }
+  ],
+  "unresolved_program_ids": [],
+  "unattributed_case_rows": {
+    "main_invoked_without_IDL_family": [
+      "full/administration/cases/84",
+      "full/administration/cases/85",
+      "full/administration/cases/86",
+      "full/administration/cases/87",
+      "full/administration/cases/88",
+      "full/administration/cases/89",
+      "full/administration/cases/90",
+      "full/administration/cases/91",
+      "full/administration/cases/92",
+      "full/extension/cases/153",
+      "full/extension/cases/154",
+      "full/extension/cases/155",
+      "full/extension/cases/156",
+      "full/extension/cases/157",
+      "full/extension/cases/158",
+      "full/extension/cases/159",
+      "full/extension/cases/160",
+      "full/extension/cases/202",
+      "full/extension/cases/203",
+      "full/extension/cases/204",
+      "full/extension/cases/205",
+      "full/extension/cases/206",
+      "full/extension/cases/207",
+      "full/extension/cases/208",
+      "full/extension/cases/209",
+      "full/extension/cases/251",
+      "full/extension/cases/252",
+      "full/extension/cases/253",
+      "full/extension/cases/254",
+      "full/extension/cases/255",
+      "full/extension/cases/256",
+      "full/extension/cases/257",
+      "full/extension/cases/258",
+      "full/extension/cases/300",
+      "full/extension/cases/301",
+      "full/extension/cases/302",
+      "full/extension/cases/303",
+      "full/extension/cases/304",
+      "full/extension/cases/305",
+      "full/extension/cases/306",
+      "full/extension/cases/307",
+      "full/volume_sync/cases/283",
+      "full/volume_sync/cases/284",
+      "full/volume_sync/cases/285",
+      "full/volume_sync/cases/286",
+      "full/volume_sync/cases/287",
+      "full/volume_sync/cases/288",
+      "full/volume_sync/cases/289",
+      "full/volume_sync/cases/290",
+      "full/set_params/cases/100",
+      "full/set_params/cases/101",
+      "full/idl_authority/cases/67",
+      "full/idl_authority/cases/68",
+      "full/legacy_create/cases/80",
+      "full/legacy_create/cases/81",
+      "full/global_init/cases/11",
+      "full/global_init/cases/12",
+      "full/global_init/cases/13",
+      "full/incentive_schedule/cases/252",
+      "full/incentive_schedule/cases/253",
+      "additional/scheduler_577/cases/252",
+      "additional/scheduler_577/cases/253",
+      "additional/admin_context_299/cases/252",
+      "additional/admin_context_299/cases/253"
+    ],
+    "main_not_invoked": [
+      "full/multi_hop_curve_partial/cases/0",
+      "full/multi_hop_curve_partial/cases/12",
+      "full/multi_hop_curve_partial/cases/14",
+      "full/multi_hop_curve_partial/cases/28",
+      "full/multi_hop_curve_partial/cases/40",
+      "full/multi_hop_curve_partial/cases/42",
+      "full/tokenkeg_two_curve/cases/9",
+      "full/tokenkeg_two_curve/cases/19",
+      "additional/old_fences_46/cases/0",
+      "additional/old_fences_46/cases/1",
+      "additional/old_fences_46/cases/2",
+      "additional/old_fences_46/cases/4",
+      "additional/old_fences_46/cases/5",
+      "additional/old_fences_46/cases/6"
+    ]
+  }
+}

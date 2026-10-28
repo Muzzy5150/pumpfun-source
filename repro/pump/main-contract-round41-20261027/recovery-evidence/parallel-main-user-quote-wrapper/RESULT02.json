@@ -1,0 +1,152 @@
+{
+  "status": "validated isolated delivery for parent composition",
+  "baseline": "frozen Round30 source, identity linker order for full set comparison",
+  "source": "source02",
+  "candidate_sha256": "0c6861b5b3a55d8988b35fdef87611e3474798bb82384a35ea1ef4a54c5c254e",
+  "unstripped_sha256": "84768ae8db2a28c59c2d823f94d4647e707952fc451234e3262a39479800ea5f",
+  "build_receipt_sha256": "9241d99cf1735a5c96212f484cb6f1257d80f6ada07702ff9b7294e6a6d495f5",
+  "source_hashes": {
+    "src/buy_v2.rs": "3353a0c3ac94ab40db5ca8111ce1105aec90bf1b4006b0463dcd806a08d63ea4",
+    "src/trade_v3.rs": "78d369ada6979e3a5b761890501db2dbe9c28b905735b88a316f0dbe39c78d71",
+    "src/user_quote_payments.rs": "f42922223ecf92c38c56c9915611d60402fd8c695dda8c9f38a1d07076f4975a"
+  },
+  "patch_sha256": "c0d27180bb96c8970e096ac99d4cbb6210d3a81c49d65634f36d20fd888119e5",
+  "inventory": {
+    "total": 1035,
+    "raw": 124,
+    "normalized": 730,
+    "unmatched": 305
+  },
+  "gains_vs_R30_identity": {
+    "normalized_matches": {
+      "gains": [
+        "0x8df98",
+        "0x8e450",
+        "0x97930",
+        "0x97bf0"
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "reconstructed_bodies": [
+    {
+      "original": "0x97930",
+      "bytes": 704,
+      "candidate": "0xb2ae0"
+    },
+    {
+      "original": "0x8df98",
+      "bytes": 1208,
+      "candidate": "0xb2628"
+    }
+  ],
+  "duplicate_normalized_windows": [
+    "0x97bf0 matches0x97930 except masked operands; its distinct native callee0x8d108 is not reconstructed here.",
+    "0x8e450 matches0x8df98 except masked operands; its original migration callers are not refactored here."
+  ],
+  "callees": [
+    {
+      "source_original": "0x97930",
+      "source_candidate": "0xb2ae0",
+      "offset": 88,
+      "original_target": "0x1ac500",
+      "candidate_target": "0x195930",
+      "bytes": 40,
+      "matching_symbols": [
+        "_ZN4core6option13unwrap_failed17h2b22848a3f32bcb7E"
+      ]
+    },
+    {
+      "source_original": "0x97930",
+      "source_candidate": "0xb2ae0",
+      "offset": 136,
+      "original_target": "0x8df98",
+      "candidate_target": "0xb2628",
+      "bytes": 1208,
+      "matching_symbols": [
+        "_ZN14pump_recovered5trade19user_quote_payments15transfer_native17ha10b7db6aa1f3a0cE"
+      ]
+    },
+    {
+      "source_original": "0x97930",
+      "source_candidate": "0xb2ae0",
+      "offset": 632,
+      "original_target": "0x91ef0",
+      "candidate_target": "0x5eae8",
+      "bytes": 2352,
+      "matching_symbols": [
+        "_ZN14pump_recovered7sell_v221quote_token_transfers21transfer_quote_tokens17hc044e5bd10fbf9c3E"
+      ]
+    },
+    {
+      "source_original": "0x97930",
+      "source_candidate": "0xb2ae0",
+      "offset": 696,
+      "original_target": "0x1ac500",
+      "candidate_target": "0x195930",
+      "bytes": 40,
+      "matching_symbols": [
+        "_ZN4core6option13unwrap_failed17h2b22848a3f32bcb7E"
+      ]
+    },
+    {
+      "source_original": "0x8df98",
+      "source_candidate": "0xb2628",
+      "offset": 1152,
+      "original_target": "0x19e090",
+      "candidate_target": "0x1864d0",
+      "bytes": 800,
+      "matching_symbols": [
+        "_ZN11anchor_lang14system_program8transfer17h6e716b5d4cc7ca2eE"
+      ]
+    }
+  ],
+  "runtime": {
+    "counts": {
+      "buy-v2": 216,
+      "v3-extensions": 126,
+      "v3-continuation": 42,
+      "v3-configured": 372,
+      "v3-native-buyback": 18,
+      "v3-token-buyback": 12,
+      "v3-crossing": 16,
+      "v3-matrix": 12,
+      "v3-post-fees": 80,
+      "price-divisible": 12,
+      "price-boundaries": 12,
+      "v3-order": 18,
+      "buyback-order16": 16,
+      "buyback-post8": 8,
+      "buyback54": 54,
+      "buyback-prefix7": 7,
+      "buyback-protocol4": 4,
+      "cost-order8": 8,
+      "quote-order22": 22
+    },
+    "total": 1055,
+    "all_signatures_verified": true,
+    "transaction_bytes_identical": true,
+    "fixture_mismatches": [],
+    "diagnostic_mismatches": [],
+    "exact_invocation_sequences": true
+  },
+  "limits": [
+    "Full ELF equality remains false.",
+    "Two Location payloads retain different source path/line/column; no coordinate padding was used.",
+    "Only V2/V3 pool payment callsites were refactored; MultiHop direct native caller, migration callers, and distinct fee/recipient wrappers remain separate.",
+    "R30 identity-link raw set is124. Optional ordered-link R30 result137 is a separate layout baseline and not directly compared here.",
+    "Parent composite still requires full regression/build qualification."
+  ],
+  "control01": {
+    "status": "passing but native ABI not reconstructed; superseded by source02",
+    "runtime_cases": 1055,
+    "wrapper_bytes": 704,
+    "wrapper_normalized_equal": true,
+    "native_bytes": 1192,
+    "native_normalized_equal": false
+  }
+}

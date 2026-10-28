@@ -1,0 +1,11 @@
+--- a/programs/pump/src/creator/distribute_fee_to_holders.rs
++++ b/programs/pump/src/creator/distribute_fee_to_holders.rs
+@@ -28,7 +28,7 @@
+  let mut total=0u64;
+  for (amount,pair) in amounts.iter().zip(ctx.remaining_accounts.chunks_exact(2)){
+   if native {
+-   if *amount!=0 {invoke_signed(&system_instruction::transfer(&a.holder_rewards.key(),pair[0].key,*amount),&[a.holder_rewards.to_account_info(),pair[0].clone(),a.system_program.to_account_info()],signer)?;}
++   crate::migrate::transfer_native(a.system_program.as_ref(),&a.holder_rewards,&pair[0],*amount,signer)?;
+   }else{
+    let source=a.holder_rewards_token_account.as_ref().ok_or_else(||error!(PumpError::HolderRewardTokenAccountMissing))?;
+    require_keys_eq!(*pair[1].key,anchor_spl::associated_token::get_associated_token_address_with_program_id(pair[0].key,&a.quote_mint.key(),&a.quote_token_program.key()),PumpError::HolderRewardRecipientsMismatch);

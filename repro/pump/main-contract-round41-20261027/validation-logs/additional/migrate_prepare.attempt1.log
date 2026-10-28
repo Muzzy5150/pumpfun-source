@@ -1,0 +1,13 @@
+{"case": "healthy", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "fee_backing_missing", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "partial_rent_no_fees", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "reserved_no_rent", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "below_reserved", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "below_quote_no_fees", "original_error": "TransactionErrorInsufficientFundsForRent { account_index: 6 }", "candidate_error": "TransactionErrorInsufficientFundsForRent { account_index: 6 }", "diff": []}
+{"case": "incomplete_underfunded", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6006))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6006))))", "diff": []}
+{"case": "incomplete_fee_overflow", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "diff": []}
+{"case": "already_migrated_low_rent", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "already_migrated_fees_low_rent", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "fee_overflow", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "diff": []}
+{"case": "small_creator_fee_missing", "original_error": null, "candidate_error": null, "diff": []}
+{"case_count": 12, "mismatches": []}

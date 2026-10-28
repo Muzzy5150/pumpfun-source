@@ -1,0 +1,25 @@
+{
+  "scope": "Four prepared scheduler inputs deduplicated against full R37; only unique rows retained. Post-fix CLI is strict and unrun. Synthetic stored reversed range; no historical reachability claim.",
+  "counts": {
+    "full": 0,
+    "additional": 4
+  },
+  "definition_sha256": {
+    "work/parallel-main-schedule-guard-corpus/probe_incremental.py": "898938f19d6059b96d5604945edc72bf603d6c65e6b6b9d05650c92dd6f9c974",
+    "work/parallel-main-schedule-guard-corpus/selected-cases.json": "440137d7ad3eefd0ac4c4ecf723dd595a07a51a00a2a8771047fb917415cbb02",
+    "work/parallel-main-schedule-guard-corpus/DEDUP06.json": "e5c45181f3569819fc05b353ed0dbcd0e275fb8d384ec3738414aa32e18fa70c",
+    "scripts/pump_incentives_admin_differential.py": "b3044b0d999f29eaffa1a4707047a46560d3ee8d0a3ef459d0caeac6b48062c0",
+    "scripts/pump_diagnostic_audit.py": "0343c70e4f9c7860ad392f0a8bd10d90ac94fe17bb2ba5bfd49a45683edbe343",
+    "evidence/upstream/pump.json": "7616681ea557975f9f623ac211080f22a93060781eaf4765b0a488d980997207",
+    "research/imported-lab/analysis/pump_fun/config-snapshot.json": "17b886a6b4aa7fdc89f2fca9a1b67b318d33998794da59fe4df1fe89ca70bd27"
+  },
+  "suites": [
+    {
+      "group": "additional",
+      "name": "scheduler_guard_order",
+      "script": "work/parallel-main-schedule-guard-corpus/probe_incremental.py",
+      "cases": 4,
+      "args": []
+    }
+  ]
+}

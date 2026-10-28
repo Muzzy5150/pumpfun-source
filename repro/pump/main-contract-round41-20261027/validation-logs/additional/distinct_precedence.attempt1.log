@@ -1,0 +1,4 @@
+base-state-3-before-quote-state-0 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) []
+base-type-3-before-quote-state-255 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) []
+base-length-164-before-quote-length-0 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) []
+cases 3 mismatches 0

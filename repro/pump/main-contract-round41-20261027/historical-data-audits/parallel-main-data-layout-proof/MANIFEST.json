@@ -1,0 +1,34 @@
+{
+  "scope": "Read-only bounded immutable-data proof",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "candidate_sha256": "e25240857e10baffef8e68f33f70bcef3e9359551665ab8f56db2a33150096ea",
+  "summary": {
+    "frontier_pairs": 1002,
+    "data_rel_ro_pairs": 365,
+    "records": 125,
+    "kinds": {
+      "Location_compatible": 100,
+      "Debug_vtable": 13,
+      "Write_vtable": 1,
+      "format_pieces_slice": 11
+    },
+    "status": {
+      "typed_call_role_supported": 107,
+      "shape_only_unproved": 18
+    },
+    "typed_location_field_agreement": 46,
+    "typed_vtable_field_correspondence": 14,
+    "typed_format_piece_field_agreement": 11,
+    "unclassified_data_rel_ro_pairs": 240,
+    "all_allocation_extents_unproved": true
+  },
+  "files": {
+    "audit.py": "5a7c2d2a7c2b58aa0f7c9d5f4eb4d0fdcd71310162533356a9cfb8328daf2ffa",
+    "AUDIT.json": "874fa999055e4dcd1110e9444e5f8b3a493a2ed8135d316cd336b6fce4215f1f",
+    "SUMMARY.json": "528214299ca3ddcf1c6e8b1ccf24ee12e445a2acc15ca6ae1772336e2d774a9f",
+    "REPRODUCTION-CHECK.json": "27f37666542943e8749a6cb50099cf643e57efb31695e5248a8b4e3a194cdf0a",
+    "VALUES.tsv": "169a56feffc63634e914a3383c3710f7e0b5a8063ed64ea372ddcee04cb4af63",
+    "README.md": "9062c9306a9fbd567aef8da69f1e377150f357f01813e9db9a5f0c64961646cb"
+  },
+  "program_source_or_elf_edits": false
+}

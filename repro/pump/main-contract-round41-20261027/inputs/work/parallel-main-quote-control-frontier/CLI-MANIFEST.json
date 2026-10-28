@@ -1,0 +1,58 @@
+{
+  "scope": "QuoteControl capacity/competing-admission cases; no source promotion.",
+  "script": "work/parallel-main-quote-control-frontier/probe_boundaries.py",
+  "script_sha256": "076957f0d3f28593eb35051ff6a7192637c95756fdbda9cd6dd220f7ce55cadb",
+  "arguments": [
+    "--candidate",
+    "CANDIDATE",
+    "--output",
+    "OUTPUT.json.gz"
+  ],
+  "extra_inputs": {
+    "scripts/pump_quote_control_fresh_differential.py": "5d6139ee50f1d8ba87d14344a281b3031fea42a9362f06d3b3ba124971049333"
+  },
+  "case_count": 36,
+  "deduplication": {
+    "compared_against": "work/parallel-main-integration/round32-unified/suites/full/quote_control.attempt1.json.gz",
+    "unique_new_input_count": 36,
+    "input_identity": "sha256(transaction_base64 + canonical before_accounts JSON)",
+    "input_hashes": {
+      "add/255/fresh/authority": "af878dff5c3487a9befccd2ea8066db7a0928d69a79c8dc23bd2904f4c373158",
+      "add/255/fresh/admin": "ce82ef66759a16d3c74e20360be2f0354e94b83ddbd72e3b674ecbf8567b70e4",
+      "add/255/duplicate/authority": "7a26184b469fc60ad53e17d9c219deaf2dbea5e1897254566d0ad2c0e85f8ac2",
+      "add/255/duplicate/admin": "3c6b20a1b0afadb269fe287e0c9fa1923327b05b7797386ca9b3c2818ee82f54",
+      "add/255/zero/authority": "743f803633a1de2b0d90325a330df9000c9960661dcd18e2421e2b408ae5289c",
+      "add/255/zero/admin": "ebb1cc36cc09f8024383cfda21d339addf6ec7ec2578c5d0035712a6ae710099",
+      "add/255/native/authority": "52d77177952f7f58539db799d16fbd31f059bf14daa7b7d32ec5855ad1e60ca4",
+      "add/255/native/admin": "1ad9520ae1cd2c2257cc0de644f7559ff1c8be910d464a160053da460a8b88eb",
+      "add/255/native2022/authority": "2170dda4637e4ad4e9c3744761d9bc3aa6870dee1cc2ac3cb90224dfbac68457",
+      "add/255/native2022/admin": "6515a8f7c077d7908e91e18f6f4a6e173a3661b25cc12549a85e88d62912514e",
+      "add/255/pump/authority": "c2c59dcee0ae921cf8cd3385fc6d906e9d061f18d427902f8bd391717128f4bf",
+      "add/255/pump/admin": "d7bc1ef8a23d0e743145d2023c42e4f36f932165a3b31d7810f82185244da969",
+      "add/256/fresh/authority": "a01f7393f6154d01145d08d52d1ee252eca88b4400946578d94788655bff5434",
+      "add/256/fresh/admin": "437d98c84c8480cada9635f4865c660442ebe4ef59039991e7fe02e827a895e2",
+      "add/256/duplicate/authority": "61ca4bfd2164eae8e87e78fb582042c58d581bc546649fe865ca790bffee1338",
+      "add/256/duplicate/admin": "dc2b9f5fa3a5b5f5248b9d91aa16a4d80184a72664346c0f006520b3d6cb78ba",
+      "add/256/zero/authority": "70163dd258459af815d038bb7d452e927c9e806bf3f3ff03d9a2068e817f1498",
+      "add/256/zero/admin": "82d3cdb629a989191506b91ae693718f33aec21c3eeab249e11c3ccf83c6f875",
+      "add/256/native/authority": "7b6b194c3ed5bb22a4ce5fb07ef0c79e9dc66d7f8844260f4dc87ab949ce8204",
+      "add/256/native/admin": "951956d03a548c266f92037184489c914e32187acccf90fd6cc0c2df9dff8775",
+      "add/256/native2022/authority": "7b66c4a78f0479b35cc97c9b6343bca498f9e1eb206c982db71bf4be3d7db200",
+      "add/256/native2022/admin": "d37f39ee109b3f0793b4cd9d358ca2e31cbcb67036a3561906e826b1d415f7ed",
+      "add/256/pump/authority": "f0b48b5c5c54352b4955d383284ef59db9dc90e19f8f6c8bf97f25659a0a8d9f",
+      "add/256/pump/admin": "da58e722c5d838011f7493de3db20a126a6b29bdcbb2fef16794d8aeb5acd117",
+      "add/257/fresh/authority": "cbd48c343b5e43bb4b30fd51527761bcc9693dc66ecf3a0c60b64b4eb4a41d9b",
+      "add/257/fresh/admin": "6791174f0fdece5a91b09d0af70f703ffd9358692f8dcb3976314ea35d151591",
+      "add/257/duplicate/authority": "b2c0d7ee572f080a3138ad06f76393231088d9ea6ff57388537d12dc8272788b",
+      "add/257/duplicate/admin": "cbb458722e6dd70814547afe15818a982ac7a9c071714637c90630c63637f339",
+      "add/257/zero/authority": "a0f20a5daf6adfb53f81a60f4e0faeeae6dc3e740df863498f1a599de2774898",
+      "add/257/zero/admin": "2b60821de418c4603fcceec8ec131fe5fa9fdecfbfa5f3105fb23ceaa834edac",
+      "add/257/native/authority": "4db35ca030f2367bab42b0bfdd9f0f0237e7b0c6305fed93c4e63b7ed58d7bf6",
+      "add/257/native/admin": "ee488494c0e4a05ed9da55980b7ce17e18e8e012c9cf36b90f0fd2e5d6bd9030",
+      "add/257/native2022/authority": "68c41be84075cbbed2baf8a820418a4fb2be550cdb874a512697a004e91950ca",
+      "add/257/native2022/admin": "95cd305928c65f9218786126c983cb28bca37831d38e7ae749d6a45f6d4635a7",
+      "add/257/pump/authority": "604d10cd7b419f6c6e4711270dad8d56ef1cc03d402712cef457a8950532908a",
+      "add/257/pump/admin": "25f320562069dce7a8ba106b51f2847a37b61ea9baaf6fa8ee0ed20e0d7138f7"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "files": {
+    "review02.py": "41d6e969772d33fdc8d4a04d545971206f16a746ce83e2de0b5f7561203757a0",
+    "REVIEW02.json": "e4a6816065eba300d7109327614ce14c499e6f40324bae3617ffb405385b6200"
+  },
+  "external_inputs": {
+    "work/parallel-main-round38-independent-review/REVIEW01.json": "fae75bb51ccf548502553d4b1d4d1def8c10fb128c9d83b37c25ee4daf43db47",
+    "work/parallel-main-integration/round38-final-source-summary.json": "325d675ca659f3e569fc956e0c0713ec52586cefc72351ca2f368523b272be09",
+    "work/parallel-main-schedule-guard-corpus/CLI-MANIFEST.json": "36a05e0c66624b57b129951950d7533ea86b3b503d0208151a49c0c87698453e",
+    "work/parallel-main-holder-token-combined/combined.patch": "d13e014710e4d2ec4a795957fefd58420d590a9458d4c42a8f2077b46f1fe0b3",
+    "work/parallel-main-migration-root-error/root-error.patch": "bcfb992d53fb2d12e1b9b80329a60030b87ec8ce4fdc0a2a5d93cc30fdbf6459"
+  }
+}

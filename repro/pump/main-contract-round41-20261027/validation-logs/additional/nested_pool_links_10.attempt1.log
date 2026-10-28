@@ -1,0 +1,11 @@
+valid None None []
+base-zero TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) []
+base-ones TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) []
+base-user TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) []
+quote-zero TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) []
+quote-ones TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) []
+quote-user TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) []
+both-zero TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) []
+base-and-state TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) []
+quote-and-state TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6103)))) []
+cases 10 mismatches 0

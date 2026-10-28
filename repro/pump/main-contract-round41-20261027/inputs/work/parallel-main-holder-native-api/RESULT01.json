@@ -1,0 +1,60 @@
+{
+  "status": "Validated holder-distribution native helper recovery",
+  "baseline": "work/parallel-main-holder-ata-api/source01",
+  "files": {
+    "src/creator/distribute_fee_to_holders.rs": "e8c23fc8204d9674d217858b114da8d02c7e57efbb9b73097a04b595790583f6"
+  },
+  "patch_sha256": "9874a4a91d097b6968c78d48f1804a6100c780c2b67e080d27856ffa55e6176c",
+  "candidate_sha256": "d4a23ebfdc303ec1ba86048e191df6ccb493270699e9f4c88330f6c47cff9899",
+  "unstripped_sha256": "1585055b3d358c579d9e7ab5486c94ac5a730724697c0b4afaaa82f5d76e6298",
+  "build_receipt_sha256": "29465d63fb484ef8bb2d8d3b484bae433e1d076d9b27cbe5741d308d85809ebd",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 739,
+    "unmatched": 296
+  },
+  "complete_match_delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "handler": {
+    "original_start": "0x34558",
+    "original_bytes": 14512,
+    "baseline_bytes": 15936,
+    "candidate_start": "0x4dfb8",
+    "candidate_bytes": 13848,
+    "normalized_equal": false
+  },
+  "scope": "Only replace the manual native transfer with the original-backed existing native helper; call it unconditionally and preserve its zero guard. The sealed ATA change and all other checks/transfers/events/close order/types remain unchanged.",
+  "runtime": {
+    "case_counts": {
+      "distribution": 298,
+      "minimum": 181,
+      "regressions": 62,
+      "rent": 6,
+      "pending": 72,
+      "quote_gate": 18,
+      "holder": 649
+    },
+    "cases": 1286,
+    "mismatches": 0,
+    "strict_diagnostics": 0,
+    "invocation_mismatches": 0,
+    "distinct_transactions": 287,
+    "new_coverage": 0
+  },
+  "static_evidence_sha256": "fe152443ff36865755780d94771ef2dc5cf0d58bbf6fd6dcf28e15a80547ffcf",
+  "original_native_abi_proof_sha256": "2f3bba44ba816ed987d13f16151eeffa949e523a89be34ff0c8615391e6cf411",
+  "limits": [
+    "No full handler/ELF identity claim unless the handler record explicitly reports equality.",
+    "No final text/data order recipe qualification.",
+    "Only existing frozen test fixtures executed; no new owner-mutation cases introduced."
+  ]
+}

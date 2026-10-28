@@ -1,0 +1,1545 @@
+{
+  "scope": "Exact mapping of stronger log oracle to the308 existing extension inputs",
+  "cases": [
+    {
+      "index": 0,
+      "name": "BondingCurve-0",
+      "input_hash": "f77fbf7b5cb9a91f987dca60d5837a1f58fd4c790c9965dabf1a3c30b669ef4e"
+    },
+    {
+      "index": 1,
+      "name": "BondingCurve-1",
+      "input_hash": "025c48c7f7e8cf117bc1b84ac2c7886ec8702cfecc93fd6fe2379357aae8eb4a"
+    },
+    {
+      "index": 2,
+      "name": "BondingCurve-7",
+      "input_hash": "412810846989468123f3ebec98447c3e3b479e0788e4155da06838cd0a534686"
+    },
+    {
+      "index": 3,
+      "name": "BondingCurve-8",
+      "input_hash": "3535cabf5ab3b99606e50377ea69358fbea68048e70431265687b29ab7aa8ba0"
+    },
+    {
+      "index": 4,
+      "name": "BondingCurve-49",
+      "input_hash": "51d55da8e79ca222a3538db1393a252ae838a1a158efb224f3fd54c60f58896e"
+    },
+    {
+      "index": 5,
+      "name": "BondingCurve-81",
+      "input_hash": "70fc3e9f30c48ea12c72aaa05c12c3a10e3a9e4d24ef6b52e9cd7df05f547e42"
+    },
+    {
+      "index": 6,
+      "name": "BondingCurve-82",
+      "input_hash": "29cb9c2cc60e60c3c19f4d275999b8e9de916215380a1217ce445fcff67c5039"
+    },
+    {
+      "index": 7,
+      "name": "BondingCurve-137",
+      "input_hash": "81e48545edac81f7c7df842655c75eb6247bedb570a3dfd57af0d1a0020d0502"
+    },
+    {
+      "index": 8,
+      "name": "BondingCurve-166",
+      "input_hash": "cf8f5bdb67b392996e2b4a788819cc988514e6778b1f085d1110fadde2f5531f"
+    },
+    {
+      "index": 9,
+      "name": "BondingCurve-200",
+      "input_hash": "e7f2d3264fed639151a91b7a142eb0a5a728ad054acb9cb30db3743bad78b66d"
+    },
+    {
+      "index": 10,
+      "name": "BondingCurve-256",
+      "input_hash": "c0069bc47f2c30deaf36a262d6b27b473af5445d27d52d53f89b9321e89be89b"
+    },
+    {
+      "index": 11,
+      "name": "BondingCurve-600",
+      "input_hash": "1dcec17944a34eff40188310e72e912ae7f267cec552307a5a545830fa3b1906"
+    },
+    {
+      "index": 12,
+      "name": "BondingCurve-1000",
+      "input_hash": "ce9f3bd1595c74268e7bf483acf85479eb9a235a81217c087b228e5b4b88f682"
+    },
+    {
+      "index": 13,
+      "name": "BondingCurve-2000",
+      "input_hash": "bff0161d7b16a9d501aa56c0aceeda405502854c31e1d2de4dfbf45bbe0d3b66"
+    },
+    {
+      "index": 14,
+      "name": "FeeConfig-0",
+      "input_hash": "f77fbf7b5cb9a91f987dca60d5837a1f58fd4c790c9965dabf1a3c30b669ef4e"
+    },
+    {
+      "index": 15,
+      "name": "FeeConfig-1",
+      "input_hash": "4d41d3964d6a6541de0de2a7f07458bfa7aa556cfb66a8937bf4591a560883ec"
+    },
+    {
+      "index": 16,
+      "name": "FeeConfig-7",
+      "input_hash": "6ae77436787b05cb2ed7504101d4458a6dff4c5028887b824d44a0a02cefc69b"
+    },
+    {
+      "index": 17,
+      "name": "FeeConfig-8",
+      "input_hash": "b3683509e2ff9ba68041a6651d5789bb586bc320e65eb2fd41a940738fe67474"
+    },
+    {
+      "index": 18,
+      "name": "FeeConfig-49",
+      "input_hash": "4c0a0e86375d65b5ab9dac3a6e98ca455a10c85c2bc1d2d7ba87c4610941c387"
+    },
+    {
+      "index": 19,
+      "name": "FeeConfig-81",
+      "input_hash": "ffb2ac48c045f0a7f1d43439c2eb5cf4de947025f33e432bf9ed841d774cf22f"
+    },
+    {
+      "index": 20,
+      "name": "FeeConfig-82",
+      "input_hash": "f096230801c3ca0af4f769a8fb7c43476ff90f94ff5c7db0e101f7d45c809b33"
+    },
+    {
+      "index": 21,
+      "name": "FeeConfig-137",
+      "input_hash": "4587f89d2433629c8914a128c2dc2d3f3488c03d4ef3b23bdf8e547a7759b654"
+    },
+    {
+      "index": 22,
+      "name": "FeeConfig-166",
+      "input_hash": "6fbf36c72d98212216b24df033ca3016609c39d4bf5bff1a89691f4ad1e94005"
+    },
+    {
+      "index": 23,
+      "name": "FeeConfig-200",
+      "input_hash": "9020ac86c7a4fe56d9a0aeae18930dc335eb71606cff7a1e19f19a0ccdb79780"
+    },
+    {
+      "index": 24,
+      "name": "FeeConfig-256",
+      "input_hash": "dffe9f37bc7f095b74b9cbd31defa7f9572ab2921521248eae9df931993ee97b"
+    },
+    {
+      "index": 25,
+      "name": "FeeConfig-600",
+      "input_hash": "8fa1c07774a321f9681ff4bfad9f83f47d98af81617c79661473ff1f9d86cf90"
+    },
+    {
+      "index": 26,
+      "name": "FeeConfig-1000",
+      "input_hash": "c9f89ae50c80105bb7f59cd4726890405c0c475f5d0f93941974aa82dbb595c7"
+    },
+    {
+      "index": 27,
+      "name": "FeeConfig-2000",
+      "input_hash": "489041f147a8998cfecd338bd749e2b93a6db833f2c72a487b6f9eb48432918a"
+    },
+    {
+      "index": 28,
+      "name": "Global-0",
+      "input_hash": "f77fbf7b5cb9a91f987dca60d5837a1f58fd4c790c9965dabf1a3c30b669ef4e"
+    },
+    {
+      "index": 29,
+      "name": "Global-1",
+      "input_hash": "60768f084a592d081014bade68acadc85e13ff8a1b15ce3b78ae196717716827"
+    },
+    {
+      "index": 30,
+      "name": "Global-7",
+      "input_hash": "8636bbf2cd08d8511f2326f30790f141a62247b191bf7f8c08c7c2b7c0e32ef3"
+    },
+    {
+      "index": 31,
+      "name": "Global-8",
+      "input_hash": "c9e3d1557dcff5915f7a841bbf064ff10c1a9a800e01939e0193c61637269d26"
+    },
+    {
+      "index": 32,
+      "name": "Global-49",
+      "input_hash": "e40ae088719e19458053f2a7c6fba4271d3507007391e205cfad03b9a07109a9"
+    },
+    {
+      "index": 33,
+      "name": "Global-81",
+      "input_hash": "a3d06674aaadef4014c7a2df32eb0476cba8edaf8ac6096197a2b77e00a3b3e4"
+    },
+    {
+      "index": 34,
+      "name": "Global-82",
+      "input_hash": "4e19f6aaaf70d2591d1b5135baf53c833ec4c7a2fb8e6b5d243e6f28f139846d"
+    },
+    {
+      "index": 35,
+      "name": "Global-137",
+      "input_hash": "b8c3e84c4ff895f23bb80ce1e6aca216cf64f2f9289077c12a861f825797e2b4"
+    },
+    {
+      "index": 36,
+      "name": "Global-166",
+      "input_hash": "516b00786d239318668ef67051641aa38a88e6c27b06801cd7af4242be20bb5f"
+    },
+    {
+      "index": 37,
+      "name": "Global-200",
+      "input_hash": "d6037a85e165ae20523cc9e269cc84faf6529317c21c09390d5ea7499e033444"
+    },
+    {
+      "index": 38,
+      "name": "Global-256",
+      "input_hash": "c45539a97cefde26515268d245180d0f596d58b563a72174b1a8e04d72fdd5fb"
+    },
+    {
+      "index": 39,
+      "name": "Global-600",
+      "input_hash": "62a01675e4634b5bf726cbc0bc261f7abb12a8d051300681da0201cb511f6b01"
+    },
+    {
+      "index": 40,
+      "name": "Global-1000",
+      "input_hash": "df8ba47b2f8a6f6966c19b67e44c53a85e781da8f5d0dc2e392356caa1d9ef3a"
+    },
+    {
+      "index": 41,
+      "name": "Global-2000",
+      "input_hash": "bd3b36bba4d1356891d196a29791e63431b09735af7a8e5b7eab186b694e990f"
+    },
+    {
+      "index": 42,
+      "name": "GlobalVolumeAccumulator-0",
+      "input_hash": "f77fbf7b5cb9a91f987dca60d5837a1f58fd4c790c9965dabf1a3c30b669ef4e"
+    },
+    {
+      "index": 43,
+      "name": "GlobalVolumeAccumulator-1",
+      "input_hash": "9a09b7e7ed0cbb80a71589e840d6b2f1fffa6b7860b33c712f1a9290899fbdd1"
+    },
+    {
+      "index": 44,
+      "name": "GlobalVolumeAccumulator-7",
+      "input_hash": "f09ebb7519ec32f75370ffa946e81a5b9dea5b5d939d30a7d069586981b43184"
+    },
+    {
+      "index": 45,
+      "name": "GlobalVolumeAccumulator-8",
+      "input_hash": "0b9f2469624ae703540b8a5962329925cbd9b74ba7ae22749af1e0055a7f8424"
+    },
+    {
+      "index": 46,
+      "name": "GlobalVolumeAccumulator-49",
+      "input_hash": "3f60161d5a4908616d18bc761a0350ad2537f34a4a8a3c710fcc4f2d069a6f83"
+    },
+    {
+      "index": 47,
+      "name": "GlobalVolumeAccumulator-81",
+      "input_hash": "1f65efe551668aba5ad4c0abc892fe8f42b270d0dab4db1c3d99d52fdb4d0395"
+    },
+    {
+      "index": 48,
+      "name": "GlobalVolumeAccumulator-82",
+      "input_hash": "a70cb147f3686d0970819e4ec259c301b90fdf2eb6bddc3b3d13f45caa57eba5"
+    },
+    {
+      "index": 49,
+      "name": "GlobalVolumeAccumulator-137",
+      "input_hash": "37e06eb7211023ea6daf3232d008aca80aaca003483220b91057b87117c78361"
+    },
+    {
+      "index": 50,
+      "name": "GlobalVolumeAccumulator-166",
+      "input_hash": "221549fa823e66c26b6b814c9a0a309270b575c697efff255b1c06d1c29cad5c"
+    },
+    {
+      "index": 51,
+      "name": "GlobalVolumeAccumulator-200",
+      "input_hash": "0c22a751262adbc570d85546a9704c0f559f404b8008916e9105d670c402450d"
+    },
+    {
+      "index": 52,
+      "name": "GlobalVolumeAccumulator-256",
+      "input_hash": "ed2f5c16d695130ec83c83705ff484594af42eecc3dd931829ae1430800efaef"
+    },
+    {
+      "index": 53,
+      "name": "GlobalVolumeAccumulator-600",
+      "input_hash": "7206016fa9ee575b0609988f17b46a3ea3142bd077a8232caef3f7684d99a54c"
+    },
+    {
+      "index": 54,
+      "name": "GlobalVolumeAccumulator-1000",
+      "input_hash": "486b91252ccd2e335ded7af02e1812a8b2d64f1788e8d604e475ac1286c92b15"
+    },
+    {
+      "index": 55,
+      "name": "GlobalVolumeAccumulator-2000",
+      "input_hash": "5eee7d976feefbe686ce3879116b76ac60adaa271d5fec32f5a8f4dd1d8410ba"
+    },
+    {
+      "index": 56,
+      "name": "QuoteControl-0",
+      "input_hash": "f77fbf7b5cb9a91f987dca60d5837a1f58fd4c790c9965dabf1a3c30b669ef4e"
+    },
+    {
+      "index": 57,
+      "name": "QuoteControl-1",
+      "input_hash": "8ff4fab8d3407ca78df8ef11b3f1df2374650fdb0a0ccb994d781b96ba7d016c"
+    },
+    {
+      "index": 58,
+      "name": "QuoteControl-7",
+      "input_hash": "5c173c847406724981f5e272cb878506d605cda88d55f87a5202174637e8ff40"
+    },
+    {
+      "index": 59,
+      "name": "QuoteControl-8",
+      "input_hash": "9e3ee1abc1d0cf87f02549e601d53b1371bce20266e6cd478c58ba69af9e9530"
+    },
+    {
+      "index": 60,
+      "name": "QuoteControl-49",
+      "input_hash": "6376225133699a60a840297092b768de775d7a003b168e0bcb3b731003380e81"
+    },
+    {
+      "index": 61,
+      "name": "QuoteControl-81",
+      "input_hash": "546376caf6129043d316b2d4430d01ee4dfdf413ffee449c69880b02f8ea8aee"
+    },
+    {
+      "index": 62,
+      "name": "QuoteControl-82",
+      "input_hash": "11629420ea7a99fe31034d5dcefede2c7e03c8aff282ea90fdfb488f971d4766"
+    },
+    {
+      "index": 63,
+      "name": "QuoteControl-137",
+      "input_hash": "24b77cce7dc9e0147b13a4449ce4480fd051bda1390b25956a4d3854b84c59eb"
+    },
+    {
+      "index": 64,
+      "name": "QuoteControl-166",
+      "input_hash": "0629138b7e5753a85c927652226532c495533a1b6a81a3e5e125879de560a362"
+    },
+    {
+      "index": 65,
+      "name": "QuoteControl-200",
+      "input_hash": "e20c6dc3e04d5b31e4983c4aeff6b3c32e5868f246b2089d85e2e89c75a98872"
+    },
+    {
+      "index": 66,
+      "name": "QuoteControl-256",
+      "input_hash": "d7adf8edcb949aca09bae1467e544babaa204f433753c43c80441b8501ef12db"
+    },
+    {
+      "index": 67,
+      "name": "QuoteControl-600",
+      "input_hash": "3eeb92b987b1fe6b24e41916ee57688fb262c42f123e72b2d43bcd3bc04d9f86"
+    },
+    {
+      "index": 68,
+      "name": "QuoteControl-1000",
+      "input_hash": "c396ef8bc8c0d4d994c9516ad82e982a847a07562cb2737fbb410f21787cd09b"
+    },
+    {
+      "index": 69,
+      "name": "QuoteControl-2000",
+      "input_hash": "6e6e98660496b74709a38a831c943556df811ae0ea4e62203206c373e40d4528"
+    },
+    {
+      "index": 70,
+      "name": "SharingConfig-0",
+      "input_hash": "f77fbf7b5cb9a91f987dca60d5837a1f58fd4c790c9965dabf1a3c30b669ef4e"
+    },
+    {
+      "index": 71,
+      "name": "SharingConfig-1",
+      "input_hash": "da6052abdbe9b21d4c3224269acd72e778afac978ce7423d106689fb08fe5e6a"
+    },
+    {
+      "index": 72,
+      "name": "SharingConfig-7",
+      "input_hash": "36293ce4892e653a6723f52658facb872f79c652f7fdcb3836a7bccd4a1021cf"
+    },
+    {
+      "index": 73,
+      "name": "SharingConfig-8",
+      "input_hash": "876522e7d7b80bd49764896ba73cd265aa0a4c28d8304330edfe8e51fb008c79"
+    },
+    {
+      "index": 74,
+      "name": "SharingConfig-49",
+      "input_hash": "2e560180ebf31b7ac9a8039b376eb245fec1a96410484d83d5878e5f1a7b5bc5"
+    },
+    {
+      "index": 75,
+      "name": "SharingConfig-81",
+      "input_hash": "d207067bb21651cedbfdda37682f06715355d93f57c54d169704598bbfa27097"
+    },
+    {
+      "index": 76,
+      "name": "SharingConfig-82",
+      "input_hash": "1d86bab20a752e9106fc7b9e27774ba67836ea55ee4e3ab2dd62303db356325d"
+    },
+    {
+      "index": 77,
+      "name": "SharingConfig-137",
+      "input_hash": "794a234fe34ab20180da431b98a76ffcd834a3efed82acc13a0b7ac1d5380197"
+    },
+    {
+      "index": 78,
+      "name": "SharingConfig-166",
+      "input_hash": "8ab887eabe40e50534d69273d6dd42f8565ff1c7bc412adf354088ed074d001c"
+    },
+    {
+      "index": 79,
+      "name": "SharingConfig-200",
+      "input_hash": "24bf95245e30c031495cf116c911b2ffa353bfe7a3f3a721820f88b30bfc7f5a"
+    },
+    {
+      "index": 80,
+      "name": "SharingConfig-256",
+      "input_hash": "f99f1efed29455dbd591b23d124d561fb4b14082f1e5390e21639bc829141f84"
+    },
+    {
+      "index": 81,
+      "name": "SharingConfig-600",
+      "input_hash": "89737900cc41238f502af1fb0b05d22bb29c250bb1885af5593554b33e3b8dc5"
+    },
+    {
+      "index": 82,
+      "name": "SharingConfig-1000",
+      "input_hash": "435abda8dcffdfbfa3bb398f8ec42bd2d45648fd57c7e37100c78fae654fcdb5"
+    },
+    {
+      "index": 83,
+      "name": "SharingConfig-2000",
+      "input_hash": "b891c990851b4e7d69f4a53a6dd902b2cfd7df0d60009b6c97639d34c1d6aeab"
+    },
+    {
+      "index": 84,
+      "name": "UserVolumeAccumulator-0",
+      "input_hash": "f77fbf7b5cb9a91f987dca60d5837a1f58fd4c790c9965dabf1a3c30b669ef4e"
+    },
+    {
+      "index": 85,
+      "name": "UserVolumeAccumulator-1",
+      "input_hash": "1a825a24d58a482a36f14be818eec5608942a2da2b2ff127818475e415675c37"
+    },
+    {
+      "index": 86,
+      "name": "UserVolumeAccumulator-7",
+      "input_hash": "e9c5e64ea179fb101101ec95ad1341c4f3ed141fb565ede6ec6bfa1517332fb5"
+    },
+    {
+      "index": 87,
+      "name": "UserVolumeAccumulator-8",
+      "input_hash": "c9e53d83a21ea0513984b6702f5f3d88dfb8884381366f8228ea353a209e0759"
+    },
+    {
+      "index": 88,
+      "name": "UserVolumeAccumulator-49",
+      "input_hash": "f673e38f13943db41429fdfe5775ecbfaf1de664c27c8386a31c64d88e69f93b"
+    },
+    {
+      "index": 89,
+      "name": "UserVolumeAccumulator-81",
+      "input_hash": "424fe914736800badec31fb3a7eb23ea77edaf15aeb413e21db91069d4255cd7"
+    },
+    {
+      "index": 90,
+      "name": "UserVolumeAccumulator-82",
+      "input_hash": "cf301975d53f2945c314d76ddc27e77176ccf5951651b4c55b158dd35dd0d4c2"
+    },
+    {
+      "index": 91,
+      "name": "UserVolumeAccumulator-137",
+      "input_hash": "b238b0b07de8dd08e501b125062ac17e269320c39b8582f512327762d9bc745a"
+    },
+    {
+      "index": 92,
+      "name": "UserVolumeAccumulator-166",
+      "input_hash": "ce939f586702bb8a3566c516de5d57cdb5c23e1434a62e3deecc03d6ba2d0a4c"
+    },
+    {
+      "index": 93,
+      "name": "UserVolumeAccumulator-200",
+      "input_hash": "2404a68ec68da9999f190f4654cc917c2b66912852093d296c83d49502729e0f"
+    },
+    {
+      "index": 94,
+      "name": "UserVolumeAccumulator-256",
+      "input_hash": "6caab9fcd1105aadde58ba68b94f683cb625b92acf4360e95f50be0e62f60d80"
+    },
+    {
+      "index": 95,
+      "name": "UserVolumeAccumulator-600",
+      "input_hash": "bd05c5be7ed59a27ff390a8ac49ed38678ee8788fa978b0f8dfaa2ded9413c03"
+    },
+    {
+      "index": 96,
+      "name": "UserVolumeAccumulator-1000",
+      "input_hash": "07a8666930d390e73a44bd35bfe04d8106e617e2a1adc4b2ab1d6f7ae2d6fd1d"
+    },
+    {
+      "index": 97,
+      "name": "UserVolumeAccumulator-2000",
+      "input_hash": "45d0abfd837698efa1a7357bd02f79dfbe4d85375928ab4b9c737453501d9244"
+    },
+    {
+      "index": 98,
+      "name": "unknown-0",
+      "input_hash": "f77fbf7b5cb9a91f987dca60d5837a1f58fd4c790c9965dabf1a3c30b669ef4e"
+    },
+    {
+      "index": 99,
+      "name": "unknown-1",
+      "input_hash": "f7393416505cde905b5e475e61bfb97c66b261eb0b5e39ee4d4fadee22221fef"
+    },
+    {
+      "index": 100,
+      "name": "unknown-7",
+      "input_hash": "c5432f912cefc15cfdb0afe399bc52759066f0b47ff3eac0c37f6f51b04d80d2"
+    },
+    {
+      "index": 101,
+      "name": "unknown-8",
+      "input_hash": "e7663c881ec2312a001d681d9da4c4c9da0e1a13a6381ad280abddf83346b0d2"
+    },
+    {
+      "index": 102,
+      "name": "unknown-49",
+      "input_hash": "3c6de53039833fbdd52a0cb509911e5657a4ee04dc5b644fb9fea90984a7f957"
+    },
+    {
+      "index": 103,
+      "name": "unknown-81",
+      "input_hash": "c548956e61253329a3dba50a32160bf9a9891078047204dec536e3d9f77da72f"
+    },
+    {
+      "index": 104,
+      "name": "unknown-82",
+      "input_hash": "d272f6df542a82f1226cb33e0db41df94ceb1912d1e0d3458e139c97cbdf3130"
+    },
+    {
+      "index": 105,
+      "name": "unknown-137",
+      "input_hash": "d2b7c83c736963b9b9d2ced8894695dd051639a305c2c8e6d3249603d2165abd"
+    },
+    {
+      "index": 106,
+      "name": "unknown-166",
+      "input_hash": "2ee141ddc7cbe0adb13a79f97d197df01dd578fb9573fff434eda95f5dec3ce6"
+    },
+    {
+      "index": 107,
+      "name": "unknown-200",
+      "input_hash": "1dd0c45fd1f4e4aecdf15ebdcc633eb4cd9995268251bf85e603e82bc8c7bd3e"
+    },
+    {
+      "index": 108,
+      "name": "unknown-256",
+      "input_hash": "e544515f6ed3559ebe863bdf93ff7601c27a2cf3890b956f3ba6e28323aaf6a7"
+    },
+    {
+      "index": 109,
+      "name": "unknown-600",
+      "input_hash": "a492daa47b21b9612ceebb92d78e6a9f847005ef5c96fe4c94eb9103408226b9"
+    },
+    {
+      "index": 110,
+      "name": "unknown-1000",
+      "input_hash": "4cb64bd4b9902ccd46aae73040c45e250b3b80c5ceaf81ce3d44773b73a04333"
+    },
+    {
+      "index": 111,
+      "name": "unknown-2000",
+      "input_hash": "6de73caf575f2b0d1e5dc9289a282ff94806b5ec6b58d7323eaae942a463f506"
+    },
+    {
+      "index": 112,
+      "name": "BondingCurve-rent-8-0",
+      "input_hash": "6d9c674df207f50ac3287d216b644542af39b36d25bbc6821d0447f87f005e12"
+    },
+    {
+      "index": 113,
+      "name": "BondingCurve-rent-8-1",
+      "input_hash": "fd19fd68eee25ce9bb709ed89ea9cc7e53bfca9d446bc124ad545dbe58b9fceb"
+    },
+    {
+      "index": 114,
+      "name": "BondingCurve-rent-8-946559",
+      "input_hash": "222ea12d91e2c92027dad4ba3a7be515a2500178019cd4730cf6fe3107e64a7d"
+    },
+    {
+      "index": 115,
+      "name": "BondingCurve-rent-8-946560",
+      "input_hash": "a18a6325d403b8c430788eb8b6e3677cd51fda1e5c64620cd650422e9d0a0a48"
+    },
+    {
+      "index": 116,
+      "name": "BondingCurve-rent-8-2046240",
+      "input_hash": "f41bb2c11c9494d1082d00690d55379ad90440776b0e63b3fef11b9d224578d2"
+    },
+    {
+      "index": 117,
+      "name": "BondingCurve-rent-8-1000000000",
+      "input_hash": "3535cabf5ab3b99606e50377ea69358fbea68048e70431265687b29ab7aa8ba0"
+    },
+    {
+      "index": 118,
+      "name": "BondingCurve-rent-165-0",
+      "input_hash": "6d9c674df207f50ac3287d216b644542af39b36d25bbc6821d0447f87f005e12"
+    },
+    {
+      "index": 119,
+      "name": "BondingCurve-rent-165-1",
+      "input_hash": "8c15c9acad04b1b3e9a7e6aeda624e38beaa6bdf408642619da0d51e46af339a"
+    },
+    {
+      "index": 120,
+      "name": "BondingCurve-rent-165-2039279",
+      "input_hash": "b1df67670410f5113ca990bd3793bd09d9f80ae7fd3233ed6fd6b79972485a83"
+    },
+    {
+      "index": 121,
+      "name": "BondingCurve-rent-165-2039280",
+      "input_hash": "c027fce1d113225e29da7c0c6b63d8c0a102be81bf83afabd8886efff061d828"
+    },
+    {
+      "index": 122,
+      "name": "BondingCurve-rent-165-2046240",
+      "input_hash": "2271de4ce708bc0baa77b58ecd13befe094a118a671431be848906f98ab66ec6"
+    },
+    {
+      "index": 123,
+      "name": "BondingCurve-rent-165-1000000000",
+      "input_hash": "a233fb17184bf30367c3f2bd6741e7baacbd72473e4f7018d514ed73cb67ea66"
+    },
+    {
+      "index": 124,
+      "name": "BondingCurve-rent-166-0",
+      "input_hash": "6d9c674df207f50ac3287d216b644542af39b36d25bbc6821d0447f87f005e12"
+    },
+    {
+      "index": 125,
+      "name": "BondingCurve-rent-166-1",
+      "input_hash": "3f5db6b17eff813410549dff21935a8eaf94b9d6efff9a12368e4f23d2af7ef3"
+    },
+    {
+      "index": 126,
+      "name": "BondingCurve-rent-166-2046239",
+      "input_hash": "7c1e75f40ae5d5c1cca5089e561fde49edae3e535b4265e1f0e350a5715755ef"
+    },
+    {
+      "index": 127,
+      "name": "BondingCurve-rent-166-2046240",
+      "input_hash": "a758723a0f074d0f338032be0d337a10e8b6a75c27dc216da59b438676b87154"
+    },
+    {
+      "index": 128,
+      "name": "BondingCurve-rent-166-2046240",
+      "input_hash": "a758723a0f074d0f338032be0d337a10e8b6a75c27dc216da59b438676b87154"
+    },
+    {
+      "index": 129,
+      "name": "BondingCurve-rent-166-1000000000",
+      "input_hash": "cf8f5bdb67b392996e2b4a788819cc988514e6778b1f085d1110fadde2f5531f"
+    },
+    {
+      "index": 130,
+      "name": "BondingCurve-rent-167-0",
+      "input_hash": "6d9c674df207f50ac3287d216b644542af39b36d25bbc6821d0447f87f005e12"
+    },
+    {
+      "index": 131,
+      "name": "BondingCurve-rent-167-1",
+      "input_hash": "312e73f56681f0e8a0cdc6968abcf742c8ac53553e7e3be201c4262871bc221a"
+    },
+    {
+      "index": 132,
+      "name": "BondingCurve-rent-167-2053199",
+      "input_hash": "76054e79ab26d96f04942f2b7b3ba1452243b18edeea2cf6bfecb3e3d7e41c17"
+    },
+    {
+      "index": 133,
+      "name": "BondingCurve-rent-167-2053200",
+      "input_hash": "492d860d7fcd7e5fbddace1263dfec98e970adefe60dcae54671f18af77bf7bd"
+    },
+    {
+      "index": 134,
+      "name": "BondingCurve-rent-167-2046240",
+      "input_hash": "538cb0cfa282f85ee77b326bbfd6759d48f57a986523fb4815be2a0667eff2ad"
+    },
+    {
+      "index": 135,
+      "name": "BondingCurve-rent-167-1000000000",
+      "input_hash": "9657608a55bb0d2f9cf4b782b6ba10f8f809da8d61be13de9c071822696294f1"
+    },
+    {
+      "index": 136,
+      "name": "BondingCurve-unsigned",
+      "input_hash": "a1dfd1f5ad88c596d3fa26cb46f7cc7941df9f4b41b51b03838c18b3376a49d0"
+    },
+    {
+      "index": 137,
+      "name": "BondingCurve-readonly-user",
+      "input_hash": "8beee5dd7d90ff2955537684b48c7f3d24749e16117f048801415a64ea4f009b"
+    },
+    {
+      "index": 138,
+      "name": "BondingCurve-readonly-target",
+      "input_hash": "ac0de589a62f7f0be97a13793e88a01aee64d5aefeb29c84f3391f7634cfc47d"
+    },
+    {
+      "index": 139,
+      "name": "BondingCurve-wrong-event",
+      "input_hash": "76db12b2240ad2195b8018c897f27695e47ea31385a74ca16276e1a5e710e635"
+    },
+    {
+      "index": 140,
+      "name": "BondingCurve-wrong-program",
+      "input_hash": "651e07b3e67d6ad50f7f16717daeb8fd3693d2fb03aeb0c39cbd162c7b018e75"
+    },
+    {
+      "index": 141,
+      "name": "BondingCurve-wrong-system",
+      "input_hash": "7966380822d16cc5c6f9cda78d7a69cb17c2c66f190a52b91591deb0058a15d0"
+    },
+    {
+      "index": 142,
+      "name": "BondingCurve-wrong-target",
+      "input_hash": "9ea3fb543893434a29d3325378c5e887163f69486faed4ce5130445a2180499b"
+    },
+    {
+      "index": 143,
+      "name": "BondingCurve-system-owner",
+      "input_hash": "d92b1297ca79c0688878c71529ec6c1e2d667789c2db93d83335d3b5fb44e7ff"
+    },
+    {
+      "index": 144,
+      "name": "BondingCurve-token-owner",
+      "input_hash": "59465a3bd95a6a1007f50912420d65013541cb24ca1969e8e47acfa616adff96"
+    },
+    {
+      "index": 145,
+      "name": "BondingCurve-fill-ff",
+      "input_hash": "f1c970fa00462b6bf67e2c6f67668bd22f419c38811a791a2430171cb97c2393"
+    },
+    {
+      "index": 146,
+      "name": "BondingCurve-no-user-funds",
+      "input_hash": "f6287fefa9ff5af00346e502ffb4fec448cc0049bb3f3760d2807b7bb44e6ea3"
+    },
+    {
+      "index": 147,
+      "name": "BondingCurve-trailing",
+      "input_hash": "2bf75cf27b6e48a75fa0a4d3faa6154ed7649816c09298c19649099c3def02fe"
+    },
+    {
+      "index": 148,
+      "name": "BondingCurve-missing-0",
+      "input_hash": "a34063711d92235882607bf359dc5a5373f4bb0e1bd2f0dbced81ee89f42a953"
+    },
+    {
+      "index": 149,
+      "name": "BondingCurve-missing-1",
+      "input_hash": "813ca9094c77ce6e6e1636effb73383009e485ce8d554cedb5def4dd5ef9827d"
+    },
+    {
+      "index": 150,
+      "name": "BondingCurve-missing-2",
+      "input_hash": "9128fd13216fea6f83a15d7f3752eaf9522fca80d1c7377c1da44563d94d93fe"
+    },
+    {
+      "index": 151,
+      "name": "BondingCurve-missing-3",
+      "input_hash": "3214509af5ed19f43a0bceffe01d1984fa2a494927181b76a95a2fa51be6cec3"
+    },
+    {
+      "index": 152,
+      "name": "BondingCurve-missing-4",
+      "input_hash": "7243e2cdf63554f3fc10f1f338a7a28e4103d094516ba6f07879279bfdd4b71a"
+    },
+    {
+      "index": 153,
+      "name": "BondingCurve-payload-0",
+      "input_hash": "a13756f6aac4e486f9ee653907b7bb1e7bff5609009926e1b689da85cb853996"
+    },
+    {
+      "index": 154,
+      "name": "BondingCurve-payload-1",
+      "input_hash": "fc4fd68cc166a6878b593c50ac83637365e3d1e5db5f817232b43904ad668cbc"
+    },
+    {
+      "index": 155,
+      "name": "BondingCurve-payload-2",
+      "input_hash": "b882be221e90ac690460d0c8ddbf74efa9ca7728457146222bff1be8ee25daf2"
+    },
+    {
+      "index": 156,
+      "name": "BondingCurve-payload-3",
+      "input_hash": "cec603d293003694ca7118e6931c27b798fed0fcff939710c316dedd1bcd108a"
+    },
+    {
+      "index": 157,
+      "name": "BondingCurve-payload-4",
+      "input_hash": "5bad06b3b68cf0b6e7e123c2fdcb09912254d6f6f6e6f9ca02280f5f81389be6"
+    },
+    {
+      "index": 158,
+      "name": "BondingCurve-payload-5",
+      "input_hash": "c670e18d8e58fe7654eabdcfd7c811c59bccd07da3fffe0a771abb3e930d3d12"
+    },
+    {
+      "index": 159,
+      "name": "BondingCurve-payload-6",
+      "input_hash": "2fedd9506de191bc4fcfbfcb5389b50c68569d71f035408f4a6a21e7fe139284"
+    },
+    {
+      "index": 160,
+      "name": "BondingCurve-payload-7",
+      "input_hash": "e4f8f72937ecd630f30ff1c60c1fb5620dd632a075a670062db128855242bebf"
+    },
+    {
+      "index": 161,
+      "name": "Global-rent-8-0",
+      "input_hash": "6d9c674df207f50ac3287d216b644542af39b36d25bbc6821d0447f87f005e12"
+    },
+    {
+      "index": 162,
+      "name": "Global-rent-8-1",
+      "input_hash": "4f68440018f293805b15595ce6890a78297b93db4d92779b1cf05af7414cd94c"
+    },
+    {
+      "index": 163,
+      "name": "Global-rent-8-946559",
+      "input_hash": "c53e53a0eeaad62aac73cf12888a1bfae869028e6c3b5d56380a1d1015186e7b"
+    },
+    {
+      "index": 164,
+      "name": "Global-rent-8-946560",
+      "input_hash": "c08d8dc911df93d005ae084c614eaba9429893850c4f0e45046283aa645aea5e"
+    },
+    {
+      "index": 165,
+      "name": "Global-rent-8-8463360",
+      "input_hash": "3cd976b7d9645cc591f96c88551566a5b07180f89f5029f53f75d63084cc8289"
+    },
+    {
+      "index": 166,
+      "name": "Global-rent-8-1000000000",
+      "input_hash": "c9e3d1557dcff5915f7a841bbf064ff10c1a9a800e01939e0193c61637269d26"
+    },
+    {
+      "index": 167,
+      "name": "Global-rent-1087-0",
+      "input_hash": "6d9c674df207f50ac3287d216b644542af39b36d25bbc6821d0447f87f005e12"
+    },
+    {
+      "index": 168,
+      "name": "Global-rent-1087-1",
+      "input_hash": "7a70af3b7e8f39f5f691dcffc84cbe664788c21d06500f48c43551d1884e4918"
+    },
+    {
+      "index": 169,
+      "name": "Global-rent-1087-8456399",
+      "input_hash": "ab3c0d103e7ebbfa871c0c64fbf899f22751658bdea04c3666a4c3b0a52f7854"
+    },
+    {
+      "index": 170,
+      "name": "Global-rent-1087-8456400",
+      "input_hash": "1bb3edba019463e8c61efea720bfad70ce2e61f21e153cc7e21d5ced90cc3ae1"
+    },
+    {
+      "index": 171,
+      "name": "Global-rent-1087-8463360",
+      "input_hash": "c9d1e9c59fa99ca0a90113302e31574e83385076dce91f4d000565900a620a0a"
+    },
+    {
+      "index": 172,
+      "name": "Global-rent-1087-1000000000",
+      "input_hash": "065e9c9cb224f80e894935244fe653458abf5599b906b223cd5f0ef024eba2a5"
+    },
+    {
+      "index": 173,
+      "name": "Global-rent-1088-0",
+      "input_hash": "6d9c674df207f50ac3287d216b644542af39b36d25bbc6821d0447f87f005e12"
+    },
+    {
+      "index": 174,
+      "name": "Global-rent-1088-1",
+      "input_hash": "c2ce753a6c8a1baa0dfaa6de9b2779d14933947b280191ebf32e429a4af99b03"
+    },
+    {
+      "index": 175,
+      "name": "Global-rent-1088-8463359",
+      "input_hash": "7c5aebc0798063437c280988055dc15566ae50efdcc506d584436533835559dc"
+    },
+    {
+      "index": 176,
+      "name": "Global-rent-1088-8463360",
+      "input_hash": "9fde704813420cae0d2bff5ce881640340d81c10256fe6f8f942d5ba89c0c765"
+    },
+    {
+      "index": 177,
+      "name": "Global-rent-1088-8463360",
+      "input_hash": "9fde704813420cae0d2bff5ce881640340d81c10256fe6f8f942d5ba89c0c765"
+    },
+    {
+      "index": 178,
+      "name": "Global-rent-1088-1000000000",
+      "input_hash": "5016b7276c1119ef4b8405d1e4a485dbed493839e1061b492e5cff289b127ec8"
+    },
+    {
+      "index": 179,
+      "name": "Global-rent-1089-0",
+      "input_hash": "6d9c674df207f50ac3287d216b644542af39b36d25bbc6821d0447f87f005e12"
+    },
+    {
+      "index": 180,
+      "name": "Global-rent-1089-1",
+      "input_hash": "6ee5240d241ff8b12d7a275dc0d693ab7778364d2bdff3a103362f9d0b7f8c07"
+    },
+    {
+      "index": 181,
+      "name": "Global-rent-1089-8470319",
+      "input_hash": "ef0b33d994df25bc00fae3cdcefa3637ac65d5e7f0142dbc408ccb0ef5e5cec4"
+    },
+    {
+      "index": 182,
+      "name": "Global-rent-1089-8470320",
+      "input_hash": "48df42a0b67c78d9d19b839df71b862d18dadf3a56ba2e26897a9db894873bd6"
+    },
+    {
+      "index": 183,
+      "name": "Global-rent-1089-8463360",
+      "input_hash": "f37cf853d0c7e1fede743b18e0e343bbe4e870e547f7510078d26ea84e0aec07"
+    },
+    {
+      "index": 184,
+      "name": "Global-rent-1089-1000000000",
+      "input_hash": "2c5c4d579e179a5afdd5afb0bf4faa8ab42b475a4e70ffff7d2db9afa01d7b95"
+    },
+    {
+      "index": 185,
+      "name": "Global-unsigned",
+      "input_hash": "39fcda2c80f046dd085b55f0e8afc362ba59688bc64fe160abbff29c44f3d3ca"
+    },
+    {
+      "index": 186,
+      "name": "Global-readonly-user",
+      "input_hash": "a39b4216c76171fa52dbd0e18d7aca8032b2b31f088e3675398cdd523c9f8477"
+    },
+    {
+      "index": 187,
+      "name": "Global-readonly-target",
+      "input_hash": "ef008269e357a5c9a0a3237931cac7c408a0c772cc431e77c99a224c1146446e"
+    },
+    {
+      "index": 188,
+      "name": "Global-wrong-event",
+      "input_hash": "44f6582e6624d811e2b42424e9f95637b0f9653e594028e0e3ebd67bb69e2bf4"
+    },
+    {
+      "index": 189,
+      "name": "Global-wrong-program",
+      "input_hash": "9ee81f0417fe50383a528ea36e1c5fe50e082d0b7b74fcb482a7e9921ba04915"
+    },
+    {
+      "index": 190,
+      "name": "Global-wrong-system",
+      "input_hash": "b135fb60616d2647d53886fae3dc5710e23186c3ec8e2d9c3f9ad73f0466aecc"
+    },
+    {
+      "index": 191,
+      "name": "Global-wrong-target",
+      "input_hash": "fa06957a25b8cebfe12d70bf271949b884ff100426b26e5627428869fd4dda2e"
+    },
+    {
+      "index": 192,
+      "name": "Global-system-owner",
+      "input_hash": "03f695b6cfa2024ba7f101f626d552247513d2312ebe81de9d260534834a5a9a"
+    },
+    {
+      "index": 193,
+      "name": "Global-token-owner",
+      "input_hash": "5823ef3b93f8ab9261e005faa13661f127bfee008409df1df099428334f445b8"
+    },
+    {
+      "index": 194,
+      "name": "Global-fill-ff",
+      "input_hash": "ea3449e1f69f9a54752f1d4276ee913cfa7a71a5fc524ff1a2274d4eaae995b3"
+    },
+    {
+      "index": 195,
+      "name": "Global-no-user-funds",
+      "input_hash": "7b6c5d4734c289d03f9a06da3a5ff98bab94a5a66c11088f7cc73e6f5507352a"
+    },
+    {
+      "index": 196,
+      "name": "Global-trailing",
+      "input_hash": "c0c2d642622c28c6c7e5a437d69b791155ef84e8c576313b7bb861633c58ba39"
+    },
+    {
+      "index": 197,
+      "name": "Global-missing-0",
+      "input_hash": "4ee55b1e25d3ffc7457de5eaf80a9d7ded1d817f83f1a1a6a071646be8872f8f"
+    },
+    {
+      "index": 198,
+      "name": "Global-missing-1",
+      "input_hash": "f5607581d9e7ab061754bd640929ff66cd923f82ca7665dc84ce5e98ce16fde2"
+    },
+    {
+      "index": 199,
+      "name": "Global-missing-2",
+      "input_hash": "2db4e1c7b6512bc8458ae7050a61740259048c02a7ca194d436fd0c65dc4d58d"
+    },
+    {
+      "index": 200,
+      "name": "Global-missing-3",
+      "input_hash": "f650a5d4db2893c7384e9f13aac7907764b6e64bc5477ff129e6f773e5f7ea14"
+    },
+    {
+      "index": 201,
+      "name": "Global-missing-4",
+      "input_hash": "8d35fc9c12cf05b2b27dd8b35d1e56fb4f24a75cd00eabad4b7356e2755bd34e"
+    },
+    {
+      "index": 202,
+      "name": "Global-payload-0",
+      "input_hash": "55a2632253efd622cdc6e7ae3b11074352d809171f8ea105560bda9649b3c1d8"
+    },
+    {
+      "index": 203,
+      "name": "Global-payload-1",
+      "input_hash": "92a174f7a7f46d4599a0c569431cf3a88188844bb9581c86a602702a95a1c511"
+    },
+    {
+      "index": 204,
+      "name": "Global-payload-2",
+      "input_hash": "f98934cab3d3eaad1e1521974cfca45929bc6ac05071477cc952d9dfbfc9eca1"
+    },
+    {
+      "index": 205,
+      "name": "Global-payload-3",
+      "input_hash": "912b9898d698c5989b018883fad6e2d1369887209dc4dc9c9adbc013b9d157bc"
+    },
+    {
+      "index": 206,
+      "name": "Global-payload-4",
+      "input_hash": "93469eae61250e7b6863b41ab16dde1685e0bf3e0ff75290d25cc0531dd72f8c"
+    },
+    {
+      "index": 207,
+      "name": "Global-payload-5",
+      "input_hash": "50c70e0fba7d277fb4d372f9da4db77f52008ea8a8e30c3103eb1f6dce7cda38"
+    },
+    {
+      "index": 208,
+      "name": "Global-payload-6",
+      "input_hash": "c4b50e2cfe263dc86db4a290cb1c42dcfecb3bb1907fa5c33534dfc5d57e1c62"
+    },
+    {
+      "index": 209,
+      "name": "Global-payload-7",
+      "input_hash": "f323833b954fce7836714144515a3be4ff60d10e68b4f2ef8d276843fcd6350c"
+    },
+    {
+      "index": 210,
+      "name": "GlobalVolumeAccumulator-rent-8-0",
+      "input_hash": "6d9c674df207f50ac3287d216b644542af39b36d25bbc6821d0447f87f005e12"
+    },
+    {
+      "index": 211,
+      "name": "GlobalVolumeAccumulator-rent-8-1",
+      "input_hash": "013f6b50f76f4f132b1044d10a7c02149411f58f754d5fd04158392a6346e404"
+    },
+    {
+      "index": 212,
+      "name": "GlobalVolumeAccumulator-rent-8-946559",
+      "input_hash": "c546042680f5633788de13d05c66bd9ded24a767bc3f94d7cb6efb132af62a87"
+    },
+    {
+      "index": 213,
+      "name": "GlobalVolumeAccumulator-rent-8-946560",
+      "input_hash": "5341e5f7f7a193aaf1530ba349bbe6d96501417320cc3bf78f5b0e7e008b5d68"
+    },
+    {
+      "index": 214,
+      "name": "GlobalVolumeAccumulator-rent-8-5066880",
+      "input_hash": "0191c497fb5f08c168bbc64c13a8e9a6b31f51efc0579495c70161e71cc3a2a6"
+    },
+    {
+      "index": 215,
+      "name": "GlobalVolumeAccumulator-rent-8-1000000000",
+      "input_hash": "0b9f2469624ae703540b8a5962329925cbd9b74ba7ae22749af1e0055a7f8424"
+    },
+    {
+      "index": 216,
+      "name": "GlobalVolumeAccumulator-rent-599-0",
+      "input_hash": "6d9c674df207f50ac3287d216b644542af39b36d25bbc6821d0447f87f005e12"
+    },
+    {
+      "index": 217,
+      "name": "GlobalVolumeAccumulator-rent-599-1",
+      "input_hash": "9da3323f8c2ccffe0a24790bd4d8063a6e446f833c88e9c2756d8dcb6bad7b1a"
+    },
+    {
+      "index": 218,
+      "name": "GlobalVolumeAccumulator-rent-599-5059919",
+      "input_hash": "23e83e98b564e67d5702b56e0748cbb14633a806b8cc9ff1a562bd7727982ada"
+    },
+    {
+      "index": 219,
+      "name": "GlobalVolumeAccumulator-rent-599-5059920",
+      "input_hash": "5d6c4e4d1dbc3bfb4f8974788fc8f946d080632bd993b9bcb96263250db05d9c"
+    },
+    {
+      "index": 220,
+      "name": "GlobalVolumeAccumulator-rent-599-5066880",
+      "input_hash": "072724a81cc2b592291721baf8d63530b0e863900b623fc7d792a85261225039"
+    },
+    {
+      "index": 221,
+      "name": "GlobalVolumeAccumulator-rent-599-1000000000",
+      "input_hash": "351a63082ffed4bfa2c386b691ee5629adb14297619088dcc795a532998d89bc"
+    },
+    {
+      "index": 222,
+      "name": "GlobalVolumeAccumulator-rent-600-0",
+      "input_hash": "6d9c674df207f50ac3287d216b644542af39b36d25bbc6821d0447f87f005e12"
+    },
+    {
+      "index": 223,
+      "name": "GlobalVolumeAccumulator-rent-600-1",
+      "input_hash": "74c6a69d2a5f1d842818581668bc9c380778574c6146c3ab8f5a1a4bff8fd14f"
+    },
+    {
+      "index": 224,
+      "name": "GlobalVolumeAccumulator-rent-600-5066879",
+      "input_hash": "3c2b5d3664706794e417614dca911f7489c2653307ff1a3195716b48496121e2"
+    },
+    {
+      "index": 225,
+      "name": "GlobalVolumeAccumulator-rent-600-5066880",
+      "input_hash": "ab101fe74eff7b0763ba3cc72064780a2a52517c4f54e3f8150050e3b0156b6e"
+    },
+    {
+      "index": 226,
+      "name": "GlobalVolumeAccumulator-rent-600-5066880",
+      "input_hash": "ab101fe74eff7b0763ba3cc72064780a2a52517c4f54e3f8150050e3b0156b6e"
+    },
+    {
+      "index": 227,
+      "name": "GlobalVolumeAccumulator-rent-600-1000000000",
+      "input_hash": "7206016fa9ee575b0609988f17b46a3ea3142bd077a8232caef3f7684d99a54c"
+    },
+    {
+      "index": 228,
+      "name": "GlobalVolumeAccumulator-rent-601-0",
+      "input_hash": "6d9c674df207f50ac3287d216b644542af39b36d25bbc6821d0447f87f005e12"
+    },
+    {
+      "index": 229,
+      "name": "GlobalVolumeAccumulator-rent-601-1",
+      "input_hash": "e839fca071b28f75b64b7dbe672944084db0619e06377c185cd911ff449d0166"
+    },
+    {
+      "index": 230,
+      "name": "GlobalVolumeAccumulator-rent-601-5073839",
+      "input_hash": "77ebcf662285d5c2c5395bb55ba10cdb8ee085b55e83bd82e1a83a9bb73de63d"
+    },
+    {
+      "index": 231,
+      "name": "GlobalVolumeAccumulator-rent-601-5073840",
+      "input_hash": "e290a23a2e4a139a5df9d5bc1323d282761040eed35e3c7c1246cd63e964f777"
+    },
+    {
+      "index": 232,
+      "name": "GlobalVolumeAccumulator-rent-601-5066880",
+      "input_hash": "dc2922d8a2fadf53cfc5470d9bac3d864256bef481aa89530982abf867dc9bb4"
+    },
+    {
+      "index": 233,
+      "name": "GlobalVolumeAccumulator-rent-601-1000000000",
+      "input_hash": "7147e5ca42449f65cb982e3896af835056d174bc132e90a6f2d2ba70ac313329"
+    },
+    {
+      "index": 234,
+      "name": "GlobalVolumeAccumulator-unsigned",
+      "input_hash": "0b69bbd687c3472df63628995b9dbc79dbc2a2f0114f5aaecf43696b4004661a"
+    },
+    {
+      "index": 235,
+      "name": "GlobalVolumeAccumulator-readonly-user",
+      "input_hash": "ce32a11194ddb10436c7b013870f5032b537ff7cc8c9c54a0236df77a74c4ac8"
+    },
+    {
+      "index": 236,
+      "name": "GlobalVolumeAccumulator-readonly-target",
+      "input_hash": "b0b7497a963dfeecdd6c92beb8d6641085d8ad7761635e7939a990a3badc6a2c"
+    },
+    {
+      "index": 237,
+      "name": "GlobalVolumeAccumulator-wrong-event",
+      "input_hash": "d3a74698c4eba72229c2d48b36ef61611ba4849b7424fd1dbd91dfc6186ec384"
+    },
+    {
+      "index": 238,
+      "name": "GlobalVolumeAccumulator-wrong-program",
+      "input_hash": "2394d93696d14920b958cdc3404886d8b778af5204a57f07bcd09f2540f54379"
+    },
+    {
+      "index": 239,
+      "name": "GlobalVolumeAccumulator-wrong-system",
+      "input_hash": "16e36d5aa517dded8ae7c705568e0887961ab0301cea3f15b20c59ccc68d7973"
+    },
+    {
+      "index": 240,
+      "name": "GlobalVolumeAccumulator-wrong-target",
+      "input_hash": "458de941929faa97071f3c851b348ad53f7e3773204b6ce58a8d0450ca7ca64b"
+    },
+    {
+      "index": 241,
+      "name": "GlobalVolumeAccumulator-system-owner",
+      "input_hash": "6002198f4e70172a9e8908b4186e640c0868ff47892fff61cf3f1ef20a3a7d84"
+    },
+    {
+      "index": 242,
+      "name": "GlobalVolumeAccumulator-token-owner",
+      "input_hash": "a682b755cd4e6ac6f8a181dd6a462cf5d2e87a27d4ee6d9dd55618e66d410008"
+    },
+    {
+      "index": 243,
+      "name": "GlobalVolumeAccumulator-fill-ff",
+      "input_hash": "966fd362649b33a7c3facdd3b4350f66ff795f97a4d5774efb986c90d12675c9"
+    },
+    {
+      "index": 244,
+      "name": "GlobalVolumeAccumulator-no-user-funds",
+      "input_hash": "0aa2ed16f8c9314d1380dba9319cffe7b233300cfc11a89b83324b6f751c71e7"
+    },
+    {
+      "index": 245,
+      "name": "GlobalVolumeAccumulator-trailing",
+      "input_hash": "f2d6ef87431769ff2348e8110e84d9b7746ac931e6aea2f84cfbb0e96edced57"
+    },
+    {
+      "index": 246,
+      "name": "GlobalVolumeAccumulator-missing-0",
+      "input_hash": "6de5e707203e31a909766b78b29d9a71c83860a8865536777cb5a5681daeb6f6"
+    },
+    {
+      "index": 247,
+      "name": "GlobalVolumeAccumulator-missing-1",
+      "input_hash": "2ffac252e97e7c9871a27e566045bfed67e55393110446e1ffa9315eddcd5c0f"
+    },
+    {
+      "index": 248,
+      "name": "GlobalVolumeAccumulator-missing-2",
+      "input_hash": "ddc5accd23bff5889b0bb0f05b769f6b9ee03f801b54b3df8a5068709bff341c"
+    },
+    {
+      "index": 249,
+      "name": "GlobalVolumeAccumulator-missing-3",
+      "input_hash": "02982262e21c707ec3e58cdf274c2f88d21989f881317ddcff57ff207d9306a7"
+    },
+    {
+      "index": 250,
+      "name": "GlobalVolumeAccumulator-missing-4",
+      "input_hash": "f2a70b707d758699aa71dc8ccce41ccdc82720d89e8ee126dd998ec9fdea9b9e"
+    },
+    {
+      "index": 251,
+      "name": "GlobalVolumeAccumulator-payload-0",
+      "input_hash": "1a2ed0c9963cf86a4925c15c80e7e55d10e50072e0216ce6377072f9119d0436"
+    },
+    {
+      "index": 252,
+      "name": "GlobalVolumeAccumulator-payload-1",
+      "input_hash": "d8bd447bce95ae72cbd3bb2f7a3c902fa5b0ba5f3a599e8f7ce454a4fa2bb37b"
+    },
+    {
+      "index": 253,
+      "name": "GlobalVolumeAccumulator-payload-2",
+      "input_hash": "34b2f7c61bc5a7daa60d44f3f18ba8cb52adb6fd898846b00469a673f65eb236"
+    },
+    {
+      "index": 254,
+      "name": "GlobalVolumeAccumulator-payload-3",
+      "input_hash": "60d9d40c1a3cfbc6598b443faf199404af3db0e983c18038406dc8f7aedc86f3"
+    },
+    {
+      "index": 255,
+      "name": "GlobalVolumeAccumulator-payload-4",
+      "input_hash": "50c9b1cc92b7efa0f9c452f9570ae7f0dd70434447b490f61d3b6f7969b92aec"
+    },
+    {
+      "index": 256,
+      "name": "GlobalVolumeAccumulator-payload-5",
+      "input_hash": "519099fd8866066c71d03cdf29a72708ac46350b90bab2fedded633d60de1e10"
+    },
+    {
+      "index": 257,
+      "name": "GlobalVolumeAccumulator-payload-6",
+      "input_hash": "ba46d21622ee584f97497306195ee0ef615987bfa27f59794a89e08aeb0d98b6"
+    },
+    {
+      "index": 258,
+      "name": "GlobalVolumeAccumulator-payload-7",
+      "input_hash": "d39c67bf1d5788f1d11f64c5e175f8a7bfe2c432f90f20687ea3ab73ae08212f"
+    },
+    {
+      "index": 259,
+      "name": "UserVolumeAccumulator-rent-8-0",
+      "input_hash": "6d9c674df207f50ac3287d216b644542af39b36d25bbc6821d0447f87f005e12"
+    },
+    {
+      "index": 260,
+      "name": "UserVolumeAccumulator-rent-8-1",
+      "input_hash": "f5200f634b84311fa7c3d5fb7054465025478f9af58a050341d9ca689ca200c5"
+    },
+    {
+      "index": 261,
+      "name": "UserVolumeAccumulator-rent-8-946559",
+      "input_hash": "c79588b5d26f30ea444cfc5bd149c9e4075cf1b09f036dfa4e2e4de00d58f14e"
+    },
+    {
+      "index": 262,
+      "name": "UserVolumeAccumulator-rent-8-946560",
+      "input_hash": "e79a4517a330bebef26a4e9ab0ad75f32a9c719353d4e68f5b53d5a00c280027"
+    },
+    {
+      "index": 263,
+      "name": "UserVolumeAccumulator-rent-8-1844400",
+      "input_hash": "8769f98878e9e31a7c2deaa418528d5644586b29c251cde90d1c8ad8a9610fbd"
+    },
+    {
+      "index": 264,
+      "name": "UserVolumeAccumulator-rent-8-1000000000",
+      "input_hash": "c9e53d83a21ea0513984b6702f5f3d88dfb8884381366f8228ea353a209e0759"
+    },
+    {
+      "index": 265,
+      "name": "UserVolumeAccumulator-rent-136-0",
+      "input_hash": "6d9c674df207f50ac3287d216b644542af39b36d25bbc6821d0447f87f005e12"
+    },
+    {
+      "index": 266,
+      "name": "UserVolumeAccumulator-rent-136-1",
+      "input_hash": "feda8eb2db7768d2fd5a84b4b6871c52f13fc5989dfcf907d249e652b6a3bf28"
+    },
+    {
+      "index": 267,
+      "name": "UserVolumeAccumulator-rent-136-1837439",
+      "input_hash": "02715b717ddb7d22d730d7bd6d46ee262aa2accf37bccfa1b92c49a6939f1aed"
+    },
+    {
+      "index": 268,
+      "name": "UserVolumeAccumulator-rent-136-1837440",
+      "input_hash": "eb27b4c8cc8a6bd0f45724c61de9e8f5ade7d897a8113f7c327a23dacfb10a12"
+    },
+    {
+      "index": 269,
+      "name": "UserVolumeAccumulator-rent-136-1844400",
+      "input_hash": "def57457bf11a8be2944132c644dbc5a690234a4d2c008b924ceaa95925306c9"
+    },
+    {
+      "index": 270,
+      "name": "UserVolumeAccumulator-rent-136-1000000000",
+      "input_hash": "cac2fdaf139a27887c491f9140efa6c181e3a2b95cd781d6d62622b60376efd7"
+    },
+    {
+      "index": 271,
+      "name": "UserVolumeAccumulator-rent-137-0",
+      "input_hash": "6d9c674df207f50ac3287d216b644542af39b36d25bbc6821d0447f87f005e12"
+    },
+    {
+      "index": 272,
+      "name": "UserVolumeAccumulator-rent-137-1",
+      "input_hash": "cad74f4f36f5887001429c0af09542999016a915edae1688cf2ea95b278ab7d3"
+    },
+    {
+      "index": 273,
+      "name": "UserVolumeAccumulator-rent-137-1844399",
+      "input_hash": "26244dfa95ca9c3da9a7dbe187829ce2c288f88b0c755a90fd2ba978a4d2e606"
+    },
+    {
+      "index": 274,
+      "name": "UserVolumeAccumulator-rent-137-1844400",
+      "input_hash": "1e771c6e3e797d111b5f662c4a2a62d9199c1b9a35d5bc18035d7a6d62ffae97"
+    },
+    {
+      "index": 275,
+      "name": "UserVolumeAccumulator-rent-137-1844400",
+      "input_hash": "1e771c6e3e797d111b5f662c4a2a62d9199c1b9a35d5bc18035d7a6d62ffae97"
+    },
+    {
+      "index": 276,
+      "name": "UserVolumeAccumulator-rent-137-1000000000",
+      "input_hash": "b238b0b07de8dd08e501b125062ac17e269320c39b8582f512327762d9bc745a"
+    },
+    {
+      "index": 277,
+      "name": "UserVolumeAccumulator-rent-138-0",
+      "input_hash": "6d9c674df207f50ac3287d216b644542af39b36d25bbc6821d0447f87f005e12"
+    },
+    {
+      "index": 278,
+      "name": "UserVolumeAccumulator-rent-138-1",
+      "input_hash": "2ec00d2a5877c783b6c98a6aa296d8711a87e47b4a9fe061c931fa129fa723a4"
+    },
+    {
+      "index": 279,
+      "name": "UserVolumeAccumulator-rent-138-1851359",
+      "input_hash": "e9d1ef85dfae11a04116c0a2fa40b648cacc8b93cecd2a397731a753b483fa88"
+    },
+    {
+      "index": 280,
+      "name": "UserVolumeAccumulator-rent-138-1851360",
+      "input_hash": "8d0fc7995f46d7568e24e3230ffa27080ced90183dac65913b19a96f1a805563"
+    },
+    {
+      "index": 281,
+      "name": "UserVolumeAccumulator-rent-138-1844400",
+      "input_hash": "34c2d5f11708e7cfed3621ae008d36119bdea1b2c362f666019f1ecc8da98d65"
+    },
+    {
+      "index": 282,
+      "name": "UserVolumeAccumulator-rent-138-1000000000",
+      "input_hash": "d9a1266906cddd7f03d7fbf23e21c046ff738d0957e3963f77979e1948967974"
+    },
+    {
+      "index": 283,
+      "name": "UserVolumeAccumulator-unsigned",
+      "input_hash": "5260a6559bec2cf93b47ecb65155a19238d199dc1a16d815021420c21a54dd60"
+    },
+    {
+      "index": 284,
+      "name": "UserVolumeAccumulator-readonly-user",
+      "input_hash": "dfff32b0bbe07fbd362f08787b5a19fce0921e10dd342cbab3ab78847b82d51d"
+    },
+    {
+      "index": 285,
+      "name": "UserVolumeAccumulator-readonly-target",
+      "input_hash": "ae84c96d2ad8b8dd69e05d5bd6ec705923dc4c2c55a84ac2a323dc2cbf27e4f8"
+    },
+    {
+      "index": 286,
+      "name": "UserVolumeAccumulator-wrong-event",
+      "input_hash": "520d0e0d7333d5af8c80f75eb9f00b2b424a7938e2c802bf1de992ec04f4e7ba"
+    },
+    {
+      "index": 287,
+      "name": "UserVolumeAccumulator-wrong-program",
+      "input_hash": "371d12680a8c310c0c79afbd9022862b4f4dee72671c6372ed986b8cfe6a9b69"
+    },
+    {
+      "index": 288,
+      "name": "UserVolumeAccumulator-wrong-system",
+      "input_hash": "b2595928fb2585757283caa997215b95a971f11dadac0a0fea8bc9ac717d708b"
+    },
+    {
+      "index": 289,
+      "name": "UserVolumeAccumulator-wrong-target",
+      "input_hash": "39564457f234c663c662308b44b37595d7becfeed3e0d6ffabc490b915126557"
+    },
+    {
+      "index": 290,
+      "name": "UserVolumeAccumulator-system-owner",
+      "input_hash": "42c99e614aa58027be9178f677f3685adbf40773e228c9c54461f5566f8eec37"
+    },
+    {
+      "index": 291,
+      "name": "UserVolumeAccumulator-token-owner",
+      "input_hash": "564ce9e63e20e8f39edefbafed1f7c294e3aca25532da7ad4954d2caa8c98c65"
+    },
+    {
+      "index": 292,
+      "name": "UserVolumeAccumulator-fill-ff",
+      "input_hash": "f69a8ffc79c05cd3e30dd76b9b269cf16dc70e94e88664c7ee03e71220376e1c"
+    },
+    {
+      "index": 293,
+      "name": "UserVolumeAccumulator-no-user-funds",
+      "input_hash": "e33ea62ebcbf71c7a4e3e0ee37a61dd1960be66c37a5b4d35a25b608f0094e78"
+    },
+    {
+      "index": 294,
+      "name": "UserVolumeAccumulator-trailing",
+      "input_hash": "c420500a8cd2c94f6aff1157e2ba7ab09e350aef9ac52a966622a4f066f1d675"
+    },
+    {
+      "index": 295,
+      "name": "UserVolumeAccumulator-missing-0",
+      "input_hash": "e1ddca5f29ac44d0380302bc4ee75adb18258602553eb5304f7576ab9fc5138f"
+    },
+    {
+      "index": 296,
+      "name": "UserVolumeAccumulator-missing-1",
+      "input_hash": "2d900ac446094aaadfb496eb9165cbbc6df5d07cb8c7415719c3c7fa59d4c05f"
+    },
+    {
+      "index": 297,
+      "name": "UserVolumeAccumulator-missing-2",
+      "input_hash": "81423b6854641821583ce5e4dd21f238ba49565e7b5e82ac54dba78084705744"
+    },
+    {
+      "index": 298,
+      "name": "UserVolumeAccumulator-missing-3",
+      "input_hash": "83728e1c3061170057b0966dec6734888377ed1cf81333985a745b5c79fa096e"
+    },
+    {
+      "index": 299,
+      "name": "UserVolumeAccumulator-missing-4",
+      "input_hash": "c49e733f10f8c10e3a173e1a47f9daa9b8c1863c793e5104fba9620ca27c5973"
+    },
+    {
+      "index": 300,
+      "name": "UserVolumeAccumulator-payload-0",
+      "input_hash": "c325b4cb696a877c7f76dc2df065e9767088043afdc7a2909d2d3752f36c4146"
+    },
+    {
+      "index": 301,
+      "name": "UserVolumeAccumulator-payload-1",
+      "input_hash": "91eabed09fc3c15424f4aa48d66cd727171f4237c74b5abd05b02ea3cb32ff01"
+    },
+    {
+      "index": 302,
+      "name": "UserVolumeAccumulator-payload-2",
+      "input_hash": "d0a78a698bcdf20600b28baddcf9de24bf010cac1a3174099717bc6c570fa45e"
+    },
+    {
+      "index": 303,
+      "name": "UserVolumeAccumulator-payload-3",
+      "input_hash": "a17a121ce38e5455d03da4b4f923f0e75d45afc8ffe304e86924541628bc9cb1"
+    },
+    {
+      "index": 304,
+      "name": "UserVolumeAccumulator-payload-4",
+      "input_hash": "81b17687de4155b43479daa2359623fabebeb501abc13c4123740d171d207da8"
+    },
+    {
+      "index": 305,
+      "name": "UserVolumeAccumulator-payload-5",
+      "input_hash": "998dce249757b4f8bf0a77c249b87b84897d3f6906118c6e3be6e6131fce1bb4"
+    },
+    {
+      "index": 306,
+      "name": "UserVolumeAccumulator-payload-6",
+      "input_hash": "d3ed91e021d6dc0b43870533cc8946c7d28bcfdd97b0752fea13ea22e1016202"
+    },
+    {
+      "index": 307,
+      "name": "UserVolumeAccumulator-payload-7",
+      "input_hash": "4fe87446a399b90cfbbe6e1d577a09470937488966391079106c83cdec97cc16"
+    }
+  ]
+}

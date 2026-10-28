@@ -1,0 +1,41 @@
+{
+  "status": "passed_private_archive_support",
+  "shared_or_frozen_changes": false,
+  "compiler_invocations": 0,
+  "new_runtime_invocations": 0,
+  "fresh_admission_performed": false,
+  "certificate_paths_rewritten": false,
+  "old_certificate_sha256": "b599cecdf30cb8d14ed7760dda56b64576f8a5077a15005ee78b553d159418cb",
+  "implementation": {
+    "verify_archive.py": {
+      "sha256": "3e73e50a62b8a69916f2b33b6ba8e97f2673f0b27e0ddfc7033ae9164fd1dc1b",
+      "mode": "0o644"
+    },
+    "reproduction.py": {
+      "sha256": "faf5a1e871195a2113bac32678107c4c06707d580b352becf5924ca75f9ecda4",
+      "mode": "0o644"
+    }
+  },
+  "proof": {
+    "path": "POSITIVE-FINAL.json",
+    "sha256": "11b72bbb95d66fb7c9a1663a0784593fcc6578014d7f20ce217c66336957db1d",
+    "baseline_sha256": "73ccbc32a68f2f47bf5e3fcaf99b89f631128969be1814f24cd99bbb8b788079",
+    "final_sha256": "dbdb845f0c4f52839868948fa8357eb84aa62fa7a6c9a6e12116114db2b0da44",
+    "counts": {
+      "moved_.text": 943,
+      "moved_.data.rel.ro": 2,
+      "branches_checked": 20964,
+      "calls_checked": 10607,
+      "lddw_checked": 7867,
+      "data_pointers_checked": 645,
+      "data_scalars_checked": 811,
+      "relocations_checked": 5818
+    }
+  },
+  "controls": {
+    "archive": 19,
+    "reproduction": 14,
+    "cli": 3
+  },
+  "scope_limit": "Read-only archive artifact replay and planned fresh reproduction, not a new compilation or original provenance claim."
+}

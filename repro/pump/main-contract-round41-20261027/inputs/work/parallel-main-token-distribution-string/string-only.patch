@@ -1,0 +1,11 @@
+--- a/programs/pump/src/creator/distribute_creator_fee_v2.rs
++++ b/programs/pump/src/creator/distribute_creator_fee_v2.rs
+@@ -49,7 +49,7 @@
+    let expected=anchor_spl::associated_token::get_associated_token_address_with_program_id(&share.address,&quote_mint_info.key(),quote_mint_info.owner);
+    require!(ata.key()==expected,PumpError::ShareholdersAndRemainingAccountsMismatch);
+    if recipient.executable{
+-    msg!("Unable to distribute to {}. Shareholder is a program account, use pump_fees::update_fee_shares to remove the shareholder from the team",recipient.key());
++    msg!("Unable to distribute to {}. Shareholder is a program account, use pump_fees::update_fee_shares to remove the shareholder from the team",recipient.key().to_string());
+     return err!(PumpError::UnableToDistributeCreatorFeesToExecutableRecipient);
+    }
+   }

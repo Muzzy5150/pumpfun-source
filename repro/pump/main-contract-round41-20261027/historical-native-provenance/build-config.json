@@ -1,0 +1,10 @@
+{
+  "registry_home": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/registry-home",
+  "dependency_cache": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/new-external-cache",
+  "cache_key": "d0bfcc81a805ed97eddf2ff75c2bb702f6774bb2624c0258becdaeba4fc93e6b",
+  "manifest_sha256": "cb499ed2cbdc040eec3323ef94fc8c1617aae85cd7e8f90fe7698aba3d589150",
+  "producer": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/plain-producer01",
+  "cache_proof": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/DIRECT-TRAIT-PARITY.json",
+  "entrypoint_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221",
+  "consumer": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/plain-consumer01"
+}

@@ -1,0 +1,54 @@
+{
+  "status": "Validated original-backed explicit length gate and infallible header borrows",
+  "source_file": "src/admin_set_idl_authority.rs",
+  "source_sha256": "2f4bd84e938aca5be5db5377774e3566240c90653e1551f33691116a4f37d459",
+  "patch_sha256": "7021e80c9aa718e295890f7748f3946033d4c93b17537324aa48e993cb1bc6e3",
+  "candidate_sha256": "9f5c760f0e3f911f4239a2c1fb7ee2d91996dda2ffb15f3cd9a760f078e9a693",
+  "unstripped_sha256": "a5ebdff81e3a4995c1ab0633c36f702cb824794e52cecdc318917bee67d847c5",
+  "build_receipt_sha256": "8d3875d32ba2fde0fb0560e928bd07c7a4b737d06d7d708e086b52c99828a1ad",
+  "prior_manifest_sha256": "51aa1b5795939feb067cd87a4116bef9e10cbfd5dde529088e1a661816978505",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 734,
+    "unmatched": 301
+  },
+  "delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "handler": {
+    "original_bytes": 5704,
+    "previous_candidate_bytes": 5632,
+    "candidate_bytes": 5944,
+    "normalized_equal": false
+  },
+  "runtime": {
+    "cases": 197,
+    "verified_transactions": 394,
+    "verified_signatures": 784,
+    "diagnostic_mismatches": 0,
+    "invocation_order_mismatches": 0,
+    "new_test_inputs": 0
+  },
+  "static_facts": [
+    "Explicit post-realloc data_len>=8 gate, original0x1562f8/0x156300.",
+    "Fallible discriminator borrow is unchanged.",
+    "Header deserialize uses RefCell::borrow; serialize uses RefCell::borrow_mut.",
+    "Corresponding borrow-conflict panic tails are present in original and candidate."
+  ],
+  "limits": [
+    "The signed instruction cases do not construct internal RefCell conflicts; panic paths are static evidence, not runtime coverage.",
+    "No normalized or raw set gain/loss;734/121 retained in hybrid identity layout.",
+    "The5944Bhandler remains unmatched to original5704B; source fidelity is not selected by byte length.",
+    "The exact896BTransferWithSeed helper and all13direct callee relationships remain.",
+    "No additional test count; existing197cases were reused.",
+    "Full original ELF identity remains false."
+  ]
+}

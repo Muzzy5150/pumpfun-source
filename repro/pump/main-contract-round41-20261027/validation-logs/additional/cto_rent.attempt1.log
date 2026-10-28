@@ -1,0 +1,13 @@
+{"case": "native-control", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-low_no_reserve", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-low_native_reserve", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6095))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6095))))", "diff": []}
+{"case": "native-rent_full_reserved", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-reserve_exceeds_balance", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-reserve_overflow", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "diff": []}
+{"case": "token-control", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "token-low_no_reserve", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "token-low_native_reserve", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6095))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6095))))", "diff": []}
+{"case": "token-rent_full_reserved", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "token-reserve_exceeds_balance", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "token-reserve_overflow", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6095))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6095))))", "diff": []}
+{"case_count": 12, "mismatches": []}

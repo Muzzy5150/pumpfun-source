@@ -1,0 +1,15 @@
+{
+  "status": "source hashes verified",
+  "issue": "Original portable patch has a malformed header at the IDL EOF boundary; no files were modified by the rejected --check.",
+  "resolution": "Copied only the seven hash-bound changed files from the sealed port source, after checking every original source hash. Complete combined build is still mandatory.",
+  "files": {
+    "idls/pump_fees.json": "6b9fa3eccc6e06273076a47b581f9fcb9e531bb7c3c88acbcd44db55a4002b29",
+    "src/creator/distribute_creator_fee_v2.rs": "1c128523b94bc8179ab562a9d93af253134e373616e812d3ded1d6097dee4728",
+    "src/distribution.rs": "2642cd655f093f57606be3fb49ffa064e8b1c4108c988ce665c4c458073eccb8",
+    "src/fee_cpi.rs": "e8bc413f1b2609c1634d9929178eaae9859a5725c5f7d69b5239d20d1f59ef9e",
+    "src/lib.rs": "15bcebce8f10e026990f19418c538cc243b988de3ffac90155546b3b66647d70",
+    "src/sell.rs": "6558a4b22b112ac4a2350b011be9f13fc5436ee7f749f991a885a0fcd1590933",
+    "src/trade_types.rs": "526dc94caaefd9826a83a8b76abc82e34c97ff27fce3fd0ccb581bb6cc1d47fe"
+  },
+  "original_patch_sha256": "9f3a0b329f1085d36200872e725b742950b51f38d3f839a89cecba201b5c0ed4"
+}

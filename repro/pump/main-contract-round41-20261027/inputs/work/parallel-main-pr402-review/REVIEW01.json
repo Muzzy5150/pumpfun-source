@@ -1,0 +1,149 @@
+{
+  "status": "Ready for one independent composite build; no local execution of the overlay yet",
+  "main_commit": "d6e82d49d968f979dab3ebe2dc7133cb44986284",
+  "scope": "Only three proven main-contract handlers; no other program work or blanket emit rewrites",
+  "verifiers": [
+    {
+      "packet": "gain01-set_creator",
+      "verifier_sha256": "0dddd12073fa557089967e2dbc51f47c5529d010d92b5a8128a75532d73cfc02",
+      "log_sha256": "c81c6b7234b89467c8ef199e3a1c658e25686c4b4385eb5ca5aa7fe797975e23",
+      "returncode": 0,
+      "source_patch_sha256": "26024c019e3155e817af5fcb66ced87c0448ef6439a58eebcba5a4349ea63fcf"
+    },
+    {
+      "packet": "gain02-incentives",
+      "verifier_sha256": "393f2ff9fbafc9967834c0ef037aef5bda83e679056c22509f8fbfd3d849b6e9",
+      "log_sha256": "faf57057a2c169bf58789fd90801c9b9761f8beece38363b2e2e4fa2e38f2dfc",
+      "returncode": 0,
+      "source_patch_sha256": "d3ba884751ec0e9ad442cdfa7019ea4e84db1c9a1f4524c0ca0e0cf3de7ecb81"
+    }
+  ],
+  "independent_normalized_windows": [
+    {
+      "original_start": "0x38fc0",
+      "original_bytes": 6136,
+      "candidate": "work/parallel-main-pr402-review/artifacts/gain01-set_creator/unstripped.so",
+      "candidate_sha256": "c696c519d3bef526fadd1c08578ab62b054ae4e190217201f746561e3afe13f4",
+      "exact_normalized_hits": [
+        {
+          "symbol": "_ZN14pump_recovered11set_creator3set17h890aee8212ee7d30E",
+          "start": "0x7e390",
+          "bytes": 6136,
+          "raw_equal": false
+        }
+      ],
+      "comparison_sha256": "a9bf3940849b3bc2800c75df55b3a5bafaf2b8bf69ba48f197796b3358acb61c"
+    },
+    {
+      "original_start": "0x3a7b8",
+      "original_bytes": 3552,
+      "candidate": "work/parallel-main-pr402-review/artifacts/gain01-set_creator/unstripped.so",
+      "candidate_sha256": "c696c519d3bef526fadd1c08578ab62b054ae4e190217201f746561e3afe13f4",
+      "exact_normalized_hits": [
+        {
+          "symbol": "_ZN14pump_recovered11set_creator4sync17h2ccdcbc922ce91d0E",
+          "start": "0x7fb88",
+          "bytes": 3552,
+          "raw_equal": false
+        }
+      ],
+      "comparison_sha256": "4560ad1cbf19fa7b14182ec1a401bc5ba735927df911362780acf9ef0ed7b848"
+    },
+    {
+      "original_start": "0x746a8",
+      "original_bytes": 3168,
+      "candidate": "work/parallel-main-pr402-review/artifacts/gain02-incentives/unstripped.so",
+      "candidate_sha256": "2543979cfc75a1acefd5a4dd45aae580ba0b9a3b598a5be865501d49545765f4",
+      "exact_normalized_hits": [
+        {
+          "symbol": "_ZN14pump_recovered10incentives7execute17hc06b5b84068b98efE",
+          "start": "0x27a30",
+          "bytes": 3168,
+          "raw_equal": false
+        }
+      ],
+      "comparison_sha256": "577739fa6a40a7e9f11d8aebce8929d108ea7225c6f6d463b65280cfda3d95a0"
+    }
+  ],
+  "runtime_provenance": [
+    {
+      "packet": "gain01-set_creator",
+      "summary": "runtime-set_creator.json",
+      "summary_sha256": "05b04b2f3e347bde95b6727f276b0a5034296f6e3c536e5925bd1517773f1402",
+      "candidate_sha256": "78acaeec48adebfcfb95987b990dd8e332468d3ef0a1eaab63947b5711187100",
+      "suites": 1,
+      "case_count": 509,
+      "diagnostic_log_cases": 509,
+      "raw_reports_archived": false
+    },
+    {
+      "packet": "gain01-set_creator",
+      "summary": "runtime-corpus44.json",
+      "summary_sha256": "18b9c221efd444c0efb2af4e9366ba7a86b494379acf466ff8154b825f8cdb1a",
+      "candidate_sha256": "78acaeec48adebfcfb95987b990dd8e332468d3ef0a1eaab63947b5711187100",
+      "suites": 44,
+      "case_count": 10468,
+      "diagnostic_log_cases": 10464,
+      "raw_reports_archived": false
+    },
+    {
+      "packet": "gain02-incentives",
+      "summary": "runtime-incentives.json",
+      "summary_sha256": "444d4feacb220caa0efdf2f46a6ef090b32fdce2aee3624160dec81feb0bfde3",
+      "candidate_sha256": "fb8df02b4afca92b58610e32aeb0c872222ef82e76743c0e17a554b2c4c161ba",
+      "suites": 2,
+      "case_count": 909,
+      "diagnostic_log_cases": 909,
+      "raw_reports_archived": false
+    }
+  ],
+  "runtime_limit": "These are upstream ELF-bound summaries. Their referenced raw compressed result reports are absent from the packet; the verifier validates summary consistency and ELF hashes, not serialized transaction or CPI details. Do not add these counts to current composite evidence.",
+  "minimal_patches": {
+    "01-set_creator.patch": "32dd8423d58726b6362ec37c4fd46e26f39fa9337b80ff8916d1f2a1e7a4922c",
+    "02-set_metaplex_creator.patch": "4d42486749644c59c80f522a782c1e7495c5479904c7196f980a080e3793be0a",
+    "03-admin_update_token_incentives.patch": "d3ba884751ec0e9ad442cdfa7019ea4e84db1c9a1f4524c0ca0e0cf3de7ecb81"
+  },
+  "source_changes": [
+    "src/incentives.rs",
+    "src/set_creator.rs"
+  ],
+  "source_files": 61,
+  "preserved": [
+    "Account types, ownership constraints, PDA seeds and event declarations are byte-identical.",
+    "The Some(empty creators) indexing behavior remains cs[0]; no new guard or altered error precedence.",
+    "Only pure account-key reads are hoisted; curve creator writes and metadata choice remain in their original branches.",
+    "The pinned emit!/emit_cpi! macros borrow event values, so removing Clone preserves event payload ownership and still permits the CPI emission.",
+    "The scheduler implementation and R38 guard-order fix are unchanged; only the wrapper captures mint before Clock, borrows that stable key and changes event/drop/return form.",
+    "All R40 prior source, Cargo, lock, IDLs, TradeEvent constructor and the two earlier source fixes remain identical outside the two changed files."
+  ],
+  "macro_evidence": {
+    "path": "work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-1949cf8c6b5b557f/anchor-attribute-event-0.31.1/src/lib.rs",
+    "sha256": "9d23b4e12ff8bb2460031a1ad7aa3c11c0e37f67b24c16d6b25ca834a25e541d",
+    "emit_borrows_event": true,
+    "emit_cpi_borrows_event": true
+  },
+  "planned_regression": {
+    "case_counts": {
+      "full": 1418,
+      "additional": 771
+    },
+    "suites": 10,
+    "new_cases": 0
+  },
+  "future_static_expectation": {
+    "base_normalized": 813,
+    "additional_windows": 3,
+    "if_all_preserved": 816,
+    "additional_original_bytes": 12856
+  },
+  "limits": [
+    "Matching normalized windows does not certify all referenced data/callees or the whole ELF.",
+    "The source statements and their scope/return form are supported by three complete compiled windows; exact historical spelling is not unique.",
+    "Fresh composite build, full retained-window comparisons, targeted/current full corpus and reproduction are required before selection."
+  ],
+  "input_sha256": {
+    "STAGED.json": "b0f01f3702d6dce4b495c4890111ef7f1089e95644b560614d92f494240662d9",
+    "EXPORT.json": "96c65b4bba9996824c97824948bb95310f0fe4878878b0d0c388744b8fe98422",
+    "INDEPENDENT-WINDOWS.json": "5f0b8e8cf31b895d691201b58581d68e2b86e2b38ae23fa8f441db8f52a96754"
+  }
+}

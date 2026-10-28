@@ -1,0 +1,21 @@
+{
+  "source_sha256": "9dff639f91f565d184e921df3d62c070ed9c3d41e70a792e2c8bc82d89c4ff5c",
+  "candidate_sha256": "19d530617b9fa65f7318b0b7675679b8b62a40403e316f3697f188e3b4c2d68a",
+  "unstripped_sha256": "82813fe9bf51c923b3e9dde9f42d27e546a4947cbd70ce61d05de1d6068d25cb",
+  "focused_cases": 97,
+  "diagnostic_mismatches": 0,
+  "invocation_mismatches": 0,
+  "case_counts": {
+    "cost-order8": 8,
+    "buyback54": 54,
+    "buyback-order16": 16,
+    "buyback-post8": 8,
+    "buyback-prefix7": 7,
+    "buyback-protocol4": 4
+  },
+  "source": "source01",
+  "change": "Move initial total-cost sum after post-pool validation and buyback assertions; retains entire accepted b499 V3 buyback correction.",
+  "base": "../parallel-main-v3-buyback-assert/source02",
+  "round21_counterexample": "round21-before.json.gz",
+  "patch": "cost-order.patch"
+}

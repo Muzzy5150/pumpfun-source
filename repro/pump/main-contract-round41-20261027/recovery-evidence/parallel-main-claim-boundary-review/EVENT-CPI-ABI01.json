@@ -1,0 +1,254 @@
+{
+  "original": {
+    "elf_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+    "claim_start": "0x75308",
+    "claim_bytes": 5920,
+    "invoke": {
+      "site": "0x76880",
+      "target": "0x1a0530",
+      "account_info_count": 1,
+      "prelude": [
+        {
+          "pc": "0x76840",
+          "bytes": "7a0a08f001000000",
+          "op": "0x7a",
+          "dst": 10,
+          "src": 0,
+          "offset": -4088,
+          "immediate": 1
+        },
+        {
+          "pc": "0x76848",
+          "bytes": "bfa1000000000000",
+          "op": "0xbf",
+          "dst": 1,
+          "src": 10,
+          "offset": 0,
+          "immediate": 0
+        },
+        {
+          "pc": "0x76850",
+          "bytes": "0701000068feffff",
+          "op": "0x7",
+          "dst": 1,
+          "src": 0,
+          "offset": 0,
+          "immediate": -408
+        },
+        {
+          "pc": "0x76858",
+          "bytes": "bfa3000000000000",
+          "op": "0xbf",
+          "dst": 3,
+          "src": 10,
+          "offset": 0,
+          "immediate": 0
+        },
+        {
+          "pc": "0x76860",
+          "bytes": "0703000080feffff",
+          "op": "0x7",
+          "dst": 3,
+          "src": 0,
+          "offset": 0,
+          "immediate": -384
+        },
+        {
+          "pc": "0x76868",
+          "bytes": "bfa5000000000000",
+          "op": "0xbf",
+          "dst": 5,
+          "src": 10,
+          "offset": 0,
+          "immediate": 0
+        },
+        {
+          "pc": "0x76870",
+          "bytes": "bf72000000000000",
+          "op": "0xbf",
+          "dst": 2,
+          "src": 7,
+          "offset": 0,
+          "immediate": 0
+        },
+        {
+          "pc": "0x76878",
+          "bytes": "b704000001000000",
+          "op": "0xb7",
+          "dst": 4,
+          "src": 0,
+          "offset": 0,
+          "immediate": 1
+        }
+      ]
+    }
+  },
+  "baseline": {
+    "elf_sha256": "6efa2bba266c366db0e3008393c0a350e354dfbd61b8491cc1b7b5f0d4a4db6f",
+    "claim_start": "0x281d0",
+    "claim_bytes": 6240,
+    "invoke": {
+      "site": "0x29790",
+      "target": "0x1892b0",
+      "account_info_count": 2,
+      "prelude": [
+        {
+          "pc": "0x29750",
+          "bytes": "bfa1000000000000",
+          "op": "0xbf",
+          "dst": 1,
+          "src": 10,
+          "offset": 0,
+          "immediate": 0
+        },
+        {
+          "pc": "0x29758",
+          "bytes": "07010000c0ffffff",
+          "op": "0x7",
+          "dst": 1,
+          "src": 0,
+          "offset": 0,
+          "immediate": -64
+        },
+        {
+          "pc": "0x29760",
+          "bytes": "bfa2000000000000",
+          "op": "0xbf",
+          "dst": 2,
+          "src": 10,
+          "offset": 0,
+          "immediate": 0
+        },
+        {
+          "pc": "0x29768",
+          "bytes": "0702000048ffffff",
+          "op": "0x7",
+          "dst": 2,
+          "src": 0,
+          "offset": 0,
+          "immediate": -184
+        },
+        {
+          "pc": "0x29770",
+          "bytes": "bfa3000000000000",
+          "op": "0xbf",
+          "dst": 3,
+          "src": 10,
+          "offset": 0,
+          "immediate": 0
+        },
+        {
+          "pc": "0x29778",
+          "bytes": "07030000d8fdffff",
+          "op": "0x7",
+          "dst": 3,
+          "src": 0,
+          "offset": 0,
+          "immediate": -552
+        },
+        {
+          "pc": "0x29780",
+          "bytes": "bfa5000000000000",
+          "op": "0xbf",
+          "dst": 5,
+          "src": 10,
+          "offset": 0,
+          "immediate": 0
+        },
+        {
+          "pc": "0x29788",
+          "bytes": "b704000002000000",
+          "op": "0xb7",
+          "dst": 4,
+          "src": 0,
+          "offset": 0,
+          "immediate": 2
+        }
+      ]
+    }
+  },
+  "candidate": {
+    "elf_sha256": "c26699faea779437932e454c2313960d38db7eb4d476c0da95e6059dbdcd1f7e",
+    "claim_start": "0x281d0",
+    "claim_bytes": 5624,
+    "invoke": {
+      "site": "0x29638",
+      "target": "0x189048",
+      "account_info_count": 1,
+      "prelude": [
+        {
+          "pc": "0x295f8",
+          "bytes": "bfa1000000000000",
+          "op": "0xbf",
+          "dst": 1,
+          "src": 10,
+          "offset": 0,
+          "immediate": 0
+        },
+        {
+          "pc": "0x29600",
+          "bytes": "0701000090ffffff",
+          "op": "0x7",
+          "dst": 1,
+          "src": 0,
+          "offset": 0,
+          "immediate": -112
+        },
+        {
+          "pc": "0x29608",
+          "bytes": "bfa2000000000000",
+          "op": "0xbf",
+          "dst": 2,
+          "src": 10,
+          "offset": 0,
+          "immediate": 0
+        },
+        {
+          "pc": "0x29610",
+          "bytes": "07020000f8fdffff",
+          "op": "0x7",
+          "dst": 2,
+          "src": 0,
+          "offset": 0,
+          "immediate": -520
+        },
+        {
+          "pc": "0x29618",
+          "bytes": "bfa3000000000000",
+          "op": "0xbf",
+          "dst": 3,
+          "src": 10,
+          "offset": 0,
+          "immediate": 0
+        },
+        {
+          "pc": "0x29620",
+          "bytes": "07030000a8ffffff",
+          "op": "0x7",
+          "dst": 3,
+          "src": 0,
+          "offset": 0,
+          "immediate": -88
+        },
+        {
+          "pc": "0x29628",
+          "bytes": "bfa5000000000000",
+          "op": "0xbf",
+          "dst": 5,
+          "src": 10,
+          "offset": 0,
+          "immediate": 0
+        },
+        {
+          "pc": "0x29630",
+          "bytes": "b704000001000000",
+          "op": "0xb7",
+          "dst": 4,
+          "src": 0,
+          "offset": 0,
+          "immediate": 1
+        }
+      ]
+    }
+  }
+}

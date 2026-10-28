@@ -1,0 +1,37 @@
+{
+  "scope": "Optimized expected-image cache, while verifying actual full ProgramData bytes and owner on every load. No target/VM behavior changes.",
+  "suites": [
+    {
+      "suite": "quote_control",
+      "cases": 507,
+      "complete_per_case_results_identical": true,
+      "all_loader_records_identical": true,
+      "loads": 1014
+    },
+    {
+      "suite": "sell",
+      "cases": 301,
+      "complete_per_case_results_identical": true,
+      "all_loader_records_identical": true,
+      "loads": 603
+    },
+    {
+      "suite": "migration",
+      "cases": 228,
+      "complete_per_case_results_identical": true,
+      "all_loader_records_identical": true,
+      "loads": 684
+    }
+  ],
+  "cases": 1036,
+  "diagnostic_cases": 1036,
+  "baseline_candidate_sha256": "95ac14b455059c483bd23ba2b5245877901178d21f83e3baf042993d573ac31a",
+  "controlled_load_speed_ratio": 3.511574818135821,
+  "negative_controls": 10,
+  "inputs": {
+    "work/parallel-main-loader-optimized/pump_captured_loader.py": "844decb7fd4ffe0eaa2ff6243433c7290c478083320cfcdf5bd35debeb2e4858",
+    "work/parallel-main-loader-optimized/pump_with_captured_loader.py": "4eb9d65c8e54b39b2e991f1cff6068a28bd2d5c1a33601225d3608eb5e82863e",
+    "work/parallel-main-loader-optimized/benchmark.py": "c0677524b689b9b34f0d3509ddbbe8a23c0a73e4b2caeb1dbccd4a0b0586386e",
+    "work/parallel-main-loader-optimized/review.py": "1f928fdd5a906e7f28b8a1070d1b343e9efff2172e6dbd51041c896ca3e47796"
+  }
+}

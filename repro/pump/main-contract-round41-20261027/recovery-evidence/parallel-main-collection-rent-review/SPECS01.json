@@ -1,0 +1,1601 @@
+{
+  "scope": "88 validated review cases; parent collection lane will dedup these against its64 and the273 existing cases before adding incremental tests. Input hash uses exact transaction plus canonical non-null original before map.",
+  "cases": [
+    {
+      "case": {
+        "name": "legacy-owner-pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ-amount0",
+        "version": "legacy",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 0,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "c60740752907d61cc5fa0cb076c9a948aab41d20c8eaabc39a9c9125f4a96766",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-owner-6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P-amount0",
+        "version": "legacy",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "lamports": 0,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "c60740752907d61cc5fa0cb076c9a948aab41d20c8eaabc39a9c9125f4a96766",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-owner-TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA-amount0",
+        "version": "legacy",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "lamports": 0,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "c60740752907d61cc5fa0cb076c9a948aab41d20c8eaabc39a9c9125f4a96766",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-executable-amount0",
+        "version": "legacy",
+        "native": 890880,
+        "executable": true
+      },
+      "input_hash": "6b0a3ed5e894c9a3f741edb9f23780c9650593891258cf939b49caf8558f98e1",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-invalid-vault-owner-lowrecipient-amount0",
+        "version": "legacy",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "lamports": 0
+          },
+          "creator_vault": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "input_hash": "f7e3bd9718fd957f7e583d1b2422857a2bdcecee00c6702986b51179528ed4b1",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-invalid-vault-data-lowrecipient-amount0",
+        "version": "legacy",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "lamports": 0
+          },
+          "creator_vault": {
+            "bytes": [
+              [
+                0,
+                "00"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "6ed12ab8e9bc7b9394a2c73d9660b117589a2b717ff9253c3abd5565d9482217",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-owner-pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ-amount1",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 0,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "6f49521fd16219b5ab3fbcb84c770d2a37dd5f26b98ea2ba8aaffd2dabffcd83",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-owner-6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P-amount1",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "lamports": 0,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "6f49521fd16219b5ab3fbcb84c770d2a37dd5f26b98ea2ba8aaffd2dabffcd83",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-owner-TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA-amount1",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "lamports": 0,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "6f49521fd16219b5ab3fbcb84c770d2a37dd5f26b98ea2ba8aaffd2dabffcd83",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-executable-amount1",
+        "version": "legacy",
+        "native": 890881,
+        "executable": true
+      },
+      "input_hash": "ba3ed3f6ccc0a8988f5dd8dd0326a6a47478c07f3f335a3f4cd4953439da7f9c",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-invalid-vault-owner-lowrecipient-amount1",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 0
+          },
+          "creator_vault": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "input_hash": "e1bf17bba5c372c049dbd0d884f638a47abfff9cfe7b977420b7b744f4336a93",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-invalid-vault-data-lowrecipient-amount1",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 0
+          },
+          "creator_vault": {
+            "bytes": [
+              [
+                0,
+                "00"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "395a9e275a816cf7eab26972ae26af5738525a974f47fbb1dbd64474cb7c3d72",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-overflow-recipient18446744073709551614-amount1",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 18446744073709551614
+          }
+        }
+      },
+      "input_hash": "8d44d6f64d670d5f0afa0b69643cad55f9f29ddb33bb0068548efdb708193096",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-overflow-recipient18446744073709551615-amount1",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 18446744073709551615
+          }
+        }
+      },
+      "input_hash": "2c7b909d8696260dd8b3217e76f3715f78191e009302ebf8fe6deb3a40094d46",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-overflow-recipient18446744073709551614-amount3",
+        "version": "legacy",
+        "native": 890883,
+        "patch": {
+          "creator": {
+            "lamports": 18446744073709551614
+          }
+        }
+      },
+      "input_hash": "36b91e159942a258e7294728dc1386e3b4edd96638ed3b5d0976069fb1239e1e",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-datalen1-floor-delta-1",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 897838,
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "bytes": [
+              [
+                0,
+                "00"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "03d460155820bec908c4254649cac14179e0c8367ff638989326f401aabea506",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-datalen1-floor-delta0",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 897839,
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "bytes": [
+              [
+                0,
+                "00"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "f24f13c275c1eac41faec1fdef82fe1bf86c38051d7cf17cdc59250d65f80f6e",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-datalen165-floor-delta-1",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 2039278,
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "bytes": [
+              [
+                0,
+                "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "fee702ed1bcc21d6e1ce58991883e9f6d2e98eb6bc7a5ea0c42df257961af44a",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-datalen165-floor-delta0",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 2039279,
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "bytes": [
+              [
+                0,
+                "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "1f999062de7b687e27cf8d7fb762bfc9b1fde2843c1120c6156be7724c940b8a",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-datalen1024-floor-delta-1",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 8017918,
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "bytes": [
+              [
+                0,
+                "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "f52a3e47a1fd5b48351c27593bd18c091eaf7204c62988408fb3c3265163bbff",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-datalen1024-floor-delta0",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 8017919,
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "bytes": [
+              [
+                0,
+                "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "a193df0694f7ba6d270a12e4805f788904fd54b9c242b9b18e015b9470694fc1",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-owner-pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ-amount0",
+        "version": "v2",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 0,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "f4d9f4c5a5fac33c8a0ed71b017970e7741b7bf85a03e4390cfdcdf28a13d2b7",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-owner-6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P-amount0",
+        "version": "v2",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "lamports": 0,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "f4d9f4c5a5fac33c8a0ed71b017970e7741b7bf85a03e4390cfdcdf28a13d2b7",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-owner-TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA-amount0",
+        "version": "v2",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "lamports": 0,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "f4d9f4c5a5fac33c8a0ed71b017970e7741b7bf85a03e4390cfdcdf28a13d2b7",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-executable-amount0",
+        "version": "v2",
+        "native": 890880,
+        "executable": true
+      },
+      "input_hash": "f74389136133d3675bfb989ef59617313fd8446564fefd4e975997ee6078b9e2",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-invalid-vault-owner-lowrecipient-amount0",
+        "version": "v2",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "lamports": 0
+          },
+          "creator_vault": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "input_hash": "89b2a9ceef83dac79a8c9190377b8dcf9796fc21ce1ad2dfa77b9291ed03626a",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-invalid-vault-data-lowrecipient-amount0",
+        "version": "v2",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "lamports": 0
+          },
+          "creator_vault": {
+            "bytes": [
+              [
+                0,
+                "00"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "b9e1dcea11c99fe559e56074c8015da48e3bb4cac13b130fd9b69bdea667588b",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-owner-pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ-amount1",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 0,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "03fd96b6f8888fc5f96957f6f0e55b12b5cd3821565595986e5813baf7d823e7",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-owner-6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P-amount1",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "lamports": 0,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "03fd96b6f8888fc5f96957f6f0e55b12b5cd3821565595986e5813baf7d823e7",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-owner-TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA-amount1",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "lamports": 0,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "03fd96b6f8888fc5f96957f6f0e55b12b5cd3821565595986e5813baf7d823e7",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-executable-amount1",
+        "version": "v2",
+        "native": 890881,
+        "executable": true
+      },
+      "input_hash": "83e78752b952a85f71f64d1d7b4aed57e680d279db551c42f7bd8f1fc7efa374",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-invalid-vault-owner-lowrecipient-amount1",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 0
+          },
+          "creator_vault": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "input_hash": "5054ed70407a31e10e3383a83dbc2f983431a83b534e058789bdf04f951a3a5b",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-invalid-vault-data-lowrecipient-amount1",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 0
+          },
+          "creator_vault": {
+            "bytes": [
+              [
+                0,
+                "00"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "2c7734a54faa8e01a1dec953ef8a477335b9907105336d6210e12816cc81d9ef",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-overflow-recipient18446744073709551614-amount1",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 18446744073709551614
+          }
+        }
+      },
+      "input_hash": "de0d029105bb685ec68685c483d726b4605f302be8aab4db72304d91b9e17f09",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-overflow-recipient18446744073709551615-amount1",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 18446744073709551615
+          }
+        }
+      },
+      "input_hash": "cf2d4fec713720100927990d7c06c61d37d4e494f2e71ebe65ffdf6a1141e3f8",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-overflow-recipient18446744073709551614-amount3",
+        "version": "v2",
+        "native": 890883,
+        "patch": {
+          "creator": {
+            "lamports": 18446744073709551614
+          }
+        }
+      },
+      "input_hash": "a45c5fca2e44df0f829a5fa3f0945694e2a931800ca0abe18e83d773da588d6a",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-datalen1-floor-delta-1",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 897838,
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "bytes": [
+              [
+                0,
+                "00"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "cd475f68e1f29e362314a4252ab4bf6c660648c5416fa4c7cad9f4041d3a246e",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-datalen1-floor-delta0",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 897839,
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "bytes": [
+              [
+                0,
+                "00"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "3f390f477da0ff829c018efc82d3034e3f56ffc441f5c970e99844c7efdbab1d",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-datalen165-floor-delta-1",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 2039278,
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "bytes": [
+              [
+                0,
+                "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "9ee4d2b56bd2431f721de3c247ebf76336c26af52bf507ea771e41213c010d36",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-datalen165-floor-delta0",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 2039279,
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "bytes": [
+              [
+                0,
+                "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "4fc7a71ab157a31ddcef3496356cd0276bb02c68c9bd2766057c7a3c6bbfd124",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-datalen1024-floor-delta-1",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 8017918,
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "bytes": [
+              [
+                0,
+                "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "2b627226080a8b94e1c88d248f5ccb1e52812b234768e04305bcc21ed8474a26",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-datalen1024-floor-delta0",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 8017919,
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "bytes": [
+              [
+                0,
+                "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "e09df22c40237797eabc5f2ab4f80297228a1d07d30a3f83e8af5661bd1c9481",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "token-executable-invalid-source-amount0",
+        "version": "v2",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "tokens": 0,
+        "executable": true,
+        "source_missing": true
+      },
+      "input_hash": "bbc2ebd900e1a42930698acadb7e5bd3fa57774c4f0a320175b029cdcf4ea9d4",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "token-fees-owner-invalid-source-amount0",
+        "version": "v2",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "tokens": 0,
+        "source_missing": true,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 0
+          }
+        }
+      },
+      "input_hash": "f3150147f0235008a0247feef4ed4de9e0a0839985327a2537b48d18af6885a2",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "token-executable-invalid-source-amount1",
+        "version": "v2",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "tokens": 1,
+        "executable": true,
+        "source_missing": true
+      },
+      "input_hash": "bbc2ebd900e1a42930698acadb7e5bd3fa57774c4f0a320175b029cdcf4ea9d4",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "token-fees-owner-invalid-source-amount1",
+        "version": "v2",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "tokens": 1,
+        "source_missing": true,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 0
+          }
+        }
+      },
+      "input_hash": "f3150147f0235008a0247feef4ed4de9e0a0839985327a2537b48d18af6885a2",
+      "source_receipt": "precedence01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-actual-token-amount0",
+        "version": "legacy",
+        "native": 890880,
+        "actual_executable": "token"
+      },
+      "input_hash": "61f6b96c2ced9fa4e5de1cfc3ca52b93c3b2a35d8a6d1a7e61dd0e109bcebdd1",
+      "source_receipt": "executable01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-actual-token-amount1",
+        "version": "legacy",
+        "native": 890881,
+        "actual_executable": "token"
+      },
+      "input_hash": "0043e586d0363ce4d1a3b0c4cda20e5a1edf03b3accf8e1cc8dd230cfee994ed",
+      "source_receipt": "executable01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-actual-token22-amount0",
+        "version": "legacy",
+        "native": 890880,
+        "actual_executable": "token22"
+      },
+      "input_hash": "2a7fee7d14446da71da95d54c5e61de2b7b07ffb6b83af48cf8391f932f5b6d6",
+      "source_receipt": "executable01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-actual-token22-amount1",
+        "version": "legacy",
+        "native": 890881,
+        "actual_executable": "token22"
+      },
+      "input_hash": "edd2c43cb5ee7c5c5f5a79b1f85d1301be0358c3330bb98fb80b3dc5687aa18a",
+      "source_receipt": "executable01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-actual-token-amount0",
+        "version": "v2",
+        "native": 890880,
+        "actual_executable": "token"
+      },
+      "input_hash": "e9c9b8a42b339db90d41c1e1300ee05d52e42656a648172c0852cd1e0b944339",
+      "source_receipt": "executable01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-actual-token-amount1",
+        "version": "v2",
+        "native": 890881,
+        "actual_executable": "token"
+      },
+      "input_hash": "32936e3e4f4b40e98ff2e54038002cc9380afa6c5647ce6ff187d25d75433f45",
+      "source_receipt": "executable01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-actual-token22-amount0",
+        "version": "v2",
+        "native": 890880,
+        "actual_executable": "token22"
+      },
+      "input_hash": "7ec7a71c2a2818fe82461c8c0fcc51d37aabf4ab6ce33a51706980cd8fb55b9d",
+      "source_receipt": "executable01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-actual-token22-amount1",
+        "version": "v2",
+        "native": 890881,
+        "actual_executable": "token22"
+      },
+      "input_hash": "f93c8692f1efcdc9141ba8421e1a6d0648160aa0ec1dc69c4885346c5693be1f",
+      "source_receipt": "executable01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-tokenquote-actual-token22-invalid-source-amount0",
+        "version": "v2",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "tokens": 0,
+        "actual_executable": "token22",
+        "source_missing": true
+      },
+      "input_hash": "b6f0508fffbced457cc7e124d64e8d1db9712c146cf46f6963126dd7313606a7",
+      "source_receipt": "executable01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-tokenquote-actual-token22-invalid-source-amount1",
+        "version": "v2",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "tokens": 1,
+        "actual_executable": "token22",
+        "source_missing": true
+      },
+      "input_hash": "b6f0508fffbced457cc7e124d64e8d1db9712c146cf46f6963126dd7313606a7",
+      "source_receipt": "executable01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-live1-ownerpfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ-amount0",
+        "version": "legacy",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 1,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "43c850ba2afcec55668fa180bb8be424dc8db77e6acec91f9f5b20e370e86133",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-live1-owner6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P-amount0",
+        "version": "legacy",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "lamports": 1,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "33b5447bb012abea0fa3ebb4d1e26049df9e45fd4760c4334ed35ef6d2aeb2df",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-live1-ownerTokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA-amount0",
+        "version": "legacy",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "lamports": 1,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "ae25386a057edef191a181153336e53b7d92558b5115d8ba05d02d8aa051b412",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-live2000000-ownerpfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ-amount0",
+        "version": "legacy",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 2000000,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "30061103874ded1dba9e0332262d9ad1d65eed86fe98273682cfbaeb8617e9a3",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-live2000000-owner6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P-amount0",
+        "version": "legacy",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "lamports": 2000000,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "40c0c2e7ea41f366ac7c8dbe4c6efe315a9977c4e953cb422fe9cd730910ce60",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-live2000000-ownerTokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA-amount0",
+        "version": "legacy",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "lamports": 2000000,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "5f3aaa417be79dc1c2d0391c88167bba8de9815dfd56dd2518e8b6eeed58d591",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-live1-ownerpfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ-amount1",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 1,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "795843b5f2698064feb102df7f5e63bfa80944a556b83dd17367f51f8eba4112",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-live1-owner6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P-amount1",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "lamports": 1,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "66613d5affb16f0d182bbb346e7e2762db96f493af1c26492cf6f0c4665f4296",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-live1-ownerTokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA-amount1",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "lamports": 1,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "88c193777656c5a7849f4228cb033a864a55bdb704c0c3911ad238017d306856",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-live2000000-ownerpfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ-amount1",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 2000000,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "46ef784e1c56eac79dafc43fb8a1343248908f75032264eae474b3b344c00695",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-live2000000-owner6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P-amount1",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "lamports": 2000000,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "26d1494875125123c2117c1d6f3dd77dbd6426248e88f1f000a4b140398d1172",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-live2000000-ownerTokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA-amount1",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "lamports": 2000000,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "931e2b1c5abfae75b5e75bd20fc59333544084b952dc0fe765bbba5e23ea988f",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-funded-recipient-invalid-vault-owner",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 2000000
+          },
+          "creator_vault": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "input_hash": "065efe0cb0186a99cc74304e1486d769c1b86e982cb914afd00a49327808338c",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "legacy-funded-recipient-invalid-vault-data",
+        "version": "legacy",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 2000000
+          },
+          "creator_vault": {
+            "bytes": [
+              [
+                0,
+                "00"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "6b0770778978d6529b104a2631c0943d6202af9fa912d7f9445ed61a20ace0ac",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-live1-ownerpfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ-amount0",
+        "version": "v2",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 1,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "000c844698842ea824395a0af3273a64350273cea9e82e2d0aa403a281fc63b6",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-live1-owner6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P-amount0",
+        "version": "v2",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "lamports": 1,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "d3d71cf82d166e4b100611784fc9c7be73d6fc17eedd54d714263fb798cbed12",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-live1-ownerTokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA-amount0",
+        "version": "v2",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "lamports": 1,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "1dd2bfe5c6ec343631736d79a3193854b6ecc55389565c81a65446e65a664dc6",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-live2000000-ownerpfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ-amount0",
+        "version": "v2",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 2000000,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "a69dd8abc3980de6767e43d7cac5c4b8e59c133946a8cf267a3c987e965d51ba",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-live2000000-owner6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P-amount0",
+        "version": "v2",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "lamports": 2000000,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "f50d9f06d355f020dee80b59eb72dff28c2fc690983a3301ab2329321efb8664",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-live2000000-ownerTokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA-amount0",
+        "version": "v2",
+        "native": 890880,
+        "patch": {
+          "creator": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "lamports": 2000000,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "6f0c7ae48809fe3a553374e75a1bd97d3a87ba497c3640119ede4c42078812bd",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-live1-ownerpfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ-amount1",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 1,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "aa6ace68153c6c1b4d20c9767023ac5cd38d2cebdf6fe7539a42ea703bac9574",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-live1-owner6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P-amount1",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "lamports": 1,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "335d48baddd6016ca2fb2aef5acdc8394a018e781c9db0ae918a82343d353b4e",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-live1-ownerTokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA-amount1",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "lamports": 1,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "f29f1e6ecaae8bedb72dcc3f014f907d02bc277241d81b8f512ee8e4f5e8dfd6",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-live2000000-ownerpfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ-amount1",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 2000000,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "597081dcc8c4c1435c1acb7f6e27bc0f59a45acb1d0ed6da191029b3d256b3ec",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-live2000000-owner6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P-amount1",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            "lamports": 2000000,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "89218ab4498eca5d6673e3159c399f087c4905b0a1a3b24dbd47c76aaf16317b",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-live2000000-ownerTokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA-amount1",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            "lamports": 2000000,
+            "bytes": [
+              [
+                0,
+                "0000000000000000"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "e2d0b563658882c46fdafdedc695deaf20482acca1b1d8a9712fa2b16dd93f05",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-funded-recipient-invalid-vault-owner",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 2000000
+          },
+          "creator_vault": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "input_hash": "b141304033a74be010bd8e8d06118fd0be53035f79211825e74fe48641e0df64",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "v2-funded-recipient-invalid-vault-data",
+        "version": "v2",
+        "native": 890881,
+        "patch": {
+          "creator": {
+            "lamports": 2000000
+          },
+          "creator_vault": {
+            "bytes": [
+              [
+                0,
+                "00"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "0c08bcfd1dbbd6377b406048eb0c7cdc0effeff17a2b78b4ee4afdbc3983d49a",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "token-live-FEES-amount0-missingFalse",
+        "version": "v2",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "tokens": 0,
+        "source_missing": false,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 1
+          }
+        }
+      },
+      "input_hash": "edaa3164de15e6439f0ec99b9c5be0769e20db385ef2cd8f96e605e7e8682baa",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "token-live-FEES-amount0-missingTrue",
+        "version": "v2",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "tokens": 0,
+        "source_missing": true,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 1
+          }
+        }
+      },
+      "input_hash": "cd7840edfe71e4759c886d557228c27cd134b98c648238a3c7c5900daccc4a45",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "token-live-FEES-amount1-missingFalse",
+        "version": "v2",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "tokens": 1,
+        "source_missing": false,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 1
+          }
+        }
+      },
+      "input_hash": "3b491830787ef905efb4310b0519208b7254d425efda454eddd8fe4277b33268",
+      "source_receipt": "owner-live01.json.gz"
+    },
+    {
+      "case": {
+        "name": "token-live-FEES-amount1-missingTrue",
+        "version": "v2",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "tokens": 1,
+        "source_missing": true,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 1
+          }
+        }
+      },
+      "input_hash": "cd7840edfe71e4759c886d557228c27cd134b98c648238a3c7c5900daccc4a45",
+      "source_receipt": "owner-live01.json.gz"
+    }
+  ]
+}

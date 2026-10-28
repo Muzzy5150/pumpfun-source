@@ -1,0 +1,35 @@
+{
+  "status": "Sealed additional-corpus fragment; original mismatch retained, corrected candidate not built or run",
+  "existing_R37_cases": 18104,
+  "prepared_inputs": 4,
+  "unique_added_inputs": 4,
+  "duplicates": [],
+  "ambiguous": [],
+  "missing_prestate_transaction_collisions": 0,
+  "baseline_comparator_check": {
+    "reversed_range_before_start": [
+      "error",
+      "logs_except_source_coordinates_and_compute_usage"
+    ],
+    "valid_range_before_start_control": [],
+    "reversed_range_zero_supply_control": [],
+    "expired_active_range_control": []
+  },
+  "log_comparison": "All logs except compute-usage lines and natural source positions; all before/after/error/events/inner/return fields and signatures required to match.",
+  "original_mismatch": {
+    "path": "work/parallel-main-schedule-guard-witness/before01.json.gz",
+    "sha256": "ca37c8a578cec31ef94257cd256ebcda7efa718269e623eee6a06767e9bc820d"
+  },
+  "staged_fix": {
+    "path": "work/parallel-main-schedule-guard-witness/guard-order01.patch",
+    "sha256": "93925e8a8dabd5860e1e8828c7c63d5167cd6cccdefac2509009d32f21b30e53"
+  },
+  "historical_reachability": "Unproved. Reversed range is validly decoded, parser-admitted synthetic state; no owner/executable mutation.",
+  "compiler_launched": false,
+  "new_runtime_launched": false,
+  "pair_traversal_reference": {
+    "path": "work/parallel-main-receipt-verifier/receipt_verifier.py",
+    "sha256": "d534cb7e5364d3ec50ea6183ce6b1b9cc0f0b9b8b055f0cc053e7206c4b40838",
+    "method": "Same original/candidate dictionary pair traversal; one authoritative top-level suite decoded at a time."
+  }
+}

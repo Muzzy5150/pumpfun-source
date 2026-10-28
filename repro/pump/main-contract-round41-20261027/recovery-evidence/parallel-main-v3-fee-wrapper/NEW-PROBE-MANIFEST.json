@@ -1,0 +1,29 @@
+{
+  "scope": "New frozen V3 local fee-selector coverage; both baseline reports passed. No mutation of previously delivered probe manifests.",
+  "loader": "work/parallel-main-loader-optimized/pump_with_captured_loader.py",
+  "scripts": [
+    {
+      "script": "work/parallel-main-v3-fee-wrapper/probe-config-boundaries.py",
+      "sha256": "52fc497adf19c8e2b48f65200cbc0c9ac4ea2f9f546a461ef07e6b2297d57f1d",
+      "expected_cases": 144,
+      "arguments": [
+        "--candidate",
+        "<candidate.so>",
+        "--output",
+        "<report.json.gz>"
+      ]
+    },
+    {
+      "script": "work/parallel-main-v3-fee-wrapper/probe-continuation-tiers.py",
+      "sha256": "ae12a71d9a700596f7bed376d874a31e4633e9b9ec85fb06d44d3151aad91a78",
+      "expected_cases": 12,
+      "arguments": [
+        "--candidate",
+        "<candidate.so>",
+        "--output",
+        "<report.json.gz>"
+      ]
+    }
+  ],
+  "total_expected_cases": 156
+}

@@ -1,0 +1,28 @@
+{
+  "script": "work/parallel-main-v2-creator-vault-rent/probe.py",
+  "script_sha256": "f8c403624055639b859f50e371e34edefb0c126e6640824f6dc796100f1bb65e",
+  "arguments": [
+    "--candidate",
+    "CANDIDATE",
+    "--output",
+    "OUTPUT.json.gz"
+  ],
+  "uses_optimized_captured_loader": true,
+  "case_count": 108,
+  "coverage": [
+    "BuyV2/BuyExactQuoteV2/SellV2",
+    "native/token quote",
+    "creator/zero creator/cashback",
+    "vault balances 0,1,890879,890880,890881",
+    "payer balances 50000,890879,895880"
+  ],
+  "baseline_archive": "work/parallel-main-v2-creator-vault-rent/before.json.gz",
+  "corrected_archive": "work/parallel-main-v2-creator-vault-rent/after01.json.gz",
+  "baseline_discrepancies": 12,
+  "corrected_discrepancies": 0,
+  "verified_transactions": 216,
+  "captured_main_loads": 216,
+  "new_unique_observable_fixtures": 108,
+  "prior_overlap_count": 0,
+  "full_delivery": "FINAL-RESULT.json"
+}

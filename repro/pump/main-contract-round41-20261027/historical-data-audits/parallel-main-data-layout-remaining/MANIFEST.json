@@ -1,0 +1,12 @@
+{
+  "scope": "Frozen read-only proof packet; no original allocation extent or historical type authentication claimed.",
+  "files": {
+    "audit.py": "4b88c6fecc347c925d0e99b8efc3d627edf4ba49ee0d40840b508e540c9770a5",
+    "AUDIT.json": "acefb5d883bfb76c9cc85e11ab3192c3c938f2b892a93f5e16f5911942cc5ac8",
+    "SUMMARY.json": "a4bc906534410251a9fa764d23a76fa7ed40e08a621f71b3ed6015f520cf5695",
+    "README.md": "6fdadf975d072282381c99bf1b1145bb55dfc37725fe9d7329aa2f78ca8cf9f8",
+    "REPRODUCTION-CHECK.json": "5e5cbd0e2503bf847b9fb9ed691c32bd50eef28fcb1551078346e138e17112a8",
+    "CANDIDATE-OBJECT-PILOT.json": "393e454ba243fb5d898116403d25275907838264c6179adb092e48970e71db7e",
+    "FORMAT-PILOT.json": "25990b73fba40ffe2703d64549dc0f39f9e312cc1d5030caf74fd25f0db34c1f"
+  }
+}

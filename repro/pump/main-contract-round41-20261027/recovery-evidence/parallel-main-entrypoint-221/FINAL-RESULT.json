@@ -1,0 +1,324 @@
+{
+  "status": "passed",
+  "scope": "Private dependency-only entrypoint2.2.1 recovery; partial original-data fidelity gain, not whole-ELF identity.",
+  "primary_source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/source",
+  "primary_lockfile": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/source/Cargo.lock",
+  "primary_lockfile_sha256": "8307bd5e79789b5190291ea014c2f5556e23fb9829fa2f68a7ede581235eae98",
+  "lock_diff": {
+    "only_changed_source_file": [
+      "Cargo.lock"
+    ],
+    "before": {
+      "name": "solana-program-entrypoint",
+      "version": "2.3.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "32ce041b1a0ed275290a5008ee1a4a6c48f5054c8a3d78d313c08958a06aedbd",
+      "dependencies": [
+        "solana-account-info",
+        "solana-msg",
+        "solana-program-error",
+        "solana-pubkey"
+      ]
+    },
+    "after": {
+      "name": "solana-program-entrypoint",
+      "version": "2.2.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "473ffe73c68d93e9f2aa726ad2985fe52760052709aaab188100a42c618060ec",
+      "dependencies": [
+        "solana-account-info",
+        "solana-msg",
+        "solana-program-error",
+        "solana-pubkey"
+      ]
+    },
+    "other_package_records_unchanged": 254,
+    "old_lock_sha256": "cc8b86f4aec8fb963bc55d7ad149f474550323b76b3d62074f633dba60782ec0",
+    "new_lock_sha256": "8307bd5e79789b5190291ea014c2f5556e23fb9829fa2f68a7ede581235eae98"
+  },
+  "matched_windows": {
+    "normalized": 723,
+    "raw": 135,
+    "gained": 0,
+    "lost": 0
+  },
+  "typed_location_fields": {
+    "before": 46,
+    "after": 63,
+    "restored_records": 17,
+    "data_rel_ro_restored_bytes": 17,
+    "lost": 0
+  },
+  "data_delta": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/DATA-DELTA.json",
+  "candidate_function_delta": {
+    "scope": "Classify the candidate-to-candidate text/data delta without changing either ELF.",
+    "before_sha256": "2e2e5dbd8f72cc86c2801c911ab9844ee6582b8576ed1c251a419d171de19157",
+    "after_sha256": "d29ddb0f360f2a3c48a2d0d3f3c804d8c444cb5660c1cfd969d633cabfcd1638",
+    "normalized_function_groups_equal": true,
+    "function_count": 940,
+    "ambiguity_groups": [
+      {
+        "old": [
+          1414032,
+          1415368
+        ],
+        "new": [
+          1415376,
+          1416712
+        ],
+        "names": [
+          "_ZN11anchor_lang5error5Error11with_values17h<hash>E"
+        ]
+      },
+      {
+        "old": [
+          8568,
+          4528,
+          7232
+        ],
+        "new": [
+          4528,
+          7232,
+          8568
+        ],
+        "names": [
+          "_ZN11anchor_lang5error5Error11with_values17h<hash>E"
+        ]
+      },
+      {
+        "old": [
+          1418048,
+          1418512
+        ],
+        "new": [
+          1418048,
+          1418512
+        ],
+        "names": [
+          "_ZN11anchor_lang8Lamports12add_lamports17h<hash>E"
+        ]
+      },
+      {
+        "old": [
+          1428368,
+          74256,
+          72552,
+          74056,
+          73672
+        ],
+        "new": [
+          1428368,
+          72552,
+          74256,
+          73672,
+          74056
+        ],
+        "names": [
+          "_ZN99_$LT$anchor_lang..accounts..account..Account$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h<hash>E"
+        ]
+      },
+      {
+        "old": [
+          73872,
+          73120
+        ],
+        "new": [
+          73872,
+          73120
+        ],
+        "names": [
+          "_ZN99_$LT$anchor_lang..accounts..account..Account$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h<hash>E"
+        ]
+      },
+      {
+        "old": [
+          36664,
+          1419848
+        ],
+        "new": [
+          36664,
+          1419848
+        ],
+        "names": [
+          "_ZN11anchor_lang8accounts7account16Account$LT$T$GT$8try_from17h<hash>E"
+        ]
+      },
+      {
+        "old": [
+          42192,
+          42056
+        ],
+        "new": [
+          42192,
+          42056
+        ],
+        "names": [
+          "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h<hash>E"
+        ]
+      },
+      {
+        "old": [
+          42080,
+          42216
+        ],
+        "new": [
+          42216,
+          42080
+        ],
+        "names": [
+          "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h<hash>E"
+        ]
+      },
+      {
+        "old": [
+          42696,
+          42400
+        ],
+        "new": [
+          42696,
+          42400
+        ],
+        "names": [
+          "_ZN45_$LT$T$u20$as$u20$alloc..string..ToString$GT$9to_string17h<hash>E"
+        ]
+      },
+      {
+        "old": [
+          1349880,
+          1350040
+        ],
+        "new": [
+          1349880,
+          1350040
+        ],
+        "names": [
+          "_ZN42_$LT$$RF$T$u20$as$u20$core..fmt..Debug$GT$3fmt17h<hash>E"
+        ]
+      }
+    ],
+    "moved_functions": 3,
+    "text_delta_is_permutation_and_translated_or_equivalent_callee_operands": true,
+    "alternate_normalized_equivalent_calls": [
+      {
+        "old_caller": 945056,
+        "new_caller": 945056,
+        "offset": 10840,
+        "old_target": 1418048,
+        "new_target": 1418512,
+        "old_names": [
+          "_ZN11anchor_lang8Lamports12add_lamports17h8637335aae928708E"
+        ],
+        "new_names": [
+          "_ZN11anchor_lang8Lamports12add_lamports17h8ebe42cdd4ab6905E"
+        ]
+      },
+      {
+        "old_caller": 945056,
+        "new_caller": 945056,
+        "offset": 12424,
+        "old_target": 1418512,
+        "new_target": 1418048,
+        "old_names": [
+          "_ZN11anchor_lang8Lamports12add_lamports17ha72fe6cb8570b19eE"
+        ],
+        "new_names": [
+          "_ZN11anchor_lang8Lamports12add_lamports17h0b434b5ca74dcdacE"
+        ]
+      },
+      {
+        "old_caller": 1020824,
+        "new_caller": 1020824,
+        "offset": 7712,
+        "old_target": 1418512,
+        "new_target": 1418048,
+        "old_names": [
+          "_ZN11anchor_lang8Lamports12add_lamports17ha72fe6cb8570b19eE"
+        ],
+        "new_names": [
+          "_ZN11anchor_lang8Lamports12add_lamports17h0b434b5ca74dcdacE"
+        ]
+      },
+      {
+        "old_caller": 1020824,
+        "new_caller": 1020824,
+        "offset": 8144,
+        "old_target": 1418512,
+        "new_target": 1418048,
+        "old_names": [
+          "_ZN11anchor_lang8Lamports12add_lamports17ha72fe6cb8570b19eE"
+        ],
+        "new_names": [
+          "_ZN11anchor_lang8Lamports12add_lamports17h0b434b5ca74dcdacE"
+        ]
+      },
+      {
+        "old_caller": 963584,
+        "new_caller": 963584,
+        "offset": 10464,
+        "old_target": 1418512,
+        "new_target": 1418048,
+        "old_names": [
+          "_ZN11anchor_lang8Lamports12add_lamports17ha72fe6cb8570b19eE"
+        ],
+        "new_names": [
+          "_ZN11anchor_lang8Lamports12add_lamports17h0b434b5ca74dcdacE"
+        ]
+      },
+      {
+        "old_caller": 984928,
+        "new_caller": 984928,
+        "offset": 14120,
+        "old_target": 1418512,
+        "new_target": 1418048,
+        "old_names": [
+          "_ZN11anchor_lang8Lamports12add_lamports17ha72fe6cb8570b19eE"
+        ],
+        "new_names": [
+          "_ZN11anchor_lang8Lamports12add_lamports17h0b434b5ca74dcdacE"
+        ]
+      }
+    ],
+    "relocations_are_exact_translated_multiset_under_one_assignment": true,
+    "relocations_equal_by_logical_function_group_and_local_offset": true,
+    "changed_data_bytes_are_only_the_17_restored_line_fields": true,
+    "instruction_counts": {
+      "translated_direct_calls": 10708,
+      "unchanged_nontext_lddw": 7762,
+      "translated_text_addresses": 116,
+      "normalized_equivalent_alternate_callee_calls": 6
+    },
+    "limits": [
+      "Logical grouping uses equal normalized bodies, canonical symbol names and archive/member identity with compiler hashes removed. Calls to alternate equal-body instances are recorded separately; this is bounded code classification, not an exact graph-identity proof.",
+      "This does not establish original whole-ELF identity or original object allocation extents."
+    ]
+  },
+  "cache_parity": {
+    "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/DIRECT-TRAIT-PARITY.json",
+    "sha256": "9c5e8c2dae2535c773c42eead69c6c863340a83622b32c3e5c82153f1dddbf6f",
+    "key": "d0bfcc81a805ed97eddf2ff75c2bb702f6774bb2624c0258becdaeba4fc93e6b",
+    "manifest_sha256": "cb499ed2cbdc040eec3323ef94fc8c1617aae85cd7e8f90fe7698aba3d589150"
+  },
+  "ordered_build": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/ordered-consumer01",
+  "candidate_sha256": "ba53207d0f84c65b40f55015465ce3c8a9007a0228fd85718aa325f9f14170f4",
+  "unstripped_sha256": "d29ddb0f360f2a3c48a2d0d3f3c804d8c444cb5660c1cfd969d633cabfcd1638",
+  "runtime": {
+    "distinct_case_family_size": 260,
+    "clean_default": {
+      "paired_rows": 260,
+      "verified_result_objects": 520,
+      "fully_backed_pairs": 260,
+      "distinct_signed_transactions": 189,
+      "distinct_transaction_pairs": 189
+    },
+    "ordered": {
+      "paired_rows": 260,
+      "verified_result_objects": 520,
+      "fully_backed_pairs": 260,
+      "distinct_signed_transactions": 189,
+      "distinct_transaction_pairs": 189
+    },
+    "strict_and_cpi_mismatches": 0
+  },
+  "whole_original_elf_equal": false,
+  "required_after_composition": "Full combined corpus, diagnostics, CPI, capture and complete signature/retention gates."
+}

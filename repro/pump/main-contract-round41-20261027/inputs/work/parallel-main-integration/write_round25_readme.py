@@ -1,0 +1,35 @@
+"""Write the evidence-bounded Round25 checkpoint description."""
+from pathlib import Path
+import json
+ROOT = Path(__file__).resolve().parents[2]
+P = ROOT / 'repro/pump/main-contract-round25-20261027'
+cp = json.loads((P / 'CHECKPOINT.json').read_text())
+n, total = cp['normalized_windows'], cp['original_windows']
+matched, size = cp['matched_text_bytes'], cp['original_text_bytes']
+logs = cp['full_log_cases'] + cp['additional_log_cases']
+text = f'''# Main Pump verified checkpoint — Round25
+
+The maintained main contract matches **{n:,} / {total:,} original function windows ({100*n/total:.1f}%)**, including **{cp['raw_windows']} raw byte-equal bodies**. Those windows cover **{matched:,} / {size:,} original text bytes ({100*matched/size:.1f}%)**. The closed direct-call subset contains {cp['closed_call_windows_without_data']} windows and excludes data references. Normalization masks specified call/address operands; it does not establish referenced data or whole-program identity. **Whole-ELF identity remains false.** These figures measure binary coverage, not the fraction of engineering work completed.
+
+The captured-loader regression passes **{cp['full_suites']} suites / {cp['full_cases']:,} cases** and **{cp['additional_suites']} focused suites / {cp['additional_cases']:,} executions**, with **{logs:,} matching paired diagnostic-log cases**. These corpora overlap. Diagnostics exclude source coordinates and compute usage. Tests use captured upgradeable-loader dimensions in local VMs. The verifier rechecks all retained serialized transaction signatures; some historical rows retain only logs and state, so their serialized-transaction evidence is incomplete. No current-chain acceptance is implied.
+
+This checkpoint extends Round24 by restoring full rent-minimum funding before positive native creator sweeps and before AdminCto holder-vault transfers. The prior candidate omitted the creator-sweep transfer or funded only the deficit. New signed boundary and insufficient-payer cases distinguish the original full-minimum amount and failure order. Existing matched-window sets are preserved; this is a behavioral correction, not a new exact-body count.
+
+The new matrix adds 32 Sweep, 35 AdminCto and 26 creation quote-validator executions. The creation validator now preserves the original padding checks, duplicate-kind rejection and trailing-byte behavior, fixing 19 prior differences. It resolves the remaining observed differences in the exhaustively mapped direct callers of the two rent helpers and their shared system-transfer helper. This is bounded caller and runtime evidence; complete source/data/relocation identity remains unproven.
+
+Every case's paired CPI invocation sequence is also audited, including failed transactions. One bounded queue schedules both corpora and keeps per-suite results for verified resumption; the preserved queue state records any retry history.
+
+The direct import of the already-locked `spl-type-length-value` 0.7.0 trait changes only the main package's direct dependency declaration and imports. The 254 external lock records are unchanged. Its dependency graph was rebuilt without a cache, then both producer ELFs were reproduced through a new verified external-only cache. The producer target was absent during the final isolated main build. The package preserves those receipts and binaries; old-cache binary identity is not claimed.
+
+Four independent fresh main compilations reproduce both final ELF hashes: the initial combined build, repeat, maintained source and archived source. No compiled main-Pump object is cached. Original executable bytes are never compiler inputs.
+
+The loader optimization retains full actual ProgramData byte equality on every load while caching immutable expected images and hashes. Its earlier controlled benchmark and corruption controls remain applicable; full-suite timings depend on the workload and concurrent jobs.
+
+```sh
+python repro/pump/main-contract-round25-20261027/verify.py
+python repro/pump/main-contract-round25-20261027/reproduce.py --registry-home ~/.cargo --output work/reproduce-main-round25
+```
+
+[Previous maintained checkpoint: Round24](../main-contract-round24-20261027/README.md). The remaining {total-n} function windows, validation paths, data, relocations and original build provenance are unresolved. [Parallel work queue](../../../research/main-pump-parallel-checkpoint-20261027/REMAINING-WORK.json).
+'''
+(P / 'README.md').write_text(text)

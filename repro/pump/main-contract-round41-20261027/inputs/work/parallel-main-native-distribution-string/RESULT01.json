@@ -1,0 +1,68 @@
+{
+  "status": "Validated one-line native planner owned-String source recovery",
+  "baseline": "work/parallel-main-token-distribution-string/source01",
+  "files": {
+    "src/distribution.rs": "c18e5f67b03a012b668ee84220f1853f3bab01cbca276c8ec1d71c332f989a2e"
+  },
+  "preserved_token_planner_source_sha256": "a996123cd7dd94133d94af372c499920f51b9a675bfd400eb5659ec6a03a9fb2",
+  "patch": "native-string-only.patch",
+  "patch_sha256": "f4f19c73622cbf703689e57ee91bd6f9e4539dd9011aca67334d7c5eeb512a41",
+  "candidate_sha256": "68e64f347ac64733ece10e5081f426d2e79995478cf7890fd1f594e3380dbd44",
+  "unstripped_sha256": "0c1e93417ab6ed0c9815f40f19d6c4c57674e58f0d046379629a16977a4a27eb",
+  "build_receipt_sha256": "adb3818b0c987f69c3785d833901cc0659909df7daabb82a1e6816c5375b4c3f",
+  "cache_key": "5de55fe66a808ad0a24be6877353a5af4a2c2ab4334b9630a1908e3e140fcb59",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 737,
+    "unmatched": 298
+  },
+  "complete_match_delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "helper": {
+    "original_bytes": 4920,
+    "baseline_bytes": 5064,
+    "candidate_bytes": 5248,
+    "normalized_equal": false,
+    "different_slots": 639
+  },
+  "instruction_evidence": {
+    "static": "STATIC01.json",
+    "static_sha256": "a4704f76862c19a04df6e1007328f6c3d99de4208e890c81de34258737115123",
+    "before": "EVIDENCE01.json",
+    "before_sha256": "6dfd5553f063abec810fb598ec496a010f6aae86d3c898f012f421801153491b"
+  },
+  "runtime": {
+    "case_counts": {
+      "distribution": 298,
+      "minimum": 181,
+      "regressions": 62,
+      "rent": 6,
+      "pending": 72,
+      "quote_gate": 18
+    },
+    "cases": 637,
+    "mismatches": 0,
+    "strict_diagnostics": 0,
+    "invocation_mismatches": 0,
+    "distinct_signed_transactions": 105,
+    "existing_native_executable_branch_cases": 8,
+    "new_case_claim": 0
+  },
+  "scope": "Only get_distribution_amounts executable-recipient log uses recipient.key().to_string(); source fidelity follows original Pubkey-to-owned-String conversion. No arithmetic, deficit, admission or caller edits.",
+  "limitations": [
+    "Native planner and whole ELF are not byte-identical.",
+    "Size changes are reported without interpreting closeness as proof.",
+    "No new final text/data ordering recipe was qualified.",
+    "Physical split and token String patches remain separate previously sealed inputs.",
+    "Natural source coordinates are unchanged; no padding."
+  ]
+}

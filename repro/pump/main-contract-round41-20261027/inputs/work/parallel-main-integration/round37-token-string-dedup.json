@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "scope": "All8 token executable-recipient inputs distinct from completeR36 captured suite trees",
+  "observations": 18107,
+  "new_inputs": [
+    "0be39da98ecaf35e22ba9f98394fac00a9caac5e06fd9a25501c9ffd3ef9b38f",
+    "1a8c8774991eba19659537826bde5b8db080ec45e4ee14b354cddbb93aa6eae5",
+    "45d742c81b8cdda36034b0266683180313cd90341de12ba7fda6d8f21f4d4a2f",
+    "7799aa9ecc06d98792ec9a0839669b23e0361349e5bba716ca4ea1410e73d1f0",
+    "88fcff5ca3c1a34c2a8a28bc00bd0cbee1301b8cfbeb0bad4b37c04ed71213b7",
+    "bd98430767085c05116aa1e7eb0f48183dbf9dd184366fa9cfa5d27d50ecb773",
+    "efbe0a31f3b1ba4ffaafdc86cbbc9d45fa280726f9b754398e12677fb8229a32",
+    "f943103d4539443ca433d43f5b4b33c599e869ce84ed4acf4bedbfaedf82c4af"
+  ],
+  "R36_reports_sha256": {
+    "work/parallel-main-integration/round36-captured-full.json.gz": "aa25cd658bf8e5562c16637d7eae06c23a3cf913e0cd3c6d93bbbddeb308b6cd",
+    "work/parallel-main-integration/round36-captured-additional.json.gz": "ce9158ad3386993e2f1d1b25e13be1c2ed5261808688ead28d18c21c03200714"
+  },
+  "overlaps": [],
+  "unbound_transaction_collisions": []
+}

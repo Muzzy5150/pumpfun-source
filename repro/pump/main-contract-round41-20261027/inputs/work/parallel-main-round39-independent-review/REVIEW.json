@@ -1,0 +1,49 @@
+{
+  "status": "passed_source_preservation_review",
+  "scope": "Read-only independent preservation review of the proposed R39 main source.",
+  "compiler_inputs": 61,
+  "changed_or_added_inputs": 34,
+  "added_inputs": [
+    "idls/pump_amm.json",
+    "src/token_incentives/init_user_volume_accumulator.rs",
+    "src/util/account_name.rs",
+    "src/util/constant_product.rs",
+    "src/util/transfer_fee.rs"
+  ],
+  "removed_inputs": [
+    "src/nested_create.rs"
+  ],
+  "checks": {
+    "five_unchanged_R38_files": {
+      "src/admin_set_idl_authority.rs": "8218b8bdea2d64454e73ed322a2d5431f34753a6f2c5f40cb889a63c0be4c417",
+      "src/creator/distribute_creator_fee_v2.rs": "3614ffb738ea149923737bf76176d7672527bcdbab356c9c3e718a414ce0729b",
+      "src/creator/distribute_creator_fees.rs": "bb256e6d56d7250a47a735b90bb30fca1c185e9b65308b499484b6d77b2694c9",
+      "src/creator/distribute_fee_to_holders.rs": "fe5bbccad0c05d7f65cc8f5c9ae022f0760e81eb93f5cbf53e481ada20ae2780",
+      "src/token_incentives/volume_accumulator.rs": "85713f122b8506ea2521fb2fdf60b50072fb4ccb9c10df49f578152e6f4a7773"
+    },
+    "scheduler": "R38 source and administrator dispatch route retained; finished-range guard remains inside the active-time branch",
+    "holder_and_IDL": "R38 holder native helper, standard ATA API, token lifetime and IDL empty-seed/clone order retained byte-for-byte, with live module routes unchanged",
+    "native_distribution": "Whole R38 distribution prefix, native executor and sole event declaration retained; genuine06 adds only sharing-config reader after the old prefix",
+    "collector": "R38 branch bodies, borrow/drop boundaries, zero/rent handling and both transfer helpers retained; incoming signature takes the same system AccountInfo at call sites",
+    "migration_root_error": "R38 root PumpError::QuoteMintNotWritable retained at discriminator6110; duplicate local enum absent amid incoming migration API updates",
+    "TradeEvent": "Exact validated source03 fee bundle/constructor tail and both call blocks retained; genuine06 complete SellV3 accounting prefix and event suffix preserved",
+    "build_interfaces": "Locked dependencies unchanged; new main-program AMM IDL and allow-missing-optionals feature intentionally require a new cache context; nested-create removal follows genuine06 relocation"
+  },
+  "findings": [],
+  "pending_validation": [
+    "New dependency feature context must have cold-producer/cache qualification before use.",
+    "Merged source has not earned genuine06 or R38 runtime/window counts yet. Run the planned18109paired cases, diagnostics/signature/CPI checks and fresh whole inventory.",
+    "Incoming genuine06 changes parser optional-account behavior, arithmetic/helper APIs and migration TLV/post-complete handling. Prior44-suite evidence is not proof of the combined source."
+  ],
+  "limits": [
+    "Read-only source review; no new build or runtime invocation.",
+    "Exact source preservation does not prove compiler-produced equivalence or whole-ELF identity."
+  ],
+  "bound_files_sha256": {
+    "work/parallel-main-integration/round39-draft-plan.json": "cd216b9c4be3d89f135708588c2f5e47dc62cb36065e094ca6351098616ce602",
+    "work/parallel-main-genuine06-r38-composition/REVIEW01.json": "6d366d1bc7b6ae2d17e7d5ab8e5712402f2925c6861fa792cbe1880f8ec6ec70",
+    "work/parallel-main-genuine06-r38-composition/REVIEW02.json": "873561ac1e929d0bd490f5d2e945aa42511a3be04f67fe69181553b01487357c",
+    "work/parallel-main-trade-event-constructor/RESULT03.json": "34f6f3688bb58046dd858c632da9b8a4a065ab7e70ec6aab4202df6f8a6aeea7",
+    "work/parallel-main-round39-independent-review/SOURCE-MANIFEST.json": "3d93bc4b726060d38257027e346e8f67e241147d26852901ad00aad7edc89ad5"
+  }
+}

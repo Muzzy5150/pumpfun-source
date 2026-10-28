@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "scope": "Seal qualified module placement, preserving failures and residual mismatches.",
+  "candidate_sha256": "5ecd6d3e4329aef49bb6958c56dc6698342cb57c115923bfc57b16b69fc626be",
+  "unstripped_sha256": "06d6f74755bc53d476aead7cf35f87559af4b26434942a7cd2e2c154fe775031",
+  "counts": {
+    "total": 1035,
+    "raw": 165,
+    "normalized": 816,
+    "unmatched": 219
+  },
+  "sets": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "runtime": {
+    "paired_rows": 828,
+    "verified_result_objects": 1656,
+    "fully_backed_pairs": 828,
+    "distinct_signed_transactions": 507,
+    "distinct_transaction_pairs": 507
+  },
+  "targeted_cases": 828,
+  "new_cases": 0,
+  "anchor_corrections": 27,
+  "remaining_targeted_anchor_filename_mismatch_cases": 0,
+  "ordinary_log_mismatch_families": {},
+  "handlers": [
+    {
+      "start": "0x133ab0",
+      "bytes": 1520,
+      "symbol": "_ZN14pump_recovered9__private8__global27set_reserved_fee_recipients17h9292af67d3f51600E"
+    },
+    {
+      "start": "0x13fe78",
+      "bytes": 1632,
+      "symbol": "_ZN14pump_recovered9__private8__global21update_buyback_config17h2369722c864aeefdE"
+    },
+    {
+      "start": "0x7ebb8",
+      "bytes": 7120,
+      "symbol": "_ZN14pump_recovered27set_reserved_fee_recipients7execute17h9f520369e8e2b98eE"
+    },
+    {
+      "start": "0x80788",
+      "bytes": 1328,
+      "symbol": "_ZN14pump_recovered27set_reserved_fee_recipients21update_buyback_config17h36ddc8c2b43591d0E"
+    }
+  ],
+  "source_changes": {
+    "src/lib.rs": "9eb6dd35ecdd42b74b9dc7d3e530de6e3aff2ad7afeaa8a5402d05393c54e37c",
+    "src/set_reserved_fee_recipients.rs": "afb855dd2ec242a3dbed5a149034bddaf9c5211c4dffd2369d27d8d65041009d"
+  },
+  "source_unchanged_after": true,
+  "limits": [
+    "Only this isolated two-handler module extraction was built and tested; cashback and creator patches remain separate.",
+    "Line and column coordinates are normalized; actual Anchor source filenames remain compared.",
+    "Remaining targeted ordinary-log mismatches are retained in ANCHOR-LOG-RESULT01.json.",
+    "Full corpus integration and whole-ELF byte identity remain unproved."
+  ],
+  "input_sha256": {
+    "work/parallel-main-reserved-source-module/REVIEW02.json": "a2591acfcc215574a8d6faf386d7050346e4f0de4e513c2c02afcb7da3286c04",
+    "work/parallel-main-reserved-source-module/MANIFEST02.json": "0c1d417349f4d67e97ee7390ae7c4d9c1349f8d5e5ebb34de9b2a25b51c060df",
+    "work/parallel-main-reserved-source-module/reserved-module.patch": "7a499672069e3097db8da3cf9f152cd6a5e57e2741bb665485b45c6521a0dd47",
+    "work/parallel-main-reserved-source-module/BUILD-PLAN01.json": "4c303f386f8314bb1b96e739df3edd471c82c3a40ab19a026624bac49e09d5ec",
+    "work/parallel-main-reserved-source-module/ANCHOR-LOG-RESULT01.json": "91038b548cc1189ec2cd006e0df654a3d1d82d64c557e366a266d2f353afcef5",
+    "work/parallel-main-reserved-source-module/RETENTION01.json": "c8edc39454e7369667a036fc19fd17eda2d4892d456acbb6ef9f59b08cf62e26",
+    "work/parallel-main-reserved-source-module/build01/build-comparison.json": "f433157c463bc99847e911b21404f28da1fca1eecd7d75164ebf927b84db0986",
+    "work/parallel-main-reserved-source-module/build01/normalized-inventory.json": "1be3632741e76fa840083af6341db2dc9c1f14c8466850026523f4a157efc3b8"
+  }
+}

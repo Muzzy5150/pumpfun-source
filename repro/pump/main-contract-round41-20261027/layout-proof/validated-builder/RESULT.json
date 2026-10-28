@@ -1,0 +1,207 @@
+{
+  "scope": "Private validation of the optional verified-builder text-order patch. Shared scripts and primary sources unchanged; no runtime run.",
+  "status": "passed",
+  "builds": [
+    {
+      "build": "r27-default02",
+      "candidate_sha256": "aa3b99d88317493cc2d36703e616b299252da0574c17caf1e0fbc74b6d7ee207",
+      "unstripped_sha256": "c938496cca34dcc7c5ee69f82e823dc39b520b70126292f95b7c4662073e280e",
+      "expected_build": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/build-round27",
+      "both_artifacts_equal": true,
+      "native_attempt_and_source_gate": true,
+      "source_files": 53,
+      "cache_key": "fdf6441ce812bf7050ae2af8ca0708104ae04c5dedd4b610613364f964b41e29",
+      "main_freshly_compiled": true,
+      "link_inputs": null,
+      "build_receipt_sha256": "2194a032c3f8da57bcb08fcc3c3672129cee2eec744d3e406b4eadd77175042f",
+      "attempt_receipt_sha256": "3a071fb162fb800925e93b5bf964ddbeaf1ca7130f1e11a34b7e5455100ba7d2"
+    },
+    {
+      "build": "r27-ordered02",
+      "candidate_sha256": "1aabcdd31de49303b573b71ae9f70a72b7483565f987ec05568417df937e05ad",
+      "unstripped_sha256": "40569fdb20f1b1e7a7a8c1fe163ea95d29eb82506364306ad5e36d2d780954d1",
+      "expected_build": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-pr264-r27-layout/build-ordered01",
+      "both_artifacts_equal": true,
+      "native_attempt_and_source_gate": true,
+      "source_files": 53,
+      "cache_key": "fdf6441ce812bf7050ae2af8ca0708104ae04c5dedd4b610613364f964b41e29",
+      "main_freshly_compiled": true,
+      "link_inputs": 122,
+      "build_receipt_sha256": "3075e8f4110885666e3bba6d28fd858ab3266186d6a12d23f7c0057dea605bde",
+      "attempt_receipt_sha256": "091fc3c0f7923fb9bbdaca397cd6eac42942e6487e537906408f0692735eb1c6"
+    },
+    {
+      "build": "r28-identity02",
+      "candidate_sha256": "666a17fe39a8c778e6c6d42e47bef7885ee625f4ab31bd277c6a6b3e0ffece6a",
+      "unstripped_sha256": "578bf7ddf493e21a17ff83c3acf6ee8bd8f4b6aa39b739708dd06608c47c35fd",
+      "expected_build": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/build-round28",
+      "both_artifacts_equal": true,
+      "native_attempt_and_source_gate": true,
+      "source_files": 53,
+      "cache_key": "fdf6441ce812bf7050ae2af8ca0708104ae04c5dedd4b610613364f964b41e29",
+      "main_freshly_compiled": true,
+      "link_inputs": 122,
+      "build_receipt_sha256": "5a063b4f1ca68ac6d71e2a3226c49eba54d933dc3501d7c37ffc9f8c3c37d94c",
+      "attempt_receipt_sha256": "16bcc351121fe729c7eaa2d16494b7e69e712195a99688193d00f5f3ce3f8e09"
+    },
+    {
+      "build": "r28-ordered02",
+      "candidate_sha256": "6791b39c866bae8c1c3ceb6f1b9786e2ad2a8c7adfb7b7c75ce00c474569efd1",
+      "unstripped_sha256": "2e2e5dbd8f72cc86c2801c911ab9844ee6582b8576ed1c251a419d171de19157",
+      "expected_build": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-verified-linker-validation/r28-relink02",
+      "both_artifacts_equal": true,
+      "native_attempt_and_source_gate": true,
+      "source_files": 53,
+      "cache_key": "fdf6441ce812bf7050ae2af8ca0708104ae04c5dedd4b610613364f964b41e29",
+      "main_freshly_compiled": true,
+      "link_inputs": 122,
+      "build_receipt_sha256": "07e2ed99e125e9c4069564b655885d6c82154e12a45b1270b2948b28da2ef5cc",
+      "attempt_receipt_sha256": "8c4f16be58bd6d6e0e5778127a8d9c2e2302f1428d6b59758861b397f0a99a79"
+    }
+  ],
+  "inventories": {
+    "r27": {
+      "before": {
+        "total": 1035,
+        "raw": 123,
+        "normalized": 723,
+        "unmatched": 312,
+        "matched_text_bytes": 886312,
+        "raw_text_bytes": 24072
+      },
+      "after": {
+        "total": 1035,
+        "raw": 135,
+        "normalized": 723,
+        "unmatched": 312,
+        "matched_text_bytes": 886312,
+        "raw_text_bytes": 33736
+      },
+      "normalized_gained": [],
+      "normalized_lost": [],
+      "raw_gained": [
+        1615064,
+        1616008,
+        1707880,
+        1712960,
+        1729392,
+        1730880,
+        1749536,
+        1750832,
+        1782304,
+        1784000,
+        1785992,
+        1786064
+      ],
+      "raw_lost": [],
+      "translation": {
+        "sections": 942,
+        "moved_sections": 938,
+        "text_bytes": 1699240,
+        "entry": [
+          1363152,
+          1038128
+        ],
+        "local_branches": 20896,
+        "direct_calls": 10713,
+        "lddw_other": 7755,
+        "lddw_text": 116,
+        "data_sections_checked": 4,
+        "data_text_pointers": 158,
+        "dynsym_entries": 19,
+        "relocations": 5794,
+        "relocation_sites_in_text": 5163,
+        "baseline_sha256": "c938496cca34dcc7c5ee69f82e823dc39b520b70126292f95b7c4662073e280e",
+        "reordered_sha256": "40569fdb20f1b1e7a7a8c1fe163ea95d29eb82506364306ad5e36d2d780954d1",
+        "scope": "Prove a reordered build is the default-layout build with only its functions permuted."
+      }
+    },
+    "r28": {
+      "before": {
+        "total": 1035,
+        "raw": 123,
+        "normalized": 723,
+        "unmatched": 312,
+        "matched_text_bytes": 886312,
+        "raw_text_bytes": 24072
+      },
+      "after": {
+        "total": 1035,
+        "raw": 135,
+        "normalized": 723,
+        "unmatched": 312,
+        "matched_text_bytes": 886312,
+        "raw_text_bytes": 33736
+      },
+      "normalized_gained": [],
+      "normalized_lost": [],
+      "raw_gained": [
+        1615064,
+        1616008,
+        1707880,
+        1712960,
+        1729392,
+        1730880,
+        1749536,
+        1750832,
+        1782304,
+        1784000,
+        1785992,
+        1786064
+      ],
+      "raw_lost": [],
+      "translation": {
+        "sections": 940,
+        "moved_sections": 936,
+        "text_bytes": 1699328,
+        "entry": [
+          1365184,
+          1038128
+        ],
+        "local_branches": 20904,
+        "direct_calls": 10714,
+        "lddw_other": 7762,
+        "lddw_text": 116,
+        "data_sections_checked": 4,
+        "data_text_pointers": 158,
+        "dynsym_entries": 19,
+        "relocations": 5812,
+        "relocation_sites_in_text": 5172,
+        "baseline_sha256": "578bf7ddf493e21a17ff83c3acf6ee8bd8f4b6aa39b739708dd06608c47c35fd",
+        "reordered_sha256": "2e2e5dbd8f72cc86c2801c911ab9844ee6582b8576ed1c251a419d171de19157",
+        "scope": "Prove a reordered build is the default-layout build with only its functions permuted."
+      }
+    }
+  },
+  "helpers": {
+    "pump_build_verified.py": {
+      "sha256": "34b1093d1744f2ed1aa4c1767db4def4318b0c57727d922ef8282291cf157e18",
+      "mode": "0o644"
+    },
+    "pump_text_layout.py": {
+      "sha256": "1719933554c4625887b9b057cb01706b7029bb4e965b50a297dc8a98231fe7ad",
+      "mode": "0o644"
+    },
+    "pump_text_layout_rustc.py": {
+      "sha256": "c4e84469d80d668ea85f53e9a203d7aaa5e8d186439a3eb7e1c030f8c74c5873",
+      "mode": "0o755"
+    },
+    "pump_text_layout_linker.py": {
+      "sha256": "b5a3dba004827c2ea355be1147901737bf4b7f7b4132ffa58c00a305de5dea00",
+      "mode": "0o755"
+    },
+    "pump_text_layout_default.ld": {
+      "sha256": "5e8370b9380f55411d827721e2e43c8cfd1eac71d1383e20b938397bc0bd82c3",
+      "mode": "0o644"
+    }
+  },
+  "v2_control_count": 19,
+  "preserved_failures": [
+    "r27-ordered01",
+    "r28-identity01"
+  ],
+  "failure_resolution": "Cargo rustc version/target queries have no crate name; v2 forwards them unchanged.",
+  "translation_limit": "Allocated image translation; unallocated symbol data and some section-header fields are outside the checker.",
+  "runtime_status": "Not rerun here. R27 ordered output equals the separately qualified R27 artifact; R28 ordered runtime remains a separate acceptance decision.",
+  "next_round": "Wait for R28 publication; batch primary changes, then identity-map build, source-specific order derivation, fresh ordered build, full-window/translation/runtime gates."
+}

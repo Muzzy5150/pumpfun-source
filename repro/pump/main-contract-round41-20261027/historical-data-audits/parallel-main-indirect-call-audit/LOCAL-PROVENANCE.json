@@ -1,0 +1,4267 @@
+{
+  "scope": "Conservative intraprocedural provenance for original Pump CALL_REG sites.\n\nThis is static register/stack analysis, not execution. Unknown operations and\ncaller-clobbered registers are widened to unknown; all branches are retained.\n",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "script_sha256": "291545e1459c4e2bf181633abc65fc9a5b445188946780b14e853e40df15e087",
+  "counts": {
+    "sites": 144,
+    "owners": 90,
+    "analyzed_functions": 208,
+    "all_paths_constant": 0,
+    "with_constant_text_targets": 0,
+    "resolved_direct_call_contexts": 60
+  },
+  "sites": [
+    {
+      "site": 26232,
+      "owner": 24920,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 26712,
+      "owner": 26352,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 28160,
+      "owner": 27496,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 30744,
+      "owner": 28280,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 44896,
+      "owner": 44816,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "load64(load64((load64(arg_r1@0xaf10)@0xaf10+0x7))@0xaf50)@0xaf58"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "load",
+            64,
+            [
+              "add",
+              [
+                "load",
+                64,
+                [
+                  "arg",
+                  44816,
+                  1
+                ],
+                44816
+              ],
+              7
+            ],
+            44880
+          ],
+          44888
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 76480,
+      "owner": 75856,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 937616,
+      "owner": 935472,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1001904,
+      "owner": 1001080,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1054240,
+      "owner": 1053768,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1058120,
+      "owner": 1056504,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1088752,
+      "owner": 1086600,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1138216,
+      "owner": 1137112,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1139408,
+      "owner": 1139032,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1172320,
+      "owner": 1169744,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1186320,
+      "owner": 1185904,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1187936,
+      "owner": 1187520,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1189608,
+      "owner": 1189136,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1191560,
+      "owner": 1190704,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1192064,
+      "owner": 1191648,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1193688,
+      "owner": 1193264,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1195976,
+      "owner": 1194912,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1197400,
+      "owner": 1196336,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1198616,
+      "owner": 1197760,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1199848,
+      "owner": 1198704,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1204080,
+      "owner": 1202920,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1204968,
+      "owner": 1204440,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1206976,
+      "owner": 1206440,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1210672,
+      "owner": 1209616,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1212280,
+      "owner": 1211224,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1213792,
+      "owner": 1212832,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1215104,
+      "owner": 1214152,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1216480,
+      "owner": 1215528,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1217752,
+      "owner": 1216904,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1219256,
+      "owner": 1217984,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1222320,
+      "owner": 1221856,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1224088,
+      "owner": 1223624,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1226352,
+      "owner": 1225392,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1231776,
+      "owner": 1230800,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1235096,
+      "owner": 1233936,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1237464,
+      "owner": 1235456,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1238128,
+      "owner": 1237664,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1247296,
+      "owner": 1246488,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1251464,
+      "owner": 1251048,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1254328,
+      "owner": 1253040,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1256376,
+      "owner": 1255192,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1257936,
+      "owner": 1256736,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1259480,
+      "owner": 1258296,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1261024,
+      "owner": 1259840,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1262584,
+      "owner": 1261384,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1447296,
+      "owner": 1441960,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1555464,
+      "owner": 1555032,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1607624,
+      "owner": 1607512,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "load64(load64((arg_r2@0x188758+0x7))@0x1887a8)@0x1887b0"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "load",
+            64,
+            [
+              "add",
+              [
+                "arg",
+                1607512,
+                2
+              ],
+              7
+            ],
+            1607592
+          ],
+          1607600
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1607856,
+      "owner": 1607744,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "load64(load64((arg_r2@0x188840+0x7))@0x188890)@0x188898"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "load",
+            64,
+            [
+              "add",
+              [
+                "arg",
+                1607744,
+                2
+              ],
+              7
+            ],
+            1607824
+          ],
+          1607832
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1608168,
+      "owner": 1608080,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "load64(load64((load64(arg_r1@0x188990)@0x188990+0x7))@0x1889d0)@0x1889d8"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "load",
+            64,
+            [
+              "add",
+              [
+                "load",
+                64,
+                [
+                  "arg",
+                  1608080,
+                  1
+                ],
+                1608080
+              ],
+              7
+            ],
+            1608144
+          ],
+          1608152
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1608376,
+      "owner": 1608264,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "load64(load64((load64((arg_r1@0x188a48+0x8))@0x188a58+0x7))@0x188aa0)@0x188aa8"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "load",
+            64,
+            [
+              "add",
+              [
+                "load",
+                64,
+                [
+                  "add",
+                  [
+                    "arg",
+                    1608264,
+                    1
+                  ],
+                  8
+                ],
+                1608280
+              ],
+              7
+            ],
+            1608352
+          ],
+          1608360
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1608584,
+      "owner": 1608264,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "load64(load64((load64((arg_r1@0x188a48+0x18))@0x188b28+0x7))@0x188b70)@0x188b78"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "load",
+            64,
+            [
+              "add",
+              [
+                "load",
+                64,
+                [
+                  "add",
+                  [
+                    "arg",
+                    1608264,
+                    1
+                  ],
+                  24
+                ],
+                1608488
+              ],
+              7
+            ],
+            1608560
+          ],
+          1608568
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1608784,
+      "owner": 1608264,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "load64(load64((load64((arg_r1@0x188a48+0x38))@0x188bf8+0x7))@0x188c38)@0x188c40"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "load",
+            64,
+            [
+              "add",
+              [
+                "load",
+                64,
+                [
+                  "add",
+                  [
+                    "arg",
+                    1608264,
+                    1
+                  ],
+                  56
+                ],
+                1608696
+              ],
+              7
+            ],
+            1608760
+          ],
+          1608768
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1665872,
+      "owner": 1665376,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1667328,
+      "owner": 1667240,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "load64(load64((load64(arg_r1@0x1970a8)@0x1970a8+0x7))@0x1970e8)@0x1970f0"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "load",
+            64,
+            [
+              "add",
+              [
+                "load",
+                64,
+                [
+                  "arg",
+                  1667240,
+                  1
+                ],
+                1667240
+              ],
+              7
+            ],
+            1667304
+          ],
+          1667312
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1705080,
+      "owner": 1704648,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1720352,
+      "owner": 1720112,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1730440,
+      "owner": 1730192,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "load64(load64((load64((load64(arg_r1@0x1a6690)@0x1a6690+0x8))@0x1a66e8+0x7))@0x1a6770)@0x1a6778"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "load",
+            64,
+            [
+              "add",
+              [
+                "load",
+                64,
+                [
+                  "add",
+                  [
+                    "load",
+                    64,
+                    [
+                      "arg",
+                      1730192,
+                      1
+                    ],
+                    1730192
+                  ],
+                  8
+                ],
+                1730280
+              ],
+              7
+            ],
+            1730416
+          ],
+          1730424
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1740608,
+      "owner": 1740384,
+      "regs": 0,
+      "immediate": 2,
+      "provenance": [
+        "load64(load64((arg_r1@0x1a8e60+0x7))@0x1a8f28)@0x1a8f30"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "load",
+            64,
+            [
+              "add",
+              [
+                "arg",
+                1740384,
+                1
+              ],
+              7
+            ],
+            1740584
+          ],
+          1740592
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1741080,
+      "owner": 1741048,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "load64((load64((load64(arg_r1@0x1a90f8)@0x1a90f8+0x8))@0x1a9108+0x18))@0x1a9110"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "arg",
+                    1741048,
+                    1
+                  ],
+                  1741048
+                ],
+                8
+              ],
+              1741064
+            ],
+            24
+          ],
+          1741072
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1745696,
+      "owner": 1745608,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "load64((load64((load64(arg_r1@0x1aa2c8)@0x1aa2d0+0x7))@0x1aa300+0x20))@0x1aa308"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "arg",
+                    1745608,
+                    1
+                  ],
+                  1745616
+                ],
+                7
+              ],
+              1745664
+            ],
+            32
+          ],
+          1745672
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1751408,
+      "owner": 1751320,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r2@0x1ab918+0x28))@0x1ab948+0x18))@0x1ab950"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1751320,
+                  2
+                ],
+                40
+              ],
+              1751368
+            ],
+            24
+          ],
+          1751376
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1751584,
+      "owner": 1751536,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r2@0x1ab9f0+0x28))@0x1ab9f8+0x18))@0x1aba00"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1751536,
+                  2
+                ],
+                40
+              ],
+              1751544
+            ],
+            24
+          ],
+          1751552
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1751648,
+      "owner": 1751600,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r2@0x1aba30+0x28))@0x1aba38+0x18))@0x1aba40"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1751600,
+                  2
+                ],
+                40
+              ],
+              1751608
+            ],
+            24
+          ],
+          1751616
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1754528,
+      "owner": 1754456,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r2@0x1ac558+0x28))@0x1ac568+0x18))@0x1ac570"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1754456,
+                  2
+                ],
+                40
+              ],
+              1754472
+            ],
+            24
+          ],
+          1754480
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1754832,
+      "owner": 1754456,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1754912,
+      "owner": 1754456,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1755064,
+      "owner": 1754456,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "load64((load64((arg_r1@0x1ac558+0x8))@0x1ac790+0x18))@0x1ac798"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1754456,
+                  1
+                ],
+                8
+              ],
+              1755024
+            ],
+            24
+          ],
+          1755032
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1755200,
+      "owner": 1754456,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1755248,
+      "owner": 1754456,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1757128,
+      "owner": 1756928,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1758088,
+      "owner": 1756928,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1758328,
+      "owner": 1758216,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "load64((load64((arg_r1@0x1ad408+0x8))@0x1ad408+0x20))@0x1ad468"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1758216,
+                  1
+                ],
+                8
+              ],
+              1758216
+            ],
+            32
+          ],
+          1758312
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1758392,
+      "owner": 1758216,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r1@0x1ad408+0x8))@0x1ad408+0x18))@0x1ad488"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1758216,
+                  1
+                ],
+                8
+              ],
+              1758216
+            ],
+            24
+          ],
+          1758344
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1758648,
+      "owner": 1758440,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((load64(arg_r1@0x1ad4e8)@0x1ad520+0x28))@0x1ad5a8+0x18))@0x1ad5b0"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "arg",
+                    1758440,
+                    1
+                  ],
+                  1758496
+                ],
+                40
+              ],
+              1758632
+            ],
+            24
+          ],
+          1758640
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1758704,
+      "owner": 1758440,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((load64(arg_r1@0x1ad4e8)@0x1ad520+0x28))@0x1ad5d8+0x18))@0x1ad5e0"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "arg",
+                    1758440,
+                    1
+                  ],
+                  1758496
+                ],
+                40
+              ],
+              1758680
+            ],
+            24
+          ],
+          1758688
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1758768,
+      "owner": 1758440,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((load64(arg_r1@0x1ad4e8)@0x1ad520+0x28))@0x1ad608+0x18))@0x1ad610"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "arg",
+                    1758440,
+                    1
+                  ],
+                  1758496
+                ],
+                40
+              ],
+              1758728
+            ],
+            24
+          ],
+          1758736
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1758816,
+      "owner": 1758440,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1758896,
+      "owner": 1758440,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((load64(arg_r1@0x1ad4e8)@0x1ad520+0x28))@0x1ad688+0x18))@0x1ad690"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "arg",
+                    1758440,
+                    1
+                  ],
+                  1758496
+                ],
+                40
+              ],
+              1758856
+            ],
+            24
+          ],
+          1758864
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1759264,
+      "owner": 1758440,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1759328,
+      "owner": 1758440,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1759480,
+      "owner": 1759376,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((load64(arg_r1@0x1ad890)@0x1ad8b0+0x28))@0x1ad8d0+0x18))@0x1ad8d8"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "arg",
+                    1759376,
+                    1
+                  ],
+                  1759408
+                ],
+                40
+              ],
+              1759440
+            ],
+            24
+          ],
+          1759448
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1759568,
+      "owner": 1759376,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((load64(arg_r1@0x1ad890)@0x1ad8b0+0x28))@0x1ad928+0x18))@0x1ad930"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "arg",
+                    1759376,
+                    1
+                  ],
+                  1759408
+                ],
+                40
+              ],
+              1759528
+            ],
+            24
+          ],
+          1759536
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1759752,
+      "owner": 1759376,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((load64(arg_r1@0x1ad890)@0x1ad8b0+0x28))@0x1ad9e0+0x18))@0x1ad9e8"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "arg",
+                    1759376,
+                    1
+                  ],
+                  1759408
+                ],
+                40
+              ],
+              1759712
+            ],
+            24
+          ],
+          1759720
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1760016,
+      "owner": 1759792,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((load64(arg_r1@0x1ada30)@0x1ada88+0x28))@0x1adab0+0x18))@0x1adab8",
+        "load64((load64((load64(arg_r1@0x1ada30)@0x1ada88+0x28))@0x1adae8+0x18))@0x1adaf0"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "arg",
+                    1759792,
+                    1
+                  ],
+                  1759880
+                ],
+                40
+              ],
+              1759976
+            ],
+            24
+          ],
+          1759984
+        ],
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "arg",
+                    1759792,
+                    1
+                  ],
+                  1759880
+                ],
+                40
+              ],
+              1759920
+            ],
+            24
+          ],
+          1759928
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1760248,
+      "owner": 1760056,
+      "regs": 0,
+      "immediate": 5,
+      "provenance": [
+        "load64((load64((load64((arg_r1@0x1adb38+0x8))@0x1adb60+0x28))@0x1adbe0+0x18))@0x1adbe8"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "add",
+                    [
+                      "arg",
+                      1760056,
+                      1
+                    ],
+                    8
+                  ],
+                  1760096
+                ],
+                40
+              ],
+              1760224
+            ],
+            24
+          ],
+          1760232
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1760296,
+      "owner": 1760056,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1760392,
+      "owner": 1760056,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((load64((arg_r1@0x1adb38+0x8))@0x1adb60+0x28))@0x1adc50+0x18))@0x1adc58"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "add",
+                    [
+                      "arg",
+                      1760056,
+                      1
+                    ],
+                    8
+                  ],
+                  1760096
+                ],
+                40
+              ],
+              1760336
+            ],
+            24
+          ],
+          1760344
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1760720,
+      "owner": 1760056,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1760784,
+      "owner": 1760056,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1761024,
+      "owner": 1760840,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((load64((arg_r1@0x1ade48+0x8))@0x1adea0+0x28))@0x1adec8+0x18))@0x1aded0"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "add",
+                    [
+                      "arg",
+                      1760840,
+                      1
+                    ],
+                    8
+                  ],
+                  1760928
+                ],
+                40
+              ],
+              1760968
+            ],
+            24
+          ],
+          1760976
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1761136,
+      "owner": 1760840,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((load64((arg_r1@0x1ade48+0x8))@0x1adea0+0x28))@0x1adf38+0x18))@0x1adf40"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "add",
+                    [
+                      "arg",
+                      1760840,
+                      1
+                    ],
+                    8
+                  ],
+                  1760928
+                ],
+                40
+              ],
+              1761080
+            ],
+            24
+          ],
+          1761088
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1761360,
+      "owner": 1761200,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((load64(arg_r1@0x1adfb0)@0x1adfd8+0x28))@0x1ae018+0x18))@0x1ae020"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "arg",
+                    1761200,
+                    1
+                  ],
+                  1761240
+                ],
+                40
+              ],
+              1761304
+            ],
+            24
+          ],
+          1761312
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1761432,
+      "owner": 1761200,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "load64((arg_r3@0x1adfb0+0x18))@0x1ae080"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "arg",
+              1761200,
+              3
+            ],
+            24
+          ],
+          1761408
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1761528,
+      "owner": 1761200,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((load64(arg_r1@0x1adfb0)@0x1adfd8+0x28))@0x1ae0c0+0x18))@0x1ae0c8"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "arg",
+                    1761200,
+                    1
+                  ],
+                  1761240
+                ],
+                40
+              ],
+              1761472
+            ],
+            24
+          ],
+          1761480
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1761840,
+      "owner": 1761200,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((arg_r3@0x1adfb0+0x18))@0x1ae208"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "arg",
+              1761200,
+              3
+            ],
+            24
+          ],
+          1761800
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1761904,
+      "owner": 1761200,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1762040,
+      "owner": 1761960,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((load64(arg_r1@0x1ae2a8)@0x1ae2c0+0x28))@0x1ae2d0+0x18))@0x1ae2d8"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "load",
+                  64,
+                  [
+                    "arg",
+                    1761960,
+                    1
+                  ],
+                  1761984
+                ],
+                40
+              ],
+              1762000
+            ],
+            24
+          ],
+          1762008
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1762328,
+      "owner": 1762144,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1762376,
+      "owner": 1762144,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1762624,
+      "owner": 1762144,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1762728,
+      "owner": 1762144,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1763152,
+      "owner": 1762144,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1763752,
+      "owner": 1763200,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r1@0x1ae780+0x28))@0x1ae838+0x18))@0x1ae988",
+        "load64((load64((arg_r1@0x1ae780+0x28))@0x1ae948+0x18))@0x1ae988"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1763200,
+                  1
+                ],
+                40
+              ],
+              1763656
+            ],
+            24
+          ],
+          1763720
+        ],
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1763200,
+                  1
+                ],
+                40
+              ],
+              1763384
+            ],
+            24
+          ],
+          1763720
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1764192,
+      "owner": 1763200,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "load64((load64((arg_r1@0x1ae780+0x28))@0x1aeae8+0x20))@0x1aeb48"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1763200,
+                  1
+                ],
+                40
+              ],
+              1764072
+            ],
+            32
+          ],
+          1764168
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1764264,
+      "owner": 1763200,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r1@0x1ae780+0x28))@0x1aeae8+0x18))@0x1aeb88"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1763200,
+                  1
+                ],
+                40
+              ],
+              1764072
+            ],
+            24
+          ],
+          1764232
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1764472,
+      "owner": 1763200,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1764600,
+      "owner": 1763200,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1764672,
+      "owner": 1763200,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1764824,
+      "owner": 1764744,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((arg_r2@0x1aed88+0x20))@0x1aedc0"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "arg",
+              1764744,
+              2
+            ],
+            32
+          ],
+          1764800
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1764912,
+      "owner": 1764744,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((arg_r2@0x1aed88+0x18))@0x1aee18"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "arg",
+              1764744,
+              2
+            ],
+            24
+          ],
+          1764888
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1765384,
+      "owner": 1764928,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r1@0x1aee40+0x28))@0x1aeff0+0x18))@0x1aeff8"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1764928,
+                  1
+                ],
+                40
+              ],
+              1765360
+            ],
+            24
+          ],
+          1765368
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1765520,
+      "owner": 1764928,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r1@0x1aee40+0x28))@0x1af068+0x18))@0x1af070"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1764928,
+                  1
+                ],
+                40
+              ],
+              1765480
+            ],
+            24
+          ],
+          1765488
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1765864,
+      "owner": 1764928,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r1@0x1aee40+0x28))@0x1af1c0+0x18))@0x1af1c8"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1764928,
+                  1
+                ],
+                40
+              ],
+              1765824
+            ],
+            24
+          ],
+          1765832
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1766008,
+      "owner": 1764928,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "load64((load64((arg_r1@0x1aee40+0x28))@0x1af240+0x20))@0x1af260"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1764928,
+                  1
+                ],
+                40
+              ],
+              1765952
+            ],
+            32
+          ],
+          1765984
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1766080,
+      "owner": 1764928,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r1@0x1aee40+0x28))@0x1af240+0x18))@0x1af2a0"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1764928,
+                  1
+                ],
+                40
+              ],
+              1765952
+            ],
+            24
+          ],
+          1766048
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1766168,
+      "owner": 1764928,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "load64((load64((arg_r1@0x1aee40+0x28))@0x1af240+0x20))@0x1af300"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1764928,
+                  1
+                ],
+                40
+              ],
+              1765952
+            ],
+            32
+          ],
+          1766144
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1766288,
+      "owner": 1766256,
+      "regs": 0,
+      "immediate": 5,
+      "provenance": [
+        "load64((load64((arg_r1@0x1af370+0x28))@0x1af378+0x18))@0x1af380"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1766256,
+                  1
+                ],
+                40
+              ],
+              1766264
+            ],
+            24
+          ],
+          1766272
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1766360,
+      "owner": 1766304,
+      "regs": 0,
+      "immediate": 5,
+      "provenance": [
+        "load64((load64((arg_r2@0x1af3a0+0x28))@0x1af3b0+0x18))@0x1af3b8"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1766304,
+                  2
+                ],
+                40
+              ],
+              1766320
+            ],
+            24
+          ],
+          1766328
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1766448,
+      "owner": 1766400,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r1@0x1af400+0x28))@0x1af418+0x18))@0x1af420"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1766400,
+                  1
+                ],
+                40
+              ],
+              1766424
+            ],
+            24
+          ],
+          1766432
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1766800,
+      "owner": 1766400,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1766976,
+      "owner": 1766824,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r1@0x1af5a8+0x28))@0x1af628+0x18))@0x1af630"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1766824,
+                  1
+                ],
+                40
+              ],
+              1766952
+            ],
+            24
+          ],
+          1766960
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1767352,
+      "owner": 1766824,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1767440,
+      "owner": 1767376,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r2@0x1af7d0+0x28))@0x1af7e8+0x18))@0x1af7f0"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1767376,
+                  2
+                ],
+                40
+              ],
+              1767400
+            ],
+            24
+          ],
+          1767408
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1767568,
+      "owner": 1767512,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r1@0x1af858+0x28))@0x1af878+0x18))@0x1af880"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1767512,
+                  1
+                ],
+                40
+              ],
+              1767544
+            ],
+            24
+          ],
+          1767552
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1767832,
+      "owner": 1767512,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1767920,
+      "owner": 1767512,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1768032,
+      "owner": 1767968,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r2@0x1afa20+0x28))@0x1afa30+0x18))@0x1afa38"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1767968,
+                  2
+                ],
+                40
+              ],
+              1767984
+            ],
+            24
+          ],
+          1767992
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1768248,
+      "owner": 1768176,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "load64((load64((arg_r3@0x1afaf0+0x28))@0x1afb08+0x20))@0x1afb18"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1768176,
+                  3
+                ],
+                40
+              ],
+              1768200
+            ],
+            32
+          ],
+          1768216
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1769080,
+      "owner": 1768176,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1769272,
+      "owner": 1768176,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1769544,
+      "owner": 1768176,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1769872,
+      "owner": 1768176,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1769912,
+      "owner": 1768176,
+      "regs": 0,
+      "immediate": 3,
+      "provenance": [
+        "unknown"
+      ],
+      "expressions": null,
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1770144,
+      "owner": 1770096,
+      "regs": 0,
+      "immediate": 9,
+      "provenance": [
+        "load64((load64((arg_r2@0x1b0270+0x28))@0x1b0280+0x20))@0x1b0288"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1770096,
+                  2
+                ],
+                40
+              ],
+              1770112
+            ],
+            32
+          ],
+          1770120
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1770336,
+      "owner": 1770096,
+      "regs": 0,
+      "immediate": 9,
+      "provenance": [
+        "load64((load64((arg_r2@0x1b0270+0x28))@0x1b0280+0x20))@0x1b0288"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1770096,
+                  2
+                ],
+                40
+              ],
+              1770112
+            ],
+            32
+          ],
+          1770120
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1770496,
+      "owner": 1770096,
+      "regs": 0,
+      "immediate": 9,
+      "provenance": [
+        "load64((load64((arg_r2@0x1b0270+0x28))@0x1b0280+0x20))@0x1b0288"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1770096,
+                  2
+                ],
+                40
+              ],
+              1770112
+            ],
+            32
+          ],
+          1770120
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1770584,
+      "owner": 1770096,
+      "regs": 0,
+      "immediate": 9,
+      "provenance": [
+        "load64((load64((arg_r2@0x1b0270+0x28))@0x1b0280+0x20))@0x1b0288"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1770096,
+                  2
+                ],
+                40
+              ],
+              1770112
+            ],
+            32
+          ],
+          1770120
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1770640,
+      "owner": 1770096,
+      "regs": 0,
+      "immediate": 9,
+      "provenance": [
+        "load64((load64((arg_r2@0x1b0270+0x28))@0x1b0280+0x20))@0x1b0288"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1770096,
+                  2
+                ],
+                40
+              ],
+              1770112
+            ],
+            32
+          ],
+          1770120
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    },
+    {
+      "site": 1782288,
+      "owner": 1782256,
+      "regs": 0,
+      "immediate": 4,
+      "provenance": [
+        "load64((load64((arg_r1@0x1b31f0+0x8))@0x1b31f8+0x18))@0x1b3200"
+      ],
+      "expressions": [
+        [
+          "load",
+          64,
+          [
+            "add",
+            [
+              "load",
+              64,
+              [
+                "add",
+                [
+                  "arg",
+                  1782256,
+                  1
+                ],
+                8
+              ],
+              1782264
+            ],
+            24
+          ],
+          1782272
+        ]
+      ],
+      "constant_values": [],
+      "all_paths_constant": false,
+      "constant_text_targets": []
+    }
+  ],
+  "direct_call_contexts": [
+    {
+      "caller": 50816,
+      "direct_callsite": 50912,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 50912,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 50976,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 50976,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51040,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51040,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51104,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51104,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51168,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51168,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51232,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51232,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51296,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51296,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51360,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51360,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51424,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51424,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51488,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51488,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51552,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51552,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51616,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51616,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51680,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51680,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51744,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51744,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51808,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51808,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51872,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51872,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51936,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51936,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52000,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52000,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52064,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52064,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52128,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52128,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52192,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52192,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52256,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52256,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52320,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52320,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52384,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52384,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52448,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52448,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52512,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52512,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52576,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52576,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52640,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52640,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52704,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52704,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52760,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52760,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    }
+  ]
+}

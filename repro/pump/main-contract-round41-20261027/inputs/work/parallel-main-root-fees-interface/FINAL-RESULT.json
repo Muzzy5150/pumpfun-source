@@ -1,0 +1,95 @@
+{
+  "status": "validated_private_root_interface_trial",
+  "base": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/source01",
+  "source_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-root-fees-interface/source01",
+  "changed_files": {
+    "idls/pump_fees.json": "6b9fa3eccc6e06273076a47b581f9fcb9e531bb7c3c88acbcd44db55a4002b29",
+    "src/distribution.rs": "35bc4326fb5f66e75a7acbda4b64b88a5451b1733a305689c9fa8870ce7b2cb8",
+    "src/fee_cpi.rs": "e8bc413f1b2609c1634d9929178eaae9859a5725c5f7d69b5239d20d1f59ef9e",
+    "src/lib.rs": "15bcebce8f10e026990f19418c538cc243b988de3ffac90155546b3b66647d70",
+    "src/sell.rs": "6558a4b22b112ac4a2350b011be9f13fc5436ee7f749f991a885a0fcd1590933",
+    "src/trade_types.rs": "526dc94caaefd9826a83a8b76abc82e34c97ff27fce3fd0ccb581bb6cc1d47fe"
+  },
+  "compiled_variants": 1,
+  "candidate_sha256": "6e2b3db1f047c738584ef6b80507561c6e9fa48e21f62e36b73489fd34bcdda0",
+  "unstripped_sha256": "9acf5d3e0a1c9929ce612675d8338954932ecfd2ecc6f960f02d07ded67e719d",
+  "source_unchanged": true,
+  "sets": {
+    "normalized_matches": {
+      "before": 738,
+      "after": 740,
+      "gains": [
+        {
+          "original": "0xcf18",
+          "bytes": 336,
+          "candidate_symbols": [
+            "_ZN67_$LT$alloc..vec..Vec$LT$T$C$A$GT$$u20$as$u20$core..clone..Clone$GT$5clone17h908e5d57085a7f83E"
+          ]
+        },
+        {
+          "original": "0x1176e0",
+          "bytes": 3200,
+          "candidate_symbols": [
+            "_ZN14pump_recovered9pump_fees3cpi24get_fees_with_quote_mint17h7b81cd99f88a9d0eE"
+          ]
+        }
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "before": 121,
+      "after": 121,
+      "gains": [],
+      "losses": []
+    }
+  },
+  "locations": {
+    "before": {
+      "shape_recognized_pairs": 102,
+      "same_filename": 100,
+      "same_filename_line_column": 84
+    },
+    "after": {
+      "shape_recognized_pairs": 102,
+      "same_filename": 101,
+      "same_filename_line_column": 84
+    },
+    "newly_unpaired": [],
+    "newly_paired": [],
+    "filepath_gains": [
+      "0x1be0f0"
+    ],
+    "filepath_losses": [],
+    "complete_gains": [],
+    "complete_losses": []
+  },
+  "runtime": {
+    "cases": 4287,
+    "suites": 32,
+    "strict_diagnostic_log_cases": 4287,
+    "CPI_pairs": 4287,
+    "new_case_definitions": 0,
+    "receipt_counts": {
+      "paired_rows": 4287,
+      "verified_result_objects": 8574,
+      "fully_backed_pairs": 4287,
+      "distinct_signed_transactions": 974,
+      "distinct_transaction_pairs": 974
+    },
+    "main_attribution": {
+      "known_main_instruction": 8558,
+      "main_not_invoked": 16
+    },
+    "findings": []
+  },
+  "meaning": "A single main-owned root declare_program!(pump_fees) restores live CPI and copy-vector bodies, external account root origin, and coherent shared type identity.",
+  "limits": [
+    "Current root macro line65 differs from original84; no padding or forced origin applied.",
+    "Remaining unchecked FeeConfig and outer fee accounting bodies are not normalized equal.",
+    "Identity-order raw121 is not an ordered-layout score.",
+    "Full original ELF identity and original source/toolchain provenance are not proved.",
+    "Strict diagnostic audit excludes source line/file coordinates and compute use as described in the saved audit scope."
+  ],
+  "shared_source_or_tool_edits": false,
+  "whole_original_identity": false
+}

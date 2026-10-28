@@ -1,0 +1,62 @@
+[
+  {
+    "wrapper_instruction_offset": 72,
+    "role": "24-byte Location payload passed to Option::unwrap_failed; allocation extent and historical type identity unproved",
+    "original": {
+      "address": "0x1bdec8",
+      "path": "programs/pump/src/lib.rs",
+      "line": 1478,
+      "column": 40,
+      "pointer": {
+        "site": 1826504,
+        "relocation_type": 8,
+        "target": 1798853,
+        "raw": "00000000c5721b00"
+      }
+    },
+    "candidate": {
+      "address": "0x1a8278",
+      "path": "programs/pump/src/lib.rs",
+      "line": 568,
+      "column": 36,
+      "pointer": {
+        "site": 1737336,
+        "relocation_type": 8,
+        "target": 1708587,
+        "raw": "000000002b121a00"
+      }
+    },
+    "equal_path": true,
+    "equal_path_line_column": false
+  },
+  {
+    "wrapper_instruction_offset": 680,
+    "role": "24-byte Location payload passed to Option::unwrap_failed; allocation extent and historical type identity unproved",
+    "original": {
+      "address": "0x1bdeb0",
+      "path": "programs/pump/src/lib.rs",
+      "line": 1477,
+      "column": 42,
+      "pointer": {
+        "site": 1826480,
+        "relocation_type": 8,
+        "target": 1798853,
+        "raw": "00000000c5721b00"
+      }
+    },
+    "candidate": {
+      "address": "0x1a8260",
+      "path": "programs/pump/src/lib.rs",
+      "line": 567,
+      "column": 33,
+      "pointer": {
+        "site": 1737312,
+        "relocation_type": 8,
+        "target": 1708587,
+        "raw": "000000002b121a00"
+      }
+    },
+    "equal_path": true,
+    "equal_path_line_column": false
+  }
+]

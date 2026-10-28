@@ -1,0 +1,29 @@
+{
+  "script": "work/parallel-main-collection-rent/probe_incremental.py",
+  "script_sha256": "b6cfff3c5e202fed63bf29b6abb03a2c137acd22a387d3b10214186a8f98af9b",
+  "arguments": [
+    "--candidate",
+    "CANDIDATE",
+    "--output",
+    "OUTPUT.json.gz"
+  ],
+  "case_count": 128,
+  "extra_inputs": {
+    "work/parallel-main-collection-rent/combined-incremental-cases.json": "a293c2c3f259ffac1058ddb2e198e300e9bfa9f41c2f02c3828729341656b756",
+    "work/parallel-main-collection-rent/probe_rent.py": "e141b3bd6090f2d8e95c9b12c6cf3f97065c95ba9b78ae48e5b73ce3b8216ccd",
+    "work/parallel-main-collection-rent-review/probe-precedence.py": "46cfcb9eebd9a9ec11c4090334dfef049de6ba75f9a9b6f40dc63d4d97cd8c8e",
+    "work/parallel-main-collection-rent-review/probe-executable.py": "d5a92ae4db65d62d9436cfb70a879f38c6496dcd4d5c7d1a23229a240aeb7d72",
+    "work/parallel-main-collection-rent-review/probe-owner-live.py": "858911ac8c8e90355efc3e07d4a14194c87b1c3e12142aa1cdf0e0507d50d28f",
+    "scripts/pump_creator_collect_v2_differential.py": "519ce5139755e1132fbd44c7a8592b7866ab67fb37adb981606fd62328f7b70b",
+    "scripts/pump_creator_collect_differential.py": "1425b2eb7449621f0d15685819f019252481b5661347876cf378eca2a8ea4c24"
+  },
+  "validated_candidate_sha256": "cb7125dd0aabaa41397597e6bd32f9f949394adbe1647b5a0df489f325dd6c6a",
+  "validated_report_sha256": "c7bbee9115c0ff5e813f1855d0baea1eb25fb71993983ead8cb83010940f0047",
+  "deduplication": {
+    "input_rows": 152,
+    "retained": 128,
+    "duplicates": 24,
+    "definition": "sha256(transaction_base64 + canonical non-null before-account JSON)",
+    "record": "work/parallel-main-collection-rent/DEDUPLICATION.json"
+  }
+}

@@ -1,0 +1,33 @@
+{"case": "native22-healthy", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native22-partial_rent", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native22-fee_backing_missing", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native22-incomplete_low", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6006))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6006))))", "diff": []}
+{"case": "native22-incomplete_overflow", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "diff": []}
+{"case": "native22-wrong_event_low", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(2006))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(2006))))", "diff": []}
+{"case": "native22-wrong_event_overflow", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "diff": []}
+{"case": "native22-already_migrated_low", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-token-healthy", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-token-partial_rent", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-token-fee_backing_missing", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "native-token-incomplete_low", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6006))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6006))))", "diff": []}
+{"case": "native-token-incomplete_overflow", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "diff": []}
+{"case": "native-token-wrong_event_low", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(2006))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(2006))))", "diff": []}
+{"case": "native-token-wrong_event_overflow", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "diff": []}
+{"case": "native-token-already_migrated_low", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "stable-token-healthy", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "stable-token-partial_rent", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "stable-token-fee_backing_missing", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "stable-token-incomplete_low", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6006))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6006))))", "diff": []}
+{"case": "stable-token-incomplete_overflow", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6006))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6006))))", "diff": []}
+{"case": "stable-token-wrong_event_low", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(2006))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(2006))))", "diff": []}
+{"case": "stable-token-wrong_event_overflow", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(2006))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(2006))))", "diff": []}
+{"case": "stable-token-already_migrated_low", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "stable22-healthy", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "stable22-partial_rent", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "stable22-fee_backing_missing", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "stable22-incomplete_low", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6006))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6006))))", "diff": []}
+{"case": "stable22-incomplete_overflow", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6006))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6006))))", "diff": []}
+{"case": "stable22-wrong_event_low", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(2006))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(2006))))", "diff": []}
+{"case": "stable22-wrong_event_overflow", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(2006))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(2006))))", "diff": []}
+{"case": "stable22-already_migrated_low", "original_error": null, "candidate_error": null, "diff": []}
+{"case_count": 32, "mismatches": []}

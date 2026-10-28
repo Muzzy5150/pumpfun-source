@@ -1,0 +1,65 @@
+{
+  "status": "Validated holder initializer order and saturating recipient-count source corrections",
+  "baseline": "work/parallel-main-holder-token-source-info",
+  "files": {
+    "src/creator/distribute_fee_to_holders.rs": "fe5bbccad0c05d7f65cc8f5c9ae022f0760e81eb93f5cbf53e481ada20ae2780"
+  },
+  "patch_sha256": "d13e014710e4d2ec4a795957fefd58420d590a9458d4c42a8f2077b46f1fe0b3",
+  "independent_saturating_patch_sha256": "b349b5003be989afed63b961269e160fb1f1eb6f6af779dcc7341e546da11c48",
+  "independent_initializer_patch_sha256": "4b3785185177cf50af98a30de12e82564fb13642ef3bb65c770ac7a8b32c2a53",
+  "candidate_sha256": "1fdd5c761a7912f882edf6fd5171b071cc9e03ce3406d48c4a71eaee58936795",
+  "unstripped_sha256": "50eb71c8c5117376a940079793d3c6eef0a737c8aeeb1a4833bda16575fad70e",
+  "build_receipt_sha256": "249b9d1adc9205aedbc82d21ec9b549e3b9be6d267e03d982bbc92a66fd12122",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 739,
+    "unmatched": 296
+  },
+  "complete_match_delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "handler": {
+    "original_start": "0x34558",
+    "original_bytes": 14512,
+    "baseline_bytes": 14152,
+    "candidate_start": "0x4dfb8",
+    "candidate_bytes": 14152,
+    "normalized_equal": false,
+    "positional_differing_slots": {
+      "baseline": 1804,
+      "candidate": 1811
+    }
+  },
+  "instruction_proof_sha256": "f49fe721e41d74c25bcf1ccdec6b249193722a52314234a84c408824917ba998",
+  "runtime": {
+    "case_counts": {
+      "holder": 649,
+      "distribution": 298,
+      "minimum": 181,
+      "regressions": 62,
+      "rent": 6,
+      "pending": 72,
+      "quote_gate": 18
+    },
+    "cases": 1286,
+    "mismatches": 0,
+    "strict_diagnostics": 0,
+    "invocation_mismatches": 0,
+    "distinct_transactions": 287,
+    "new_coverage": 0
+  },
+  "limits": [
+    "No runtime-reachable high-bit Vec length claimed.",
+    "Source corrections are independently evidenced but the compiled/runtime control combines both.",
+    "No whole-holder or whole-ELF identity unless explicitly reported.",
+    "No final text/data order qualification."
+  ]
+}

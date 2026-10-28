@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "counts": {
+    "moved_.text": 1033,
+    "moved_.data.rel.ro": 2,
+    "branches_checked": 22142,
+    "calls_checked": 11112,
+    "lddw_checked": 8214,
+    "data_pointers_checked": 632,
+    "data_scalars_checked": 784,
+    "relocations_checked": 6179
+  },
+  "all_allocated_bytes_checked": true,
+  "all_other_file_bytes_checked": true,
+  "baseline_sha256": "fcc876fba7451c10d94d192cc29d5467de7ecda6e1da6aa450288372f3ec6505",
+  "candidate_sha256": "8f8db4faaa749deaf3821a192e30eb345f79b3b472344e6df6e26fa9b916da5f"
+}

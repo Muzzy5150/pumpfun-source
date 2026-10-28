@@ -1,0 +1,224 @@
+{
+  "status": "validated isolated increment; ready for parent composition, not canonical",
+  "basis": "Frozen Round28 source; original deployed main Pump SHA7a19...",
+  "files": {
+    "baseline": "work/parallel-main-integration/round28-source/programs/pump",
+    "source": "work/parallel-main-transfer-fee-boundary/source02",
+    "changes": [
+      "src/trade_v3.rs",
+      "src/v3_native_transfer_fee.rs"
+    ],
+    "before": {
+      "src/trade_v3.rs": "3bb48fb3a200de4ca4aa002e5adff3816b4242b5f635b2480ab28fa57af8c64d",
+      "src/v3_native_transfer_fee.rs": null
+    },
+    "after": {
+      "src/trade_v3.rs": "0aef80d44b92871db65ccf8c9abe7869a78add4cf71349c0ce9ba190e52cff8f",
+      "src/v3_native_transfer_fee.rs": "0801a123aac7632023849294c812878c71a5c5e431ea337318fbf9256c9b4a3f"
+    }
+  },
+  "build": {
+    "candidate_sha256": "e45582ed9e0a708b473916ea08bd26970c8baca53f044e07cee0db1f274484d1",
+    "unstripped_sha256": "7bdf32fda96feeb025fdab52aad6411e493a1f9acc435cf0f9c7beefb5e4e023",
+    "receipt_sha256": "954a074883f95fd6660b9e701124773802e5e21b75656d79c517124d65f31b5f",
+    "source_unchanged": true,
+    "dependency_cache": {
+      "key": "fdf6441ce812bf7050ae2af8ca0708104ae04c5dedd4b610613364f964b41e29",
+      "cache_root": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-cache/direct-cache",
+      "status": "hit",
+      "seeded_files": 541,
+      "excluded": [
+        "main project artifacts and fingerprints",
+        "all build directories",
+        "all incremental directories",
+        "all build-script fingerprints"
+      ],
+      "source_integrity": "full external package file hashes before and after Cargo build",
+      "manifest_sha256": "2cc57b597b4359e023c60a4743fe34b86ec142d58b98a0aeccff8a8686474fb0",
+      "clone_methods": [
+        "apfs-clonefile",
+        "copy2"
+      ],
+      "implementation_sha256": "c776c977e30ea9a21035919e0ec2339d858e57cf85a5a2ddbd1d499a561572c1",
+      "execution": "fresh-cargo-plan-rustc",
+      "build_plan_command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/fees-compat/toolchains/v1.44/rust/bin/cargo",
+        "build",
+        "--manifest-path",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-transfer-fee-boundary/build02/source/programs/pump/Cargo.toml",
+        "--release",
+        "--target",
+        "sbf-solana-solana",
+        "--locked",
+        "--offline",
+        "-Z",
+        "unstable-options",
+        "--build-plan"
+      ],
+      "build_plan_sha256": "80986803328e4b52c00c5a6e1539b94169dc1412e268363d75717390c536b4c3",
+      "main_command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_physical_source_wrapper.py",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/fees-compat/toolchains/v1.44/rust/bin/rustc",
+        "--crate-name",
+        "pump_recovered",
+        "--edition=2021",
+        "programs/pump/src/lib.rs",
+        "--error-format=json",
+        "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+        "--crate-type",
+        "cdylib",
+        "--crate-type",
+        "lib",
+        "--emit=dep-info,link",
+        "-C",
+        "opt-level=3",
+        "-C",
+        "panic=abort",
+        "-C",
+        "embed-bitcode=no",
+        "-C",
+        "codegen-units=1",
+        "-C",
+        "overflow-checks=on",
+        "--cfg",
+        "feature=\"default\"",
+        "-C",
+        "metadata=4ada728f60c02230",
+        "--out-dir",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-transfer-fee-boundary/build02/target/sbf-solana-solana/release/deps",
+        "--target",
+        "sbf-solana-solana",
+        "-C",
+        "strip=debuginfo",
+        "-L",
+        "dependency=/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-transfer-fee-boundary/build02/target/sbf-solana-solana/release/deps",
+        "-L",
+        "dependency=/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-transfer-fee-boundary/build02/target/release/deps",
+        "--extern",
+        "anchor_lang=/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-transfer-fee-boundary/build02/target/sbf-solana-solana/release/deps/libanchor_lang-bfd7831fac494992.rlib",
+        "--extern",
+        "anchor_spl=/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-transfer-fee-boundary/build02/target/sbf-solana-solana/release/deps/libanchor_spl-360ea9047cee84fe.rlib",
+        "--extern",
+        "spl_type_length_value=/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-transfer-fee-boundary/build02/target/sbf-solana-solana/release/deps/libspl_type_length_value-eb0b03c883ea37d2.rlib",
+        "-Zremap-cwd-prefix="
+      ],
+      "main_cwd": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-transfer-fee-boundary/build02/source",
+      "main_environment": {
+        "CARGO": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/fees-compat/toolchains/v1.44/rust/bin/cargo",
+        "CARGO_CRATE_NAME": "pump_recovered",
+        "CARGO_MANIFEST_DIR": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-transfer-fee-boundary/build02/source/programs/pump",
+        "CARGO_PKG_AUTHORS": "",
+        "CARGO_PKG_DESCRIPTION": "",
+        "CARGO_PKG_HOMEPAGE": "",
+        "CARGO_PKG_LICENSE": "",
+        "CARGO_PKG_LICENSE_FILE": "",
+        "CARGO_PKG_NAME": "pump-recovered",
+        "CARGO_PKG_README": "",
+        "CARGO_PKG_REPOSITORY": "",
+        "CARGO_PKG_RUST_VERSION": "",
+        "CARGO_PKG_VERSION": "0.1.0",
+        "CARGO_PKG_VERSION_MAJOR": "0",
+        "CARGO_PKG_VERSION_MINOR": "1",
+        "CARGO_PKG_VERSION_PATCH": "0",
+        "CARGO_PKG_VERSION_PRE": "",
+        "CARGO_PRIMARY_PACKAGE": "1",
+        "CARGO_RUSTC_CURRENT_DIR": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-transfer-fee-boundary/build02/source",
+        "DYLD_FALLBACK_LIBRARY_PATH": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-transfer-fee-boundary/build02/target/release/deps:/Users/shawwalters/lib:/usr/local/lib:/usr/lib"
+      },
+      "main_freshly_compiled": true
+    }
+  },
+  "byte_identity": {
+    "original_window": "0x17c548",
+    "bytes": 776,
+    "normalized_exact": true,
+    "raw_exact": false,
+    "full_inventory": {
+      "total": 1035,
+      "raw": 123,
+      "normalized": 724,
+      "unmatched": 311
+    },
+    "changes": {
+      "normalized_matches": {
+        "gains": [
+          "0x17c548"
+        ],
+        "losses": []
+      },
+      "raw_match": {
+        "gains": [],
+        "losses": []
+      }
+    },
+    "callee_relationships": [
+      {
+        "offset": 272,
+        "original": "0x1b55c8",
+        "candidate": "0x19e1f8",
+        "bytes": 352,
+        "matches": [
+          {
+            "start": 1696248,
+            "symbol": "__multi3",
+            "raw_sha256": "face056642083fcc15c6737f1910030a4b59b6a78a4fa523f142dc0f28635762",
+            "operands": []
+          }
+        ]
+      },
+      {
+        "offset": 456,
+        "original": "0x1b4088",
+        "candidate": "0x19e358",
+        "bytes": 72,
+        "matches": [
+          {
+            "start": 1696600,
+            "symbol": "__udivti3",
+            "raw_sha256": "4c7fdcb05ebe6e9644f6f82174ae7b33ccc28be551a89726b8118724d242175e",
+            "operands": [
+              {
+                "offset": 24,
+                "kind": "direct-call",
+                "target": 1690880
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "runtime": {
+    "case_counts": {
+      "extensions": 126,
+      "buy_v2": 216
+    },
+    "total_cases": 342,
+    "signature_and_transaction_payload_identity": true,
+    "strict_fixture_comparisons": true,
+    "diagnostics": {
+      "scope": "Compare captured Pump error payloads, preserving account names and operands.\n\nThis audits paired logs already present in a differential receipt. It excludes\nsource file/line coordinates, compute usage, and cases without paired logs.\nIt therefore strengthens the bounded oracle, not its input-space coverage.\n",
+      "coverage": {
+        "extensions": 126,
+        "buy_v2": 216
+      },
+      "log_bearing_cases": 342,
+      "mismatches": []
+    },
+    "program_invocation_sequences": {
+      "extensions": {
+        "cases": 126,
+        "mismatches": []
+      },
+      "buy_v2": {
+        "cases": 216,
+        "mismatches": []
+      }
+    }
+  },
+  "limits": [
+    "Full ELF byte equality remains false.",
+    "The tested native carrier and method restore the original helper body; this does not authenticate original Rust names or allocation history.",
+    "The isolated increment still requires parent composite build/regression before promotion."
+  ]
+}

@@ -1,0 +1,19 @@
+{"case": "buy_v3-token-False-control", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_v3-token-False-whitelist_user", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_v3-token-False-adjacent_admin_user", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_v3-token-True-control", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_v3-token-True-whitelist_user", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_v3-token-True-adjacent_admin_user", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_exact_quote_in_v3-token-False-control", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_exact_quote_in_v3-token-False-whitelist_user", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_exact_quote_in_v3-token-False-adjacent_admin_user", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_exact_quote_in_v3-token-True-control", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_exact_quote_in_v3-token-True-whitelist_user", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_exact_quote_in_v3-token-True-adjacent_admin_user", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell_v3-token-False-control", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell_v3-token-False-whitelist_user", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell_v3-token-False-adjacent_admin_user", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell_v3-token-True-control", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell_v3-token-True-whitelist_user", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell_v3-token-True-adjacent_admin_user", "original_error": null, "candidate_error": null, "diff": []}
+{"case_count": 18, "mismatches": []}

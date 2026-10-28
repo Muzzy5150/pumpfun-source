@@ -1,0 +1,493 @@
+{
+  "scope": "Input dedup against six authoritative Round32 claim suites (498 executions); exact signed transaction + canonical address-keyed non-null watched pre-state, including owner/lamports/data/executable/rent_epoch. Retains repeated historical cases only as provenance.",
+  "existing_cases": 498,
+  "existing_unique_inputs": 459,
+  "new_executed_cases": 30,
+  "new_unique_inputs": 28,
+  "overlaps": [
+    {
+      "case": {
+        "name": "claim-claimed0-amount0-none",
+        "claimed": 0,
+        "has_claimed": 0,
+        "volume": 0,
+        "unclaimed": 0
+      },
+      "input_hash": "49b2adb753cc3bd490e88735f18c49209f68c78105a11aaeb5ffda4e84d167f5",
+      "matches": [
+        "work/parallel-main-integration/round32-unified/suites/full/incentive_claim.attempt1.json.gz",
+        "work/parallel-main-integration/round32-unified/suites/full/incentive_claim.attempt1.json.gz",
+        "work/parallel-main-integration/round32-unified/suites/additional/claim_mint_6.attempt1.json.gz",
+        "work/parallel-main-integration/round32-unified/suites/additional/claim_program_precedence_20.attempt1.json.gz",
+        "work/parallel-main-integration/round32-unified/suites/additional/claim_zero_log_4.attempt1.json.gz"
+      ]
+    },
+    {
+      "case": {
+        "name": "claim-claimed0-amount1-none",
+        "claimed": 0,
+        "has_claimed": 0,
+        "volume": 0,
+        "unclaimed": 1
+      },
+      "input_hash": "a8c0438ae67e293a0ab0eaa8fe568c86ebe97918cb5d236a0cbd03d5ca790dfa",
+      "matches": [
+        "work/parallel-main-integration/round32-unified/suites/additional/claim_zero_log_4.attempt1.json.gz"
+      ]
+    }
+  ],
+  "specs": [
+    {
+      "case": {
+        "name": "claim-claimed0-amount0-empty-source",
+        "claimed": 0,
+        "has_claimed": 0,
+        "volume": 0,
+        "unclaimed": 0,
+        "vault_amount": 0
+      },
+      "input_hash": "6e8e7f569ee543b7727425e7e8856da7a887843160f4dffd566fa29581274e8c"
+    },
+    {
+      "case": {
+        "name": "claim-claimed0-amount0-frozen-source",
+        "claimed": 0,
+        "has_claimed": 0,
+        "volume": 0,
+        "unclaimed": 0,
+        "mutations": {
+          "global_ata": {
+            "patches": [
+              [
+                108,
+                "02"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "58188e51c5a9e7203b8dbdbfd442275335f86caa679a92a1169a3e1fc025dc12"
+    },
+    {
+      "case": {
+        "name": "claim-claimed0-amount0-frozen-destination",
+        "claimed": 0,
+        "has_claimed": 0,
+        "volume": 0,
+        "unclaimed": 0,
+        "mutations": {
+          "user_ata": {
+            "patches": [
+              [
+                108,
+                "02"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "b4311a172f95dfa33e4b9bf5a79e383e4397c48bfc212cd58194fcb15e045b0c"
+    },
+    {
+      "case": {
+        "name": "claim-claimed0-amount1-empty-source",
+        "claimed": 0,
+        "has_claimed": 0,
+        "volume": 0,
+        "unclaimed": 1,
+        "vault_amount": 0
+      },
+      "input_hash": "4854560fc6ab96a0549cead28f5fc192183c289070e75be5c27194725e5787a7"
+    },
+    {
+      "case": {
+        "name": "claim-claimed0-amount1-frozen-source",
+        "claimed": 0,
+        "has_claimed": 0,
+        "volume": 0,
+        "unclaimed": 1,
+        "mutations": {
+          "global_ata": {
+            "patches": [
+              [
+                108,
+                "02"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "ef9cc3195de2b6e918ef47b293fea0b4129ff14eef260aa4a485e9962664e276"
+    },
+    {
+      "case": {
+        "name": "claim-claimed0-amount1-frozen-destination",
+        "claimed": 0,
+        "has_claimed": 0,
+        "volume": 0,
+        "unclaimed": 1,
+        "mutations": {
+          "user_ata": {
+            "patches": [
+              [
+                108,
+                "02"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "ff6b1d06638e32d6a121fedffdeae03e952e90a7b6ca11dd1b1fa416ee8b3845"
+    },
+    {
+      "case": {
+        "name": "claim-claimed0-amount200-none",
+        "claimed": 0,
+        "has_claimed": 0,
+        "volume": 0,
+        "unclaimed": 200
+      },
+      "input_hash": "e082112355044b6951ea75b2494444455e26ae373535b2c9004f849fef20016c"
+    },
+    {
+      "case": {
+        "name": "claim-claimed0-amount200-empty-source",
+        "claimed": 0,
+        "has_claimed": 0,
+        "volume": 0,
+        "unclaimed": 200,
+        "vault_amount": 0
+      },
+      "input_hash": "b36b494c9e4ebccf21535fad26ba85fd538216bbb645ac4895a9ca48df7b79ac"
+    },
+    {
+      "case": {
+        "name": "claim-claimed0-amount200-frozen-source",
+        "claimed": 0,
+        "has_claimed": 0,
+        "volume": 0,
+        "unclaimed": 200,
+        "mutations": {
+          "global_ata": {
+            "patches": [
+              [
+                108,
+                "02"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "4b495404e7ed569f9bb53ec7e0fef02638da015cd10e90e07ca7f4774e0ff90a"
+    },
+    {
+      "case": {
+        "name": "claim-claimed0-amount200-frozen-destination",
+        "claimed": 0,
+        "has_claimed": 0,
+        "volume": 0,
+        "unclaimed": 200,
+        "mutations": {
+          "user_ata": {
+            "patches": [
+              [
+                108,
+                "02"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "aa0023f12aa5b53389c4071c7a4537789f6bde460440c5c573451a3c602ae469"
+    },
+    {
+      "case": {
+        "name": "claim-claimed18446744073709551615-amount0-none",
+        "claimed": 18446744073709551615,
+        "has_claimed": 1,
+        "volume": 0,
+        "unclaimed": 0
+      },
+      "input_hash": "549a6dd1c05a54aff07a70a4b186cf9a3ff58625273ce3ecbbb950c123b6ed3a"
+    },
+    {
+      "case": {
+        "name": "claim-claimed18446744073709551615-amount0-empty-source",
+        "claimed": 18446744073709551615,
+        "has_claimed": 1,
+        "volume": 0,
+        "unclaimed": 0,
+        "vault_amount": 0
+      },
+      "input_hash": "054d145d78b9c295462e32a3f15fa8d12a299f51bee8879b7de7a37acbf07866"
+    },
+    {
+      "case": {
+        "name": "claim-claimed18446744073709551615-amount0-frozen-source",
+        "claimed": 18446744073709551615,
+        "has_claimed": 1,
+        "volume": 0,
+        "unclaimed": 0,
+        "mutations": {
+          "global_ata": {
+            "patches": [
+              [
+                108,
+                "02"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "3f2508cec18c059d36f0218167e339f7a30fe33641446ff773078802cb3068c2"
+    },
+    {
+      "case": {
+        "name": "claim-claimed18446744073709551615-amount0-frozen-destination",
+        "claimed": 18446744073709551615,
+        "has_claimed": 1,
+        "volume": 0,
+        "unclaimed": 0,
+        "mutations": {
+          "user_ata": {
+            "patches": [
+              [
+                108,
+                "02"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "0d98b96b6898939ab890f435955d7a449cecf396166c13a13f760b37cc5e9d7d"
+    },
+    {
+      "case": {
+        "name": "claim-claimed18446744073709551615-amount1-none",
+        "claimed": 18446744073709551615,
+        "has_claimed": 1,
+        "volume": 0,
+        "unclaimed": 1
+      },
+      "input_hash": "c9cef230e87cfbe4c1797866e98546ee2187f382c86289ef67b4514cc8686ac5"
+    },
+    {
+      "case": {
+        "name": "claim-claimed18446744073709551615-amount1-empty-source",
+        "claimed": 18446744073709551615,
+        "has_claimed": 1,
+        "volume": 0,
+        "unclaimed": 1,
+        "vault_amount": 0
+      },
+      "input_hash": "7d315c860dd726775699690ecb033a07144d244546abdb3a311fa0de76920c9e"
+    },
+    {
+      "case": {
+        "name": "claim-claimed18446744073709551615-amount1-frozen-source",
+        "claimed": 18446744073709551615,
+        "has_claimed": 1,
+        "volume": 0,
+        "unclaimed": 1,
+        "mutations": {
+          "global_ata": {
+            "patches": [
+              [
+                108,
+                "02"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "9fe41973c87133fe40b0161b03e2633a35d6d1fd1ac53e2b4c8dc0e95cd2c829"
+    },
+    {
+      "case": {
+        "name": "claim-claimed18446744073709551615-amount1-frozen-destination",
+        "claimed": 18446744073709551615,
+        "has_claimed": 1,
+        "volume": 0,
+        "unclaimed": 1,
+        "mutations": {
+          "user_ata": {
+            "patches": [
+              [
+                108,
+                "02"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "0b500c5ea48a66592745d3cf7f92dcb80f150561e64f832f22ee977f6e732972"
+    },
+    {
+      "case": {
+        "name": "claim-claimed18446744073709551615-amount200-none",
+        "claimed": 18446744073709551615,
+        "has_claimed": 1,
+        "volume": 0,
+        "unclaimed": 200
+      },
+      "input_hash": "352c6979bf1a784afd8b4d4865da7d5e5447ae7a0878815b22b3342ad98292c9"
+    },
+    {
+      "case": {
+        "name": "claim-claimed18446744073709551615-amount200-empty-source",
+        "claimed": 18446744073709551615,
+        "has_claimed": 1,
+        "volume": 0,
+        "unclaimed": 200,
+        "vault_amount": 0
+      },
+      "input_hash": "3c0a82685707b42a659bb881178f77c7707725e4346648fd78bc3fb9e2134134"
+    },
+    {
+      "case": {
+        "name": "claim-claimed18446744073709551615-amount200-frozen-source",
+        "claimed": 18446744073709551615,
+        "has_claimed": 1,
+        "volume": 0,
+        "unclaimed": 200,
+        "mutations": {
+          "global_ata": {
+            "patches": [
+              [
+                108,
+                "02"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "301e329415c25e8322b1b4844401fbeb113117370e59556c33e009f143448057"
+    },
+    {
+      "case": {
+        "name": "claim-claimed18446744073709551615-amount200-frozen-destination",
+        "claimed": 18446744073709551615,
+        "has_claimed": 1,
+        "volume": 0,
+        "unclaimed": 200,
+        "mutations": {
+          "user_ata": {
+            "patches": [
+              [
+                108,
+                "02"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "8c6fed3045d04356cf92b654a768860f7a99fa119d68b59fb798ff8b7d7356a9"
+    },
+    {
+      "case": {
+        "name": "before-start-period-1-pending0",
+        "now": 9,
+        "start": 10,
+        "end": 39,
+        "last": 0,
+        "seconds_in_a_day": -1,
+        "volume": 0,
+        "unclaimed": 0,
+        "claimed": 18446744073709551615,
+        "has_claimed": 1
+      },
+      "input_hash": "c8c9d4130b0ccdbfcfe119fcbafd3fed943ba2170a0490f6a271df9d3d2f8f30"
+    },
+    {
+      "case": {
+        "name": "before-start-period-1-pending1",
+        "now": 9,
+        "start": 10,
+        "end": 39,
+        "last": 0,
+        "seconds_in_a_day": -1,
+        "volume": 0,
+        "unclaimed": 1,
+        "claimed": 18446744073709551615,
+        "has_claimed": 1
+      },
+      "input_hash": "b28675b1d56b8294e15b777981362105b2beaf27cb15e3f2ef845f46b49b22a3"
+    },
+    {
+      "case": {
+        "name": "before-start-period0-pending0",
+        "now": 9,
+        "start": 10,
+        "end": 39,
+        "last": 0,
+        "seconds_in_a_day": 0,
+        "volume": 0,
+        "unclaimed": 0,
+        "claimed": 18446744073709551615,
+        "has_claimed": 1
+      },
+      "input_hash": "436601c9a161eef35636ba81d56c2f1b0a841e1e9e1eedac737f2809449a9cf8"
+    },
+    {
+      "case": {
+        "name": "before-start-period0-pending1",
+        "now": 9,
+        "start": 10,
+        "end": 39,
+        "last": 0,
+        "seconds_in_a_day": 0,
+        "volume": 0,
+        "unclaimed": 1,
+        "claimed": 18446744073709551615,
+        "has_claimed": 1
+      },
+      "input_hash": "0949c1a4f176a1068d9fd59850ce3bb173402e5eb15f102778d77ab9610b27e3"
+    },
+    {
+      "case": {
+        "name": "before-start-period1-pending0",
+        "now": 9,
+        "start": 10,
+        "end": 39,
+        "last": 0,
+        "seconds_in_a_day": 1,
+        "volume": 0,
+        "unclaimed": 0,
+        "claimed": 18446744073709551615,
+        "has_claimed": 1
+      },
+      "input_hash": "063f624cfe378e5aa17af69e425b12c2b5db164bb15cda76f746db3fab50db67"
+    },
+    {
+      "case": {
+        "name": "before-start-period1-pending1",
+        "now": 9,
+        "start": 10,
+        "end": 39,
+        "last": 0,
+        "seconds_in_a_day": 1,
+        "volume": 0,
+        "unclaimed": 1,
+        "claimed": 18446744073709551615,
+        "has_claimed": 1
+      },
+      "input_hash": "8a5a77f2552350ed1a7e0ce899ba008244a979dd2358591842076f3296918edb"
+    }
+  ],
+  "existing_receipts": {
+    "work/parallel-main-integration/round32-unified/suites/full/claim_panic_diagnostics.attempt1.json.gz": "35575b28f990bd44a1f5b0545a944881df08c45049a1d04edfd68ebe022bd04e",
+    "work/parallel-main-integration/round32-unified/suites/full/incentive_claim.attempt1.json.gz": "a50e2e159a202acd53e5625e42673f2029ee9a9628b96a682dda6941e2ef5fa8",
+    "work/parallel-main-integration/round32-unified/suites/additional/claim_grid_132.attempt1.json.gz": "720e6576ce11b90ad54af79b89b90068326cd13fac40523c3290126eca719360",
+    "work/parallel-main-integration/round32-unified/suites/additional/claim_mint_6.attempt1.json.gz": "04b2e64fbb3e83cc5f5cc127d6efc6d7fba2740b6a4404758a8fcf48fa5fb654",
+    "work/parallel-main-integration/round32-unified/suites/additional/claim_program_precedence_20.attempt1.json.gz": "1aa097110f005070778b683e5800750eb07dc8feab377a51c94188f7b705bce7",
+    "work/parallel-main-integration/round32-unified/suites/additional/claim_zero_log_4.attempt1.json.gz": "8499adf45b84de19d269bf4de91918ac63603737f2ee19cae150fd48ec14e193"
+  },
+  "existing_case_counts": {
+    "work/parallel-main-integration/round32-unified/suites/full/claim_panic_diagnostics.attempt1.json.gz": 2,
+    "work/parallel-main-integration/round32-unified/suites/full/incentive_claim.attempt1.json.gz": 334,
+    "work/parallel-main-integration/round32-unified/suites/additional/claim_grid_132.attempt1.json.gz": 132,
+    "work/parallel-main-integration/round32-unified/suites/additional/claim_mint_6.attempt1.json.gz": 6,
+    "work/parallel-main-integration/round32-unified/suites/additional/claim_program_precedence_20.attempt1.json.gz": 20,
+    "work/parallel-main-integration/round32-unified/suites/additional/claim_zero_log_4.attempt1.json.gz": 4
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "status": "passed_static_merge_review",
+  "scope": "Only requested migration and SellV3 conflict resolutions plus constructor provenance and five preserved R38 files; no compilation or runtime claim",
+  "input_sha256": {
+    "work/parallel-main-genuine06-r38-composition/RESOLUTION01.json": "4ec9e12619b5ab0bb0f335ddf1bd975fc13e3c7ce014e351c3d954911dc45bae",
+    "work/parallel-main-genuine06-r38-composition/REVIEW01.json": "6d366d1bc7b6ae2d17e7d5ab8e5712402f2925c6861fa792cbe1880f8ec6ec70",
+    "work/parallel-main-genuine06-r38-composition/REVIEW02.json": "873561ac1e929d0bd490f5d2e945aa42511a3be04f67fe69181553b01487357c",
+    "work/parallel-main-genuine06-r38-composition/SOURCE-MANIFEST02.json": "3d93bc4b726060d38257027e346e8f67e241147d26852901ad00aad7edc89ad5",
+    "work/parallel-main-genuine06-r38-composition/source02/src/migrate_v2.rs": "e56041d507daf546eadfc59ad5bfb0c93fab9019a19cb8f2a89179bc550a4cd2",
+    "work/parallel-main-genuine06-r38-composition/source02/src/trade_v3.rs": "ca734ceb3e3a639a321253f29e8beaa3ce5f5fe5a1373652b9b6369f48d42f45",
+    "work/parallel-main-genuine06-r38-composition/source02/src/trade_types.rs": "ae1d8798e790d6cae9c62bcaf73f9ceb81c865fc1f8bf2ec7205b050840a1123",
+    "work/parallel-main-live-frontier-review/export/research/claude-pump-integration-20261027/r37-genuine-06/source/programs/pump/src/migrate_v2.rs": "a4892aa0aa783447d2b4ce6017945ee07c9eb62927db1195b274d26a5538ae1f",
+    "work/parallel-main-live-frontier-review/export/research/claude-pump-integration-20261027/r37-genuine-06/source/programs/pump/src/trade_v3.rs": "4ff6b0a2942be18e2391e632dcbeaf5cff9c768600995ee90372ccd26b8d4bba",
+    "work/parallel-main-trade-event-constructor/source03/src/trade_v3.rs": "665be799a9f535a46f59a88d277aef1bb35e89851ff31e418b23462b7143d572",
+    "work/parallel-main-trade-event-constructor/source03/src/trade_types.rs": "035b70d39527c3253e6b94db1925aec0b6a7bf24e4144d932d9949e63685544c"
+  },
+  "migration_exact_expected_transform": true,
+  "migration_root_error_code": 6110,
+  "migration_error_message_same": true,
+  "migration_all_other_genuine06_bytes_retained": true,
+  "sell_all_prefix_and_suffix_bytes_retained": true,
+  "sell_constructor_call_exact_source03": true,
+  "shared_constructor_tail_exact_source03": true,
+  "preserved_r38_files": [
+    "src/admin_set_idl_authority.rs",
+    "src/creator/distribute_creator_fee_v2.rs",
+    "src/creator/distribute_creator_fees.rs",
+    "src/creator/distribute_fee_to_holders.rs",
+    "src/token_incentives/volume_accumulator.rs"
+  ],
+  "source_manifest_bound_files": 61,
+  "source_was_not_modified": true,
+  "limits": [
+    "Actual combined compiled match counts and full18109case runtime remain required.",
+    "Source03 event constructor is still1808B versus original1800B in its separately measured build.",
+    "This static check does not inherit peer runtime or whole-program identity."
+  ]
+}

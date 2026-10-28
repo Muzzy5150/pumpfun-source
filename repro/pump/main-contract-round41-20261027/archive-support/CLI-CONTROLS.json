@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "controls": [
+    {
+      "name": "positive_cli",
+      "status": "passed",
+      "report_sha256": "11b72bbb95d66fb7c9a1663a0784593fcc6578014d7f20ce217c66336957db1d"
+    },
+    {
+      "name": "wrong_bindings_digest",
+      "status": "rejected_as_expected",
+      "output_absent": true,
+      "diagnostic": "archive bindings digest differs"
+    },
+    {
+      "name": "missing_final_map",
+      "status": "rejected_as_expected",
+      "output_absent": true,
+      "diagnostic": "missing artifact: final_map"
+    }
+  ],
+  "compiler_invocations": 0
+}

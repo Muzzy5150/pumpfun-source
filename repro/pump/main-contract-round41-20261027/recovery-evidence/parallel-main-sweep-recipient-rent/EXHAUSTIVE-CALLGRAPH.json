@@ -1,0 +1,62 @@
+{
+  "scope": "Exhaustive original .text direct-call scan, instruction aligned; no indirect calls inferred.",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "targets": {
+    "0x3b598": [
+      {
+        "site": "0x13dcf8",
+        "containing_function": "0x13b9b8",
+        "function_bytes": 15480
+      },
+      {
+        "site": "0x142b70",
+        "containing_function": "0x13f630",
+        "function_bytes": 20184
+      },
+      {
+        "site": "0x1468d8",
+        "containing_function": "0x144508",
+        "function_bytes": 13976
+      }
+    ],
+    "0x3b738": [
+      {
+        "site": "0x28490",
+        "containing_function": "0x22a10",
+        "function_bytes": 27400
+      },
+      {
+        "site": "0x14d790",
+        "containing_function": "0x14c038",
+        "function_bytes": 10880
+      },
+      {
+        "site": "0x1512b0",
+        "containing_function": "0x14f4e0",
+        "function_bytes": 13224
+      },
+      {
+        "site": "0x1538b0",
+        "containing_function": "0x152888",
+        "function_bytes": 8488
+      }
+    ],
+    "0x8cc58": [
+      {
+        "site": "0x3b6c8",
+        "containing_function": "0x3b598",
+        "function_bytes": 416
+      },
+      {
+        "site": "0x3b868",
+        "containing_function": "0x3b738",
+        "function_bytes": 416
+      },
+      {
+        "site": "0x73d30",
+        "containing_function": "0x72810",
+        "function_bytes": 7832
+      }
+    ]
+  }
+}

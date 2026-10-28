@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "prior_R37_dedup_sha256": "c9fae9fabb92e4c3d97515373614ca4736fda3b949a43edadae8c6cd6162506e",
+  "R38_additional_cases": 4,
+  "R38_additional_suite_sha256": "70927ae022a3e01fc4849be9b3ee0105e26e3817618d4d82ced0b34ba4fd99be",
+  "R38_additional_distinct_transaction_encodings": 2,
+  "witness_distinct_transaction_encodings": 1,
+  "new_transaction_encoding_overlap": 0,
+  "total_admitted_new_state_inputs": 1,
+  "scope": "R37 input dedup remains preserved; four added R38 scheduler transactions cannot equal SellV3 witness input."
+}

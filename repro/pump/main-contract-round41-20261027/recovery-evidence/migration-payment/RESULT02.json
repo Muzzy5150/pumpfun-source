@@ -1,0 +1,91 @@
+{
+  "status": "validated exact-two migration boost policy and funding successor; source01 remains immutable",
+  "baseline": "frozen R32 draft plus accepted MultiHop edge",
+  "source_hashes": {
+    "src/migrate.rs": "fb03bc70b5359b29527fec5f8c5328c2212012bd782a9aabd62f4489fc115db7",
+    "src/migrate_v2.rs": "b557054b667629085d5a284329fec569df376520c17228d84be119f99ebec4c3",
+    "src/migration_native_payments.rs": "d67b1eecd822d8fee7ae470922c3612b0c852308beab2ec73184f74f1042839e"
+  },
+  "candidate_sha256": "9d57e4f32fb4697226e28e6bb7e491e9c6e10599ae431120a040d218d9cf0a1d",
+  "unstripped_sha256": "bb8b9ccd6ff66e1a939fd37f2938e2bae33dc160200e8f95ed6b46597d4be8f9",
+  "build_receipt_sha256": "313ae9d6077951cfbd50113bcbf69f5509bb1ee08554dc850f17455d8dda01ba",
+  "patch_sha256": "b22cbb7572fa61cd40daba55fa66857a777f75033bff11c614c068779a762567",
+  "inventory": {
+    "total": 1035,
+    "raw": 124,
+    "normalized": 733,
+    "unmatched": 302
+  },
+  "full_sets": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "native_transfer_body": {
+    "original": "0x8e450",
+    "bytes": 1208,
+    "normalized_exact": true,
+    "actual_candidate_call_count": 4
+  },
+  "runtime": {
+    "case_counts": {
+      "migrate_v2_prepare": 32,
+      "migrate_prepare": 12,
+      "migration_balances": 7,
+      "migration_headers": 66,
+      "migration": 228,
+      "required_account_size": 14,
+      "pausable_migration": 6,
+      "new": 36,
+      "negative": 429,
+      "migrate_v2": 827
+    },
+    "total_cases": 1657,
+    "verified_transactions": 3314,
+    "verified_signatures": 6620,
+    "deduplicated_new_cases": 465,
+    "negative_and_cardinality_cases": 429,
+    "before_differing_new_cases": 28,
+    "after_differing_new_cases": 0,
+    "source01_extra_cardinality_mismatches": 12,
+    "source02_extra_cardinality_mismatches": 0,
+    "diagnostic_mismatches": [],
+    "invocation_sequence_mismatches": [],
+    "amount_audit_cases": 6,
+    "existing_case_count": 1192,
+    "existing_unique_input_count": 1041,
+    "total_unique_input_count": 1506,
+    "additional_group_sizes": [
+      59,
+      58,
+      58,
+      58,
+      58,
+      58,
+      58,
+      58
+    ]
+  },
+  "fixes": [
+    "Exactly2 remaining accounts are processed. Any other count skips when a valid old config or decoded boost_enabled=false permits it, and errors6027 when enabled. Mayhem skips.",
+    "Legacy fronts full token-account rent before boost CPI.",
+    "V2 fronts full selected token-account rent, then refunds excess or replenishes the initial pool-authority balance."
+  ],
+  "limits": [
+    "Full ELF equality remains false.",
+    "No new normalized/raw windows are claimed; actual native callee/callers are restored.",
+    "AMM implementation is unchanged.234 negative cases stop in earlier AMM validation; this does not prove direct execution of the later absence decoder.",
+    "Parent combined source/profile validation remains required."
+  ],
+  "cardinality_patch_sha256": "e65a2fd00b73d97f7daa0ca7b2d0238f491f3590e22ca1008d3b3c5ccac5489e",
+  "precedence": {
+    "earlier_captured_AMM_failure": 234,
+    "success": 153,
+    "main_exact_two_gate": 42
+  }
+}

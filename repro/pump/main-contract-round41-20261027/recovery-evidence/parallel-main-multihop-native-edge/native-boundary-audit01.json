@@ -1,0 +1,79 @@
+{
+  "cases": [
+    {
+      "case": {
+        "amount": 0,
+        "curve_lamports": null
+      },
+      "pump_nested_system_transfer_entered": false,
+      "error": "TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(6002))))"
+    },
+    {
+      "case": {
+        "amount": 0,
+        "curve_lamports": 18446744073709551615
+      },
+      "pump_nested_system_transfer_entered": false,
+      "error": "TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(6002))))"
+    },
+    {
+      "case": {
+        "amount": 0,
+        "curve_lamports": 18446744073709551614
+      },
+      "pump_nested_system_transfer_entered": false,
+      "error": "TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(6002))))"
+    },
+    {
+      "case": {
+        "amount": 1000000,
+        "curve_lamports": null
+      },
+      "pump_nested_system_transfer_entered": true,
+      "error": null
+    },
+    {
+      "case": {
+        "amount": 1000000,
+        "curve_lamports": 18446744073709551615
+      },
+      "pump_nested_system_transfer_entered": true,
+      "error": "TransactionErrorInstructionError((0, Fieldless(ArithmeticOverflow)))"
+    },
+    {
+      "case": {
+        "amount": 1000000,
+        "curve_lamports": 18446744073709551614
+      },
+      "pump_nested_system_transfer_entered": true,
+      "error": "TransactionErrorInstructionError((0, Fieldless(ArithmeticOverflow)))"
+    },
+    {
+      "case": {
+        "amount": 1000000000,
+        "curve_lamports": null
+      },
+      "pump_nested_system_transfer_entered": true,
+      "error": null
+    },
+    {
+      "case": {
+        "amount": 1000000000,
+        "curve_lamports": 18446744073709551615
+      },
+      "pump_nested_system_transfer_entered": true,
+      "error": "TransactionErrorInstructionError((0, Fieldless(ArithmeticOverflow)))"
+    },
+    {
+      "case": {
+        "amount": 1000000000,
+        "curve_lamports": 18446744073709551614
+      },
+      "pump_nested_system_transfer_entered": true,
+      "error": "TransactionErrorInstructionError((0, Fieldless(ArithmeticOverflow)))"
+    }
+  ],
+  "zero_amount_precedes_edge": 3,
+  "successful_edge_cases": 2,
+  "system_overflow_edge_cases": 4
+}

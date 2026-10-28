@@ -1,0 +1,17 @@
+{
+  "scope": "Compare captured Pump error payloads, preserving account names and operands.\n\nThis audits paired logs already present in a differential receipt. It excludes\nsource file/line coordinates, compute usage, and cases without paired logs.\nIt therefore strengthens the bounded oracle, not its input-space coverage.\n",
+  "coverage": {
+    "migrate_v2_prepare": 32,
+    "migrate_prepare": 12,
+    "migration_balances": 7,
+    "migration_headers": 66,
+    "migration": 228,
+    "required_account_size": 14,
+    "pausable_migration": 6,
+    "new": 36,
+    "negative": 429,
+    "migrate_v2": 827
+  },
+  "log_bearing_cases": 1657,
+  "mismatches": []
+}

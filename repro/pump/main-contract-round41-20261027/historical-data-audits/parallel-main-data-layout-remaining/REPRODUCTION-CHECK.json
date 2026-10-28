@@ -1,0 +1,17 @@
+{
+  "scope": "Second independent execution of same read-only audit with same bound inputs.",
+  "checks": [
+    {
+      "file": "AUDIT.json",
+      "sha256": "acefb5d883bfb76c9cc85e11ab3192c3c938f2b892a93f5e16f5911942cc5ac8",
+      "repeat_sha256": "acefb5d883bfb76c9cc85e11ab3192c3c938f2b892a93f5e16f5911942cc5ac8",
+      "equal": true
+    },
+    {
+      "file": "SUMMARY.json",
+      "sha256": "a4bc906534410251a9fa764d23a76fa7ed40e08a621f71b3ed6015f520cf5695",
+      "repeat_sha256": "a4bc906534410251a9fa764d23a76fa7ed40e08a621f71b3ed6015f520cf5695",
+      "equal": true
+    }
+  ]
+}

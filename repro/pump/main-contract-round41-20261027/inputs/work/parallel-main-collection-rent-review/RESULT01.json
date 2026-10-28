@@ -1,0 +1,29 @@
+{
+  "scope": "Independent read-only creator-collection rent review; no collection source edits",
+  "case_counts": {
+    "precedence01.json.gz": 46,
+    "executable01.json.gz": 10,
+    "owner-live01.json.gz": 32
+  },
+  "cases": 88,
+  "verified_transactions": 176,
+  "verified_signatures": 176,
+  "mismatches": 0,
+  "findings": [
+    "Recipient balance+amount uses unsigned saturation to u64::MAX before the rent floor. Overflow still reaches System CPI ArithmeticOverflow.",
+    "Rent floor calls AccountInfo::data_len then Rent::minimum_balance. Length1/165/1024 exact-vs-below boundaries pass.",
+    "A zero amount skips rent eligibility and emits the no-fee log. Invalid source owner/data is suppressed on zero or ineligible-recipient paths.",
+    "Live FEES-owned recipients return6050 before zero-fee, rent, or malformed token-source checks. Positive lamports are necessary to retain that owner in this fixture.",
+    "Already-loaded Token and Token22 accounts reach the executable early-return gate;10 cases pass including zero fee and malformed token source."
+  ],
+  "limitations": [
+    "The4 initial Pump-as-creator executable cases hit earlier ConstraintMut; only the10 loaded-SPL cases prove the business gate.",
+    "Zero-lamport owner mutations are absent accounts in this VM; only live-owner32 cases support owner-precedence claims.",
+    "These88 are executed cases before dedup, not88 unique incremental inputs.",
+    "FEES-owner plus executable is not constructed; such an account would not model a normal loader-owned executable."
+  ],
+  "candidate_sha256": "cb7125dd0aabaa41397597e6bd32f9f949394adbe1647b5a0df489f325dd6c6a",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "driver_smoke_cases": 2,
+  "driver_smoke_input_hashes_matched": true
+}

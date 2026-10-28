@@ -1,0 +1,29 @@
+{
+  "scope": "Read-only indirect-call provenance audit",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "counts": {
+    "sites": 144,
+    "families": {
+      "tagged_io_error_custom_drop": 63,
+      "formatting_trait_dispatch": 81
+    },
+    "locally_constant_sites": 0,
+    "sites_with_fixed_direct_contexts": 2,
+    "direct_context_edges": 60,
+    "unrestricted_target_sets_unproved": 144,
+    "local_analysis_status": {
+      "analysis_widened_unknown": 83,
+      "input_dependent_symbolic": 61
+    }
+  },
+  "files": {
+    "trace.py": "291545e1459c4e2bf181633abc65fc9a5b445188946780b14e853e40df15e087",
+    "classify.py": "41f3c0482e706e1e8ca9443ad112d087d2a61f7906b094ed148fc5ac058bba68",
+    "LOCAL-PROVENANCE.json": "b682b5de286b75967547da31682ec55797d04f0abd2b3b3855e1109559917bb4",
+    "CLASSIFICATION.json": "a179880cff9f39cc9d31e308fcd0c194e88a8d31d25d022bb92649a0d27be4d1",
+    "RESOLVED-CONTEXTS.json": "80e4b411b0b76477b16b425ad1bc81659d06154ebc032f6ec0861543b687fbd3",
+    "SITES.tsv": "12e56ba573918e0bad4d52a0e8a3d1c1574e786e3c0cce821f06fd4ac72e574c",
+    "README.md": "f2baad52989876d74baea3c7a6f4195c60ea921af40341ac4c82b1d6da7eef6c"
+  },
+  "source_or_boundary_edits": false
+}

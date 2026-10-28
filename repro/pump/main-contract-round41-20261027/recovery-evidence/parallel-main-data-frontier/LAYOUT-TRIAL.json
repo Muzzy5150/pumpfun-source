@@ -1,0 +1,66 @@
+{
+  "scope": "Physical source-path restoration using literal original ELF strings and known corresponding handler semantics. Module names and source-body bytes preserved; no line padding or coordinate constants added. This is not yet a promoted layout.",
+  "records": [
+    {
+      "module": "idl_authority",
+      "old": "src/idl_authority.rs",
+      "new": "src/admin_set_idl_authority.rs",
+      "unchanged_body_sha256": "d54a5ba66b17018c8d765abe6d38dc7387f70ddf042cd3e10dad8ce013b899a7"
+    },
+    {
+      "module": "legacy_buy",
+      "old": "src/legacy_buy.rs",
+      "new": "src/buy.rs",
+      "unchanged_body_sha256": "376bdaf1144b19e2238906c9574942898925e7830e0cb02d726fc498ee793b92"
+    },
+    {
+      "module": "legacy_sell",
+      "old": "src/legacy_sell.rs",
+      "new": "src/sell.rs",
+      "unchanged_body_sha256": "394977adb2a09d35f1988b2244355bf46aae40d741352a8f8fb0afd8fe2b5cf2"
+    },
+    {
+      "module": "admin_cto",
+      "old": "src/admin_cto.rs",
+      "new": "src/creator/admin_cto.rs",
+      "unchanged_body_sha256": "4217663bb8d47d12279ae5de54b2449fc2181f5a322eb4e6009666a40ea69111"
+    },
+    {
+      "module": "creator_migration",
+      "old": "src/creator_migration.rs",
+      "new": "src/creator/migrate_bonding_curve_creator.rs",
+      "unchanged_body_sha256": "5b83c3a7db77d639bb36eb8dc840ec8530ebb5b56e8dd670a717fcd2d377bd24"
+    },
+    {
+      "module": "holder_distribution",
+      "old": "src/holder_distribution.rs",
+      "new": "src/creator/distribute_fee_to_holders.rs",
+      "unchanged_body_sha256": "0f7e1bed2407d4abf4202079cfcbe89932cdfa83f4b5f4da0329284488fb25ad"
+    },
+    {
+      "module": "extend",
+      "old": "src/extend.rs",
+      "new": "src/extend_account.rs",
+      "unchanged_body_sha256": "016a0daa8baf7454668aa3756c862b0495637b7a05db3b82ec6ad889c42ac039"
+    },
+    {
+      "module": "multi_hop_curve",
+      "old": "src/multi_hop_curve.rs",
+      "new": "src/multi_hop_curve_swap.rs",
+      "unchanged_body_sha256": "f1e05d9576fd94a6052c27f5a3b39be2b1bcf4fc38285847b76bc5cc5537f53b"
+    },
+    {
+      "module": "sweep",
+      "old": "src/sweep.rs",
+      "new": "src/sweep_fees.rs",
+      "unchanged_body_sha256": "2ce97a23e2e3033b415ae4f948e6df06db69b516aecf8356550b41aac601cbf2"
+    },
+    {
+      "module": "collect_v2",
+      "old": "src/collect_v2.rs",
+      "new": "src/creator/collect_creator_fee.rs",
+      "unchanged_body_sha256": "a74c2e8510f77ab43622d6a11e494a296942310426aa2514836381b2021509e9"
+    }
+  ],
+  "goal_complete": false
+}

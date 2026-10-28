@@ -1,0 +1,127 @@
+{
+  "status": "installed",
+  "scope": "Versioned R41 controllers only; shared helpers stay at reviewed R40 installation.",
+  "install_plan_sha256": "4f6298cd09c0fcadebdc6ba08d56f56b985eae748651538dc0f35f81a5bd5dfe",
+  "files": [
+    {
+      "source": "work/parallel-main-r41-tooling/update_local_pump_readme_round41.py",
+      "destination": "work/parallel-main-integration/update_local_pump_readme_round41.py",
+      "sha256": "501dae44cf297639d465521be9ce1568276972f82c69ba48f55e05937f8ec4a0",
+      "previous_controller": "work/parallel-main-integration/update_local_pump_readme_round40.py",
+      "previous_sha256": "79b403a8fdf50492fd4809c7a8d84593e36d9c0c9c3190122362cee325f6b710"
+    },
+    {
+      "source": "work/parallel-main-r41-tooling/prepare_round41_layout.py",
+      "destination": "work/parallel-main-integration/prepare_round41_layout.py",
+      "sha256": "f68bd09720fc31646910d41dc5ab9ab2249ad7f5fc30713094effb0299654366",
+      "previous_controller": "work/parallel-main-integration/prepare_round40_layout.py",
+      "previous_sha256": "d2b705aa16a8152af803d5002970888fb7400bc4ae4331cdda024617fdc659dd"
+    },
+    {
+      "source": "work/parallel-main-r41-tooling/launch_round41.py",
+      "destination": "work/parallel-main-integration/launch_round41.py",
+      "sha256": "664c2817c89111528622a877d20ffceea3022e108d025ba9eb0e02c537eb001e",
+      "previous_controller": "work/parallel-main-integration/launch_round40.py",
+      "previous_sha256": "3a9f92a8c28b4ce6d7e3b84e5567a380eb7842595c7439a8ecdc61eae44ea73d"
+    },
+    {
+      "source": "work/parallel-main-r41-tooling/run_round41_full.py",
+      "destination": "work/parallel-main-integration/run_round41_full.py",
+      "sha256": "382119f8846f241e6b352053aba43428f0590be5d2ffd3b7a61d438ee983ce73",
+      "previous_controller": "work/parallel-main-integration/run_round40_full.py",
+      "previous_sha256": "e2319442d004dcb359b205ed203aaa7ff4a71ad9fede86179803d6be668444fd"
+    },
+    {
+      "source": "work/parallel-main-r41-tooling/run_snapshot_round41.py",
+      "destination": "work/parallel-main-integration/run_snapshot_round41.py",
+      "sha256": "91dded78458a1524f34de0dfdd5f5e2f572e137660bb74a260aa076cb4656f4b",
+      "previous_controller": "work/parallel-main-integration/run_snapshot_round40.py",
+      "previous_sha256": "f44707382ffbd803927aa22194f18b40b040794c629a85fe2d50cf2234787a12"
+    },
+    {
+      "source": "work/parallel-main-r41-tooling/write_round41_readme.py",
+      "destination": "work/parallel-main-integration/write_round41_readme.py",
+      "sha256": "87c8480b137dc670090a2465eb8224c8d051ca87c3c3d458d967ac37c9095ce2",
+      "previous_controller": "work/parallel-main-integration/write_round40_readme.py",
+      "previous_sha256": "dde02cc7f82e10551da133547a1e1abe5718b5cf115164cd50cb6aeb94676a68"
+    },
+    {
+      "source": "work/parallel-main-r41-tooling/prepare_round41_metadata.py",
+      "destination": "work/parallel-main-integration/prepare_round41_metadata.py",
+      "sha256": "e52a898b4380b089b6c959b48d7706411c938258ccbe5706dded71265f4a6ba0",
+      "previous_controller": "work/parallel-main-integration/prepare_round40_metadata.py",
+      "previous_sha256": "806a9825773ad2c9389f02bba7c230343312ea2503d7f163dc7d4e6d88a4e2b5"
+    },
+    {
+      "source": "work/parallel-main-r41-tooling/admit_and_launch_round41.py",
+      "destination": "work/parallel-main-integration/admit_and_launch_round41.py",
+      "sha256": "dd60a1eeec5ce1b8eb051c2cec7a05c032891cbe7b6b251b73b673da8172490e",
+      "previous_controller": "work/parallel-main-integration/admit_and_launch_round40.py",
+      "previous_sha256": "3aec0841905efdc3b951e6f6dc28227acb66788b6857ca477f67b0219578b720"
+    },
+    {
+      "source": "work/parallel-main-r41-tooling/publish_when_ready_round41.py",
+      "destination": "work/parallel-main-integration/publish_when_ready_round41.py",
+      "sha256": "c73364d28b994740ff4dc3f4202e06404a1135d6c34561a9c3a4657ae860170c",
+      "previous_controller": "work/parallel-main-integration/publish_when_ready_round40.py",
+      "previous_sha256": "da7b305079af3b9202398269b6089d941f33a095ebb8a7ab73a250dafb1ee074"
+    },
+    {
+      "source": "work/parallel-main-r41-tooling/promote_round41.py",
+      "destination": "work/parallel-main-integration/promote_round41.py",
+      "sha256": "80478d9a57692204f55a179c4793cdcc59a76ea8755be399d15436fb7d99be5b",
+      "previous_controller": "work/parallel-main-integration/promote_round40.py",
+      "previous_sha256": "8c164fc7a45f3fb927d017722bd976b20c64ca2258adbaae264df2647898c2a5"
+    },
+    {
+      "source": "work/parallel-main-r41-tooling/update_round41_queue.py",
+      "destination": "work/parallel-main-integration/update_round41_queue.py",
+      "sha256": "f68f53b65c5317c18b4ec010b6aa9025bf8912088c2e05338008a342a356ce9c",
+      "previous_controller": "work/parallel-main-integration/update_round40_queue.py",
+      "previous_sha256": "41f5dc0a0ee093b089a51f4fd84da071c3a92034478199063e1cb572f4b9423b"
+    },
+    {
+      "source": "work/parallel-main-r41-tooling/finish_round41.py",
+      "destination": "work/parallel-main-integration/finish_round41.py",
+      "sha256": "4620de6a78ae072fa4935714f17888ecefc89be8872d0d894f4f3391ead70bf6",
+      "previous_controller": "work/parallel-main-integration/finish_round40.py",
+      "previous_sha256": "1960b0b48f0e881644f804740d748c9514c2303f094522a659528cb415d139bd"
+    },
+    {
+      "source": "work/parallel-main-r41-tooling/publish_round41.py",
+      "destination": "work/parallel-main-integration/publish_round41.py",
+      "sha256": "99e695070f8b6a2a8188013a33baa65e12a71d3495d75a2daf315a189306624e",
+      "previous_controller": "work/parallel-main-integration/publish_round40.py",
+      "previous_sha256": "b1e792097950d00399ba3e2f87311a880927c3bdcd52150ef8d1a992c782c782"
+    },
+    {
+      "source": "work/parallel-main-r41-tooling/package_round41.py",
+      "destination": "work/parallel-main-integration/package_round41.py",
+      "sha256": "e7ba5561d66bc346a97791a93fd2fa8b8947f6e688608ba58aeee0e728620940",
+      "previous_controller": "work/parallel-main-integration/package_round40.py",
+      "previous_sha256": "902b7deeb644b537b4fa6ef81a6cee1ac571ef339d9e31abd6fa43efb007cdc3"
+    },
+    {
+      "source": "work/parallel-main-r41-tooling/review_round41_packaging.py",
+      "destination": "work/parallel-main-integration/review_round41_packaging.py",
+      "sha256": "e5e8c75246fe8e52e3f43b13bd2aa6a9d57b1cd686dbeba17fab58009a0801c5",
+      "previous_controller": "work/parallel-main-integration/review_round40_packaging.py",
+      "previous_sha256": "b915f0beab8557a01a3104be0a7097550265ce74ae78a47993ee29fa3ca4b293"
+    },
+    {
+      "source": "work/parallel-main-r41-tooling/freeze_round41.py",
+      "destination": "work/parallel-main-integration/freeze_round41.py",
+      "sha256": "a6311a95ee93de6120a015ddaac2dd20170f10237347e3905b9233754ae5e1a0",
+      "previous_controller": "work/parallel-main-integration/freeze_round40.py",
+      "previous_sha256": "c6f953952cdf3c500f9160e54bfbfaa36e1c2b9d2db576f7b99e1129c2d5127b"
+    },
+    {
+      "source": "work/parallel-main-r41-tooling/snapshot_round41_followup.py",
+      "destination": "work/parallel-main-integration/snapshot_round41_followup.py",
+      "sha256": "1b58abee77ea7ad3ed6b71308e8f05aace3e043f9262b20d95356016901174ae",
+      "previous_controller": "work/parallel-main-integration/snapshot_round40_followup.py",
+      "previous_sha256": "7cdae1bcacc1feef2413d43746c2ccb337206352bc3be88c0f70b695d759f082"
+    }
+  ],
+  "source_selection": false
+}

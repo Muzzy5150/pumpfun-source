@@ -1,0 +1,111 @@
+{
+  "helper_normalized_equal": true,
+  "helper_bytes": 2128,
+  "only_direct_callee": {
+    "candidate_address": "0x168f48",
+    "original_address": "0x17fcc8",
+    "identity": "anchor_spl::token_2022::transfer_checked",
+    "normalized_equal": true
+  },
+  "live_callers": [
+    {
+      "site": "0x30c68",
+      "owner": "_ZN14pump_recovered6buy_v213execute_inner17h17e642ed7afae423E"
+    },
+    {
+      "site": "0x37b80",
+      "owner": "_ZN14pump_recovered6buy_v213execute_inner17he051dfe62536c2c0E"
+    }
+  ],
+  "gained": [
+    "0x8f5c8"
+  ],
+  "lost": [],
+  "files": {
+    "buy_v2.rs": "ebbac4ce01297625eac72e1051f09eb281a515fa4a8f3781337ae1f036c34e97",
+    "v2_token_transfers.rs": "9b538a848ee03174e864d114c6bd3fba43a61012ba9180e76f881602e2ef7bae"
+  },
+  "candidate_sha256": "9090ed40d1ca2f38b5dd845ea4908a0302cfd92a8e0a8e6c4164977591e4c6d6",
+  "unstripped_sha256": "ac1ff5248864e974a3716dd755c68bbfb048a5c6ec9a783b405dcc6ff49bd294",
+  "status": "validated frozen delivery",
+  "base": "work/parallel-main-buy-v2-order/source01",
+  "source": "work/parallel-main-buy-v2-transfer-helper/source04",
+  "patch": "transfer-helper.patch",
+  "case_count": 1494,
+  "strict_case_count": 1492,
+  "paired_captured_loads": 2988,
+  "suites": [
+    {
+      "suite": "order",
+      "cases": 130,
+      "strict_cases": 130,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "regression",
+      "cases": 882,
+      "strict_cases": 880,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "sell-expanded",
+      "cases": 32,
+      "strict_cases": 32,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "sell-atas",
+      "cases": 25,
+      "strict_cases": 25,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "sell-prepare",
+      "cases": 12,
+      "strict_cases": 12,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "recipients",
+      "cases": 144,
+      "strict_cases": 144,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "boundaries",
+      "cases": 206,
+      "strict_cases": 206,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "crossing",
+      "cases": 36,
+      "strict_cases": 36,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "waiver",
+      "cases": 27,
+      "strict_cases": 27,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    }
+  ],
+  "inventory": {
+    "total": 1035,
+    "raw": 114,
+    "normalized": 663,
+    "unmatched": 372
+  },
+  "source_build_binding": true,
+  "full_elf_equal": false,
+  "scope": "Shared live base-token transfer helper; exactly one signer group; original program/source/destination/authority/mint clone order. Only buy_v2.rs plus new private helper changed."
+}

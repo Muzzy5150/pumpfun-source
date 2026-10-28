@@ -1,0 +1,104 @@
+{
+  "status": "validated owned-ATA/data_len API control; no exact-body gain; ready for parent review",
+  "baseline": "work/parallel-main-token-distribution-plan/source02",
+  "baseline_distribution_sha256": "0292237f44ebaef83f62ed0128e20eeb7b4b2384e1fc658d69a544da8aebaed3",
+  "source": "work/parallel-main-token-distribution-data-len/source01/src/distribution.rs",
+  "source_sha256": "7ca42333a9da3a97ca32e08f505a6328810d8811a191960e694e30c4027b9f8d",
+  "patch_sha256": "64edf02affe43eff8dbe2e8d609061b2cfffc0ce7ab11bb134ac41564c39f66f",
+  "candidate_sha256": "25b23ca6b0004b719bcd3db8ef580fbcad3cc296eacfc6ac79e067443439896c",
+  "unstripped_sha256": "3da39575dc758ac05d48a3553f4c4f2d7e88786d5aebf80751998b3aa47fe8ae",
+  "helper": {
+    "original_start": "0x2bf18",
+    "original_bytes": 6664,
+    "candidate_start": "0x95428",
+    "candidate_bytes": 6064,
+    "normalized_equal": false,
+    "different_slots": 825
+  },
+  "measured_abi": {
+    "numeric_return": "retains Vec fields+sourceamount atresult+24",
+    "source_input": "Typed source pointer from accepted public baseline retained",
+    "typed_mint_owner": "Typed mint pointer and owner-derived ATA program retained",
+    "actual_api_sequence": {
+      "baseline_source_sha256": "0292237f44ebaef83f62ed0128e20eeb7b4b2384e1fc658d69a544da8aebaed3",
+      "source_sha256": "7ca42333a9da3a97ca32e08f505a6328810d8811a191960e694e30c4027b9f8d",
+      "sole_change": "ata.data_is_empty() \u2192 ata.to_account_info().data_len()==0",
+      "original": {
+        "clone": "0x2cdd0..0x2cef8",
+        "get": "0x2cf20\u21920x1a2a68",
+        "drop": "0x2cf30..0x2cfc0"
+      },
+      "candidate": {
+        "clone": "0x956e0..0x95820",
+        "get": "0x95838\u21920x18be60",
+        "drop": "0x95848..0x958c8"
+      },
+      "matched_standard_method": "AccountInfo::data_len,80-byte normalized-exact callee, already present before control",
+      "instruction_assertions": {
+        "0x95708": [
+          7,
+          2,
+          0,
+          1
+        ],
+        "0x95770": [
+          7,
+          3,
+          0,
+          1
+        ],
+        "0x95860": [
+          7,
+          3,
+          0,
+          -1
+        ],
+        "0x95898": [
+          7,
+          2,
+          0,
+          -1
+        ]
+      },
+      "scope": "Actual source API/ownership sequence recovery, not full helper identity; no body improvement claim from positional distance."
+    },
+    "parent_result_sha256": "1ddb5ca4d8c1de45486494988a3b9026e4d01d927fbcdc1183ab3a73f2fed9a9"
+  },
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 737,
+    "unmatched": 298
+  },
+  "complete_match_delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "runtime": {
+    "counts": {
+      "distribution": 298,
+      "minimum": 181,
+      "regressions": 62,
+      "rent": 6,
+      "pending": 72,
+      "quote_gate": 18
+    },
+    "cases": 637,
+    "mismatches": 0,
+    "strict_diagnostic_mismatches": 0,
+    "invocation_mismatches": 0,
+    "distinct_signed_transactions": 105
+  },
+  "consumer_proof": "work/parallel-main-token-distribution-consumer/CONSUMER-ADDENDUM.json",
+  "limits": [
+    "No owner mutation or adversarial owner probe.",
+    "No exact token-planner body claim.",
+    "R35 combined source remains parent-owned; this is isolated."
+  ]
+}

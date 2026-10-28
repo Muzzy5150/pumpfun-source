@@ -1,0 +1,9 @@
+{
+  "corrupt_library_rejected": true,
+  "main_artifact_rejected": true,
+  "path_escape_rejected": true,
+  "fingerprint_rejected": true,
+  "build_output_rejected": true,
+  "all_artifacts_exclude_main_fingerprints_build_incremental": true,
+  "invalid_main_compiler_rejection": true
+}

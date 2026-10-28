@@ -1,0 +1,14 @@
+{
+  "counts": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 708,
+    "unmatched": 327
+  },
+  "normalized_gained": [],
+  "normalized_lost": [],
+  "original_path_strings_present_before": 12,
+  "original_path_strings_present_after": 22,
+  "candidate_only_before": 20,
+  "candidate_only_after": 10
+}

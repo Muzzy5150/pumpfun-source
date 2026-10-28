@@ -1,0 +1,242 @@
+{
+  "status": "validated frozen SellV2 buyback/payment delivery",
+  "source": "work/parallel-main-sell-v2-buyback-accounting/source01",
+  "base": "work/parallel-main-sell-v2-buyback-accounting/source-base",
+  "base_composition": "frozen Round21 plus four unchanged files from accepted legacy buyback source03",
+  "files": {
+    "src/sell_v2.rs": "956d6ee96454025bd0416edf7051d0bf1b700ef68bc67b78173f976e2979264e"
+  },
+  "patch": "work/parallel-main-sell-v2-buyback-accounting/sell-v2-payment-order.patch",
+  "candidate_sha256": "ef0e39c986870cb1eb55d7aa6a639b190ad74e04d5b2bc94a524c5cf24e9ecba",
+  "unstripped_sha256": "cb56662fefc2d74f9e3cbba9eafa551ddb1f7866fc6e84f3dd171a6b30451064",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "case_count": 1688,
+  "strict_case_count": 1686,
+  "paired_captured_loads": 3376,
+  "verified_transaction_signatures": 3376,
+  "source_build_binding": true,
+  "inventory": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 709,
+    "unmatched": 326
+  },
+  "normalized_gains_vs_round21": [
+    "0x9a048"
+  ],
+  "normalized_losses_vs_round21": [],
+  "gain_attribution": "0x9a048 was already accepted via preceding V2/legacy helper delivery; this change adds its final real SellV2 caller, no separate new body match",
+  "preserved_exact_helpers": {
+    "0x9a048": {
+      "candidate": "0x3a208",
+      "bytes": 328,
+      "normalized_equal": true,
+      "callees": [
+        {
+          "offset": 80,
+          "original": "0x1b55c8",
+          "candidate": "0x198bf8",
+          "bytes": 352,
+          "normalized_equal": true
+        },
+        {
+          "offset": 144,
+          "original": "0x1b4088",
+          "candidate": "0x198d58",
+          "bytes": 72,
+          "normalized_equal": true
+        },
+        {
+          "offset": 272,
+          "original": "0x1ace18",
+          "candidate": "0x18ff70",
+          "bytes": 232,
+          "normalized_equal": true
+        },
+        {
+          "offset": 320,
+          "original": "0x1ac528",
+          "candidate": "0x18f680",
+          "bytes": 48,
+          "normalized_equal": true
+        }
+      ]
+    },
+    "0x8fe18": {
+      "candidate": "0x5b758",
+      "bytes": 2080,
+      "normalized_equal": true,
+      "callees": [
+        {
+          "offset": 2024,
+          "original": "0x17fcc8",
+          "candidate": "0x1637a0",
+          "bytes": 2192,
+          "normalized_equal": true
+        }
+      ]
+    }
+  },
+  "suites": [
+    {
+      "suite": "legacy-boundary",
+      "case_count": 36,
+      "strict_case_count": 36,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-legacy-boundary.json.gz",
+      "archive_sha256": "9a7b9bed35d60490a40f119f42bbb4db9f9b6cdad829e9df040f71b900a1a41e",
+      "script": "work/parallel-main-buyback-split/probe-legacy-boundary.py",
+      "script_sha256": "3660389e576e748aef4836986d35b1bc5514a0f5e856819069a2561df81a5d37"
+    },
+    {
+      "suite": "low-lamports",
+      "case_count": 6,
+      "strict_case_count": 6,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-low-lamports.json.gz",
+      "archive_sha256": "ca9a364c671e129a544a0c76ed39f07e718c4a871263c3a1dc326469a43a97f5",
+      "script": "work/parallel-main-legacy-buyback-split/probe-sell-low-lamports.py",
+      "script_sha256": "2670d045ef703e8ca8a3fb989dc8a977f70caf2d7dc5e2c5f3526c0fcefb4aaf"
+    },
+    {
+      "suite": "partial-balance",
+      "case_count": 2,
+      "strict_case_count": 2,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-partial-balance.json.gz",
+      "archive_sha256": "4cbb0a83df3d11537b499786af5903628220d11aaabc397effc69f42ea80f2a3",
+      "script": "work/parallel-main-legacy-buyback-split/probe-sell-partial-balance.py",
+      "script_sha256": "c086efbc8bb488dd240f69b24015aae38b424d91fad335f72e83d43efaeeebb2"
+    },
+    {
+      "suite": "thresholds",
+      "case_count": 12,
+      "strict_case_count": 12,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-thresholds.json.gz",
+      "archive_sha256": "d0e3ed730dff791fa20f05e130165e661983e42bf40294834e042824e61a7965",
+      "script": "work/parallel-main-legacy-buyback-split/probe-sell-payment-thresholds.py",
+      "script_sha256": "8ed48fdb90be7b25a59b46a24a4a71f224b6c566e8f4c6c56168858e0cef84fc"
+    },
+    {
+      "suite": "creator-order",
+      "case_count": 8,
+      "strict_case_count": 8,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-creator-order.json.gz",
+      "archive_sha256": "38535c5bb9779df605f1d0647a25878fc52c4463e73ece9f9e4bdc51eaf2f45e",
+      "script": "work/parallel-main-legacy-buyback-split/probe-sell-creator-order02.py",
+      "script_sha256": "85c5a1acf130d877aec38418357be1780386cee4b8a94c28a57a5f47c882fa1e"
+    },
+    {
+      "suite": "sell-v2-split",
+      "case_count": 24,
+      "strict_case_count": 24,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-sell-v2-split.json.gz",
+      "archive_sha256": "bf3a95e1fd9fc4bc0733b1a70727a3096e834681f609fc190e45cb6a4c6ebb71",
+      "script": "work/parallel-main-legacy-buyback-split/probe-sell-v2-boundary.py",
+      "script_sha256": "096d6462d8d223862a0debf06890c74f1d9ea3b4038531a58b59e6ec2aed97f0"
+    },
+    {
+      "suite": "sell-v2-thresholds",
+      "case_count": 42,
+      "strict_case_count": 42,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-sell-v2-thresholds.json.gz",
+      "archive_sha256": "3f46719a80367f3dbfcd97dc0dd274cced7a22a192b21f4e3ebecb0db46cd880",
+      "script": "work/parallel-main-sell-v2-buyback-accounting/probe-payment-thresholds.py",
+      "script_sha256": "4bea8b8a9732aa02a7df09adf751d3e33487a6e9112035d57d051054d6decc8a"
+    },
+    {
+      "suite": "regression",
+      "case_count": 882,
+      "strict_case_count": 880,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-regression.json.gz",
+      "archive_sha256": "1f4231ea61754f6d706a51e2b6b5f48e4dda7200368791589a50023739097cb6",
+      "script": "work/parallel-main-fee-accounting/validate.py",
+      "script_sha256": "09c78694b2974ca52a931477be88d968d89d8af3e791937e74020ba81bf5a795"
+    },
+    {
+      "suite": "order",
+      "case_count": 130,
+      "strict_case_count": 130,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-order.json.gz",
+      "archive_sha256": "0fa6ef409828ca347686a18ceafa09c65bd22ce71772899cce3285853f1f2d2b",
+      "script": "work/parallel-main-buy-v2-order/probe.py",
+      "script_sha256": "2e182f92cd4b24089c40e50922210b277029807a5ad3647680312c542a31eaf9"
+    },
+    {
+      "suite": "sell-expanded",
+      "case_count": 32,
+      "strict_case_count": 32,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-sell-expanded.json.gz",
+      "archive_sha256": "6854440427fe5aa73c6437a911aa3f4c489526919bf2d6860ab3ee5b10674ff2",
+      "script": "work/parallel-main-sell-v2-buyback/probe-expanded.py",
+      "script_sha256": "3e2cc73e7d4328b5aecc512340e1ff2cf406ae986c4c75899e6ab7105ced64e1"
+    },
+    {
+      "suite": "sell-atas",
+      "case_count": 25,
+      "strict_case_count": 25,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-sell-atas.json.gz",
+      "archive_sha256": "82de9be5607a915ac27cfaf34265da0153fa005b403d732a11676957a2bf49e9",
+      "script": "work/parallel-main-sell-v2-buyback/probe-atas.py",
+      "script_sha256": "4dfed00892e8c21da41a3be9e518410e960d0a7ef3b59b96fa11c06029b53d3a"
+    },
+    {
+      "suite": "sell-prepare",
+      "case_count": 12,
+      "strict_case_count": 12,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-sell-prepare.json.gz",
+      "archive_sha256": "c22ba0269fc84d530647941825a9c5321f7a511b7e18578d97da7bedbdbb931f",
+      "script": "work/parallel-main-sell-v2-buyback/probe-prepare.py",
+      "script_sha256": "62f37a069f38fb542bab66d364f3da80364b786bcd01ac54038b7197b666c18d"
+    },
+    {
+      "suite": "recipients",
+      "case_count": 144,
+      "strict_case_count": 144,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-recipients.json.gz",
+      "archive_sha256": "3e831595e47ba41b24b11a1ce53b494275736e8afa8cc3a1d39043a2741be3b9",
+      "script": "work/parallel-main-fee-recipient-helper/probe.py",
+      "script_sha256": "391cd8c22ee41062681f393e0ff0bed130e069aed093139e0034d127c7cbff98"
+    },
+    {
+      "suite": "boundaries",
+      "case_count": 206,
+      "strict_case_count": 206,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-boundaries.json.gz",
+      "archive_sha256": "f092386e6ba194ff065ff552e276db18d93c81b03936fe491fca49214e208cdb",
+      "script": "work/parallel-main-fee-accounting/probe-boundaries.py",
+      "script_sha256": "972dd83a4ad6d0a40e7f011bd958aa4fd0ef0de2c5f6835508dd611504f40f18"
+    },
+    {
+      "suite": "crossing",
+      "case_count": 36,
+      "strict_case_count": 36,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-crossing.json.gz",
+      "archive_sha256": "b22b2a13bc21589d45b3e4f742e8cea5e3439e6c53dcf538768c1d833d4e8438",
+      "script": "work/parallel-main-fee-waiver/crossing.py",
+      "script_sha256": "e0a1c59130ec4d6b5dd89cf548c845acea6b506f1aea9961aa66a49d33839b5e"
+    },
+    {
+      "suite": "waiver",
+      "case_count": 27,
+      "strict_case_count": 27,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-waiver.json.gz",
+      "archive_sha256": "ae7b60bcb44bb75fa9794da7be03f2d1e3d88e42f0a700e5cda951c71734bf32",
+      "script": "work/parallel-main-global-fee-waiver/probe-v2.py",
+      "script_sha256": "b52657498fd9e9b976f6196ad5d64184c7eab60442cc2a1e3659dd6b3713741b"
+    },
+    {
+      "suite": "payment",
+      "case_count": 64,
+      "strict_case_count": 64,
+      "archive": "work/parallel-main-sell-v2-buyback-accounting/after01-payment.json.gz",
+      "archive_sha256": "3f1c45982d67aaa9c4da12ea6b4c1743db3dfc98003e8b0557a14f67b4a14676",
+      "script": "work/parallel-main-buy-native-recipient/probe-payment-order.py",
+      "script_sha256": "ea3dbec2c3d393c94a62a756006fdaf81f4b72f7021ef4e61513bed0ee828ad3"
+    }
+  ],
+  "full_elf_identity": false,
+  "new_cases": "NEW-CASES.json",
+  "before_failures": {
+    "sell-v2-split": 4,
+    "sell-v2-thresholds": 16
+  },
+  "failed_control": "build01 cold old-registry dependency build ended ENFILE/os23; build02 used verified current cache and freshly compiled main source"
+}

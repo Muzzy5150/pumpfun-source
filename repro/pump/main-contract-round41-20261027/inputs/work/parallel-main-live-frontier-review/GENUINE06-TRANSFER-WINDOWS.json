@@ -1,0 +1,764 @@
+[
+  {
+    "original_start": "0x340",
+    "bytes": 1336,
+    "candidate_matches": [
+      {
+        "start": 2168,
+        "symbol": "_ZN11anchor_lang5error5Error11with_values17h206cb26ce442b97dE",
+        "raw_sha256": "494534fd0fef66ec6a211b87bdd714f46e0ffc177b4740c10c0ec7e836f948f8"
+      }
+    ]
+  },
+  {
+    "original_start": "0x2bc0",
+    "bytes": 232,
+    "candidate_matches": [
+      {
+        "start": 704304,
+        "symbol": "_ZN14pump_recovered12account_name15with_owned_name17h46bd9a369403f4fdE",
+        "raw_sha256": "763ad3cc4e2b2f96491d8bd67f3ee6daf545277c4df0f3406c35196e08aad143"
+      }
+    ]
+  },
+  {
+    "original_start": "0xea68",
+    "bytes": 1240,
+    "candidate_matches": [
+      {
+        "start": 68272,
+        "symbol": "_ZN69_$LT$$u5b$T$u3b$$u20$N$u5d$$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17h252a1ff2b904b558E",
+        "raw_sha256": "c05b763b5eba391433edcc63b5689d98b67825ad62cf811303591cbc88de17d4"
+      }
+    ]
+  },
+  {
+    "original_start": "0xf130",
+    "bytes": 1424,
+    "candidate_matches": [
+      {
+        "start": 69512,
+        "symbol": "_ZN69_$LT$$u5b$T$u3b$$u20$N$u5d$$u20$as$u20$borsh..ser..BorshSerialize$GT$9serialize17h8cf194cb577bf97aE",
+        "raw_sha256": "9a65fc18167eda1adf6c40580c9df25b6d22f6f4ebc1bb0adc20a1d47cc78fcf"
+      }
+    ]
+  },
+  {
+    "original_start": "0x2a8e8",
+    "bytes": 2984,
+    "candidate_matches": [
+      {
+        "start": 460840,
+        "symbol": "_ZN14pump_recovered10collect_v27execute17ha1a0290a58faaa46E",
+        "raw_sha256": "2054571373d767663515103d3f8653771bdb8f36a997f714cf933c79ee74400f"
+      }
+    ]
+  },
+  {
+    "original_start": "0x3b598",
+    "bytes": 416,
+    "candidate_matches": [
+      {
+        "start": 246240,
+        "symbol": "_ZN14pump_recovered6buy_v215native_payments18ensure_rent_exempt17h85cbe79d5a346e0cE",
+        "raw_sha256": "3f15bca97d4a8b990cda2dcd960c83092d2446b4a3e0a74ecbb71e4e957d8e0b"
+      }
+    ]
+  },
+  {
+    "original_start": "0x3b738",
+    "bytes": 416,
+    "candidate_matches": [
+      {
+        "start": 302784,
+        "symbol": "_ZN14pump_recovered10legacy_buy15native_payments18ensure_rent_exempt17hc119ad4e6687c21bE",
+        "raw_sha256": "dc83448baa5f5f4125803509e7985f8d515a5b34f6f25227abc71bad04c2ff45"
+      }
+    ]
+  },
+  {
+    "original_start": "0x47d00",
+    "bytes": 296,
+    "candidate_matches": [
+      {
+        "start": 362584,
+        "symbol": "_ZN14pump_recovered7migrate33pool_authority_mint_token_account17h4f8d56ada7050567E",
+        "raw_sha256": "4ccf13a691f506c0a17d9b1659d84913749d79e536bad131e584b89d72ece74b"
+      }
+    ]
+  },
+  {
+    "original_start": "0x48710",
+    "bytes": 1792,
+    "candidate_matches": [
+      {
+        "start": 360792,
+        "symbol": "_ZN14pump_recovered7migrate28close_pool_authority_account17h316eba2292c55ae3E",
+        "raw_sha256": "0074b9db61457c78e58db598a4f02d611a8ed6263780292e2607c1de6e03063d"
+      }
+    ]
+  },
+  {
+    "original_start": "0x524f0",
+    "bytes": 368,
+    "candidate_matches": [
+      {
+        "start": 360424,
+        "symbol": "_ZN14pump_recovered7migrate15native_payments13boost_enabled17hdb96b248e5488c64E",
+        "raw_sha256": "20efcf8f5409b651dddb31a8a1a501cdc6e6f485fdcc04cedafcba4f9e562c23"
+      }
+    ]
+  },
+  {
+    "original_start": "0x54c90",
+    "bytes": 296,
+    "candidate_matches": [
+      {
+        "start": 297192,
+        "symbol": "_ZN14pump_recovered10migrate_v233pool_authority_mint_token_account17h68c70979e436ffbcE",
+        "raw_sha256": "7945f3471db22dd787d987fea31d814622c52bc265441af0da6e33236c554b30"
+      }
+    ]
+  },
+  {
+    "original_start": "0x54f30",
+    "bytes": 1792,
+    "candidate_matches": [
+      {
+        "start": 297488,
+        "symbol": "_ZN14pump_recovered10migrate_v228close_pool_authority_account17h021b18f9437156f7E",
+        "raw_sha256": "d7d6a4c3d6836454134425b9deff7e560e5e2de5ba99cfac4c2f4ae531aef7cc"
+      }
+    ]
+  },
+  {
+    "original_start": "0x55630",
+    "bytes": 1792,
+    "candidate_matches": [
+      {
+        "start": 299280,
+        "symbol": "_ZN14pump_recovered10migrate_v216close_lp_account17h985bd9888b55e2beE",
+        "raw_sha256": "4e02010d28592119129e80b195bbf6743954007b416a4cdb12ef1ac65334ed0e"
+      }
+    ]
+  },
+  {
+    "original_start": "0x56658",
+    "bytes": 384,
+    "candidate_matches": [
+      {
+        "start": 295328,
+        "symbol": "_ZN14pump_recovered10migrate_v221refund_pool_authority17hfed24237704a3b66E",
+        "raw_sha256": "fe1297270098bebc4877a791d7fc04b18e7f486aee980a48c53bed4b94af737d"
+      }
+    ]
+  },
+  {
+    "original_start": "0x8b970",
+    "bytes": 608,
+    "candidate_matches": [
+      {
+        "start": 560160,
+        "symbol": "_ZN14pump_recovered12distribution27sharing_config_shareholders17h091cfc0c0bc7b759E",
+        "raw_sha256": "e39e9a03bcf5e81727b2b45165b2df7e2be35d5cd93dcc2764558acc4ac36398"
+      }
+    ]
+  },
+  {
+    "original_start": "0x8c2d8",
+    "bytes": 1176,
+    "candidate_matches": [
+      {
+        "start": 727072,
+        "symbol": "_ZN14pump_recovered19user_quote_payments25transfer_native_unchecked17h57cd5670b1f59e4cE",
+        "raw_sha256": "e2477013edae9aa167228098236d9f26d201ae6b6361cda826b065a188228c06"
+      }
+    ]
+  },
+  {
+    "original_start": "0x8cc58",
+    "bytes": 1200,
+    "candidate_matches": [
+      {
+        "start": 303200,
+        "symbol": "_ZN14pump_recovered10legacy_buy15native_payments8transfer17h7306b892a5d1f07fE",
+        "raw_sha256": "e142a3e9177131d778bf78066fa188af55e0c8cdbb5f9d941781da1d4dcc468c"
+      }
+    ]
+  },
+  {
+    "original_start": "0x8e908",
+    "bytes": 1176,
+    "candidate_matches": [
+      {
+        "start": 728248,
+        "symbol": "_ZN14pump_recovered19user_quote_payments31transfer_native_curve_unchecked17h6ba902fe80daab88E",
+        "raw_sha256": "73b7e13cce461bb5c58cf88d348798cca598c8a9dc68d2c31a5a7484078a8aeb"
+      }
+    ]
+  },
+  {
+    "original_start": "0x90e60",
+    "bytes": 2096,
+    "candidate_matches": [
+      {
+        "start": 465912,
+        "symbol": "_ZN14pump_recovered10collect_v224transfer_user_tokens_ref17h1767d1fed00e928cE",
+        "raw_sha256": "2f13735a9f1b368c940031191db97ad412bdd17faf44de2648196b7df572093e"
+      }
+    ]
+  },
+  {
+    "original_start": "0x91690",
+    "bytes": 2144,
+    "candidate_matches": [
+      {
+        "start": 248784,
+        "symbol": "_ZN14pump_recovered6buy_v215token_transfers25transfer_curve_tokens_ref17hba921c6a9a607840E",
+        "raw_sha256": "5bb08995e574f82f3c0f7a93e348366760896b1dbf414663a017506efc716379"
+      }
+    ]
+  },
+  {
+    "original_start": "0x92820",
+    "bytes": 2096,
+    "candidate_matches": [
+      {
+        "start": 468008,
+        "symbol": "_ZN14pump_recovered10collect_v226transfer_user_quote_tokens17hb23ef3f65b2a957fE",
+        "raw_sha256": "c70438765e31b677069ce520585487a1082ff80c26c3f97d658e2d7fb80f4e86"
+      }
+    ]
+  },
+  {
+    "original_start": "0x93898",
+    "bytes": 2088,
+    "candidate_matches": [
+      {
+        "start": 463824,
+        "symbol": "_ZN14pump_recovered10collect_v221transfer_vault_tokens17ha294d660c014e411E",
+        "raw_sha256": "73b5ead8cb3409bbc6001efc02b44966665e13e73875d63765b391e311e8ee12"
+      }
+    ]
+  },
+  {
+    "original_start": "0x95610",
+    "bytes": 1480,
+    "candidate_matches": [
+      {
+        "start": 295712,
+        "symbol": "_ZN14pump_recovered10migrate_v231harvest_withheld_tokens_to_mint17h55e27f2eb0f5534dE",
+        "raw_sha256": "e2b0db3f3383bfd8f8d195a147be0269e7a6efb849d0f3dfb7a90c03aeb8b885"
+      }
+    ]
+  },
+  {
+    "original_start": "0x95f38",
+    "bytes": 840,
+    "candidate_matches": [
+      {
+        "start": 668048,
+        "symbol": "_ZN14pump_recovered5trade14quote_payments11move_native17h03f086444bc1c26aE",
+        "raw_sha256": "8e63702feec235fd94820b5eb9c253f9a71312a8f1b833f5f5cb6285cf78680f"
+      }
+    ]
+  },
+  {
+    "original_start": "0x96280",
+    "bytes": 824,
+    "candidate_matches": [
+      {
+        "start": 668888,
+        "symbol": "_ZN14pump_recovered5trade14quote_payments11move_native17hc4de41a749e1b0eeE",
+        "raw_sha256": "e2342ddad5bb9a2cfd3e980a57731b1a2731e7a2bc8363f1c2fe7de9d9adda97"
+      }
+    ]
+  },
+  {
+    "original_start": "0x96d48",
+    "bytes": 944,
+    "candidate_matches": [
+      {
+        "start": 671816,
+        "symbol": "_ZN14pump_recovered5trade14quote_payments21transfer_to_recipient17h643d335c5763e05bE",
+        "raw_sha256": "e7acc2777c62f0c08ef952ce08b0669c72b488cd773a08941d8ab18d7133e09e"
+      },
+      {
+        "start": 669712,
+        "symbol": "_ZN14pump_recovered5trade14quote_payments16transfer_to_user17h0993cb992b1d4658E",
+        "raw_sha256": "e40293133e242434a1653be7cf6bcfd94d255ae415d4554276c504e2dd43c687"
+      }
+    ]
+  },
+  {
+    "original_start": "0x970f8",
+    "bytes": 1160,
+    "candidate_matches": [
+      {
+        "start": 670656,
+        "symbol": "_ZN14pump_recovered5trade14quote_payments17transfer_to_owned17hfe4e107050a4c8c8E",
+        "raw_sha256": "f52e4a98f5a7a921833da5f069dd48f2237e836322251bdcbe9d53f56c348788"
+      }
+    ]
+  },
+  {
+    "original_start": "0x97580",
+    "bytes": 944,
+    "candidate_matches": [
+      {
+        "start": 671816,
+        "symbol": "_ZN14pump_recovered5trade14quote_payments21transfer_to_recipient17h643d335c5763e05bE",
+        "raw_sha256": "e7acc2777c62f0c08ef952ce08b0669c72b488cd773a08941d8ab18d7133e09e"
+      },
+      {
+        "start": 669712,
+        "symbol": "_ZN14pump_recovered5trade14quote_payments16transfer_to_user17h0993cb992b1d4658E",
+        "raw_sha256": "e40293133e242434a1653be7cf6bcfd94d255ae415d4554276c504e2dd43c687"
+      }
+    ]
+  },
+  {
+    "original_start": "0xa0838",
+    "bytes": 192,
+    "candidate_matches": [
+      {
+        "start": 704112,
+        "symbol": "_ZN14pump_recovered16constant_product16tokens_for_quote17hee673b44c7e8713bE",
+        "raw_sha256": "2950a64eb038e764e925518f0bf834714e5053dea5cac6b971874fdbfabf768c"
+      }
+    ]
+  },
+  {
+    "original_start": "0xa23f0",
+    "bytes": 1168,
+    "candidate_matches": [
+      {
+        "start": 192152,
+        "symbol": "_ZN14pump_recovered21mayhem_virtual_params59_$LT$impl$u20$pump_recovered..trade_types..BondingCurve$GT$27sync_virtual_quote_reserves17h55a17f5003cbd765E",
+        "raw_sha256": "e6b6c0930929bd2aabfb25d2a8771fc40f9dc878947a9fb455268e549fd2e6c1"
+      }
+    ]
+  },
+  {
+    "original_start": "0xc5650",
+    "bytes": 7344,
+    "candidate_matches": [
+      {
+        "start": 873432,
+        "symbol": "_ZN173_$LT$pump_recovered..holder_distribution..DistributeFeeToHolders$u20$as$u20$anchor_lang..Accounts$LT$pump_recovered..holder_distribution..DistributeFeeToHoldersBumps$GT$$GT$12try_accounts17h29941350b6c1bb54E",
+        "raw_sha256": "fa41216974bf1e5c4439551a539b9be5358ff13b33c623e6fa53fcfeab63aba1"
+      }
+    ]
+  },
+  {
+    "original_start": "0xca628",
+    "bytes": 1944,
+    "candidate_matches": [
+      {
+        "start": 1056416,
+        "symbol": "_ZN122_$LT$pump_recovered..set_creator..__cpi_client_accounts_set_creator..SetCreator$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h2e03a8010109ef9dE",
+        "raw_sha256": "51a5db5f2ba2d1eb76d94bc0c2e8d6b19dd8134b80323a24e0782e77ad929b3e"
+      },
+      {
+        "start": 1056416,
+        "symbol": "_ZN146_$LT$pump_recovered..idl_authority..__cpi_client_accounts_admin_set_idl_authority..AdminSetIdlAuthority$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h7629f8dbeda85c3aE",
+        "raw_sha256": "51a5db5f2ba2d1eb76d94bc0c2e8d6b19dd8134b80323a24e0782e77ad929b3e"
+      },
+      {
+        "start": 1056416,
+        "symbol": "_ZN146_$LT$pump_recovered..distribution..__cpi_client_accounts_distribute_creator_fees..DistributeCreatorFees$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17hb6f7beab875f4dcbE",
+        "raw_sha256": "51a5db5f2ba2d1eb76d94bc0c2e8d6b19dd8134b80323a24e0782e77ad929b3e"
+      },
+      {
+        "start": 1056416,
+        "symbol": "_ZN134_$LT$pump_recovered..pump_amm..internal..__cpi_client_accounts_admin_cto_pool..AdminCtoPool$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h9517c0d211661bffE",
+        "raw_sha256": "51a5db5f2ba2d1eb76d94bc0c2e8d6b19dd8134b80323a24e0782e77ad929b3e"
+      },
+      {
+        "start": 1056416,
+        "symbol": "_ZN154_$LT$pump_recovered..pump_fees..internal..__cpi_client_accounts_admin_cto_sharing_config..AdminCtoSharingConfig$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h8e1e8f71cd299e8cE",
+        "raw_sha256": "51a5db5f2ba2d1eb76d94bc0c2e8d6b19dd8134b80323a24e0782e77ad929b3e"
+      }
+    ]
+  },
+  {
+    "original_start": "0xcf510",
+    "bytes": 576,
+    "candidate_matches": [
+      {
+        "start": 815072,
+        "symbol": "_ZN107_$LT$pump_recovered..mayhem_virtual_params..SetMayhemVirtualParams$u20$as$u20$anchor_lang..AccountsExit$GT$4exit17hd74a74009d65b13fE",
+        "raw_sha256": "35aa3e6013ca43c2534bf90e07706d6d356258884333da9de769c0e57fb131fe"
+      }
+    ]
+  },
+  {
+    "original_start": "0xd5af0",
+    "bytes": 23608,
+    "candidate_matches": [
+      {
+        "start": 849264,
+        "symbol": "_ZN129_$LT$pump_recovered..migrate_v2..MigrateV2$u20$as$u20$anchor_lang..Accounts$LT$pump_recovered..migrate_v2..MigrateV2Bumps$GT$$GT$12try_accounts17he713600cb2355074E",
+        "raw_sha256": "3339db4a0eefb15da107ec467f52272b0f7058ef3a67423adf6a9ba9e7e6c553"
+      }
+    ]
+  },
+  {
+    "original_start": "0xdd700",
+    "bytes": 3512,
+    "candidate_matches": [
+      {
+        "start": 741784,
+        "symbol": "_ZN137_$LT$pump_recovered..multi_hop_curve..CurveHop$u20$as$u20$anchor_lang..Accounts$LT$pump_recovered..multi_hop_curve..CurveHopBumps$GT$$GT$12try_accounts17h1a35cbba34129490E",
+        "raw_sha256": "c0701da0acc2d3e5b1a9f96af90573f6508bfe07a1c881a64b6be2e265155ebe"
+      }
+    ]
+  },
+  {
+    "original_start": "0x109488",
+    "bytes": 3160,
+    "candidate_matches": [
+      {
+        "start": 1151464,
+        "symbol": "_ZN100_$LT$pump_recovered..pump_amm..accounts..GlobalConfig$u20$as$u20$anchor_lang..AccountDeserialize$GT$25try_deserialize_unchecked17hc35d255ad3d4bef6E",
+        "raw_sha256": "12a43b65fb7fe26e8d6052c3464db4d3ddf5e3fc2654c38920e784a4acf65689"
+      }
+    ]
+  },
+  {
+    "original_start": "0x10a0e0",
+    "bytes": 4056,
+    "candidate_matches": [
+      {
+        "start": 1154624,
+        "symbol": "_ZN14pump_recovered8pump_amm3cpi14admin_cto_pool17h4e94f3bf8e832e78E",
+        "raw_sha256": "5fcaac4d3697a6a4bb3e24ff921afc356125ce82afd28e42a25da7a68b6036ef"
+      }
+    ]
+  },
+  {
+    "original_start": "0x10b0b8",
+    "bytes": 4096,
+    "candidate_matches": [
+      {
+        "start": 1158680,
+        "symbol": "_ZN14pump_recovered8pump_amm3cpi24collect_coin_creator_fee17habab70b642eff3c9E",
+        "raw_sha256": "64adae6c558832b93b05ca9999651ee114459b6e23b82fa4c8911d92dc6415a8"
+      }
+    ]
+  },
+  {
+    "original_start": "0x10c0b8",
+    "bytes": 5504,
+    "candidate_matches": [
+      {
+        "start": 1162776,
+        "symbol": "_ZN14pump_recovered8pump_amm3cpi11create_pool17he4ac5eb9d6d20946E",
+        "raw_sha256": "443647305893032d3864cfc66a741b6b29b179b87ebe4b65ca7d2a402fdb1112"
+      }
+    ]
+  },
+  {
+    "original_start": "0x10d638",
+    "bytes": 4864,
+    "candidate_matches": [
+      {
+        "start": 1168280,
+        "symbol": "_ZN14pump_recovered8pump_amm3cpi10init_boost17h9be7c853e19feb18E",
+        "raw_sha256": "c43d18df7adbb02d04840680176397b450f67eab97a31761f892b411fdaaefaf"
+      }
+    ]
+  },
+  {
+    "original_start": "0x10e938",
+    "bytes": 4608,
+    "candidate_matches": [
+      {
+        "start": 1173144,
+        "symbol": "_ZN14pump_recovered8pump_amm3cpi32transfer_creator_fees_to_pump_v217h5a3b60a67564f490E",
+        "raw_sha256": "8e0dcf46d94a263598a0e33b062b0a5cb87fef8a52e43fc631b4dbdd26a058f8"
+      }
+    ]
+  },
+  {
+    "original_start": "0x10fb38",
+    "bytes": 1472,
+    "candidate_matches": [
+      {
+        "start": 1177752,
+        "symbol": "_ZN134_$LT$pump_recovered..pump_amm..internal..__cpi_client_accounts_admin_cto_pool..AdminCtoPool$u20$as$u20$anchor_lang..ToAccountMetas$GT$16to_account_metas17h7739172c677bd54eE",
+        "raw_sha256": "3a51e727a4ec0772dcc509eb509c112293f868c797503ca83d3fbfb8fcb9ab7c"
+      }
+    ]
+  },
+  {
+    "original_start": "0x1100f8",
+    "bytes": 3144,
+    "candidate_matches": [
+      {
+        "start": 1194176,
+        "symbol": "_ZN140_$LT$pump_recovered..pump_amm..internal..__cpi_client_accounts_sweep_creator_fee..SweepCreatorFee$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h4a40319bd30195b4E",
+        "raw_sha256": "41dbdfdca07bc1a949dc6506af5ff4cac6c2707ba26422a41b8029dabb6d3b44"
+      },
+      {
+        "start": 1194176,
+        "symbol": "_ZN172_$LT$pump_recovered..token_incentives..claim_token_incentives..__cpi_client_accounts_claim_token_incentives..ClaimTokenIncentives$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17hb555f21825e7fa7fE",
+        "raw_sha256": "41dbdfdca07bc1a949dc6506af5ff4cac6c2707ba26422a41b8029dabb6d3b44"
+      },
+      {
+        "start": 1194176,
+        "symbol": "_ZN151_$LT$pump_recovered..distribution..__cpi_client_accounts_distribute_creator_fees_v2..DistributeCreatorFeesV2$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17hfd5d9afd3c19a9eeE",
+        "raw_sha256": "41dbdfdca07bc1a949dc6506af5ff4cac6c2707ba26422a41b8029dabb6d3b44"
+      },
+      {
+        "start": 1194176,
+        "symbol": "_ZN150_$LT$pump_recovered..pump_amm..internal..__cpi_client_accounts_claim_token_incentives..ClaimTokenIncentives$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h77c738e015948390E",
+        "raw_sha256": "41dbdfdca07bc1a949dc6506af5ff4cac6c2707ba26422a41b8029dabb6d3b44"
+      },
+      {
+        "start": 1194176,
+        "symbol": "_ZN142_$LT$pump_recovered..pump_amm..internal..__cpi_client_accounts_sweep_protocol_fee..SweepProtocolFee$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h71f5958bae7ed80aE",
+        "raw_sha256": "41dbdfdca07bc1a949dc6506af5ff4cac6c2707ba26422a41b8029dabb6d3b44"
+      },
+      {
+        "start": 1194176,
+        "symbol": "_ZN167_$LT$pump_recovered..pump_amm..internal..__cpi_client_accounts_transfer_creator_fees_to_pump_v2..TransferCreatorFeesToPumpV2$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h433b8e67bd15d899E",
+        "raw_sha256": "41dbdfdca07bc1a949dc6506af5ff4cac6c2707ba26422a41b8029dabb6d3b44"
+      },
+      {
+        "start": 1194176,
+        "symbol": "_ZN151_$LT$pump_recovered..pump_fees..internal..__cpi_client_accounts_claim_social_fee_pda_v2..ClaimSocialFeePdaV2$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17hb8098450b9528985E",
+        "raw_sha256": "41dbdfdca07bc1a949dc6506af5ff4cac6c2707ba26422a41b8029dabb6d3b44"
+      }
+    ]
+  },
+  {
+    "original_start": "0x110d40",
+    "bytes": 1672,
+    "candidate_matches": [
+      {
+        "start": 1179224,
+        "symbol": "_ZN153_$LT$pump_recovered..pump_amm..internal..__cpi_client_accounts_collect_coin_creator_fee..CollectCoinCreatorFee$u20$as$u20$anchor_lang..ToAccountMetas$GT$16to_account_metas17h0c1da8daa7b34732E",
+        "raw_sha256": "b53d8f607cb93f8987ad2bcc34f2a89b59485f4feea7d173eb6b0213b7382101"
+      }
+    ]
+  },
+  {
+    "original_start": "0x1113c8",
+    "bytes": 3672,
+    "candidate_matches": [
+      {
+        "start": 1183112,
+        "symbol": "_ZN129_$LT$pump_recovered..pump_amm..internal..__cpi_client_accounts_create_pool..CreatePool$u20$as$u20$anchor_lang..ToAccountMetas$GT$16to_account_metas17h060cb284396bacc1E",
+        "raw_sha256": "8c93bbf969e3507bfc031ff87d77dfcfcd616b0f1a5534bdc68501281af89ee9"
+      }
+    ]
+  },
+  {
+    "original_start": "0x112220",
+    "bytes": 4520,
+    "candidate_matches": [
+      {
+        "start": 1186784,
+        "symbol": "_ZN129_$LT$pump_recovered..pump_amm..internal..__cpi_client_accounts_create_pool..CreatePool$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17hf81750f38ce341d6E",
+        "raw_sha256": "65537c95858b60d9164f01f86674127387a0502cd584cb2f36799df46c276694"
+      },
+      {
+        "start": 1186784,
+        "symbol": "_ZN141_$LT$pump_recovered..pump_fees..internal..__cpi_client_accounts_update_fee_shares..UpdateFeeShares$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17ha5d95aa7ff53fcfcE",
+        "raw_sha256": "65537c95858b60d9164f01f86674127387a0502cd584cb2f36799df46c276694"
+      }
+    ]
+  },
+  {
+    "original_start": "0x1133c8",
+    "bytes": 2872,
+    "candidate_matches": [
+      {
+        "start": 1191304,
+        "symbol": "_ZN127_$LT$pump_recovered..pump_amm..internal..__cpi_client_accounts_init_boost..InitBoost$u20$as$u20$anchor_lang..ToAccountMetas$GT$16to_account_metas17hf882dc347d19112aE",
+        "raw_sha256": "c87d2d900eefa2780fabb92f8aaa16daf0fa5a23f80dbc4f546b5ea75d6b2f94"
+      }
+    ]
+  },
+  {
+    "original_start": "0x113f00",
+    "bytes": 3656,
+    "candidate_matches": [
+      {
+        "start": 1492776,
+        "symbol": "_ZN100_$LT$pump_recovered..__cpi_client_accounts_create..Create$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h6d230b3b9bf1ea1eE",
+        "raw_sha256": "44f213c3a254ebb98691b265f65893a5946676a8aae962c22ea3ed505355e719"
+      },
+      {
+        "start": 1492776,
+        "symbol": "_ZN127_$LT$pump_recovered..pump_amm..internal..__cpi_client_accounts_init_boost..InitBoost$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17he89b3797603b6220E",
+        "raw_sha256": "44f213c3a254ebb98691b265f65893a5946676a8aae962c22ea3ed505355e719"
+      },
+      {
+        "start": 1492776,
+        "symbol": "_ZN122_$LT$pump_recovered..legacy_sell..__cpi_client_accounts_legacy_sell..LegacySell$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17hf5ea8fe43a05b5beE",
+        "raw_sha256": "44f213c3a254ebb98691b265f65893a5946676a8aae962c22ea3ed505355e719"
+      }
+    ]
+  },
+  {
+    "original_start": "0x114d48",
+    "bytes": 2472,
+    "candidate_matches": [
+      {
+        "start": 1197320,
+        "symbol": "_ZN167_$LT$pump_recovered..pump_amm..internal..__cpi_client_accounts_transfer_creator_fees_to_pump_v2..TransferCreatorFeesToPumpV2$u20$as$u20$anchor_lang..ToAccountMetas$GT$16to_account_metas17hf82ed54f43c97311E",
+        "raw_sha256": "3de71beee48fb9446f20b14b89bce6cb322c6dc1648f29259a56a10df6349b30"
+      }
+    ]
+  },
+  {
+    "original_start": "0x116718",
+    "bytes": 4040,
+    "candidate_matches": [
+      {
+        "start": 1203160,
+        "symbol": "_ZN14pump_recovered9pump_fees3cpi24admin_cto_sharing_config17hde3e17e9bb28932fE",
+        "raw_sha256": "2f964cf9d88607fe46f118d2175d64151ff6b747d2a3cec5f59a0b87c4a79623"
+      }
+    ]
+  },
+  {
+    "original_start": "0x118360",
+    "bytes": 1472,
+    "candidate_matches": [
+      {
+        "start": 1210400,
+        "symbol": "_ZN154_$LT$pump_recovered..pump_fees..internal..__cpi_client_accounts_admin_cto_sharing_config..AdminCtoSharingConfig$u20$as$u20$anchor_lang..ToAccountMetas$GT$16to_account_metas17h1e44d6cefbac78e0E",
+        "raw_sha256": "9f850529359a063801a85656947d326d1495ba381d1a219b34074fa11ba5bc78"
+      }
+    ]
+  },
+  {
+    "original_start": "0x119c50",
+    "bytes": 2216,
+    "candidate_matches": [
+      {
+        "start": 1180896,
+        "symbol": "_ZN153_$LT$pump_recovered..pump_amm..internal..__cpi_client_accounts_collect_coin_creator_fee..CollectCoinCreatorFee$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17ha9db35c828b6edf3E",
+        "raw_sha256": "5fff583e64adb2a435126ac4cf5aba3dca74538ddfe80e82161666a49b950d69"
+      },
+      {
+        "start": 1180896,
+        "symbol": "_ZN158_$LT$pump_recovered..mayhem_virtual_params..__cpi_client_accounts_set_mayhem_virtual_params..SetMayhemVirtualParams$u20$as$u20$anchor_lang..ToAccountInfos$GT$16to_account_infos17h48212a6af64d1082E",
+        "raw_sha256": "5fff583e64adb2a435126ac4cf5aba3dca74538ddfe80e82161666a49b950d69"
+      }
+    ]
+  },
+  {
+    "original_start": "0x1255a8",
+    "bytes": 1344,
+    "candidate_matches": [
+      {
+        "start": 1252960,
+        "symbol": "_ZN14pump_recovered9__private8__global25set_mayhem_virtual_params17he0cb0460b47ecd9fE",
+        "raw_sha256": "05ec7b51a480ef895f2488a6861773664278d6cdb1ddc6e0dea773a29efa2390"
+      }
+    ]
+  },
+  {
+    "original_start": "0x12a4e0",
+    "bytes": 1768,
+    "candidate_matches": [
+      {
+        "start": 1273240,
+        "symbol": "_ZN14pump_recovered9__private8__global3buy17h989da78240aef53aE",
+        "raw_sha256": "a0f78e4b2c93d1ee4fdad8c5f5c5aec29c2590738bf481f6da5cfb38a8c5c1e2"
+      }
+    ]
+  },
+  {
+    "original_start": "0x12abc8",
+    "bytes": 1768,
+    "candidate_matches": [
+      {
+        "start": 1275008,
+        "symbol": "_ZN14pump_recovered9__private8__global16buy_exact_sol_in17he7e9a4e1c647669eE",
+        "raw_sha256": "a77514ace92e43cb18a32257e780c5c0e9ca5290dc8690f03f5f6b967341e7b1"
+      }
+    ]
+  },
+  {
+    "original_start": "0x12ba48",
+    "bytes": 1072,
+    "candidate_matches": [
+      {
+        "start": 1278720,
+        "symbol": "_ZN14pump_recovered9__private8__global10migrate_v217h55c8d7ade3c8252eE",
+        "raw_sha256": "6b14924487281fe8652dddea814864ba0ecd2a864c17d5caacfbac5718ccb9cd"
+      }
+    ]
+  },
+  {
+    "original_start": "0x137fc0",
+    "bytes": 2912,
+    "candidate_matches": [
+      {
+        "start": 1334944,
+        "symbol": "_ZN14pump_recovered14pump_recovered25set_mayhem_virtual_params17hc43334198ae211dcE",
+        "raw_sha256": "5580279ea6fa8950f1f74bd3d78836e05dc6c4b49830406cacf82d96d82c91c4"
+      }
+    ]
+  },
+  {
+    "original_start": "0x163ea8",
+    "bytes": 1040,
+    "candidate_matches": [
+      {
+        "start": 1048672,
+        "symbol": "_ZN81_$LT$pump_recovered..set_params..SetParamsEvent$u20$as$u20$anchor_lang..Event$GT$4data17hebcb727d1ef12b63E",
+        "raw_sha256": "1967df9cfbe4c40928ee6af7f245b4f2c68b799b1a2b2b76e371e994971b3281"
+      }
+    ]
+  },
+  {
+    "original_start": "0x17c0f0",
+    "bytes": 744,
+    "candidate_matches": [
+      {
+        "start": 264184,
+        "symbol": "_ZN14pump_recovered10migrate_v226required_quote_account_len17h2fd75eb06f4c60edE",
+        "raw_sha256": "134493d033646d46ff4d18902239f56bc4705e967bc15a43a9cd38312f31b780"
+      }
+    ]
+  },
+  {
+    "original_start": "0x184e38",
+    "bytes": 2664,
+    "candidate_matches": [
+      {
+        "start": 1607696,
+        "symbol": "_ZN10anchor_spl21token_2022_extensions12transfer_fee31harvest_withheld_tokens_to_mint17h3571ec80bcfc2bf8E",
+        "raw_sha256": "7c10376de9168a6b10799684a42ec77cf00910c7a62da7ad3953800cff500dba"
+      }
+    ]
+  },
+  {
+    "original_start": "0x18fc98",
+    "bytes": 2320,
+    "candidate_matches": [
+      {
+        "start": 1652336,
+        "symbol": "_ZN14spl_token_20229extension12transfer_fee11instruction22TransferFeeInstruction4pack17h76088c49f144eab6E",
+        "raw_sha256": "18a54b51c6895ba7fb07f84405ccb855585b9f4c1a91b6899bdc965355722f21"
+      }
+    ]
+  },
+  {
+    "original_start": "0x1905a8",
+    "bytes": 1104,
+    "candidate_matches": [
+      {
+        "start": 1654656,
+        "symbol": "_ZN14spl_token_20229extension12transfer_fee11instruction31harvest_withheld_tokens_to_mint17h9df957f235c92181E",
+        "raw_sha256": "4ce908e1e3dd7c2c38023305902c7e42466433c179676657233d19a5ceb71c16"
+      }
+    ]
+  }
+]

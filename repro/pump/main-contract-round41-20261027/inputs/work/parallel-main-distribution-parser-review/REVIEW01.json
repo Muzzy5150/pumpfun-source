@@ -1,0 +1,159 @@
+{
+  "scope": "Independent read-only check of the staged distribution parser correction.",
+  "reviewed_source_sha256": "c1992559481ebd11cd88214e7b6c1bf3a1479956d7a48dd03ab28939f9042c0d",
+  "input_sha256": {
+    "evidence/original/pump/deployed.so": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+    "work/parallel-main-distribution-parser-correction/source02/src/distribution.rs": "c1992559481ebd11cd88214e7b6c1bf3a1479956d7a48dd03ab28939f9042c0d",
+    "work/parallel-main-distribution-parser-correction/STAGED.json": "c2d94699bd32c7185e3bfd98c950b1b01a73b92bc3fe00113db96ce17f1e3f70",
+    "work/parallel-main-distribution-parser-correction/combined-from-v1-context.patch": "cdbd1d02ca6ea54e3a94c128184b2767c27116bae40be898c38097663b45c61d",
+    "work/parallel-main-distribution-parser-audit/before.json.gz": "e0c0c95fb150d1e43d19c6cbdca6cbab2aafa3bcd666f3bacc7a2336dbe05d8e",
+    "work/parallel-main-distribution-parser-audit/calls.json": "3d98931460bf1690971a5666371638142dc88450b4f9c4c49f88a32dc254a167",
+    "work/parallel-main-distribution-parser-audit/original-v1-constraints.asm": "e4f8040da3edba6d1376d5fcb2ac5763e4546960b1d208e2f864d3aa57b223c8",
+    "work/parallel-main-distribution-parser-audit/original-v2-quote-comparison.asm": "078557dd09ca2b954989f7ac9d8a320c0f4ae0ed809e8e813b1f5fae930a7813",
+    "work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-lang-0.31.1/src/accounts/interface_account.rs": "ff5e5a8e782a5057044a563fb4a90158e87b652a87b3f2e9fa788c75de58aa77",
+    "work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-lang-0.31.1/src/accounts/program.rs": "980d02253db1151d0721500eaaeb6ecb1b7bc9138a8ae78d7367a63b94b60878",
+    "work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-syn-0.31.1/src/codegen/accounts/try_accounts.rs": "f6706ae318ca9629d60a91e559227170a47f56647f7e46e44a8730356b8df308",
+    "work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-syn-0.31.1/src/codegen/accounts/constraints.rs": "0b02cfff7da8eb64450260577c9bdcea21b320adb33b176c0d4ced58ce96c75e"
+  },
+  "verdict": "V1 guard/order matches original; V2 expression matches original and preserves admitted-mint behavior. No new source or build by reviewer.",
+  "v1": {
+    "original_parser": "0xc1d58/7256B",
+    "guard": "0xc2a20..0xc2ae0",
+    "condition": "curve quote mint equals all-zero Pubkey",
+    "failure": "6063 UnsupportedQuoteMint, attributed to bonding_curve, no compared-pubkey payload",
+    "original_success_branch": "0xc2a80 ->0xc2b00 then creator comparison",
+    "creator_error_enum_index": 53,
+    "ordering": "Typed account loading and curve seeds precede the quote guard; quote guard precedes creator equality, sharing mint/seeds, event seeds, creator-vault mutability, and handler status/pending/remaining checks.",
+    "macro_evidence": "Pinned Anchor deserializes all non-init accounts before raw constraints; seeds precede raw constraints; raw constraints preserve source order. Raw custom error uses account attribution."
+  },
+  "v2": {
+    "original_parser": "0xbf800/9560B",
+    "original_compare_calls": [
+      "0xc1880",
+      "0xc18e0",
+      "0xc1968"
+    ],
+    "condition": "m==q || (q==zero && m==native)",
+    "typed_quote_parse_call": "0xc0190 ->0x3a08 ->0x288, before raw comparisons",
+    "truth_table": [
+      {
+        "curve_quote": "zero",
+        "quote_mint": "zero",
+        "old": false,
+        "new": true
+      },
+      {
+        "curve_quote": "zero",
+        "quote_mint": "native",
+        "old": true,
+        "new": true
+      },
+      {
+        "curve_quote": "zero",
+        "quote_mint": "other1",
+        "old": false,
+        "new": false
+      },
+      {
+        "curve_quote": "zero",
+        "quote_mint": "other2",
+        "old": false,
+        "new": false
+      },
+      {
+        "curve_quote": "native",
+        "quote_mint": "zero",
+        "old": false,
+        "new": false
+      },
+      {
+        "curve_quote": "native",
+        "quote_mint": "native",
+        "old": true,
+        "new": true
+      },
+      {
+        "curve_quote": "native",
+        "quote_mint": "other1",
+        "old": false,
+        "new": false
+      },
+      {
+        "curve_quote": "native",
+        "quote_mint": "other2",
+        "old": false,
+        "new": false
+      },
+      {
+        "curve_quote": "other1",
+        "quote_mint": "zero",
+        "old": false,
+        "new": false
+      },
+      {
+        "curve_quote": "other1",
+        "quote_mint": "native",
+        "old": false,
+        "new": false
+      },
+      {
+        "curve_quote": "other1",
+        "quote_mint": "other1",
+        "old": true,
+        "new": true
+      },
+      {
+        "curve_quote": "other1",
+        "quote_mint": "other2",
+        "old": false,
+        "new": false
+      },
+      {
+        "curve_quote": "other2",
+        "quote_mint": "zero",
+        "old": false,
+        "new": false
+      },
+      {
+        "curve_quote": "other2",
+        "quote_mint": "native",
+        "old": false,
+        "new": false
+      },
+      {
+        "curve_quote": "other2",
+        "quote_mint": "other1",
+        "old": false,
+        "new": false
+      },
+      {
+        "curve_quote": "other2",
+        "quote_mint": "other2",
+        "old": true,
+        "new": true
+      }
+    ],
+    "algebraic_difference": [
+      {
+        "curve_quote": "zero",
+        "quote_mint": "zero",
+        "old": false,
+        "new": true
+      }
+    ],
+    "equivalence_limit": "The formulas are NOT unconditionally Boolean-equivalent. They agree if quote_mint.key()!=zero. For the actual System-program account, typed Mint owner/deserialization rejection occurs earlier than the raw predicate. A synthetic substituted System-program account is not covered by that chain-state premise.",
+    "precedence": "Payer/mint/curve/sharing/System/self-program and typed quote/token/ATA program account admission occurs before constraints. Creator equality, sharing checks, vault/event/ATA seeds precede this quote raw predicate. Existing field order and types are unchanged."
+  },
+  "existing_runtime_evidence": {
+    "cases": 24,
+    "prior_candidate_differences": 16,
+    "default_control_matches": 8,
+    "paired_signatures_reverified": true,
+    "post_fix_runtime_by_reviewer": false
+  },
+  "limits": [
+    "Independent static review plus re-verification of existing signed before-receipts; no claim that combined correction has passed until R35 runs.",
+    "The new V2 predicate intentionally also matches original on the mathematical zero/zero case. Valid-mint domain equivalence must not be described as equivalence for arbitrary Pubkeys.",
+    "No source files, ELF images, frozen probes or other agent evidence were edited."
+  ]
+}

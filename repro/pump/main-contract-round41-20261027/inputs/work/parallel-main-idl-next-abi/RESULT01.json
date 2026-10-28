@@ -1,0 +1,141 @@
+{
+  "status": "Validated original-backed leading empty signer seed for AdminSetIdlAuthority TransferWithSeed",
+  "source_file": "src/admin_set_idl_authority.rs",
+  "source_sha256": "6d674f297a467f28b6bf7df885c0ce77508efba10cf7a78c9ae9bff119c30686",
+  "patch_sha256": "4ae0cd5d5a227515a6839465ead3eeb44d144802e7dec2a9b3a5506dfc447e8f",
+  "candidate_sha256": "eba1f59ead6514e294a27e892e582028471b40f77ff3eebeae49c906032124c8",
+  "unstripped_sha256": "404b829cbea3269bfc1b5991dbbbcf1a41334129a968d5b9571ff9a4b19f0a10",
+  "build_receipt_sha256": "7afd027e94ca84c82e2a8cf2adff652f5dd9a7404c98eb126138cd53d746d124",
+  "baseline_inventory_sha256": "7abe2468b90a4e88458694f6dd42ddb64588743c7871d0b783f31f3a8e1488a1",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 744,
+    "unmatched": 291
+  },
+  "delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "handler": {
+    "original_bytes": 5704,
+    "candidate": "0x8b490",
+    "candidate_bytes": 5984,
+    "normalized_equal": false,
+    "different_slots": 737
+  },
+  "helper": {
+    "original": "0x19e3b0",
+    "candidate": "0x1869a8",
+    "bytes": 896,
+    "normalized_equal": true,
+    "callees": [
+      {
+        "offset": 112,
+        "original": "0x1a7558",
+        "candidate": "0x18fb50",
+        "normalized_equal": true
+      },
+      {
+        "offset": 168,
+        "original": "0x1b3610",
+        "candidate": "0x19dc70",
+        "normalized_equal": true
+      },
+      {
+        "offset": 216,
+        "original": "0x1b3610",
+        "candidate": "0x19dc70",
+        "normalized_equal": true
+      },
+      {
+        "offset": 264,
+        "original": "0x1b3610",
+        "candidate": "0x19dc70",
+        "normalized_equal": true
+      },
+      {
+        "offset": 352,
+        "original": "0x1a0530",
+        "candidate": "0x188b28",
+        "normalized_equal": true
+      },
+      {
+        "offset": 416,
+        "original": "0x156fe8",
+        "candidate": "0x14be48",
+        "normalized_equal": true
+      },
+      {
+        "offset": 456,
+        "original": "0x1ab1b0",
+        "candidate": "0x194b18",
+        "normalized_equal": true
+      },
+      {
+        "offset": 576,
+        "original": "0x1570b8",
+        "candidate": "0x14bf18",
+        "normalized_equal": true
+      },
+      {
+        "offset": 616,
+        "original": "0x1570b8",
+        "candidate": "0x14bf18",
+        "normalized_equal": true
+      },
+      {
+        "offset": 640,
+        "original": "0x199db8",
+        "candidate": "0x1823b0",
+        "normalized_equal": true
+      },
+      {
+        "offset": 656,
+        "original": "0x19a020",
+        "candidate": "0x182618",
+        "normalized_equal": true
+      },
+      {
+        "offset": 760,
+        "original": "0x1570b8",
+        "candidate": "0x14bf18",
+        "normalized_equal": true
+      },
+      {
+        "offset": 856,
+        "original": "0x1570b8",
+        "candidate": "0x14bf18",
+        "normalized_equal": true
+      }
+    ]
+  },
+  "seed_descriptor": {
+    "outer_groups": 1,
+    "inner_seed_lengths": [
+      0,
+      1
+    ],
+    "original_and_candidate_confirmed": true
+  },
+  "runtime": {
+    "cases": 197,
+    "transactions": 394,
+    "verified_signatures": 784,
+    "diagnostic_mismatches": 0,
+    "invocation_order_mismatches": 0,
+    "new_inputs": 0
+  },
+  "limits": [
+    "Whole original ELF identity remains false.",
+    "Handler equality is reported separately; only the896Btyped helper is claimed exact.",
+    "The empty seed preserves PDA hash input bytes here but restores the original explicit signer descriptor.",
+    "No other IDL constraints/borrow/error/CPI/account-order changes; previous197-case fixtures preserved."
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "status": "Validated holder-distribution standard ATA creation recovery",
+  "baseline": "work/parallel-main-distribution-v2-parser-next/source01",
+  "files": {
+    "src/creator/distribute_fee_to_holders.rs": "90ee67a79ecb01a480e7b3fd6d812ba46143bfe664c5b2bcbcc01648d0e2a596"
+  },
+  "patch_sha256": "b27e34a558e6a495c8064137066f03ec66b4d820763e3ae39b1f4abd495b4147",
+  "candidate_sha256": "ace39c3fa9001ccee119c96bfce1b15ddcb11aa62b2cbd05f636eee014bcd136",
+  "unstripped_sha256": "115590a3a807bfeae359c472cf9c19cb1649d43985857078f933ee8267da680e",
+  "build_receipt_sha256": "578434f89af065339666a4e4179b4d69612ddd65eb02d2543235c6f8d39d8232",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 739,
+    "unmatched": 296
+  },
+  "complete_match_delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "handler": {
+    "original_start": "0x34558",
+    "original_bytes": 14512,
+    "baseline_bytes": 17464,
+    "candidate_start": "0x4dfb8",
+    "candidate_bytes": 15936,
+    "normalized_equal": false
+  },
+  "scope": "Only replace the manually packed ATA creation with the original-backed AnchorSPL Create API. No other checks/transfers/events/close order/type changes.",
+  "runtime": {
+    "case_counts": {
+      "distribution": 298,
+      "minimum": 181,
+      "regressions": 62,
+      "rent": 6,
+      "pending": 72,
+      "quote_gate": 18,
+      "holder": 649
+    },
+    "cases": 1286,
+    "mismatches": 0,
+    "strict_diagnostics": 0,
+    "invocation_mismatches": 0,
+    "distinct_transactions": 287,
+    "new_coverage": 0
+  },
+  "static_evidence_sha256": "fb4581a575bb496efd2280a3f83d0a847bf2c3693b9c631f73eb1681e7ff4472",
+  "original_ata_data_proof_sha256": "73c519efa3db0c1dc6ff05dcb94e83a6f7586b4a3189779bb4ac9eda20ee493d",
+  "limits": [
+    "No full handler/ELF identity claim unless the handler record explicitly reports equality.",
+    "No final text/data order recipe qualification.",
+    "Only existing frozen test fixtures executed; no new owner-mutation cases introduced."
+  ]
+}

@@ -1,0 +1,18 @@
+--- a/src/distribution.rs
++++ b/src/distribution.rs
+@@ -53,6 +53,7 @@
+ pub fn execute<'info>(ctx:Context<'_, '_, '_, 'info,DistributeCreatorFees<'info>>)->Result<DistributeCreatorFeesEvent>{
+  let a=&ctx.accounts;
+  require!(a.sharing_config.status==ConfigStatus::Active,PumpError::SharingConfigNotActive);
++ require!(a.bonding_curve.creator_fee==0,PumpError::CreatorFeesNotSwept);
+  let rent=Rent::get()?;
+  let (transfers,minimum_distributable,_,available)=get_distribution_amounts(&rent,&a.sharing_config.shareholders,ctx.remaining_accounts,&a.creator_vault)?;
+  let eligible=available>=minimum_distributable;let mut distributed=0u64;
+@@ -85,6 +86,7 @@
+ pub fn execute_v2<'info>(ctx:Context<'_, '_, '_, 'info,DistributeCreatorFeesV2<'info>>,initialize_ata:bool)->Result<DistributeCreatorFeesEvent>{
+  let a=&ctx.accounts;
+  require!(a.sharing_config.status==ConfigStatus::Active,PumpError::SharingConfigNotActive);
++ require!(a.bonding_curve.creator_fee==0,PumpError::CreatorFeesNotSwept);
+  let native=a.bonding_curve.quote_mint==Pubkey::default() || a.bonding_curve.quote_mint==anchor_spl::token::spl_token::native_mint::ID;
+  let count=a.sharing_config.shareholders.len();
+  let mut distributed=0u64;let bump=[ctx.bumps.creator_vault];let seeds:&[&[u8]]=&[b"creator-vault",a.bonding_curve.creator.as_ref(),&bump];

@@ -1,0 +1,120 @@
+--- a/src/buy_v2.rs
++++ b/src/buy_v2.rs
+@@ -116,11 +116,13 @@
+   if cf>0{token_interface::transfer_checked(CpiContext::new(a.quote_token_program.to_account_info(),TransferChecked{from:a.associated_quote_user.to_account_info(),mint:a.quote_mint.to_account_info(),to,authority:a.user.to_account_info()}),cf,a.quote_mint.decimals)?;}
+  }
+  if cashback_coin{crate::token_incentives::volume_accumulator::record_cashback_earned(&mut a.user_volume_accumulator,cf,native)?;}
+- if native{
+-  if quote>0{anchor_lang::system_program::transfer(CpiContext::new(a.system_program.to_account_info(),anchor_lang::system_program::Transfer{from:a.user.to_account_info(),to:a.bonding_curve.to_account_info()}),quote)?;}
+- }else if gross_quote>0{
+-  token_interface::transfer_checked(CpiContext::new(a.quote_token_program.to_account_info(),TransferChecked{from:a.associated_quote_user.to_account_info(),mint:a.quote_mint.to_account_info(),to:a.associated_quote_bonding_curve.to_account_info(),authority:a.user.to_account_info()}),gross_quote,a.quote_mint.decimals)?;
+- }
++ crate::trade::user_quote_payments::transfer_from_user(
++  native,a.system_program.as_ref(),&a.user,a.bonding_curve.as_ref(),
++  if native{quote}else{gross_quote},&a.quote_token_program,a.quote_mint.decimals,
++  a.quote_mint.as_ref().as_ref(),
++  if native{None}else{Some(a.associated_quote_user.as_ref())},
++  if native{None}else{Some(a.associated_quote_bonding_curve.as_ref())},
++ )?;
+  let (bf,protocol_fee)=recipient_payments::split_protocol_fee(&a.global,pf,c.is_mayhem_mode);
+  let buyback_received=if native{bf}else{sub(bf,crate::trade::quote_transfer_fee(&a.quote_mint.to_account_info(),bf,false)?)?};
+  if native{
+--- a/src/trade_v3.rs
++++ b/src/trade_v3.rs
+@@ -220,13 +220,18 @@
+     token_interface::transfer_checked(CpiContext::new_with_signer(a.base_token_program.to_account_info(),TransferChecked{
+         from:a.associated_base_bonding_curve.to_account_info(),mint:a.base_mint.to_account_info(),to:a.associated_base_user.to_account_info(),authority:a.bonding_curve.to_account_info()
+     },&[seeds]),transfer_base,a.base_mint.decimals)?;
++    user_quote_payments::transfer_from_user(
++        is_sol,a.system_program.as_ref(),&a.user,a.bonding_curve.as_ref(),
++        if is_sol{user_output}else{pool_quote},&a.quote_token_program,
++        quote_decimals.unwrap_or_default(),a.quote_mint.as_ref().as_ref(),
++        if is_sol{None}else{Some(a.associated_quote_user.as_ref())},
++        if is_sol{None}else{Some(a.associated_quote_bonding_curve.as_ref())},
++    )?;
+     if let Some(decimals)=quote_decimals {
+-      for (to,amount) in [(a.associated_quote_bonding_curve.to_account_info(),pool_quote),(a.buyback_fee_recipient.to_account_info(),total_buyback)] {
+-        if amount==0{continue}
+-        token_interface::transfer_checked(CpiContext::new(a.quote_token_program.to_account_info(),TransferChecked{from:a.associated_quote_user.to_account_info(),mint:a.quote_mint.to_account_info(),to,authority:a.user.to_account_info()}),amount,decimals)?;
++      if total_buyback!=0 {
++        token_interface::transfer_checked(CpiContext::new(a.quote_token_program.to_account_info(),TransferChecked{from:a.associated_quote_user.to_account_info(),mint:a.quote_mint.to_account_info(),to:a.buyback_fee_recipient.to_account_info(),authority:a.user.to_account_info()}),total_buyback,decimals)?;
+       }
+     }else{
+-      anchor_lang::system_program::transfer(CpiContext::new(a.system_program.to_account_info(),anchor_lang::system_program::Transfer{from:a.user.to_account_info(),to:a.bonding_curve.to_account_info()}),user_output)?;
+       a.bonding_curve.sub_lamports(total_buyback)?;a.buyback_fee_recipient.add_lamports(total_buyback)?;
+     }
+     let curve=&mut a.bonding_curve;
+@@ -339,13 +344,18 @@
+     token_interface::transfer_checked(CpiContext::new_with_signer(a.base_token_program.to_account_info(),TransferChecked{
+         from:a.associated_base_bonding_curve.to_account_info(),mint:a.base_mint.to_account_info(),to:a.associated_base_user.to_account_info(),authority:a.bonding_curve.to_account_info()
+     },&[seeds]),transfer_base,a.base_mint.decimals)?;
++    user_quote_payments::transfer_from_user(
++        is_sol,a.system_program.as_ref(),&a.user,a.bonding_curve.as_ref(),
++        if is_sol{user_output}else{pool_quote},&a.quote_token_program,
++        quote_decimals.unwrap_or_default(),a.quote_mint.as_ref().as_ref(),
++        if is_sol{None}else{Some(a.associated_quote_user.as_ref())},
++        if is_sol{None}else{Some(a.associated_quote_bonding_curve.as_ref())},
++    )?;
+     if let Some(decimals)=quote_decimals {
+-      for (to,amount) in [(a.associated_quote_bonding_curve.to_account_info(),pool_quote),(a.buyback_fee_recipient.to_account_info(),total_buyback)] {
+-        if amount==0{continue}
+-        token_interface::transfer_checked(CpiContext::new(a.quote_token_program.to_account_info(),TransferChecked{from:a.associated_quote_user.to_account_info(),mint:a.quote_mint.to_account_info(),to,authority:a.user.to_account_info()}),amount,decimals)?;
++      if total_buyback!=0 {
++        token_interface::transfer_checked(CpiContext::new(a.quote_token_program.to_account_info(),TransferChecked{from:a.associated_quote_user.to_account_info(),mint:a.quote_mint.to_account_info(),to:a.buyback_fee_recipient.to_account_info(),authority:a.user.to_account_info()}),total_buyback,decimals)?;
+       }
+     }else{
+-      anchor_lang::system_program::transfer(CpiContext::new(a.system_program.to_account_info(),anchor_lang::system_program::Transfer{from:a.user.to_account_info(),to:a.bonding_curve.to_account_info()}),user_output)?;
+       a.bonding_curve.sub_lamports(add(buyback_fee,post_buyback)?)?;a.buyback_fee_recipient.add_lamports(add(buyback_fee,post_buyback)?)?;
+     }
+     let curve=&mut a.bonding_curve;
+@@ -488,3 +498,6 @@
+ 
+ #[path="curve_quote_payments.rs"]
+ pub mod quote_payments;
++
++#[path="user_quote_payments.rs"]
++pub mod user_quote_payments;
+--- /dev/null
++++ b/src/user_quote_payments.rs
+@@ -0,0 +1,41 @@
++use anchor_lang::prelude::*;
++use anchor_spl::token_interface::TokenInterface;
++use crate::trade_types::BondingCurve;
++
++#[inline(never)]
++pub fn transfer_native<'info>(
++    system_program: &AccountInfo<'info>,
++    payer: &Signer<'info>,
++    destination: &Account<'info, BondingCurve>,
++    amount: u64,
++) -> Result<()> {
++    if amount == 0 { return Ok(()); }
++    anchor_lang::system_program::transfer(
++        CpiContext::new(system_program.clone(), anchor_lang::system_program::Transfer {
++            from: payer.to_account_info(),
++            to: destination.to_account_info(),
++        }), amount,
++    )
++}
++
++#[inline(never)]
++pub fn transfer_from_user<'info>(
++    native: bool,
++    system_program: &AccountInfo<'info>,
++    payer: &Signer<'info>,
++    destination: &Account<'info, BondingCurve>,
++    amount: u64,
++    token_program: &Interface<'info, TokenInterface>,
++    quote_decimals: u8,
++    quote_mint: &AccountInfo<'info>,
++    quote_source: Option<&AccountInfo<'info>>,
++    quote_destination: Option<&AccountInfo<'info>>,
++) -> Result<()> {
++    if native { return transfer_native(system_program, payer, destination, amount); }
++    let from = quote_source.unwrap();
++    let to = quote_destination.unwrap();
++    let authority = payer.to_account_info();
++    crate::sell_v2::quote_token_transfers::transfer_quote_tokens(
++        token_program, from, to, authority, quote_decimals, quote_mint, amount, &[],
++    )
++}

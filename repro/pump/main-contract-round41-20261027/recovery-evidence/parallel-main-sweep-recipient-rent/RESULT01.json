@@ -1,0 +1,30 @@
+{
+  "status": "Frozen verified delivery",
+  "scope": "Native creator Sweep rent funding before payout",
+  "source": "source01/src/sweep_fees.rs",
+  "source_sha256": "44dd89a2707d44a9e76d88dc1e79ef79cba96eb69de7f689bd80f90681b0f41f",
+  "candidate_sha256": "fdff6ea1780b68be4523ca43e64e021b25ead81f7a5570b801f828fc67be0082",
+  "unstripped_sha256": "c9a689ea253536950631a515b32006f37b76f3c4224c130e6d623d05c4416639",
+  "base": "frozen Round24-final",
+  "patch": "sweep-recipient-rent01.patch",
+  "signed_cases": 536,
+  "case_counts": {
+    "after": 32,
+    "full": 504
+  },
+  "before_incremental_mismatches": 4,
+  "after_mismatches": 0,
+  "diagnostic_mismatches": 0,
+  "invocation_mismatches": 0,
+  "inventory": {
+    "baseline_count": 720,
+    "candidate_count": 720,
+    "gains": [],
+    "losses": []
+  },
+  "raw_windows": 123,
+  "change": "For a positive native creator-fee sweep, ensure recipient zero-space rent exemption by paying the full rent minimum from payer before debiting curve. Reuse accepted legacy helper.",
+  "unchanged_controls": "protocol sweeps, token quote, zero amount, sufficient recipient balances",
+  "evidence": "EXHAUSTIVE-CALLGRAPH.json and original-sweep-rent.asm; fourth3b738caller is AdminCto, as corrected by build_identity.",
+  "limitations": "No new normalized body; fullELF remains unequal. Original Sweep directly calls8cc58 transfer; minimal semantic fix reuses3b738-shaped ensure helper."
+}

@@ -1,0 +1,37 @@
+{
+  "scope": "Independent read-only collection rent arithmetic/precedence review; no source changes",
+  "files": {
+    "CLI-MANIFEST.json": "9c26936b8ab43c408f962083f0ab86e86e6ea773ff1e85b1c9b4fc762a33a19d",
+    "DRIVER-SMOKE-SPECS.json": "6bd52e4dd4f6ac1a7d666da9d44abf8f6b345af7419f0bebfbfbaf98cfe2f136",
+    "README.md": "3f9314e44a538c08bb061a02b1aac39d477c3ed2376156be7b4087b866d9c1b7",
+    "RESULT01.json": "4f3d76af3d032a93e84fef25ebf40e37d5a75dd9d7d2b9cac8f774a6d95595e1",
+    "SPECS01.json": "9fc5647ff8d12c727ecf449871ca16da08a1e230164e4f2e8b59355d065eed6a",
+    "STATIC01.json": "6a7627cbd8c5ee5148a6eb8eaa400d080bb85ba6cc7006a48f053c27d7deb317",
+    "driver-smoke.json.gz": "45fafc765aaa73e3067d31181fb2ec280d3917a360e37f727b60467bc9b47b91",
+    "driver-smoke.loader.json": "38cb02f277d98cbf70204607d78148bc5ad6bea5f2a762182790ecb744ec67ed",
+    "driver-smoke.log": "5f9406a4168cc06a416b25d9fee2ae69a7d127bd245ca47a5bd63f607d1572b1",
+    "executable01.json.gz": "4a7183088825e17988169acaff1b4e64e62e895ba90159e4517a37a41b3d5884",
+    "executable01.loader.json": "f4a637a3cf5bc837d05f1079a4473b30c1462571a0ac49e1b0779aca4d28a8a7",
+    "executable01.log": "58562287f334b1203bb7373f38dd5c6f7519ac2314873b128a9138d1b27a07a5",
+    "owner-live01.json.gz": "0412b6a8c63cbf09a33ba36c01480f4a075514ce76dbe2338f52f5a5b3523dc5",
+    "owner-live01.loader.json": "64c61b1efe6f41e27674e7f5c9f508751f7dcba8acbad1294986fe162b260700",
+    "owner-live01.log": "1c0c378bcacbf85bb5720375f91dfa50e5b9f7d6210c197114dfaa3b221a6ae3",
+    "precedence01.json.gz": "f9e06b7326690591a0e362383222dc786c3ed980d052de07124a5a6b30f6be18",
+    "precedence01.loader.json": "1957bfb6dcfa5b8f5ad07d2585ae65db8b7161d4c1551431232e16850fb05ace",
+    "precedence01.log": "368adba5b5fa21dd728c73e84b109c549d349a484d894b5ff75833869582f1d2",
+    "probe-executable.py": "d5a92ae4db65d62d9436cfb70a879f38c6496dcd4d5c7d1a23229a240aeb7d72",
+    "probe-owner-live.py": "858911ac8c8e90355efc3e07d4a14194c87b1c3e12142aa1cdf0e0507d50d28f",
+    "probe-precedence.py": "46cfcb9eebd9a9ec11c4090334dfef049de6ba75f9a9b6f40dc63d4d97cd8c8e",
+    "probe-selected.py": "c277dd0be196285a3ea148be07263e64125720ab146eb4195c40c0d1109b382d"
+  },
+  "external_inputs": {
+    "work/parallel-main-collection-rent/build01/candidate.so": "cb7125dd0aabaa41397597e6bd32f9f949394adbe1647b5a0df489f325dd6c6a",
+    "work/parallel-main-collection-rent/build01/build-comparison.json": "fad4d7f16ffa7f4078160985dfd8ef5bb470065b13ec642932a4f6ec27b15ab5",
+    "evidence/original/pump/deployed.so": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+    "scripts/pump_creator_collect_v2_differential.py": "519ce5139755e1132fbd44c7a8592b7866ab67fb37adb981606fd62328f7b70b",
+    "scripts/pump_creator_collect_differential.py": "1425b2eb7449621f0d15685819f019252481b5661347876cf378eca2a8ea4c24",
+    "scripts/pump_diagnostic_audit.py": "0343c70e4f9c7860ad392f0a8bd10d90ac94fe17bb2ba5bfd49a45683edbe343",
+    "work/parallel-main-loader-optimized/pump_with_captured_loader.py": "4eb9d65c8e54b39b2e991f1cff6068a28bd2d5c1a33601225d3608eb5e82863e",
+    "work/parallel-main-loader-optimized/pump_captured_loader.py": "844decb7fd4ffe0eaa2ff6243433c7290c478083320cfcdf5bd35debeb2e4858"
+  }
+}

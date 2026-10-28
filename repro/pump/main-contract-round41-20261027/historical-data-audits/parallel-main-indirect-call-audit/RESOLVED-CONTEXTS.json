@@ -1,0 +1,807 @@
+{
+  "proof": {
+    "caller_function": 50816,
+    "callee_function": 1761200,
+    "known_direct_calls": 30,
+    "indirect_sites": [
+      1761432,
+      1761840
+    ],
+    "vtable_argument": 1824928,
+    "method_offset": 24,
+    "relocated_method_slot": 1824952,
+    "target": 43136,
+    "raw_table_prefix": "00000000f0ae0000080000000000000008000000000000000000000080a80000",
+    "all_known_direct_call_arguments_checked_against_original_bytes": true,
+    "callee_function_pointer_references": [],
+    "existing_data_frontier_mapping": {
+      "original": "0x1bd8a0",
+      "candidate": "0x1a6258",
+      "uses": 30,
+      "candidate_sha256": "e25240857e10baffef8e68f33f70bcef3e9359551665ab8f56db2a33150096ea"
+    },
+    "limitation": "This resolves both indirect sites when reached from those30 static call instructions. It is not proof that no computed/indirect call can enter the callee with another vtable."
+  },
+  "contexts": [
+    {
+      "caller": 50816,
+      "direct_callsite": 50912,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 50912,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 50976,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 50976,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51040,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51040,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51104,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51104,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51168,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51168,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51232,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51232,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51296,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51296,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51360,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51360,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51424,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51424,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51488,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51488,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51552,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51552,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51616,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51616,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51680,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51680,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51744,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51744,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51808,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51808,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51872,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51872,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51936,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 51936,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52000,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52000,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52064,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52064,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52128,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52128,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52192,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52192,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52256,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52256,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52320,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52320,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52384,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52384,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52448,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52448,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52512,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52512,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52576,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52576,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52640,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52640,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52704,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52704,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52760,
+      "callee": 1761200,
+      "indirect_callsite": 1761432,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae080"
+      ]
+    },
+    {
+      "caller": 50816,
+      "direct_callsite": 52760,
+      "callee": 1761200,
+      "indirect_callsite": 1761840,
+      "targets": [
+        43136
+      ],
+      "exhaustive_for_this_callsite": true,
+      "provenance": [
+        "roload64(0x1bd8b8)=0xa880@0x1ae208"
+      ]
+    }
+  ]
+}

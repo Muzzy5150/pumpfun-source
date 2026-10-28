@@ -1,0 +1,110 @@
+{
+  "status": "validated real native helper caller reuse; no normalized-window gain claimed",
+  "baseline": "exact stable R32-draft snapshot, one unchanged native-profile control",
+  "candidate_sha256": "5337a335204a6301f42012c942a1762276b41df9716db75bf63796154d93921f",
+  "unstripped_sha256": "39f42e83a26613fb758446e0e4e684511d04f7eea0d69375264aa08d414a5738",
+  "baseline_candidate_sha256": "da2cfed2e2f39e84c359fd9eca4133ed62fda32a237a81bf91eb8a4e8ba53c19",
+  "baseline_unstripped_sha256": "0643b11035d3363f7802c72ca18677d1e59f5cc5b44211f6eef7a15c0632e956",
+  "source_file": "src/multi_hop_curve_swap.rs",
+  "source_sha256": "f27e2d6626a384d85bcd682aa59b3f556cd06498baa7efc284392b1ddcf1898b",
+  "baseline_source_sha256": "f1e05d9576fd94a6052c27f5a3b39be2b1bcf4fc38285847b76bc5cc5537f53b",
+  "patch_sha256": "e7bf8c9caf91154280bb692a6dfa7938181338c2ddcf962c6be79b03553fdffd",
+  "inventory": {
+    "total": 1035,
+    "raw": 124,
+    "normalized": 733,
+    "unmatched": 302
+  },
+  "full_sets": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "exact_callee": {
+    "original": "0x8df98",
+    "bytes": 1208,
+    "candidate": "0xba490"
+  },
+  "caller_edges": {
+    "original_calls": [
+      {
+        "site": "0x5e030",
+        "owner": "0x5b3b0"
+      },
+      {
+        "site": "0x979b8",
+        "owner": "0x97930"
+      }
+    ],
+    "baseline_incoming": [
+      {
+        "site": "0xbb038",
+        "target": "0xbaaf8",
+        "owners": [
+          {
+            "start": "0xbafb0",
+            "bytes": 704,
+            "symbol": "_ZN14pump_recovered19user_quote_payments18transfer_from_user17h86c1a707cface0fcE"
+          }
+        ]
+      }
+    ],
+    "candidate_incoming": [
+      {
+        "site": "0x21d98",
+        "target": "0xba490",
+        "owners": [
+          {
+            "start": "0x1cb80",
+            "bytes": 43160,
+            "symbol": "_ZN14pump_recovered15multi_hop_curve7execute17h2a99127d26e341c3E"
+          }
+        ]
+      },
+      {
+        "site": "0xba9d0",
+        "target": "0xba490",
+        "owners": [
+          {
+            "start": "0xba948",
+            "bytes": 704,
+            "symbol": "_ZN14pump_recovered19user_quote_payments18transfer_from_user17h86c1a707cface0fcE"
+          }
+        ]
+      }
+    ],
+    "native_normalized_exact": true,
+    "old_edge_count": 1,
+    "new_edge_count": 2,
+    "large_caller_body_identity_proved": false
+  },
+  "runtime": {
+    "case_counts": {
+      "two-curve": 20,
+      "flags": 16,
+      "native": 56,
+      "continuation": 12,
+      "native-lamports": 9
+    },
+    "total_cases": 113,
+    "signatures_verified": 226,
+    "transaction_bytes_identical": true,
+    "diagnostic_mismatches": [],
+    "invocation_sequence_mismatches": [],
+    "new_native_lamport_cases": 9,
+    "successful_edge_baselines": 2,
+    "system_overflow_edge_cases": 4,
+    "zero_before_edge": 3
+  },
+  "limits": [
+    "No new normalized or raw function-window matches; this closes the genuine missing MultiHop incoming edge.",
+    "The18,584-byte original caller and current large execute body remain unmatched.",
+    "Full ELF equality remains false.",
+    "Parent combined qualification remains required."
+  ]
+}

@@ -1,0 +1,782 @@
+[
+  {
+    "case": "transfer-fee-size-128",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        1,
+        "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "default-state-1-255",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        6,
+        "ff"
+      ]
+    ]
+  },
+  {
+    "case": "default-state-2-0",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        6,
+        "0000"
+      ]
+    ]
+  },
+  {
+    "case": "default-state-2-1",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        6,
+        "0101"
+      ]
+    ]
+  },
+  {
+    "case": "default-state-2-2",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        6,
+        "0202"
+      ]
+    ]
+  },
+  {
+    "case": "default-state-2-255",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        6,
+        "ffff"
+      ]
+    ]
+  },
+  {
+    "case": "default-state-8-0",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        6,
+        "0000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "default-state-8-1",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        6,
+        "0101010101010101"
+      ]
+    ]
+  },
+  {
+    "case": "default-state-8-2",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        6,
+        "0202020202020202"
+      ]
+    ]
+  },
+  {
+    "case": "default-state-8-255",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        6,
+        "ffffffffffffffff"
+      ]
+    ]
+  },
+  {
+    "case": "transfer-hook-size-96",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        14,
+        "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "transfer-hook-nonzero-0",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        14,
+        "c70000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "transfer-hook-nonzero-1",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        14,
+        "00c700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "transfer-hook-nonzero-31",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        14,
+        "00000000000000000000000000000000000000000000000000000000000000c700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "transfer-hook-nonzero-32",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        14,
+        "0000000000000000000000000000000000000000000000000000000000000000c7000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "transfer-hook-nonzero-33",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        14,
+        "000000000000000000000000000000000000000000000000000000000000000000c70000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "transfer-hook-nonzero-63",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        14,
+        "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c70000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "transfer-hook-nonzero-64",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        14,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c700000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "transfer-hook-nonzero-65",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        14,
+        "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c7000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "transfer-hook-nonzero-95",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        14,
+        "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c7"
+      ]
+    ]
+  },
+  {
+    "case": "rejected-63-0",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        63,
+        ""
+      ]
+    ]
+  },
+  {
+    "case": "rejected-63-1",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        63,
+        "00"
+      ]
+    ]
+  },
+  {
+    "case": "rejected-64-0",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        64,
+        ""
+      ]
+    ]
+  },
+  {
+    "case": "rejected-64-1",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        64,
+        "00"
+      ]
+    ]
+  },
+  {
+    "case": "rejected-255-0",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        255,
+        ""
+      ]
+    ]
+  },
+  {
+    "case": "rejected-255-1",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        255,
+        "00"
+      ]
+    ]
+  },
+  {
+    "case": "rejected-65535-0",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        65535,
+        ""
+      ]
+    ]
+  },
+  {
+    "case": "rejected-65535-1",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        65535,
+        "00"
+      ]
+    ]
+  },
+  {
+    "case": "sequence-101",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        0,
+        ""
+      ],
+      [
+        65535,
+        ""
+      ]
+    ]
+  },
+  {
+    "case": "sequence-102",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        18,
+        ""
+      ],
+      [
+        0,
+        ""
+      ],
+      [
+        18,
+        ""
+      ]
+    ]
+  },
+  {
+    "case": "sequence-103",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        14,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      [
+        0,
+        ""
+      ],
+      [
+        14,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "sequence-104",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        18,
+        ""
+      ],
+      [
+        19,
+        ""
+      ],
+      [
+        18,
+        ""
+      ]
+    ]
+  },
+  {
+    "case": "sequence-105",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        18,
+        ""
+      ],
+      [
+        4,
+        ""
+      ]
+    ]
+  },
+  {
+    "case": "sequence-106",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        4,
+        ""
+      ],
+      [
+        18,
+        ""
+      ]
+    ]
+  },
+  {
+    "case": "False-False-metadata",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": false,
+    "quote_extensions": [
+      [
+        18,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "False-False-group-pointer",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": false,
+    "quote_extensions": [
+      [
+        20,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "False-False-member-pointer",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": false,
+    "quote_extensions": [
+      [
+        22,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "False-False-unknown",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": false,
+    "quote_extensions": [
+      [
+        29,
+        ""
+      ]
+    ]
+  },
+  {
+    "case": "False-False-short-fee",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": false,
+    "quote_extensions": [
+      [
+        1,
+        "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "False-False-padding",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": false,
+    "quote_extensions": [
+      [
+        18,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ],
+    "mutations": {
+      "quote_mint": {
+        "patches": [
+          [
+            82,
+            "01"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "case": "False-False-duplicate",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": false,
+    "quote_extensions": [
+      [
+        18,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      [
+        18,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ]
+  },
+  {
+    "case": "False-True-unknown",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        29,
+        ""
+      ]
+    ]
+  },
+  {
+    "case": "True-False-base",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": false,
+    "quote_extensions": [],
+    "quote_key": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
+  },
+  {
+    "case": "True-False-metadata",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": false,
+    "quote_extensions": [
+      [
+        18,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ],
+    "quote_key": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
+  },
+  {
+    "case": "True-False-group-pointer",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": false,
+    "quote_extensions": [
+      [
+        20,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ],
+    "quote_key": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
+  },
+  {
+    "case": "True-False-member-pointer",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": false,
+    "quote_extensions": [
+      [
+        22,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ],
+    "quote_key": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
+  },
+  {
+    "case": "True-False-unknown",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": false,
+    "quote_extensions": [
+      [
+        29,
+        ""
+      ]
+    ],
+    "quote_key": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
+  },
+  {
+    "case": "True-False-short-fee",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": false,
+    "quote_extensions": [
+      [
+        1,
+        "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ],
+    "quote_key": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
+  },
+  {
+    "case": "True-False-padding",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": false,
+    "quote_extensions": [
+      [
+        18,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ],
+    "quote_key": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+    "mutations": {
+      "quote_mint": {
+        "patches": [
+          [
+            82,
+            "01"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "case": "True-False-duplicate",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": false,
+    "quote_extensions": [
+      [
+        18,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      [
+        18,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ],
+    "quote_key": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
+  },
+  {
+    "case": "True-True-base",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [],
+    "quote_key": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
+  },
+  {
+    "case": "True-True-metadata",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        18,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ],
+    "quote_key": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
+  },
+  {
+    "case": "True-True-group-pointer",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        20,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ],
+    "quote_key": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
+  },
+  {
+    "case": "True-True-member-pointer",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        22,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ],
+    "quote_key": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
+  },
+  {
+    "case": "True-True-unknown",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        29,
+        ""
+      ]
+    ],
+    "quote_key": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
+  },
+  {
+    "case": "True-True-short-fee",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        1,
+        "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ],
+    "quote_key": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
+  },
+  {
+    "case": "True-True-padding",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        18,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ],
+    "quote_key": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+    "mutations": {
+      "quote_mint": {
+        "patches": [
+          [
+            82,
+            "01"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "case": "True-True-duplicate",
+    "instruction": "create_v2",
+    "quote": true,
+    "quote_token22": true,
+    "quote_extensions": [
+      [
+        18,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      [
+        18,
+        "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+    ],
+    "quote_key": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
+  }
+]

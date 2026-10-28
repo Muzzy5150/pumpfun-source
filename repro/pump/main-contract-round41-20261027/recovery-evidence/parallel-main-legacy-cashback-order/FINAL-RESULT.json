@@ -1,0 +1,37 @@
+{
+  "status": "frozen validated narrow patch",
+  "base": "work/parallel-main-integration/round26-source/programs/pump",
+  "modified_files": [
+    "src/sell.rs"
+  ],
+  "source_sha256": "77ee2e493b73895d870b7df426855e47162cc11ca6678cbb422781a1d00e47ef",
+  "candidate_sha256": "8db29dc708526ac8c2240f6dff1f8d2b3bb78eb957964bd8dab2d353261eeb5e",
+  "unstripped_sha256": "9ef7de5113a1bd2f59f93f82318ec8ede2be114e5b781beacf85d9984b9ed376",
+  "paired_cases": 165,
+  "new_matrix_cases": 22,
+  "focused_regression_cases": 143,
+  "strict_log_cases": 165,
+  "signed_transactions_verified": 330,
+  "paired_program_loads_verified": 330,
+  "before_differences": 4,
+  "after_differences": 0,
+  "window_delta": {
+    "normalized": {
+      "gains": [],
+      "losses": []
+    },
+    "raw": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "inventory": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 721,
+    "unmatched": 314
+  },
+  "patch": "sell-cashback-order.patch",
+  "new_case_cli": "CLI-MANIFEST.json",
+  "source_change": "Read the first cashback remaining account or return6072; validate it as the accumulator before the existing V2 lookup. Fee/base CPI order retained."
+}

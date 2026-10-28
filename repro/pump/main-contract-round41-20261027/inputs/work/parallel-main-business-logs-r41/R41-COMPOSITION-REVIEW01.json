@@ -1,0 +1,52 @@
+{
+  "status": "PASS source composition review; full combined build/runtime pending",
+  "staged_sha256": "5748651f29ee2489cd6f6d1293b2121f817466e00b3f5618db8fd61687983f01",
+  "source": "work/parallel-main-r41-composition/source01",
+  "input_count": 64,
+  "changed_inputs": 12,
+  "new_files": [
+    "src/creator/set_creator.rs",
+    "src/creator/set_metaplex_creator.rs",
+    "src/set_reserved_fee_recipients.rs"
+  ],
+  "checks": [
+    "All64 physical compiler inputs exactly match manifest; every copied file matches its declared qualified lane.",
+    "lib.rs reconstructs exactly from qualified creator/owned-quote base plus two qualified reserved wrappers and one module declaration.",
+    "Cargo manifest/lock unchanged from frozenR40.",
+    "TradeEvent constructor/source untouched from frozenR40.",
+    "All four qualified business files identical, including native frozen-parser/ATA/collector order and gates.",
+    "Cashback and volume files identical to qualified lane copies; no unselected executable notice or owned-return experiment.",
+    "One new signed cashback input only; zero-log and156 business rows strengthen existing coverage."
+  ],
+  "proofs_checked": {
+    "creator": {
+      "path": "work/parallel-main-creator-path-placement/RESULT01.json",
+      "sha256": "7974738d037f61bc03028e35a391ac1c48f577ac5381bc7073af3c5a484a11f0"
+    },
+    "owned_quote": {
+      "path": "work/parallel-main-owned-quote-placement/RESULT01.json",
+      "sha256": "1b34a0bad33e9ebf69137d3f3645a05d9ac355c212f84bbab3ae4724278261d2"
+    },
+    "reserved": {
+      "path": "work/parallel-main-reserved-source-module/RESULT01.json",
+      "sha256": "8a0bee7dbf150266ff63dc8094b48683b4f5dc8e5498bd056d5798ec17b49e67"
+    },
+    "cashback": {
+      "path": "work/parallel-main-cashback-v2-api/FIX-RESULT02.json",
+      "sha256": "8ace2a479bdce1bca83a4070a21c8b48f8c9657e024210f87f1d1e5c47b549af"
+    },
+    "volume": {
+      "path": "work/parallel-main-volume-routine-logs/RESULT01.json",
+      "sha256": "f88d1d02a219ff0c488be2639beed981826fc6e4dcd224722f18c81335979da2"
+    },
+    "business_runtime": {
+      "path": "work/parallel-main-business-logs-r41/RUNTIME-LOG-REVIEW03.json",
+      "sha256": "d0f4644b035e60924e3539eeb032840d2a99aed9b04f3e9bb5a497d1d3a2b676"
+    }
+  },
+  "limits": [
+    "Business proof in STAGED01 is the initial2186-case report; final private business result additionally covers64 existing sweep cases to close all156 target rows. Source bytes do not change.",
+    "Full R41 run must pass ordinary business messages and keep source-filename differences explicitly counted.",
+    "Per-lane/source composition evidence is not whole-ELF identity."
+  ]
+}

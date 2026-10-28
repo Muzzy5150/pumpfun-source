@@ -1,0 +1,68 @@
+{
+  "status": "Single original-backed physical-module and common-return control qualified in37focused cases; no normalized/raw set gain",
+  "source_files": {
+    "src/nested_create.rs": {
+      "before": "a82709785ab519440149f711e3b04af5384f8e99158c494c88ce9364135c967c",
+      "after": "bfd7308b017623f288a372871a298bd76151c64faf58a081cb6cb8c8ee19a644"
+    },
+    "src/quote_control/state.rs": {
+      "before": "98df5c28a3c0006fcdef4f3cb0c3529ad0aca6393fe8b99852f12abc502d5213",
+      "after": "960e011099451f70156573f1e0a4c3f600d500a63fd3b35bd0af05a121794921"
+    }
+  },
+  "patch_sha256": "2d4f3b01affafabac6552746685059689804a85bbd00c0890b9651eb5df9ce96",
+  "parent_manifest_sha256": "6c64dfb21dc9db892a2e4eb36b69d23577263e56c9d5a11020f2c93ff8258b4c",
+  "candidate_sha256": "c1a638d1f1fa05666c3831eeb3ee19aca9f8cb672110a8b648eb96feab32dad7",
+  "unstripped_sha256": "1932efa79c94da73deff84b334b0fb109d8eed4984acfaa7dc28e10c8201931b",
+  "build_receipt_sha256": "81dd48a969c34ff384b716fffe08295496d1b6210dc49120a952103f31671605",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 735,
+    "unmatched": 300
+  },
+  "delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "reader": {
+    "original_bytes": 1736,
+    "previous_bytes": 1728,
+    "candidate_bytes": 1736,
+    "previous_positional_differences": 106,
+    "candidate_positional_differences": 98,
+    "normalized_equal": false
+  },
+  "retained_exact_bodies": [
+    "0x18568 AccountInfo reader wrapper272B",
+    "0x68918 QuoteControl::space704B"
+  ],
+  "source_origin": {
+    "original_and_candidate": "programs/pump/src/quote_control/state.rs",
+    "extent": 40,
+    "error_sites": 3,
+    "historical_line_numbers_recovered": false
+  },
+  "runtime": {
+    "paired_cases": 37,
+    "transactions": 74,
+    "signatures": 148,
+    "new_inputs": 0,
+    "diagnostic_mismatches": 0,
+    "invocation_order_mismatches": 0
+  },
+  "limits": [
+    "Same body length is not exact identity;98normalized instruction slots still differ.",
+    "No normalized/raw gains or losses. The supported improvement is authentic physical source filename plus observed common-return structure.",
+    "No line padding, source coordinates, guessed public API, compiler flags or dummy callers used.",
+    "This private candidate is based on the sealed reader01source, not a complete R35composition. Parent combined regression is required for any future promotion.",
+    "The37cases are reused from the accepted34unique increment; add no duplicate corpus count.",
+    "Full original ELF equality remains false."
+  ]
+}

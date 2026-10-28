@@ -1,0 +1,81 @@
+{
+  "scope": "Three exact native payout helpers plus typed quote wrappers with genuine V3 and SellV2 callers.",
+  "source": "source03",
+  "source_sha256": {
+    "src/trade_v3.rs": "3bb48fb3a200de4ca4aa002e5adff3816b4242b5f635b2480ab28fa57af8c64d",
+    "src/sell_v2.rs": "4e1938bfae9c6e25faa534bdbf6dc263a5d53c989a9d6b5df170c82e032fea15",
+    "src/curve_quote_payments.rs": "84d8ae750f67db2b2e01084b3e983996f76a8e1354d6c0bab6f8e9efbfe896ba"
+  },
+  "candidate_sha256": "a96441bbd0891dae57fe6825a74623bb52856a3bff1ca3aeae4409431df97024",
+  "unstripped_sha256": "96e464e8c118f360ab7aff40e5764ec345af15640aa5afc0b94d40fad68aa39e",
+  "signed_cases": 1357,
+  "case_counts": {
+    "sell-v2-boundaries24": 24,
+    "sell-v2-thresholds42": 42,
+    "tail-boundaries9": 9,
+    "oversized18": 18,
+    "quote-order22": 22,
+    "cost-order8": 8,
+    "buyback54": 54,
+    "buyback-order16": 16,
+    "buyback-post8": 8,
+    "buyback-prefix7": 7,
+    "buyback-protocol4": 4,
+    "v3-order": 18,
+    "v3-focused": 18,
+    "v3-extensions": 126,
+    "v3-continuation": 42,
+    "v3-configured": 372,
+    "v3-native-buyback": 18,
+    "v3-token-buyback": 12,
+    "v3-crossing": 16,
+    "v3-post-fees": 80,
+    "v3-matrix": 12,
+    "price-divisible": 12,
+    "price-boundaries": 12,
+    "v3-precedence": 36,
+    "multihop-native": 56,
+    "multihop-two-curve": 20,
+    "sell-v2-guards": 32,
+    "sell-v2-atas": 25,
+    "sell-v2-prepare": 12,
+    "v3-supply": 16,
+    "v3-zero-reserve": 4,
+    "sell-v2": 206
+  },
+  "diagnostic_mismatches": 0,
+  "invocation_mismatches": 0,
+  "normalized_windows": 716,
+  "raw_windows": 123,
+  "gains_vs_R23final": [
+    "0x91ef0",
+    "0x95bd8",
+    "0x965b8",
+    "0x969f0"
+  ],
+  "losses": [],
+  "new_owned_exact_bodies": [
+    {
+      "start": "0x95bd8",
+      "bytes": 864
+    },
+    {
+      "start": "0x965b8",
+      "bytes": 1080
+    },
+    {
+      "start": "0x969f0",
+      "bytes": 856
+    }
+  ],
+  "reused_shared_body": "0x91ef0/2352B by context agent",
+  "outer_wrappers": {
+    "0x96d48": "960B vs944",
+    "0x970f8": "1168B vs1160",
+    "0x97580": "960B vs944"
+  },
+  "patch": "native-quote-wrappers03.patch",
+  "integration": "Only3 changed files. Preserve context sharing-loader hunk belowSellV2payoutblock; apply narrowpatch ratherthanoverwritingSellV2fromanotherstage.",
+  "status": "Frozen verified delivery; later typed-base-mint genericcontrolsource04 has no window gain and is excluded.",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d"
+}

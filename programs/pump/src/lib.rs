@@ -48,6 +48,7 @@ pub use creator_migration::*;
 pub mod set_params;
 pub use set_params::*;
 pub mod set_creator;
+pub mod set_reserved_fee_recipients;
 pub use set_creator::*;
 #[path="admin_set_idl_authority.rs"]pub mod idl_authority;
 pub use idl_authority::*;
@@ -132,13 +133,7 @@ pub mod pump_recovered {
      let event=SetParamsEvent{initial_virtual_token_reserves,initial_virtual_sol_reserves,initial_real_token_reserves,token_total_supply,fee_basis_points,withdraw_authority,enable_migrate,pool_migration_fee,creator_fee_basis_points,set_creator_authority,admin_set_creator_authority,final_real_sol_reserves,fee_recipients:recipients,timestamp:Clock::get()?.unix_timestamp};emit!(event.clone());emit_cpi!(event);Ok(())
     }
     pub fn set_mayhem_virtual_params(ctx: Context<SetMayhemVirtualParams>) -> Result<()> { mayhem_virtual_params::execute(ctx) }
-    pub fn set_reserved_fee_recipients(ctx:Context<AdminReadonly>,whitelist_pda:Pubkey)->Result<()>{
-     require_gte!(ctx.remaining_accounts.len(),8,PumpError::NotEnoughRemainingAccounts);
-     for (index,account) in ctx.remaining_accounts.iter().take(8).enumerate(){require_keys_neq!(account.key(),Pubkey::default(),PumpError::AllFeeRecipientsShouldBeNonZero);if account.executable{return Err(crate::account_name::with_owned_name(error!(anchor_lang::error::ErrorCode::ConstraintExecutable), &format!("reserved_fee_recipients[{}]",index)));}if !Rent::get()?.is_exempt(account.lamports(),account.data_len()){return Err(error!(anchor_lang::error::ErrorCode::ConstraintRentExempt).with_account_name(format!("reserved_fee_recipients[{}]",index)));}}
-     let first=ctx.remaining_accounts[0].key();let rest=core::array::from_fn(|i|ctx.remaining_accounts[i+1].key());
-     ctx.accounts.global.whitelist_pda=whitelist_pda;ctx.accounts.global.reserved_fee_recipient=first;ctx.accounts.global.reserved_fee_recipients=rest;
-     let event=ReservedFeeRecipientsEvent{timestamp:Clock::get()?.unix_timestamp,reserved_fee_recipient:first,reserved_fee_recipients:rest};emit!(event.clone());emit_cpi!(event);Ok(())
-    }
+    pub fn set_reserved_fee_recipients(ctx:Context<AdminReadonly>,whitelist_pda:Pubkey)->Result<()>{crate::set_reserved_fee_recipients::execute(ctx,whitelist_pda)}
     pub fn create(ctx:Context<Create>,name:String,symbol:String,uri:String,creator:Pubkey)->Result<()>{
      require_keys_neq!(creator,Pubkey::default(),PumpError::CreatorShouldNotBeZero);
      let a=&ctx.accounts;let bump=[ctx.bumps.mint_authority];let seeds:&[&[u8]]=&[b"mint-authority",&bump];
@@ -284,14 +279,7 @@ pub mod pump_recovered {
     pub fn get_minimum_distributable_fee<'info>(ctx:Context<'_,'_,'_,'info,GetMinimumDistributableFee<'info>>)->Result<MinimumDistributableFeeEvent>{minimum::execute(ctx)}
     pub fn distribute_creator_fees<'info>(ctx:Context<'_,'_,'_,'info,DistributeCreatorFees<'info>>)->Result<DistributeCreatorFeesEvent>{distribution::execute(ctx)}
     pub fn distribute_creator_fees_v2<'info>(ctx:Context<'_,'_,'_,'info,DistributeCreatorFeesV2<'info>>,initialize_ata:bool)->Result<DistributeCreatorFeesEvent>{distribution::execute_v2(ctx,initialize_ata)}
-    pub fn update_buyback_config(ctx:Context<AdminGlobal>,buyback_basis_points:Option<u64>)->Result<()>{
-     let global=&mut ctx.accounts.global;
-     if let Some(value)=buyback_basis_points{global.set_buyback_basis_points(value)?;}
-     if ctx.remaining_accounts.is_empty(){return Ok(());}
-     require!(ctx.remaining_accounts.len()==8,PumpError::WrongBuybackFeeRecipientsCount);
-     let recipients=core::array::from_fn(|index|ctx.remaining_accounts[index].key());
-     global.set_buyback_fee_recipients(recipients)
-    }
+    pub fn update_buyback_config(ctx:Context<AdminGlobal>,buyback_basis_points:Option<u64>)->Result<()>{crate::set_reserved_fee_recipients::update_buyback_config(ctx,buyback_basis_points)}
     pub fn initialize_quote_control(ctx: Context<InitializeQuoteControl>) -> Result<()> { quote_control::initialize_quote_control(ctx) }
     pub fn set_quote_control_admin(ctx: Context<SetQuoteControlAdmin>, new_admin: Pubkey) -> Result<()> { quote_control::set_quote_control_admin(ctx, new_admin) }
     pub fn add_quote_control_mint(ctx: Context<UpdateQuoteControlMints>, quote_mint: Pubkey, initial_virtual_quote_reserves: u64) -> Result<()> { quote_control::add_quote_control_mint(ctx, quote_mint, initial_virtual_quote_reserves) }
@@ -988,4 +976,31 @@ pub struct TradeEvent {
     pub holder_rewards: u64,
     pub creator_fee_unclaimed: u64,
     pub unparsed_trailing_field: u64,
+}
+
+
+// Physical placement inferred from original transfer_to_owned Location fields.
+pub mod owned_quote_payments {
+use anchor_lang::prelude::*;
+use anchor_spl::token_interface::TokenInterface;
+use crate::trade_types::BondingCurve;
+use crate::trade::quote_payments::transfer_native;
+
+#[inline(never)]
+pub fn transfer_to_owned<'info>(
+    native:bool,base_mint:&AccountInfo<'info>,curve:&Account<'info,BondingCurve>,
+    destination:AccountInfo<'info>,amount:u64,token_program:&Interface<'info,TokenInterface>,
+    quote_decimals:u8,quote_mint:&AccountInfo<'info>,
+    quote_source:Option<&AccountInfo<'info>>,quote_destination:Option<&AccountInfo<'info>>,
+    bump:u8,
+)->Result<()>{
+    if native{return transfer_native(curve,destination,amount)}
+    let from=quote_source.unwrap();
+    let to=quote_destination.unwrap();
+    crate::sell_v2::quote_token_transfers::transfer_quote_tokens(
+        token_program,from,to,curve.to_account_info(),quote_decimals,quote_mint,amount,
+        &[&[b"bonding-curve",base_mint.key().as_ref(),&[bump]]],
+    )
+}
+
 }

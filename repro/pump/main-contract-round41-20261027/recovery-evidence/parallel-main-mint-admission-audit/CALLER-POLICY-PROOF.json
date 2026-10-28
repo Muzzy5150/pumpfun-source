@@ -1,0 +1,61 @@
+{
+  "scope": "Original-backed main mint admission caller and boolean policy. Earlier closed scanner body controls are not repeated.",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "call_edges": [
+    {
+      "target": "0x17bc48",
+      "caller": "0x1a918",
+      "site": "0x1a980",
+      "offset": "0x68"
+    },
+    {
+      "target": "0x1a918",
+      "caller": "0x1e7c0",
+      "site": "0x22008",
+      "offset": "0x3848"
+    },
+    {
+      "target": "0x1e7c0",
+      "caller": "0x1268a8",
+      "site": "0x1272b8",
+      "offset": "0xa10"
+    }
+  ],
+  "scanner": "r1=data pointer, r2=len, r3=boolean; only direct call sets r3=1. No main false-policy route identified.",
+  "masks": {
+    "0x6015052": [
+      1,
+      4,
+      6,
+      12,
+      14,
+      16,
+      25,
+      26
+    ],
+    "0xc0000": [
+      18,
+      19
+    ]
+  },
+  "wrapper": "0x1a918 borrows account data, calls scanner with true, returns6063 UnsupportedQuoteMint on false; source programs/pump/src/create_v2.rs:528.",
+  "caller_exception": {
+    "site": "0x22008",
+    "prior_branch": "0x21fe8",
+    "condition": "Stored quote mint key, same local previously tested against WSOL and9pan, equals constant0x1b5c88; equality skips validation.",
+    "pubkey": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+    "other_local_comparisons": {
+      "0x1b5cc8": "So11111111111111111111111111111111111111112",
+      "0x1b5a88": "9pan9bMn5HatX4EJdBwg9VgCa7Uz5HL8N1m5D3NdXejP"
+    },
+    "runtime": "32case matrix: Tokenkeg variants unchanged;6differences occur for literalPUMP quote +Token2022. Corrected by exception under existing Token2022 gate."
+  },
+  "prior_semantic_fix": "work/parallel-main-create-extension-validation/QUOTE-VALIDATOR-REVIEW01.json retained; current scanner matches107additional boundary probes.",
+  "evidence_sha256": {
+    "work/parallel-main-mint-admission-audit/original-create-v2.asm": "e339cd54860b31d535f1de257ae20c5d566612639c3e32912da68c01c3610cdb",
+    "work/parallel-main-mint-admission-audit/original-wrapper.asm": "7fc2199b4f12702693b6d40717b9c3b811a4857c8a811847f2bdbc20b2095b87",
+    "work/parallel-main-mint-admission-audit/original-callsite.asm": "4dc7bc05e19e520c82142da60a4140d10909c22d7bcb7f258e60a42e946605ef",
+    "work/parallel-main-mint-admission-audit/gate01.json.gz": "a3cf90fbce5349a70a0e21d529917902bed533d931ce0de9d830d51a78572662",
+    "work/parallel-main-mint-admission-audit/policy01.json.gz": "e7585eef7383bbeb8fa0664923d2c5a1e358e8ad6967eae5bb621d09fe6083b2"
+  }
+}

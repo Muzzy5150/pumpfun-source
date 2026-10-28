@@ -1,0 +1,438 @@
+{
+  "status": "passed",
+  "scope": "Full-prestate input deduplication against all frozen 18,109 paired originals.",
+  "existing_cases": 18109,
+  "existing_with_prestate": 11441,
+  "counts": {
+    "work/parallel-main-integration/round39-captured-full.json.gz": 10468,
+    "work/parallel-main-integration/round39-captured-additional.json.gz": 7641
+  },
+  "rows": [
+    {
+      "name": "token-control",
+      "transaction_sha256": "67dd3cf658f29cb55c81caf1857c6159ac227eea07c14c8dd38fd1991935cf83",
+      "full_prestate_sha256": "d444764319a68df3ee89d648194d2bc484912c6a971b99f5065feb4a35b95316",
+      "same_transaction": [
+        {
+          "record": 7754,
+          "row_path": "cashback/cases/66",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7755,
+          "row_path": "cashback/cases/67",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7756,
+          "row_path": "cashback/cases/68",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7757,
+          "row_path": "cashback/cases/69",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7758,
+          "row_path": "cashback/cases/70",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7759,
+          "row_path": "cashback/cases/71",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7760,
+          "row_path": "cashback/cases/72",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7761,
+          "row_path": "cashback/cases/73",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7762,
+          "row_path": "cashback/cases/74",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7763,
+          "row_path": "cashback/cases/75",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7764,
+          "row_path": "cashback/cases/76",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7765,
+          "row_path": "cashback/cases/77",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7766,
+          "row_path": "cashback/cases/78",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7767,
+          "row_path": "cashback/cases/79",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7768,
+          "row_path": "cashback/cases/80",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7769,
+          "row_path": "cashback/cases/81",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7770,
+          "row_path": "cashback/cases/82",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7771,
+          "row_path": "cashback/cases/83",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7772,
+          "row_path": "cashback/cases/84",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7773,
+          "row_path": "cashback/cases/85",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7774,
+          "row_path": "cashback/cases/86",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7775,
+          "row_path": "cashback/cases/87",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7776,
+          "row_path": "cashback/cases/88",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7777,
+          "row_path": "cashback/cases/89",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7778,
+          "row_path": "cashback/cases/90",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7779,
+          "row_path": "cashback/cases/91",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7780,
+          "row_path": "cashback/cases/92",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7781,
+          "row_path": "cashback/cases/93",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7845,
+          "row_path": "cashback/cases/157",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7847,
+          "row_path": "cashback/cases/159",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7849,
+          "row_path": "cashback/cases/161",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7851,
+          "row_path": "cashback/cases/163",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7853,
+          "row_path": "cashback/cases/165",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7854,
+          "row_path": "cashback/cases/166",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7855,
+          "row_path": "cashback/cases/167",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7856,
+          "row_path": "cashback/cases/168",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7857,
+          "row_path": "cashback/cases/169",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7858,
+          "row_path": "cashback/cases/170",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7859,
+          "row_path": "cashback/cases/171",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7860,
+          "row_path": "cashback/cases/172",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7861,
+          "row_path": "cashback/cases/173",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7862,
+          "row_path": "cashback/cases/174",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7863,
+          "row_path": "cashback/cases/175",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7864,
+          "row_path": "cashback/cases/176",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7865,
+          "row_path": "cashback/cases/177",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7904,
+          "row_path": "cashback/cases/216",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7905,
+          "row_path": "cashback/cases/217",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7906,
+          "row_path": "cashback/cases/218",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7907,
+          "row_path": "cashback/cases/219",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7908,
+          "row_path": "cashback/cases/220",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7909,
+          "row_path": "cashback/cases/221",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7916,
+          "row_path": "cashback/cases/228",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7917,
+          "row_path": "cashback/cases/229",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7918,
+          "row_path": "cashback/cases/230",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7919,
+          "row_path": "cashback/cases/231",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7920,
+          "row_path": "cashback/cases/232",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7921,
+          "row_path": "cashback/cases/233",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7949,
+          "row_path": "cashback/cases/261",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7950,
+          "row_path": "cashback/cases/262",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7951,
+          "row_path": "cashback/cases/263",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7952,
+          "row_path": "cashback/cases/264",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7953,
+          "row_path": "cashback/cases/265",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7954,
+          "row_path": "cashback/cases/266",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7955,
+          "row_path": "cashback/cases/267",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7956,
+          "row_path": "cashback/cases/268",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7957,
+          "row_path": "cashback/cases/269",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        },
+        {
+          "record": 7969,
+          "row_path": "cashback/cases/281",
+          "file": "work/parallel-main-integration/round39-captured-full.json.gz",
+          "prestate_present": false
+        }
+      ],
+      "admit_as_new": false,
+      "policy": "Control is deliberately excluded from new coverage. New witness admitted only if its signed transaction appears nowhere in all18109 originals; any collision would require complete prestate resolution."
+    },
+    {
+      "name": "wrong-program",
+      "transaction_sha256": "283f1892c29ab2253e1aa4a3231e372e00717af0a911d5f703428c074bbdfef3",
+      "full_prestate_sha256": "7e9bc576607cfd729a5e1a5b3f32a181995886380354a37e66199c1a87cae255",
+      "same_transaction": [],
+      "admit_as_new": true,
+      "policy": "Control is deliberately excluded from new coverage. New witness admitted only if its signed transaction appears nowhere in all18109 originals; any collision would require complete prestate resolution."
+    }
+  ],
+  "new_cases": 1,
+  "inputs_sha256": {
+    "work/parallel-main-integration/round39-captured-full.json.gz": "509476b6046876cc317ffc33768704600405ab4cfb08560b253feaece51a397d",
+    "work/parallel-main-integration/round39-captured-additional.json.gz": "fb474ad340fe04f2cc4eda092d547abb3c9b2ffaaecb23846ead08b1db9f3364",
+    "work/parallel-main-cashback-v2-api/program-guard01.json.gz": "f4578109469fdd4e19bad825674c902125e3a08f2b2d8b5425b7c1f51556a8a2",
+    "work/parallel-main-integration/unified-main-corpus-round39.json": "d6c2e621cdc6dc02617ce1b2f7ef405f848729921b8bc5c51699ab59347f069f"
+  }
+}

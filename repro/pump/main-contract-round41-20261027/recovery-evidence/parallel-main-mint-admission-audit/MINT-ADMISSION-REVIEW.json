@@ -1,0 +1,76 @@
+{
+  "scope": "Minimal main CreateV2 PUMP quote-mint extension-admission exception. No scanner rewrite, companion or dependency source changes.",
+  "source_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-mint-admission-audit/source02",
+  "source_create_v2_sha256": "67668a10b5733ff3eff79dc384c27e5e181c068e78189834e27f85edd7da92e2",
+  "baseline_create_v2_sha256": "8786dbcf57b01d38853a3d773c1a1c4c0be55a4c49c7ce7321ac258d5417f8d0",
+  "patch": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-mint-admission-audit/pump-mint-exception-from-round31.patch",
+  "patch_sha256": "f052178382ffa3354168b677cde4129ba5ee075e5c50def519aeea74e05a3b1f",
+  "change": "Keep Token2022-only validation, but skip scanner for original literal quote mint pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn.",
+  "before_after": {
+    "matrix_cases": 32,
+    "before_differences": 6,
+    "after_differences": 0,
+    "new_original_successes_previously_rejected": 4
+  },
+  "qualified_runtime": {
+    "candidate_sha256": "07d1ac9eb3ff1500b09843d2459e006253f6fbd3ae92ada3eb92785dd25d3cc7",
+    "unstripped_sha256": "af952f083d3ebf46188ae8816d24eb88918fd1538ca82132ceecc6245ff6b3b9",
+    "build": "build02",
+    "cases": 601,
+    "strict_log_pairs": 599,
+    "errors": [],
+    "diagnostic_mismatches": [],
+    "limits": "Two historical preflight cases have no paired runtime logs; all new58 cases execute and verify identical ordinary signed transactions."
+  },
+  "incremental_coverage": {
+    "raw_boundary_cases": 107,
+    "new_boundary_inputs": 34,
+    "raw_gate_cases": 32,
+    "new_gate_inputs": 24,
+    "deduplicated_new_inputs": 58,
+    "overlap_inputs": 81,
+    "normalization": "Exact effective fixture-argument deduplication against public297 CreateV2/quote cases, accepted26 TLV cases, then within combined107+32 inputs. Names removed; empty optional collections, default false quote_token22 / true quote_whitelisted normalized. This does not claim non-overlap against every other distinct harness/context in the global corpus.",
+    "manifest": "incremental-manifest.json"
+  },
+  "window_control": {
+    "build": "build03",
+    "candidate_sha256": "b516b47ab8fb3f388bf79869de606b758fec229cccf56be861d654eca8b126bb",
+    "unstripped_sha256": "fd89c08aa82169da080671bdf86dedfcea92e781b6563a26a602d1c29b507fc6",
+    "baseline": "frozen R31",
+    "normalized_before": 730,
+    "normalized_after": 730,
+    "raw_before": 137,
+    "raw_after": 137,
+    "gains": [],
+    "losses": [],
+    "recipe": "Unchanged source02 under R31 existing ordered.ld; private preservation control only. Not a newly qualified ordering recipe for changed/composite source. Root must derive next composite order and revalidate."
+  },
+  "preserved_source": {
+    "scanner": "quote_extensions_supported unchanged; only direct original caller supplies true. No reachable main false-policy path claimed.",
+    "prior_deliveries": "All other R31 source files identical to frozen baseline."
+  },
+  "evidence_sha256": {
+    "work/parallel-main-mint-admission-audit/CALLER-POLICY-PROOF.json": "eb4b4cf46b16680fe0cdcbab05b4cee387d2498c686cf358c5dfa8f470272e27",
+    "work/parallel-main-mint-admission-audit/PLAN01.json": "5cf124bbbf7d8299500c6853b8567268fe38a7a23c7918ea35dd6085a8758fc3",
+    "work/parallel-main-mint-admission-audit/PLAN02.json": "03f9eff59272b14870b46c43169c459320fa7283ce31ef15a5cfb734ed139517",
+    "work/parallel-main-mint-admission-audit/QUOTE-FIXTURE-DERIVATION.json": "4bbb5c600d7bdf087f8533500631a958b28a17dcbbc298864d260ea81f7615fc",
+    "work/parallel-main-mint-admission-audit/policy01.json.gz": "e7585eef7383bbeb8fa0664923d2c5a1e358e8ad6967eae5bb621d09fe6083b2",
+    "work/parallel-main-mint-admission-audit/policy01.loader.json": "0f5458258d5617c752be85d959e3b96dd5aa2547514e7419f17752f1200be78b",
+    "work/parallel-main-mint-admission-audit/gate01.json.gz": "a3cf90fbce5349a70a0e21d529917902bed533d931ce0de9d830d51a78572662",
+    "work/parallel-main-mint-admission-audit/gate01.loader.json": "67d50f3c2519d88c082b44cf042436a014016cc1aea1cfd6743cc00baaa568cd",
+    "work/parallel-main-mint-admission-audit/gate02.json.gz": "14ffbb110fce33521670bf3d55df3a86f82228d00f6dd0a8d2b5bb36d090edb2",
+    "work/parallel-main-mint-admission-audit/gate02.loader.json": "7c149763ba6833ac309a0b6ec119f7c9121357282318fb1941c115e8e71273e9",
+    "work/parallel-main-mint-admission-audit/runtime02/summary.json": "ec47c07475a14d97030fadcba74edb53deffef23592aae5f0e46fbe0648b0eb8",
+    "work/parallel-main-mint-admission-audit/build02/build-comparison.json": "67d36a576bb4182402d68f3710a8758d352b51fb133e8afb8b64dfea612cd419",
+    "work/parallel-main-mint-admission-audit/build03/build-comparison.json": "e4ada1ef6df93e12f01768a59c08fbcab429e8ed0e92a92914ddc175e6a4b56d",
+    "work/parallel-main-mint-admission-audit/result02/MATCH-DELTA.json": "cbcb0d1e6a1cd4f89971eb0479017cf9f5e8b042beb432434373a92ead533227",
+    "work/parallel-main-mint-admission-audit/result03/MATCH-DELTA.json": "11bb4cfe16b704cfaf9a284b2352928fec3f93e9ab9698cf2756ec2e2c1cc0f8",
+    "work/parallel-main-mint-admission-audit/DEDUPLICATION.json": "adcca2e6d16ad7a5b3fa4f280d2235d99a8883a5d00a044bc5695cd85db3b6b3",
+    "work/parallel-main-mint-admission-audit/incremental-cases.json": "1c917b2344cbc349a28f55607f6602318f3e53d28f36a3385597dc710c81ad9c",
+    "work/parallel-main-mint-admission-audit/incremental-manifest.json": "bddb79a84738b402552614955b03d91038681078e9c2882e89a53f1283a713a7",
+    "work/parallel-main-mint-admission-audit/probe_incremental.py": "3a8ac4660a85ea204f4b1ec5fb2421a05eece41dd10f7dcc1cb32756919886ab",
+    "work/parallel-main-mint-admission-audit/probe_policy_boundaries.py": "58dcb0a4cd7bacec427ea28a85d9e9dd3e20c01a40facf139681acfacb231bd4",
+    "work/parallel-main-mint-admission-audit/probe_program_gate.py": "e9102c47e5fc83241f078fd16dac6a7430c72ae6d1c312046034f577072471d6",
+    "work/parallel-main-mint-admission-audit/quote_key_fixture.py": "dbb4c42a80d6d799cf64161e4aca9f6aa8c10f4f2febd51712550b986f2b7213"
+  }
+}

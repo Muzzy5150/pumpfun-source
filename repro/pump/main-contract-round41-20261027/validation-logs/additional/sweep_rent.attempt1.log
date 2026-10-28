@@ -1,0 +1,13 @@
+{"case": "sweep_creator_fee-native-True-control", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sweep_creator_fee-native-True-reserved", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sweep_creator_fee-native-True-zero_fees_reserved", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sweep_creator_fee-native-False-control", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sweep_creator_fee-native-False-reserved", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sweep_creator_fee-native-False-zero_fees_reserved", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sweep_protocol_fee-native-True-control", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sweep_protocol_fee-native-True-reserved", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sweep_protocol_fee-native-True-zero_fees_reserved", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sweep_protocol_fee-native-False-control", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sweep_protocol_fee-native-False-reserved", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sweep_protocol_fee-native-False-zero_fees_reserved", "original_error": null, "candidate_error": null, "diff": []}
+{"case_count": 12, "mismatches": []}

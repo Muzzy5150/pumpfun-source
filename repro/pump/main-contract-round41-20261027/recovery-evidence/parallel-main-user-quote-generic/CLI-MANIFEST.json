@@ -1,0 +1,26 @@
+{
+  "scope": "48 focused owned creator/cashback zero-fee and split-failure cases",
+  "script": "work/parallel-main-user-quote-generic/probe-owned-order.py",
+  "script_sha256": "cbac08f2dba0c55f7297a9fe51e2fed181be221f686970d81bfcdba225916215",
+  "arguments": [
+    "--candidate",
+    "CANDIDATE",
+    "--output",
+    "OUTPUT.json.gz"
+  ],
+  "case_count": 48,
+  "uses_optimized_captured_loader": true,
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "validated_candidate_sha256": "a9487b1f5e4a19eeadad338604c4367cd4501c2662e4352e7e8ddfee269edc27",
+  "validated_output": "owned-order4802.json.gz",
+  "validated_output_sha256": "280ba6987b13d92943e0f6a144e3ece5fcda3cd79d7af36a0a2b884ca22948f9",
+  "mismatches": 0,
+  "coverage": [
+    "normal/exact BuyV2",
+    "native/Token/Token-2022 quote",
+    "creator/cashback",
+    "zero/nonzero creator fee",
+    "buyback rate0/20000 and failed-transaction payment prefix"
+  ],
+  "note": "Other1227cases are replays of existing fixtures; these48 can be deduplicated by case payload when composing the shared corpus."
+}

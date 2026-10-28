@@ -1,0 +1,42 @@
+{
+  "migrate_v2_prepare": {
+    "cases": 32,
+    "mismatches": []
+  },
+  "migrate_prepare": {
+    "cases": 12,
+    "mismatches": []
+  },
+  "migration_balances": {
+    "cases": 7,
+    "mismatches": []
+  },
+  "migration_headers": {
+    "cases": 66,
+    "mismatches": []
+  },
+  "migration": {
+    "cases": 228,
+    "mismatches": []
+  },
+  "required_account_size": {
+    "cases": 14,
+    "mismatches": []
+  },
+  "pausable_migration": {
+    "cases": 6,
+    "mismatches": []
+  },
+  "new": {
+    "cases": 36,
+    "mismatches": []
+  },
+  "negative": {
+    "cases": 429,
+    "mismatches": []
+  },
+  "migrate_v2": {
+    "cases": 827,
+    "mismatches": []
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "status": "validated frozen shared-caller source-fidelity option",
+  "source": "work/parallel-main-sweep-recipient-reuse/source01",
+  "base": "work/parallel-main-integration/round22-source/programs/pump",
+  "files": {
+    "src/sweep_fees.rs": "541e4efc9922e1e0b6c0349ca9b4efcc0e8d983a02bf54320ce3b55479c16174"
+  },
+  "patch": "work/parallel-main-sweep-recipient-reuse/sweep-validator-reuse.patch",
+  "candidate_sha256": "c1238fe074de38e7120357d8f62aea2c9e985592d154ab10603ec661ebd9bb77",
+  "unstripped_sha256": "de421383f733ec111fc4a92827efb11094796c565f8dde42f74b78eee08e1959",
+  "source_build_binding": true,
+  "case_count": 462,
+  "strict_case_count": 462,
+  "verified_transactions": 924,
+  "captured_loads": 1386,
+  "case_scope": "Existing504Sweepcases excluding42explicitaccount-owner mutationpatchcases. Includesall56normal/reserved/unsortedselectors andcreatorbranches.",
+  "inventory": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 711,
+    "unmatched": 324
+  },
+  "normalized_gains": [],
+  "normalized_losses": [],
+  "call_evidence": {
+    "original_callsite": "0x72e58",
+    "original_target": "0x3dd78",
+    "candidate_handler": "0x75010",
+    "candidate_handler_bytes": 12168,
+    "candidate_selector": "0x5c868",
+    "candidate_direct_calls": [
+      "0x75268"
+    ],
+    "baseline_handler_bytes": 13560,
+    "candidate_selector_bytes": 2008,
+    "candidate_selector_different_slots": 50
+  },
+  "creator_branch_and_context": "unchanged source",
+  "existing_selector_source": "unchanged fromR22, no negativecontroladopted",
+  "runtime_archive_sha256": "64347e2d7a7f734163e75dca8259fdd5a55ef4a81ab76fd589c8873901428c42",
+  "full_elf_identity": false
+}

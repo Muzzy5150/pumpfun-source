@@ -1,0 +1,301 @@
+{
+  "identity": "sha256(transaction_base64 + canonical JSON of non-null before accounts)",
+  "existing_files": {
+    "work/parallel-main-integration/round32-unified/suites/full/creator_distribution.attempt1.json.gz": "89be944bc7b464893f7779431d791ef93dd2142e2b8dcdcc73a5f8e680d6331f",
+    "work/parallel-main-integration/round32-unified/suites/additional/distribution_regressions_62.attempt1.json.gz": "e314826e23ab069642ba0b7094ba1c72aaa7493ab303f6eac9ef9e5806b6bd5f"
+  },
+  "existing_unique_count": 352,
+  "input_cases": 72,
+  "new_cases": [
+    {
+      "name": "native-v1/pending=0/status=0/available=1000000/missing=False",
+      "input_hash": "e56dd5b400c407959cbc786dcb89a1f1e9ea73e0c0433a3da2fc932f9e0ed867"
+    },
+    {
+      "name": "native-v1/pending=0/status=0/available=1000000/missing=True",
+      "input_hash": "8634a026cc36f231655c9ecc4dcd9a1d4c92e7d850e26aff4a43f11430eda24c"
+    },
+    {
+      "name": "native-v1/pending=0/status=1/available=1000000/missing=True",
+      "input_hash": "576685b77cf9421d41e2d953b79414722c2cc0d2a3a0e0918e22fa0b6424d752"
+    },
+    {
+      "name": "native-v1/pending=1/status=0/available=0/missing=False",
+      "input_hash": "2b666fcb4b42fdbe8669e9cf01d9ac0e24b83375961d2eae29579067b83620cc"
+    },
+    {
+      "name": "native-v1/pending=1/status=0/available=0/missing=True",
+      "input_hash": "e65d3fa3531a40a2c70da418989dc5bdb7f5ec31b3d566b805b253f73c80ad78"
+    },
+    {
+      "name": "native-v1/pending=1/status=0/available=1000000/missing=False",
+      "input_hash": "c2f342e1b7c0cb07ff0ea40619c3985a266751d0aa5bc0a2c791fa082095c5d5"
+    },
+    {
+      "name": "native-v1/pending=1/status=0/available=1000000/missing=True",
+      "input_hash": "998b40fc66f459763cfee706bfc6c20a30d5ed401c0316710a71d2489e7e5bf7"
+    },
+    {
+      "name": "native-v1/pending=1/status=1/available=0/missing=False",
+      "input_hash": "a3e4854d3011d9cccdb6219572922c90dbb48de0130c20ccb38971b5d21f5895"
+    },
+    {
+      "name": "native-v1/pending=1/status=1/available=0/missing=True",
+      "input_hash": "ca0e48db67e168629817004be3ecb38b8ec84f89306a1bc580e568008fc815d3"
+    },
+    {
+      "name": "native-v1/pending=1/status=1/available=1000000/missing=False",
+      "input_hash": "cf89b2e62bcef96991569470f8b2a85b0dd5941bff83a562c70a3fc86ba8d01c"
+    },
+    {
+      "name": "native-v1/pending=1/status=1/available=1000000/missing=True",
+      "input_hash": "0bdab3e49d187cbf025f1b761c7e7d15aec591bc6354d0ccf4795925781f261b"
+    },
+    {
+      "name": "native-v1/pending=18446744073709551615/status=0/available=0/missing=False",
+      "input_hash": "5a9dd50ee0670b134488ae724e341fc6e1710e10425aee253269872d18bdad09"
+    },
+    {
+      "name": "native-v1/pending=18446744073709551615/status=0/available=0/missing=True",
+      "input_hash": "b72db4a23e4d3eaa94c44245a55d13c8745759b138aec84793fa5a99436ea4c2"
+    },
+    {
+      "name": "native-v1/pending=18446744073709551615/status=0/available=1000000/missing=False",
+      "input_hash": "7291424a0a52a4dcb33ddb9df3893e4949c3186c272096affd4ea7d56498d24a"
+    },
+    {
+      "name": "native-v1/pending=18446744073709551615/status=0/available=1000000/missing=True",
+      "input_hash": "87f12df786ae683c1aebe3568b6a2b70c46b20f3a8132fb1ad3b7d03327e0385"
+    },
+    {
+      "name": "native-v1/pending=18446744073709551615/status=1/available=0/missing=False",
+      "input_hash": "49e514606fa010eb570dad3253a6b2161f2b117062754f9883b44fce62b547bb"
+    },
+    {
+      "name": "native-v1/pending=18446744073709551615/status=1/available=0/missing=True",
+      "input_hash": "a6c51b5cc97a3886d3a97ddc9daa6854207d1de550b912b567029d52a00df0ff"
+    },
+    {
+      "name": "native-v1/pending=18446744073709551615/status=1/available=1000000/missing=False",
+      "input_hash": "a706b82758837e93b0343768ba8e8f39e127fd5b3657c24e054d764cda806384"
+    },
+    {
+      "name": "native-v1/pending=18446744073709551615/status=1/available=1000000/missing=True",
+      "input_hash": "96f5dc365f6744c4af2e7e220efce674d8243ee1b921cbfe335b96913c30f19c"
+    },
+    {
+      "name": "native-v2/pending=0/status=0/available=1000000/missing=False",
+      "input_hash": "92fba81f015b5f1fbd57f90dfab07e6c8de2ec6b8e805853696d17bdde83d229"
+    },
+    {
+      "name": "native-v2/pending=0/status=0/available=1000000/missing=True",
+      "input_hash": "684c6719d20968ed2fab75c6e3946406c45d8c86f18753762f2d52a78a599e90"
+    },
+    {
+      "name": "native-v2/pending=0/status=1/available=1000000/missing=True",
+      "input_hash": "b98b8626410f228ca9dd3fe97027f085191b171bc91f9d822dad5907756dfe7e"
+    },
+    {
+      "name": "native-v2/pending=1/status=0/available=0/missing=False",
+      "input_hash": "90ba82e094e9a4b03f8abe80661e957451fe3c9e33c0c9e62f12d2fd8c7ad557"
+    },
+    {
+      "name": "native-v2/pending=1/status=0/available=0/missing=True",
+      "input_hash": "0f27c5264c5ec28277c1207d1fe364b50fe0e8577cd3f16bcd9f33b39f173073"
+    },
+    {
+      "name": "native-v2/pending=1/status=0/available=1000000/missing=False",
+      "input_hash": "9d67355ab7764cac898785310f529ea8cf146ad08a2778e5b548962e89bf3491"
+    },
+    {
+      "name": "native-v2/pending=1/status=0/available=1000000/missing=True",
+      "input_hash": "fe25802d820ec02172cd93524e056f201528232564299e140133260865bbcf57"
+    },
+    {
+      "name": "native-v2/pending=1/status=1/available=0/missing=False",
+      "input_hash": "46081fceca8d14512c9eebb3583fc55fbdce2341b5bd9483408d569d269f38ab"
+    },
+    {
+      "name": "native-v2/pending=1/status=1/available=0/missing=True",
+      "input_hash": "df7f774633f597e268dd92b8b108898bf98a87e68e16d7f3e1826216ef45d98d"
+    },
+    {
+      "name": "native-v2/pending=1/status=1/available=1000000/missing=False",
+      "input_hash": "bc722d159163c032ffd45884eaefa6660524cc4989ca475c5846078105814152"
+    },
+    {
+      "name": "native-v2/pending=1/status=1/available=1000000/missing=True",
+      "input_hash": "305a73bbfe7488a3fd56723e8f34816f7e98493d2a11b71b6f34e143538b8634"
+    },
+    {
+      "name": "native-v2/pending=18446744073709551615/status=0/available=0/missing=False",
+      "input_hash": "38ff4ee1064dccc05afb83d499d5bb9765cea62b00611ebcfe08d11e434f83a9"
+    },
+    {
+      "name": "native-v2/pending=18446744073709551615/status=0/available=0/missing=True",
+      "input_hash": "37720a961621ae9280e1ccfb7f8413d5f7ad0335cd48376297b1bfd73f697380"
+    },
+    {
+      "name": "native-v2/pending=18446744073709551615/status=0/available=1000000/missing=False",
+      "input_hash": "20f16ec98c529a5a44c55ed56272f45e57da65bbd99a009d77da3ffc41763b1a"
+    },
+    {
+      "name": "native-v2/pending=18446744073709551615/status=0/available=1000000/missing=True",
+      "input_hash": "64551625eb7e9d3d3fe383f7608b5f143f2db3833d7b7eb1a336227d37094096"
+    },
+    {
+      "name": "native-v2/pending=18446744073709551615/status=1/available=0/missing=False",
+      "input_hash": "fbfcc03823b4921e6ba095d63d0c7637c2aae4c34f56c75036283e9675a8cae7"
+    },
+    {
+      "name": "native-v2/pending=18446744073709551615/status=1/available=0/missing=True",
+      "input_hash": "a54441de54d2451063510cc315b392f44f0b2734228138033b933cb684fb595b"
+    },
+    {
+      "name": "native-v2/pending=18446744073709551615/status=1/available=1000000/missing=False",
+      "input_hash": "3e7e374725977f315b02755aeeb9e19b97e8b7c08fa243d4a3311bddd489e325"
+    },
+    {
+      "name": "native-v2/pending=18446744073709551615/status=1/available=1000000/missing=True",
+      "input_hash": "9c66cd2cf13fafe6232bd5f51a4176fe2e8c91873a0fea8c2920906c579bce2d"
+    },
+    {
+      "name": "token-v2/pending=0/status=0/available=0/missing=False",
+      "input_hash": "dcdf10f7f8040ea29b37b45e086be54a0a61b31f4bb29c90e19d833d75993379"
+    },
+    {
+      "name": "token-v2/pending=0/status=0/available=0/missing=True",
+      "input_hash": "de2e3d90518c664d68f8ffa60bb4ac60b68cc0e6a349e1f22937ea9c4bc4417f"
+    },
+    {
+      "name": "token-v2/pending=0/status=0/available=1000000/missing=False",
+      "input_hash": "83c0348f8b76fdc467e919d43c917dbc3e641679b6c591232cdd429fecc41a51"
+    },
+    {
+      "name": "token-v2/pending=0/status=0/available=1000000/missing=True",
+      "input_hash": "85a66ea6fa66656b12eecb66f27a2bd3c0dbbad2b8174af30a8efe8a8ec350d4"
+    },
+    {
+      "name": "token-v2/pending=0/status=1/available=0/missing=True",
+      "input_hash": "95b22370f30cb9b3e8cb8bf217931d15399b4896fb01deb0c30f49935925eb65"
+    },
+    {
+      "name": "token-v2/pending=0/status=1/available=1000000/missing=False",
+      "input_hash": "639d16efe30f0580c23cbe4eb921a48b7d06a151d26fcb8d3c64ad6845944ce9"
+    },
+    {
+      "name": "token-v2/pending=0/status=1/available=1000000/missing=True",
+      "input_hash": "79bda4d5134657b68f1063a0a00b4731ae53c2c8fca6bc3af479cd1bc67e1762"
+    },
+    {
+      "name": "token-v2/pending=1/status=0/available=0/missing=False",
+      "input_hash": "291d7e7995d1cb5075c72775a9d047382791d6f7ab59d20631533933d4cbf567"
+    },
+    {
+      "name": "token-v2/pending=1/status=0/available=0/missing=True",
+      "input_hash": "2060c91507b1209bb771791c2201cadc81899b342895b9cdc716de333bbd24f6"
+    },
+    {
+      "name": "token-v2/pending=1/status=0/available=1000000/missing=False",
+      "input_hash": "d6789c9e6c126593d391b189e31108f23e1cdb0b3e4e2961a9745f283b6919ef"
+    },
+    {
+      "name": "token-v2/pending=1/status=0/available=1000000/missing=True",
+      "input_hash": "96328aa72d19f8e97fb4e216102739861a9ea48070047307172a3aa3004392ea"
+    },
+    {
+      "name": "token-v2/pending=1/status=1/available=0/missing=False",
+      "input_hash": "ffe1ccd8259cc013dcdd444a1141b0e02d890c1d58112f6208c7eb5b1bad6974"
+    },
+    {
+      "name": "token-v2/pending=1/status=1/available=0/missing=True",
+      "input_hash": "da999f4144f65ee5e05a46bc824294c64d0921fc99b41a55b22844041d9fac37"
+    },
+    {
+      "name": "token-v2/pending=1/status=1/available=1000000/missing=False",
+      "input_hash": "8ab4227056403ff889bc82e2966e5ff15d5c32bdd78addb290708f8ad8df2b75"
+    },
+    {
+      "name": "token-v2/pending=1/status=1/available=1000000/missing=True",
+      "input_hash": "71381ec5ed6350c846656f20f456999947ae1609f7a7ce5d45e90b4d65e19bbe"
+    },
+    {
+      "name": "token-v2/pending=18446744073709551615/status=0/available=0/missing=False",
+      "input_hash": "93185debf38ee857b9ecd91bf4055d550f2d7322caa6569b50dfc38d292ebcc1"
+    },
+    {
+      "name": "token-v2/pending=18446744073709551615/status=0/available=0/missing=True",
+      "input_hash": "9f958154234b467a4d9db58c0e25de8ef029a212638f058b0e4c2b90a965e679"
+    },
+    {
+      "name": "token-v2/pending=18446744073709551615/status=0/available=1000000/missing=False",
+      "input_hash": "e6b5c42fa6f86cd0da96523f1cdfd4d41d8706c27a9560e9c4c8f0ebd687bf21"
+    },
+    {
+      "name": "token-v2/pending=18446744073709551615/status=0/available=1000000/missing=True",
+      "input_hash": "d0f3611e7cfab5a26fb4b11f3eacfdd9f302867d46dd892c706a5fa91d425e0b"
+    },
+    {
+      "name": "token-v2/pending=18446744073709551615/status=1/available=0/missing=False",
+      "input_hash": "bab98940956e50d06d0eefdb1bd70f20f6a767b34782947605ed7988f80b81a8"
+    },
+    {
+      "name": "token-v2/pending=18446744073709551615/status=1/available=0/missing=True",
+      "input_hash": "22de42174427953dec3a595318d44e379f266ad9e7b9c315fff318ce5de5d8ef"
+    },
+    {
+      "name": "token-v2/pending=18446744073709551615/status=1/available=1000000/missing=False",
+      "input_hash": "52e04f43db3404ffeaed7a98901402ca8c2a39482ea2a7d49932cfa8e74c1670"
+    },
+    {
+      "name": "token-v2/pending=18446744073709551615/status=1/available=1000000/missing=True",
+      "input_hash": "2f0654a764f47cab7701ad438eaaf06374091372cda892061c268f7fdcfc67d9"
+    }
+  ],
+  "duplicates": [
+    {
+      "name": "native-v1/pending=0/status=0/available=0/missing=False",
+      "input_hash": "efdfd07164f6f853c822ad6699dd8c32d7db9eab8c5cf58f4ff9d4086ca7089c"
+    },
+    {
+      "name": "native-v1/pending=0/status=0/available=0/missing=True",
+      "input_hash": "0217001183d4c707ec8f57597f3d6d019c0e64148efa7aabcb10645c188b62d9"
+    },
+    {
+      "name": "native-v1/pending=0/status=1/available=0/missing=False",
+      "input_hash": "dfb81cd6da6d9468fa6221cdf8d713fd5b5109c62897f3cd847623b85d13a1e9"
+    },
+    {
+      "name": "native-v1/pending=0/status=1/available=0/missing=True",
+      "input_hash": "706dc3b69832dacfbf17ee319a1efc3b8d506583b6f805b211431fa828453e20"
+    },
+    {
+      "name": "native-v1/pending=0/status=1/available=1000000/missing=False",
+      "input_hash": "317c569a34411ca34516449aa18d898c0eb9731d518b2c1b044a8ffeef50d663"
+    },
+    {
+      "name": "native-v2/pending=0/status=0/available=0/missing=False",
+      "input_hash": "8976a6f7ec93363a5eea1bd81ce281cb6367c182362c0b60dabbf380010abd20"
+    },
+    {
+      "name": "native-v2/pending=0/status=0/available=0/missing=True",
+      "input_hash": "2c7fc0ec8b514a89a3337a795f7133997e81cbe8a37cffb637f6cdeaa42eb3d7"
+    },
+    {
+      "name": "native-v2/pending=0/status=1/available=0/missing=False",
+      "input_hash": "25516b61e6d3903566775d8b50335a7311823da799d50ffcd93d3d85f2990abf"
+    },
+    {
+      "name": "native-v2/pending=0/status=1/available=0/missing=True",
+      "input_hash": "00bab81e198916079f826503bf15919d6438a6f5e056ffb4c1d7ac04cb93ac58"
+    },
+    {
+      "name": "native-v2/pending=0/status=1/available=1000000/missing=False",
+      "input_hash": "4bfe6f2d22eaa769afa4d4af81c0ddc4ee24d0837d2c99fd6354c1dc2da7c955"
+    },
+    {
+      "name": "token-v2/pending=0/status=1/available=0/missing=False",
+      "input_hash": "c3e2cb8d6bd0c825f0cc7aa37ecd57f2d2d713be8d3e01acbf98f77267eb69fb"
+    }
+  ]
+}

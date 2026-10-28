@@ -1,0 +1,29 @@
+{
+  "scope": "Frozen validated native pre-fee helper increment; parent composition pending.",
+  "files": {
+    "README.md": "c956d198a99c3e00b2b7467b845fa964be38abba9e4c7432ae2e86e24aa4eaad",
+    "HYPOTHESIS.json": "e49696c9bc55886ea4ebb98ac2e5229d290b4d8f2bd2e569d49240fd2a7dc591",
+    "HYPOTHESIS02.json": "c3bf507f0866bf13011a60b960e383131006830423d813ee3bbaa29122844ef4",
+    "RESULT01.json": "25076e5dfb605a8a099528a7e5a401d1dfa1dc019e2106f2294544a57e16e225",
+    "RESULT02.json": "0229ef9291bf5d58469a970a10c3265fc131f563447c8761e7222819b7be64a3",
+    "SOURCE-CHANGES02.json": "df0b0da3a06af49102572a8580da4db2836fbd65fb0921bfa6830ae9a07e0e5a",
+    "native-pre-fee02.patch": "1a41a8aaf1b84756d903331e7efe8a1af4f78ad917fbbebceb5c11b985f375ae",
+    "pre-fee-comparison.json": "709b29292b71403cea5d640723d1250dcabd3e6ea52a12034cbff3d0a668c2fb",
+    "pre-fee-comparison02.json": "f9964222e3ede7ee7fa493a51f29d7077e387c139f3a837003843ad035d45f65",
+    "pre-fee-callees02.json": "655d6485bc9abe2bad092a61d38fe691f60cd2a0d1c71a650663bbccc2bb9f58",
+    "window-gains02.json": "321f0d6d5cc5fdc50f56e51f9590bd565b26d8f12fd036232f9355ac016f800d",
+    "diagnostics02.json": "be30c99fb0d4958bcd633bd5da47ef42544eb22dda856beecb1a8e27c9390b0a",
+    "invocations02.json": "8e0b8b59a2f83a01292027767e3e4979290c3b12e23c84f93abaa0d56e3670b9",
+    "source02/src/trade_v3.rs": "0aef80d44b92871db65ccf8c9abe7869a78add4cf71349c0ce9ba190e52cff8f",
+    "source02/src/v3_native_transfer_fee.rs": "0801a123aac7632023849294c812878c71a5c5e431ea337318fbf9256c9b4a3f",
+    "build02/build-comparison.json": "954a074883f95fd6660b9e701124773802e5e21b75656d79c517124d65f31b5f",
+    "build02/normalized-inventory.json": "37545814ebbcedae11d92a0bd53fc2d25b4162b45b58d0a50e25f0c02561c52f",
+    "build02/candidate.so": "e45582ed9e0a708b473916ea08bd26970c8baca53f044e07cee0db1f274484d1",
+    "build02/unstripped.so": "7bdf32fda96feeb025fdab52aad6411e493a1f9acc435cf0f9c7beefb5e4e023",
+    "extensions02.json.gz": "f7addce8f021488c1ac4c43db96cbb5a6983ff7e616b7fd57b8fa15b50844fee",
+    "extensions02.loader.json": "8b2389bea96281691d5115fabd9b621c36f523030d36dade9d2501e0a1cb109e",
+    "buy-v2-02.json.gz": "f4ffe213ecafcb120e69951e5e48e26f7232abe1c5dda8d56b744607bb68e068",
+    "buy-v2-02.loader.json": "af7c2a3bff7e3fc61711ce4d0bc25c804759fe6c3e1f183be950105674daec7c",
+    "finalize02.py": "ddd6cb42ca13da80baecc481378975859f5e4ba390d108ce9b81f798d7b818fb"
+  }
+}

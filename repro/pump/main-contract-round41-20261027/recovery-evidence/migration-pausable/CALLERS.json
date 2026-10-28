@@ -1,0 +1,408 @@
+{
+  "0x52660": {
+    "start": 337504,
+    "end": 347280,
+    "bytes": 9776,
+    "raw_sha256": "f3a441e5b08f3222e366667c5286c5d2c31f56960f275c8e9d454aa57973155e",
+    "raw_match": false,
+    "normalized_matches": [],
+    "original_operands": [
+      {
+        "offset": 88,
+        "kind": "direct-call",
+        "target": 1714672
+      },
+      {
+        "offset": 120,
+        "kind": "direct-call",
+        "target": 1706528
+      },
+      {
+        "offset": 224,
+        "kind": "direct-call",
+        "target": 1686456
+      },
+      {
+        "offset": 264,
+        "kind": "direct-call",
+        "target": 337136
+      },
+      {
+        "offset": 304,
+        "kind": "elf-pointer",
+        "value": 1793824,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 320,
+        "kind": "direct-call",
+        "target": 1405824
+      },
+      {
+        "offset": 352,
+        "kind": "elf-pointer",
+        "value": 1824824,
+        "sections": [
+          ".data.rel.ro"
+        ]
+      },
+      {
+        "offset": 448,
+        "kind": "elf-pointer",
+        "value": 1793824,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 464,
+        "kind": "direct-call",
+        "target": 1433224
+      },
+      {
+        "offset": 584,
+        "kind": "elf-pointer",
+        "value": 1797760,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 680,
+        "kind": "direct-call",
+        "target": 1686320
+      },
+      {
+        "offset": 872,
+        "kind": "elf-pointer",
+        "value": 1792808,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 896,
+        "kind": "direct-call",
+        "target": 1783416
+      },
+      {
+        "offset": 1248,
+        "kind": "direct-call",
+        "target": 1715368
+      },
+      {
+        "offset": 1336,
+        "kind": "direct-call",
+        "target": 1556720
+      },
+      {
+        "offset": 1448,
+        "kind": "direct-call",
+        "target": 1686456
+      },
+      {
+        "offset": 1664,
+        "kind": "direct-call",
+        "target": 1706728
+      },
+      {
+        "offset": 1744,
+        "kind": "direct-call",
+        "target": 582736
+      },
+      {
+        "offset": 1872,
+        "kind": "elf-pointer",
+        "value": 1796258,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 8408,
+        "kind": "direct-call",
+        "target": 1103416
+      },
+      {
+        "offset": 8448,
+        "kind": "direct-call",
+        "target": 1714672
+      },
+      {
+        "offset": 8496,
+        "kind": "direct-call",
+        "target": 68728
+      },
+      {
+        "offset": 8616,
+        "kind": "direct-call",
+        "target": 353880
+      },
+      {
+        "offset": 8768,
+        "kind": "direct-call",
+        "target": 582736
+      },
+      {
+        "offset": 9104,
+        "kind": "elf-pointer",
+        "value": 1793608,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 9120,
+        "kind": "direct-call",
+        "target": 1405824
+      },
+      {
+        "offset": 9152,
+        "kind": "elf-pointer",
+        "value": 1824824,
+        "sections": [
+          ".data.rel.ro"
+        ]
+      },
+      {
+        "offset": 9248,
+        "kind": "elf-pointer",
+        "value": 1793608,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 9264,
+        "kind": "direct-call",
+        "target": 1433224
+      },
+      {
+        "offset": 9296,
+        "kind": "elf-pointer",
+        "value": 1793956,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 9320,
+        "kind": "elf-pointer",
+        "value": 1824872,
+        "sections": [
+          ".data.rel.ro"
+        ]
+      },
+      {
+        "offset": 9336,
+        "kind": "elf-pointer",
+        "value": 1824904,
+        "sections": [
+          ".data.rel.ro"
+        ]
+      },
+      {
+        "offset": 9352,
+        "kind": "direct-call",
+        "target": 1756696
+      },
+      {
+        "offset": 9456,
+        "kind": "elf-pointer",
+        "value": 1797760,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 9552,
+        "kind": "direct-call",
+        "target": 1686320
+      }
+    ]
+  },
+  "0x94e28": {
+    "start": 609832,
+    "end": 610528,
+    "bytes": 696,
+    "raw_sha256": "c7be6c54f801193ab699fda10c57682f2b92acffdc15002b4ddf2abcd4ca6748",
+    "raw_match": false,
+    "normalized_matches": [],
+    "original_operands": [
+      {
+        "offset": 128,
+        "kind": "direct-call",
+        "target": 1557464
+      },
+      {
+        "offset": 200,
+        "kind": "elf-pointer",
+        "value": 1793788,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 216,
+        "kind": "direct-call",
+        "target": 1405824
+      },
+      {
+        "offset": 248,
+        "kind": "elf-pointer",
+        "value": 1824824,
+        "sections": [
+          ".data.rel.ro"
+        ]
+      },
+      {
+        "offset": 344,
+        "kind": "elf-pointer",
+        "value": 1793788,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 360,
+        "kind": "direct-call",
+        "target": 1433224
+      },
+      {
+        "offset": 392,
+        "kind": "elf-pointer",
+        "value": 1793956,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 416,
+        "kind": "elf-pointer",
+        "value": 1824872,
+        "sections": [
+          ".data.rel.ro"
+        ]
+      },
+      {
+        "offset": 432,
+        "kind": "elf-pointer",
+        "value": 1824904,
+        "sections": [
+          ".data.rel.ro"
+        ]
+      },
+      {
+        "offset": 448,
+        "kind": "direct-call",
+        "target": 1756696
+      },
+      {
+        "offset": 552,
+        "kind": "elf-pointer",
+        "value": 1798815,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 648,
+        "kind": "direct-call",
+        "target": 1686320
+      }
+    ]
+  },
+  "0x95360": {
+    "start": 611168,
+    "end": 611856,
+    "bytes": 688,
+    "raw_sha256": "f5ecde410a0b961b267b8bcaaf9c922da348af9a182999e05a31db0cda046886",
+    "raw_match": false,
+    "normalized_matches": [],
+    "original_operands": [
+      {
+        "offset": 120,
+        "kind": "direct-call",
+        "target": 1557832
+      },
+      {
+        "offset": 192,
+        "kind": "elf-pointer",
+        "value": 1793788,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 208,
+        "kind": "direct-call",
+        "target": 1405824
+      },
+      {
+        "offset": 240,
+        "kind": "elf-pointer",
+        "value": 1824824,
+        "sections": [
+          ".data.rel.ro"
+        ]
+      },
+      {
+        "offset": 336,
+        "kind": "elf-pointer",
+        "value": 1793788,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 352,
+        "kind": "direct-call",
+        "target": 1433224
+      },
+      {
+        "offset": 384,
+        "kind": "elf-pointer",
+        "value": 1793956,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 408,
+        "kind": "elf-pointer",
+        "value": 1824872,
+        "sections": [
+          ".data.rel.ro"
+        ]
+      },
+      {
+        "offset": 424,
+        "kind": "elf-pointer",
+        "value": 1824904,
+        "sections": [
+          ".data.rel.ro"
+        ]
+      },
+      {
+        "offset": 440,
+        "kind": "direct-call",
+        "target": 1756696
+      },
+      {
+        "offset": 544,
+        "kind": "elf-pointer",
+        "value": 1798815,
+        "sections": [
+          ".rodata"
+        ]
+      },
+      {
+        "offset": 640,
+        "kind": "direct-call",
+        "target": 1686320
+      }
+    ]
+  }
+}

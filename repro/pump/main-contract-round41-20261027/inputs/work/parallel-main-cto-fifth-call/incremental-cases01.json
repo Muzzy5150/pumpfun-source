@@ -1,0 +1,112 @@
+{
+  "cases": [
+    {
+      "name": "native-size0-amount0-delta0",
+      "input_hash": "f171b414322b5c95acab526f32860af70f87d899835168346903025c1b77e229",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "native-size0-amount1-delta-1",
+      "input_hash": "0bddce86f00bcebae04ffd882879768dc4e16accbb6c8236b544c986fe2130e9",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "native-size0-amount1-delta0",
+      "input_hash": "e397e5c3f491afccc3df9ebe1643bd378539b9b061eb0c23e6c92884f579f2e1",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "native-size0-amount1-delta1",
+      "input_hash": "8436033d19c773d6d4788e3b0fe41a07d312960f3d5624f6a79416d650495733",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "native-size8-amount0-delta0",
+      "input_hash": "73d921269d21c5e485556a2acee869b07ca550fe6850216d7a87097f439610b0",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "native-size8-amount1-delta-1",
+      "input_hash": "563ee00360487b8357795e2b5a8c5935d6107d8156bb02266223070c18d2642b",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "native-size8-amount1-delta0",
+      "input_hash": "1bf97570c569e032b0c911f7f147228176dfbb658d3552a843cd90c7a5034a27",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "native-size8-amount1-delta1",
+      "input_hash": "73073d9be1c6d3f4feff8bd47e6d72eaef6f61ee02a4f3e0eadcf5b37c1a49d9",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "native-size128-amount0-delta0",
+      "input_hash": "11292ca13ec113863cb9cdbbff900289da4c1a602f205bc0d6f7e2d5002fc6dc",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "native-size128-amount1-delta-1",
+      "input_hash": "2d911004dde992207c5dc4234e4a91d40498f869c715adc6ee0cbf969cc34a98",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "native-size128-amount1-delta0",
+      "input_hash": "a33fd091514ec6600d26a202104b34bcf14de43509d151ade044fcaa2f295bc8",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "native-size128-amount1-delta1",
+      "input_hash": "6bd72e86a5d74d28b2295a226dcaf47f7a5e925d46c305bd987b03ae59a26b0a",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "token-TokenzQd-zero-frozenFalse",
+      "input_hash": "14b81b1ec3e5e27dba827ccc4222899ec9142e3ed281880f2ddb5a7862fb574e",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "token-TokenzQd-zero-frozenTrue",
+      "input_hash": "ff355055bf67207645c714c75c75f1bee207f4d9c18f310af2280c160fdb1421",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "wsol/native-size0-amount0-delta0",
+      "input_hash": "89fae7657c3bd41be8e64e8e591161cd189d7a83554dad18761b6cf23f7fa616",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "wsol/native-size0-amount1-delta-1",
+      "input_hash": "3436f8dd994d47dc59e355eab7e163dc702bcb1766e7a722ea3b142dd15563f6",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "wsol/native-size8-amount1-delta-1",
+      "input_hash": "c249d74dd74868f187120f0a5900082fce4c6c5d0e6e886d60fa41bb06330a3c",
+      "prior": [],
+      "new": true
+    },
+    {
+      "name": "wsol/native-size8-amount1-delta0",
+      "input_hash": "b4a6ef95b78a45b6de5859b19118f5c6e2faa2db127bb4ff7106e6b51620c6bd",
+      "prior": [],
+      "new": true
+    }
+  ]
+}

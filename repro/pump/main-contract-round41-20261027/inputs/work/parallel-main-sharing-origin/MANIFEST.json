@@ -1,0 +1,39 @@
+{
+  "scope": "Read-only main-Pump remaining source-origin evidence; sealed prior fee-split delivery unchanged.",
+  "packet_sha256": {
+    "audit.py": "c4631bf0e2bc03a6380ae8370502f2df25d63da746958db180fc67e02fede70a",
+    "REPORT.json": "8ee2ee5cdda55dcac1b08d3079d82ef9defe86793905f8706aea15a56ff40682",
+    "README.md": "7bdf69ab2e5d4e36ccdc2055c4d04a5b8c3fdaf9c95509f7619e0f04edf772dd"
+  },
+  "input_sha256": {
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/evidence/original/pump/deployed.so": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/evidence/upstream/pump_fees.json": "6b9fa3eccc6e06273076a47b581f9fcb9e531bb7c3c88acbcd44db55a4002b29",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_compare_function_bytes.py": "43fa359dce1e398f820df445d534e0912ac5f181f1ea15e13a5267b53105b075",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_quote_control_function_match.py": "28ad656012f8fbcd41ed1726e9345ee76f6249992bf28c91c4b9202479d3e94e",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-data-layout-r34/typed_values.py": "32b992d5e86ce051a0d9cd30ddc278933ed0ba8a0405a21af2f478dfc7ec14fc",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-attribute-account-0.31.2/src/lib.rs": "b8b45db7eb7e4ed68751b3f1980ff9f8d816bc7a7c2c190e625fae8484c706cd",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-attribute-program-0.31.2/src/declare_program/common.rs": "6cadf5a7657586fd543087ccd0e964c7eb7627d0d4a6d7f05d8b8a6c807ce1ad",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-attribute-program-0.31.2/src/declare_program/mod.rs": "3b8be488de600eccff3945294790dec1713ce636d09e8eda2b814e2a134b260e",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-attribute-program-0.31.2/src/declare_program/mods/accounts.rs": "36eec6a0742c5112601fa85e5bb432f467fe73a4e29ed1adba19a54c1b543d01",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-attribute-program-0.31.2/src/declare_program/mods/cpi.rs": "e2025210f6f205b9d1c67f1401a9243375bcd41c19f803a0a98f40891b8e1e8d",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/FINAL-RESULT.json": "d45c1d892b00208881d34b2352f55a29d6924f5e74a18c2cfe0d8bca43575210",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/build01/normalized-inventory.json": "6ba68052a0b32d980f2e1ab46e289e5c49ad8e4b84c80287f6a79b700998d412",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/build01/unstripped.so": "6a81dfefa311ff8ef913b4e3e3cccd6e59273c3584b1a6346bc2a013ce853b0d",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/locations.json": "50761bcf7055d7c3ba3b4855dfc4a6517e35fcf0c2c29bf412bccd2fc797eb09",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/source01/Cargo.lock": "8307bd5e79789b5190291ea014c2f5556e23fb9829fa2f68a7ede581235eae98",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/source01/src/distribution.rs": "7ca42333a9da3a97ca32e08f505a6328810d8811a191960e694e30c4027b9f8d",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/source01/src/fee_cpi.rs": "db77bbded616a63571686a05487fa12776fcef9bae55d4da74743944ac0ce404",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/source01/src/lib.rs": "e529cbf4aea7dac213b6889847053ac330fedf67e76103e6a00c2981cac22b51",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/source01/src/sell.rs": "77ee2e493b73895d870b7df426855e47162cc11ca6678cbb422781a1d00e47ef",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/source01/src/trade_types.rs": "31f21ef4e3099443da3e5f7f827990cfdebee6d062d366a4ac1a264cc13a6197",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-sharing-origin/audit.py": "c4631bf0e2bc03a6380ae8370502f2df25d63da746958db180fc67e02fede70a"
+  },
+  "compiler_runs": 0,
+  "source_edits": false,
+  "next_step": "Root review of external interface boundary before any isolated source trial.",
+  "limits": [
+    "Original macro spelling remains a hypothesis.",
+    "100/102 filepath matches differ from84/102 complete Location matches.",
+    "No new normalized/raw gains or runtime result is claimed for this read-only audit."
+  ]
+}

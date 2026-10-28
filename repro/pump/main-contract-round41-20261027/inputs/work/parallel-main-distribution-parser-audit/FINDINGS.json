@@ -1,0 +1,205 @@
+{
+  "status": "read-only discrepancy proved; no Rust source or compiled candidate changed",
+  "baseline_source": "work/parallel-main-distribution-v1-context/source01/src/distribution.rs",
+  "baseline_source_sha256": "b1ef5583a0aee56b7c2e76c49f12384bbd1dda01daa0256702415e39778a228b",
+  "candidate_sha256": "5c19e60427ac10372aaa86456482f22058fb5c42aefeba6945b9b0d64cddad27",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "v1": {
+    "original_parser": "0xc1d58/7256B",
+    "original_guard": "0xc2a20..0xc2ae0",
+    "predicate": "bonding_curve.quote_mint == Pubkey::default()",
+    "error": "6063 UnsupportedQuoteMint, account bonding_curve, no compared operands",
+    "precedes": [
+      "creator equality6053",
+      "sharing mint6004",
+      "creator vault mut2000",
+      "event seeds2006",
+      "handler paused6051",
+      "handler pending6095",
+      "remaining-account6027"
+    ],
+    "observed": "24 signed cases;16 semantic and16 strict mismatches fornative andarbitrary nonzero quotes;all8default controls agree",
+    "source_recommendation": "Add only the raw quote_mint==default constraint before the existing raw creator-equality constraint on V1 bonding_curve."
+  },
+  "v2": {
+    "original_parser": "0xbf800/9560B",
+    "call_sites": [
+      "0xc1880",
+      "0xc18e0",
+      "0xc1968"
+    ],
+    "predicate": "quote_mint.key() == bonding_curve.quote_mint || (bonding_curve.quote_mint == Pubkey::default() && quote_mint.key() == native_mint::ID)",
+    "current_predicate": "quote_mint.key() == if curve_quote == default || curve_quote == native {native} else {curve_quote}",
+    "finding": "Same acceptance predicate, but original directly short-circuits comparisons rather than selecting/copying a 32-byte expected key. This is a concrete expression/dataflow control, not a behavior fix.",
+    "runtime_limit": "No new V2 source control built or tested."
+  },
+  "signatures": {
+    "distinct_transactions": 4,
+    "all_verified": true
+  },
+  "specs": [
+    {
+      "case": "default/none",
+      "input_sha256": "67892195d70c73a0fd077e4d6f5c2fb5606885467f0cd22494af5b2ed1f12716",
+      "different_fields": []
+    },
+    {
+      "case": "default/creator",
+      "input_sha256": "d9c75f90d8f645141526479eedbc1d8b5e6f4640f613261a603a4a3cd7e9dddf",
+      "different_fields": []
+    },
+    {
+      "case": "default/paused",
+      "input_sha256": "fb9d64e272cd0e5c732c63f54532a3b64873aa55bf98be37f7074996a0a8fd36",
+      "different_fields": []
+    },
+    {
+      "case": "default/pending",
+      "input_sha256": "21df8e7db653136d8981fb28148aa510d4b974ae8cb13b3ebdccde4c3a86f788",
+      "different_fields": []
+    },
+    {
+      "case": "default/remaining",
+      "input_sha256": "c423e4bb05be27c6c9c695beab10564d307cd3ab5764d74c09a3e4b4a7cd39c9",
+      "different_fields": []
+    },
+    {
+      "case": "default/vault_readonly",
+      "input_sha256": "81247b7d3ed4d21a178a03a33837eb65c4dedeccd2f733817afa06ce314bdc2e",
+      "different_fields": []
+    },
+    {
+      "case": "default/sharing_mint",
+      "input_sha256": "97cb8173a22ea94d47d70ebf5c9a0c39af15074a5241468dbe7f05d18a6c5a58",
+      "different_fields": []
+    },
+    {
+      "case": "default/event",
+      "input_sha256": "f722aa5f187234e75ca28c8834f074b391a7f216cb8368b20e430c9d55ca86bf",
+      "different_fields": []
+    },
+    {
+      "case": "native/none",
+      "input_sha256": "7021e69924fa6d456704e87cfafe72c5158d916f7098f52a7454822293fd47c4",
+      "different_fields": [
+        "error",
+        "events",
+        "inner",
+        "return"
+      ]
+    },
+    {
+      "case": "native/creator",
+      "input_sha256": "c6b76b37ac118cf947d693aad398a086d81f37a872dbaf76a8e6ac50b1ed3f78",
+      "different_fields": [
+        "error"
+      ]
+    },
+    {
+      "case": "native/paused",
+      "input_sha256": "4d07628e91c137e4521d64e4be71504d4b4dd5b7474f6fd7bda64c59bb984ce8",
+      "different_fields": [
+        "error"
+      ]
+    },
+    {
+      "case": "native/pending",
+      "input_sha256": "be8825aec7ba7bb000e31a0b4f88d7a8d68a542897c7c426ab7df20fc7fa3298",
+      "different_fields": [
+        "error"
+      ]
+    },
+    {
+      "case": "native/remaining",
+      "input_sha256": "b94cde9170cf5924c2ab241becd4f8b17eb6e62ba9ef5e0bcdfff4541c96fa2e",
+      "different_fields": [
+        "error"
+      ]
+    },
+    {
+      "case": "native/vault_readonly",
+      "input_sha256": "ede7b2f8aa858fc7e1a1bf797921c30dc445ee70cfde21ef39c1f11b9177b97d",
+      "different_fields": [
+        "error"
+      ]
+    },
+    {
+      "case": "native/sharing_mint",
+      "input_sha256": "d86ce00e1347641a60eaae4faf45f7240ca21ec91146fe4476bd8f51a2e4b317",
+      "different_fields": [
+        "error"
+      ]
+    },
+    {
+      "case": "native/event",
+      "input_sha256": "ec40e0852f0c0930a99d21ced6d3e5311928df263c7c8c7c73e7c915653cb88c",
+      "different_fields": [
+        "error"
+      ]
+    },
+    {
+      "case": "other/none",
+      "input_sha256": "144d15c333d1132949c89142fb4b28988f0b0b2f017b3d7f89589ba037bcc810",
+      "different_fields": [
+        "error",
+        "events",
+        "inner",
+        "return"
+      ]
+    },
+    {
+      "case": "other/creator",
+      "input_sha256": "76317ec4bd653972d8fa7508fe664a7fc90d30b4623ee578e31fac9256ad6683",
+      "different_fields": [
+        "error"
+      ]
+    },
+    {
+      "case": "other/paused",
+      "input_sha256": "a3a87dc3cde8d10f0a12d47638786c42ecdf945705a54ff7bf654bd15c502f9a",
+      "different_fields": [
+        "error"
+      ]
+    },
+    {
+      "case": "other/pending",
+      "input_sha256": "37a0b7119087abab824987ce57d229867d2cc602ac21ba35d794bda2f2b8e507",
+      "different_fields": [
+        "error"
+      ]
+    },
+    {
+      "case": "other/remaining",
+      "input_sha256": "49965112f808f7863515f2419355c518df6bf2363eb2db2d0a09d532f6772d35",
+      "different_fields": [
+        "error"
+      ]
+    },
+    {
+      "case": "other/vault_readonly",
+      "input_sha256": "a0735c0d2c7022412306985cf192b4b2b50c4ea914e1f3c614049765e63d3a93",
+      "different_fields": [
+        "error"
+      ]
+    },
+    {
+      "case": "other/sharing_mint",
+      "input_sha256": "6552670aeec6b6d558395c04d7f30fe08b03689fb0fa01c6d5206d54da56f4cf",
+      "different_fields": [
+        "error"
+      ]
+    },
+    {
+      "case": "other/event",
+      "input_sha256": "70f70400e7a98e0332a5ed43f857689be6f9bbf49ef25526c41e3d757b61aeb0",
+      "different_fields": [
+        "error"
+      ]
+    }
+  ],
+  "limitations": [
+    "No source recovery or new build is delivered by this read-only packet.",
+    "No uniqueness claim is made before corpus input dedup.",
+    "Linear call annotation is a navigation aid; full original instruction snippets and runtime receipts are retained."
+  ]
+}

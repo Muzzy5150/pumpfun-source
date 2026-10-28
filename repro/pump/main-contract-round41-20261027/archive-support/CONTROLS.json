@@ -1,0 +1,230 @@
+{
+  "status": "passed",
+  "controls": [
+    {
+      "name": "external_archive_explicit_paths",
+      "status": "passed",
+      "fresh_admission": false,
+      "transformation_counts": {
+        "moved_.text": 943,
+        "moved_.data.rel.ro": 2,
+        "branches_checked": 20964,
+        "calls_checked": 10607,
+        "lddw_checked": 7867,
+        "data_pointers_checked": 645,
+        "data_scalars_checked": 811,
+        "relocations_checked": 5818
+      }
+    },
+    {
+      "name": "same_process_second_replay",
+      "status": "passed",
+      "fresh_admission": false,
+      "transformation_counts": {
+        "moved_.text": 943,
+        "moved_.data.rel.ro": 2,
+        "branches_checked": 20964,
+        "calls_checked": 10607,
+        "lddw_checked": 7867,
+        "data_pointers_checked": 645,
+        "data_scalars_checked": 811,
+        "relocations_checked": 5818
+      }
+    },
+    {
+      "name": "bindings_digest",
+      "status": "rejected_as_expected",
+      "diagnostic": "archive bindings digest differs",
+      "mutation": null,
+      "trust_input_rebound_for_semantic_control": false
+    },
+    {
+      "name": "baseline_hash",
+      "status": "rejected_as_expected",
+      "diagnostic": "artifact hash/length mismatch: baseline_elf",
+      "mutation": {
+        "artifact": "baseline_elf",
+        "offset": 1736560,
+        "before": "7d",
+        "after": "00"
+      },
+      "trust_input_rebound_for_semantic_control": false
+    },
+    {
+      "name": "final_map_hash",
+      "status": "rejected_as_expected",
+      "diagnostic": "artifact hash/length mismatch: final_map",
+      "mutation": {
+        "artifact": "final_map",
+        "offset": 0,
+        "before": "20",
+        "after": "58"
+      },
+      "trust_input_rebound_for_semantic_control": false
+    },
+    {
+      "name": "certificate_hash",
+      "status": "rejected_as_expected",
+      "diagnostic": "artifact hash/length mismatch: admitted_certificate",
+      "mutation": {
+        "artifact": "admitted_certificate",
+        "offset": 0,
+        "before": "7b",
+        "after": "20"
+      },
+      "trust_input_rebound_for_semantic_control": false
+    },
+    {
+      "name": "original_hash_constant",
+      "status": "rejected_as_expected",
+      "diagnostic": "original main-Pump ELF differs",
+      "mutation": {
+        "artifact": "original_elf",
+        "offset": 100,
+        "before": "00",
+        "after": "01"
+      },
+      "trust_input_rebound_for_semantic_control": true
+    },
+    {
+      "name": "false_admitted_role_descriptor",
+      "status": "rejected_as_expected",
+      "diagnostic": "admitted role descriptor differs from independently observed baseline",
+      "mutation": {
+        "artifact": "admitted_certificate",
+        "field": "roles[0].candidate_owner",
+        "delta": 8
+      },
+      "trust_input_rebound_for_semantic_control": true
+    },
+    {
+      "name": "baseline_location_scalar",
+      "status": "rejected_as_expected",
+      "diagnostic": "candidate Location fields differ",
+      "mutation": {
+        "artifact": "baseline_elf",
+        "offset": 1736560,
+        "before": "7d020000",
+        "after": "7e020000"
+      },
+      "trust_input_rebound_for_semantic_control": true
+    },
+    {
+      "name": "baseline_role_lddw_target",
+      "status": "rejected_as_expected",
+      "diagnostic": "role target is not one complete map input: borsh_array_location",
+      "mutation": {
+        "artifact": "baseline_elf",
+        "offset": 1086892,
+        "before": "607f1a00",
+        "after": "407f1a00"
+      },
+      "trust_input_rebound_for_semantic_control": true
+    },
+    {
+      "name": "baseline_vtable_scalar",
+      "status": "rejected_as_expected",
+      "diagnostic": "vtable scalar fields differ",
+      "mutation": {
+        "artifact": "baseline_elf",
+        "offset": 1736520,
+        "before": "0800000000000000",
+        "after": "1000000000000000"
+      },
+      "trust_input_rebound_for_semantic_control": true
+    },
+    {
+      "name": "final_location_scalar",
+      "status": "rejected_as_expected",
+      "diagnostic": "candidate Location fields differ",
+      "mutation": {
+        "artifact": "final_elf",
+        "offset": 1736528,
+        "before": "7d020000",
+        "after": "7e020000"
+      },
+      "trust_input_rebound_for_semantic_control": true
+    },
+    {
+      "name": "final_vtable_method_body",
+      "status": "rejected_as_expected",
+      "diagnostic": "vtable method body differs",
+      "mutation": {
+        "artifact": "final_elf",
+        "offset": 42332,
+        "before": "00000000",
+        "after": "01000000"
+      },
+      "trust_input_rebound_for_semantic_control": true
+    },
+    {
+      "name": "other_data_scalar",
+      "status": "rejected_as_expected",
+      "diagnostic": "unaccounted data bytes",
+      "mutation": {
+        "artifact": "final_elf",
+        "offset": 1735984,
+        "before": "0000000079011a00",
+        "after": "7b00000000000000"
+      },
+      "trust_input_rebound_for_semantic_control": true
+    },
+    {
+      "name": "other_instruction_operand",
+      "status": "rejected_as_expected",
+      "diagnostic": "unaccounted instruction bytes",
+      "mutation": {
+        "artifact": "final_elf",
+        "offset": 348,
+        "before": "e4820200",
+        "after": "00000000"
+      },
+      "trust_input_rebound_for_semantic_control": true
+    },
+    {
+      "name": "other_rodata_byte",
+      "status": "rejected_as_expected",
+      "diagnostic": "other section changed: .rodata",
+      "mutation": {
+        "artifact": "final_elf",
+        "offset": 1735962,
+        "before": "00",
+        "after": "01"
+      },
+      "trust_input_rebound_for_semantic_control": true
+    },
+    {
+      "name": "symbol_value",
+      "status": "rejected_as_expected",
+      "diagnostic": "unaccounted symbol bytes",
+      "mutation": {
+        "artifact": "final_elf",
+        "offset": 1841680,
+        "before": "0000000000000000",
+        "after": "7b00000000000000"
+      },
+      "trust_input_rebound_for_semantic_control": true
+    },
+    {
+      "name": "duplicate_input_section",
+      "status": "rejected_as_expected",
+      "diagnostic": "duplicate input-section identity",
+      "mutation": {
+        "artifact": "final_map",
+        "action": "duplicate text input row inside its .text group",
+        "row": "120              120       b0     8         /Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-data-order-option/data-build03/link/inputs/0002/pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o:(.text._ZN103_$LT$anchor_lang..accounts..interface..Interface$LT$T$GT$$u20$as$u20$anchor_lang..Accounts$LT$B$GT$$GT$12try_accounts17h0e14175409742fd5E)"
+      },
+      "trust_input_rebound_for_semantic_control": true
+    },
+    {
+      "name": "optimized_python",
+      "status": "rejected_as_expected",
+      "output_absent": true
+    }
+  ],
+  "count": 19,
+  "original_certificate_unchanged": true,
+  "compiler_invocations": 0,
+  "script_sha256": "f0741d459d38f4ff3760ef97eeecf339ad9fdcdb972e132a98cd452b977ae3bb",
+  "verifier_sha256": "3e73e50a62b8a69916f2b33b6ba8e97f2673f0b27e0ddfc7033ae9164fd1dc1b"
+}

@@ -1,0 +1,194 @@
+{
+  "status": "validated concrete owned quote-payment increment for parent composition",
+  "base": "sealed wrapper/source03",
+  "candidate_sha256": "a9487b1f5e4a19eeadad338604c4367cd4501c2662e4352e7e8ddfee269edc27",
+  "unstripped_sha256": "f47c690b2d44509cd9233399b2a0050c018775656f38bfbde6a1249b8870432b",
+  "build_receipt_sha256": "99dfb0f2c54284398a3bddf04edf14f6737ee3ab267cf02b6fd6823ac26473ef",
+  "source_hashes": {
+    "src/lib.rs": "3295caffa3c9a9859b4e04997fb6880247c95020f56f7d106a0a1a44c11bd47b",
+    "src/buy_v2.rs": "680d6cf30a9ac208acdbd537da1a483edb538c10403a3588654262da86a044ff"
+  },
+  "patch_sha256": "83ae9bd3d1f385d0490d2f79c242ac44e622a2973086cbf367d623597caa32bb",
+  "inventory": {
+    "total": 1035,
+    "raw": 124,
+    "normalized": 732,
+    "unmatched": 303
+  },
+  "window_sets": {
+    "normalized_matches": {
+      "gained": [
+        "0x8da98",
+        "0x97eb0"
+      ],
+      "lost": []
+    },
+    "raw_match": {
+      "gained": [],
+      "lost": []
+    }
+  },
+  "new_exact_bodies": {
+    "0x97eb0": 864,
+    "0x8da98": 1280
+  },
+  "preserved_actual_exact_bodies": {
+    "0x97930": 704,
+    "0x8df98": 1208
+  },
+  "callees": [
+    {
+      "source_original": "0x97930",
+      "source_candidate": "0xbadc8",
+      "offset": 88,
+      "original_target": "0x1ac500",
+      "candidate_target": "0x195c80",
+      "bytes": 40,
+      "matching_symbols": [
+        "_ZN4core6option13unwrap_failed17h2b22848a3f32bcb7E"
+      ]
+    },
+    {
+      "source_original": "0x97930",
+      "source_candidate": "0xbadc8",
+      "offset": 136,
+      "original_target": "0x8df98",
+      "candidate_target": "0xba910",
+      "bytes": 1208,
+      "matching_symbols": [
+        "_ZN14pump_recovered19user_quote_payments15transfer_native17h7ad249fecab419edE"
+      ]
+    },
+    {
+      "source_original": "0x97930",
+      "source_candidate": "0xbadc8",
+      "offset": 632,
+      "original_target": "0x91ef0",
+      "candidate_target": "0x5e5d8",
+      "bytes": 2352,
+      "matching_symbols": [
+        "_ZN14pump_recovered7sell_v221quote_token_transfers21transfer_quote_tokens17hc044e5bd10fbf9c3E"
+      ]
+    },
+    {
+      "source_original": "0x97930",
+      "source_candidate": "0xbadc8",
+      "offset": 696,
+      "original_target": "0x1ac500",
+      "candidate_target": "0x195c80",
+      "bytes": 40,
+      "matching_symbols": [
+        "_ZN4core6option13unwrap_failed17h2b22848a3f32bcb7E"
+      ]
+    },
+    {
+      "source_original": "0x8df98",
+      "source_candidate": "0xba910",
+      "offset": 1152,
+      "original_target": "0x19e090",
+      "candidate_target": "0x186820",
+      "bytes": 800,
+      "matching_symbols": [
+        "_ZN11anchor_lang14system_program8transfer17h6e716b5d4cc7ca2eE"
+      ]
+    },
+    {
+      "source_original": "0x97eb0",
+      "source_candidate": "0xbb588",
+      "offset": 96,
+      "original_target": "0x1ac500",
+      "candidate_target": "0x195c80",
+      "bytes": 40,
+      "matching_symbols": [
+        "_ZN4core6option13unwrap_failed17h2b22848a3f32bcb7E"
+      ]
+    },
+    {
+      "source_original": "0x97eb0",
+      "source_candidate": "0xbb588",
+      "offset": 144,
+      "original_target": "0x8da98",
+      "candidate_target": "0xbb088",
+      "bytes": 1280,
+      "matching_symbols": [
+        "_ZN14pump_recovered19user_quote_payments21transfer_native_owned17hb3658fe07626349cE"
+      ]
+    },
+    {
+      "source_original": "0x97eb0",
+      "source_candidate": "0xbb588",
+      "offset": 664,
+      "original_target": "0x91ef0",
+      "candidate_target": "0x5e5d8",
+      "bytes": 2352,
+      "matching_symbols": [
+        "_ZN14pump_recovered7sell_v221quote_token_transfers21transfer_quote_tokens17hc044e5bd10fbf9c3E"
+      ]
+    },
+    {
+      "source_original": "0x97eb0",
+      "source_candidate": "0xbb588",
+      "offset": 856,
+      "original_target": "0x1ac500",
+      "candidate_target": "0x195c80",
+      "bytes": 40,
+      "matching_symbols": [
+        "_ZN4core6option13unwrap_failed17h2b22848a3f32bcb7E"
+      ]
+    },
+    {
+      "source_original": "0x8da98",
+      "source_candidate": "0xbb088",
+      "offset": 1112,
+      "original_target": "0x19e090",
+      "candidate_target": "0x186820",
+      "bytes": 800,
+      "matching_symbols": [
+        "_ZN11anchor_lang14system_program8transfer17h6e716b5d4cc7ca2eE"
+      ]
+    }
+  ],
+  "runtime": {
+    "case_count": 1275,
+    "suite_counts": {
+      "buy-v2": 216,
+      "v3-extensions": 126,
+      "v3-continuation": 42,
+      "v3-configured": 372,
+      "v3-native-buyback": 18,
+      "v3-token-buyback": 12,
+      "v3-post-fees": 80,
+      "v3-matrix": 12,
+      "v3-crossing": 16,
+      "price-divisible": 12,
+      "price-boundaries": 12,
+      "v3-order": 18,
+      "buyback-order16": 16,
+      "buyback54": 54,
+      "buyback-post8": 8,
+      "buyback-protocol4": 4,
+      "buyback-prefix7": 7,
+      "cost-order8": 8,
+      "quote-order22": 22,
+      "owned-order48": 48,
+      "creator-rent108": 108,
+      "payment-order64": 64
+    },
+    "all_signatures_verified": true,
+    "transaction_bytes_identical": true,
+    "strict_fixture_mismatches": [],
+    "diagnostic_mismatches": [],
+    "invocation_sequence_mismatches": [],
+    "explicit_owned_zero_and_failure_cases": 48,
+    "zero_fee_creator_cpi_absence_proved_cases": 24,
+    "positive_fee_creator_cpi_presence_proved_cases": 24
+  },
+  "limits": [
+    "Full original ELF identity remains false.",
+    "Common original Location objects prove shared source spans but not the exact original generic implementation; generic control01 is negative and unpromoted.",
+    "The new concrete owned API preserves observed typed Signer and AccountInfo ownership; exact original source names are unknown.",
+    "Two borrowed duplicate-normalized windows keep their prior caveats.",
+    "Other legacy direct callers of0x8da98 and MultiHop direct caller of0x8df98 remain unrefactored.",
+    "Root composite must complete its own full validation."
+  ]
+}

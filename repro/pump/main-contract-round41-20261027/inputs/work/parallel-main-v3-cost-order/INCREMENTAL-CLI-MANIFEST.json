@@ -1,0 +1,84 @@
+{
+  "total_cases": 97,
+  "scripts": [
+    {
+      "script": "work/parallel-main-v3-accounting-boundary/probe-cost-order.py",
+      "sha256": "1fb17f375886aa4f3cdbfe3edfadd516c6ad9814f8266bc7c35216e8c9c6b29a",
+      "expected_cases": 8,
+      "arguments": [
+        "--candidate",
+        "<candidate.so>",
+        "--output",
+        "<report.json.gz>"
+      ],
+      "loader": "work/parallel-main-loader-optimized/pump_with_captured_loader.py",
+      "extra_validation": "pump_diagnostic_audit.audit plus audit_invocations.py compare paired error diagnostics and CPI log order"
+    },
+    {
+      "script": "work/parallel-main-v3-buyback-assert/probe.py",
+      "sha256": "c1fc3067bcda6fe08cf5a43722d9eed884623f5f6c7a0ea3bfd8197bb0ade966",
+      "expected_cases": 54,
+      "arguments": [
+        "--candidate",
+        "<candidate.so>",
+        "--output",
+        "<report.json.gz>"
+      ],
+      "loader": "work/parallel-main-loader-optimized/pump_with_captured_loader.py",
+      "extra_validation": "pump_diagnostic_audit.audit plus audit_invocations.py compare paired error diagnostics and CPI log order"
+    },
+    {
+      "script": "work/parallel-main-v3-buyback-assert/probe-order.py",
+      "sha256": "04baf9cb66bf61f3e7264d43e566a27e7535cae1da9a18c3c7575beaf69e3283",
+      "expected_cases": 16,
+      "arguments": [
+        "--candidate",
+        "<candidate.so>",
+        "--output",
+        "<report.json.gz>"
+      ],
+      "loader": "work/parallel-main-loader-optimized/pump_with_captured_loader.py",
+      "extra_validation": "pump_diagnostic_audit.audit plus audit_invocations.py compare paired error diagnostics and CPI log order"
+    },
+    {
+      "script": "work/parallel-main-v3-buyback-assert/probe-post.py",
+      "sha256": "7ebf7fab184ff57f05ff283cd9f1acf0ee29d85a6d9246cc21ad5f6478484ba1",
+      "expected_cases": 8,
+      "arguments": [
+        "--candidate",
+        "<candidate.so>",
+        "--output",
+        "<report.json.gz>"
+      ],
+      "loader": "work/parallel-main-loader-optimized/pump_with_captured_loader.py",
+      "extra_validation": "pump_diagnostic_audit.audit plus audit_invocations.py compare paired error diagnostics and CPI log order"
+    },
+    {
+      "script": "work/parallel-main-v3-buyback-assert/probe-payment-prefix.py",
+      "sha256": "d82f0e74db3bd6ae00792a1642cbdea5cae5de2bbbad503489b7abc4af15057f",
+      "expected_cases": 7,
+      "arguments": [
+        "--candidate",
+        "<candidate.so>",
+        "--output",
+        "<report.json.gz>"
+      ],
+      "loader": "work/parallel-main-loader-optimized/pump_with_captured_loader.py",
+      "extra_validation": "pump_diagnostic_audit.audit plus audit_invocations.py compare paired error diagnostics and CPI log order"
+    },
+    {
+      "script": "work/parallel-main-v3-buyback-assert/probe-protocol-overflow.py",
+      "sha256": "e8525bf562b76813f1c3b4df3a5890a31da2020e8eeca8767c67491442dbf073",
+      "expected_cases": 4,
+      "arguments": [
+        "--candidate",
+        "<candidate.so>",
+        "--output",
+        "<report.json.gz>"
+      ],
+      "loader": "work/parallel-main-loader-optimized/pump_with_captured_loader.py",
+      "extra_validation": "pump_diagnostic_audit.audit plus audit_invocations.py compare paired error diagnostics and CPI log order"
+    }
+  ],
+  "scope": "New V3 buyback97 cases; old 1145 corpus is separate."
+}

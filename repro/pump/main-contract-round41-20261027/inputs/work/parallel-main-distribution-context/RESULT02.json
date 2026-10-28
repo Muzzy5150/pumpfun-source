@@ -1,0 +1,74 @@
+{
+  "status": "validated isolated source recovery; ready for parent integration review",
+  "scope": "Main Pump DistributeCreatorFeesV2 account types only, preserving accepted numeric plan and pending-fee guards.",
+  "source_file": "work/parallel-main-distribution-context/source02/src/distribution.rs",
+  "source_sha256": "b862f3757c6051e4c71439f2e097250a9cf9491239f095a7a4206fc8bfb3eb09",
+  "numeric_baseline_source_sha256": "aaa0f636a354a336dfe6361eed4ed9c501f0d7ccbf7abf20f3a41fcd87e6d985",
+  "round34_source_sha256": "50be401d3a89612f46927f8750a3b32ad025979bb74a99d8049caf065a0eb9b5",
+  "context_patch_sha256": "2fead4bac45da7479c3ca080f33c017d480bd89474de28fb5e60e06cc3e0c750",
+  "combined_patch_sha256": "fd0b8b760df974e800053b28ac1686d97af17039149789e033ade8f5868683fa",
+  "candidate_sha256": "cfa584ec9f7941a0a121c19522efe0c2e9fa54cfc825b12f68ed9816ba277cf1",
+  "unstripped_sha256": "31b73ba9ae754e23b4d0c67f347079eb45e968aed55f70c6b0158a52f556c455",
+  "build_receipt_sha256": "795af051595bf72cf8a23895609e79fffc0ebad567b55c7e325e52b8c45a4cc9",
+  "changes": [
+    "DistributeCreatorFeesV2.quote_mint: Box<InterfaceAccount<Mint>>",
+    "DistributeCreatorFeesV2.event_authority: AccountInfo instead of UncheckedAccount"
+  ],
+  "original_evidence": {
+    "quote_mint": "0xc0190 calls boxed Accounts helper0x3a08; error name at0xc0550 is quote_mint;128-byte underlying value allocation/copy.",
+    "event_authority": "0xbfe08 calls exact AccountInfo::try_accounts0x2ca8; error name at0xbfe48 is event_authority;48-byte owned result.",
+    "context_size": "Prior632B -120B(Box128B value to8B pointer) +40B(owned48B AccountInfo replacing8B wrapper) = original552B.",
+    "input_abi_manifest_sha256": "bcd64172639eda09baa322dfd68e41819c0b799d61dbe681e04ad6dc475668c1"
+  },
+  "wrapper": {
+    "original_start": "0x1316e8",
+    "bytes": 1992,
+    "normalized_equal": true,
+    "raw_equal": false
+  },
+  "parser": {
+    "original_start": "0xbf800",
+    "original_bytes": 9560,
+    "candidate_bytes": 9728,
+    "normalized_equal": false
+  },
+  "inventory": {
+    "total": 1035,
+    "raw": 119,
+    "normalized": 734,
+    "unmatched": 301
+  },
+  "complete_match_delta": {
+    "normalized_matches": {
+      "gains": [
+        "0x1316e8"
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "runtime": {
+    "case_counts": {
+      "distribution": 298,
+      "minimum": 181,
+      "regressions": 62,
+      "rent": 6,
+      "pending": 72
+    },
+    "cases": 619,
+    "mismatches": 0,
+    "strict_diagnostic_mismatches": 0,
+    "invocation_order_mismatches": 0,
+    "distinct_transactions_reverified": 104
+  },
+  "limitations": [
+    "The V2 parser remains nonexact.",
+    "Normalized masks relocation operands; callee/data identity remains a separate obligation.",
+    "Raw sets compare unordered identity builds; no fresh final text/data order is qualified here.",
+    "No behavior change or new coverage is claimed;619 existing tests replayed.",
+    "No canonical/shared source or original/companion binary was changed."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "script": "work/parallel-main-sweep-recipient-rent/probe.py",
+  "cases": 32,
+  "command": [
+    "work/test-env/bin/python",
+    "work/parallel-main-sweep-recipient-rent/probe.py",
+    "--candidate",
+    "<candidate.so>",
+    "--output",
+    "<report.json.gz>"
+  ],
+  "uses_optimized_loader": true,
+  "input_sha256": {
+    "work/parallel-main-sweep-recipient-rent/probe.py": "067eb1adfc93b6da2a4a9c8120cdf0b863df3d0041f6438b52b696a29cf7fe62",
+    "scripts/pump_fee_sweep_differential.py": "a21fd04a1d56a7c173679a779873b0ce9ff3d8e50e67d608801bd635a597760d"
+  },
+  "scenarios": "Native/token, creator/protocol, zero/nonzero fee, recipient0/1/min-1/min/min+1, poor payer."
+}

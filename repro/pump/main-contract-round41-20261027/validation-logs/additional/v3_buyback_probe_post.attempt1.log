@@ -1,0 +1,9 @@
+buy_v3-False-10001-post-buyback TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete))) TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete))) []
+buy_v3-False-15000-post-buyback TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete))) TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete))) []
+buy_v3-True-10001-post-buyback TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete))) TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete))) []
+buy_v3-True-15000-post-buyback TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete))) TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete))) []
+buy_exact_quote_in_v3-False-10001-post-buyback TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete))) TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete))) []
+buy_exact_quote_in_v3-False-15000-post-buyback TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete))) TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete))) []
+buy_exact_quote_in_v3-True-10001-post-buyback TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete))) TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete))) []
+buy_exact_quote_in_v3-True-15000-post-buyback TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete))) TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete))) []
+{"count": 8, "mismatches": [], "diagnostics": 0}

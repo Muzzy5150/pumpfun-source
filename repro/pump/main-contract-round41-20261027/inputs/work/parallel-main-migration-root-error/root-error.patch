@@ -1,0 +1,25 @@
+--- a/src/migrate_v2.rs
++++ b/src/migrate_v2.rs
+@@ -138,7 +138,7 @@
+   crate::migrate::native_payments::transfer_native(a.system_program.as_ref(),&a.user,&a.pool_authority,initial_balance.saturating_sub(after_balance))?;
+  }
+  call(&tok,&[(&tmpb,false,true),(&wa,false,true),(&pa,true,false)],vec![9],&[pas])?;
+- if !quote_preexisting{if quote_extensions(&wsol)?.contains(&1){if !wsol.is_writable{return err!(MigrateV2Error::QuoteMintNotWritable)}call(&qt,&[(&wsol,false,true),(&tmpq,false,true)],vec![26,4],&[])?;}
++ if !quote_preexisting{if quote_extensions(&wsol)?.contains(&1){if !wsol.is_writable{return err!(PumpError::QuoteMintNotWritable)}call(&qt,&[(&wsol,false,true),(&tmpq,false,true)],vec![26,4],&[])?;}
+  call(&qt,&[(&tmpq,false,true),(&wa,false,true),(&pa,true,false)],vec![9],&[pas])?;}
+  let burn_amount=amount(&ulp)?;anchor_spl::token_2022::burn(CpiContext::new_with_signer(t22.clone(),anchor_spl::token_2022::Burn{mint:lp.clone(),from:ulp.clone(),authority:pa.clone()},&[pas]),burn_amount)?;call(&t22,&[(&ulp,false,true),(&wa,false,true),(&pa,true,false)],vec![9],&[pas])?;
+  refund_pool_authority(a,ctx.bumps.pool_authority,&wa,pa.lamports())?;
+@@ -148,13 +148,6 @@
+  let event=CompletePumpAmmMigrationEvent{user:a.user.key(),mint:mintkey,mint_amount:base,sol_amount:quote,pool_migration_fee:fee,bonding_curve:a.bonding_curve.key(),timestamp:Clock::get()?.unix_timestamp,pool:a.pool.key(),quote_mint:a.bonding_curve.quote_mint};emit!(event.clone());let mut event_data=vec![228,69,165,46,81,203,154,29];event_data.extend_from_slice(&event.data());let eb=[ctx.bumps.event_authority];invoke_signed(&Instruction{program_id:crate::ID,accounts:vec![AccountMeta::new_readonly(a.event_authority.key(),true)],data:event_data},&[a.event_authority.to_account_info(),a.program.to_account_info()],&[&[b"__event_authority",&eb]])?;Ok(())
+ }
+ 
+-// Captured original emits6110 although the saved public IDL stops at6109.
+-#[error_code]
+-pub enum MigrateV2Error {
+- #[msg("quote_mint must be writable for a quote with a Token-2022 transfer fee: its withheld fees are harvested to the mint")]
+- QuoteMintNotWritable = 110,
+-}
+-
+ // The original migration skips an empty refund before constructing signer seeds.
+ #[inline(never)]
+ fn refund_pool_authority<'info>(a:&MigrateV2<'info>,bump:u8,destination:&AccountInfo<'info>,amount:u64)->Result<()>{

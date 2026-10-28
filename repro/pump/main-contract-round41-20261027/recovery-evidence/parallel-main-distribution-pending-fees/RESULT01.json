@@ -1,0 +1,51 @@
+{
+  "status": "validated isolated main-Pump pending creator fee admission correction",
+  "baseline": "work/parallel-main-integration/round32-source/programs/pump",
+  "changed_files": [
+    "src/distribution.rs"
+  ],
+  "source_hashes": {
+    "src/distribution.rs": "50be401d3a89612f46927f8750a3b32ad025979bb74a99d8049caf065a0eb9b5"
+  },
+  "source_baseline_hashes": {
+    "src/distribution.rs": "6c7b6dd35e19112e01a743542910dedea83cc9c769795a9aab3512b214ca3f7d"
+  },
+  "patch_sha256": "1539bfe316e5266aa685dbbd0864fda3a3d44865d67accfdc3c3b0c83d35729b",
+  "candidate_sha256": "54854ba28834fc888cd0c016dd7b55f21f42a976a7098f9e18ce1486b7556c1c",
+  "unstripped_sha256": "5d90a94c203981f11b130c56ab1814a6b224a4b4e1fe7f9f0b4109381bc988f2",
+  "build_receipt_sha256": "1883af6aa6884339b88c78f9f367a4a529407fa6268df934aadbbf35712ad648",
+  "original_evidence": {
+    "v1_handler": "0x32840",
+    "status_guard": "0x32850/0x32858",
+    "pending_fee_load_guard": "0x32860/0x32868",
+    "creator_fees_not_swept_error": "0x329b0 (6095)",
+    "v1_original_diagnostic": "programs/pump/src/creator/distribute_creator_fees.rs:249",
+    "v2_original_diagnostic": "programs/pump/src/creator/distribute_creator_fee_v2.rs:213",
+    "wire_pending_creator_fee": "u64 offset125; unchanged historical BondingCurve decoder"
+  },
+  "behavior": "Require creator_fee==0 after active-sharing check, before Rent/planning/transfers, in execute and execute_v2.",
+  "runtime": {
+    "existing_cases": 547,
+    "focused_cases": 72,
+    "total_cases": 619,
+    "new_deduplicated_cases": 61,
+    "fixed_before_differences": 24,
+    "after_differences": 0,
+    "diagnostic_mismatches": 0,
+    "invocation_mismatches": 0,
+    "distinct_transactions_reverified": 104
+  },
+  "inventory": {
+    "total": 1035,
+    "raw": 119,
+    "normalized": 733,
+    "unmatched": 302
+  },
+  "normalized_gains": [],
+  "normalized_losses": [],
+  "limits": [
+    "No new whole-function match is claimed.",
+    "Raw layout changed because the private control omits the ordered recipe; parent must derive new final order.",
+    "No companion implementation or existing frozen source edited."
+  ]
+}

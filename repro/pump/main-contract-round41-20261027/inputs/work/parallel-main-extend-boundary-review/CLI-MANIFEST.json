@@ -1,0 +1,18 @@
+{
+  "replacement_suite": {
+    "group": "full",
+    "name": "extension",
+    "script": "work/parallel-main-extend-boundary-review/probe-full-logs-v2.py",
+    "cases": 308,
+    "args": []
+  },
+  "replacement_definition_sha256": {
+    "work/parallel-main-extend-boundary-review/probe-full-logs-v2.py": "9afff671deefedd951352345b76132860bde53c0d255d2c4d65fa8ba70556c5f",
+    "work/parallel-main-extend-boundary-review/probe-full-logs.py": "a83bf02ac0d2c6ee8ae40a0e5fca3796c93713c1fdef6a5ac60e7d6f66c43df6",
+    "work/parallel-main-extend-boundary-review/probe-logs.py": "4ef24e44c22304cde78ddd4abb19f90290021ee457a773bcd498ccac7424041e"
+  },
+  "additional_manifest": "work/parallel-main-extend-boundary-review/additional-manifest.json",
+  "additional_manifest_sha256": "6a6ba76e90934fb403f01460e29ce4110c79ac5f72093fe0a64f60383dfb9634",
+  "mapping308_sha256": "0ae69b5392b427a8a792f6517ca9adffba5808f5d46c621359bfe1ab00d74a3a",
+  "incremental_cases": 12
+}

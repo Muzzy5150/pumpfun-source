@@ -1,0 +1,13 @@
+{"case": "quote-token-False-fee-0-same-False", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "quote-token-False-fee-0-same-True", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "quote-token-False-fee-1-same-False", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6095))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6095))))", "diff": []}
+{"case": "quote-token-False-fee-1-same-True", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6095))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6095))))", "diff": []}
+{"case": "quote-token-False-pending-authority", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6000))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6000))))", "diff": []}
+{"case": "quote-token-False-pending-new_none", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6089))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6089))))", "diff": []}
+{"case": "quote-token-True-fee-0-same-False", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "quote-token-True-fee-0-same-True", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "quote-token-True-fee-1-same-False", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6095))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6095))))", "diff": []}
+{"case": "quote-token-True-fee-1-same-True", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6095))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6095))))", "diff": []}
+{"case": "quote-token-True-pending-authority", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6000))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6000))))", "diff": []}
+{"case": "quote-token-True-pending-new_none", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6089))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6089))))", "diff": []}
+{"case_count": 12, "mismatches": []}

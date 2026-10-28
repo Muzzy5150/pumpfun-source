@@ -1,0 +1,13 @@
+buy_v3 False False 1000000000000000 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6021)))) []
+buy_v3 False True 1000000000000000 None []
+buy_v3 True False 1000000000000000 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6021)))) []
+buy_v3 True True 1000000000000000 None []
+buy_exact_quote_in_v3 False False 1 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6021)))) []
+buy_exact_quote_in_v3 False False 1000001 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6021)))) []
+buy_exact_quote_in_v3 False True 1 None []
+buy_exact_quote_in_v3 False True 1000001 None []
+buy_exact_quote_in_v3 True False 1 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6021)))) []
+buy_exact_quote_in_v3 True False 1000001 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6021)))) []
+buy_exact_quote_in_v3 True True 1 None []
+buy_exact_quote_in_v3 True True 1000001 None []
+12 0 0

@@ -1,0 +1,13 @@
+buy_v3 control None None []
+buy_v3 zero_unlisted TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6062)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6062)))) []
+buy_v3 zero_listed TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6062)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6062)))) []
+buy_v3 wrong_key TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6057)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6057)))) []
+sell_v3 control None None []
+sell_v3 zero_unlisted TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6062)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6062)))) []
+sell_v3 zero_listed TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6062)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6062)))) []
+sell_v3 wrong_key TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6057)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6057)))) []
+buy_exact_quote_in_v3 control None None []
+buy_exact_quote_in_v3 zero_unlisted TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6062)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6062)))) []
+buy_exact_quote_in_v3 zero_listed TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6062)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6062)))) []
+buy_exact_quote_in_v3 wrong_key TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6057)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6057)))) []
+{'cases': 12, 'mismatches': [], 'diagnostic_mismatches': 0}

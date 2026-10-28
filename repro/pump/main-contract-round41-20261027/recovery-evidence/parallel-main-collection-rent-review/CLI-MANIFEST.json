@@ -1,0 +1,12 @@
+{
+  "script": "work/parallel-main-collection-rent-review/probe-selected.py",
+  "selection_schema": "list of SPECS01.json records, or object with cases list",
+  "specs": "work/parallel-main-collection-rent-review/SPECS01.json",
+  "specs_sha256": "9fc5647ff8d12c727ecf449871ca16da08a1e230164e4f2e8b59355d065eed6a",
+  "executed_cases": 88,
+  "dedup_owner": "build_identity",
+  "unfiltered_command_args": [
+    "--cases-file",
+    "work/parallel-main-collection-rent-review/SPECS01.json"
+  ]
+}

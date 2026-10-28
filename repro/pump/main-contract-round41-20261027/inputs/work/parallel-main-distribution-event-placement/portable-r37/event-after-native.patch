@@ -1,0 +1,23 @@
+--- a/src/creator/distribute_creator_fees.rs
++++ b/src/creator/distribute_creator_fees.rs
+@@ -32,3 +32,8 @@
+     }
+     Ok(distributed)
+ }
++
++use crate::trade_types::Shareholder;
++
++#[event]
++#[derive(Clone)]pub struct DistributeCreatorFeesEvent{pub timestamp:i64,pub mint:Pubkey,pub bonding_curve:Pubkey,pub sharing_config:Pubkey,pub admin:Pubkey,pub shareholders:Vec<Shareholder>,pub distributed:u64,pub quote_mint:Pubkey}
+--- a/src/distribution.rs
++++ b/src/distribution.rs
+@@ -15,8 +15,7 @@
+   let quote_mint=if buf.len()>=115{Pubkey::new_from_array(buf[83..115].try_into().unwrap())}else{Pubkey::default()};Ok(Self{creator,quote_mint})
+  }
+ }
+-#[event]
+-#[derive(Clone)]pub struct DistributeCreatorFeesEvent{pub timestamp:i64,pub mint:Pubkey,pub bonding_curve:Pubkey,pub sharing_config:Pubkey,pub admin:Pubkey,pub shareholders:Vec<Shareholder>,pub distributed:u64,pub quote_mint:Pubkey}
++pub use native_distribution::DistributeCreatorFeesEvent;
+ #[derive(Accounts)]
+ pub struct DistributeCreatorFees<'info>{
+  pub mint:InterfaceAccount<'info,anchor_spl::token_interface::Mint>,

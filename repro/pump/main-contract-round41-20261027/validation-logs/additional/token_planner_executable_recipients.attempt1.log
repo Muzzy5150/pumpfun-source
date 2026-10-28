@@ -1,0 +1,9 @@
+token22=False/recipient=pump/amount=0 []
+token22=False/recipient=pump/amount=1000000 []
+token22=False/recipient=token/amount=0 []
+token22=False/recipient=token/amount=1000000 []
+token22=True/recipient=pump/amount=0 []
+token22=True/recipient=pump/amount=1000000 []
+token22=True/recipient=token/amount=0 []
+token22=True/recipient=token/amount=1000000 []
+passed 8

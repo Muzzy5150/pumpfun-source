@@ -1,0 +1,23 @@
+{
+  "scope": "Bounded main-Pump later-hop error parity through the unchanged captured AMM; no implementation changes",
+  "case_count": 10,
+  "mismatches": 0,
+  "pump_cpi_each_side": 1,
+  "verified_outer_signatures_each": 1,
+  "candidate_sha256": "aa3b99d88317493cc2d36703e616b299252da0574c17caf1e0fbc74b6d7ee207",
+  "result_sha256": "c1580a6f6b5982c3bbb5715dd601aef6544ccb1d2becdf4c757f6658cd6cae81",
+  "probe_sha256": "631f9016681f01e81fce6e66d4067d3e91e7f060514fdb8b049b96e45d4174ab",
+  "manifest_sha256": "66618bbb69bb59ff8216435529cd70c1dc9298437e129e82e14e591778a8771c",
+  "cases": [
+    "Curve A/B malformed discriminator",
+    "Curve A/B seven-byte data",
+    "Curve A/B Mayhem flag",
+    "Curve A/B readonly meta",
+    "Both malformed discriminator",
+    "A Mayhem before B short"
+  ],
+  "limitations": [
+    "Finite input coverage, not universal equivalence.",
+    "The separate source/destination-mint mutation family was rejected before Pump; no claim of reaching6098 from those mutations."
+  ]
+}

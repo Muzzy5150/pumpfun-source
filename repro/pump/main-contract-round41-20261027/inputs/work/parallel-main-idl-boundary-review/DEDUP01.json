@@ -1,0 +1,406 @@
+{
+  "scope": "Dedup exact signed transaction plus canonical non-null original before map against prior171 IDL cases",
+  "prior_receipt": "work/parallel-main-integration/round32-unified/suites/full/idl_authority.attempt1.json.gz",
+  "prior_sha256": "f702d88eb98f334a40194206e57ac467476fc06f4c4a9a915570593ddb037b29",
+  "prior_cases": 171,
+  "new_probe_cases": 26,
+  "new_unique_inputs": 10,
+  "cases": [
+    {
+      "case": {
+        "name": "system-amount18446744073709551615-writeFalse-length0",
+        "writable": null,
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 18446744073709551615,
+            "length": 0
+          }
+        }
+      },
+      "input_hash": "08c08e00d0786e20a25b4b0df51e97f392445167020ee1582ada6710f029ad7b"
+    },
+    {
+      "case": {
+        "name": "system-amount18446744073709551615-writeFalse-length1",
+        "writable": null,
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 18446744073709551615,
+            "length": 1
+          }
+        }
+      },
+      "input_hash": "f9ac1422ef608b7c04c840c4812a134f56186aad10b2863c16bf48aeec12cbd4"
+    },
+    {
+      "case": {
+        "name": "system-amount18446744073709551615-writeTrue-length0",
+        "writable": "authority",
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 18446744073709551615,
+            "length": 0
+          }
+        }
+      },
+      "input_hash": "749c16cbf2c2fba53c51c945e6f8bdda839b945bfa3022a1e7effc3a7679e8a6"
+    },
+    {
+      "case": {
+        "name": "system-amount18446744073709551615-writeTrue-length1",
+        "writable": "authority",
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 18446744073709551615,
+            "length": 1
+          }
+        }
+      },
+      "input_hash": "326576ac5ad3cc8b5f7938f3a0bde16112431b820c8b7a78f25531af361ade7e"
+    },
+    {
+      "case": {
+        "name": "recipient-overflow-amount0-authority18446744073709551614",
+        "writable": "authority",
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 0,
+            "length": 0
+          },
+          "authority": {
+            "lamports": 18446744073709551614
+          }
+        }
+      },
+      "input_hash": "fa05dde3604e73a4245395a514af93c00304278fbb11fa566d252178ffa5b7a7"
+    },
+    {
+      "case": {
+        "name": "recipient-overflow-amount0-authority18446744073709551615",
+        "writable": "authority",
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 0,
+            "length": 0
+          },
+          "authority": {
+            "lamports": 18446744073709551615
+          }
+        }
+      },
+      "input_hash": "3ad054a76e880a2d931e89d46f57a33359e2652b2aa9bd90d806f9cfe1ec6a9c"
+    },
+    {
+      "case": {
+        "name": "recipient-overflow-amount1-authority18446744073709551614",
+        "writable": "authority",
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 1,
+            "length": 0
+          },
+          "authority": {
+            "lamports": 18446744073709551614
+          }
+        }
+      },
+      "input_hash": "9c549d30c550a26fff7049ef5c109e8c5879cda992ee2cfe8d1dbd6d7fe2fd93"
+    },
+    {
+      "case": {
+        "name": "recipient-overflow-amount1-authority18446744073709551615",
+        "writable": "authority",
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 1,
+            "length": 0
+          },
+          "authority": {
+            "lamports": 18446744073709551615
+          }
+        }
+      },
+      "input_hash": "d0cae8143804d6fb37f8dfd1f710a45560170faeed51d4eb574d2d2c27ecf0e8"
+    },
+    {
+      "case": {
+        "name": "recipient-overflow-amount2-authority18446744073709551614",
+        "writable": "authority",
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 2,
+            "length": 0
+          },
+          "authority": {
+            "lamports": 18446744073709551614
+          }
+        }
+      },
+      "input_hash": "c9dc37725d35f9dfacc597ad4018b9ce5e3e5d41ea5d16896b46ecdb7fb2362e"
+    },
+    {
+      "case": {
+        "name": "recipient-overflow-amount2-authority18446744073709551615",
+        "writable": "authority",
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 2,
+            "length": 0
+          },
+          "authority": {
+            "lamports": 18446744073709551615
+          }
+        }
+      },
+      "input_hash": "30a71327c8c4f3a5c6311544e344a090a0eb79298852dca6cfb8548d6923aa05"
+    }
+  ],
+  "overlaps": [
+    {
+      "case": {
+        "name": "system-amount0-writeFalse-length0",
+        "writable": null,
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 0,
+            "length": 0
+          }
+        }
+      },
+      "input_hash": "3be8ad1b6fc25f14b8aa74e4c403ec0d722bfafe7c7540e0fd48fa1879ef9273"
+    },
+    {
+      "case": {
+        "name": "system-amount0-writeFalse-length1",
+        "writable": null,
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 0,
+            "length": 1
+          }
+        }
+      },
+      "input_hash": "3be8ad1b6fc25f14b8aa74e4c403ec0d722bfafe7c7540e0fd48fa1879ef9273"
+    },
+    {
+      "case": {
+        "name": "system-amount0-writeTrue-length0",
+        "writable": "authority",
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 0,
+            "length": 0
+          }
+        }
+      },
+      "input_hash": "9f73dedbdd3374eabea52cb42cf06886eddf0959a33a8635f9e03bb09f2751be"
+    },
+    {
+      "case": {
+        "name": "system-amount0-writeTrue-length1",
+        "writable": "authority",
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 0,
+            "length": 1
+          }
+        }
+      },
+      "input_hash": "9f73dedbdd3374eabea52cb42cf06886eddf0959a33a8635f9e03bb09f2751be"
+    },
+    {
+      "case": {
+        "name": "system-amount1-writeFalse-length0",
+        "writable": null,
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 1,
+            "length": 0
+          }
+        }
+      },
+      "input_hash": "2ccd20a8e9994e10118d1e9fa929a65278b1d5c747fdd0b4731804ca4ea254a5"
+    },
+    {
+      "case": {
+        "name": "system-amount1-writeFalse-length1",
+        "writable": null,
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 1,
+            "length": 1
+          }
+        }
+      },
+      "input_hash": "209f8a62803491d59c0aec2d45e21c926c45128abdc7e0d67f711d95581b26af"
+    },
+    {
+      "case": {
+        "name": "system-amount1-writeTrue-length0",
+        "writable": "authority",
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 1,
+            "length": 0
+          }
+        }
+      },
+      "input_hash": "d8e06767c8c863085957df29b13b2e2199200da96ab1385982e483347d724819"
+    },
+    {
+      "case": {
+        "name": "system-amount1-writeTrue-length1",
+        "writable": "authority",
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 1,
+            "length": 1
+          }
+        }
+      },
+      "input_hash": "1e7912def6acd1985e7626974b748c94697e3235785087ae2a8e728413009451"
+    },
+    {
+      "case": {
+        "name": "system-amount890880-writeFalse-length0",
+        "writable": null,
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 890880,
+            "length": 0
+          }
+        }
+      },
+      "input_hash": "a4fd8a0351e3665623a9a973900e6846e44943ed72e730598a1b3bb575332136"
+    },
+    {
+      "case": {
+        "name": "system-amount890880-writeFalse-length1",
+        "writable": null,
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 890880,
+            "length": 1
+          }
+        }
+      },
+      "input_hash": "42762b58afe4b863c984871b016bf62bd1773276191ee30fa437f6ae5f4a7611"
+    },
+    {
+      "case": {
+        "name": "system-amount890880-writeTrue-length0",
+        "writable": "authority",
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 890880,
+            "length": 0
+          }
+        }
+      },
+      "input_hash": "eeedf343369611ecd81a4d2a0f940ff5d997a1bbe77e4eee977cedf59ea1bda5"
+    },
+    {
+      "case": {
+        "name": "system-amount890880-writeTrue-length1",
+        "writable": "authority",
+        "mutations": {
+          "idl_account": {
+            "owner": "11111111111111111111111111111111",
+            "lamports": 890880,
+            "length": 1
+          }
+        }
+      },
+      "input_hash": "036cbe24bcef5968751c8178238e9dff30b176ccc4b97a4b6e97f673eba51f39"
+    },
+    {
+      "case": {
+        "name": "pump-bad-disc-realloc-size8",
+        "mutations": {
+          "idl_account": {
+            "length": 8,
+            "patches": [
+              [
+                0,
+                "ff"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "927e1c92f173a88c0487b83e0025fff519fdcccf0e523f7734ce8167b7b79d37"
+    },
+    {
+      "case": {
+        "name": "pump-bad-disc-realloc-size44",
+        "mutations": {
+          "idl_account": {
+            "length": 44,
+            "patches": [
+              [
+                0,
+                "ff"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "d151a33d6a3d71c92f82321e9387e738f986f19ba3d1480a10dc117abb015b92"
+    },
+    {
+      "case": {
+        "name": "pump-bad-disc-realloc-size81",
+        "mutations": {
+          "idl_account": {
+            "length": 81,
+            "patches": [
+              [
+                0,
+                "ff"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "e3746b7614b900ab61efbdff8568119b80b98f33ab14c97b3efa67620a303f09"
+    },
+    {
+      "case": {
+        "name": "pump-bad-disc-realloc-size20000",
+        "mutations": {
+          "idl_account": {
+            "length": 20000,
+            "patches": [
+              [
+                0,
+                "ff"
+              ]
+            ]
+          }
+        }
+      },
+      "input_hash": "4b84a9e76a6f2edf5e347976d0adea9c07c736a9317bd592c345ce29d0a2dd68"
+    }
+  ]
+}

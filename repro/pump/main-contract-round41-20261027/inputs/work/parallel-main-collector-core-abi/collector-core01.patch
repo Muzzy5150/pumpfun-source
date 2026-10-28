@@ -1,0 +1,40 @@
+--- a/src/creator/collect_creator_fee.rs
++++ b/src/creator/collect_creator_fee.rs
+@@ -23,20 +23,24 @@
+ )->Result<Option<(u64,Pubkey)>>{
+  require!(*creator.owner!=crate::distribution::FEES,crate::PumpError::UnableToDistributeCreatorVaultMigratedToSharingConfig);
+  if creator.executable{msg!("Creator account is executable, so it cannot receive lamports");return Ok(None);}
+- let native=quote_mint.key()==anchor_spl::token::spl_token::native_mint::ID;
+- let amount=if native{
+-  let rent=Rent::get()?;
+-  let amount=creator_vault.lamports().saturating_sub(rent.minimum_balance(0));
+-  if amount>0 && creator.lamports().saturating_add(amount)<rent.minimum_balance(creator.data_len()){msg!("Creator account does not have enough rent-exemption lamports");return Ok(None);}
+-  amount
+- }else{
+-  let data=creator_vault_token_account.try_borrow_data()?;anchor_spl::token_interface::TokenAccount::try_deserialize(&mut &data[..])?.amount
+- };
++ let creator_key=creator.key();
++ let quote_key=quote_mint.key();
++ if quote_key!=anchor_spl::token::spl_token::native_mint::ID{
++  let data=creator_vault_token_account.try_borrow_data()?;
++  let amount=anchor_spl::token_interface::TokenAccount::try_deserialize(&mut &data[..])?.amount;
++  drop(data);
++  if amount==0{msg!("No creator fee to collect");return Ok(None);}
++  let bump=[creator_vault_bump];let seeds:&[&[u8]]=&[b"creator-vault",creator_key.as_ref(),&bump];
++  transfer_tokens(quote_token_program,creator_vault_token_account,creator_token_account,creator_vault,decimals,quote_mint,amount,&[seeds])?;
++  return Ok(Some((amount,quote_key)));
++ }
++ let rent=Rent::get()?;
++ let amount=creator_vault.lamports().saturating_sub(rent.minimum_balance(0));
+  if amount==0{msg!("No creator fee to collect");return Ok(None);}
+- let creator_key=creator.key();let bump=[creator_vault_bump];let seeds:&[&[u8]]=&[b"creator-vault",creator_key.as_ref(),&bump];
+- if native{transfer_native(system_program.as_ref(),creator_vault,creator,amount,&[seeds])?;}
+- else{transfer_tokens(quote_token_program,creator_vault_token_account,creator_token_account,creator_vault,decimals,quote_mint,amount,&[seeds])?;}
+- Ok(Some((amount,if native{Pubkey::default()}else{quote_mint.key()})))
++ if creator.lamports().saturating_add(amount)<rent.minimum_balance(creator.data_len()){msg!("Creator account does not have enough rent-exemption lamports");return Ok(None);}
++ let bump=[creator_vault_bump];let seeds:&[&[u8]]=&[b"creator-vault",creator_key.as_ref(),&bump];
++ transfer_native(system_program.as_ref(),creator_vault,creator,amount,&[seeds])?;
++ Ok(Some((amount,Pubkey::default())))
+ }
+ 
+ #[inline(never)]

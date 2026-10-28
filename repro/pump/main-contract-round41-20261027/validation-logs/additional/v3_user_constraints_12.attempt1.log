@@ -1,0 +1,13 @@
+buy_v3 control None None []
+buy_v3 authority None None []
+buy_v3 token_program TransactionErrorInstructionError((1, Fieldless(IncorrectProgramId))) TransactionErrorInstructionError((1, Fieldless(IncorrectProgramId))) []
+buy_v3 both TransactionErrorInstructionError((1, Fieldless(IncorrectProgramId))) TransactionErrorInstructionError((1, Fieldless(IncorrectProgramId))) []
+sell_v3 control None None []
+sell_v3 authority TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(4)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(4)))) []
+sell_v3 token_program TransactionErrorInstructionError((1, Fieldless(IncorrectProgramId))) TransactionErrorInstructionError((1, Fieldless(IncorrectProgramId))) []
+sell_v3 both TransactionErrorInstructionError((1, Fieldless(IncorrectProgramId))) TransactionErrorInstructionError((1, Fieldless(IncorrectProgramId))) []
+buy_exact_quote_in_v3 control None None []
+buy_exact_quote_in_v3 authority None None []
+buy_exact_quote_in_v3 token_program TransactionErrorInstructionError((1, Fieldless(IncorrectProgramId))) TransactionErrorInstructionError((1, Fieldless(IncorrectProgramId))) []
+buy_exact_quote_in_v3 both TransactionErrorInstructionError((1, Fieldless(IncorrectProgramId))) TransactionErrorInstructionError((1, Fieldless(IncorrectProgramId))) []
+{'cases': 12, 'mismatches': [], 'diagnostic_mismatches': 0}

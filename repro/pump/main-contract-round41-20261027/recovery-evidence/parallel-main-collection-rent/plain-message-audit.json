@@ -1,0 +1,5 @@
+{
+  "cases": 425,
+  "mismatches": [],
+  "rule": "Compare all Program log messages except AnchorError location-bearing lines, which are independently checked by the diagnostic audit."
+}

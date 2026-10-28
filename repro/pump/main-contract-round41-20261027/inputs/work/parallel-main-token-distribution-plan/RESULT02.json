@@ -1,0 +1,62 @@
+{
+  "status": "validated public-visibility ABI control; no exact-body gain; ready for parent review",
+  "baseline": "work/parallel-main-integration/round35-source/programs/pump",
+  "baseline_distribution_sha256": "c1992559481ebd11cd88214e7b6c1bf3a1479956d7a48dd03ab28939f9042c0d",
+  "source": "work/parallel-main-token-distribution-plan/source02/src/distribution.rs",
+  "source_sha256": "0292237f44ebaef83f62ed0128e20eeb7b4b2384e1fc658d69a544da8aebaed3",
+  "patch_sha256": "72fc90679319cc286a8d288f808ff1a4b31a3a6f472f47aeccaa65ed0ba95a85",
+  "parent_result_sha256": "78456d8f5189f95d8d0df71a2542dce8980c390630ffd2d61a311e21cc14fd18",
+  "candidate_sha256": "750162e0e034eb5317ae1df026f8121d481239ba5b2485ffd5714cac8a0ce6a4",
+  "unstripped_sha256": "619052d7ec910af9e775867b0996fefe3b23dd2df2f60deac115557044417646",
+  "helper": {
+    "original_start": "0x2bf18",
+    "original_bytes": 6664,
+    "candidate_start": "0x95428",
+    "candidate_bytes": 5592,
+    "normalized_equal": false,
+    "different_slots": 797
+  },
+  "measured_abi": {
+    "numeric_return": "retains Vec fields+sourceamount atresult+24",
+    "source_input": "Retains typed TokenAccount pointer: stack[-0xff8] then dereference+0x40, matching original input ABI",
+    "typed_mint_owner": "retains typed mint pointer and AccountInfo+0x58; source derives ATA program from AccountInfo.owner",
+    "visibility_control": "Only pub was added after source01; no body/shape changes; this does not prove original Rust visibility"
+  },
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 737,
+    "unmatched": 298
+  },
+  "complete_match_delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "runtime": {
+    "counts": {
+      "distribution": 298,
+      "minimum": 181,
+      "regressions": 62,
+      "rent": 6,
+      "pending": 72,
+      "quote_gate": 18
+    },
+    "cases": 637,
+    "mismatches": 0,
+    "strict_diagnostic_mismatches": 0,
+    "invocation_mismatches": 0,
+    "distinct_signed_transactions": 105
+  },
+  "consumer_proof": "work/parallel-main-token-distribution-consumer/CONSUMER-ADDENDUM.json",
+  "limits": [
+    "No owner mutation or adversarial owner probe.",
+    "No exact token-planner body claim.",
+    "R35 combined source remains parent-owned; this is isolated."
+  ]
+}

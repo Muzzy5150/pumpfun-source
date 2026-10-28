@@ -1,0 +1,27 @@
+[
+  {
+    "name": "ata_owner_precedence",
+    "script": "work/parallel-main-shared-ata/probe_owners.py",
+    "count": 92
+  },
+  {
+    "name": "fee_sweeps",
+    "script": "scripts/pump_fee_sweep_differential.py",
+    "count": 504
+  },
+  {
+    "name": "sell_v2",
+    "script": "scripts/pump_sell_v2_differential.py",
+    "count": 206
+  },
+  {
+    "name": "buy_v2",
+    "script": "scripts/pump_buy_v2_differential.py",
+    "count": 216
+  },
+  {
+    "name": "multi_hop_curve_partial",
+    "script": "repro/pump/native-curve-partial-fortyeight/harness/pump_multi_hop_curve_differential.py",
+    "count": 56
+  }
+]

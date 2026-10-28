@@ -1,0 +1,122 @@
+{
+  "status": "passed",
+  "scope": "Read-only artifact replay of the fixed main-Pump data-order transformation.\n\nThis is not fresh source/build admission. The admitted certificate is preserved;\nits absolute paths are never edited or followed to bypass archive relocation.\n",
+  "fresh_admission": false,
+  "certificate_paths_rewritten": false,
+  "original_certificate_sha256": "b599cecdf30cb8d14ed7760dda56b64576f8a5077a15005ee78b553d159418cb",
+  "bindings_sha256": "bdd4b4fbcf377924d4fdc482f71d1b4f1042bb80c4ebec98ef41ece7396e7b91",
+  "artifacts": {
+    "original_elf": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-data-order-archive/fixture-archive/evidence/original/pump/deployed.so",
+      "sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+      "bytes": 10485715
+    },
+    "baseline_elf": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-data-order-archive/fixture-archive/identity/unstripped.so",
+      "sha256": "73ccbc32a68f2f47bf5e3fcaf99b89f631128969be1814f24cd99bbb8b788079",
+      "bytes": 2526576
+    },
+    "baseline_map": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-data-order-archive/fixture-archive/identity/link/link.map",
+      "sha256": "f8b67cdca72ff273013b96b68c5725bda8a7888c757b5b1e12f5f59f6b38b6ab",
+      "bytes": 2164321
+    },
+    "final_elf": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-data-order-archive/fixture-archive/final/unstripped.so",
+      "sha256": "dbdb845f0c4f52839868948fa8357eb84aa62fa7a6c9a6e12116114db2b0da44",
+      "bytes": 2526576
+    },
+    "final_map": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-data-order-archive/fixture-archive/final/link/link.map",
+      "sha256": "7d7021c16190f3fe929cc828a702d7ba751cec6340f8920fc4faf53828166f09",
+      "bytes": 2154853
+    },
+    "admitted_certificate": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-data-order-archive/fixture-archive/provenance/admitted-certificate.json",
+      "sha256": "b599cecdf30cb8d14ed7760dda56b64576f8a5077a15005ee78b553d159418cb",
+      "bytes": 809811
+    }
+  },
+  "roles": {
+    "baseline": [
+      {
+        "role": "borsh_array_location",
+        "original": 1825072,
+        "owner": 1053768,
+        "bytes": 1640,
+        "offset": 1616,
+        "footprint": 24,
+        "candidate": 1736544,
+        "candidate_owner": 1085272,
+        "data_index": 19,
+        "input_owner": "pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o",
+        "input_section": ".data.rel.ro..L__unnamed_448"
+      },
+      {
+        "role": "debug_argument_table",
+        "original": 1825096,
+        "owner": 68640,
+        "bytes": 88,
+        "offset": 56,
+        "footprint": 32,
+        "candidate": 1736512,
+        "candidate_owner": 78816,
+        "data_index": 18,
+        "input_owner": "pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o",
+        "input_section": ".data.rel.ro..L__unnamed_53"
+      }
+    ],
+    "final": [
+      {
+        "role": "borsh_array_location",
+        "original": 1825072,
+        "owner": 1053768,
+        "bytes": 1640,
+        "offset": 1616,
+        "footprint": 24,
+        "candidate": 1736512,
+        "candidate_owner": 721608,
+        "data_index": 18,
+        "input_owner": "pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o",
+        "input_section": ".data.rel.ro..L__unnamed_448"
+      },
+      {
+        "role": "debug_argument_table",
+        "original": 1825096,
+        "owner": 68640,
+        "bytes": 88,
+        "offset": 56,
+        "footprint": 32,
+        "candidate": 1736536,
+        "candidate_owner": 64272,
+        "data_index": 19,
+        "input_owner": "pump_recovered.pump_recovered.3ea6595f33b540c7-cgu.0.rcgu.o",
+        "input_section": ".data.rel.ro..L__unnamed_53"
+      }
+    ]
+  },
+  "transformation": {
+    "status": "passed",
+    "counts": {
+      "moved_.text": 943,
+      "moved_.data.rel.ro": 2,
+      "branches_checked": 20964,
+      "calls_checked": 10607,
+      "lddw_checked": 7867,
+      "data_pointers_checked": 645,
+      "data_scalars_checked": 811,
+      "relocations_checked": 5818
+    },
+    "all_allocated_bytes_checked": true,
+    "all_other_file_bytes_checked": true,
+    "baseline_sha256": "73ccbc32a68f2f47bf5e3fcaf99b89f631128969be1814f24cd99bbb8b788079",
+    "candidate_sha256": "dbdb845f0c4f52839868948fa8357eb84aa62fa7a6c9a6e12116114db2b0da44"
+  },
+  "tracked_typeid_equality_checked": false,
+  "whole_original_elf_identity": false,
+  "limits": [
+    "This independently replays archived artifact roles and full-file transformation; it does not re-run source/compiler/cache admission.",
+    "The unchanged admitted certificate remains provenance. New compilation must derive a fresh certificate from a fresh identity build.",
+    "Whole original allocation extents and original toolchain provenance remain unproved."
+  ]
+}

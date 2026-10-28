@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "identity_build_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/archive-round41-build-identity",
+  "final_build_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/archive-round41-build",
+  "certificate": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/archive-round41-build-data-order-certificate.json",
+  "certificate_sha256": "0a80e8bde53a0aa830443d2922c4d4110e50ca68f3518383dd22a87c7c4f3362",
+  "identity_candidate_sha256": "77b95066b91ac6d86780d538324e79746b00752ac5a2a081f074eeac36dc8c22",
+  "identity_unstripped_sha256": "fcc876fba7451c10d94d192cc29d5467de7ecda6e1da6aa450288372f3ec6505",
+  "fresh_certificate": true,
+  "final_proof": {
+    "status": "passed",
+    "scope": "Both final ELF hashes and standard completed data-order build receipts, without compiling.",
+    "actual_elf_sha256": {
+      "candidate.so": "f169345d952b0e2a8ba6cbd400ab2decca0bee97bdc6645240466d901e4f1bc0",
+      "unstripped.so": "8f8db4faaa749deaf3821a192e30eb345f79b3b472344e6df6e26fa9b916da5f"
+    },
+    "certificate_sha256": "0a80e8bde53a0aa830443d2922c4d4110e50ca68f3518383dd22a87c7c4f3362",
+    "records_sha256": {
+      "build-attempt.json": "2014049b25ba85bf74714e76663a626b63982a99d7fcc2c736a058965ced7dba",
+      "build-comparison.json": "2014049b25ba85bf74714e76663a626b63982a99d7fcc2c736a058965ced7dba"
+    },
+    "transformation_sha256": "3f971b264455c86e23f52e5e9ec02ad5e070bb77c0818a57e43e20b3de65135b",
+    "runtime_reexecuted": false,
+    "fresh_admission_reexecuted_by_this_function": false
+  }
+}

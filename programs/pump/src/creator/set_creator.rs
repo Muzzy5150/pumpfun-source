@@ -1,0 +1,3 @@
+use super::*;
+
+pub fn set(mut ctx:Context<SetCreator>,creator:Pubkey)->Result<()>{let a=&mut ctx.accounts;if a.bonding_curve.creator!=Pubkey::default(){msg!("Bonding curve has creator already set");return Ok(());}let mint=a.mint.key();let bonding_curve=a.bonding_curve.key();match &a.metadata.creators{Some(cs)=>{let creator=cs[0].address;a.bonding_curve.creator=creator;let e=SetMetaplexCreatorEvent{timestamp:Clock::get()?.unix_timestamp,mint,bonding_curve,metadata:a.metadata.key(),creator};emit!(e);emit_cpi!(e);return Ok(());}None=>{a.bonding_curve.creator=creator;let e=SetCreatorEvent{timestamp:Clock::get()?.unix_timestamp,mint,bonding_curve,creator};emit!(e);emit_cpi!(e);}}Ok(())}

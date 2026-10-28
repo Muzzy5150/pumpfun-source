@@ -1,0 +1,180 @@
+{
+  "status": "Validated partial native executor ABI/ownership recovery; no new exact function window",
+  "source_files": {
+    "src/distribution.rs": {
+      "before": "db0b4832b28d3771a5ba81d7eec564c7a3624262455d614889ad32cb673818a5",
+      "after": "cb78be041ee8ed8285fdd492432b44cc46fb0ad32e6978434edd768b98ecb643"
+    },
+    "src/creator/distribute_creator_fees.rs": {
+      "before": null,
+      "after": "7853fdf73b387b49d8d0bccd84c0f40226adac120bff3608fc60152860ccb184"
+    }
+  },
+  "patch_sha256": "7ea0d53c86d115051d86a5d5cef2b52f08b920eed29a942e867a825620081328",
+  "physical_split_patch_sha256": "b740dc146a2ebb2a6b7c0f8a80d2620af7215a269ed1f0bb2e4396754f3a843b",
+  "candidate_sha256": "968d60bfd4997e36e15f4e84a616c7d56a529ddd5f9d459f242986fd7e190ed1",
+  "unstripped_sha256": "af41c53bf5409935242b69babff45611ca1c0892ecbd1f6a006cc85923095368",
+  "build_receipt_sha256": "0821152d1b53899cce72277a77668dca11322868541fd84b7e2e8613d47b4685",
+  "baseline_manifest_sha256": "a045c4ff7d6507be4e7f4f13bf82c74feef85d56bfa003faf737f401eb0df07b",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 740,
+    "unmatched": 295
+  },
+  "delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "executor": {
+    "original": "0x33c50",
+    "original_bytes": 2312,
+    "candidate": "0x926e0",
+    "candidate_bytes": 2304,
+    "normalized_equal": false,
+    "differing_slots": 288,
+    "actual_callers": [
+      {
+        "site": "0x8ee20",
+        "functions": [
+          "_ZN14pump_recovered12distribution7execute17he28e1b593214dc35E"
+        ]
+      },
+      {
+        "site": "0x90578",
+        "functions": [
+          "_ZN14pump_recovered12distribution10execute_v217hec07a273d268927bE"
+        ]
+      }
+    ],
+    "callees": [
+      {
+        "site": "0x92a88",
+        "target": "0x78510",
+        "symbols": [
+          "_ZN14pump_recovered10collect_v215transfer_native17h9d7ed9a37ec24f69E"
+        ],
+        "matching_original_windows": [
+          "0x8d5c8"
+        ]
+      },
+      {
+        "site": "0x92bc0",
+        "target": "0x152188",
+        "symbols": [
+          "_ZN14pump_recovered9PumpError4name17h049d49820d62cdccE"
+        ],
+        "matching_original_windows": [
+          "0x157380"
+        ]
+      },
+      {
+        "site": "0x92c50",
+        "target": "0x158c90",
+        "symbols": [
+          "_ZN64_$LT$pump_recovered..PumpError$u20$as$u20$core..fmt..Display$GT$3fmt17h97b2cf625e058f63E"
+        ],
+        "matching_original_windows": [
+          "0x15de88"
+        ]
+      },
+      {
+        "site": "0x92c88",
+        "target": "0x152188",
+        "symbols": [
+          "_ZN14pump_recovered9PumpError4name17h049d49820d62cdccE"
+        ],
+        "matching_original_windows": [
+          "0x157380"
+        ]
+      },
+      {
+        "site": "0x92d18",
+        "target": "0x158c90",
+        "symbols": [
+          "_ZN64_$LT$pump_recovered..PumpError$u20$as$u20$core..fmt..Display$GT$3fmt17h97b2cf625e058f63E"
+        ],
+        "matching_original_windows": [
+          "0x15de88"
+        ]
+      },
+      {
+        "site": "0x92d70",
+        "target": "0x196cf0",
+        "symbols": [
+          "_ZN4core6result13unwrap_failed17h3adcf81658ff1466E"
+        ],
+        "matching_original_windows": [
+          "0x1ace18"
+        ]
+      },
+      {
+        "site": "0x92e38",
+        "target": "0x184698",
+        "symbols": [
+          "_ZN104_$LT$anchor_lang..error..Error$u20$as$u20$core..convert..From$LT$anchor_lang..error..AnchorError$GT$$GT$4from17hf12314b067d455ccE"
+        ],
+        "matching_original_windows": [
+          "0x19bb30"
+        ]
+      },
+      {
+        "site": "0x92f18",
+        "target": "0x184698",
+        "symbols": [
+          "_ZN104_$LT$anchor_lang..error..Error$u20$as$u20$core..convert..From$LT$anchor_lang..error..AnchorError$GT$$GT$4from17hf12314b067d455ccE"
+        ],
+        "matching_original_windows": [
+          "0x19bb30"
+        ]
+      },
+      {
+        "site": "0x92fd8",
+        "target": "0x1968a0",
+        "symbols": [
+          "_ZN4core9panicking18panic_bounds_check17ha4f9511d47b106bbE"
+        ],
+        "matching_original_windows": [
+          "0x1ac9c8"
+        ]
+      }
+    ],
+    "delta": {
+      "normalized_matches": {
+        "gains": [],
+        "losses": []
+      },
+      "raw_match": {
+        "gains": [],
+        "losses": []
+      }
+    }
+  },
+  "runtime": {
+    "cases": 626,
+    "transactions": 1252,
+    "verified_signatures": 1738,
+    "diagnostic_mismatches": 0,
+    "invocation_order_mismatches": 0,
+    "new_inputs": 0
+  },
+  "observed_improvements": [
+    "Original Account<SharingConfig> key/count input boundary restored.",
+    "Borrowed plan slice and explicit shareholder count traversal replace consuming zip.",
+    "The original local vault AccountInfo clone, internal seed construction and lazy error branches are present.",
+    "Both actual V1/V2 callsites and nine matching standard/helper callee bodies retained."
+  ],
+  "limits": [
+    "The body is2304Bvsoriginal2312B and remains unmatched.",
+    "Original Rust source spelling/visibility is not uniquely proven by machine ABI.",
+    "Internal short-plan bounds panic is static-only; no admitted signed reachability claim.",
+    "Source Location line/column values remain different; no padding used.",
+    "Full ELF byte identity remains false."
+  ]
+}

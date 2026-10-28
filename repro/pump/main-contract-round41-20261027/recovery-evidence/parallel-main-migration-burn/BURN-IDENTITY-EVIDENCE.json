@@ -1,0 +1,53 @@
+{
+  "original_elf_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "original_windows": {
+    "0x180cc0": {
+      "bytes": 1896,
+      "sha256": "444cee742f41efb612c4177efbf8041bf075e4ecc51df1f4a33495a021ab581b"
+    },
+    "0x192c20": {
+      "bytes": 1384,
+      "sha256": "5468f1a07a8a4e702b99846c8d57413c392750ff9a098ffcd38ccd65ad4738ff"
+    },
+    "0x48e10": {
+      "bytes": 2296,
+      "sha256": "e772f224709488cdd90de91ef31af438d5a0d0e6e60e0c6cb69cc2272b2f2a14"
+    },
+    "0x55d30": {
+      "bytes": 2344,
+      "sha256": "1474a2d19533f8b4d783b3974729d7d54abcda4fa8b215a3b6453662635718d7"
+    }
+  },
+  "witnesses": {
+    "burn_discriminant_store": {
+      "address": "0x192d10",
+      "bytes": "620ab0ff08000000",
+      "meaning": "stw [r10 - 0x50], 8"
+    },
+    "wrapper_builder_call": {
+      "address": "0x180d30",
+      "bytes": "85100000dd230000",
+      "target": "0x192c20"
+    }
+  },
+  "primary_dependency_sources": [
+    {
+      "path": "/Users/shawwalters/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-token-2022-6.0.0/src/instruction.rs",
+      "sha256": "c7e637e3e62e6a8aa3b3927a8f2b2cf26e2b6f8334b6f1b5280e3db28b519a38",
+      "pin": "spl-token-2022 6.0.0",
+      "lines": [
+        749,
+        891,
+        1516
+      ]
+    },
+    {
+      "path": "/Users/shawwalters/.cargo/registry/src/index.crates.io-6f17d22bba15001f/anchor-spl-0.31.1/src/token_2022.rs",
+      "sha256": "069bea9de487a912826917d198ccbc88ca6cd338af79392d53897ac8f466eee8",
+      "pin": "anchor-spl 0.31.1",
+      "item": "token_2022::burn"
+    }
+  ],
+  "validated_reconstruction": "BURN-API-REVIEW.json",
+  "validated_reconstruction_sha256": "d4047f104c4a499d75a34616d0edb53403b81590c42483d053e8441d018a587d"
+}

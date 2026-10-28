@@ -1,0 +1,80 @@
+--- a/src/creator/collect_creator_fee.rs
++++ b/src/creator/collect_creator_fee.rs
+@@ -34,9 +34,21 @@
+  };
+  if amount==0{msg!("No creator fee to collect");return Ok(None);}
+  let creator_key=creator.key();let bump=[creator_vault_bump];let seeds:&[&[u8]]=&[b"creator-vault",creator_key.as_ref(),&bump];
+- if native{anchor_lang::system_program::transfer(CpiContext::new_with_signer(system_program.to_account_info(),anchor_lang::system_program::Transfer{from:creator_vault.clone(),to:creator.clone()},&[seeds]),amount)?;}
++ if native{transfer_native(system_program.as_ref(),creator_vault,creator,amount,&[seeds])?;}
+  else{anchor_spl::token_interface::transfer_checked(CpiContext::new_with_signer(quote_token_program.to_account_info(),anchor_spl::token_interface::TransferChecked{from:creator_vault_token_account.clone(),mint:quote_mint.clone(),to:creator_token_account.clone(),authority:creator_vault.clone()},&[seeds]),amount,decimals)?;}
+  Ok(Some((amount,if native{Pubkey::default()}else{quote_mint.key()})))
++}
++
++#[inline(never)]
++pub(crate) fn transfer_native<'info>(
++ system_program:&AccountInfo<'info>,source:&AccountInfo<'info>,destination:&AccountInfo<'info>,
++ amount:u64,signer_seeds:&[&[&[u8]]],
++)->Result<()>{
++ if amount==0{return Ok(());}
++ anchor_lang::system_program::transfer(
++  CpiContext::new_with_signer(system_program.clone(),anchor_lang::system_program::Transfer{from:source.clone(),to:destination.clone()},signer_seeds),
++  amount,
++ )
+ }
+ 
+ pub fn execute(ctx:Context<CollectCreatorFeeV2>)->Result<()>{
+--- a/src/creator/admin_cto.rs
++++ b/src/creator/admin_cto.rs
+@@ -119,7 +119,7 @@
+  if shared && holder && amount>0{
+   let dest=Pubkey::find_program_address(&[b"creator-vault",holder_key.as_ref()],&crate::ID).0;if a.holder_creator_vault.key()!=dest{return Err(error!(anchor_lang::error::ErrorCode::ConstraintSeeds).with_pubkeys((a.holder_creator_vault.key(),dest)));}
+   if native{crate::legacy_buy::native_payments::ensure_rent_exempt(&a.system_program,&a.admin_set_creator_authority,&a.holder_creator_vault)?;
+-  anchor_lang::system_program::transfer(CpiContext::new_with_signer(a.system_program.to_account_info(),anchor_lang::system_program::Transfer{from:a.creator_vault.to_account_info(),to:a.holder_creator_vault.to_account_info()},&[vaultseeds]),amount)?;}else{pay_token(a,&a.holder_creator_vault.to_account_info(),&a.holder_creator_vault_quote_token_account.to_account_info(),amount,vaultseeds)?;}swept=amount;
++  crate::collect_v2::transfer_native(a.system_program.as_ref(),&a.creator_vault,&a.holder_creator_vault,amount,&[vaultseeds])?;}else{pay_token(a,&a.holder_creator_vault.to_account_info(),&a.holder_creator_vault_quote_token_account.to_account_info(),amount,vaultseeds)?;}swept=amount;
+  }
+  if wallet&&!wallet_frozen{
+   let collection_native=a.quote_mint.key()==anchor_spl::token::spl_token::native_mint::ID;
+--- a/src/distribution.rs
++++ b/src/distribution.rs
+@@ -58,9 +58,7 @@
+  let (transfers,minimum_distributable,_,available)=get_distribution_amounts(&rent,&a.sharing_config.shareholders,ctx.remaining_accounts,&a.creator_vault)?;
+  let eligible=available>=minimum_distributable;let mut distributed=0u64;
+  let bump=[ctx.bumps.creator_vault];let seeds:&[&[u8]]=&[b"creator-vault",a.bonding_curve.creator.as_ref(),&bump];
+- if eligible{for ((amount,_),recipient) in transfers.into_iter().zip(ctx.remaining_accounts){
+-  if amount>0{anchor_lang::system_program::transfer(CpiContext::new_with_signer(a.system_program.to_account_info(),anchor_lang::system_program::Transfer{from:a.creator_vault.to_account_info(),to:recipient.clone()},&[seeds]),amount)?;distributed=distributed.checked_add(amount).ok_or(error!(PumpError::Overflow))?;}
+- }}
++ if eligible{distributed=crate::distribution::execute_native_distribution(transfers,ctx.remaining_accounts,&a.creator_vault,&a.system_program,seeds)?;}
+  let event=DistributeCreatorFeesEvent{timestamp:Clock::get()?.unix_timestamp,mint:a.mint.key(),bonding_curve:a.bonding_curve.key(),sharing_config:a.sharing_config.key(),admin:a.sharing_config.admin,shareholders:a.sharing_config.shareholders.clone(),distributed,quote_mint:Pubkey::default()};if eligible{emit!(event.clone());emit_cpi!(event.clone());}Ok(event)
+ }
+ 
+@@ -95,10 +93,7 @@
+   let rent=Rent::get()?;
+   let (transfers,minimum_distributable,_,available)=get_distribution_amounts(&rent,&a.sharing_config.shareholders,ctx.remaining_accounts,&a.creator_vault)?;
+   eligible=available>=minimum_distributable;
+-  if eligible{for ((amount,_),recipient) in transfers.into_iter().zip(ctx.remaining_accounts){
+-   if amount>0{anchor_lang::system_program::transfer(CpiContext::new_with_signer(a.system_program.to_account_info(),anchor_lang::system_program::Transfer{from:a.creator_vault.to_account_info(),to:recipient.clone()},&[seeds]),amount)?;}
+-   distributed=distributed.checked_add(amount).ok_or(error!(PumpError::Overflow))?;
+-  }}
++  if eligible{distributed=crate::distribution::execute_native_distribution(transfers,ctx.remaining_accounts,&a.creator_vault,&a.system_program,seeds)?;}
+  }else{
+   let data=a.creator_vault_quote_token_account.try_borrow_data()?;
+   let source=anchor_spl::token_interface::TokenAccount::try_deserialize(&mut data.as_ref())?;drop(data);
+@@ -114,6 +109,18 @@
+   }
+  }
+  let event=DistributeCreatorFeesEvent{timestamp:Clock::get()?.unix_timestamp,mint:a.mint.key(),bonding_curve:a.bonding_curve.key(),sharing_config:a.sharing_config.key(),admin:a.sharing_config.admin,shareholders:a.sharing_config.shareholders.clone(),distributed,quote_mint:if native{Pubkey::default()}else{a.quote_mint.key()}};if eligible{emit!(event.clone());emit_cpi!(event.clone());}Ok(event)
++}
++
++fn execute_native_distribution<'info>(
++ transfers:Vec<(u64,u64)>,recipients:&[AccountInfo<'info>],creator_vault:&AccountInfo<'info>,
++ system_program:&Program<'info,System>,seeds:&[&[u8]],
++)->Result<u64>{
++ let mut distributed=0u64;
++ for ((amount,_),recipient) in transfers.into_iter().zip(recipients){
++  crate::collect_v2::transfer_native(system_program.as_ref(),creator_vault,recipient,amount,&[seeds])?;
++  distributed=distributed.checked_add(amount).ok_or(error!(PumpError::Overflow))?;
++ }
++ Ok(distributed)
+ }
+ 
+ pub(crate) fn get_distribution_amounts<'info>(rent:&Rent,shares:&[Shareholder],recipients:&[AccountInfo<'info>],creator_vault:&AccountInfo<'info>)->Result<(Vec<(u64,u64)>,u64,u64,u64)>{

@@ -1,0 +1,10 @@
+{
+  "status": "validated",
+  "controls": 10,
+  "baseline_pairs": 18109,
+  "baseline_log_mismatches": 1095,
+  "baseline_non_filename_mismatches": 413,
+  "matches_independent_v3_classification": true,
+  "acceptance": "R41 must have zero non-filename differences; report every residual source-file mismatch explicitly.",
+  "not_claimed": "No assertion that the R40 source passes ordinary-log parity."
+}

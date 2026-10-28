@@ -1,0 +1,16 @@
+{
+  "fixed_table_equals_historical_ledger": true,
+  "rows": 1035,
+  "producer_source_hash_bindings": {
+    "elf_reader.py": {
+      "observed_sha256": "247700e9930d5e53daf93a50888ae1e5429f74ccb19155e7a205f72ee21d5883",
+      "published_sha256": "247700e9930d5e53daf93a50888ae1e5429f74ccb19155e7a205f72ee21d5883",
+      "equal": true
+    },
+    "layer_inventory.py": {
+      "observed_sha256": "03802cf1847e810ad425dfd77a558f56b6914b4f45770eda3548b70b89c2ae98",
+      "published_sha256": "03802cf1847e810ad425dfd77a558f56b6914b4f45770eda3548b70b89c2ae98",
+      "equal": true
+    }
+  }
+}

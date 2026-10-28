@@ -1,0 +1,69 @@
+{
+  "status": "Shared CollectCreatorFeeV2 core and genuine AdminCto fifth frozen-check path restored;950primary paired cases pass",
+  "source_files": {
+    "src/creator/collect_creator_fee.rs": {
+      "before": "a00ed6655a289ac407f6164a3f6777f34a73799dd2277e64af89c30e6f32ce14",
+      "after": "7bc58ae9146555e4ae6fb22bbed902082de1e99db8f94498a657ed013d8a7744"
+    },
+    "src/creator/admin_cto.rs": {
+      "before": "941a62addff36d4e3244f10692fc934e30fb69a6726b1ca76187aaaa2920a503",
+      "after": "b9390f0f0ed1f67e7bd9746357f91e80b16c98ae2a84a6494ad86a6768dfeaf4"
+    }
+  },
+  "patch_sha256": "255ac04e24a714fd59ec47c57f49779671d3f29b752f5e0238cfcc125c436ae0",
+  "candidate_sha256": "f7ac6f46e4d7078e97bc888cd738bee0eca4300bf05c0b856548c584333f2cd0",
+  "unstripped_sha256": "c28eb39f508eee2544d1e4ca2e35fec33a064b142106017f50b6d9800d02d671",
+  "build_receipt_sha256": "b71792cc032b154cc067c56294d1e77480e7327e0828d25362d29aa4265133bf",
+  "base_manifest_sha256": "07fb1bb40ef4b9b8c7762090347ba4f95562f31d46de25330ea4bee5770e3d1b",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 738,
+    "unmatched": 297
+  },
+  "delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "runtime": {
+    "existing_cases": 930,
+    "focused_cases": 20,
+    "before_mismatches": 12,
+    "after_mismatches": 0,
+    "primary_verified_transactions": 1900,
+    "primary_verified_signatures": 2990,
+    "diagnostic_mismatches": 0,
+    "invocation_mismatches": 0,
+    "relevant_collection_message_mismatches": 0,
+    "new_incremental_inputs": 18,
+    "incremental_replay_passed": 18
+  },
+  "call_boundaries": {
+    "collector_original": "0x2b490",
+    "collector_real_callers": 2,
+    "collector_result": "Result<Option<(u64, Pubkey)>>; callers perform Clock/event emission",
+    "frozen_original": "0x29518",
+    "frozen_real_callers": 5,
+    "raw_amount_original": "0x296f0",
+    "raw_amount_real_callers": 2
+  },
+  "helper_size": {
+    "original": 2696,
+    "candidate": 4848,
+    "normalized_equal": false
+  },
+  "limits": [
+    "No exact shared-collector body claim:4848Bvs2696B remains unmatched.",
+    "All738normalized/121raw identity-layout matches retained; no new normalized window in this successor.",
+    "Original5/current5frozen call multiplicity and actual typed caller destinations are restored; broad whole-program call closure is not claimed.",
+    "Full Program log comparison applies to20focused cases;930existing cases additionally compare the three collection messages and existing diagnostics/CPI/event/state checks.",
+    "No new owner mutation probes; accepted collection fixtures retain their original definitions.",
+    "Full original ELF equality remains false."
+  ]
+}

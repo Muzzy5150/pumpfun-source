@@ -1,0 +1,76 @@
+{
+  "cases": [
+    {
+      "name": "default/vault_readonly",
+      "input_hash": "2351b5273b63d1acec7fcedaf8ef04bb3f9f44476eb413a84075b00ccef63ba2"
+    },
+    {
+      "name": "default/sharing_mint",
+      "input_hash": "729035488a0a8c178b3ba7268d2c643347b28c8cf4d96407dbbf8925d12a13bc"
+    },
+    {
+      "name": "native/none",
+      "input_hash": "d6d68efc508dfbbbb1f074d43129a73535a743c592a9f57278dbcfe56d6c97b3"
+    },
+    {
+      "name": "native/creator",
+      "input_hash": "08389580b960507e301bb24dd495f89dd2e2a696ff58ab7dcf01c47606272dc5"
+    },
+    {
+      "name": "native/paused",
+      "input_hash": "29721bf5866f347281c0358f96d19ca7ca4d669674b15b3eb94f9a397bbc4c41"
+    },
+    {
+      "name": "native/pending",
+      "input_hash": "5fe5a7502155988025c0e352ec35d30afbdfc70493013d0f012637357f7f13eb"
+    },
+    {
+      "name": "native/remaining",
+      "input_hash": "8f4e4bccf2bc6e4850f98575b0c994a2999a92c48890124cb9ea36173cc778aa"
+    },
+    {
+      "name": "native/vault_readonly",
+      "input_hash": "470be073c058fa42bc0e9f7e7f6079fbc215d484d263c4387ec54feeb564be90"
+    },
+    {
+      "name": "native/sharing_mint",
+      "input_hash": "847070baa69d645abfbeba4f8f83434a87c89923ead5dd7abd81313c1e69e68d"
+    },
+    {
+      "name": "native/event",
+      "input_hash": "8f24166a428b0d0a23949e681e54ab605ed49b4181a232bac98ceb0214815c77"
+    },
+    {
+      "name": "other/none",
+      "input_hash": "6a21614e6ac52cc482627e75c3c11b81502684739015515f8b713096e6b74798"
+    },
+    {
+      "name": "other/creator",
+      "input_hash": "4d61ec0c847f4a206cdd12bb984b39e4d3b9068633d8d2cae5886e707fcbfdfb"
+    },
+    {
+      "name": "other/paused",
+      "input_hash": "4d7cf1e6b78d1d30252010d8d49b7f8d20d049fcbcb22ef359ecd9a4bb880544"
+    },
+    {
+      "name": "other/pending",
+      "input_hash": "cc53577eba07f1750ff6c1bf9c6dacd130f78f5d71566fb3c0794c1f90cb20d7"
+    },
+    {
+      "name": "other/remaining",
+      "input_hash": "b6a06d7cc01764bd1e7cdd906013cf75b744a1b8516b6c5a5fc6c7309602d53a"
+    },
+    {
+      "name": "other/vault_readonly",
+      "input_hash": "71a45fda0484f4154d6494cf523a071ea343fa4e368bc4ef9a0bfb4dff3214e5"
+    },
+    {
+      "name": "other/sharing_mint",
+      "input_hash": "99e66a705bb7133cec99455657846be0304b3c19637a83aa9a6d8133141a7c32"
+    },
+    {
+      "name": "other/event",
+      "input_hash": "71ba1cdff7bee7ce4e5a479491e96622c5552fe1c91505b2c23aa305fa5e3787"
+    }
+  ]
+}

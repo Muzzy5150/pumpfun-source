@@ -1,0 +1,265 @@
+{
+  "status": "Validated original-backed shared collector branch/lifetime control",
+  "source_files": {
+    "src/creator/collect_creator_fee.rs": {
+      "before": "95ca7828e58f6cce51b13609f20e89daf32dedd9a844d10da66b20ab0f3a5378",
+      "after": "b6c64ec699b290154eaa3016bf59200610bf8ab842e9d0b9d5495441b2cd7910"
+    }
+  },
+  "patch_sha256": "4893f7c15b44763454e9f4186b4f0d81d56f289a132eafd99afa28cea670357b",
+  "base_manifest_sha256": "a045c4ff7d6507be4e7f4f13bf82c74feef85d56bfa003faf737f401eb0df07b",
+  "candidate_sha256": "890c06a7fbc1c4b9c2be9023a6da7981204a7ac997e2e260d3f856c0b4dee066",
+  "unstripped_sha256": "873007c3bd0987041fdc956a530e9cd3e4ae210e3beed64cadecae49a6e8cccf",
+  "build_receipt_sha256": "984568f14cb41f60b08d3c121933681c228c575d5c86037e926489262a242a49",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 740,
+    "unmatched": 295
+  },
+  "delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "collector": {
+    "original": "0x2b490",
+    "original_bytes": 2696,
+    "candidate": "0x779e8",
+    "candidate_bytes": 2720,
+    "normalized_equal": false,
+    "differing_slots": 238,
+    "actual_callers": [
+      {
+        "site": "0x79250",
+        "functions": [
+          "_ZN14pump_recovered10collect_v27execute17h74fb38dc90b0bb74E"
+        ]
+      },
+      {
+        "site": "0x817b8",
+        "functions": [
+          "_ZN14pump_recovered9admin_cto7execute17h723b61202d9173bbE"
+        ]
+      }
+    ],
+    "callees": [
+      {
+        "offset": 72,
+        "target": "0x19df58",
+        "symbols": [
+          "memcmp"
+        ],
+        "matching_original_windows": [
+          "0x1b3678"
+        ]
+      },
+      {
+        "offset": 136,
+        "target": "0x151e98",
+        "symbols": [
+          "_ZN14pump_recovered9PumpError4name17h049d49820d62cdccE"
+        ],
+        "matching_original_windows": [
+          "0x157380"
+        ]
+      },
+      {
+        "offset": 280,
+        "target": "0x1589a0",
+        "symbols": [
+          "_ZN64_$LT$pump_recovered..PumpError$u20$as$u20$core..fmt..Display$GT$3fmt17h97b2cf625e058f63E"
+        ],
+        "matching_original_windows": [
+          "0x15de88"
+        ]
+      },
+      {
+        "offset": 368,
+        "target": "0x196a00",
+        "symbols": [
+          "_ZN4core6result13unwrap_failed17h3adcf81658ff1466E"
+        ],
+        "matching_original_windows": [
+          "0x1ace18"
+        ]
+      },
+      {
+        "offset": 632,
+        "target": "0x1843a8",
+        "symbols": [
+          "_ZN104_$LT$anchor_lang..error..Error$u20$as$u20$core..convert..From$LT$anchor_lang..error..AnchorError$GT$$GT$4from17hf12314b067d455ccE"
+        ],
+        "matching_original_windows": [
+          "0x19bb30"
+        ]
+      },
+      {
+        "offset": 960,
+        "target": "0x19df58",
+        "symbols": [
+          "memcmp"
+        ],
+        "matching_original_windows": [
+          "0x1b3678"
+        ]
+      },
+      {
+        "offset": 1024,
+        "target": "0x18b520",
+        "symbols": [
+          "_ZN19solana_account_info11AccountInfo15try_borrow_data17h5ff2da27975e6e7dE"
+        ],
+        "matching_original_windows": [
+          "0x1a2ca8"
+        ]
+      },
+      {
+        "offset": 1152,
+        "target": "0x16f4a8",
+        "symbols": [
+          "_ZN93_$LT$anchor_spl..token_interface..TokenAccount$u20$as$u20$anchor_lang..AccountDeserialize$GT$25try_deserialize_unchecked17hb39bd10713dbb5ceE"
+        ],
+        "matching_original_windows": [
+          "0x185ed0"
+        ]
+      },
+      {
+        "offset": 1280,
+        "target": "0x189298",
+        "symbols": [
+          "_ZN13solana_sysvar4rent69_$LT$impl$u20$solana_sysvar..Sysvar$u20$for$u20$solana_rent..Rent$GT$3get17h6c68a03db844604cE"
+        ],
+        "matching_original_windows": [
+          "0x1a0a20"
+        ]
+      },
+      {
+        "offset": 1384,
+        "target": "0x184430",
+        "symbols": [
+          "_ZN107_$LT$anchor_lang..error..Error$u20$as$u20$core..convert..From$LT$solana_program_error..ProgramError$GT$$GT$4from17h7884c24a646e0802E"
+        ],
+        "matching_original_windows": [
+          "0x19bbb8"
+        ]
+      },
+      {
+        "offset": 1472,
+        "target": "0x184430",
+        "symbols": [
+          "_ZN107_$LT$anchor_lang..error..Error$u20$as$u20$core..convert..From$LT$solana_program_error..ProgramError$GT$$GT$4from17h7884c24a646e0802E"
+        ],
+        "matching_original_windows": [
+          "0x19bbb8"
+        ]
+      },
+      {
+        "offset": 1816,
+        "target": "0x78958",
+        "symbols": [
+          "_ZN14pump_recovered10collect_v215transfer_tokens17ha5ed9d2dc00f9dd1E"
+        ],
+        "matching_original_windows": [
+          "0x90638"
+        ]
+      },
+      {
+        "offset": 2000,
+        "target": "0x18b268",
+        "symbols": [
+          "_ZN19solana_account_info11AccountInfo8lamports17h0ff88b0cb687fca7E"
+        ],
+        "matching_original_windows": [
+          "0x1a29f0"
+        ]
+      },
+      {
+        "offset": 2048,
+        "target": "0x189360",
+        "symbols": [
+          "_ZN11solana_rent4Rent15minimum_balance17hea6ac3bc2b8bb235E"
+        ],
+        "matching_original_windows": [
+          "0x1a0ae8"
+        ]
+      },
+      {
+        "offset": 2136,
+        "target": "0x18b268",
+        "symbols": [
+          "_ZN19solana_account_info11AccountInfo8lamports17h0ff88b0cb687fca7E"
+        ],
+        "matching_original_windows": [
+          "0x1a29f0"
+        ]
+      },
+      {
+        "offset": 2216,
+        "target": "0x18b2e0",
+        "symbols": [
+          "_ZN19solana_account_info11AccountInfo8data_len17h11478a473a815c65E"
+        ],
+        "matching_original_windows": [
+          "0x1a2a68"
+        ]
+      },
+      {
+        "offset": 2248,
+        "target": "0x189360",
+        "symbols": [
+          "_ZN11solana_rent4Rent15minimum_balance17hea6ac3bc2b8bb235E"
+        ],
+        "matching_original_windows": [
+          "0x1a0ae8"
+        ]
+      },
+      {
+        "offset": 2488,
+        "target": "0x78488",
+        "symbols": [
+          "_ZN14pump_recovered10collect_v215transfer_native17h9d7ed9a37ec24f69E"
+        ],
+        "matching_original_windows": [
+          "0x8d5c8"
+        ]
+      }
+    ],
+    "delta": {
+      "normalized_matches": {
+        "gains": [],
+        "losses": []
+      },
+      "raw_match": {
+        "gains": [],
+        "losses": []
+      }
+    }
+  },
+  "runtime": {
+    "cases": 950,
+    "existing": 930,
+    "focused": 20,
+    "transactions": 1900,
+    "verified_signatures": 2990,
+    "diagnostic_mismatches": 0,
+    "invocation_order_mismatches": 0,
+    "new_inputs": 0
+  },
+  "changes": [
+    "Copy creator and quote keys before choosing native/token execution.",
+    "Use original separate non-native borrow/amount/drop/zero/transfer/Some path.",
+    "Use separate native rent/zero/recipient-floor/transfer/Some path.",
+    "Preserve all argument types, admission order, log messages and both exact CPI helper definitions."
+  ],
+  "limits": [
+    "The exact original source spelling is not uniquely established.",
+    "Whole original ELF identity remains false.",
+    "The separate native-executor future packet is not included."
+  ]
+}

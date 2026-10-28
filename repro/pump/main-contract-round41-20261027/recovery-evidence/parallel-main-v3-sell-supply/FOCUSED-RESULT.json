@@ -1,0 +1,33 @@
+{
+  "scope": "Minimal V3 sell market-cap source correction, independent of optional net-budget reconstruction.",
+  "base": "work/parallel-main-integration/round18-source/programs/pump",
+  "source": "work/parallel-main-v3-sell-supply/source/src/trade_v3.rs",
+  "source_sha256": "c27da3e16584a2c1d8b1162686c05a06fb414f66db9bdc8bde9063a6f5370e5a",
+  "candidate_sha256": "4e474a2e9eefa59a8c506c173dd373bd12c034db292f4114eb2230427357d2fe",
+  "unstripped_sha256": "14b451c78db1dd7519088c2e5190c6b85a496bfbae7f1a786e591399aa3a2da1",
+  "signed_focused_cases": 20,
+  "original_counterexamples_fixed": 6,
+  "mismatches": [],
+  "diagnostic_mismatches": 0,
+  "change": "Use existing mode-selected market-cap helper in SellV3, using mint.supply ordinarily and stored curve token_total_supply in mayhem, with the original checked zero-reserve failure.",
+  "normalized_windows": 693,
+  "raw_windows": 118,
+  "normalized_inventory_delta_vs_round18": {
+    "gains": [],
+    "losses": []
+  },
+  "regressions": "850 existing signed V3/MultiHop cases actively running separately; this source is now frozen.",
+  "patch": "sell-supply.patch",
+  "new_probe_scripts": [
+    {
+      "path": "work/parallel-main-v3-net-budget/probe-sell-supply.py",
+      "cases": 16,
+      "sha256": "0635380d5d162426443bc5716be271fa8eab7a183e4afc214ff119accab065b6"
+    },
+    {
+      "path": "work/parallel-main-v3-sell-supply/probe-zero-reserve.py",
+      "cases": 4,
+      "sha256": "47552488f699f0b44f85eadb2d3256ab8759da9ba3e4daab8dfe251a42f27ff7"
+    }
+  ]
+}

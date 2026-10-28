@@ -1,0 +1,305 @@
+{
+  "scope": "Correlate source-file names from already signed original/candidate diagnostic pairs.",
+  "rows": [
+    {
+      "candidate_path": "programs/pump/src/token_incentives/volume_accumulator.rs",
+      "original_path": "programs/pump/src/token_incentives/volume_accumulator.rs",
+      "paired_diagnostics": 627,
+      "example": "Error Code: StartTimeInThePast. Error Number: 6031. Error Message: StartTimeInThePast."
+    },
+    {
+      "candidate_path": "programs/pump/src/trade_v3.rs",
+      "original_path": "programs/pump/src/trade_v3.rs",
+      "paired_diagnostics": 510,
+      "example": "Error Code: Overflow. Error Number: 6024. Error Message: Overflow."
+    },
+    {
+      "candidate_path": "programs/pump/src/buy_v2.rs",
+      "original_path": "programs/pump/src/buy_v2.rs",
+      "paired_diagnostics": 335,
+      "example": "Error Code: BuyZeroAmount. Error Number: 6020. Error Message: Buy zero amount."
+    },
+    {
+      "candidate_path": "programs/pump/src/quote_control/state.rs",
+      "original_path": "programs/pump/src/quote_control/state.rs",
+      "paired_diagnostics": 190,
+      "example": "Error Code: QuoteMintNotWhitelisted. Error Number: 6068. Error Message: Quote mint is not in the whitelist."
+    },
+    {
+      "candidate_path": "programs/pump/src/create_v2.rs",
+      "original_path": "programs/pump/src/create_v2.rs",
+      "paired_diagnostics": 172,
+      "example": "Error Code: NameTooLong. Error Number: 6043. Error Message: NameTooLong."
+    },
+    {
+      "candidate_path": "programs/pump/src/multi_hop_curve.rs",
+      "original_path": "programs/pump/src/multi_hop_curve_swap.rs",
+      "paired_diagnostics": 147,
+      "example": "Error Code: BuyZeroAmount. Error Number: 6020. Error Message: Buy zero amount."
+    },
+    {
+      "candidate_path": "programs/pump/src/multi_hop_curve.rs",
+      "original_path": "programs/pump/src/trade_v3.rs",
+      "paired_diagnostics": 139,
+      "example": "Error Code: BuyNotEnoughSolToCoverFees. Error Number: 6041. Error Message: Buy: Not enough SOL to cover for fees.."
+    },
+    {
+      "candidate_path": "programs/pump/src/lib.rs",
+      "original_path": "programs/pump/src/lib.rs",
+      "paired_diagnostics": 128,
+      "example": "Error Code: QuoteMintNotEligibleForWhitelist. Error Number: 6069. Error Message: Quote mint cannot be added or removed via whitelist (default or native SOL mint)."
+    },
+    {
+      "candidate_path": "programs/pump/src/admin_cto.rs",
+      "original_path": "programs/pump/src/creator/admin_cto.rs",
+      "paired_diagnostics": 88,
+      "example": "Error Code: CtoNewCreatorRequired. Error Number: 6089. Error Message: new_creator is required unless converting to holder rewards."
+    },
+    {
+      "candidate_path": "programs/pump/src/fee_recipient.rs",
+      "original_path": "programs/pump/src/fee_recipient.rs",
+      "paired_diagnostics": 80,
+      "example": "Error Code: NotAuthorized. Error Number: 6000. Error Message: The given account is not authorized to execute this instruction.."
+    },
+    {
+      "candidate_path": "programs/pump/src/distribution.rs",
+      "original_path": "programs/pump/src/creator/distribute_creator_fees.rs",
+      "paired_diagnostics": 74,
+      "example": "Error Code: InvalidShareBps. Error Number: 6055. Error Message: Share bps must be greater than 0."
+    },
+    {
+      "candidate_path": "programs/pump/src/set_params.rs",
+      "original_path": "programs/pump/src/lib.rs",
+      "paired_diagnostics": 74,
+      "example": "Error Code: InitialVirtualTokenReservesShouldBeGreaterThanInitialRealTokenReserves. Error Number: 6012. Error Message: initial_virtual_token_reserves should be greater than initial_real_token_reserves."
+    },
+    {
+      "candidate_path": "programs/pump/src/migrate_v2.rs",
+      "original_path": "programs/pump/src/migrate_v2.rs",
+      "paired_diagnostics": 72,
+      "example": "Error Code: NotEnoughRemainingAccounts. Error Number: 6027. Error Message: Not enough remaining accounts."
+    },
+    {
+      "candidate_path": "programs/pump/src/extend.rs",
+      "original_path": "programs/pump/src/extend_account.rs",
+      "paired_diagnostics": 68,
+      "example": "Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "candidate_path": "programs/pump/src/buy_v2.rs",
+      "original_path": "programs/pump/src/lib.rs",
+      "paired_diagnostics": 68,
+      "example": "Error Code: BuybackFeeRecipientNotAuthorized. Error Number: 6057. Error Message: Buyback fee recipient not authorized."
+    },
+    {
+      "candidate_path": "programs/pump/src/trade_v3.rs",
+      "original_path": "programs/pump/src/lib.rs",
+      "paired_diagnostics": 67,
+      "example": "Error Code: BuybackFeeRecipientNotAuthorized. Error Number: 6057. Error Message: Buyback fee recipient not authorized."
+    },
+    {
+      "candidate_path": "programs/pump/src/sell_v2.rs",
+      "original_path": "programs/pump/src/sell_v2.rs",
+      "paired_diagnostics": 67,
+      "example": "Error Code: SellZeroAmount. Error Number: 6022. Error Message: Sell zero amount."
+    },
+    {
+      "candidate_path": "programs/pump/src/fee_cpi.rs",
+      "original_path": "programs/pump/src/util/fee.rs",
+      "paired_diagnostics": 60,
+      "example": "Error Code: Truncation. Error Number: 6025. Error Message: Truncation."
+    },
+    {
+      "candidate_path": "programs/pump/src/trade_v3.rs",
+      "original_path": "programs/pump/src/util/fee.rs",
+      "paired_diagnostics": 57,
+      "example": "Error Code: Truncation. Error Number: 6025. Error Message: Truncation."
+    },
+    {
+      "candidate_path": "programs/pump/src/holder_distribution.rs",
+      "original_path": "programs/pump/src/creator/distribute_fee_to_holders.rs",
+      "paired_diagnostics": 55,
+      "example": "Error Code: HolderRewardRecipientsMismatch. Error Number: 6085. Error Message: Holder-reward amounts and recipient accounts do not match."
+    },
+    {
+      "candidate_path": "programs/pump/src/trade_v3.rs",
+      "original_path": "programs/pump/src/util/transfer_fee.rs",
+      "paired_diagnostics": 44,
+      "example": "Error Code: Overflow. Error Number: 6024. Error Message: Overflow."
+    },
+    {
+      "candidate_path": "programs/pump/src/legacy_buy.rs",
+      "original_path": "programs/pump/src/buy.rs",
+      "paired_diagnostics": 42,
+      "example": "Error Code: BuyNotEnoughSolToCoverFees. Error Number: 6041. Error Message: Buy: Not enough SOL to cover for fees.."
+    },
+    {
+      "candidate_path": "programs/pump/src/sweep.rs",
+      "original_path": "programs/pump/src/fee_recipient.rs",
+      "paired_diagnostics": 41,
+      "example": "Error Code: NotAuthorized. Error Number: 6000. Error Message: The given account is not authorized to execute this instruction.."
+    },
+    {
+      "candidate_path": "programs/pump/src/sell_v2.rs",
+      "original_path": "programs/pump/src/lib.rs",
+      "paired_diagnostics": 39,
+      "example": "Error Code: Overflow. Error Number: 6024. Error Message: Overflow."
+    },
+    {
+      "candidate_path": "programs/pump/src/nested_create.rs",
+      "original_path": "programs/pump/src/create_v2.rs",
+      "paired_diagnostics": 36,
+      "example": "Error Code: UnsupportedQuoteMint. Error Number: 6063. Error Message: Unsupported quote mint."
+    },
+    {
+      "candidate_path": "programs/pump/src/legacy_buy.rs",
+      "original_path": "programs/pump/src/lib.rs",
+      "paired_diagnostics": 35,
+      "example": "Error Code: BuyZeroAmount. Error Number: 6020. Error Message: Buy zero amount."
+    },
+    {
+      "candidate_path": "programs/pump/src/distribution.rs",
+      "original_path": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+      "paired_diagnostics": 29,
+      "example": "Error Code: SharingConfigNotActive. Error Number: 6051. Error Message: Sharing config is not active."
+    },
+    {
+      "candidate_path": "programs/pump/src/legacy_sell.rs",
+      "original_path": "programs/pump/src/lib.rs",
+      "paired_diagnostics": 29,
+      "example": "Error Code: SellZeroAmount. Error Number: 6022. Error Message: Sell zero amount."
+    },
+    {
+      "candidate_path": "programs/pump/src/lib.rs",
+      "original_path": "programs/pump/src/set_reserved_fee_recipients.rs",
+      "paired_diagnostics": 27,
+      "example": "Error Code: NotEnoughRemainingAccounts. Error Number: 6027. Error Message: Not enough remaining accounts."
+    },
+    {
+      "candidate_path": "programs/pump/src/sweep.rs",
+      "original_path": "programs/pump/src/buy_v2.rs",
+      "paired_diagnostics": 26,
+      "example": "Error Code: AccountNotInitialized. Error Number: 3012. Error Message: The program expected this account to be already initialized."
+    },
+    {
+      "candidate_path": "programs/pump/src/fee_cpi.rs",
+      "original_path": "programs/pump/src/lib.rs",
+      "paired_diagnostics": 20,
+      "example": "Error Code: Overflow. Error Number: 6024. Error Message: Overflow."
+    },
+    {
+      "candidate_path": "programs/pump/src/idl_authority.rs",
+      "original_path": "programs/pump/src/admin_set_idl_authority.rs",
+      "paired_diagnostics": 16,
+      "example": "Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "candidate_path": "programs/pump/src/trade_types.rs",
+      "original_path": "programs/pump/src/lib.rs",
+      "paired_diagnostics": 14,
+      "example": "Error Code: Overflow. Error Number: 6024. Error Message: Overflow."
+    },
+    {
+      "candidate_path": "programs/pump/src/set_params.rs",
+      "original_path": "programs/pump/src/fee_recipient.rs",
+      "paired_diagnostics": 14,
+      "example": "Error Code: NotEnoughRemainingAccounts. Error Number: 6027. Error Message: Not enough remaining accounts."
+    },
+    {
+      "candidate_path": "programs/pump/src/creator_migration.rs",
+      "original_path": "programs/pump/src/creator/migrate_bonding_curve_creator.rs",
+      "paired_diagnostics": 14,
+      "example": "Error Code: HolderRewardCreatorImmutable. Error Number: 6083. Error Message: The creator of a holder-reward coin cannot be changed."
+    },
+    {
+      "candidate_path": "programs/pump/src/cashback.rs",
+      "original_path": "programs/pump/src/token_incentives/claim_token_incentives.rs",
+      "paired_diagnostics": 13,
+      "example": "Error Code: Overflow. Error Number: 6024. Error Message: Overflow."
+    },
+    {
+      "candidate_path": "programs/pump/src/migrate.rs",
+      "original_path": "programs/pump/src/migrate.rs",
+      "paired_diagnostics": 12,
+      "example": "Error Code: NotEnoughRemainingAccounts. Error Number: 6027. Error Message: Not enough remaining accounts."
+    },
+    {
+      "candidate_path": "programs/pump/src/multi_hop_curve.rs",
+      "original_path": "programs/pump/src/util/fee.rs",
+      "paired_diagnostics": 12,
+      "example": "Error Code: Truncation. Error Number: 6025. Error Message: Truncation."
+    },
+    {
+      "candidate_path": "programs/pump/src/nested_create.rs",
+      "original_path": "programs/pump/src/quote_control/state.rs",
+      "paired_diagnostics": 11,
+      "example": "Error Code: InvalidQuoteControl. Error Number: 6075. Error Message: quote_control remaining account does not match derivation or is uninitialized."
+    },
+    {
+      "candidate_path": "programs/pump/src/sweep.rs",
+      "original_path": "programs/pump/src/sweep_fees.rs",
+      "paired_diagnostics": 10,
+      "example": "Error Code: ConstraintSeeds. Error Number: 2006. Error Message: A seeds constraint was violated."
+    },
+    {
+      "candidate_path": "programs/pump/src/sell_v2.rs",
+      "original_path": "programs/pump/src/buy_v2.rs",
+      "paired_diagnostics": 9,
+      "example": "Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "candidate_path": "programs/pump/src/trade_v3.rs",
+      "original_path": "programs/pump/src/buy_v2.rs",
+      "paired_diagnostics": 8,
+      "example": "Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "candidate_path": "programs/pump/src/trade_types.rs",
+      "original_path": "programs/pump/src/extend_account.rs",
+      "paired_diagnostics": 7,
+      "example": "Error Code: Overflow. Error Number: 6024. Error Message: Overflow."
+    },
+    {
+      "candidate_path": "programs/pump/src/nested_create.rs",
+      "original_path": "programs/pump/src/pump_quote.rs",
+      "paired_diagnostics": 5,
+      "example": "Error Code: Overflow. Error Number: 6024. Error Message: Overflow."
+    },
+    {
+      "candidate_path": "programs/pump/src/legacy_buy.rs",
+      "original_path": "programs/pump/src/sell.rs",
+      "paired_diagnostics": 4,
+      "example": "Error Code: BuybackFeeRecipientMissing. Error Number: 6062. Error Message: BuybackFeeRecipientMissing."
+    },
+    {
+      "candidate_path": "programs/pump/src/multi_hop_curve.rs",
+      "original_path": "programs/pump/src/lib.rs",
+      "paired_diagnostics": 4,
+      "example": "Error Code: BuybackFeeRecipientNotAuthorized. Error Number: 6057. Error Message: Buyback fee recipient not authorized."
+    },
+    {
+      "candidate_path": "programs/pump/src/lib.rs",
+      "original_path": "programs/pump/src/creator/collect_creator_fee.rs",
+      "paired_diagnostics": 4,
+      "example": "Error Code: UnableToDistributeCreatorVaultMigratedToSharingConfig. Error Number: 6050. Error Message: creator_vault has been migrated to sharing config, use pump:distribute_creator_fees instead."
+    },
+    {
+      "candidate_path": "programs/pump/src/legacy_sell.rs",
+      "original_path": "programs/pump/src/sell.rs",
+      "paired_diagnostics": 3,
+      "example": "Error Code: InvalidCashbackAccumulator. Error Number: 6073. Error Message: Cashback user_volume_accumulator account is invalid."
+    },
+    {
+      "candidate_path": "programs/pump/src/collect_v2.rs",
+      "original_path": "programs/pump/src/creator/collect_creator_fee.rs",
+      "paired_diagnostics": 2,
+      "example": "Error Code: UnableToDistributeCreatorVaultMigratedToSharingConfig. Error Number: 6050. Error Message: creator_vault has been migrated to sharing config, use pump:distribute_creator_fees instead."
+    },
+    {
+      "candidate_path": "programs/pump/src/create.rs",
+      "original_path": "programs/pump/src/lib.rs",
+      "paired_diagnostics": 1,
+      "example": "Error Code: CreatorShouldNotBeZero. Error Number: 6030. Error Message: Creator should not be zero."
+    }
+  ]
+}

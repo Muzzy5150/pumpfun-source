@@ -1,0 +1,32 @@
+--- a/src/multi_hop_curve_swap.rs
++++ b/src/multi_hop_curve_swap.rs
+@@ -1,7 +1,7 @@
+ //! Reconstructed multi-hop curve trading.
+ //! Signed original-runtime probes cover ordinary trades, completion, and quote adapters.
+ use anchor_lang::prelude::*;
+-use anchor_lang::solana_program::{instruction::{Instruction,AccountMeta},program::{invoke,invoke_signed},program_error::ProgramError,system_instruction};
++use anchor_lang::solana_program::{instruction::{Instruction,AccountMeta},program::{invoke,invoke_signed},program_error::ProgramError};
+ use anchor_spl::{token::Token,token_2022::Token2022,token_interface::{Mint,TokenAccount}};
+ use crate::{Global,PumpError};
+ use crate::trade_types::{BondingCurve,FeeConfig,FeeTier,Fees,TradeEvent};
+@@ -190,11 +190,6 @@
+ }
+ 
+ // N01: Native interface hypotheses use pinned SDK APIs, not newly recovered processors.
+-fn system_transfer<'info>(from: AccountInfo<'info>, to: AccountInfo<'info>, amount: u64) -> Result<()> {
+-    if amount == 0 { return Ok(()); }
+-    invoke(&system_instruction::transfer(from.key,to.key,amount), &[from,to])?;
+-    Ok(())
+-}
+ fn prepare_curve<'info>(a: &MultiHopCurve<'info>, h: &CurveHop<'info>) -> Result<()> {
+     crate::trade_types::prepare_bonding_curve(&h.bonding_curve, &a.system_program, &a.user)
+ }
+@@ -338,7 +333,7 @@
+         let quote_before_adapter = if buy { amount } else { raw_output };
+         let quote_after_adapter = if buy { trade_amount } else { output };
+         if buy && native {
+-            system_transfer(a.user.to_account_info(),h.bonding_curve.to_account_info(),amount)?;
++            crate::user_quote_payments::transfer_native(a.system_program.as_ref(),&a.user,h.bonding_curve.as_ref(),amount)?;
+         } else if buy {
+             route_input(a,previous.as_ref(),h.quote_mint.to_account_info(),h.associated_quote_bonding_curve.to_account_info(),amount,h.quote_mint.decimals)?;
+         } else {

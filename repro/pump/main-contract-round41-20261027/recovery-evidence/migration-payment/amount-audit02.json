@@ -1,0 +1,89 @@
+{
+  "cases": [
+    {
+      "case": "legacy_vault_2039280_payer_None",
+      "payments": [
+        [
+          "forward",
+          2039280
+        ]
+      ],
+      "candidate_equal": true
+    },
+    {
+      "case": "legacy_vault_2039281_payer_None",
+      "payments": [
+        [
+          "forward",
+          2039280
+        ]
+      ],
+      "candidate_equal": true
+    },
+    {
+      "case": "v2-native_vault_2039280_payer_None",
+      "payments": [
+        [
+          "forward",
+          2039280
+        ],
+        [
+          "refund",
+          2039280
+        ]
+      ],
+      "candidate_equal": true
+    },
+    {
+      "case": "v2-native_vault_2039281_payer_None",
+      "payments": [
+        [
+          "forward",
+          2039280
+        ],
+        [
+          "refund",
+          2039280
+        ]
+      ],
+      "candidate_equal": true
+    },
+    {
+      "case": "v2-token_vault_2039280_payer_None",
+      "payments": [
+        [
+          "forward",
+          15000001
+        ],
+        [
+          "forward",
+          2039280
+        ],
+        [
+          "refund",
+          2039280
+        ]
+      ],
+      "candidate_equal": true
+    },
+    {
+      "case": "v2-token_vault_2039281_payer_None",
+      "payments": [
+        [
+          "forward",
+          15000001
+        ],
+        [
+          "forward",
+          2039280
+        ],
+        [
+          "refund",
+          2039280
+        ]
+      ],
+      "candidate_equal": true
+    }
+  ],
+  "rent_minimum_165": 2039280
+}

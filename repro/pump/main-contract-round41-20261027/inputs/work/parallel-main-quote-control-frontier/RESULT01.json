@@ -1,0 +1,23 @@
+{
+  "status": "closed negative single source control; no source delivery",
+  "original_helper": "0x68bd8/3488B",
+  "trial_helper": {
+    "start": 728920,
+    "bytes": 3496,
+    "normalized_equal": false
+  },
+  "different_slots": 410,
+  "normalized_counts": {
+    "total": 1035,
+    "raw": 119,
+    "normalized": 733,
+    "unmatched": 302
+  },
+  "gains": [],
+  "losses": [],
+  "raw_note": "Unordered trial; R32 ordered raw layout deliberately not reused. No raw no-loss claim.",
+  "before_and_after_cases": 36,
+  "before_mismatches": [],
+  "after_mismatches": [],
+  "decision": "Do not promote iter().any(); preserve36 original-backed capacity cases for optional future corpus admission."
+}

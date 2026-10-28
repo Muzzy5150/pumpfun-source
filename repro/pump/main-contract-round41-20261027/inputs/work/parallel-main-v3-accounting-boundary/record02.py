@@ -1,0 +1,9 @@
+from pathlib import Path
+import json,hashlib,sys,gzip
+P=Path(__file__).resolve().parent;R=P.parents[1];sys.path.insert(0,str(R/'scripts'));sys.path.insert(0,str(R/'work/parallel-main-v3-buyback-assert'));from pump_diagnostic_audit import audit;from audit_invocations import audit_invocations
+state=json.loads((P/'regression-state.json').read_text());assert len(state)==26 and all(v['returncode']==0 for v in state.values());suites={}
+for k,v in state.items():
+ b=Path(v['output']).read_bytes();suites[k]=json.loads(gzip.decompress(b)if b[:2]==b'\x1f\x8b'else b)
+diag=audit(suites);assert not diag['mismatches'];inv={k:audit_invocations(v)for k,v in suites.items()};assert not any(v['mismatches']for v in inv.values())
+(P/'diagnostics02.json').write_text(json.dumps(diag,indent=2)+'\n');(P/'invocations02.json').write_text(json.dumps(inv,indent=2)+'\n');sha=lambda f:hashlib.sha256(f.read_bytes()).hexdigest();counts={k:v.get('case_count',len(v.get('cases',[])))for k,v in suites.items()};assert sum(counts.values())==1234
+result={'source':'source02','build':'build02','status':'verified structural trial, not promoted','source_sha256':sha(P/'source02/src/trade_v3.rs'),'candidate_sha256':sha(P/'build02/candidate.so'),'unstripped_sha256':sha(P/'build02/unstripped.so'),'signed_cases':sum(counts.values()),'case_counts':counts,'diagnostic_mismatches':0,'invocation_mismatches':0,'helper':{'original_bytes':2120,'candidate_bytes':2776,'different_slots':341},'sum_helper':{'original_bytes':656,'candidate_bytes':656,'different_slots':1},'pre_fee_helper':{'original_bytes':688,'candidate_bytes':688,'different_slots':7},'inventory':{'normalized':708,'raw':123,'gains':[],'losses':[]},'next':'source03 corrects the observed shared panic and overflow chains, with source02 frozen as control.'};(P/'RESULT02.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

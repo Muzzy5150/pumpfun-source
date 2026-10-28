@@ -1,0 +1,11 @@
+--- a/programs/pump/src/create_v2.rs
++++ b/programs/pump/src/create_v2.rs
+@@ -68,7 +68,7 @@
+    }
+   };
+   require_keys_eq!(*mint.owner,program.key(),PumpError::UnsupportedQuoteMint);
+-  if program.key()==anchor_spl::token_2022::ID {require!(quote_extensions_supported(&mint.try_borrow_data()?,true),PumpError::UnsupportedQuoteMint);}
++  if program.key()==anchor_spl::token_2022::ID && mint.key()!=anchor_lang::solana_program::pubkey!("pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn") {require!(quote_extensions_supported(&mint.try_borrow_data()?,true),PumpError::UnsupportedQuoteMint);}
+ 
+   let expected=anchor_spl::associated_token::get_associated_token_address_with_program_id(&a.bonding_curve.key(),mint.key,program.key);
+   require_keys_eq!(ata.key(),expected,PumpError::InvalidAssociatedQuoteBondingCurve);

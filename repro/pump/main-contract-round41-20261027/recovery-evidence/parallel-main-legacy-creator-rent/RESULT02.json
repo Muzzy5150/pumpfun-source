@@ -1,0 +1,38 @@
+{
+  "scope": "Restore original creator-vault rent funding in legacy Buy/Exact/Sell",
+  "status": "Frozen verified delivery",
+  "source": "source02",
+  "source_sha256": {
+    "src/buy.rs": "9d4af64b2adcf7ebc52949a5bae65b58fe6e10751f27cbe7c45dcb82a3d09af8",
+    "src/sell.rs": "5804161cb98e96c3d5b5663041f1c0c935a367a54a84120e789123a478295c5b",
+    "src/legacy_native_payments.rs": "f929fd69edeb27fbc16d94cfea558347f3b163838329f3efc684eb536ba6389d"
+  },
+  "candidate_sha256": "db6d9fce64b0aa19e3a2324e88d2edd7b8c814d292fdf3bc5ac43e07a06304de",
+  "unstripped_sha256": "eff159d9f3415ccbd65a775a95a89a9892a8289f451f128a1ea8334739a0c2fd",
+  "signed_cases": 462,
+  "case_counts": {
+    "legacy-buy": 284,
+    "legacy-sell": 115,
+    "vault_rent": 63
+  },
+  "new_incremental_cases": 63,
+  "before_mismatches": 13,
+  "after_mismatches": 0,
+  "diagnostic_mismatches": 0,
+  "invocation_mismatches": 0,
+  "helper_original_start": "0x3b738",
+  "helper_original_bytes": 416,
+  "helper_candidate_bytes": 416,
+  "helper_normalized_differing_slots": 3,
+  "normalized_windows": 720,
+  "raw_windows": 123,
+  "patch": "legacy-creator-rent02.patch",
+  "base": "frozen Round24 staging",
+  "notes": [
+    "Only buy.rs/sell.rs/new private module changed; no lib or canonical edit.",
+    "New helper preserves full rent minimum top-up; only nonzero creator fee and non-cashback.",
+    "Source01 failed compile due visibility; source02 corrects only private helper accessibility.",
+    "Original also calls helper from a creation parser; that caller was not modified.",
+    "Whole ELF identity remains false."
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "driver_sha256": "2d353e507b06cd2afb5ebaae0b4475647183f836589045a0bfbd8cb173253800",
+  "group_sizes": [
+    59,
+    58,
+    58,
+    58,
+    58,
+    58,
+    58,
+    58
+  ],
+  "mode_smokes": [
+    {
+      "mode": [
+        "pump_migrate_probe",
+        "plain"
+      ],
+      "case": "legacy_2_0_length_908",
+      "input_hash": "006ce53508a71676c3d0dab29121bef92e83187ef0976b7bcb0ee111d32e1ae2",
+      "match": true
+    },
+    {
+      "mode": [
+        "pump_migrate_v2_probe",
+        "plain"
+      ],
+      "case": "v2_native_1_1_owner_pump",
+      "input_hash": "0152f18dd87e45ece0bd43c998ccb36560834a74587a622d5d8da36ae91d556b",
+      "match": true
+    },
+    {
+      "mode": [
+        "pump_migrate_v2_probe",
+        "funded"
+      ],
+      "case": "v2-native_vault_2039280_payer_100000",
+      "input_hash": "049680c4e05976e1aa1b15144bfbc18aeb52445dc146e4bed670eaf195d970da",
+      "match": true
+    },
+    {
+      "mode": [
+        "pump_migrate_v2_probe",
+        "extra"
+      ],
+      "case": "v2_token_actual_count_4_enabled_1_mayhem_0",
+      "input_hash": "050858f0ac4070d050133996b6ed3a7ee9222defe38045e7d9d74b22f6bd1372",
+      "match": true
+    },
+    {
+      "mode": [
+        "pump_migrate_probe",
+        "extra"
+      ],
+      "case": "legacy_actual_count_3_enabled_1_mayhem_0",
+      "input_hash": "07ef27c07af0d37b141eb0074ba6c055cc231c66f9ec3ee50782bde8399d7be1",
+      "match": true
+    },
+    {
+      "mode": [
+        "pump_migrate_probe",
+        "funded"
+      ],
+      "case": "legacy_vault_2039281_payer_100000",
+      "input_hash": "4055ab98c333982f94a7e14d30bc03a236cfde5bbe771a651b1c3d09989c4962",
+      "match": true
+    }
+  ],
+  "transformed_fixture_sha256": {
+    "pump_migrate_v2_probe/funded": "507a02bae9b606a3e3799516f197de3c2a01de891091e51d93934358ada533cc",
+    "pump_migrate_v2_probe/extra": "a3684badb9875d6c6e5402872516f8858d0c5c2d1959d1f5c503909e237e444b",
+    "pump_migrate_probe/extra": "c74b16eeb70f3bd25acad5aff58c0590b47820feb5314a4a96bfeec2b32ab0d6",
+    "pump_migrate_probe/funded": "634929283f966752133ef64662ee7c69675ca694e613c1b582a112b9347ab90f"
+  },
+  "all_group_inputs_validated_in_full02": true
+}

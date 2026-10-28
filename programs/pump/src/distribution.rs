@@ -32,9 +32,9 @@ pub fn execute<'info>(ctx:Context<'_, '_, '_, 'info,DistributeCreatorFees<'info>
  require!(matches!(a.sharing_config.status, ConfigStatus::Active),PumpError::SharingConfigNotActive);
  require!(a.bonding_curve.creator_fee==0,PumpError::CreatorFeesNotSwept);
  let rent=Rent::get()?;
- let (transfers,minimum_distributable,_,available)=get_distribution_amounts(&rent,&a.sharing_config.shareholders,ctx.remaining_accounts,&a.creator_vault)?;
+ let (transfers,minimum_distributable,minimum_vault_balance,available)=get_distribution_amounts(&rent,&a.sharing_config.shareholders,ctx.remaining_accounts,&a.creator_vault)?;
  let eligible=available>=minimum_distributable;let mut distributed=0u64;
- if eligible{distributed=crate::distribution::execute_native_distribution(&a.sharing_config,&a.creator_vault,&a.system_program,ctx.remaining_accounts,&transfers,ctx.bumps.creator_vault)?;}
+ if eligible{distributed=crate::distribution::execute_native_distribution(&a.sharing_config,&a.creator_vault,&a.system_program,ctx.remaining_accounts,&transfers,ctx.bumps.creator_vault)?;}else{msg!("Insufficient fees for distribution. Minimum vault balance needed: {} lamports. Use get_minimum_distributable_fee instruction to check the minimum distributable amount.",minimum_vault_balance);}
  let event=DistributeCreatorFeesEvent{timestamp:Clock::get()?.unix_timestamp,mint:a.mint.key(),bonding_curve:a.bonding_curve.key(),sharing_config:a.sharing_config.key(),admin:a.sharing_config.admin,shareholders:a.sharing_config.shareholders.clone(),distributed,quote_mint:Pubkey::default()};if eligible{emit!(event.clone());emit_cpi!(event.clone());}Ok(event)
 }
 

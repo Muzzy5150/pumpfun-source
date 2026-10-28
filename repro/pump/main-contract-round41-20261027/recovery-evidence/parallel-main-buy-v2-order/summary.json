@@ -1,0 +1,76 @@
+{
+  "status": "validated",
+  "source_file": "work/parallel-main-buy-v2-order/source01/src/buy_v2.rs",
+  "source_sha256": "fda10a3f953776d83bc59e0c34d0be01a5b53798221b5ea205824f3d50acac4f",
+  "candidate_sha256": "6b713a8ace8476295b9f2a84deaf4dd10a7ff26338737e1d9887dd5d5fc158c8",
+  "unstripped_sha256": "e5c2a47cda19c0771a3e9ccafc6576829a9a45bce2357d8f2f00f702f04c9c5b",
+  "case_count": 1494,
+  "strict_case_count": 1492,
+  "paired_captured_loads": 2988,
+  "new_cases": 130,
+  "positive_before_counterexamples": 2,
+  "patch": "buy-v2-order.patch",
+  "inventory": {
+    "total": 1035,
+    "raw": 114,
+    "normalized": 662,
+    "unmatched": 373
+  },
+  "suites": [
+    {
+      "suite": "after",
+      "cases": 130,
+      "strict_cases": 130,
+      "mismatches": 0
+    },
+    {
+      "suite": "regression",
+      "cases": 882,
+      "strict_cases": 880,
+      "mismatches": 0
+    },
+    {
+      "suite": "sell-expanded",
+      "cases": 32,
+      "strict_cases": 32,
+      "mismatches": 0
+    },
+    {
+      "suite": "sell-atas",
+      "cases": 25,
+      "strict_cases": 25,
+      "mismatches": 0
+    },
+    {
+      "suite": "sell-prepare",
+      "cases": 12,
+      "strict_cases": 12,
+      "mismatches": 0
+    },
+    {
+      "suite": "recipients",
+      "cases": 144,
+      "strict_cases": 144,
+      "mismatches": 0
+    },
+    {
+      "suite": "boundaries",
+      "cases": 206,
+      "strict_cases": 206,
+      "mismatches": 0
+    },
+    {
+      "suite": "crossing",
+      "cases": 36,
+      "strict_cases": 36,
+      "mismatches": 0
+    },
+    {
+      "suite": "waiver",
+      "cases": 27,
+      "strict_cases": 27,
+      "mismatches": 0
+    }
+  ],
+  "scope": "Only the destination ATA creation array order in buy_v2.rs; both V2 buy forms now create creator,user-volume,fee,buyback."
+}

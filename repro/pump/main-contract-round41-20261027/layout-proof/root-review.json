@@ -1,0 +1,16 @@
+{
+  "scope": "Independent root review of optional main-Pump linker recipe before installation",
+  "files_verified": 847,
+  "result_sha256": "96bb8e883d9b02249b857a7c5e4655df04e3802d0c3801959bee7d6d6b4717c8",
+  "reviewed_behaviors": [
+    "optional branch preserves default path",
+    "Cargo metadata queries forwarded unchanged",
+    "only root cdylib receives linker hook",
+    "actual link input copies are hash bound",
+    "script grammar disallows padding and foreign sections",
+    "four native build bindings and byte parity",
+    "full R27 ordered runtime and transaction gate passed separately"
+  ],
+  "runtime_required_for_new_source": true,
+  "installation": "pending Round28 publication"
+}

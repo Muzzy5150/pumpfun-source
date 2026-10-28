@@ -1,0 +1,5 @@
+token-False-zero-reserve-amount-0 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6022)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6022)))) []
+token-False-zero-reserve-amount-500000000 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6026)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6026)))) []
+token-True-zero-reserve-amount-0 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6022)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6022)))) []
+token-True-zero-reserve-amount-500000000 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6026)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6026)))) []
+{"count": 4, "mismatches": [], "diagnostics": 0}

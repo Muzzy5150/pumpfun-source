@@ -1,0 +1,41 @@
+--- a/programs/pump/src/trade_v3.rs
++++ b/programs/pump/src/trade_v3.rs
+@@ -461,12 +461,9 @@
+ fn quote_fee_for_amount(snapshot:&Option<(u64,u64,u64)>,amount:u64,inverse:bool)->Result<u64>{
+     match *snapshot {
+         Some((epoch,maximum_fee,basis_points))=>{
+-            let selected=anchor_spl::token_2022::spl_token_2022::extension::transfer_fee::TransferFee{
+-                epoch:epoch.into(),maximum_fee:maximum_fee.into(),transfer_fee_basis_points:(basis_points as u16).into(),
+-            };
++            let selected=native_transfer_fee::Fee { epoch, maximum_fee, basis_points: basis_points as u16 };
+             let fee=if inverse{
+-                native_transfer_fee::Fee { epoch, maximum_fee, basis_points: basis_points as u16 }
+-                    .calculate_pre_fee_amount(amount).and_then(|gross| selected.calculate_fee(gross))
++                selected.calculate_pre_fee_amount(amount).and_then(|gross| selected.calculate_fee(gross))
+             }else{selected.calculate_fee(amount)};
+             fee.ok_or_else(||error!(PumpError::Overflow))
+         }
+--- a/programs/pump/src/v3_native_transfer_fee.rs
++++ b/programs/pump/src/v3_native_transfer_fee.rs
+@@ -8,6 +8,21 @@
+ }
+ 
+ impl Fee {
++    #[inline(never)]
++    pub fn calculate_fee(&self, pre_fee_amount: u64) -> Option<u64> {
++        if pre_fee_amount == 0 {
++            return Some(0);
++        }
++        let basis_points = self.basis_points as u128;
++        if basis_points == 0 {
++            return Some(0);
++        }
++        let numerator = (pre_fee_amount as u128).checked_mul(basis_points)?;
++        let raw_fee: u64 = numerator.checked_add(10_000)?
++            .checked_sub(1)?.checked_div(10_000)?.try_into().ok()?;
++        Some(core::cmp::min(raw_fee, self.maximum_fee))
++    }
++
+     #[inline(never)]
+     pub fn calculate_pre_fee_amount(&self, post_fee_amount: u64) -> Option<u64> {
+         let basis_points = self.basis_points as u128;

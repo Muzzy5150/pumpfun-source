@@ -1,0 +1,8 @@
+{"name": "buy-reserve-0-partial-0", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6021))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6021))))", "diff": []}
+{"name": "buy-reserve-0-partial-1", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6020))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6020))))", "diff": []}
+{"name": "buy-reserve-1-partial-0", "original_error": null, "candidate_error": null, "diff": []}
+{"name": "buy-reserve-1-partial-1", "original_error": null, "candidate_error": null, "diff": []}
+{"name": "buy_exact_sol_in-reserve-0-partial-0", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6021))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6021))))", "diff": []}
+{"name": "buy_exact_sol_in-reserve-0-partial-1", "original_error": null, "candidate_error": null, "diff": []}
+{"name": "buy_exact_sol_in-reserve-1-partial-0", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6021))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6021))))", "diff": []}
+{"name": "buy_exact_sol_in-reserve-1-partial-1", "original_error": null, "candidate_error": null, "diff": []}

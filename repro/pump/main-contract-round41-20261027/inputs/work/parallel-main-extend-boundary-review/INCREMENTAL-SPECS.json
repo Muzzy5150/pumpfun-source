@@ -1,0 +1,426 @@
+{
+  "scope": "Dedup transaction+watched non-null account prestate+explicit Rent sysvar configuration. Rent is included because Sysvar::get accesses implicit VM state absent from transaction accounts.",
+  "existing_executions": 308,
+  "new_probe_executions": 40,
+  "distinct_additional_inputs": 12,
+  "overlaps": [
+    {
+      "case": {
+        "name": "BondingCurve-length0",
+        "kind": "BondingCurve",
+        "size": 0
+      },
+      "mode": "normal",
+      "input_hash": "f77fbf7b5cb9a91f987dca60d5837a1f58fd4c790c9965dabf1a3c30b669ef4e",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "BondingCurve-length7",
+        "kind": "BondingCurve",
+        "size": 7
+      },
+      "mode": "normal",
+      "input_hash": "412810846989468123f3ebec98447c3e3b479e0788e4155da06838cd0a534686",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "BondingCurve-length8",
+        "kind": "BondingCurve",
+        "size": 8
+      },
+      "mode": "normal",
+      "input_hash": "3535cabf5ab3b99606e50377ea69358fbea68048e70431265687b29ab7aa8ba0",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "BondingCurve-length165",
+        "kind": "BondingCurve",
+        "size": 165
+      },
+      "mode": "normal",
+      "input_hash": "a233fb17184bf30367c3f2bd6741e7baacbd72473e4f7018d514ed73cb67ea66",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "BondingCurve-length166",
+        "kind": "BondingCurve",
+        "size": 166
+      },
+      "mode": "normal",
+      "input_hash": "cf8f5bdb67b392996e2b4a788819cc988514e6778b1f085d1110fadde2f5531f",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "BondingCurve-length167",
+        "kind": "BondingCurve",
+        "size": 167
+      },
+      "mode": "normal",
+      "input_hash": "9657608a55bb0d2f9cf4b782b6ba10f8f809da8d61be13de9c071822696294f1",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "Global-length0",
+        "kind": "Global",
+        "size": 0
+      },
+      "mode": "normal",
+      "input_hash": "f77fbf7b5cb9a91f987dca60d5837a1f58fd4c790c9965dabf1a3c30b669ef4e",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "Global-length7",
+        "kind": "Global",
+        "size": 7
+      },
+      "mode": "normal",
+      "input_hash": "8636bbf2cd08d8511f2326f30790f141a62247b191bf7f8c08c7c2b7c0e32ef3",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "Global-length8",
+        "kind": "Global",
+        "size": 8
+      },
+      "mode": "normal",
+      "input_hash": "c9e3d1557dcff5915f7a841bbf064ff10c1a9a800e01939e0193c61637269d26",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "Global-length1087",
+        "kind": "Global",
+        "size": 1087
+      },
+      "mode": "normal",
+      "input_hash": "065e9c9cb224f80e894935244fe653458abf5599b906b223cd5f0ef024eba2a5",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "Global-length1088",
+        "kind": "Global",
+        "size": 1088
+      },
+      "mode": "normal",
+      "input_hash": "5016b7276c1119ef4b8405d1e4a485dbed493839e1061b492e5cff289b127ec8",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "Global-length1089",
+        "kind": "Global",
+        "size": 1089
+      },
+      "mode": "normal",
+      "input_hash": "2c5c4d579e179a5afdd5afb0bf4faa8ab42b475a4e70ffff7d2db9afa01d7b95",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "GlobalVolumeAccumulator-length0",
+        "kind": "GlobalVolumeAccumulator",
+        "size": 0
+      },
+      "mode": "normal",
+      "input_hash": "f77fbf7b5cb9a91f987dca60d5837a1f58fd4c790c9965dabf1a3c30b669ef4e",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "GlobalVolumeAccumulator-length7",
+        "kind": "GlobalVolumeAccumulator",
+        "size": 7
+      },
+      "mode": "normal",
+      "input_hash": "f09ebb7519ec32f75370ffa946e81a5b9dea5b5d939d30a7d069586981b43184",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "GlobalVolumeAccumulator-length8",
+        "kind": "GlobalVolumeAccumulator",
+        "size": 8
+      },
+      "mode": "normal",
+      "input_hash": "0b9f2469624ae703540b8a5962329925cbd9b74ba7ae22749af1e0055a7f8424",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "GlobalVolumeAccumulator-length599",
+        "kind": "GlobalVolumeAccumulator",
+        "size": 599
+      },
+      "mode": "normal",
+      "input_hash": "351a63082ffed4bfa2c386b691ee5629adb14297619088dcc795a532998d89bc",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "GlobalVolumeAccumulator-length600",
+        "kind": "GlobalVolumeAccumulator",
+        "size": 600
+      },
+      "mode": "normal",
+      "input_hash": "7206016fa9ee575b0609988f17b46a3ea3142bd077a8232caef3f7684d99a54c",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "GlobalVolumeAccumulator-length601",
+        "kind": "GlobalVolumeAccumulator",
+        "size": 601
+      },
+      "mode": "normal",
+      "input_hash": "7147e5ca42449f65cb982e3896af835056d174bc132e90a6f2d2ba70ac313329",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "UserVolumeAccumulator-length0",
+        "kind": "UserVolumeAccumulator",
+        "size": 0
+      },
+      "mode": "normal",
+      "input_hash": "f77fbf7b5cb9a91f987dca60d5837a1f58fd4c790c9965dabf1a3c30b669ef4e",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "UserVolumeAccumulator-length7",
+        "kind": "UserVolumeAccumulator",
+        "size": 7
+      },
+      "mode": "normal",
+      "input_hash": "e9c5e64ea179fb101101ec95ad1341c4f3ed141fb565ede6ec6bfa1517332fb5",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "UserVolumeAccumulator-length8",
+        "kind": "UserVolumeAccumulator",
+        "size": 8
+      },
+      "mode": "normal",
+      "input_hash": "c9e53d83a21ea0513984b6702f5f3d88dfb8884381366f8228ea353a209e0759",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "UserVolumeAccumulator-length136",
+        "kind": "UserVolumeAccumulator",
+        "size": 136
+      },
+      "mode": "normal",
+      "input_hash": "cac2fdaf139a27887c491f9140efa6c181e3a2b95cd781d6d62622b60376efd7",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "UserVolumeAccumulator-length137",
+        "kind": "UserVolumeAccumulator",
+        "size": 137
+      },
+      "mode": "normal",
+      "input_hash": "b238b0b07de8dd08e501b125062ac17e269320c39b8582f512327762d9bc745a",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "UserVolumeAccumulator-length138",
+        "kind": "UserVolumeAccumulator",
+        "size": 138
+      },
+      "mode": "normal",
+      "input_hash": "d9a1266906cddd7f03d7fbf23e21c046ff738d0957e3963f77979e1948967974",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "unknown-length0",
+        "kind": "unknown",
+        "size": 0
+      },
+      "mode": "normal",
+      "input_hash": "f77fbf7b5cb9a91f987dca60d5837a1f58fd4c790c9965dabf1a3c30b669ef4e",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "unknown-length7",
+        "kind": "unknown",
+        "size": 7
+      },
+      "mode": "normal",
+      "input_hash": "c5432f912cefc15cfdb0afe399bc52759066f0b47ff3eac0c37f6f51b04d80d2",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "unknown-length8",
+        "kind": "unknown",
+        "size": 8
+      },
+      "mode": "normal",
+      "input_hash": "e7663c881ec2312a001d681d9da4c4c9da0e1a13a6381ad280abddf83346b0d2",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "unknown-length166",
+        "kind": "unknown",
+        "size": 166
+      },
+      "mode": "normal",
+      "input_hash": "2ee141ddc7cbe0adb13a79f97d197df01dd578fb9573fff434eda95f5dec3ce6",
+      "before_receipt": "before01.json.gz"
+    }
+  ],
+  "cases": [
+    {
+      "case": {
+        "name": "short-compound-{'owner': 'TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA'}",
+        "size": 7,
+        "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+      },
+      "mode": "normal",
+      "input_hash": "fefa005b4d85b7782105ff13aabc9c842cd467035f37dd9f1029a5d7cb16b8b3",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "short-compound-{'wrong': 'system_program'}",
+        "size": 7,
+        "wrong": "system_program"
+      },
+      "mode": "normal",
+      "input_hash": "f245de84f767bea81d81eb8132b94b230c0c1601c139f5dda17b7fd9b03e4712",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "short-compound-{'readonly': 'account'}",
+        "size": 7,
+        "readonly": "account"
+      },
+      "mode": "normal",
+      "input_hash": "e3cc61c78e03a29a9a5ce902e4bbcb7429d25b052e0cef3ff45c544af340e3ab",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "short-compound-{'unsigned': 'user'}",
+        "size": 7,
+        "unsigned": "user"
+      },
+      "mode": "normal",
+      "input_hash": "2efd66a90c23a48ff93fc93a7fee293a142a37aec7fc3e826e1a61ed1472bd3a",
+      "before_receipt": "before01.json.gz"
+    },
+    {
+      "case": {
+        "name": "BondingCurve-zero-lamports",
+        "kind": "BondingCurve",
+        "size": 8,
+        "rent_lamports_per_byte": 0,
+        "rent_threshold": 2.0
+      },
+      "mode": "zero-rent",
+      "input_hash": "0c55256feaf61d676ff420b7a2a29aba75e841d1813b4e9e0f09da504c6291f7",
+      "before_receipt": "zero-rent-before02.json.gz"
+    },
+    {
+      "case": {
+        "name": "BondingCurve-zero-threshold",
+        "kind": "BondingCurve",
+        "size": 8,
+        "rent_lamports_per_byte": 3480,
+        "rent_threshold": 0.0
+      },
+      "mode": "zero-rent",
+      "input_hash": "5f33573ddd97225b4467dd414552c609000ed743cddf0499b1cea9e981cb76fa",
+      "before_receipt": "zero-rent-before02.json.gz"
+    },
+    {
+      "case": {
+        "name": "Global-zero-lamports",
+        "kind": "Global",
+        "size": 8,
+        "rent_lamports_per_byte": 0,
+        "rent_threshold": 2.0
+      },
+      "mode": "zero-rent",
+      "input_hash": "bf7fd8996cf36550ca4ef3c0d01d23a897612bba23471e0332d9e56ced0359be",
+      "before_receipt": "zero-rent-before02.json.gz"
+    },
+    {
+      "case": {
+        "name": "Global-zero-threshold",
+        "kind": "Global",
+        "size": 8,
+        "rent_lamports_per_byte": 3480,
+        "rent_threshold": 0.0
+      },
+      "mode": "zero-rent",
+      "input_hash": "c6f6692e0aef62a6a6cd4e869e7ecd1d0f4d5db6bac9c76b0a14ddcd318a90c7",
+      "before_receipt": "zero-rent-before02.json.gz"
+    },
+    {
+      "case": {
+        "name": "GlobalVolumeAccumulator-zero-lamports",
+        "kind": "GlobalVolumeAccumulator",
+        "size": 8,
+        "rent_lamports_per_byte": 0,
+        "rent_threshold": 2.0
+      },
+      "mode": "zero-rent",
+      "input_hash": "e252c2ff65045c6104b3176a26873eb80857ea0bb3af05a0d74c92a072507e8e",
+      "before_receipt": "zero-rent-before02.json.gz"
+    },
+    {
+      "case": {
+        "name": "GlobalVolumeAccumulator-zero-threshold",
+        "kind": "GlobalVolumeAccumulator",
+        "size": 8,
+        "rent_lamports_per_byte": 3480,
+        "rent_threshold": 0.0
+      },
+      "mode": "zero-rent",
+      "input_hash": "d54647c0017ee1c6dad00d66262563b9fcda7d273ff5a515add12b64a8d44359",
+      "before_receipt": "zero-rent-before02.json.gz"
+    },
+    {
+      "case": {
+        "name": "UserVolumeAccumulator-zero-lamports",
+        "kind": "UserVolumeAccumulator",
+        "size": 8,
+        "rent_lamports_per_byte": 0,
+        "rent_threshold": 2.0
+      },
+      "mode": "zero-rent",
+      "input_hash": "41f98aaa543a87c735ef18ea749351905596632d822eaea0c172f894561f7a8e",
+      "before_receipt": "zero-rent-before02.json.gz"
+    },
+    {
+      "case": {
+        "name": "UserVolumeAccumulator-zero-threshold",
+        "kind": "UserVolumeAccumulator",
+        "size": 8,
+        "rent_lamports_per_byte": 3480,
+        "rent_threshold": 0.0
+      },
+      "mode": "zero-rent",
+      "input_hash": "ccbcfb41e0be382a0018c6c75ed23339bc38f46746a49b9759f8143406e9ea10",
+      "before_receipt": "zero-rent-before02.json.gz"
+    }
+  ]
+}

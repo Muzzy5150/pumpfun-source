@@ -1,0 +1,44 @@
+{
+  "input_sha256": {
+    "evidence/original/pump/deployed.so": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+    "work/parallel-main-integration/build-round24-final/unstripped.so": "e25240857e10baffef8e68f33f70bcef3e9359551665ab8f56db2a33150096ea",
+    "work/parallel-main-data-frontier/round24-frontier.json": "8c594376376a9132d3e9fcbb3850a8743742a03812b0d0e13fc5fe39760ecd31",
+    "work/parallel-main-data-frontier/round24-location-objects.json": "81b06853992f481638608d338775c03ed6da13edb86d8d004d520e906c01c4b1",
+    "work/parallel-main-integration/build-round24-final/normalized-inventory.json": "eb345651a54d238f1a71554c89dae8aec9ab46d3f18b703f4867bc790dcd3267",
+    "work/parallel-main-indirect-call-audit/trace.py": "291545e1459c4e2bf181633abc65fc9a5b445188946780b14e853e40df15e087",
+    "work/parallel-main-data-layout-proof/audit.py": "5a7c2d2a7c2b58aa0f7c9d5f4eb4d0fdcd71310162533356a9cfb8328daf2ffa",
+    "work/fees-compat/toolchains/v1.44/rust/lib/rustlib/src/rust/library/core/src/panic/location.rs": "42af49b238b9892d0973c89eb6597cc4b173a29b5133f7a083d2cb487d098f1f",
+    "work/fees-compat/toolchains/v1.44/rust/lib/rustlib/src/rust/library/core/src/fmt/mod.rs": "8f13e9ce495b6d303d19cfce8a0d53c6e33eefb58a8334eb32ee063fe7d445aa",
+    "work/fees-compat/toolchains/v1.44/rust/lib/rustlib/src/rust/library/core/src/panicking.rs": "48ba1fd5fe7ede5073afe8773702530f93b8d737c23eeabd40aed2d362e3318b",
+    "work/fees-compat/toolchains/v1.44/rust/lib/rustlib/src/rust/library/core/src/slice/index.rs": "67c0543e53d827faf8d1fd5a3da186101b57d371c210f1ee1c707b8e09803dda",
+    "work/fees-compat/toolchains/v1.44/rust/lib/rustlib/src/rust/library/core/src/result.rs": "f1c4a03832480a83f84eb569fd806a582fada4c7faec9af2ce6e4f2245d4e34f",
+    "work/fees-compat/toolchains/v1.44/rust/lib/rustlib/src/rust/library/core/src/option.rs": "f0ad2f33e8b7fab690fa3094d534bb17add510ab117b3dba83b900188471f574",
+    "work/fees-compat/toolchains/v1.44/rust/lib/rustlib/src/rust/library/core/src/cell.rs": "a078da8f91ab0c0ea1eb403b4d03e07a28d4d9a9644f59927586271ff85f1223"
+  },
+  "summary": {
+    "frontier_pairs": 1002,
+    "data_rel_ro_pairs": 365,
+    "records": 125,
+    "kinds": {
+      "Location_compatible": 100,
+      "Debug_vtable": 13,
+      "Write_vtable": 1,
+      "format_pieces_slice": 11
+    },
+    "status": {
+      "typed_call_role_supported": 107,
+      "shape_only_unproved": 18
+    },
+    "typed_location_field_agreement": 46,
+    "typed_vtable_field_correspondence": 14,
+    "typed_format_piece_field_agreement": 11,
+    "unclassified_data_rel_ro_pairs": 240,
+    "all_allocation_extents_unproved": true
+  },
+  "limitations": [
+    "A typed value footprint is not a symbol/allocation extent. No complete original allocation identity is claimed.",
+    "Location and trait roles use observed register transport plus ABI-equivalent normalized candidate callees and pinned Rust source; original source names/types remain inferred.",
+    "Function-pointer comparison proves local normalized body counterparts only, not transitive callee/data identity.",
+    "All reads use exact field/string lengths; the frontier64-byte previews are not used as object extents."
+  ]
+}

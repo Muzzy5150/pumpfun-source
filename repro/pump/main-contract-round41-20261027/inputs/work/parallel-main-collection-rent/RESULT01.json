@@ -1,0 +1,63 @@
+{
+  "status": "validated main-only native creator-recipient rent gate",
+  "baseline": "work/parallel-main-integration/round32-source/programs/pump",
+  "changed_files": [
+    "src/creator/collect_creator_fee.rs",
+    "src/lib.rs"
+  ],
+  "source_hashes": {
+    "src/creator/collect_creator_fee.rs": "a00ed6655a289ac407f6164a3f6777f34a73799dd2277e64af89c30e6f32ce14",
+    "src/lib.rs": "9c6c151c7d735caf72364b06f4ea965bf00ddcb03e96045331fd035237dbeeef"
+  },
+  "baseline_hashes": {
+    "src/creator/collect_creator_fee.rs": "a74c2e8510f77ab43622d6a11e494a296942310426aa2514836381b2021509e9",
+    "src/lib.rs": "b19a14ca58c9846b252e2b809e15906dd048b642207fa51114df9a40848e85b3"
+  },
+  "patch_sha256": "27f57d3f8890945d056f1a239b5867c9a1ac61b06a7c6d0ae3e7c4297e0cb04e",
+  "candidate_sha256": "cb7125dd0aabaa41397597e6bd32f9f949394adbe1647b5a0df489f325dd6c6a",
+  "unstripped_sha256": "8f2519605d64d3788cfda9b61820cbae74e4339a27c692600e9f487226b42292",
+  "build_receipt_sha256": "fad4d7f16ffa7f4078160985dfd8ef5bb470065b13ec642932a4f6ec27b15ab5",
+  "original_helper": "0x2b490/2696B",
+  "original_gate": "0x2bce0\u20130x2bd60; recipient lamports saturating addition compared to rent of actual recipient data length",
+  "original_message_pointer": "0x1b6a20",
+  "runtime": {
+    "existing_cases": 273,
+    "primary_focus_cases": 64,
+    "independent_review_cases": 88,
+    "total_comparisons": 425,
+    "deduplicated_new_cases": 128,
+    "incremental_replay_cases": 128,
+    "before_primary_differences": 18,
+    "after_differences": 0,
+    "diagnostic_mismatches": 0,
+    "plain_message_mismatches": 0,
+    "invocation_mismatches": 0,
+    "distinct_transactions_reverified": 73
+  },
+  "inventory": {
+    "total": 1035,
+    "raw": 119,
+    "normalized": 733,
+    "unmatched": 302
+  },
+  "normalized_gains": [],
+  "normalized_losses": [],
+  "independent_review": {
+    "directory": "work/parallel-main-collection-rent-review",
+    "manifest_sha256": "d8c3156ae5fbe95ae8c2a8df21eabc9a70dd136f34a20542f23237a120473b77",
+    "result_sha256": "4f3d76af3d032a93e84fef25ebf40e37d5a75dd9d7d2b9cac8f774a6d95595e1"
+  },
+  "precedence": [
+    "FEES-owned creator rejection precedes rent/source logic.",
+    "Executable creators return success before native payment checks.",
+    "Zero collectible fee retains its original message and early return.",
+    "Positive native payment requires saturated recipient balance >= actual-data rent minimum.",
+    "Token collection does not apply this native-recipient gate."
+  ],
+  "limitations": [
+    "No new whole-window byte match claimed.",
+    "Raw layout is not qualified without a newly derived final linker recipe.",
+    "Original Pump-as-recipient fixture reaches ConstraintMut, not executable business gate; independent loaded Token/Token22 probes cover that gate.",
+    "Zero-lamport owner fixtures purge the account in LiteSVM; independent live1/2M-lamport owner probes establish ownership order."
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "scope": "Original main AdminSetIdlAuthority TransferWithSeed signer-seed descriptor, read-only proof.",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "baseline_unstripped_sha256": "636ed9c8114502e2b4c8c515568f91abed9c014877f794e1ff532726293a7f57",
+  "handler": "0x1557e8/5704B",
+  "helper": "0x19e3b0/896B normalized exact",
+  "context_base": "r10-0x240 at0x156248",
+  "callee_seed_fields": "CpiContext+0xd8 pointer/+0xe0 count => caller stack-0x168/-0x160, consumed by exact helper at19e4c0/19e4c8.",
+  "original_graph": {
+    "outer": {
+      "pointer": "stack-0x120",
+      "count": 1
+    },
+    "inner": {
+      "pointer": "stack-0x40",
+      "count": 2
+    },
+    "seeds": [
+      {
+        "pointer": 1,
+        "length": 0,
+        "meaning": "empty byte slice"
+      },
+      {
+        "pointer": "stack-0x158",
+        "length": 1,
+        "meaning": "program_signer bump"
+      }
+    ]
+  },
+  "baseline_graph": {
+    "outer": {
+      "pointer": "stack-0x68",
+      "count": 1
+    },
+    "inner": {
+      "pointer": "stack-0x158",
+      "count": 1
+    },
+    "seeds": [
+      {
+        "pointer": "stack-0xd8",
+        "length": 1,
+        "meaning": "program_signer bump"
+      }
+    ]
+  },
+  "original_instructions": [
+    {
+      "address": "0x155af8",
+      "bytes": "7161210000000000",
+      "opcode": 113,
+      "registers": 97,
+      "offset": 33,
+      "immediate": 0
+    },
+    {
+      "address": "0x155b00",
+      "bytes": "bfa2000000000000",
+      "opcode": 191,
+      "registers": 162,
+      "offset": 0,
+      "immediate": 0
+    },
+    {
+      "address": "0x155b08",
+      "bytes": "07020000a8feffff",
+      "opcode": 7,
+      "registers": 2,
+      "offset": 0,
+      "immediate": -344
+    },
+    {
+      "address": "0x155b10",
+      "bytes": "7b2ad0ff00000000",
+      "opcode": 123,
+      "registers": 42,
+      "offset": -48,
+      "immediate": 0
+    },
+    {
+      "address": "0x155b18",
+      "bytes": "731aa8fe00000000",
+      "opcode": 115,
+      "registers": 26,
+      "offset": -344,
+      "immediate": 0
+    },
+    {
+      "address": "0x155b20",
+      "bytes": "bfa1000000000000",
+      "opcode": 191,
+      "registers": 161,
+      "offset": 0,
+      "immediate": 0
+    },
+    {
+      "address": "0x155b28",
+      "bytes": "07010000c0ffffff",
+      "opcode": 7,
+      "registers": 1,
+      "offset": 0,
+      "immediate": -64
+    },
+    {
+      "address": "0x155b30",
+      "bytes": "7b1ae0fe00000000",
+      "opcode": 123,
+      "registers": 26,
+      "offset": -288,
+      "immediate": 0
+    },
+    {
+      "address": "0x155b38",
+      "bytes": "7a0ad8ff01000000",
+      "opcode": 122,
+      "registers": 10,
+      "offset": -40,
+      "immediate": 1
+    },
+    {
+      "address": "0x155b40",
+      "bytes": "7a0ac8ff00000000",
+      "opcode": 122,
+      "registers": 10,
+      "offset": -56,
+      "immediate": 0
+    },
+    {
+      "address": "0x155b48",
+      "bytes": "7a0ac0ff01000000",
+      "opcode": 122,
+      "registers": 10,
+      "offset": -64,
+      "immediate": 1
+    },
+    {
+      "address": "0x155b50",
+      "bytes": "7a0ae8fe02000000",
+      "opcode": 122,
+      "registers": 10,
+      "offset": -280,
+      "immediate": 2
+    },
+    {
+      "address": "0x156070",
+      "bytes": "bfa1000000000000",
+      "opcode": 191,
+      "registers": 161,
+      "offset": 0,
+      "immediate": 0
+    },
+    {
+      "address": "0x156078",
+      "bytes": "07010000e0feffff",
+      "opcode": 7,
+      "registers": 1,
+      "offset": 0,
+      "immediate": -288
+    },
+    {
+      "address": "0x156080",
+      "bytes": "7b1a98fe00000000",
+      "opcode": 123,
+      "registers": 26,
+      "offset": -360,
+      "immediate": 0
+    },
+    {
+      "address": "0x156108",
+      "bytes": "7a0aa0fe01000000",
+      "opcode": 122,
+      "registers": 10,
+      "offset": -352,
+      "immediate": 1
+    },
+    {
+      "address": "0x19e4c0",
+      "bytes": "7971e00000000000",
+      "opcode": 121,
+      "registers": 113,
+      "offset": 224,
+      "immediate": 0
+    },
+    {
+      "address": "0x19e4c8",
+      "bytes": "7972d80000000000",
+      "opcode": 121,
+      "registers": 114,
+      "offset": 216,
+      "immediate": 0
+    }
+  ],
+  "baseline_instructions": [
+    {
+      "address": "0x8cee0",
+      "bytes": "7122210000000000",
+      "opcode": 113,
+      "registers": 34,
+      "offset": 33,
+      "immediate": 0
+    },
+    {
+      "address": "0x8cee8",
+      "bytes": "bfa4000000000000",
+      "opcode": 191,
+      "registers": 164,
+      "offset": 0,
+      "immediate": 0
+    },
+    {
+      "address": "0x8cef0",
+      "bytes": "0704000028ffffff",
+      "opcode": 7,
+      "registers": 4,
+      "offset": 0,
+      "immediate": -216
+    },
+    {
+      "address": "0x8cef8",
+      "bytes": "7b4aa8fe00000000",
+      "opcode": 123,
+      "registers": 74,
+      "offset": -344,
+      "immediate": 0
+    },
+    {
+      "address": "0x8cf00",
+      "bytes": "732a28ff00000000",
+      "opcode": 115,
+      "registers": 42,
+      "offset": -216,
+      "immediate": 0
+    },
+    {
+      "address": "0x8cf08",
+      "bytes": "bfa2000000000000",
+      "opcode": 191,
+      "registers": 162,
+      "offset": 0,
+      "immediate": 0
+    },
+    {
+      "address": "0x8cf10",
+      "bytes": "07020000a8feffff",
+      "opcode": 7,
+      "registers": 2,
+      "offset": 0,
+      "immediate": -344
+    },
+    {
+      "address": "0x8cf18",
+      "bytes": "7b2a98ff00000000",
+      "opcode": 123,
+      "registers": 42,
+      "offset": -104,
+      "immediate": 0
+    },
+    {
+      "address": "0x8d080",
+      "bytes": "7a0ab0fe01000000",
+      "opcode": 122,
+      "registers": 10,
+      "offset": -336,
+      "immediate": 1
+    },
+    {
+      "address": "0x8d088",
+      "bytes": "7a0aa0ff01000000",
+      "opcode": 122,
+      "registers": 10,
+      "offset": -96,
+      "immediate": 1
+    },
+    {
+      "address": "0x8d090",
+      "bytes": "bfa2000000000000",
+      "opcode": 191,
+      "registers": 162,
+      "offset": 0,
+      "immediate": 0
+    },
+    {
+      "address": "0x8d098",
+      "bytes": "0702000098ffffff",
+      "opcode": 7,
+      "registers": 2,
+      "offset": 0,
+      "immediate": -104
+    },
+    {
+      "address": "0x8d0a0",
+      "bytes": "7b2a98fe00000000",
+      "opcode": 123,
+      "registers": 42,
+      "offset": -360,
+      "immediate": 0
+    },
+    {
+      "address": "0x8d110",
+      "bytes": "7a0aa0fe01000000",
+      "opcode": 122,
+      "registers": 10,
+      "offset": -352,
+      "immediate": 1
+    }
+  ],
+  "proposed_change": "Only TransferWithSeed signer seeds: &[&[&[bump]]] -> &[&[b\"\", &[bump]]]. Keep program-signer constraints, account order, exact typed helper, owner/funding/realloc/header/event logic unchanged.",
+  "expected_behavior": "Empty seed contributes no hash bytes and both seed counts remain within the pinned SDK bound; validate all197 existing cases, no new runtime input claimed.",
+  "sdk_evidence": {
+    "file": "work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/solana-pubkey-2.2.1/src/lib.rs",
+    "sha256": "143252a8a99a9a5c1acd9cfb9bef6759b94c6b1788fdbbddc1126b57632a34a4",
+    "lines": "721..742 accepts empty seeds and hashes each byte slice in order"
+  },
+  "limits": [
+    "Descriptor graph is direct static evidence; original Rust spelling is not unique.",
+    "No full handler equality claim; no padding or visibility change.",
+    "No source/build change in this proof."
+  ]
+}

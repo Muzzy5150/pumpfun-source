@@ -1,0 +1,12 @@
+{
+  "reader": "work/parallel-main-schedule-guard-corpus/dedup06.py",
+  "reader_sha256": "fc316b5c417e09168332ff18bf8c0eb47e731076f4c15ae8181a60ff86f3e58d",
+  "audit": "work/parallel-main-cashback-v2-independent-review/audit_logs_v3.py",
+  "audit_sha256": "13c2e60cb4eaabd8685b693c0e6053fa7122d5800b77cdbaf7e81600311762cb",
+  "changes": [
+    "yield complete pair instead of original only",
+    "explicit input paths and expected counts",
+    "fail if only one side invokes main",
+    "require zero non-filename differences by default"
+  ]
+}

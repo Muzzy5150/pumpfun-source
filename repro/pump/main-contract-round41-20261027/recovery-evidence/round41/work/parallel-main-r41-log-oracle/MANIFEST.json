@@ -1,0 +1,10 @@
+{
+  "R40-BASELINE.json": "3bec26dfdb7ac42485cf12b691aea18df7420d8f3de4eaf1f1ac9b38919d9ebd",
+  "R40-BASELINE.log": "c4159451e833158ddd8c7d46bf2f2f37b309fba80f6d3e650f8da92770b448f2",
+  "paired_receipt_reader.py": "622f4b59eafe9d59620ddf515864f0c753b2573ee47e4207f3e38c81a62fea19",
+  "ORIGIN.json": "88371f3f54beb2717aae894cf5172e7aa982e2ea440ce7a7ff9d83690b8413ad",
+  "audit.py": "73a52113cea55e5dca318d72af191bc2e5bc854db93a0a6ad359f647766dee63",
+  "test_audit.py": "72703761f32d97ba0f643a3ff7351c4ba46aecc8a02b524cc9eb6930c7995fbb",
+  "VALIDATION.json": "558a4a0a9b07820ff70e1c44d14db80dff8d0fbdac103f9fda3f18df3e042a44",
+  "R40-BASELINE-MISMATCHES.jsonl.gz": "6f614c8b3f3d6df6f5e2a5f435c524b699cb66be8927a1f3cd9b656d26c084ba"
+}

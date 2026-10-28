@@ -18,5 +18,7 @@ use anchor_spl::metadata::MetadataAccount as CreatorMetadata;
 }
 #[event]#[derive(Clone)]pub struct SetCreatorEvent{pub timestamp:i64,pub mint:Pubkey,pub bonding_curve:Pubkey,pub creator:Pubkey}
 #[event]#[derive(Clone)]pub struct SetMetaplexCreatorEvent{pub timestamp:i64,pub mint:Pubkey,pub bonding_curve:Pubkey,pub metadata:Pubkey,pub creator:Pubkey}
-pub fn set(mut ctx:Context<SetCreator>,creator:Pubkey)->Result<()>{let a=&mut ctx.accounts;if a.bonding_curve.creator!=Pubkey::default(){msg!("Bonding curve has creator already set");return Ok(());}let mint=a.mint.key();let bonding_curve=a.bonding_curve.key();match &a.metadata.creators{Some(cs)=>{let creator=cs[0].address;a.bonding_curve.creator=creator;let e=SetMetaplexCreatorEvent{timestamp:Clock::get()?.unix_timestamp,mint,bonding_curve,metadata:a.metadata.key(),creator};emit!(e);emit_cpi!(e);return Ok(());}None=>{a.bonding_curve.creator=creator;let e=SetCreatorEvent{timestamp:Clock::get()?.unix_timestamp,mint,bonding_curve,creator};emit!(e);emit_cpi!(e);}}Ok(())}
-pub fn sync(mut ctx:Context<SetMetaplexCreator>)->Result<()>{let a=&mut ctx.accounts;if a.bonding_curve.creator!=Pubkey::default(){msg!("Bonding curve has creator already set");return Ok(());}match &a.metadata.creators{Some(cs)=>{let creator=cs[0].address;a.bonding_curve.creator=creator;let e=SetMetaplexCreatorEvent{timestamp:Clock::get()?.unix_timestamp,mint:a.mint.key(),bonding_curve:a.bonding_curve.key(),metadata:a.metadata.key(),creator};emit!(e);emit_cpi!(e);return Ok(());}None=>{msg!("Missing metaplex creators");}}Ok(())}
+#[path="creator/set_creator.rs"] mod set_creator_impl;
+#[path="creator/set_metaplex_creator.rs"] mod set_metaplex_creator_impl;
+pub use set_creator_impl::set;
+pub use set_metaplex_creator_impl::sync;

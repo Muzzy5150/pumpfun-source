@@ -1,0 +1,10 @@
+{
+  "scope": "Isolated main-Pump pending creator fee admission correction.",
+  "baseline": "work/parallel-main-integration/round32-source/programs/pump",
+  "original_handler": "0x32840",
+  "guard_source": "Original0x32858 branches inactive sharing status first;0x32860/0x32868 tests pending creator fee,6095 error0x329b0.",
+  "observed_counterexamples": "Both native distribution versions: curve wire offset125 u64=1 => original6095, R32 success; offset125=0 unchanged.",
+  "changed_file": "src/distribution.rs",
+  "before_sha256": "6c7b6dd35e19112e01a743542910dedea83cc9c769795a9aab3512b214ca3f7d",
+  "after_sha256": "50be401d3a89612f46927f8750a3b32ad025979bb74a99d8049caf065a0eb9b5"
+}

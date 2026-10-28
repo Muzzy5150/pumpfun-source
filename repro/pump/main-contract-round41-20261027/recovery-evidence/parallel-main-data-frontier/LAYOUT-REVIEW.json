@@ -1,0 +1,25 @@
+{
+  "counts": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 708,
+    "unmatched": 327
+  },
+  "normalized_gained": [],
+  "normalized_lost": [],
+  "original_path_strings_present_before": 12,
+  "original_path_strings_present_after": 22,
+  "candidate_only_before": 20,
+  "candidate_only_after": 10,
+  "runtime": {
+    "cases": 310,
+    "groups": [
+      "full.idl_authority",
+      "full.creator_migration"
+    ],
+    "strict_per_suite_diagnostics": true,
+    "scope": "Targeted IDL-authority and creator-migration only; full corpus required before promotion.",
+    "state_sha256": "dfeb1f4206cebd0692b8f30f4e240c876d6dcf56e26d2c8154194a2cb73e2e14",
+    "resume_reverified_without_rerun": true
+  }
+}

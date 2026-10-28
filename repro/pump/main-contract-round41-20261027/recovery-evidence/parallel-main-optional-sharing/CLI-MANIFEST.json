@@ -1,0 +1,28 @@
+{
+  "script": "work/parallel-main-optional-sharing/probe.py",
+  "script_sha256": "f7743330bfbf2c3a71450c2d9aa8117d6733052982d88aa66473278809a9ecad",
+  "command": [
+    "work/test-env/bin/python",
+    "work/parallel-main-optional-sharing/probe.py",
+    "--candidate",
+    "CANDIDATE",
+    "--output",
+    "optional-sharing.json.gz"
+  ],
+  "raw_case_count": 246,
+  "unique_fixture_count": 216,
+  "new_unique_fixture_count": 209,
+  "intra_suite_duplicate_count": 30,
+  "unique_fixtures_already_in_accepted_trade_corpus": 7,
+  "duplicate_report": "work/parallel-main-optional-sharing/DUPLICATES.json",
+  "variants_per_route": 41,
+  "routes": [
+    "buy_v2 native",
+    "buy_v2 token",
+    "buy_exact_quote_in_v2 native",
+    "buy_exact_quote_in_v2 token",
+    "sell_v2 native",
+    "sell_v2 token"
+  ],
+  "mutation_scope": "SharingConfig only; empty,length,owner,discriminator,status,admin_revoked,vectorlength,sharebps,mint/admin pubkeys"
+}

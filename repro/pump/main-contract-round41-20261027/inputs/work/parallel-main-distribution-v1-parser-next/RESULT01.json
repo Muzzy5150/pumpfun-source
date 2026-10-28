@@ -1,0 +1,72 @@
+{
+  "status": "Validated V1 creator-vault borrowed curve-creator seed recovery",
+  "baseline": "work/parallel-main-native-distribution-string/source01",
+  "files": {
+    "src/distribution.rs": "eda32fbd54392feaaf28f440b8f9d606c3bfb91c4db9e609b243c84cf46c70a1"
+  },
+  "preserved_token_planner_source_sha256": "a996123cd7dd94133d94af372c499920f51b9a675bfd400eb5659ec6a03a9fb2",
+  "patch": "v1-creator-seed-only.patch",
+  "patch_sha256": "7ce7978bba2bdccd10df7f3c0b3e1ef71a9ab9541b8daf2a84af10cf563693f4",
+  "candidate_sha256": "3ee67b013052d7cf802d04291b5358d6cd22cf4f2316053160faeddb25e5187d",
+  "unstripped_sha256": "b5aa063d4ca042b56133f1193a0028b8166df1188e6f87a1a160bc02007b3114",
+  "build_receipt_sha256": "ffc62b4b264f46db4ec953bad811b93377b3107f558fb53ca9df1de28fbdfc83",
+  "cache_key": "5de55fe66a808ad0a24be6877353a5af4a2c2ab4334b9630a1908e3e140fcb59",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 738,
+    "unmatched": 297
+  },
+  "complete_match_delta": {
+    "normalized_matches": {
+      "gains": [
+        793944
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "helper": {
+    "original_start": "0xc1d58",
+    "raw_equal": false,
+    "original_bytes": 7256,
+    "baseline_bytes": 7320,
+    "candidate_bytes": 7256,
+    "normalized_equal": true,
+    "different_slots": 0
+  },
+  "instruction_evidence": {
+    "static": "STATIC01.json",
+    "static_sha256": "a40f49eb73561bad756c2385a0e58048e31999c491c8eb1b1e4a486b66bad8c8",
+    "before": "STATIC-BEFORE01.json",
+    "before_sha256": "54f7750af926a9de9fccf4e5a3db4ff793ea0c812625ee73ea439cb4390ea48f"
+  },
+  "runtime": {
+    "case_counts": {
+      "distribution": 298,
+      "minimum": 181,
+      "regressions": 62,
+      "rent": 6,
+      "pending": 72,
+      "quote_gate": 18
+    },
+    "cases": 637,
+    "mismatches": 0,
+    "strict_diagnostics": 0,
+    "invocation_mismatches": 0,
+    "distinct_signed_transactions": 105,
+    "existing_native_executable_branch_cases": 8,
+    "new_case_claim": 0
+  },
+  "scope": "Only the V1 creator-vault seed uses bonding_curve.creator.as_ref(), preserving the preceding equality check, account order and all business logic.",
+  "limitations": [
+    "Whole ELF remains nonidentical. Complete parser equality is reported in the helper record.",
+    "Size changes are reported without interpreting closeness as proof.",
+    "No new final text/data ordering recipe was qualified.",
+    "Physical split and both String patches remain separate previously sealed inputs.",
+    "Natural source coordinates are unchanged; no padding."
+  ]
+}

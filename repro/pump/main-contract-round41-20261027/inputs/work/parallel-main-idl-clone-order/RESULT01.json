@@ -1,0 +1,142 @@
+{
+  "status": "Validated original-backed IDL caller program-first clone order",
+  "source_file": "src/admin_set_idl_authority.rs",
+  "source_sha256": "8218b8bdea2d64454e73ed322a2d5431f34753a6f2c5f40cb889a63c0be4c417",
+  "base_seed_manifest_sha256": "deb1fdd322ab36b360530e8cac2a105e893a96184e9392912e1044af54fa7e28",
+  "patch_sha256": "9aae397621f253dd6382a91af30bd6f8ab59f6d2825932f1b64fb305be4b1c96",
+  "combined_r37_patch_sha256": "f3272bf1c4d669634e3dc33069d5dd3e214ad26b5fba2f1404001461cb9ac1d1",
+  "candidate_sha256": "d907e235ac2d0e87ad9e6d92346dc21275737f1dcb5114362a26baf68f0054f3",
+  "unstripped_sha256": "1adce9a1eeb83f64e60a0610d3acf36e650c17d0eb2f1b0dd70a0d02c4ef560e",
+  "build_receipt_sha256": "d1dd430deee17d79928bc38f515555fbbce445008ef9782d118e550a31648614",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 744,
+    "unmatched": 291
+  },
+  "delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "handler": {
+    "original_bytes": 5704,
+    "candidate": "0x8b490",
+    "candidate_bytes": 5952,
+    "normalized_equal": false,
+    "different_slots": 737
+  },
+  "helper": {
+    "bytes": 896,
+    "normalized_equal": true,
+    "callees": [
+      {
+        "offset": 112,
+        "original": "0x1a7558",
+        "candidate": "0x18fb30",
+        "normalized_equal": true
+      },
+      {
+        "offset": 168,
+        "original": "0x1b3610",
+        "candidate": "0x19dc50",
+        "normalized_equal": true
+      },
+      {
+        "offset": 216,
+        "original": "0x1b3610",
+        "candidate": "0x19dc50",
+        "normalized_equal": true
+      },
+      {
+        "offset": 264,
+        "original": "0x1b3610",
+        "candidate": "0x19dc50",
+        "normalized_equal": true
+      },
+      {
+        "offset": 352,
+        "original": "0x1a0530",
+        "candidate": "0x188b08",
+        "normalized_equal": true
+      },
+      {
+        "offset": 416,
+        "original": "0x156fe8",
+        "candidate": "0x14be28",
+        "normalized_equal": true
+      },
+      {
+        "offset": 456,
+        "original": "0x1ab1b0",
+        "candidate": "0x194af8",
+        "normalized_equal": true
+      },
+      {
+        "offset": 576,
+        "original": "0x1570b8",
+        "candidate": "0x14bef8",
+        "normalized_equal": true
+      },
+      {
+        "offset": 616,
+        "original": "0x1570b8",
+        "candidate": "0x14bef8",
+        "normalized_equal": true
+      },
+      {
+        "offset": 640,
+        "original": "0x199db8",
+        "candidate": "0x182390",
+        "normalized_equal": true
+      },
+      {
+        "offset": 656,
+        "original": "0x19a020",
+        "candidate": "0x1825f8",
+        "normalized_equal": true
+      },
+      {
+        "offset": 760,
+        "original": "0x1570b8",
+        "candidate": "0x14bef8",
+        "normalized_equal": true
+      },
+      {
+        "offset": 856,
+        "original": "0x1570b8",
+        "candidate": "0x14bef8",
+        "normalized_equal": true
+      }
+    ]
+  },
+  "clone_order": [
+    "system_program",
+    "idl_account/from",
+    "program_signer/base",
+    "authority/to"
+  ],
+  "both_rc_fields_verified": true,
+  "seed_lengths": [
+    0,
+    1
+  ],
+  "runtime": {
+    "cases": 197,
+    "transactions": 394,
+    "verified_signatures": 784,
+    "diagnostic_mismatches": 0,
+    "invocation_order_mismatches": 0,
+    "new_inputs": 0
+  },
+  "limits": [
+    "The full original ELF and full handler remain separate identity claims.",
+    "No signed fixture attempts internal Rc counter overflow; clone order is static instruction evidence.",
+    "No guards, account order, seed values, amounts, header operations or attributes changed."
+  ]
+}

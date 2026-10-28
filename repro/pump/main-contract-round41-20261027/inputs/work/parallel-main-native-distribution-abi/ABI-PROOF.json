@@ -1,0 +1,136 @@
+{
+  "scope": "Read-only original main-Pump native distribution planner ABI and consumer trace; no source/build changes.",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "calls": {
+    "0x311f8": [
+      {
+        "owner": "0x2d920",
+        "owner_bytes": 8512,
+        "site": "0x2e1f8"
+      },
+      {
+        "owner": "0x32530",
+        "owner_bytes": 784,
+        "site": "0x32638"
+      },
+      {
+        "owner": "0x32840",
+        "owner_bytes": 5136,
+        "site": "0x32d78"
+      }
+    ],
+    "0x33c50": [
+      {
+        "owner": "0x2d920",
+        "owner_bytes": 8512,
+        "site": "0x2e8c0"
+      },
+      {
+        "owner": "0x32840",
+        "owner_bytes": 5136,
+        "site": "0x33120"
+      }
+    ]
+  },
+  "function_address_references": {
+    "lddw": [],
+    "literal_u64_data": [],
+    "limitation": "No observed address-taking reference in these representations; arithmetic-created or externally constructed function pointers are not proven impossible."
+  },
+  "input_abi": {
+    "r1": "48-byte result buffer",
+    "r2": "Rent reference",
+    "r3": "Shareholder slice pointer;34-byte entries",
+    "r4": "Shareholder slice length",
+    "caller_frame_minus_0x1000": "remaining AccountInfo slice pointer;48-byte entries",
+    "caller_frame_minus_0xff8": "remaining AccountInfo length",
+    "caller_frame_minus_0xff0": "creator vault AccountInfo reference"
+  },
+  "success_return_buffer": {
+    "0": "plan Vec capacity",
+    "8": "plan Vec data pointer",
+    "16": "plan Vec initialized length",
+    "24": "maximum ceil(recipient rent deficit*10000/share_bps)",
+    "32": "saturating rent.minimum_balance(0)+field24",
+    "40": "creator vault lamports minus rent.minimum_balance(0), saturating"
+  },
+  "error_return_buffer": {
+    "0": "i64::MIN niche marker",
+    "8_and_16": "Anchor Error payload; not a plan vector"
+  },
+  "entry_layout": {
+    "bytes": 16,
+    "0": "floor(available * share_bps / 10000), checked product",
+    "8": "recipient rent deficit = rent.minimum_balance(recipient.data_len()).saturating_sub(recipient.lamports())",
+    "source_instructions": {
+      "0x31d28": [
+        183,
+        6,
+        0,
+        0
+      ],
+      "0x31d38": [
+        191,
+        22,
+        0,
+        0
+      ],
+      "0x31538": [
+        123,
+        97,
+        8,
+        0
+      ],
+      "0x31540": [
+        123,
+        113,
+        0,
+        0
+      ],
+      "0x33e98": [
+        7,
+        2,
+        0,
+        16
+      ],
+      "0x33f18": [
+        121,
+        39,
+        0,
+        0
+      ]
+    }
+  },
+  "second_word_consumers": {
+    "minimum_query": "No plan element dereference; reads buffer+24/+32/+40 to form event and returned tuple.",
+    "v1_and_v2": "Borrow plan pointer/length to shared native executor0x33c50 when available>=threshold.",
+    "shared_executor": "Only entry+0 is loaded at0x33f18; cursor advances16 at0x33e98. Entry+8 is skipped.",
+    "meaning": "The numeric deficit is definitely produced but no runtime read of that second word was found in any of the three direct consumers."
+  },
+  "executor_analysis": {
+    "function_start": "0x33c50",
+    "function_bytes": 2312,
+    "reachable_instruction_slots": 276,
+    "worklist_visits": 408,
+    "plan_reads": [
+      {
+        "site": "0x33f18",
+        "entry_offset": 0,
+        "bytes": 8
+      }
+    ],
+    "plan_pointer_call_arguments": [],
+    "nonreturning_imported_abort_sites": [
+      "0x33cf0"
+    ],
+    "unhandled_plan_pointer_operations": [],
+    "second_word_read": false,
+    "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+    "script_sha256": "b27ec5c27e88c0e798cb23d061ab5f92ba4d0f60726dc58952b7cce257d9fec1"
+  },
+  "limits": [
+    "The exact original Rust tuple/struct name remains unknown.",
+    "Pointer provenance is a bounded original-executor analysis and observed ABI check, not a general memory-safety/formal-equivalence claim.",
+    "Sealed source01 remains unchanged; no extra build was launched."
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "tests": [
+    {
+      "name": "fresh_identity_derive_final_plan",
+      "status": "passed",
+      "compiler_invocations": 0
+    },
+    {
+      "name": "stale_source",
+      "status": "rejected_as_expected",
+      "diagnostic": "archived primary source differs"
+    },
+    {
+      "name": "stale_pure_text_hash",
+      "status": "rejected_as_expected",
+      "diagnostic": "archived pure text recipe differs"
+    },
+    {
+      "name": "incomplete_final_hashes",
+      "status": "rejected_as_expected",
+      "diagnostic": "two expected ELF hashes required"
+    },
+    {
+      "name": "reused_output",
+      "status": "rejected_as_expected",
+      "diagnostic": "reproduction output root must be new"
+    },
+    {
+      "name": "combined_script_as_pure",
+      "status": "rejected_as_expected",
+      "diagnostic": "invalid pure text recipe"
+    },
+    {
+      "name": "two_elf_hashes_and_standard_receipts",
+      "status": "passed"
+    },
+    {
+      "name": "candidate_hash",
+      "status": "rejected_as_expected",
+      "diagnostic": "reproduced ELF hashes differ"
+    },
+    {
+      "name": "unstripped_hash",
+      "status": "rejected_as_expected",
+      "diagnostic": "reproduced ELF hashes differ"
+    },
+    {
+      "name": "incomplete_attempt",
+      "status": "rejected_as_expected",
+      "diagnostic": "unsuccessful reproduction receipt: build-attempt.json"
+    },
+    {
+      "name": "unfresh_main",
+      "status": "rejected_as_expected",
+      "diagnostic": "main was not freshly compiled: build-comparison.json"
+    },
+    {
+      "name": "unpassed_data_status",
+      "status": "rejected_as_expected",
+      "diagnostic": "data-order status is not passed: build-comparison.json"
+    },
+    {
+      "name": "wrong_certificate_binding",
+      "status": "rejected_as_expected",
+      "diagnostic": "new certificate receipt binding differs: build-comparison.json"
+    },
+    {
+      "name": "changed_transform",
+      "status": "rejected_as_expected",
+      "diagnostic": "transformation receipt binding differs: build-attempt.json"
+    }
+  ],
+  "count": 14,
+  "compiler_invocations": 0,
+  "output_directory_created": false,
+  "script_sha256": "063339b1ca870cd735d716de6fe7e3e4b99dd7d6991b1dae44198afe8528d56d",
+  "implementation_sha256": "faf5a1e871195a2113bac32678107c4c06707d580b352becf5924ca75f9ecda4"
+}

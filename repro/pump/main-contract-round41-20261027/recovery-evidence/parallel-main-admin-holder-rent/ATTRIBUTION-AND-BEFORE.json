@@ -1,0 +1,201 @@
+{
+  "correction": "Original0x22a10 is AdminCto business handler, not a creation parser. No Create/CreateV2 changes warranted by this caller.",
+  "original_elf_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "wrapper": {
+    "original_start": "0x12da00",
+    "bytes": 2208,
+    "normalized_candidate_matches": [
+      {
+        "start": 1297864,
+        "symbol": "_ZN14pump_recovered9__private8__global9admin_cto17h4d5d25bac4c5b992E",
+        "raw_sha256": "3113eeed381600831942d0efeb1fb5984ceb8320c48b5a21682e9f401f83935c",
+        "operands": [
+          {
+            "offset": 40,
+            "kind": "elf-pointer",
+            "value": 1705725,
+            "sections": [
+              ".rodata"
+            ]
+          },
+          {
+            "offset": 208,
+            "kind": "elf-pointer",
+            "value": 1729192,
+            "sections": [
+              ".data.rel.ro"
+            ]
+          },
+          {
+            "offset": 256,
+            "kind": "elf-pointer",
+            "value": 1686344,
+            "sections": [
+              ".text"
+            ]
+          },
+          {
+            "offset": 328,
+            "kind": "elf-pointer",
+            "value": 1729392,
+            "sections": [
+              ".data.rel.ro"
+            ]
+          },
+          {
+            "offset": 376,
+            "kind": "elf-pointer",
+            "value": 1686344,
+            "sections": [
+              ".text"
+            ]
+          },
+          {
+            "offset": 1112,
+            "kind": "direct-call",
+            "target": 1091240
+          },
+          {
+            "offset": 1200,
+            "kind": "direct-call",
+            "target": 1687744
+          },
+          {
+            "offset": 1472,
+            "kind": "direct-call",
+            "target": 504480
+          },
+          {
+            "offset": 1536,
+            "kind": "elf-pointer",
+            "value": 1704648,
+            "sections": [
+              ".rodata"
+            ]
+          },
+          {
+            "offset": 1552,
+            "kind": "direct-call",
+            "target": 27640
+          },
+          {
+            "offset": 1592,
+            "kind": "direct-call",
+            "target": 53680
+          },
+          {
+            "offset": 1616,
+            "kind": "elf-pointer",
+            "value": 1728984,
+            "sections": [
+              ".data.rel.ro"
+            ]
+          },
+          {
+            "offset": 1632,
+            "kind": "direct-call",
+            "target": 1636536
+          },
+          {
+            "offset": 1648,
+            "kind": "elf-pointer",
+            "value": 1729392,
+            "sections": [
+              ".data.rel.ro"
+            ]
+          },
+          {
+            "offset": 1696,
+            "kind": "elf-pointer",
+            "value": 1686344,
+            "sections": [
+              ".text"
+            ]
+          },
+          {
+            "offset": 1744,
+            "kind": "elf-pointer",
+            "value": 1729392,
+            "sections": [
+              ".data.rel.ro"
+            ]
+          },
+          {
+            "offset": 1792,
+            "kind": "elf-pointer",
+            "value": 1686344,
+            "sections": [
+              ".text"
+            ]
+          },
+          {
+            "offset": 1904,
+            "kind": "direct-call",
+            "target": 1650688
+          },
+          {
+            "offset": 1928,
+            "kind": "direct-call",
+            "target": 47984
+          },
+          {
+            "offset": 2040,
+            "kind": "direct-call",
+            "target": 1596776
+          },
+          {
+            "offset": 2128,
+            "kind": "elf-pointer",
+            "value": 1703015,
+            "sections": [
+              ".rodata"
+            ]
+          },
+          {
+            "offset": 2152,
+            "kind": "direct-call",
+            "target": 13536
+          },
+          {
+            "offset": 2192,
+            "kind": "direct-call",
+            "target": 53680
+          }
+        ]
+      }
+    ],
+    "sha256": "7d0a74f04ad9aad2fb0a9e916e65b30e6118342d2036b2cfdf28119c053f2b14"
+  },
+  "wrapper_call": {
+    "site": "0x12dfc0",
+    "target": "0x22a10"
+  },
+  "rent_call": {
+    "site": "0x28490",
+    "target": "0x3b738"
+  },
+  "helper": {
+    "start": "0x3b738",
+    "bytes": 416,
+    "sha256": "5543f3fe19a3645cb16a9876656daacad41217a00e9e892078a18a1e287dd327"
+  },
+  "current_source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/build-round24-final/source/programs/pump/src/creator/admin_cto.rs",
+  "before": {
+    "cases": 35,
+    "mismatches": [
+      "native-source-1000000-destination-1",
+      "native-source-1000000-destination-890879",
+      "payer-0-destination-1",
+      "payer-0-destination-890879",
+      "payer-1-destination-1",
+      "payer-1-destination-890879",
+      "payer-890879-destination-1",
+      "payer-890879-destination-890879",
+      "payer-890880-destination-1",
+      "payer-890880-destination-890879",
+      "payer-1000000-destination-1",
+      "payer-1000000-destination-890879"
+    ],
+    "sha256": "aab6c13f050fee190d7cbfd5be52123311433b8e2567e37e4b164f3b5a017640"
+  }
+}

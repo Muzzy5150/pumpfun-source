@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "scope": "Read-only post-publication review of private R41 controllers. No controller changes or new compilation.",
+  "published_R40": {
+    "commit": "038e724121d1d1ab6a239c8fdb8bcd002ec011da",
+    "candidate_sha256": "469fe39861d0b3697ad5668ba2c935d329f084916152b268d96df2d7c6ff254a",
+    "main_verified": "038e724121d1d1ab6a239c8fdb8bcd002ec011da"
+  },
+  "staged_controllers_unchanged": 17,
+  "base_R40_controllers_unchanged": 17,
+  "existing_installation_sha256": "c5567a5b66a50406d9492f90f6a6f85a14c204f3ebe064f22e026fba54636b88",
+  "existing_oracle_sha256": {
+    "audit.py": "73a52113cea55e5dca318d72af191bc2e5bc854db93a0a6ad359f647766dee63",
+    "paired_receipt_reader.py": "622f4b59eafe9d59620ddf515864f0c753b2573ee47e4207f3e38c81a62fea19",
+    "test_audit.py": "72703761f32d97ba0f643a3ff7351c4ba46aecc8a02b524cc9eb6930c7995fbb",
+    "ORIGIN.json": "88371f3f54beb2717aae894cf5172e7aa982e2ea440ce7a7ff9d83690b8413ad"
+  },
+  "findings": [],
+  "checks": [
+    "All9 published final/identity/producer/control receipts satisfy R41 profile and primary-binding functions.",
+    "Qualified63-file source satisfies final-primary binding;61-file producer map is separately retained and cannot substitute for final source.",
+    "Only Cargo.toml/Cargo.lock equality is required between producer/final primaries; full feature/SDK/cache context remains bound by identical profile and cache key.",
+    "Exact shared oracle reproduces all1095 R40 mismatches:413 non-filename and682 filename-only. Ten meaningful oracle controls pass.",
+    "Only launch_round41 invokes publish_when_ready_round41, once after finish and snapshot. That waiter invokes one generic publication wrapper. Generic wrapper creates/upload reviewed objects then uses checked non-force GitHub tree/ref publication.",
+    "Frozen corpus retains all18109 old definitions and adds exactlyone wrong-program case.",
+    "No R41 helper activation or new61/63-file count assumption is present."
+  ],
+  "remaining_gates": [
+    "Root selected-source review and immutable source manifest.",
+    "Fresh final-source identity/data certificate and four final/two identity reproduction checks.",
+    "18110-case full corpus and zero non-filename raw-log mismatches.",
+    "Root packaging approval and current-main publication checks."
+  ],
+  "inputs": {
+    "work/parallel-main-r41-tooling/MANIFEST.json": "38a36a0c5fb74a636efe332e8bed84b09216e86dda289f07aec4cdf1fd0a4ef8",
+    "work/parallel-main-r41-tooling/INSTALL-PLAN.json": "4f6298cd09c0fcadebdc6ba08d56f56b985eae748651538dc0f35f81a5bd5dfe",
+    "work/parallel-main-r41-tooling/STAGED-CHECK.json": "09d0db681f2594c73ed9506bfa484f35fb45d1cac02d3be32da16a312f3620c7",
+    "work/parallel-main-r41-tooling/POST-PUBLISH-RECEIPTS.json": "53e5bb76f2ee1498bed50e73f5ed5861542cf94188a3f2f702d53f7a463b4bbe",
+    "work/parallel-main-r41-tooling/POST-PUBLISH-BOUNDARIES.json": "30879b776802c1b99eaef89f2ef5b95316daa599b0c0fe3fdb26a5bc4a563673",
+    "work/parallel-main-r41-log-oracle/R40-BASELINE.json": "3bec26dfdb7ac42485cf12b691aea18df7420d8f3de4eaf1f1ac9b38919d9ebd",
+    "work/parallel-main-r41-log-oracle/VALIDATION.json": "558a4a0a9b07820ff70e1c44d14db80dff8d0fbdac103f9fda3f18df3e042a44",
+    "work/parallel-main-integration/publish_with_staged_objects.py": "a273401f79b86e87ec5145a0589fa0ea3a40b0d65d400d70954280161d3395ea",
+    "work/parallel-main-integration/publish_uploaded_tree_api.py": "0a8eaae89a7e91bceff4bdff6420b6829fcd5f4ff368f40ab6a9b87dde2092f1"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "status": "108 new funding cases passed; broader trade regression running",
+  "source_base": "work/parallel-main-integration/round24-source/programs/pump",
+  "source_files": {
+    "src/buy_v2.rs": "7d7322c4b66737f785f4e1bf2c8371f6427efe04b1922a9de0153b8c609fd0da",
+    "src/sell_v2.rs": "654ea4a649d045a48bb5482ed7d13e452fe670939a80a70dbdfe45331da12d0b",
+    "src/v2_native_payments.rs": "26ec8fb6d1d4c36e88f72df3980e8325eb3220ee25b9be87c600a20c5c32fac1"
+  },
+  "baseline_source_hashes": {
+    "src/buy_v2.rs": "2c7c8a8111cf60481a23ac74f1f91ded394445d8cd172baeeb488d17d3e11787",
+    "src/sell_v2.rs": "4e1938bfae9c6e25faa534bdbf6dc263a5d53c989a9d6b5df170c82e032fea15",
+    "src/v2_native_payments.rs": "8104628d40b47123f565617e49a06e73b64e840e2e97baf63d79374641d6819b"
+  },
+  "candidate_sha256": "fad449882ca8d550a1df72101196f2a94f16243b6e0918b53f38bfcdbaef3c1d",
+  "unstripped_sha256": "abf40b6934604f40e8b2f85a7de402d0b87e0366ef6888f3844d85faded1abb2",
+  "patches": [
+    "sell-v2-funding.patch",
+    "helper-visibility.patch",
+    "v2-creator-vault-rent.patch"
+  ],
+  "before_mismatches": 12,
+  "after_mismatches": 0,
+  "strict_mismatches": 0,
+  "new_cases": 108,
+  "verified_transactions": 216,
+  "captured_main_loads": 216,
+  "inventory": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 720,
+    "unmatched": 315
+  },
+  "helper_original": "0x3b598",
+  "helper_bytes": 416,
+  "helper_normalized_different_slots": 22,
+  "helper_body_changed": false,
+  "placement": "After base-token CPI; before creator payment; cf > 0 and !cashback_coin",
+  "semantics": "Fund full Rent::minimum_balance(0) from user when creator vault below minimum; poor user retains original System custom1 error",
+  "main_owned_files_only": true
+}

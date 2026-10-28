@@ -1,0 +1,17 @@
+{
+  "status": "staged source; not compiled or post-fix validated",
+  "baseline": "work/parallel-main-distribution-v1-context/source01/src/distribution.rs",
+  "baseline_sha256": "b1ef5583a0aee56b7c2e76c49f12384bbd1dda01daa0256702415e39778a228b",
+  "v1_source": "work/parallel-main-distribution-parser-correction/source01/src/distribution.rs",
+  "v1_source_sha256": "b2fdaacb4152ce5ad5d7b99a342a32e9c50d659f8970d0fba586049a4790770c",
+  "v1_patch_sha256": "dc4f8d26d34be42bea74523fab4380b8d25d4dcb8a84c833d6a31161f223f4c2",
+  "combined_source": "work/parallel-main-distribution-parser-correction/source02/src/distribution.rs",
+  "combined_source_sha256": "c1992559481ebd11cd88214e7b6c1bf3a1479956d7a48dd03ab28939f9042c0d",
+  "v2_patch_sha256": "3e8da03af3e63a250ee7d0cc584c1c3d3cb2bf6ffefd416dd4c3ae2de56029bf",
+  "combined_patch_sha256": "cdbd1d02ca6ea54e3a94c128184b2767c27116bae40be898c38097663b45c61d",
+  "v1_evidence": "work/parallel-main-distribution-parser-audit/FINDINGS.json",
+  "v2_status": "static-only; full key predicate differs on default/default, excluded by earlier typed Mint ownership in genuine accounts;15/16 finite equality partitions agree, all nondefault quote keys agree. Combined qualification still required.",
+  "incremental_case_count": 18,
+  "dedup_report_sha256": "9036855eb675380317fb4c5a74522083511fb0459a845d516cec9fd662be8362",
+  "cli_manifest_sha256": "837a15e11886e4aeb4f4b9ac26d929e9342b1522cba5687a1e144bc6e46899ff"
+}

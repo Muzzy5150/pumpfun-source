@@ -1,0 +1,22 @@
+{
+  "scope": "18 new signed AdminCto collection-boundary inputs after original R34 dedup; previous CTO/collection suites remain unchanged.",
+  "counts": {
+    "full": 0,
+    "additional": 18
+  },
+  "definition_sha256": {
+    "work/parallel-main-cto-fifth-call/probe_incremental.py": "d1f95c56add6b560a03b56604dee6b782cf0b0a2696a7a360d0d746a77f3b354",
+    "work/parallel-main-cto-fifth-call/probe_collection_boundary.py": "5abf20a17d51d60218ff4cc26e2a0692289d4b985789327cb7eb777698bfc129",
+    "work/parallel-main-cto-fifth-call/probe_wsol_boundary.py": "aeb639e1389467274c0c55bf227965ddec0e3ac0c571f184e97fe3e095d418bf",
+    "work/parallel-main-cto-fifth-call/incremental-cases01.json": "493496519f17cffce688669639e4d17bb9399c2f41506b73c5478958687cc7a3"
+  },
+  "suites": [
+    {
+      "group": "additional",
+      "name": "cto_collection_boundary",
+      "script": "work/parallel-main-cto-fifth-call/probe_incremental.py",
+      "cases": 18,
+      "args": []
+    }
+  ]
+}

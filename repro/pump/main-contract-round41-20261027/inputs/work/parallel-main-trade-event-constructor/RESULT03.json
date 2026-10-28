@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "scope": "Eligible successor to source02; eager local-copy constructor on frozen R38, one private compile,1756 targeted paired cases and1separate new-state CLI invocation.",
+  "source": "work/parallel-main-trade-event-constructor/source03",
+  "patch": "work/parallel-main-trade-event-constructor/constructor-r38-eager.patch",
+  "incremental_patch": "work/parallel-main-trade-event-constructor/eager-copy03.patch",
+  "candidate_sha256": "50025d5ac99dddec210c0c6eb512e549663ee10df055372dbc68a5b621ff3982",
+  "unstripped_sha256": "bbfbf5f7a784891fd09544ccdc4677e7ba805d6b00c02584dd7a5ee1adb4376b",
+  "counts": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 744,
+    "unmatched": 291
+  },
+  "normalized_gains": [],
+  "normalized_losses": [],
+  "runtime": {
+    "cases": 1756,
+    "suites": 37,
+    "counts": {
+      "paired_rows": 1756,
+      "verified_result_objects": 3512,
+      "fully_backed_pairs": 1756,
+      "distinct_signed_transactions": 383,
+      "distinct_transaction_pairs": 383
+    },
+    "incremental_cases": 1,
+    "new_state_inputs": 1
+  },
+  "helper": {
+    "start": "0x98f60",
+    "bytes": 1808,
+    "original_bytes": 1800,
+    "exact": false,
+    "change": "Original eager reserve/quote-key local values now precede memcmp; original body still not matched."
+  },
+  "changed_from_source02": [
+    "src/trade_types.rs"
+  ],
+  "primary_changes": {
+    "src/trade_types.rs": "035b70d39527c3253e6b94db1925aec0b6a7bf24e4144d932d9949e63685544c",
+    "src/trade_v3.rs": "665be799a9f535a46f59a88d277aef1bb35e89851ff31e418b23462b7143d572",
+    "src/multi_hop_curve_swap.rs": "e6a6a362708c486410a00ea8400368abbf7a2ec02cecfeed96cf932579529269"
+  },
+  "limits": [
+    "No full integrated18109case/reproduction result claimed.",
+    "Original Rust spelling and original toolchain identity remain unproved.",
+    "Same source02one-new-state dedup; noextra unique transaction count.",
+    "Originalconstructorstill8bytes shorter; no byte identity claim."
+  ],
+  "evidence_sha256": {
+    "work/parallel-main-trade-event-constructor/RESULT02.json": "0aae7328955e28a4ee708106a1af6a82a3d10a6f5f527e6a661af091d1bfead3",
+    "work/parallel-main-trade-event-constructor/MANIFEST02.json": "73b529e737c0a1bbc4abd4bf75423d4a44271745b549e44796d325b95ecdc676",
+    "work/parallel-main-trade-event-constructor/EAGER-COPY03.json": "0cdbfad57618c975fb914dcf6efdc9f6aa479f9b14260cd068d83b4f512d3a42",
+    "work/parallel-main-trade-event-constructor/eager-copy03.patch": "ce6be1a2e5f119a420552dec0ce934366ad268685f52350a2d104776be24490d",
+    "work/parallel-main-trade-event-constructor/constructor-r38-eager.patch": "c307260c14bdded2f2ced328e2d6aba8dbcdc24bd401b80ab761e182db5edaaa",
+    "work/parallel-main-trade-event-constructor/build03/build-comparison.json": "76766a80864a8f9d8b6613ab0c61303c06717ae3f4ea767d8f20cc304b7ba50a",
+    "work/parallel-main-trade-event-constructor/build03/normalized-inventory.json": "05e3b18e1ee7f52ba38967ef6c44b450499553c79d1a67b095fd50a3bd7b2216",
+    "work/parallel-main-trade-event-constructor/candidate-helper03.asm": "11ca64c1db92fbbfe319f5ba11972c39454d70bf9a1bc8a682f36d4271dd55bd",
+    "work/parallel-main-trade-event-constructor/targeted03/state.json": "d6cc0f0a8a673dceecac7dfe36b12690ccfd226c82c3ccba54efe6de87ab90c0",
+    "work/parallel-main-trade-event-constructor/retention03.json": "a3f10c35e25725e8f7581acc879a5e498e82974c5ea5b9324863a372b6cc3b7a",
+    "work/parallel-main-trade-event-constructor/incremental03.json.gz": "5b6789e46a89d7979df59c8ce4e6cb9eed651a7444201d00dd5d57557b92c67d",
+    "work/parallel-main-trade-event-constructor/incremental03.loader.json": "2e86910772520b8c6f7c0b4598b354a4940023dabf51ec91b2ccb052932b793f",
+    "work/parallel-main-trade-event-constructor/r38-future-corpus-fragment.json": "48c8dbdb75e110f7f3dca8d91691ffb8085a2fb1fae88a0c999f74a392e31e08"
+  }
+}

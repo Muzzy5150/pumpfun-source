@@ -1,0 +1,39 @@
+{
+  "scope": "Only main-Pump source changes from PR264; own verified builder, no other program changes.",
+  "pull_request": "https://github.com/lalalune/pumpfun-source/pull/264",
+  "reviewed_head": "204ee2513d0532193ad88ca4ea43f00a765bcc99",
+  "base": "work/parallel-main-integration/round26-source/programs/pump",
+  "before_lib_sha256": "acb78a38367a3eadc820ba053d87a5382d5e30ed47b435ef08a857d384d30d4c",
+  "after_lib_sha256": "499967898d50157df8ee84f31e1e5a2d751206bbff230f927cf39c946bd7b449",
+  "tools_sha256": {
+    "work/parallel-main-pr264-pump/tools/reorder_program.py": "ca4b1191819ea3de581cb76d27894d78e268b8fe80b7dd4479796c74c523c1e1",
+    "work/parallel-main-pr264-pump/tools/apply_lane_changes.py": "1ed3a8617527b3fb3df3888db59e3856a464b7ba382fac207424c1ba984a72ae"
+  },
+  "source_change": "Original56-discriminator handler order and by-value update_global_authority handler with original assignment order.",
+  "status": "Main-source patch accepted for next combined regression; whole PR and linker packet not approved",
+  "goal_complete": false,
+  "candidate_sha256": "c9a55d6da305d4b88fb31d88fb629b9b2600b2714c57568e0cc986293737462a",
+  "unstripped_sha256": "05a9d3b7d91e8b69fb2dbf7e4bae15d5d47d67cb99707fe6172cef3eef569dd3",
+  "inventory": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 723,
+    "unmatched": 312
+  },
+  "delta": {
+    "normalized_matches": {
+      "gains": [
+        "0x11b758",
+        "0x1348c0"
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "targeted_cases": 914,
+  "targeted_suites": 4,
+  "validated_full_corpus": false
+}

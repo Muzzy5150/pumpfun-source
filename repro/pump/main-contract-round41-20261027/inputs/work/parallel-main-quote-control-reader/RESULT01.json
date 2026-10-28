@@ -1,0 +1,87 @@
+{
+  "status": "Validated exact AccountInfo QuoteControl wrapper plus original-backed space/range delegation",
+  "source_files": {
+    "src/nested_create.rs": {
+      "before": "4a08a86ff5df5467b3638ab02ee51f680158960b0427da4223441a0335174461",
+      "after": "a82709785ab519440149f711e3b04af5384f8e99158c494c88ce9364135c967c"
+    },
+    "src/create_v2.rs": {
+      "before": "67668a10b5733ff3eff79dc384c27e5e181c068e78189834e27f85edd7da92e2",
+      "after": "993734a309d89ed7f2e4dbf1d43e236c8444abf34e84ef9adf3c2ce3c8f2f640"
+    }
+  },
+  "patch_sha256": "0440beb03c0f8487f0d7251c4d950b62f8ff4931aac46028e6b0d6f226902635",
+  "candidate_sha256": "349604d229ffebb9832884dd4311afe4feb3cc4d186b28cbd6005807f6add060",
+  "unstripped_sha256": "6bdbe449ac2428d8c7fa6932976d6b45b69799e7e306b5254bd6d20fd66a322f",
+  "build_receipt_sha256": "b20252e8caff8b3e4a431fa437ef5652cd34ca056883a0c492e42b602c465df3",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 735,
+    "unmatched": 300
+  },
+  "delta": {
+    "normalized_matches": {
+      "gains": [
+        "0x18568"
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    },
+    "baseline": {
+      "total": 1035,
+      "raw": 121,
+      "normalized": 734,
+      "unmatched": 301
+    },
+    "candidate": {
+      "total": 1035,
+      "raw": 121,
+      "normalized": 735,
+      "unmatched": 300
+    }
+  },
+  "wrapper": {
+    "original_start": "0x18568",
+    "bytes": 272,
+    "normalized_equal": true,
+    "actual_original_callers": 1,
+    "actual_candidate_callers": 1,
+    "callees": "try_borrow_data and ProgramError conversion exact; raw core reader still unmatched"
+  },
+  "core_reader": {
+    "original_start": "0x6a1e0",
+    "original_bytes": 1736,
+    "candidate_bytes": 1728,
+    "normalized_equal": false,
+    "differing_instruction_slots": 106
+  },
+  "size_helper": {
+    "original_start": "0x68918",
+    "bytes": 704,
+    "normalized_equal": true,
+    "source_unchanged": true
+  },
+  "runtime": {
+    "focused_cases": 37,
+    "success_cases": 13,
+    "verified_transactions": 74,
+    "verified_signatures": 148,
+    "field_mismatches": 0,
+    "diagnostic_mismatches": 0,
+    "invocation_order_mismatches": 0,
+    "incremental_distinct_inputs": 34,
+    "incremental_cli_replay_cases": 34
+  },
+  "limits": [
+    "The raw reader remains unmatched; the new exact wrapper does not establish exact whole-call-chain identity.",
+    "The shared QuoteControl::space checked arithmetic cannot overflow on these u32 counts in the64-bit target; maximal-count tests reach the range error.",
+    "The original raw-reader error source path is programs/pump/src/quote_control/state.rs. Current control_entry remains physically in nested_create.rs; source path and coordinates are not claimed recovered.",
+    "The existing accepted create/quote corpus will run in the parent R35 composition; no redundant complete replay was performed here.",
+    "No behavioral difference was found in the37before-controls; this delivery restores observed call and size-helper boundaries.",
+    "Full original ELF equality remains false."
+  ]
+}

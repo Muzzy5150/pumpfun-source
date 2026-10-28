@@ -1,0 +1,11 @@
+{'target': 'A', 'mutation': 'discriminator'} TransactionErrorInstructionError((0, Fieldless(InvalidAccountData))) TransactionErrorInstructionError((0, Fieldless(InvalidAccountData))) pump calls 1 []
+{'target': 'A', 'mutation': 'short'} TransactionErrorInstructionError((0, Fieldless(InvalidAccountData))) TransactionErrorInstructionError((0, Fieldless(InvalidAccountData))) pump calls 1 []
+{'target': 'A', 'mutation': 'mayhem'} TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(6108)))) TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(6108)))) pump calls 1 []
+{'target': 'A', 'mutation': 'readonly'} TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(2000)))) TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(2000)))) pump calls 1 []
+{'target': 'B', 'mutation': 'discriminator'} TransactionErrorInstructionError((0, Fieldless(InvalidAccountData))) TransactionErrorInstructionError((0, Fieldless(InvalidAccountData))) pump calls 1 []
+{'target': 'B', 'mutation': 'short'} TransactionErrorInstructionError((0, Fieldless(InvalidAccountData))) TransactionErrorInstructionError((0, Fieldless(InvalidAccountData))) pump calls 1 []
+{'target': 'B', 'mutation': 'mayhem'} TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(6108)))) TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(6108)))) pump calls 1 []
+{'target': 'B', 'mutation': 'readonly'} TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(2000)))) TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(2000)))) pump calls 1 []
+{'target': 'both', 'mutation': 'discriminator'} TransactionErrorInstructionError((0, Fieldless(InvalidAccountData))) TransactionErrorInstructionError((0, Fieldless(InvalidAccountData))) pump calls 1 []
+{'target': 'A_mayhem_B_short', 'mutation': 'mixed'} TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(6108)))) TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(6108)))) pump calls 1 []
+cases 10 mismatches 0

@@ -1,0 +1,56 @@
+{
+  "status": "Validated original typed TransferWithSeed boundary with one exact recovered helper",
+  "source_file": "src/admin_set_idl_authority.rs",
+  "source_sha256": "b26e23284e7ef41573e04e97444a3384c7f246a2e5ce6d41ca03065664fb776e",
+  "patch_sha256": "72ada7767091acae1c40976262d0f79555d258dc8bcdedc9cb6bea81d7e85cb2",
+  "candidate_sha256": "de3f84b0422f09beda01413233f37cd60c3fe9d43c7c31fe0d686cda9a003b38",
+  "unstripped_sha256": "8bd1f9d8c4fb07cb18d78304bdd16ae14f1a18ae80e3028d7d92701d37d151c8",
+  "build_receipt_sha256": "beb50724e6081df871c3a71cb00227af4c6433fdf781ae6ff79c1ce363f32d5a",
+  "helper": {
+    "original": "0x19e3b0",
+    "candidate": "0x186c20",
+    "bytes": 896,
+    "normalized_equal": true,
+    "actual_incoming_calls": 1,
+    "direct_callee_relations_verified": 13
+  },
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 734,
+    "unmatched": 301
+  },
+  "delta": {
+    "normalized_matches": {
+      "gains": [
+        "0x19e3b0"
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [
+        "0x198fe8",
+        "0x19b4e0"
+      ],
+      "losses": []
+    }
+  },
+  "runtime": {
+    "cases": 197,
+    "existing_cases": 171,
+    "targeted_cases": 26,
+    "new_unique_cases": 10,
+    "verified_transactions": 394,
+    "verified_signatures": 784,
+    "incremental_driver_replay": 10,
+    "diagnostic_mismatches": 0,
+    "invocation_order_mismatches": 0
+  },
+  "limits": [
+    "The surrounding admin handler remains unmatched:6096versus5704originalbytes.",
+    "Raw+2 is the measured identity-layout set; no claim of two further recovered semantic helpers.",
+    "Full original ELF equality remains false.",
+    "All thirteen direct-call relationships are normalized-window matches; immutable data allocation identity is separate.",
+    "This restores an actual typed API/call boundary; no new behavioral difference was claimed by the26 baseline controls."
+  ]
+}

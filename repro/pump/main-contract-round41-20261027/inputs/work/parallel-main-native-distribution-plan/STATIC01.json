@@ -1,0 +1,24 @@
+{
+  "original_planner": "0x311f8/4920B",
+  "baseline_planner_bytes": 5096,
+  "candidate_planner_bytes": 5064,
+  "complete_match_sets": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "source_sha256": "aaa0f636a354a336dfe6361eed4ed9c501f0d7ccbf7abf20f3a41fcd87e6d985",
+  "baseline_source_sha256": "50be401d3a89612f46927f8750a3b32ad025979bb74a99d8049caf065a0eb9b5",
+  "numeric_word_proof": [
+    "31d28: mov r6,0",
+    "31d38: mov r6,r1; r1=recipient rent minimum minus recipient lamports",
+    "31538: stxdw [r1+8],r6 after multiplication/subtraction flow"
+  ],
+  "scope": "Two u64 plan words; exact original Rust type name and complete body still unproved.",
+  "candidate_semantics": "Callers pair planned numeric entries with validated remaining-account slice; accepted pending-fee guards preserved."
+}

@@ -1,0 +1,151 @@
+--- a/programs/pump/src/multi_hop_curve_swap.rs
++++ b/programs/pump/src/multi_hop_curve_swap.rs
+@@ -4,7 +4,7 @@
+ use anchor_lang::solana_program::{instruction::{Instruction,AccountMeta},program::{invoke,invoke_signed},program_error::ProgramError};
+ use anchor_spl::{token::Token,token_2022::Token2022,token_interface::{Mint,TokenAccount}};
+ use crate::{Global,PumpError};
+-use crate::trade_types::{BondingCurve,FeeConfig,FeeTier,Fees,TradeEvent};
++use crate::trade_types::{BondingCurve,FeeConfig,FeeTier,Fees};
+ const FEES:Pubkey=anchor_lang::solana_program::pubkey!("pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ");
+ const AMM:Pubkey=anchor_lang::solana_program::pubkey!("pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA");
+ const WSOL:Pubkey=anchor_spl::token::spl_token::native_mint::ID;
+@@ -404,23 +404,18 @@
+             move_lamports(&h.bonding_curve.to_account_info(),&a.user.to_account_info(),output)?;
+         }
+         let c = &h.bonding_curve;
+-        let event = TradeEvent {
+-            mint: mint_key,sol_amount: if native { quote_amount } else { 0 },token_amount: base_amount,
+-            is_buy: buy,user: a.user.key(),timestamp: Clock::get()?.unix_timestamp,
+-            virtual_sol_reserves: if native { c.virtual_quote_reserves } else { 0 },
+-            virtual_token_reserves: c.virtual_token_reserves,
+-            real_sol_reserves: if native { c.real_quote_reserves } else { 0 },real_token_reserves: c.real_token_reserves,
+-            fee_recipient: Pubkey::default(),fee_basis_points: p_rate,fee: pf,creator: c.creator,
+-            creator_fee_basis_points: c_rate,creator_fee: cf,track_volume: false,total_unclaimed_tokens: 0,
+-            total_claimed_tokens: 0,current_sol_volume: 0,last_update_timestamp: 0,ix_name: "multi_hop_swap".into(),
+-            mayhem_mode: false,cashback_fee_basis_points: 0,cashback: 0,
+-            buyback_fee_basis_points: a.global.buyback_basis_points,buyback_fee: buyback,shareholders: vec![],
+-            quote_mint: c.quote_mint,quote_amount,virtual_quote_reserves: c.virtual_quote_reserves,
+-            real_quote_reserves: c.real_quote_reserves,
+-            holder_rewards_bps: if c.is_holder_reward { c_rate } else { 0 },
+-            holder_rewards: if c.is_holder_reward { cf } else { 0 },
+-            creator_fee_unclaimed: c.creator_fee,unparsed_trailing_field: adapter_difference,
++        let event_user=a.user.key();
++        let event_timestamp=Clock::get()?.unix_timestamp;
++        let event_fees=crate::trade_types::TradeEventFees {
++            fee:pf, creator_fee:cf,
++            fee_basis_points:p_rate, creator_fee_basis_points:c_rate,
+         };
++        let event_volume=crate::UserVolumeAccumulator::default();
++        let event=crate::trade_types::make_trade_event(
++            c,&a.global,&event_volume,&event_user,&mint_key,buy,base_amount,
++            quote_amount,&event_fees,adapter_difference,buyback,
++            "multi_hop_swap",event_timestamp,
++        );
+         route_event(a,&event,ctx.bumps.event_authority)?;
+         if completed {
+             let completion=crate::trade_types::CompleteEvent { user:a.user.key(),mint:mint_key,
+--- a/programs/pump/src/trade_types.rs
++++ b/programs/pump/src/trade_types.rs
+@@ -374,3 +374,71 @@
+ #[event]
+ #[derive(Clone)]
+ pub struct CompleteEvent {pub user:Pubkey,pub mint:Pubkey,pub bonding_curve:Pubkey,pub timestamp:i64,pub quote_mint:Pubkey}
++
++// Original shared event constructor 0x8bbd0. Both callers retain Clock reads.
++pub struct TradeEventFees {
++    pub fee: u64,
++    pub creator_fee: u64,
++    pub fee_basis_points: u64,
++    pub creator_fee_basis_points: u64,
++}
++
++#[inline(never)]
++pub fn make_trade_event(
++    curve: &BondingCurve,
++    global: &crate::Global,
++    volume: &crate::UserVolumeAccumulator,
++    user: &Pubkey,
++    mint: &Pubkey,
++    is_buy: bool,
++    token_amount: u64,
++    quote_amount: u64,
++    fees: &TradeEventFees,
++    unparsed_trailing_field: u64,
++    buyback_fee: u64,
++    ix_name: &str,
++    timestamp: i64,
++) -> TradeEvent {
++    let real_quote_reserves = curve.real_quote_reserves;
++    let virtual_quote_reserves = curve.virtual_quote_reserves;
++    let quote_mint = curve.quote_mint;
++    let native = quote_mint == Pubkey::default();
++    TradeEvent {
++        mint: *mint,
++        sol_amount: if native { quote_amount } else { 0 },
++        token_amount,
++        is_buy,
++        user: *user,
++        timestamp,
++        virtual_sol_reserves: if native { virtual_quote_reserves } else { 0 },
++        virtual_token_reserves: curve.virtual_token_reserves,
++        real_sol_reserves: if native { real_quote_reserves } else { 0 },
++        real_token_reserves: curve.real_token_reserves,
++        fee_recipient: Pubkey::default(),
++        fee_basis_points: fees.fee_basis_points,
++        fee: fees.fee,
++        creator: curve.creator,
++        creator_fee_basis_points: fees.creator_fee_basis_points,
++        creator_fee: fees.creator_fee,
++        track_volume: false,
++        total_unclaimed_tokens: volume.total_unclaimed_tokens,
++        total_claimed_tokens: volume.total_claimed_tokens,
++        current_sol_volume: volume.current_sol_volume,
++        last_update_timestamp: volume.last_update_timestamp,
++        ix_name: ix_name.into(),
++        mayhem_mode: curve.is_mayhem_mode,
++        cashback_fee_basis_points: 0,
++        cashback: 0,
++        buyback_fee_basis_points: if curve.is_mayhem_mode { 0 } else { global.buyback_basis_points },
++        buyback_fee,
++        shareholders: Vec::new(),
++        quote_mint,
++        quote_amount,
++        virtual_quote_reserves: virtual_quote_reserves,
++        real_quote_reserves: real_quote_reserves,
++        holder_rewards_bps: if curve.is_holder_reward { fees.creator_fee_basis_points } else { 0 },
++        holder_rewards: if curve.is_holder_reward { fees.creator_fee } else { 0 },
++        creator_fee_unclaimed: curve.creator_fee,
++        unparsed_trailing_field,
++    }
++}
+--- a/programs/pump/src/trade_v3.rs
++++ b/programs/pump/src/trade_v3.rs
+@@ -137,15 +137,19 @@
+     curve.virtual_token_reserves=next_base;curve.virtual_quote_reserves=next_quote;
+     curve.real_token_reserves=next_real_base;curve.real_quote_reserves=next_real_quote;
+     curve.creator_fee=next_creator;curve.protocol_fees=next_protocol;
+-    let event=TradeEvent{
+-        mint:a.base_mint.key(),sol_amount:if is_sol{quote}else{0},token_amount:amount,is_buy:false,user:a.user.key(),timestamp:Clock::get()?.unix_timestamp,
+-        virtual_sol_reserves:if is_sol{next_quote}else{0},virtual_token_reserves:next_base,real_sol_reserves:if is_sol{next_real_quote}else{0},real_token_reserves:next_real_base,
+-        fee_recipient:Pubkey::default(),fee_basis_points:fees.protocol_fee_bps,fee:protocol_fee,creator:curve.creator,creator_fee_basis_points:fees.creator_fee_bps,creator_fee,
+-        track_volume:false,total_unclaimed_tokens:0,total_claimed_tokens:0,current_sol_volume:0,last_update_timestamp:0,ix_name:"sell".into(),mayhem_mode:curve.is_mayhem_mode,
+-        cashback_fee_basis_points:0,cashback:0,buyback_fee_basis_points:buyback_bps,buyback_fee:buyback_received,shareholders:vec![],quote_mint:curve.quote_mint,
+-        quote_amount:quote,virtual_quote_reserves:next_quote,real_quote_reserves:next_real_quote,holder_rewards_bps:if curve.is_holder_reward{fees.creator_fee_bps}else{0},holder_rewards:if curve.is_holder_reward{creator_fee}else{0},creator_fee_unclaimed:next_creator,
+-        unparsed_trailing_field:quote_transfer_fee,
+-    };
++    let event_mint=a.base_mint.key();
++    let event_user=a.user.key();
++    let event_timestamp=Clock::get()?.unix_timestamp;
++    let event_fees=crate::trade_types::TradeEventFees {
++        fee:protocol_fee, creator_fee,
++        fee_basis_points:fees.protocol_fee_bps,
++        creator_fee_basis_points:fees.creator_fee_bps,
++    };
++    let event=crate::trade_types::make_trade_event(
++        curve,&a.global,&a.user_volume_accumulator,&event_user,&event_mint,
++        false,amount,quote,&event_fees,quote_transfer_fee,buyback_received,
++        "sell",event_timestamp,
++    );
+     emit!(event.clone());
+     emit_cpi!(event);
+     Ok(())

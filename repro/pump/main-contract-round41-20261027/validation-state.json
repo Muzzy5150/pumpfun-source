@@ -1,0 +1,90 @@
+{
+  "status": "passed",
+  "candidate_sha256": "f169345d952b0e2a8ba6cbd400ab2decca0bee97bdc6645240466d901e4f1bc0",
+  "checks": {
+    "repeat_build": {
+      "returncode": 0,
+      "seconds": 111.31702724999923,
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_build_verified.py",
+        "--source-directory",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-source/programs/pump",
+        "--workspace-layout",
+        "--sdk",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/fees-compat/toolchains/v1.44",
+        "--target-library-profile",
+        "linux-v1.44-sbpf",
+        "--target-library-directory",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/claude-pump-work/toolchains/hybrid144/rust/lib/rustlib/sbpf-solana-solana/lib",
+        "--registry-home",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/cold-producer01/cargo-home",
+        "--dependency-cache",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/external-cache",
+        "--text-section-order",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-layout/ordered.ld",
+        "--data-order-certificate",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-layout/data-order-certificate.json",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/build-round41-repeat"
+      ]
+    },
+    "unified": {
+      "returncode": 0,
+      "seconds": 196.47344933299973,
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/main_corpus_runner_v3.py",
+        "--manifest",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/unified-main-corpus-round41.json",
+        "--build",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/build-round41",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-unified",
+        "--workers",
+        "8"
+      ]
+    },
+    "ordinary_logs": {
+      "returncode": 0,
+      "seconds": 9.014884000000166,
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r41-log-oracle/audit.py",
+        "--full",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-captured-full.json.gz",
+        "--additional",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-captured-additional.json.gz",
+        "--expected-full",
+        "10468",
+        "--expected-additional",
+        "7642",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-ordinary-logs.json",
+        "--mismatches",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-ordinary-log-mismatches.jsonl.gz"
+      ]
+    },
+    "transaction_retention": {
+      "returncode": 0,
+      "seconds": 4.448619667000457,
+      "command": [
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-receipt-verifier/verify_receipts.py",
+        "--full",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-captured-full.json.gz",
+        "--additional",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-captured-additional.json.gz",
+        "--root",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source",
+        "--candidate-sha256",
+        "f169345d952b0e2a8ba6cbd400ab2decca0bee97bdc6645240466d901e4f1bc0",
+        "--expected-total",
+        "18110",
+        "--output",
+        "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-transaction-retention.json"
+      ]
+    }
+  },
+  "case_count": 18110
+}

@@ -1,0 +1,24 @@
+{
+  "scope": "One novel parser-admitted wrong-program state; control kept only in private regression. All18109prior original inputs checked.",
+  "counts": {
+    "full": 0,
+    "additional": 1
+  },
+  "suites": [
+    {
+      "group": "additional",
+      "name": "claim_cashback_v2_program_guard",
+      "script": "work/parallel-main-cashback-v2-api/probe_guard_regression.py",
+      "cases": 1,
+      "args": [
+        "--only-new"
+      ]
+    }
+  ],
+  "definition_sha256": {
+    "work/parallel-main-cashback-v2-api/probe_guard_regression.py": "1b3bd41aab5b727021ddb50692f875779e65f07d975f3e5f2d7e213e70f0e394",
+    "work/parallel-main-cashback-v2-api/probe_program_guard.py": "8aad8844a57c38153b3a72bdaead1308b17f55c8cd48531b6b5082ced1bfbd3a",
+    "work/parallel-main-cashback-v2-api/DEDUP01.json": "fae66701f1fe8533fc7528dcaa660eae3f0c5dc0b0c81762b6dcd78f38e9cb96",
+    "work/parallel-main-cashback-v2-api/program-guard01.json.gz": "f4578109469fdd4e19bad825674c902125e3a08f2b2d8b5425b7c1f51556a8a2"
+  }
+}

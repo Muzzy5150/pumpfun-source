@@ -1,0 +1,12 @@
+{
+  "status": "Prepared source03composition; wait for its runtimepass beforecompile",
+  "base_composition_sha256": "6ea9bb756ced8efcd0345a969bc9ed075d39b0df5e01e43eb8091ff158b89aa6",
+  "source_manifest_sha256": "3d93bc4b726060d38257027e346e8f67e241147d26852901ad00aad7edc89ad5",
+  "changed_files_from_composition01": [
+    "src/trade_types.rs"
+  ],
+  "source03_patch_sha256": "ce6be1a2e5f119a420552dec0ce934366ad268685f52350a2d104776be24490d",
+  "constructor_tail_equals_source03": true,
+  "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-genuine06-r38-composition/source02",
+  "source_files": 61
+}

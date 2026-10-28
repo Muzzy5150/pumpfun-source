@@ -1,0 +1,50 @@
+{
+  "status": "validated_source_fidelity_candidate",
+  "source_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-cashback-source-order/source01",
+  "source_file": "src/token_incentives/volume_accumulator.rs",
+  "source_file_sha256": "4a693725cf3b109901dd141f36e55e0c0c998794ef783dd60d0666476d6df350",
+  "patch": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-cashback-source-order/source-order.patch",
+  "patch_sha256": "48b1caccd52ee5a937a147f22b94114764d052ebe8d954ae2703a5a2cbd2f3ca",
+  "base_compiled_inputs": "R34",
+  "current_R35_volume_base_unchanged": true,
+  "build_candidate_sha256": "466164a7418cee82d2b1a84f21c6716da82dc674b87eedd47150b31540d38280",
+  "build_unstripped_sha256": "f3a6554b503cc3de84e72d37cb3bbce1656f0b12cfc3d3e901e4a058cd3324fd",
+  "fresh_main": true,
+  "cache_status": "hit",
+  "compiled_variants": 1,
+  "normalized_and_raw_sets": {
+    "normalized_matches": {
+      "before": 733,
+      "after": 733,
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "before": 137,
+      "after": 137,
+      "gains": [],
+      "losses": []
+    }
+  },
+  "data_progress": {
+    "four_Location_objects_original_order_restored": true,
+    "four_error_strings_original_order_restored": true,
+    "exact_Location_field_matches": 84,
+    "Location_field_match_losses": [],
+    "selected_source_coordinates_still_differ": true
+  },
+  "runtime": {
+    "paired_cases": 344,
+    "new_case_definitions": 0,
+    "diagnostic_log_cases": 344,
+    "diagnostic_mismatches": [],
+    "CPI_order_pairs": 344,
+    "CPI_order_mismatches": [],
+    "fully_backed_pairs": 344,
+    "signature_verified_result_objects": 688,
+    "distinct_signed_transactions": 54
+  },
+  "recommendation": "Accept as authentic declaration/object-order fidelity only if the next combined source preserves these results; use the narrow patch. Derive fresh source-specific layout/certificate for that combined source.",
+  "full_original_ELF_identity": false,
+  "shared_source_or_tool_edits": false
+}

@@ -1,0 +1,13 @@
+{"case": "sell-tokenkeg-False-control", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell-tokenkeg-False-quote_above_lamports", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell-tokenkeg-False-fees_above_lamports", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell-tokenkeg-False-sum_above_lamports", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell-tokenkeg-False-quote_below_lamports", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell-tokenkeg-False-large_quote", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell-tokenkeg-True-control", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell-tokenkeg-True-quote_above_lamports", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell-tokenkeg-True-fees_above_lamports", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell-tokenkeg-True-sum_above_lamports", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell-tokenkeg-True-quote_below_lamports", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell-tokenkeg-True-large_quote", "original_error": null, "candidate_error": null, "diff": []}
+{"case_count": 12, "mismatches": []}

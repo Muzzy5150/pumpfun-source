@@ -1,0 +1,12 @@
+[
+  {
+    "name": "nested_comparison_matrix",
+    "script": "work/parallel-main-nested-comparison-audit/probe_comparisons.py",
+    "count": 73
+  },
+  {
+    "name": "distinct_precedence",
+    "script": "work/parallel-main-nested-comparison-audit/probe_precedence_distinct.py",
+    "count": 3
+  }
+]

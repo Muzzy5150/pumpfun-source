@@ -1,0 +1,6 @@
+{
+  "builder_sha256": "a8f1ac256709a404a19a4cab7904c235a24274d06800a278a1c5937dddced523",
+  "helper_sha256": "c776c977e30ea9a21035919e0ec2339d858e57cf85a5a2ddbd1d499a561572c1",
+  "race_test_helper_sha256": "c776c977e30ea9a21035919e0ec2339d858e57cf85a5a2ddbd1d499a561572c1",
+  "helper_matches_race_test_candidate": true
+}

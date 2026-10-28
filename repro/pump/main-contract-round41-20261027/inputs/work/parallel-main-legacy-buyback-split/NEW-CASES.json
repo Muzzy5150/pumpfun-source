@@ -1,0 +1,87 @@
+{
+  "case_count": 64,
+  "strict_cases": 64,
+  "suites": [
+    {
+      "name": "legacy-boundary",
+      "cases": 36,
+      "script": "work/parallel-main-buyback-split/probe-legacy-boundary.py",
+      "script_sha256": "3660389e576e748aef4836986d35b1bc5514a0f5e856819069a2561df81a5d37",
+      "command": [
+        "work/test-env/bin/python",
+        "work/parallel-main-buyback-split/probe-legacy-boundary.py",
+        "--candidate",
+        "CANDIDATE",
+        "--output",
+        "legacy-boundary.json.gz"
+      ],
+      "archive": "work/parallel-main-legacy-buyback-split/after03-legacy-boundary.json.gz",
+      "archive_sha256": "170b8a6e2a7717d2c1c109eedefa9350b0e01dc65ff205114b65d4b5214303fa"
+    },
+    {
+      "name": "low-lamports",
+      "cases": 6,
+      "script": "work/parallel-main-legacy-buyback-split/probe-sell-low-lamports.py",
+      "script_sha256": "2670d045ef703e8ca8a3fb989dc8a977f70caf2d7dc5e2c5f3526c0fcefb4aaf",
+      "command": [
+        "work/test-env/bin/python",
+        "work/parallel-main-legacy-buyback-split/probe-sell-low-lamports.py",
+        "--candidate",
+        "CANDIDATE",
+        "--output",
+        "low-lamports.json.gz"
+      ],
+      "archive": "work/parallel-main-legacy-buyback-split/after03-low-lamports.json.gz",
+      "archive_sha256": "a53643bc76cec465fc9618bc560751a019f1d373e5e8a64108b3fc210ad76700"
+    },
+    {
+      "name": "partial-balance",
+      "cases": 2,
+      "script": "work/parallel-main-legacy-buyback-split/probe-sell-partial-balance.py",
+      "script_sha256": "c086efbc8bb488dd240f69b24015aae38b424d91fad335f72e83d43efaeeebb2",
+      "command": [
+        "work/test-env/bin/python",
+        "work/parallel-main-legacy-buyback-split/probe-sell-partial-balance.py",
+        "--candidate",
+        "CANDIDATE",
+        "--output",
+        "partial-balance.json.gz"
+      ],
+      "archive": "work/parallel-main-legacy-buyback-split/after03-partial-balance.json.gz",
+      "archive_sha256": "c3d183e5b23336bbdec6e07366459d834ac76959e8c01d51c5ba49556a19be5e"
+    },
+    {
+      "name": "thresholds",
+      "cases": 12,
+      "script": "work/parallel-main-legacy-buyback-split/probe-sell-payment-thresholds.py",
+      "script_sha256": "8ed48fdb90be7b25a59b46a24a4a71f224b6c566e8f4c6c56168858e0cef84fc",
+      "command": [
+        "work/test-env/bin/python",
+        "work/parallel-main-legacy-buyback-split/probe-sell-payment-thresholds.py",
+        "--candidate",
+        "CANDIDATE",
+        "--output",
+        "thresholds.json.gz"
+      ],
+      "archive": "work/parallel-main-legacy-buyback-split/after03-thresholds.json.gz",
+      "archive_sha256": "2c33379d00e6baa6cc735f578f7cacc83dc597b21a544886c849583f54116008"
+    },
+    {
+      "name": "creator-order",
+      "cases": 8,
+      "script": "work/parallel-main-legacy-buyback-split/probe-sell-creator-order02.py",
+      "script_sha256": "85c5a1acf130d877aec38418357be1780386cee4b8a94c28a57a5f47c882fa1e",
+      "command": [
+        "work/test-env/bin/python",
+        "work/parallel-main-legacy-buyback-split/probe-sell-creator-order02.py",
+        "--candidate",
+        "CANDIDATE",
+        "--output",
+        "creator-order.json.gz"
+      ],
+      "archive": "work/parallel-main-legacy-buyback-split/after03-creator-order.json.gz",
+      "archive_sha256": "17723fa445b5c64ef5dc8f3f167cdd32198d43c1d16e53c217e519fe1f3132a9"
+    }
+  ],
+  "excluded_failed_probe": "probe-sell-creator-order.py lacked a preseeded normal empty creator vault; no receipt produced. Corrected immutable probe-sell-creator-order02.py is validated."
+}

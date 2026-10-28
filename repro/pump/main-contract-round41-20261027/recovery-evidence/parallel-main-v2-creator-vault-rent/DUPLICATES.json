@@ -1,0 +1,29 @@
+{
+  "method": "SHA256 of original signed transaction bytes plus complete original post-execution accounts snapshot, with sorted JSON keys. An observable-fixture count, not a claim that every covered path is distinct.",
+  "raw_cases": 108,
+  "unique_observable_fixtures": 108,
+  "intra_matrix_duplicates": [],
+  "prior_corpus_archives": [
+    "work/parallel-main-v2-creator-vault-rent/after01-boundaries.json.gz",
+    "work/parallel-main-v2-creator-vault-rent/after01-creator-order.json.gz",
+    "work/parallel-main-v2-creator-vault-rent/after01-crossing.json.gz",
+    "work/parallel-main-v2-creator-vault-rent/after01-legacy-boundary.json.gz",
+    "work/parallel-main-v2-creator-vault-rent/after01-low-lamports.json.gz",
+    "work/parallel-main-v2-creator-vault-rent/after01-order.json.gz",
+    "work/parallel-main-v2-creator-vault-rent/after01-partial-balance.json.gz",
+    "work/parallel-main-v2-creator-vault-rent/after01-payment.json.gz",
+    "work/parallel-main-v2-creator-vault-rent/after01-recipients.json.gz",
+    "work/parallel-main-v2-creator-vault-rent/after01-regression.json.gz",
+    "work/parallel-main-v2-creator-vault-rent/after01-sell-atas.json.gz",
+    "work/parallel-main-v2-creator-vault-rent/after01-sell-expanded.json.gz",
+    "work/parallel-main-v2-creator-vault-rent/after01-sell-prepare.json.gz",
+    "work/parallel-main-v2-creator-vault-rent/after01-sell-v2-split.json.gz",
+    "work/parallel-main-v2-creator-vault-rent/after01-sell-v2-thresholds.json.gz",
+    "work/parallel-main-v2-creator-vault-rent/after01-thresholds.json.gz",
+    "work/parallel-main-v2-creator-vault-rent/after01-waiver.json.gz",
+    "work/parallel-main-optional-sharing/before.json.gz"
+  ],
+  "unique_prior_overlaps": 0,
+  "prior_overlaps": [],
+  "new_unique_observable_fixtures": 108
+}

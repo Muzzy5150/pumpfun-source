@@ -1,0 +1,30 @@
+{
+  "status": "passed, no net complete-window gain",
+  "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-create-frontier/source-outlined-ancestor-decoder",
+  "build_source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-create-frontier/build-outlined-ancestor-decoder/source/programs/pump",
+  "base_file_sha256": {
+    "nested_create.rs": "9344e766ffc29358d9d13c136aafb233a5441942496ea58f5089b5c6f97e0c6d",
+    "trade_types.rs": "c7ea180a6a809fa38785e53b0fd91f0e4df3102db1163680364b754cf0037816"
+  },
+  "source_file_sha256": {
+    "nested_create.rs": "27216f56375c404cadd912e1ae015e07fb0d14df38770cce9c3680e075c52724",
+    "trade_types.rs": "7e4bb39cd348bfcc7007a6ca6cbcd9cfba37eadd243ee7471a4c39782b4b0124"
+  },
+  "patch": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-create-frontier/outlined-ancestor-from-option-bool.patch",
+  "patch_sha256": "78d695eab4a00c965fe8a66e6d248652f2806ad9a7afd06d46724748b77c2f67",
+  "cases": 116,
+  "counts": {
+    "normalized": 680,
+    "raw": 114
+  },
+  "normalized_gained": [],
+  "normalized_lost": [],
+  "all9_leaf_decoders_retained": true,
+  "all_Create_and_CreateV2_exact_bodies_retained": true,
+  "scope": "Use shared checked decoder with unchanged InvalidQuoteBondingCurve mapping, retain observed out-of-line checked call. Ancestor shrinks6760\u21922632B versus2640B original. Branch layout and source-origin constants remain unmatched.",
+  "strict_diagnostic_pairs": 116,
+  "validation_summary_sha256": "81756f3e9fdce45f64c83faaaa6bef029e437496ca3b7ee053ed2566655e76f6",
+  "build_receipt_sha256": "a573447a51b9ad4fbe7b1eeca6c3e35d08a92595ea0c2862ed279e0df559cfb2",
+  "candidate_sha256": "4a9868e08e43af4a1076d5a7be89b1bc6663f696df3f575801fc97a7aaa55058",
+  "unstripped_sha256": "8e0415c32ae60445ba4aacc495194c951108f6e80d22736547e06041f0c5b7c5"
+}

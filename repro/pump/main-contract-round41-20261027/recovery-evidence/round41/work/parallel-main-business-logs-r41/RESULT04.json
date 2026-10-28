@@ -1,0 +1,170 @@
+{
+  "status": "passed",
+  "scope": "Private source03 fixes for main Pump fee-sweep, native distribution and AdminCto ordinary messages/order. All2250 existing pairs and all156 exact frozen witness rows verified. Frozen R40 unchanged.",
+  "source": "work/parallel-main-business-logs-r41/source03",
+  "source_manifest_sha256": "4e1a39974e0ede5886c8e0abd40b441c99bdef83caf3b52221e55599770344cf",
+  "source_files": {
+    "Cargo.toml": "14b729d8c312968e6d8c775e7d942480d3ac44277c1af18117841ca139ee1998",
+    "Cargo.lock": "8307bd5e79789b5190291ea014c2f5556e23fb9829fa2f68a7ede581235eae98",
+    "recovered/constant_product_host.rs": "ee2e9e7fb89d7cdc42525dcafa28c802faab4ccb874652fa9df2307b11bc5825",
+    "recovered/constant_product.rs": "ec71f386f5f42abca163df627c7d8a5741c8954efec8732a1c9093728d33a99b",
+    "recovered/sell_accounting_host.rs": "b4aa42643c68895a23b99d5c46ac429cdaff76f0b650b69211b813b48859a39a",
+    "recovered/sell_accounting.rs": "23c1bbd79d6aa2987472a6eba572e0ded99cc8846cffd6bc23883f0700a25983",
+    "idls/pump_amm.json": "7a6d9badd36c50fd2426a89073fabce7398394035c95503b48fc2fefa7662bac",
+    "idls/pump_fees.json": "6b9fa3eccc6e06273076a47b581f9fcb9e531bb7c3c88acbcd44db55a4002b29",
+    "src/admin_set_idl_authority.rs": "8218b8bdea2d64454e73ed322a2d5431f34753a6f2c5f40cb889a63c0be4c417",
+    "src/distribution.rs": "4d08892dab5dd8ce1139bd02ae5af341aaf7166747a8b43ad1a2a14cd98707f7",
+    "src/multi_hop_curve_swap.rs": "127d21f8bc5e742b88ace3a93b11174a94ea8d556584111990be470eaf0192c0",
+    "src/v2_native_payments.rs": "0d6ed2941144ba94a1eec70e87df193538b3de8745525e4ac479cf6c6f783eb8",
+    "src/sweep_fees.rs": "584f4d7efe35229483a0e74eb509271c072a47642f0034831a80bdfa2076c1a3",
+    "src/set_creator.rs": "32a0f0326f370cd6db598ffba31be5c172a715dad0aa59178fffc1a91b65e359",
+    "src/global_init.rs": "10af175df7b55445cd3a239c4d63f42bf4cfe459892e2ec3abe4a926f2d89e45",
+    "src/volume_sync.rs": "6ed1f053f6b318d7cb27cbaa723f88917e87e757df0d5035d00b6b40c29ce699",
+    "src/cashback.rs": "1c632938b7f4d9c08b4f6ef173a47f1674b1c53dd255f0a3fd38109570a17863",
+    "src/create_v2.rs": "caaed29c5fa5c4dae51c8c827c9422aa6e5eef418b0702379aebd614f7fa68ef",
+    "src/v3_native_transfer_fee.rs": "81047d109f5cffabdb13795c67003eb34e8285708d68d7594485c0bfc55b9b75",
+    "src/buy_v2.rs": "bb9936302f6685a1ac9fb03c7e97b825229728709ca0ffa44356b08faa1625aa",
+    "src/lib.rs": "5175b637ad6281876fe5ca74a9e0a5ac8aea676d2f84a3081798e8e4ab766846",
+    "src/v2_recipient_payments.rs": "afdf1516ed7cb43f98cd04f73c69837c3d02319841ec4d64e0f3dd239e72bbf5",
+    "src/set_params.rs": "0508a02b59e8ca1feb1f642db1597c4d2553800571ef09c0eef7370d9c6ce84c",
+    "src/create.rs": "8af4fb0525644d230f5fd394cd479aaeab412ca76d39e7995b963f5dbaae8e33",
+    "src/v2_user_token_transfers.rs": "86577a8573623af55b93fab323306c8fc087bbb8478f7d5a13d1be8581d8beb5",
+    "src/incentives.rs": "2ef61bf21c8a21daa80a45a9337e38205826a8abae401439fa65ce602915018d",
+    "src/fee_recipient.rs": "a0a58edb66cc5ffb5d5f066b441923d64430d1ca1fbc9bb07af9e35a603a932a",
+    "src/sell_v2.rs": "ee6ec5bb846c3bbbfa7590347cb95da485b3ad1d7d3339b76132c3b1e21cf874",
+    "src/fee_cpi.rs": "b6977ff24ad33bf1546e4e9c8af13afb226aac7b82eef8f380e2e0be57fd5754",
+    "src/trade_v3.rs": "ca734ceb3e3a639a321253f29e8beaa3ce5f5fe5a1373652b9b6369f48d42f45",
+    "src/migrate.rs": "8090cb3d47fdc8ba889daa040720d6c2e204a8e4e5dfc987214a2bb68605572f",
+    "src/v2_quote_token_transfers.rs": "ac15f56326e6b234c9593a6843a2ac19d353bfa047d5cd8b381a5517afe83bfe",
+    "src/v2_token_transfers.rs": "61c0a1a7ab4fca1607deb661e0da6265eb89dcd9fd091088e14813e1decbda99",
+    "src/legacy_native_payments.rs": "e10fdcb0373ba407df6e35a9092e7e5a4c38fa40a9d0e542dcb9a95f8c05037f",
+    "src/migration_native_payments.rs": "d5c3558ca41e76f6f815f73bbe55c836086a0adcf8f0bbfbe5edac3ae364a59f",
+    "src/trade_types.rs": "36e755961aa8ecb79196076f4f8fe48b43ad2e55d048bf7f34719e80bf6b8d8f",
+    "src/sell.rs": "967fb7a70eed80c130ba8d09997ec61c4208dc554dbc0b377bf629edb32abd59",
+    "src/buy.rs": "828f32743422006dcdcfc0dcf0b6bf31dff6e0a7cc660b7848d506436a4973ee",
+    "src/curve_quote_payments.rs": "df0a8f007c9ee733c17388ae3217d0d3d349bd699b3e6b73d951fde6d38d4358",
+    "src/migrate_v2.rs": "e56041d507daf546eadfc59ad5bfb0c93fab9019a19cb8f2a89179bc550a4cd2",
+    "src/extend_account.rs": "a833e5eaa3e18d9abaa914c560fca853644063495de6f2a1dc4192ea1dafec60",
+    "src/mayhem_virtual_params.rs": "7a3d037c8f0b2e4b995f6023eb98f7d6a13dbd3c81101d49a100de9b6b2e2511",
+    "src/minimum.rs": "aab3cb1d7c3598bf5a44c3bd8917493c3cf05fb356f7a315ed862669fe64155d",
+    "src/creator/admin_cto.rs": "04cbfe44d87557f61d6793fed982791a37a691f44199cbf3997cbcef18d72eee",
+    "src/creator/migrate_bonding_curve_creator.rs": "5b83c3a7db77d639bb36eb8dc840ec8530ebb5b56e8dd670a717fcd2d377bd24",
+    "src/creator/distribute_creator_fees.rs": "bb256e6d56d7250a47a735b90bb30fca1c185e9b65308b499484b6d77b2694c9",
+    "src/creator/distribute_fee_to_holders.rs": "fe5bbccad0c05d7f65cc8f5c9ae022f0760e81eb93f5cbf53e481ada20ae2780",
+    "src/creator/distribute_creator_fee_v2.rs": "10c2a24586eb90e7c7d18e256762c15f03e43023c751bb0b603858b1943321a3",
+    "src/creator/collect_creator_fee.rs": "e3c1e1960221eb35e7b071d44fad1626636af21c931d67a5953dc26a2420f1c4",
+    "src/util/fee.rs": "4f2a9dbf0eadcf31d6b3e96d9ad43c2f8ebbcff151b4add3577548868ae6a52d",
+    "src/util/account_name.rs": "d1f56578bc7f5f9ba770b14d97108984ec38d84b62a938f0def71e518602113e",
+    "src/util/transfer_fee.rs": "9996b9b73bbf42380e8419186de517959c2d318d9fc5e19e2132af74dbdda7d1",
+    "src/util/constant_product.rs": "5011b956cd36566f1ae331624483cecb1729d98e337a2e9b41957aa9d263f726",
+    "src/quote_control/initialize_quote_control.rs": "f69183651495574b85e572aafd23ab768fdf3072a0d4c7e05da6ca51715b9136",
+    "src/quote_control/mod.rs": "c1a355d9ed55a4b69224ddd3ddc703b2dd7608bc8aa0bbde830d88a6a61a8120",
+    "src/quote_control/update_quote_control_mints.rs": "820a28f795130c637b30709cabfe5426915a68e72bd3b5f6c557266ea3e9dea5",
+    "src/quote_control/state.rs": "960e011099451f70156573f1e0a4c3f600d500a63fd3b35bd0af05a121794921",
+    "src/token_incentives/volume_accumulator.rs": "85713f122b8506ea2521fb2fdf60b50072fb4ccb9c10df49f578152e6f4a7773",
+    "src/token_incentives/claim_token_incentives.rs": "0cb2eb0418661007e8847f659c9dd856ce67b9c6628a8eed85181ea5bb2019a6",
+    "src/token_incentives/mod.rs": "5b8f20984b1e98a9ac1809592275b787a6fc78b41c2406076490065912f38b76",
+    "src/token_incentives/init_user_volume_accumulator.rs": "3017fb0462fc866b4059384dddc82cf1c25153e655a1eee21200115a17f2cebc"
+  },
+  "patch_sha256": "2b6db27a3cac1975aca30d87e2ffe5153443f8c3690706023839ada8e01254e1",
+  "candidate_sha256": "d4f87c4f6fec883e5cbe49dff008be5895d53ed89b20395fb277a7b6cb67ad52",
+  "unstripped_sha256": "ea56c87de4829d6264afd6827a532eb19b5c6e47c43dad322b4e9f5dd3242cf2",
+  "counts": {
+    "normalized": 817,
+    "raw": 165
+  },
+  "identity_losses": {
+    "normalized": [],
+    "raw": []
+  },
+  "normalized_gains": [
+    {
+      "start": 54016,
+      "bytes": 448,
+      "normalized_matches": [
+        {
+          "start": 61672,
+          "symbol": "_ZN5alloc3fmt6format17h5424e8a08f31e4d3E",
+          "raw_sha256": "1811d6469219b520dba789fa9af6a2212fdf3db1228f85828e1102d86607fa63",
+          "operands": [
+            {
+              "offset": 80,
+              "kind": "direct-call",
+              "target": 1762512
+            },
+            {
+              "offset": 384,
+              "kind": "direct-call",
+              "target": 1796424
+            },
+            {
+              "offset": 440,
+              "kind": "direct-call",
+              "target": 1762336
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cache": {
+    "key": "cc75395a3c1f178105d500df5cc825f8696f42c21fd51a1d70bbd0aaac03ce9f",
+    "status": "hit",
+    "manifest_sha256": "3a0f72ffc445fe5929f0963350885734de7061390326e2671fdce1919861104c"
+  },
+  "runtime": {
+    "paired_rows": 2250,
+    "verified_result_objects": 4500,
+    "fully_backed_pairs": 2250,
+    "distinct_signed_transactions": 507,
+    "distinct_transaction_pairs": 507
+  },
+  "fixed_families": {
+    "missing_distribution_minimum_notice": 26,
+    "missing_fee_bucket_zero_notice": 105,
+    "missing_creator_non_system_notice": 5,
+    "missing_canonical_pool_notice": 3,
+    "ordinary_message_order": 6,
+    "missing_creator_quote_frozen_notice": 11
+  },
+  "fixed_business_rows": 156,
+  "frozen_ata_controls": 2,
+  "ordinary_log_counts": {
+    "paired_cases": 2250,
+    "main_invocation_pairs": 2250,
+    "successful_pairs": 994,
+    "equal_full_main_logs": 2155
+  },
+  "remaining_log_families": {
+    "source_file_path_only": 95
+  },
+  "inputs": {
+    "work/parallel-main-business-logs-r41/STAGED03.json": "4e1a39974e0ede5886c8e0abd40b441c99bdef83caf3b52221e55599770344cf",
+    "work/parallel-main-business-logs-r41/business-logs03.patch": "2b6db27a3cac1975aca30d87e2ffe5153443f8c3690706023839ada8e01254e1",
+    "work/parallel-main-business-logs-r41/SOURCE-REVIEW04.json": "dace4b1361fcbc61a50b01855ada942a32f1c23e609349626081c434e0db0b24",
+    "work/parallel-main-business-logs-r41/TARGETED03.json": "db9cf661c28f511cb8f021bc4c66b0d27f8e77f6ba9fe10c5d9ef7fa61367700",
+    "work/parallel-main-business-logs-r41/TARGETED04.json": "68c4c56c2eece48ffd62ad5417dd93299d9a373a7f53966a4d4d7c62ef29155f",
+    "work/parallel-main-business-logs-r41/build03/build-comparison.json": "9a40c103c6a2535c4252f7829e270f53d8dc3ec81951cb2e2b853b43a6d9ee54",
+    "work/parallel-main-business-logs-r41/build03/normalized-inventory.json": "add63cfeb6b8bf5ce4767cb3f961c48e7aca11d716046bcbdd3d2f59d42de9d9",
+    "work/parallel-main-business-logs-r41/IDENTITY04.json": "45fb0338c9b532a5a959dbce64ea050c456b3e8495456ab795ba47c69279744d",
+    "work/parallel-main-business-logs-r41/RETENTION03.json": "65d907ff647eafed05827cafe6ba22737ae61e14a420d61f0b2cb5bd732c4c75",
+    "work/parallel-main-business-logs-r41/RETENTION04.json": "eddb3c43f4cf873e81c210087c1d3e6c3fe371046cca3cf86d0bfb1743fb249f",
+    "work/parallel-main-business-logs-r41/RUNTIME-LOG-REVIEW03.json": "d0f4644b035e60924e3539eeb032840d2a99aed9b04f3e9bb5a497d1d3a2b676",
+    "work/parallel-main-business-logs-r41/RUNTIME-LOG-EXTRA04.json": "3905f39a42bf95994c5d0c59c30d64eab27ee5817865355ef3ee485dd9c31644",
+    "work/parallel-main-business-logs-r41/FIXED-ROWS04.json": "c8eaa741d42845af6141f73504b572961c9e876d6218b7327dd698f6a7b5a4ba",
+    "work/parallel-main-business-logs-r41/seal_result04.py": "acb6bd5a56427586ad8a7f5af0f2a36f721c4ebe2b2efce9b0fc0f2e4dd16bbc",
+    "work/parallel-main-business-logs-r41/runtime03/full.json.gz": "9f9685113eff74f6e0ccd9c2a177eb3c091c6445b9bfa73f16b28a3c3e45c93c",
+    "work/parallel-main-business-logs-r41/runtime03/additional.json.gz": "f044379743e2980dca151fe07b45de17f829048432b1a15890861fe677474236",
+    "work/parallel-main-business-logs-r41/runtime04/full.json.gz": "e0c6aedb9c83b574dd44ecc471159a167183f815eb75b959d613378595995431",
+    "work/parallel-main-business-logs-r41/runtime04/additional.json.gz": "679a0ff138a9d91214f7dd1ab92e332a31d1736fed70f9d0406f7583aaee0932"
+  },
+  "limitations": [
+    "95 source-filename-only Anchor/panic origin differences remain; business log differences are zero.",
+    "The private build retains all raw165 from R40 ordinary layout. Final ordered R40 raw202 is a separate layout; differences explicitly reported in IDENTITY04.",
+    "IDENTITY04 corrects initial controller IDENTITY03 use of nonexistent raw_matches property. No build repeated.",
+    "Initial2186-case selection covered135 witness rows;64 additional existing sweep cases close the21 omitted rows. The total2250 contains no added fixtures.",
+    "Initial extra64 log audit rejected four source-filename differences; preserved attempt1 files show the result. The final audit separately counts these four; it does not remove their filenames.",
+    "Unwitnessed executable notice remains separate and unselected.",
+    "Combined R41 build, final data order and full18110-case replay remain required. No whole-ELF identity claim."
+  ]
+}

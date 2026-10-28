@@ -1,0 +1,129 @@
+{
+  "scope": "Exact transaction plus canonical non-null before-account mapping. Existing legacy fixture lacks before; every new legacy transaction differs from every retained legacy transaction.",
+  "existing_v2_rows": 154,
+  "existing_legacy_transaction_count": 14,
+  "input_rows": 152,
+  "new_count": 128,
+  "duplicates": [
+    {
+      "group": "primary",
+      "name": "legacy/len=8/available=0/recipient=0",
+      "input_hash": "c60740752907d61cc5fa0cb076c9a948aab41d20c8eaabc39a9c9125f4a96766"
+    },
+    {
+      "group": "primary",
+      "name": "legacy/len=8/available=1/recipient=0",
+      "input_hash": "6f49521fd16219b5ab3fbcb84c770d2a37dd5f26b98ea2ba8aaffd2dabffcd83"
+    },
+    {
+      "group": "primary",
+      "name": "legacy/len=8/available=10/recipient=0",
+      "input_hash": "cef42aabd851f65c0c85a568c430b35be396826047d9ccf7526f800f63814e42"
+    },
+    {
+      "group": "primary",
+      "name": "legacy/len=8/available=890880/recipient=0",
+      "input_hash": "83d8f60cac8e76743682cdbd01039a1a33e6ad09709cc154f4fa13a70ee8375b"
+    },
+    {
+      "group": "primary",
+      "name": "v2/len=8/available=0/recipient=0",
+      "input_hash": "f4d9f4c5a5fac33c8a0ed71b017970e7741b7bf85a03e4390cfdcdf28a13d2b7"
+    },
+    {
+      "group": "primary",
+      "name": "v2/len=8/available=1/recipient=0",
+      "input_hash": "03fd96b6f8888fc5f96957f6f0e55b12b5cd3821565595986e5813baf7d823e7"
+    },
+    {
+      "group": "primary",
+      "name": "v2/len=8/available=10/recipient=0",
+      "input_hash": "f15f97455ecdc8201f47fcc9a6da7edd6181e596d2687e4541b41977f3e98446"
+    },
+    {
+      "group": "primary",
+      "name": "v2/len=8/available=890880/recipient=0",
+      "input_hash": "d22c75a5aacbeb082d3fa84df17a43aaa19d6f9be40c90d8a37c13e081bbaecd"
+    },
+    {
+      "group": "precedence",
+      "name": "legacy-owner-pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ-amount0",
+      "input_hash": "c60740752907d61cc5fa0cb076c9a948aab41d20c8eaabc39a9c9125f4a96766"
+    },
+    {
+      "group": "precedence",
+      "name": "legacy-owner-6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P-amount0",
+      "input_hash": "c60740752907d61cc5fa0cb076c9a948aab41d20c8eaabc39a9c9125f4a96766"
+    },
+    {
+      "group": "precedence",
+      "name": "legacy-owner-TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA-amount0",
+      "input_hash": "c60740752907d61cc5fa0cb076c9a948aab41d20c8eaabc39a9c9125f4a96766"
+    },
+    {
+      "group": "precedence",
+      "name": "legacy-owner-pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ-amount1",
+      "input_hash": "6f49521fd16219b5ab3fbcb84c770d2a37dd5f26b98ea2ba8aaffd2dabffcd83"
+    },
+    {
+      "group": "precedence",
+      "name": "legacy-owner-6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P-amount1",
+      "input_hash": "6f49521fd16219b5ab3fbcb84c770d2a37dd5f26b98ea2ba8aaffd2dabffcd83"
+    },
+    {
+      "group": "precedence",
+      "name": "legacy-owner-TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA-amount1",
+      "input_hash": "6f49521fd16219b5ab3fbcb84c770d2a37dd5f26b98ea2ba8aaffd2dabffcd83"
+    },
+    {
+      "group": "precedence",
+      "name": "v2-owner-pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ-amount0",
+      "input_hash": "f4d9f4c5a5fac33c8a0ed71b017970e7741b7bf85a03e4390cfdcdf28a13d2b7"
+    },
+    {
+      "group": "precedence",
+      "name": "v2-owner-6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P-amount0",
+      "input_hash": "f4d9f4c5a5fac33c8a0ed71b017970e7741b7bf85a03e4390cfdcdf28a13d2b7"
+    },
+    {
+      "group": "precedence",
+      "name": "v2-owner-TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA-amount0",
+      "input_hash": "f4d9f4c5a5fac33c8a0ed71b017970e7741b7bf85a03e4390cfdcdf28a13d2b7"
+    },
+    {
+      "group": "precedence",
+      "name": "v2-owner-pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ-amount1",
+      "input_hash": "03fd96b6f8888fc5f96957f6f0e55b12b5cd3821565595986e5813baf7d823e7"
+    },
+    {
+      "group": "precedence",
+      "name": "v2-owner-6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P-amount1",
+      "input_hash": "03fd96b6f8888fc5f96957f6f0e55b12b5cd3821565595986e5813baf7d823e7"
+    },
+    {
+      "group": "precedence",
+      "name": "v2-owner-TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA-amount1",
+      "input_hash": "03fd96b6f8888fc5f96957f6f0e55b12b5cd3821565595986e5813baf7d823e7"
+    },
+    {
+      "group": "precedence",
+      "name": "token-executable-invalid-source-amount1",
+      "input_hash": "bbc2ebd900e1a42930698acadb7e5bd3fa57774c4f0a320175b029cdcf4ea9d4"
+    },
+    {
+      "group": "precedence",
+      "name": "token-fees-owner-invalid-source-amount1",
+      "input_hash": "f3150147f0235008a0247feef4ed4de9e0a0839985327a2537b48d18af6885a2"
+    },
+    {
+      "group": "executable",
+      "name": "v2-tokenquote-actual-token22-invalid-source-amount1",
+      "input_hash": "b6f0508fffbced457cc7e124d64e8d1db9712c146cf46f6963126dd7313606a7"
+    },
+    {
+      "group": "owner-live",
+      "name": "token-live-FEES-amount1-missingTrue",
+      "input_hash": "cd7840edfe71e4759c886d557228c27cd134b98c648238a3c7c5900daccc4a45"
+    }
+  ]
+}

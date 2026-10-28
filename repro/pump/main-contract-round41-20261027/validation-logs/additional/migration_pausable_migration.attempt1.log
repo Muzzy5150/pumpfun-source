@@ -1,0 +1,7 @@
+pausable_authority None None []
+pausable_paused TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(67)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(67)))) []
+transfer_fee_then_pausable None None []
+pausable_then_transfer_fee None None []
+transfer_hook_pausable None None []
+pausable_extra_payload None None []
+cases 6 mismatches 0

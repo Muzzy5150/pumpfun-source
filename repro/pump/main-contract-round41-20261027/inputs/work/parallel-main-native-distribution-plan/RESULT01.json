@@ -1,0 +1,62 @@
+{
+  "status": "bounded numeric planner type control validated; no source promotion requested",
+  "baseline": "work/parallel-main-integration/round34-source/programs/pump",
+  "source_file": "work/parallel-main-native-distribution-plan/source01/src/distribution.rs",
+  "source_sha256": "aaa0f636a354a336dfe6361eed4ed9c501f0d7ccbf7abf20f3a41fcd87e6d985",
+  "baseline_source_sha256": "50be401d3a89612f46927f8750a3b32ad025979bb74a99d8049caf065a0eb9b5",
+  "patch_sha256": "82827c27e6f991f5346b271fa8c76425075ba80e52d7ae24279a1dcaa81be936",
+  "candidate_sha256": "ee5b573960c4145fba8bf2283d79a5ee5951b59182572022ebbb90d9bd996fa6",
+  "unstripped_sha256": "b174168f50de9951bce56f003fa35ed83f00a3f338c263a1bfa7c517daaa2877",
+  "build_receipt_sha256": "876e9563914a1d75434df58b24b8eaf6c6a10abae0be059511e34d73a65424c4",
+  "finding": "Original plan vector stores numeric recipient rent deficit as second u64; current maintained baseline stored an AccountInfo reference. Source01 corrects that internal value and pairs entries with validated recipient slice at callers.",
+  "original_proof": [
+    "Original0x31d28/0x31d38 place saturated deficit inr6",
+    "Original0x31538 storesr6 atentry+8;0x31540 storespayment atentry+0",
+    "Original0x33c50 iterates recipients separately"
+  ],
+  "body_comparison": {
+    "original_bytes": 4920,
+    "baseline_bytes": 5096,
+    "candidate_bytes": 5064,
+    "baseline_different_slots": 595,
+    "candidate_different_slots": 615,
+    "normalized_equal": false
+  },
+  "complete_match_sets": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "inventory": {
+    "total": 1035,
+    "raw": 119,
+    "normalized": 733,
+    "unmatched": 302
+  },
+  "runtime": {
+    "case_counts": {
+      "distribution": 298,
+      "minimum": 181,
+      "regressions": 62,
+      "rent": 6,
+      "pending": 72
+    },
+    "cases": 619,
+    "mismatches": 0,
+    "diagnostic_mismatches": 0,
+    "invocation_mismatches": 0,
+    "distinct_transactions_reverified": 104
+  },
+  "limitations": [
+    "No new whole-body match or external behavior change is claimed.",
+    "32-byte size reduction does not establish a closer complete body; positional differing slots increased.",
+    "Original Rust tuple/struct name and remaining source organization are unresolved.",
+    "Source01 retains both accepted pending-creator-fee admission guards.",
+    "Raw comparisons are against the unordered R34 identity build only; no newly qualified final layout recipe."
+  ]
+}

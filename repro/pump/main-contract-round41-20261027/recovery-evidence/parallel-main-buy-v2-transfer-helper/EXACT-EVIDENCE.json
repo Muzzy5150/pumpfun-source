@@ -1,0 +1,30 @@
+{
+  "helper_normalized_equal": true,
+  "helper_bytes": 2128,
+  "only_direct_callee": {
+    "candidate_address": "0x168f48",
+    "original_address": "0x17fcc8",
+    "identity": "anchor_spl::token_2022::transfer_checked",
+    "normalized_equal": true
+  },
+  "live_callers": [
+    {
+      "site": "0x30c68",
+      "owner": "_ZN14pump_recovered6buy_v213execute_inner17h17e642ed7afae423E"
+    },
+    {
+      "site": "0x37b80",
+      "owner": "_ZN14pump_recovered6buy_v213execute_inner17he051dfe62536c2c0E"
+    }
+  ],
+  "gained": [
+    "0x8f5c8"
+  ],
+  "lost": [],
+  "files": {
+    "buy_v2.rs": "ebbac4ce01297625eac72e1051f09eb281a515fa4a8f3781337ae1f036c34e97",
+    "v2_token_transfers.rs": "9b538a848ee03174e864d114c6bd3fba43a61012ba9180e76f881602e2ef7bae"
+  },
+  "candidate_sha256": "9090ed40d1ca2f38b5dd845ea4908a0302cfd92a8e0a8e6c4164977591e4c6d6",
+  "unstripped_sha256": "ac1ff5248864e974a3716dd755c68bbfb048a5c6ec9a783b405dcc6ff49bd294"
+}

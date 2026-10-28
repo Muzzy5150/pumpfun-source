@@ -1,0 +1,546 @@
+{
+  "status": "staged_source_only",
+  "scope": "Compose only individually qualified main-Pump R41 source changes, without building.",
+  "source": "work/parallel-main-r41-composition/source01",
+  "primary_input_count": 64,
+  "changed_from_R40": {
+    "src/creator/admin_cto.rs": "04cbfe44d87557f61d6793fed982791a37a691f44199cbf3997cbcef18d72eee",
+    "src/creator/distribute_creator_fee_v2.rs": "10c2a24586eb90e7c7d18e256762c15f03e43023c751bb0b603858b1943321a3",
+    "src/creator/set_creator.rs": "4f613ffe892cf4ab24b134b5cec292a1fd81f5ea7a1f10ab89c93e333eaab40a",
+    "src/creator/set_metaplex_creator.rs": "d2de84fd0c6e21622634946f9ed400f227df7dca209f510181f99d4def2476ce",
+    "src/curve_quote_payments.rs": "ba246d5badc7a71c688db4be658555ecbb0eb350f882ff79d06d889f1d1b66b0",
+    "src/distribution.rs": "4d08892dab5dd8ce1139bd02ae5af341aaf7166747a8b43ad1a2a14cd98707f7",
+    "src/lib.rs": "6672492263c011c979a2c54085a6767aa6aaf8a4fb35e936712fa888619b5991",
+    "src/set_creator.rs": "22fe5a74b1345c40be254299d4ef1b85c7bed7e27cd833dd296bcc0df83a60ba",
+    "src/set_reserved_fee_recipients.rs": "afb855dd2ec242a3dbed5a149034bddaf9c5211c4dffd2369d27d8d65041009d",
+    "src/sweep_fees.rs": "584f4d7efe35229483a0e74eb509271c072a47642f0034831a80bdfa2076c1a3",
+    "src/token_incentives/claim_token_incentives.rs": "23cfb84b5d1dda8acd6521e3034732e0d0079c640155a8f2460a7f16754910b2",
+    "src/volume_sync.rs": "0bba7158bc964a50599e9e9b9486da9b20ce3be0e904a6c7d2c27bf5a6162a83"
+  },
+  "new_inputs": [
+    "src/creator/set_creator.rs",
+    "src/creator/set_metaplex_creator.rs",
+    "src/set_reserved_fee_recipients.rs"
+  ],
+  "removed_inputs": [],
+  "source_sha256": {
+    "Cargo.lock": "8307bd5e79789b5190291ea014c2f5556e23fb9829fa2f68a7ede581235eae98",
+    "Cargo.toml": "14b729d8c312968e6d8c775e7d942480d3ac44277c1af18117841ca139ee1998",
+    "idls/pump_amm.json": "7a6d9badd36c50fd2426a89073fabce7398394035c95503b48fc2fefa7662bac",
+    "idls/pump_fees.json": "6b9fa3eccc6e06273076a47b581f9fcb9e531bb7c3c88acbcd44db55a4002b29",
+    "recovered/constant_product.rs": "ec71f386f5f42abca163df627c7d8a5741c8954efec8732a1c9093728d33a99b",
+    "recovered/constant_product_host.rs": "ee2e9e7fb89d7cdc42525dcafa28c802faab4ccb874652fa9df2307b11bc5825",
+    "recovered/sell_accounting.rs": "23c1bbd79d6aa2987472a6eba572e0ded99cc8846cffd6bc23883f0700a25983",
+    "recovered/sell_accounting_host.rs": "b4aa42643c68895a23b99d5c46ac429cdaff76f0b650b69211b813b48859a39a",
+    "src/admin_set_idl_authority.rs": "8218b8bdea2d64454e73ed322a2d5431f34753a6f2c5f40cb889a63c0be4c417",
+    "src/buy.rs": "828f32743422006dcdcfc0dcf0b6bf31dff6e0a7cc660b7848d506436a4973ee",
+    "src/buy_v2.rs": "bb9936302f6685a1ac9fb03c7e97b825229728709ca0ffa44356b08faa1625aa",
+    "src/cashback.rs": "1c632938b7f4d9c08b4f6ef173a47f1674b1c53dd255f0a3fd38109570a17863",
+    "src/create.rs": "8af4fb0525644d230f5fd394cd479aaeab412ca76d39e7995b963f5dbaae8e33",
+    "src/create_v2.rs": "caaed29c5fa5c4dae51c8c827c9422aa6e5eef418b0702379aebd614f7fa68ef",
+    "src/creator/admin_cto.rs": "04cbfe44d87557f61d6793fed982791a37a691f44199cbf3997cbcef18d72eee",
+    "src/creator/collect_creator_fee.rs": "e3c1e1960221eb35e7b071d44fad1626636af21c931d67a5953dc26a2420f1c4",
+    "src/creator/distribute_creator_fee_v2.rs": "10c2a24586eb90e7c7d18e256762c15f03e43023c751bb0b603858b1943321a3",
+    "src/creator/distribute_creator_fees.rs": "bb256e6d56d7250a47a735b90bb30fca1c185e9b65308b499484b6d77b2694c9",
+    "src/creator/distribute_fee_to_holders.rs": "fe5bbccad0c05d7f65cc8f5c9ae022f0760e81eb93f5cbf53e481ada20ae2780",
+    "src/creator/migrate_bonding_curve_creator.rs": "5b83c3a7db77d639bb36eb8dc840ec8530ebb5b56e8dd670a717fcd2d377bd24",
+    "src/creator/set_creator.rs": "4f613ffe892cf4ab24b134b5cec292a1fd81f5ea7a1f10ab89c93e333eaab40a",
+    "src/creator/set_metaplex_creator.rs": "d2de84fd0c6e21622634946f9ed400f227df7dca209f510181f99d4def2476ce",
+    "src/curve_quote_payments.rs": "ba246d5badc7a71c688db4be658555ecbb0eb350f882ff79d06d889f1d1b66b0",
+    "src/distribution.rs": "4d08892dab5dd8ce1139bd02ae5af341aaf7166747a8b43ad1a2a14cd98707f7",
+    "src/extend_account.rs": "a833e5eaa3e18d9abaa914c560fca853644063495de6f2a1dc4192ea1dafec60",
+    "src/fee_cpi.rs": "b6977ff24ad33bf1546e4e9c8af13afb226aac7b82eef8f380e2e0be57fd5754",
+    "src/fee_recipient.rs": "a0a58edb66cc5ffb5d5f066b441923d64430d1ca1fbc9bb07af9e35a603a932a",
+    "src/global_init.rs": "10af175df7b55445cd3a239c4d63f42bf4cfe459892e2ec3abe4a926f2d89e45",
+    "src/incentives.rs": "2ef61bf21c8a21daa80a45a9337e38205826a8abae401439fa65ce602915018d",
+    "src/legacy_native_payments.rs": "e10fdcb0373ba407df6e35a9092e7e5a4c38fa40a9d0e542dcb9a95f8c05037f",
+    "src/lib.rs": "6672492263c011c979a2c54085a6767aa6aaf8a4fb35e936712fa888619b5991",
+    "src/mayhem_virtual_params.rs": "7a3d037c8f0b2e4b995f6023eb98f7d6a13dbd3c81101d49a100de9b6b2e2511",
+    "src/migrate.rs": "8090cb3d47fdc8ba889daa040720d6c2e204a8e4e5dfc987214a2bb68605572f",
+    "src/migrate_v2.rs": "e56041d507daf546eadfc59ad5bfb0c93fab9019a19cb8f2a89179bc550a4cd2",
+    "src/migration_native_payments.rs": "d5c3558ca41e76f6f815f73bbe55c836086a0adcf8f0bbfbe5edac3ae364a59f",
+    "src/minimum.rs": "aab3cb1d7c3598bf5a44c3bd8917493c3cf05fb356f7a315ed862669fe64155d",
+    "src/multi_hop_curve_swap.rs": "127d21f8bc5e742b88ace3a93b11174a94ea8d556584111990be470eaf0192c0",
+    "src/quote_control/initialize_quote_control.rs": "f69183651495574b85e572aafd23ab768fdf3072a0d4c7e05da6ca51715b9136",
+    "src/quote_control/mod.rs": "c1a355d9ed55a4b69224ddd3ddc703b2dd7608bc8aa0bbde830d88a6a61a8120",
+    "src/quote_control/state.rs": "960e011099451f70156573f1e0a4c3f600d500a63fd3b35bd0af05a121794921",
+    "src/quote_control/update_quote_control_mints.rs": "820a28f795130c637b30709cabfe5426915a68e72bd3b5f6c557266ea3e9dea5",
+    "src/sell.rs": "967fb7a70eed80c130ba8d09997ec61c4208dc554dbc0b377bf629edb32abd59",
+    "src/sell_v2.rs": "ee6ec5bb846c3bbbfa7590347cb95da485b3ad1d7d3339b76132c3b1e21cf874",
+    "src/set_creator.rs": "22fe5a74b1345c40be254299d4ef1b85c7bed7e27cd833dd296bcc0df83a60ba",
+    "src/set_params.rs": "0508a02b59e8ca1feb1f642db1597c4d2553800571ef09c0eef7370d9c6ce84c",
+    "src/set_reserved_fee_recipients.rs": "afb855dd2ec242a3dbed5a149034bddaf9c5211c4dffd2369d27d8d65041009d",
+    "src/sweep_fees.rs": "584f4d7efe35229483a0e74eb509271c072a47642f0034831a80bdfa2076c1a3",
+    "src/token_incentives/claim_token_incentives.rs": "23cfb84b5d1dda8acd6521e3034732e0d0079c640155a8f2460a7f16754910b2",
+    "src/token_incentives/init_user_volume_accumulator.rs": "3017fb0462fc866b4059384dddc82cf1c25153e655a1eee21200115a17f2cebc",
+    "src/token_incentives/mod.rs": "5b8f20984b1e98a9ac1809592275b787a6fc78b41c2406076490065912f38b76",
+    "src/token_incentives/volume_accumulator.rs": "85713f122b8506ea2521fb2fdf60b50072fb4ccb9c10df49f578152e6f4a7773",
+    "src/trade_types.rs": "36e755961aa8ecb79196076f4f8fe48b43ad2e55d048bf7f34719e80bf6b8d8f",
+    "src/trade_v3.rs": "ca734ceb3e3a639a321253f29e8beaa3ce5f5fe5a1373652b9b6369f48d42f45",
+    "src/util/account_name.rs": "d1f56578bc7f5f9ba770b14d97108984ec38d84b62a938f0def71e518602113e",
+    "src/util/constant_product.rs": "5011b956cd36566f1ae331624483cecb1729d98e337a2e9b41957aa9d263f726",
+    "src/util/fee.rs": "4f2a9dbf0eadcf31d6b3e96d9ad43c2f8ebbcff151b4add3577548868ae6a52d",
+    "src/util/transfer_fee.rs": "9996b9b73bbf42380e8419186de517959c2d318d9fc5e19e2132af74dbdda7d1",
+    "src/v2_native_payments.rs": "0d6ed2941144ba94a1eec70e87df193538b3de8745525e4ac479cf6c6f783eb8",
+    "src/v2_quote_token_transfers.rs": "ac15f56326e6b234c9593a6843a2ac19d353bfa047d5cd8b381a5517afe83bfe",
+    "src/v2_recipient_payments.rs": "afdf1516ed7cb43f98cd04f73c69837c3d02319841ec4d64e0f3dd239e72bbf5",
+    "src/v2_token_transfers.rs": "61c0a1a7ab4fca1607deb661e0da6265eb89dcd9fd091088e14813e1decbda99",
+    "src/v2_user_token_transfers.rs": "86577a8573623af55b93fab323306c8fc087bbb8478f7d5a13d1be8581d8beb5",
+    "src/v3_native_transfer_fee.rs": "81047d109f5cffabdb13795c67003eb34e8285708d68d7594485c0bfc55b9b75",
+    "src/volume_sync.rs": "0bba7158bc964a50599e9e9b9486da9b20ce3be0e904a6c7d2c27bf5a6162a83"
+  },
+  "file_provenance": {
+    "Cargo.lock": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/Cargo.lock",
+      "sha256": "8307bd5e79789b5190291ea014c2f5556e23fb9829fa2f68a7ede581235eae98",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "Cargo.toml": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/Cargo.toml",
+      "sha256": "14b729d8c312968e6d8c775e7d942480d3ac44277c1af18117841ca139ee1998",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "idls/pump_amm.json": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/idls/pump_amm.json",
+      "sha256": "7a6d9badd36c50fd2426a89073fabce7398394035c95503b48fc2fefa7662bac",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "idls/pump_fees.json": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/idls/pump_fees.json",
+      "sha256": "6b9fa3eccc6e06273076a47b581f9fcb9e531bb7c3c88acbcd44db55a4002b29",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "recovered/constant_product.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/recovered/constant_product.rs",
+      "sha256": "ec71f386f5f42abca163df627c7d8a5741c8954efec8732a1c9093728d33a99b",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "recovered/constant_product_host.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/recovered/constant_product_host.rs",
+      "sha256": "ee2e9e7fb89d7cdc42525dcafa28c802faab4ccb874652fa9df2307b11bc5825",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "recovered/sell_accounting.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/recovered/sell_accounting.rs",
+      "sha256": "23c1bbd79d6aa2987472a6eba572e0ded99cc8846cffd6bc23883f0700a25983",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "recovered/sell_accounting_host.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/recovered/sell_accounting_host.rs",
+      "sha256": "b4aa42643c68895a23b99d5c46ac429cdaff76f0b650b69211b813b48859a39a",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/admin_set_idl_authority.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/admin_set_idl_authority.rs",
+      "sha256": "8218b8bdea2d64454e73ed322a2d5431f34753a6f2c5f40cb889a63c0be4c417",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/buy.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/buy.rs",
+      "sha256": "828f32743422006dcdcfc0dcf0b6bf31dff6e0a7cc660b7848d506436a4973ee",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/buy_v2.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/buy_v2.rs",
+      "sha256": "bb9936302f6685a1ac9fb03c7e97b825229728709ca0ffa44356b08faa1625aa",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/cashback.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/cashback.rs",
+      "sha256": "1c632938b7f4d9c08b4f6ef173a47f1674b1c53dd255f0a3fd38109570a17863",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/create.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/create.rs",
+      "sha256": "8af4fb0525644d230f5fd394cd479aaeab412ca76d39e7995b963f5dbaae8e33",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/create_v2.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/create_v2.rs",
+      "sha256": "caaed29c5fa5c4dae51c8c827c9422aa6e5eef418b0702379aebd614f7fa68ef",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/creator/admin_cto.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-business-logs-r41/source03/src/creator/admin_cto.rs",
+      "sha256": "04cbfe44d87557f61d6793fed982791a37a691f44199cbf3997cbcef18d72eee",
+      "lane": "business"
+    },
+    "src/creator/collect_creator_fee.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/creator/collect_creator_fee.rs",
+      "sha256": "e3c1e1960221eb35e7b071d44fad1626636af21c931d67a5953dc26a2420f1c4",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/creator/distribute_creator_fee_v2.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-business-logs-r41/source03/src/creator/distribute_creator_fee_v2.rs",
+      "sha256": "10c2a24586eb90e7c7d18e256762c15f03e43023c751bb0b603858b1943321a3",
+      "lane": "business"
+    },
+    "src/creator/distribute_creator_fees.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/creator/distribute_creator_fees.rs",
+      "sha256": "bb256e6d56d7250a47a735b90bb30fca1c185e9b65308b499484b6d77b2694c9",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/creator/distribute_fee_to_holders.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/creator/distribute_fee_to_holders.rs",
+      "sha256": "fe5bbccad0c05d7f65cc8f5c9ae022f0760e81eb93f5cbf53e481ada20ae2780",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/creator/migrate_bonding_curve_creator.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/creator/migrate_bonding_curve_creator.rs",
+      "sha256": "5b83c3a7db77d639bb36eb8dc840ec8530ebb5b56e8dd670a717fcd2d377bd24",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/creator/set_creator.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/creator/set_creator.rs",
+      "sha256": "4f613ffe892cf4ab24b134b5cec292a1fd81f5ea7a1f10ab89c93e333eaab40a",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/creator/set_metaplex_creator.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/creator/set_metaplex_creator.rs",
+      "sha256": "d2de84fd0c6e21622634946f9ed400f227df7dca209f510181f99d4def2476ce",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/curve_quote_payments.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/curve_quote_payments.rs",
+      "sha256": "ba246d5badc7a71c688db4be658555ecbb0eb350f882ff79d06d889f1d1b66b0",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/distribution.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-business-logs-r41/source03/src/distribution.rs",
+      "sha256": "4d08892dab5dd8ce1139bd02ae5af341aaf7166747a8b43ad1a2a14cd98707f7",
+      "lane": "business"
+    },
+    "src/extend_account.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/extend_account.rs",
+      "sha256": "a833e5eaa3e18d9abaa914c560fca853644063495de6f2a1dc4192ea1dafec60",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/fee_cpi.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/fee_cpi.rs",
+      "sha256": "b6977ff24ad33bf1546e4e9c8af13afb226aac7b82eef8f380e2e0be57fd5754",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/fee_recipient.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/fee_recipient.rs",
+      "sha256": "a0a58edb66cc5ffb5d5f066b441923d64430d1ca1fbc9bb07af9e35a603a932a",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/global_init.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/global_init.rs",
+      "sha256": "10af175df7b55445cd3a239c4d63f42bf4cfe459892e2ec3abe4a926f2d89e45",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/incentives.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/incentives.rs",
+      "sha256": "2ef61bf21c8a21daa80a45a9337e38205826a8abae401439fa65ce602915018d",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/legacy_native_payments.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/legacy_native_payments.rs",
+      "sha256": "e10fdcb0373ba407df6e35a9092e7e5a4c38fa40a9d0e542dcb9a95f8c05037f",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/lib.rs": {
+      "kind": "qualified composition",
+      "base": "work/parallel-main-creator-path-placement/source01/src/lib.rs",
+      "base_sha256": "a80ac3aba0cca7078e626ec4f95fd82eae710416a1447ac06dccc8fbeeef8b24",
+      "qualified_reserved_reference": "work/parallel-main-reserved-source-module/source01/src/lib.rs",
+      "output_sha256": "6672492263c011c979a2c54085a6767aa6aaf8a4fb35e936712fa888619b5991",
+      "only_changes": [
+        "reserved module declaration",
+        "set_reserved_fee_recipients thin wrapper",
+        "update_buyback_config thin wrapper"
+      ],
+      "owned_quote_module_preserved_exactly": true
+    },
+    "src/mayhem_virtual_params.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/mayhem_virtual_params.rs",
+      "sha256": "7a3d037c8f0b2e4b995f6023eb98f7d6a13dbd3c81101d49a100de9b6b2e2511",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/migrate.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/migrate.rs",
+      "sha256": "8090cb3d47fdc8ba889daa040720d6c2e204a8e4e5dfc987214a2bb68605572f",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/migrate_v2.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/migrate_v2.rs",
+      "sha256": "e56041d507daf546eadfc59ad5bfb0c93fab9019a19cb8f2a89179bc550a4cd2",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/migration_native_payments.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/migration_native_payments.rs",
+      "sha256": "d5c3558ca41e76f6f815f73bbe55c836086a0adcf8f0bbfbe5edac3ae364a59f",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/minimum.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/minimum.rs",
+      "sha256": "aab3cb1d7c3598bf5a44c3bd8917493c3cf05fb356f7a315ed862669fe64155d",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/multi_hop_curve_swap.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/multi_hop_curve_swap.rs",
+      "sha256": "127d21f8bc5e742b88ace3a93b11174a94ea8d556584111990be470eaf0192c0",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/quote_control/initialize_quote_control.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/quote_control/initialize_quote_control.rs",
+      "sha256": "f69183651495574b85e572aafd23ab768fdf3072a0d4c7e05da6ca51715b9136",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/quote_control/mod.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/quote_control/mod.rs",
+      "sha256": "c1a355d9ed55a4b69224ddd3ddc703b2dd7608bc8aa0bbde830d88a6a61a8120",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/quote_control/state.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/quote_control/state.rs",
+      "sha256": "960e011099451f70156573f1e0a4c3f600d500a63fd3b35bd0af05a121794921",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/quote_control/update_quote_control_mints.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/quote_control/update_quote_control_mints.rs",
+      "sha256": "820a28f795130c637b30709cabfe5426915a68e72bd3b5f6c557266ea3e9dea5",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/sell.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/sell.rs",
+      "sha256": "967fb7a70eed80c130ba8d09997ec61c4208dc554dbc0b377bf629edb32abd59",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/sell_v2.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/sell_v2.rs",
+      "sha256": "ee6ec5bb846c3bbbfa7590347cb95da485b3ad1d7d3339b76132c3b1e21cf874",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/set_creator.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/set_creator.rs",
+      "sha256": "22fe5a74b1345c40be254299d4ef1b85c7bed7e27cd833dd296bcc0df83a60ba",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/set_params.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/set_params.rs",
+      "sha256": "0508a02b59e8ca1feb1f642db1597c4d2553800571ef09c0eef7370d9c6ce84c",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/sweep_fees.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-business-logs-r41/source03/src/sweep_fees.rs",
+      "sha256": "584f4d7efe35229483a0e74eb509271c072a47642f0034831a80bdfa2076c1a3",
+      "lane": "business"
+    },
+    "src/token_incentives/claim_token_incentives.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-cashback-v2-api/source03/src/token_incentives/claim_token_incentives.rs",
+      "sha256": "23cfb84b5d1dda8acd6521e3034732e0d0079c640155a8f2460a7f16754910b2",
+      "lane": "cashback"
+    },
+    "src/token_incentives/init_user_volume_accumulator.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/token_incentives/init_user_volume_accumulator.rs",
+      "sha256": "3017fb0462fc866b4059384dddc82cf1c25153e655a1eee21200115a17f2cebc",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/token_incentives/mod.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/token_incentives/mod.rs",
+      "sha256": "5b8f20984b1e98a9ac1809592275b787a6fc78b41c2406076490065912f38b76",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/token_incentives/volume_accumulator.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/token_incentives/volume_accumulator.rs",
+      "sha256": "85713f122b8506ea2521fb2fdf60b50072fb4ccb9c10df49f578152e6f4a7773",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/trade_types.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/trade_types.rs",
+      "sha256": "36e755961aa8ecb79196076f4f8fe48b43ad2e55d048bf7f34719e80bf6b8d8f",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/trade_v3.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/trade_v3.rs",
+      "sha256": "ca734ceb3e3a639a321253f29e8beaa3ce5f5fe5a1373652b9b6369f48d42f45",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/util/account_name.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/util/account_name.rs",
+      "sha256": "d1f56578bc7f5f9ba770b14d97108984ec38d84b62a938f0def71e518602113e",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/util/constant_product.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/util/constant_product.rs",
+      "sha256": "5011b956cd36566f1ae331624483cecb1729d98e337a2e9b41957aa9d263f726",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/util/fee.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/util/fee.rs",
+      "sha256": "4f2a9dbf0eadcf31d6b3e96d9ad43c2f8ebbcff151b4add3577548868ae6a52d",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/util/transfer_fee.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/util/transfer_fee.rs",
+      "sha256": "9996b9b73bbf42380e8419186de517959c2d318d9fc5e19e2132af74dbdda7d1",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/v2_native_payments.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/v2_native_payments.rs",
+      "sha256": "0d6ed2941144ba94a1eec70e87df193538b3de8745525e4ac479cf6c6f783eb8",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/v2_quote_token_transfers.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/v2_quote_token_transfers.rs",
+      "sha256": "ac15f56326e6b234c9593a6843a2ac19d353bfa047d5cd8b381a5517afe83bfe",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/v2_recipient_payments.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/v2_recipient_payments.rs",
+      "sha256": "afdf1516ed7cb43f98cd04f73c69837c3d02319841ec4d64e0f3dd239e72bbf5",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/v2_token_transfers.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/v2_token_transfers.rs",
+      "sha256": "61c0a1a7ab4fca1607deb661e0da6265eb89dcd9fd091088e14813e1decbda99",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/v2_user_token_transfers.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/v2_user_token_transfers.rs",
+      "sha256": "86577a8573623af55b93fab323306c8fc087bbb8478f7d5a13d1be8581d8beb5",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/v3_native_transfer_fee.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-creator-path-placement/source01/src/v3_native_transfer_fee.rs",
+      "sha256": "81047d109f5cffabdb13795c67003eb34e8285708d68d7594485c0bfc55b9b75",
+      "lane": "creator (includes qualified owned quote placement)"
+    },
+    "src/volume_sync.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-volume-routine-logs/source01/src/volume_sync.rs",
+      "sha256": "0bba7158bc964a50599e9e9b9486da9b20ce3be0e904a6c7d2c27bf5a6162a83",
+      "lane": "volume"
+    },
+    "src/set_reserved_fee_recipients.rs": {
+      "kind": "copy",
+      "path": "work/parallel-main-reserved-source-module/source01/src/set_reserved_fee_recipients.rs",
+      "sha256": "afb855dd2ec242a3dbed5a149034bddaf9c5211c4dffd2369d27d8d65041009d",
+      "lane": "reserved"
+    }
+  },
+  "conflict_resolutions": [
+    {
+      "file": "src/lib.rs",
+      "operation": "replace existing program body with qualified thin wrapper",
+      "function": "set_reserved_fee_recipients",
+      "original_full_function_sha256": "df4d67b3a81bf0aa5bfd8bed3b9a9bbd9bb5967ea375e85f1463d2beceb2a66d",
+      "qualified_wrapper_sha256": "5bc15c20ea63fc06cb65612d6978cd6c0ac79f139217b36b8a072eb8c1f5f5ae",
+      "body_source": "work/parallel-main-reserved-source-module/source01/src/set_reserved_fee_recipients.rs"
+    },
+    {
+      "file": "src/lib.rs",
+      "operation": "replace existing program body with qualified thin wrapper",
+      "function": "update_buyback_config",
+      "original_full_function_sha256": "db2b235d6f4fe0e1135befad1d111318043751ac6a6d8cfb5684b966fa5e6169",
+      "qualified_wrapper_sha256": "81763e92f041ca8888c193590a0b9f746b7fcb4b7b11100e1376fa02d79885af",
+      "body_source": "work/parallel-main-reserved-source-module/source01/src/set_reserved_fee_recipients.rs"
+    }
+  ],
+  "base_R40_unchanged": true,
+  "qualified_creator_source_unchanged": true,
+  "Cargo_and_lock_unchanged": true,
+  "TradeEvent_source03_preserved": true,
+  "unselected_cashback_owned_return_experiment_excluded": true,
+  "qualified_proofs": {
+    "creator": {
+      "path": "work/parallel-main-creator-path-placement/RESULT01.json",
+      "sha256": "7974738d037f61bc03028e35a391ac1c48f577ac5381bc7073af3c5a484a11f0"
+    },
+    "owned_quote": {
+      "path": "work/parallel-main-owned-quote-placement/RESULT01.json",
+      "sha256": "1b34a0bad33e9ebf69137d3f3645a05d9ac355c212f84bbab3ae4724278261d2"
+    },
+    "reserved": {
+      "path": "work/parallel-main-reserved-source-module/RESULT01.json",
+      "sha256": "8a0bee7dbf150266ff63dc8094b48683b4f5dc8e5498bd056d5798ec17b49e67"
+    },
+    "cashback": {
+      "path": "work/parallel-main-cashback-v2-api/FIX-RESULT02.json",
+      "sha256": "8ace2a479bdce1bca83a4070a21c8b48f8c9657e024210f87f1d1e5c47b549af"
+    },
+    "volume": {
+      "path": "work/parallel-main-volume-routine-logs/RESULT01.json",
+      "sha256": "f88d1d02a219ff0c488be2639beed981826fc6e4dcd224722f18c81335979da2"
+    },
+    "business_runtime": {
+      "path": "work/parallel-main-business-logs-r41/RUNTIME-LOG-REVIEW03.json",
+      "sha256": "d0f4644b035e60924e3539eeb032840d2a99aed9b04f3e9bb5a497d1d3a2b676"
+    }
+  },
+  "new_case_count": 1,
+  "new_case_manifest": {
+    "path": "work/parallel-main-cashback-v2-api/CLI-MANIFEST.json",
+    "sha256": "3120e892c100a662bd0430daa25d8272c07196c16c09447162747519093eeefc",
+    "scope": "Only wrong-program ordinary-account V2 cashback input; zero-message controls add no cases."
+  },
+  "patch_sha256": "011293534915ef71705818256b685cc443275a7a9d60543e95fdaa4c2f3da871",
+  "limits": [
+    "No combined build or runtime corpus has run. Per-lane evidence does not establish combined equivalence.",
+    "Root must freeze inputs then run full18110-case corpus and strict ordinary-log oracle.",
+    "Whole-ELF identity remains unproved."
+  ]
+}

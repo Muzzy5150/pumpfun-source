@@ -1,0 +1,24 @@
+{
+  "scope": "Advance the main-only work queue after Round41 has passed all checks.",
+  "newly_matched_since_round40": [
+    {
+      "original_start": "0xd300",
+      "bytes": 448,
+      "original_body_sha256": "5a70346ef21d6c1b8ddf10b2919f6aa7884d8c9740cbfbbe2262ca57504802c2",
+      "owner": "context_finish",
+      "work": "Unattributed function: initial static triage required",
+      "source_attribution": [],
+      "status": "normalized match in verified Round41",
+      "matched_candidate_symbols": [
+        "_ZN5alloc3fmt6format17h5424e8a08f31e4d3E"
+      ]
+    }
+  ],
+  "remaining_windows": 218,
+  "assignment_counts": {
+    "context_finish": 76,
+    "build_identity": 76,
+    "claim_finish": 66
+  },
+  "goal_complete": false
+}

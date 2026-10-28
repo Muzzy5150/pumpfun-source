@@ -1,0 +1,74 @@
+{
+  "status": "verified complete main-owned creation caller+client interface delivery; not whole-ELF identity",
+  "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-create-mayhem-interface/source03",
+  "create_v2_sha256": "66f7bce55049a6e5a5998973eee7d7d43d95d5d723defc8da6ded50b0271e194",
+  "candidate_sha256": "d10c3b216ddf38d7096c51543d82a76a7199233bcf3151d099af5cab814e1f91",
+  "unstripped_sha256": "01325d9e500e5ad2c1616a260d46707f21af6da737d138dbfc0d20b10ef6cf41",
+  "incremental_counts_before": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 714,
+    "unmatched": 321
+  },
+  "counts_after": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 715,
+    "unmatched": 320
+  },
+  "incremental_deltas": {
+    "normalized_matches": {
+      "gains": [
+        "0x8a530"
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "cumulative_vs_round22": {
+    "before": 711,
+    "after": 715,
+    "gained_original_windows": [
+      "0x8a530",
+      "0x118b50",
+      "0x11a4f8",
+      "0x11ad10"
+    ],
+    "lost_original_windows": []
+  },
+  "causal_changes_from_interface01": [
+    "Public helper retains actual Context-reference ABI rather than compiler argument promotion",
+    "global_params AccountInfo clone follows token_vault, matching original observed order"
+  ],
+  "runtime": {
+    "cases": 517,
+    "diagnostic_cases": 515,
+    "suite_count": 4,
+    "errors": [],
+    "mismatches": []
+  },
+  "call_closure": {
+    "count": 51,
+    "all_matched": true,
+    "outer_signer_seed_bytes": "mint-authority, exact"
+  },
+  "scope": "Only main Pump create_v2.rs; client binding and caller only; no companion implementation or dependency changes.",
+  "all_prior_windows_retained": true,
+  "all_six_creation_contexts_and_nine_historical_leaves_retained": true,
+  "evidence_sha256": {
+    "PLAN03.json": "ed6bb5a106927fcf4d4b7bf4f791ffe23804314377e29e6d1c15162cf0b31572",
+    "CALLER-ACCOUNT-ORDER.json": "cc8fab9e7f4c3b84e58aa29e55054370fc50adb2fa7d416a49f667d1d335c474",
+    "MATCH-DELTA03.json": "5d09f8bcd8b894921ab91f9f29b9517c784dfd2b6bdebc425f0863cfa88ca98a",
+    "FULL-MATCH-SETS03.json": "d3abc0fb01da45b89644870853c0fb29c37c8d0a77fbb3999bf879b23923e71c",
+    "CALL-CLOSURE03.json": "b47a2ad7886e980b6d1c46f49e80c9f2690a775cdf98e3f746eebcc2087a5001",
+    "CALLER-CLOSURE03.json": "44208d403f816d8fb980dd91f10df0dd61204e3bccbe53e5937fdf41dbb371ad",
+    "manifest.json": "53737ffe4203cec30698521e413abbe88f67c7599c4d2ca9b1cd4292d6980256",
+    "runtime03/summary.json": "f199c56aa337daef836135186eb44a733bb729b6f1c38d5e0f839e576254c12c",
+    "build03/build-comparison.json": "a6d1a0a58a8287e60fd0bc378b24eac352a906cd8ccf2a0ce44c73d9a5e2341d",
+    "build03/caller-comparison.json": "9cca9a2461ee235b2c5702c1117378c5d0f5d355eaa224b15b7df683bc5ba084",
+    "outer-caller-from-interface01.patch": "2e3b44750dad32095b8d6723e424b7d4a9bdf221f3353f131fe069c7a1416df7"
+  }
+}

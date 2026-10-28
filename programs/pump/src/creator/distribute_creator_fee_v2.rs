@@ -12,9 +12,9 @@ pub fn execute_v2<'info>(ctx:Context<'_, '_, '_, 'info,DistributeCreatorFeesV2<'
  let eligible;
  if native{
   let rent=Rent::get()?;
-  let (transfers,minimum_distributable,_,available)=get_distribution_amounts(&rent,&a.sharing_config.shareholders,ctx.remaining_accounts,&a.creator_vault)?;
+  let (transfers,minimum_distributable,minimum_vault_balance,available)=get_distribution_amounts(&rent,&a.sharing_config.shareholders,ctx.remaining_accounts,&a.creator_vault)?;
   eligible=available>=minimum_distributable;
-  if eligible{distributed=crate::distribution::execute_native_distribution(&a.sharing_config,&a.creator_vault,&a.system_program,ctx.remaining_accounts,&transfers,ctx.bumps.creator_vault)?;}
+  if eligible{distributed=crate::distribution::execute_native_distribution(&a.sharing_config,&a.creator_vault,&a.system_program,ctx.remaining_accounts,&transfers,ctx.bumps.creator_vault)?;}else{msg!("Insufficient fees for distribution. Minimum vault balance needed: {} lamports. Use get_minimum_distributable_fee instruction to check the minimum distributable amount.",minimum_vault_balance);}
  }else{
   let data=a.creator_vault_quote_token_account.try_borrow_data()?;
   let source=anchor_spl::token_interface::TokenAccount::try_deserialize(&mut data.as_ref())?;drop(data);

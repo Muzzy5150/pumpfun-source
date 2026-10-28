@@ -1,0 +1,30 @@
+{
+  "scope": "Rebind only four approved, activated build-tool hashes; preserve every corpus definition and expectation. The initial attempt stopped at integrity preflight with no suites executed.",
+  "changes": [
+    {
+      "path": "scripts/pump_target_library_profile.py",
+      "old": "25456c533d738225f6867bc535d3272c1834ee8b5f42cffe764ad615c741bccd",
+      "new": "f997a891051ee84aec6f0bc22270425213880a4b1ef358774f015b08e0c9a605"
+    },
+    {
+      "path": "scripts/pump_build_verified.py",
+      "old": "ecd7a059c743861bc2d36c6c9e1a6c4b4fbdad037a37fadd78d2542edea7caef",
+      "new": "d8a63fb5ed15db3525a93ff98203e9f6821b3e1b44e689ca2db3e576acdc4e5c"
+    },
+    {
+      "path": "scripts/pump_text_layout.py",
+      "old": "fa5ddf72272e847d23f9481175b64ab464425eaed1c1fdd0d747f2cfa1193d25",
+      "new": "a8f57b4edb31237010a32371e8d6893b684eeedae75d642b2c2985b6d0bcefc9"
+    },
+    {
+      "path": "scripts/pump_data_order.py",
+      "old": "7c02897baacca2db0d0e47919300d46a45398384c6fea2d2f3a79f02750d4ef2",
+      "new": "275bd1ded0f949aee08901e4a82fe209417fe3477aadac31a60f68a710de12ea"
+    }
+  ],
+  "old_manifest_sha256": "91052489990c46add0ec4380ecc83de3ac20a7e004e01d6f5119eae8e2454686",
+  "new_manifest_sha256": "765256f74f488f1653e25377a503af406efbb7e4e1ab966931264ef1e6b34dc1",
+  "activation_review_sha256": "c298b3291c527286a30000b3377bf2dcee6782e2946939032ed8864e1c7242ae",
+  "prior_failed_log_sha256": "ed0cda053c0b6313ebfa91d9188b9c8ff813f8b3eebd31f0ee940864adfde9f3",
+  "same_candidate_sha256": "4334577e9fb2ca18ebf95370c7fdd92ee009859978f600bf4eb9d6a46cb6ecd0"
+}

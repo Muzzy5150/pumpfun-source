@@ -1,0 +1,634 @@
+{
+  "cases": 64,
+  "no_zero_amount_recipient_cpis": true,
+  "protocol_before_buyback": true,
+  "all_waived_recipient_cpis_absent": true,
+  "rows": [
+    {
+      "case": "buy_v2_False_False_0",
+      "waived": false,
+      "basis_points": 0,
+      "payments": [
+        [
+          "protocol",
+          133
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_False_False_1",
+      "waived": false,
+      "basis_points": 1,
+      "payments": [
+        [
+          "protocol",
+          133
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_False_False_9999",
+      "waived": false,
+      "basis_points": 9999,
+      "payments": [
+        [
+          "protocol",
+          1
+        ],
+        [
+          "buyback",
+          132
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_False_False_10000",
+      "waived": false,
+      "basis_points": 10000,
+      "payments": [
+        [
+          "buyback",
+          133
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_False_False_10001",
+      "waived": false,
+      "basis_points": 10001,
+      "payments": [
+        [
+          "buyback",
+          133
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_False_False_15000",
+      "waived": false,
+      "basis_points": 15000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_False_False_20000",
+      "waived": false,
+      "basis_points": 20000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_False_False_18446744073709551615",
+      "waived": false,
+      "basis_points": 18446744073709551615,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_False_True_0",
+      "waived": true,
+      "basis_points": 0,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_False_True_1",
+      "waived": true,
+      "basis_points": 1,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_False_True_9999",
+      "waived": true,
+      "basis_points": 9999,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_False_True_10000",
+      "waived": true,
+      "basis_points": 10000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_False_True_10001",
+      "waived": true,
+      "basis_points": 10001,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_False_True_15000",
+      "waived": true,
+      "basis_points": 15000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_False_True_20000",
+      "waived": true,
+      "basis_points": 20000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_False_True_18446744073709551615",
+      "waived": true,
+      "basis_points": 18446744073709551615,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_True_False_0",
+      "waived": false,
+      "basis_points": 0,
+      "payments": [
+        [
+          "protocol",
+          133
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_True_False_1",
+      "waived": false,
+      "basis_points": 1,
+      "payments": [
+        [
+          "protocol",
+          133
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_True_False_9999",
+      "waived": false,
+      "basis_points": 9999,
+      "payments": [
+        [
+          "protocol",
+          1
+        ],
+        [
+          "buyback",
+          132
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_True_False_10000",
+      "waived": false,
+      "basis_points": 10000,
+      "payments": [
+        [
+          "buyback",
+          133
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_True_False_10001",
+      "waived": false,
+      "basis_points": 10001,
+      "payments": [
+        [
+          "buyback",
+          133
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_True_False_15000",
+      "waived": false,
+      "basis_points": 15000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_True_False_20000",
+      "waived": false,
+      "basis_points": 20000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_True_False_18446744073709551615",
+      "waived": false,
+      "basis_points": 18446744073709551615,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_True_True_0",
+      "waived": true,
+      "basis_points": 0,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_True_True_1",
+      "waived": true,
+      "basis_points": 1,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_True_True_9999",
+      "waived": true,
+      "basis_points": 9999,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_True_True_10000",
+      "waived": true,
+      "basis_points": 10000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_True_True_10001",
+      "waived": true,
+      "basis_points": 10001,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_True_True_15000",
+      "waived": true,
+      "basis_points": 15000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_True_True_20000",
+      "waived": true,
+      "basis_points": 20000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_v2_True_True_18446744073709551615",
+      "waived": true,
+      "basis_points": 18446744073709551615,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_False_0",
+      "waived": false,
+      "basis_points": 0,
+      "payments": [
+        [
+          "protocol",
+          4691359
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_False_1",
+      "waived": false,
+      "basis_points": 1,
+      "payments": [
+        [
+          "protocol",
+          4690890
+        ],
+        [
+          "buyback",
+          469
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_False_9999",
+      "waived": false,
+      "basis_points": 9999,
+      "payments": [
+        [
+          "protocol",
+          470
+        ],
+        [
+          "buyback",
+          4690889
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_False_10000",
+      "waived": false,
+      "basis_points": 10000,
+      "payments": [
+        [
+          "buyback",
+          4691359
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_False_10001",
+      "waived": false,
+      "basis_points": 10001,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_False_15000",
+      "waived": false,
+      "basis_points": 15000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_False_20000",
+      "waived": false,
+      "basis_points": 20000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_False_18446744073709551615",
+      "waived": false,
+      "basis_points": 18446744073709551615,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_True_0",
+      "waived": true,
+      "basis_points": 0,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_True_1",
+      "waived": true,
+      "basis_points": 1,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_True_9999",
+      "waived": true,
+      "basis_points": 9999,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_True_10000",
+      "waived": true,
+      "basis_points": 10000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_True_10001",
+      "waived": true,
+      "basis_points": 10001,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_True_15000",
+      "waived": true,
+      "basis_points": 15000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_True_20000",
+      "waived": true,
+      "basis_points": 20000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_False_True_18446744073709551615",
+      "waived": true,
+      "basis_points": 18446744073709551615,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_False_0",
+      "waived": false,
+      "basis_points": 0,
+      "payments": [
+        [
+          "protocol",
+          4691359
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_False_1",
+      "waived": false,
+      "basis_points": 1,
+      "payments": [
+        [
+          "protocol",
+          4690890
+        ],
+        [
+          "buyback",
+          469
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_False_9999",
+      "waived": false,
+      "basis_points": 9999,
+      "payments": [
+        [
+          "protocol",
+          470
+        ],
+        [
+          "buyback",
+          4690889
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_False_10000",
+      "waived": false,
+      "basis_points": 10000,
+      "payments": [
+        [
+          "buyback",
+          4691359
+        ]
+      ],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_False_10001",
+      "waived": false,
+      "basis_points": 10001,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_False_15000",
+      "waived": false,
+      "basis_points": 15000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_False_20000",
+      "waived": false,
+      "basis_points": 20000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_False_18446744073709551615",
+      "waived": false,
+      "basis_points": 18446744073709551615,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_True_0",
+      "waived": true,
+      "basis_points": 0,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_True_1",
+      "waived": true,
+      "basis_points": 1,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_True_9999",
+      "waived": true,
+      "basis_points": 9999,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_True_10000",
+      "waived": true,
+      "basis_points": 10000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_True_10001",
+      "waived": true,
+      "basis_points": 10001,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_True_15000",
+      "waived": true,
+      "basis_points": 15000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_True_20000",
+      "waived": true,
+      "basis_points": 20000,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_True_True_18446744073709551615",
+      "waived": true,
+      "basis_points": 18446744073709551615,
+      "payments": [],
+      "same_candidate_payments": true,
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+#!/usr/bin/env python3
+"""Build-bound parallel execution of the unchanged 44-suite main-Pump corpus."""
+import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import gzip
+import importlib.util
+import json
+import shutil
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
+import time
+import traceback
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / 'scripts'))
+from pump_diagnostic_audit import audit
+spec = importlib.util.spec_from_file_location('published_pump_validation', Path(__file__).with_name('validate_combined.py'))
+base = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(base)
+sha = base.sha
+
+
+def validate_result(name, result, candidate, original):
+    if name == 'quote_control':
+        bound = result['bound_inputs_sha256']
+        assert bound[str(candidate.relative_to(ROOT))] == sha(candidate)
+        assert bound[str(original.relative_to(ROOT))] == sha(original)
+        count = result['cases']
+        assert count == len(result['results'])
+        assert all(row['matches'] and not row['different_fields'] for row in result['results'])
+    elif name == 'multi_hop_curve_partial':
+        assert result['candidate_sha256'] == sha(candidate)
+        assert result['original_pump_sha256'] == sha(original)
+        assert result['passed'] == result['case_count'] == len(result['cases']) == 56
+        assert all(not row['mismatches'] for row in result['cases'])
+        count = result['case_count']
+    elif name == 'tokenkeg_two_curve':
+        count = base.validate_two_curve(result, sha(candidate), sha(original))
+    else:
+        assert result.get('original_sha256', result.get('provenance', {}).get(str(original))) == sha(original)
+        assert result.get('candidate_sha256', result.get('provenance', {}).get(str(candidate))) == sha(candidate)
+        count = result['case_count'] if 'case_count' in result else len(result['cases'])
+    assert count == base.EXPECTED_CASES[name], (name, count, base.EXPECTED_CASES[name])
+    assert not result.get('mismatches', result.get('failures', [])), name
+    return count
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--candidate', type=Path, required=True)
+    parser.add_argument('--source-directory', type=Path, required=True)
+    parser.add_argument('--build-comparison', type=Path, required=True)
+    parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--workers', type=int, choices=range(1, 5), default=2)
+    parser.add_argument('--validate-existing', type=Path)
+    parser.add_argument('--captured-loader', action='store_true')
+    args = parser.parse_args()
+    args.output = args.output.resolve()
+    args.build_comparison = args.build_comparison.resolve()
+    args.source_directory = args.source_directory.resolve()
+    candidate = args.candidate.resolve()
+    original = ROOT / 'evidence/original/pump/deployed.so'
+    record = json.loads(args.build_comparison.read_text())
+    assert record['returncode'] == 0 and record['source_unchanged']
+    assert record['comparison']['candidate_sha256'] == sha(candidate)
+    sources = record['source_sha256']
+    assert all(sha(ROOT / k) == v for k, v in sources.items())
+    bound_files = {str(p): sha(p) for p in [candidate, original, Path(__file__), Path(base.__file__), ROOT / 'scripts/pump_diagnostic_audit.py', args.build_comparison]}
+    loader_wrapper = ROOT / 'work/parallel-main-loader-optimized/pump_with_captured_loader.py'
+    loader_inputs = [loader_wrapper, loader_wrapper.with_name('pump_captured_loader.py'), ROOT / 'evidence/original/pump/capture.json', ROOT / 'evidence/original/pump/program-account.bin', ROOT / 'evidence/original/pump/programdata-account.bin']
+    if args.captured_loader:
+        bound_files.update({str(p): sha(p) for p in loader_inputs})
+    loader_receipts = {}
+    scripts = {name: ROOT / filename if filename.startswith('repro/') else ROOT / 'scripts' / filename for name, filename in base.SUITES}
+    script_hashes = {name: sha(path) for name, path in scripts.items()}
+    suites, counts, elapsed = {}, {}, {}
+    # Start larger bounded corpora first to reduce idle workers near the end.
+    ordered_suites = sorted(base.SUITES, key=lambda item: (-base.EXPECTED_CASES[item[0]], item[0]))
+    retained = args.output.parent / (args.output.name + '.suites')
+    retained.mkdir(parents=True, exist_ok=True)
+
+    previous_root = ROOT/'work/parallel-main-integration/round21-captured-full.json.gz.suites'
+    previous_failure = ROOT/'work/parallel-main-integration/round21-captured-full.json.gz.failed.json'
+    old = json.loads(previous_failure.read_text())
+    assert old['candidate_sha256'] == sha(candidate)
+    assert all(sha(Path(path)) == digest for path,digest in old['bound_files_sha256'].items())
+    recovered = set(old['completed_suites'])
+    bound_files.update(old['bound_files_sha256'])
+    bound_files[str(previous_failure)] = sha(previous_failure)
+    for name in recovered:
+        for suffix in ['.json.gz','.loader.json','.log']:
+            path=previous_root/(name+suffix);bound_files[str(path)]=sha(path)
+
+    def check_bound_files():
+        assert all(sha(Path(p)) == digest for p, digest in bound_files.items())
+        assert all(sha(ROOT / k) == v for k, v in sources.items())
+        assert all(sha(scripts[name]) == digest for name, digest in script_hashes.items())
+
+    def run_suite(name):
+        started = time.monotonic()
+        script = scripts[name]
+        if name in recovered:
+            old_result=previous_root/(name+'.json.gz')
+            result=json.loads(gzip.decompress(old_result.read_bytes()))
+            primary=result.get('script_sha256') or result.get('provenance',{}).get(str(script)) or result.get('inputs_sha256',{}).get(str(script.relative_to(ROOT)))
+            assert primary == script_hashes[name], ('reused script binding',name)
+            for mapping_name in ['provenance','inputs_sha256','input_sha256']:
+                for path,digest in result.get(mapping_name,{}).items():
+                    actual=Path(path);actual=actual if actual.is_absolute() else ROOT/actual
+                    assert sha(actual)==digest,(name,path)
+            count=validate_result(name,result,candidate,original)
+            for suffix in ['.json.gz','.loader.json','.log']:
+                shutil.copy2(previous_root/(name+suffix),retained/(name+suffix))
+            receipt=retained/(name+'.loader.json');loaded=json.loads(receipt.read_text())
+            assert {row['elf_sha256'] for row in loaded['loads']} == {sha(candidate),sha(original)}
+            assert all(row['program_bytes']==36 and row['program_owner']=='BPFLoaderUpgradeab1e11111111111111111111111' and row['programdata_bytes']==10485760 and row['elf_prefix_unchanged'] and row['zero_allocation_tail'] for row in loaded['loads'])
+            assert all(sha(Path(path))==digest for path,digest in loaded['input_sha256'].items())
+            loader_receipts[name]={'path':str(receipt.relative_to(ROOT)),'sha256':sha(receipt),'load_count':len(loaded['loads']),'reused_from':str(old_result.relative_to(ROOT))}
+            check_bound_files();elapsed[name]=0
+            return name,count,result
+        with tempfile.TemporaryDirectory(prefix='pump-suite-' + name + '-') as tmp:
+            output = Path(tmp) / 'result.json'
+            command = [sys.executable, str(script), '--candidate', str(candidate), '--output', str(output)]
+            loader_receipt = retained / (name + '.loader.json')
+            if args.captured_loader:
+                command = [sys.executable, str(loader_wrapper), '--receipt', str(loader_receipt), *command[1:]]
+            source = script.read_text()
+            if "'--source-directory'" in source or '"--source-directory"' in source:
+                command += ['--source-directory', str(args.source_directory.resolve())]
+            completed = subprocess.run(command, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+            (retained / (name + '.log')).write_text(completed.stdout)
+            completed.check_returncode()
+            raw = output.read_bytes()
+            result = json.loads(gzip.decompress(raw) if raw.startswith(b'\x1f\x8b') else raw)
+        (retained / (name + '.json.gz')).write_bytes(gzip.compress(json.dumps(result, separators=(',', ':')).encode(), mtime=0))
+        count = validate_result(name, result, candidate, original)
+        if args.captured_loader:
+            loaded = json.loads(loader_receipt.read_text())
+            assert loaded['loads'], name
+            expected = {sha(candidate), sha(original)}
+            assert {row['elf_sha256'] for row in loaded['loads']} == expected, name
+            assert all(row['program_bytes'] == 36 and row['program_owner'] == 'BPFLoaderUpgradeab1e11111111111111111111111' and row['programdata_bytes'] == 10485760 and row['elf_prefix_unchanged'] and row['zero_allocation_tail'] for row in loaded['loads']), name
+            assert all(sha(Path(path)) == digest for path, digest in loaded['input_sha256'].items())
+            loader_receipts[name] = {'path': str(loader_receipt.relative_to(ROOT)), 'sha256': sha(loader_receipt), 'load_count': len(loaded['loads'])}
+        check_bound_files()
+        result['case_count'] = count
+        (retained / (name + '.json.gz')).write_bytes(gzip.compress(json.dumps(result, separators=(',', ':')).encode(), mtime=0))
+        elapsed[name] = time.monotonic() - started
+        return name, count, result
+
+    if args.validate_existing:
+        raw = args.validate_existing.read_bytes()
+        previous = json.loads(gzip.decompress(raw) if raw.startswith(b'\x1f\x8b') else raw)
+        assert set(previous['suites']) == set(scripts)
+        assert previous.get('loader_profile', 'legacy-raw') == ('captured-upgradeable' if args.captured_loader else 'legacy-raw')
+        expected_previous_scripts = {filename: script_hashes[name] for name, filename in base.SUITES}
+        assert previous['script_sha256'] == expected_previous_scripts, 'saved report harness hashes differ'
+        assert previous['compiled_source_sha256'] == sources, 'saved report compiled-source binding differs'
+        bound_files[str(args.validate_existing.resolve())] = sha(args.validate_existing)
+        for name, result in previous['suites'].items():
+            counts[name] = validate_result(name, result, candidate, original)
+            suites[name] = result
+    else:
+        with ThreadPoolExecutor(max_workers=args.workers) as executor:
+            jobs = {executor.submit(run_suite, name): name for name, _ in ordered_suites}
+            errors = []
+            for future in as_completed(jobs):
+                if future.cancelled():
+                    continue
+                try:
+                    name, count, result = future.result()
+                except Exception as exc:
+                    errors.append({'suite': jobs[future], 'error': repr(exc), 'traceback': traceback.format_exc()})
+                    print(json.dumps({'failed': jobs[future], 'error': repr(exc)}), flush=True)
+                    for pending in jobs:
+                        pending.cancel()
+                    continue
+                suites[name], counts[name] = result, count
+                print(json.dumps({'completed': name, 'cases': count, 'suite_count': len(suites)}), flush=True)
+            if errors:
+                args.output.with_name(args.output.name + '.failed.json').write_text(json.dumps({'complete': False, 'candidate_sha256': sha(candidate), 'completed_suites': list(suites), 'errors': errors, 'bound_files_sha256': bound_files}, indent=2) + '\n')
+                raise RuntimeError('suite failure; completed receipts and logs retained')
+    check_bound_files()
+    assert len(suites) == 44 and sum(counts.values()) == 10468
+    diagnostics = audit(suites)
+    report = {'scope': __doc__ + ' Per-suite limits still apply; no whole-ELF identity claim.',
+              'candidate_sha256': sha(candidate), 'original_sha256': sha(original),
+              'bound_files_sha256': bound_files, 'compiled_source_sha256': sources,
+              'source_directory': str(args.source_directory.resolve()),
+              'script_sha256': {str(scripts[name].relative_to(ROOT)): digest for name, digest in script_hashes.items()},
+              'workers': 0 if args.validate_existing else args.workers, 'reused_completed_suites':sorted(recovered),
+              'suite_schedule': [name for name, _ in ordered_suites], 'suite_elapsed_seconds': elapsed,
+              'loader_profile': 'captured-upgradeable' if args.captured_loader else 'legacy-raw',
+              'loader_receipts': loader_receipts,
+              'validation_only_source_sha256': sha(args.validate_existing) if args.validate_existing else None,
+              'case_count': sum(counts.values()), 'diagnostics': diagnostics,
+              'mismatches': diagnostics['mismatches'], 'suites': suites}
+    args.output.write_bytes(gzip.compress(json.dumps(report, separators=(',', ':')).encode(), mtime=0))
+    print(json.dumps({'case_count': report['case_count'], 'suites': len(suites), 'diagnostic_log_cases': diagnostics['log_bearing_cases'], 'diagnostic_mismatches': len(diagnostics['mismatches'])}))
+    return bool(diagnostics['mismatches'])
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

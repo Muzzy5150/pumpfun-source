@@ -1,0 +1,107 @@
+{
+  "start": 480008,
+  "end": 485928,
+  "bytes": 5920,
+  "original_operands": [
+    {
+      "offset": 40,
+      "kind": "direct-call",
+      "target": 1706296
+    },
+    {
+      "offset": 240,
+      "kind": "direct-call",
+      "target": 507864
+    },
+    {
+      "offset": 480,
+      "kind": "direct-call",
+      "target": 1686456
+    },
+    {
+      "offset": 736,
+      "kind": "elf-pointer",
+      "value": 1798199,
+      "sections": [
+        ".rodata"
+      ]
+    },
+    {
+      "offset": 2736,
+      "kind": "direct-call",
+      "target": 1572040
+    },
+    {
+      "offset": 2952,
+      "kind": "elf-pointer",
+      "value": 1826016,
+      "sections": [
+        ".data.rel.ro"
+      ]
+    },
+    {
+      "offset": 2968,
+      "kind": "direct-call",
+      "target": 1754368
+    },
+    {
+      "offset": 2976,
+      "kind": "elf-pointer",
+      "value": 1798181,
+      "sections": [
+        ".rodata"
+      ]
+    },
+    {
+      "offset": 3576,
+      "kind": "direct-call",
+      "target": 1749400
+    },
+    {
+      "offset": 3888,
+      "kind": "direct-call",
+      "target": 1705208
+    },
+    {
+      "offset": 4984,
+      "kind": "direct-call",
+      "target": 1749424
+    },
+    {
+      "offset": 5160,
+      "kind": "elf-pointer",
+      "value": 1800671,
+      "sections": [
+        ".rodata"
+      ]
+    },
+    {
+      "offset": 5184,
+      "kind": "direct-call",
+      "target": 1734880
+    },
+    {
+      "offset": 5344,
+      "kind": "elf-pointer",
+      "value": 1796103,
+      "sections": [
+        ".rodata"
+      ]
+    },
+    {
+      "offset": 5496,
+      "kind": "direct-call",
+      "target": 1705264
+    },
+    {
+      "offset": 5720,
+      "kind": "direct-call",
+      "target": 1686456
+    },
+    {
+      "offset": 5912,
+      "kind": "direct-call",
+      "target": 1749400
+    }
+  ]
+}

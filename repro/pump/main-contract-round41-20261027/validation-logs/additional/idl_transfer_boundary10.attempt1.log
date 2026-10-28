@@ -1,0 +1,11 @@
+system-amount18446744073709551615-writeFalse-length0 TransactionErrorInstructionError((0, Fieldless(PrivilegeEscalation))) TransactionErrorInstructionError((0, Fieldless(PrivilegeEscalation))) []
+system-amount18446744073709551615-writeFalse-length1 TransactionErrorInstructionError((0, Fieldless(PrivilegeEscalation))) TransactionErrorInstructionError((0, Fieldless(PrivilegeEscalation))) []
+system-amount18446744073709551615-writeTrue-length0 TransactionErrorInstructionError((0, Fieldless(ArithmeticOverflow))) TransactionErrorInstructionError((0, Fieldless(ArithmeticOverflow))) []
+system-amount18446744073709551615-writeTrue-length1 TransactionErrorInstructionError((0, Fieldless(InvalidArgument))) TransactionErrorInstructionError((0, Fieldless(InvalidArgument))) []
+recipient-overflow-amount0-authority18446744073709551614 None None []
+recipient-overflow-amount0-authority18446744073709551615 None None []
+recipient-overflow-amount1-authority18446744073709551614 None None []
+recipient-overflow-amount1-authority18446744073709551615 TransactionErrorInstructionError((0, Fieldless(ArithmeticOverflow))) TransactionErrorInstructionError((0, Fieldless(ArithmeticOverflow))) []
+recipient-overflow-amount2-authority18446744073709551614 TransactionErrorInstructionError((0, Fieldless(ArithmeticOverflow))) TransactionErrorInstructionError((0, Fieldless(ArithmeticOverflow))) []
+recipient-overflow-amount2-authority18446744073709551615 TransactionErrorInstructionError((0, Fieldless(ArithmeticOverflow))) TransactionErrorInstructionError((0, Fieldless(ArithmeticOverflow))) []
+{'cases': 10, 'mismatches': 0, 'diagnostic_mismatches': 0}

@@ -1,0 +1,23 @@
+{
+  "scope": "Final private builder revision; no shared edits.",
+  "proposal_patch_sha256": "7f76bac374b0279bc3a009738f8422191ecbac9c31376eecc92028bdf78fbe50",
+  "files": {
+    "scripts-v2/analyze.py": "dd7fb38d795d4dd72a25aab0d65c2223d9f6f75d8b3ecb0de1d87d6e102910ac",
+    "scripts-v2/build_source_manifest.py": "bbcf5081f99cc911af108216dee430ac15721c16159406490beb7671e4b14a8b",
+    "scripts-v2/compare.py": "9e33a6c239927728b96bb1305bffad0e144a701e9ac7723928bb2f8d49f63e67",
+    "scripts-v2/pump_build_verified.py": "34b1093d1744f2ed1aa4c1767db4def4318b0c57727d922ef8282291cf157e18",
+    "scripts-v2/pump_dependency_cache.py": "c776c977e30ea9a21035919e0ec2339d858e57cf85a5a2ddbd1d499a561572c1",
+    "scripts-v2/pump_text_layout.py": "1719933554c4625887b9b057cb01706b7029bb4e965b50a297dc8a98231fe7ad",
+    "scripts-v2/pump_text_layout_default.ld": "5e8370b9380f55411d827721e2e43c8cfd1eac71d1383e20b938397bc0bd82c3",
+    "scripts-v2/pump_text_layout_linker.py": "b5a3dba004827c2ea355be1147901737bf4b7f7b4132ffa58c00a305de5dea00",
+    "scripts-v2/pump_text_layout_rustc.py": "c4e84469d80d668ea85f53e9a203d7aaa5e8d186439a3eb7e1c030f8c74c5873",
+    "layout_tools/correspond.py": "adda195faff055ade12368d4c4fb106205a90f6c52b644cfe9a3d00fc15174f4",
+    "layout_tools/default.ld": "5e8370b9380f55411d827721e2e43c8cfd1eac71d1383e20b938397bc0bd82c3",
+    "layout_tools/derive_layout.py": "75ab57b2820061aec38dcd406da95080667cf2444b3abb106ed1253506c64d93",
+    "layout_tools/layout_script.py": "74671c08cc3293929986c82cde35a1a8503894a4066a20de6da2c854d7048aa3",
+    "layout_tools/mapfile.py": "3cf995a598ec9227bc7cdf0360f32d79bf9a84e9d090fe61050156afe73e51f4",
+    "layout_tools/measure.py": "5a1aeb4cbbed00f92e223acdc187f88e68a99e2f0cd210dd120a3da1317237b4",
+    "layout_tools/translation.py": "1577de658dc697b92a2bc290619799d17a638c99595fdc2db06701abb9a4c91e"
+  },
+  "entrypoint_sha256": "c130d617616598ab15f883420f29f568933814e241dd0e42570cc4de59b461ba"
+}

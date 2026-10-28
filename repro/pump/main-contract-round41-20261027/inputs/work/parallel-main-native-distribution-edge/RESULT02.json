@@ -1,0 +1,71 @@
+{
+  "status": "Exact native signed-System CPI wrapper restored by its genuine zero-capable distribution caller",
+  "source_files": {
+    "src/creator/collect_creator_fee.rs": {
+      "before": "7bc58ae9146555e4ae6fb22bbed902082de1e99db8f94498a657ed013d8a7744",
+      "after": "291d885d92ac869992b3deddc1b96b7fde159e95bbcc54f9166895abe5ed34cc"
+    },
+    "src/creator/admin_cto.rs": {
+      "before": "b9390f0f0ed1f67e7bd9746357f91e80b16c98ae2a84a6494ad86a6768dfeaf4",
+      "after": "c40409a0c1eb86a2f8010000a812ad4c591b1bf3ea1200a17d98c233cb5948ad"
+    },
+    "src/distribution.rs": {
+      "before": "4b4b11015f896130a5dccfec8344938b64e4fb50446e988a920e42890647c0b8",
+      "after": "4d3c5f09dc68668a5af91b20b1d8470d29176e95b8a14694ca4cc38a58dd2ca7"
+    }
+  },
+  "patch_sha256": "75720daa8e25bbcebca05424d0769dd5127be9203a935e46b5d429f3be714e7b",
+  "candidate_sha256": "911424249ae16ff82e2ebd480ddbf61a8b5bfdb2c0b0b3133ee640009f4b6780",
+  "unstripped_sha256": "014d7c9d9fafa756d7a0baa622d0cc0d137438d1c45caeace71458938d8cd2b2",
+  "build_receipt_sha256": "aff81cd8e7a41fe9c1e107bd571b8449d5b915f496eac4c26055cc14261adeed",
+  "baseline": "Frozen R36 source and identity inventory",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 739,
+    "unmatched": 296
+  },
+  "delta_vs_round36": {
+    "normalized_matches": {
+      "gains": [
+        "0x8d5c8"
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "native_wrapper": {
+    "original": "0x8d5c8",
+    "bytes": 1232,
+    "normalized_equal": true,
+    "actual_callers": 3,
+    "standard_CPI_callee": "0x19e090/800B normalized exact",
+    "zero_guard_retained": true
+  },
+  "native_executor": {
+    "original": "0x33c50",
+    "original_bytes": 2312,
+    "candidate_bytes": 1688,
+    "normalized_equal": false,
+    "actual_callers": 2
+  },
+  "runtime": {
+    "existing_cases": 1556,
+    "focused_cases": 20,
+    "primary_transactions": 3152,
+    "primary_signatures": 4728,
+    "diagnostic_mismatches": 0,
+    "invocation_order_mismatches": 0,
+    "new_inputs": 0
+  },
+  "prior_cto18_dedup_vs_R35": "All18remain distinct, no exact or transaction-only ambiguity; no new inputs added by this control.",
+  "limits": [
+    "The native executor remains1688Bvs2312B and is not exact.",
+    "The full original ELF remains different.",
+    "No forced seed length, broad type search, padding, dummy callers or retention attribute was added to the shared native executor.",
+    "The current source is a private R36 successor; V2 native-loop hunk must be transplanted if the separate physical V2-file split is selected."
+  ]
+}

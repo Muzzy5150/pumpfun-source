@@ -1,0 +1,2845 @@
+{
+  "scope": "Decode candidate Rust source-location objects through captured ELF relocations.\n\nShape recognition and paired normalized bodies are triage evidence, not proof of object identity.\n",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "candidate_sha256": "8f8db4faaa749deaf3821a192e30eb345f79b3b472344e6df6e26fa9b916da5f",
+  "analysis_sha256": "9ffc4a06c884615207839567445c6f34d44942d233af0616b9b5c27c7001b07e",
+  "counts": {
+    "shape_recognized_pairs": 108,
+    "same_filename": 108,
+    "same_filename_line_column": 85
+  },
+  "pairs": [
+    {
+      "original_address": "0x1bd720",
+      "candidate_address": "0x1c0ee8",
+      "original": {
+        "file": "/home/runner/work/platform-tools/platform-tools/out/rust/library/alloc/src/vec/spec_from_iter_nested.rs",
+        "line": 59,
+        "column": 18,
+        "length": 103,
+        "pointer": "0x1b5a01"
+      },
+      "candidate": {
+        "file": "/home/runner/work/platform-tools/platform-tools/out/rust/library/alloc/src/vec/spec_from_iter_nested.rs",
+        "line": 59,
+        "column": 18,
+        "length": 103,
+        "pointer": "0x1b91c1"
+      },
+      "uses": [
+        {
+          "original_function": "0x12ae8",
+          "candidate_function": "0x12838",
+          "offset": 1056
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bd778",
+      "candidate_address": "0x1c0f40",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 168,
+        "column": 49,
+        "length": 10,
+        "pointer": "0x1b5f70"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 168,
+        "column": 49,
+        "length": 10,
+        "pointer": "0x1b9784"
+      },
+      "uses": [
+        {
+          "original_function": "0x12850",
+          "candidate_function": "0x125a0",
+          "offset": 640
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bd808",
+      "candidate_address": "0x1c0fd0",
+      "original": {
+        "file": "src/de/mod.rs",
+        "line": 613,
+        "column": 50,
+        "length": 13,
+        "pointer": "0x1b5f7a"
+      },
+      "candidate": {
+        "file": "src/de/mod.rs",
+        "line": 613,
+        "column": 50,
+        "length": 13,
+        "pointer": "0x1b978e"
+      },
+      "uses": [
+        {
+          "original_function": "0x101448",
+          "candidate_function": "0xd8200",
+          "offset": 1592
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bd888",
+      "candidate_address": "0x1c1050",
+      "original": {
+        "file": "/home/runner/work/platform-tools/platform-tools/out/rust/library/alloc/src/string.rs",
+        "line": 2559,
+        "column": 14,
+        "length": 84,
+        "pointer": "0x1b5fdb"
+      },
+      "candidate": {
+        "file": "/home/runner/work/platform-tools/platform-tools/out/rust/library/alloc/src/string.rs",
+        "line": 2559,
+        "column": 14,
+        "length": 84,
+        "pointer": "0x1b97ef"
+      },
+      "uses": [
+        {
+          "original_function": "0x340",
+          "candidate_function": "0x340",
+          "offset": 272
+        },
+        {
+          "original_function": "0x26b0",
+          "candidate_function": "0x26b0",
+          "offset": 248
+        },
+        {
+          "original_function": "0x2930",
+          "candidate_function": "0x2930",
+          "offset": 256
+        },
+        {
+          "original_function": "0xf858",
+          "candidate_function": "0xf5a8",
+          "offset": 400
+        },
+        {
+          "original_function": "0x68918",
+          "candidate_function": "0x4f6b8",
+          "offset": 440
+        },
+        {
+          "original_function": "0x69978",
+          "candidate_function": "0x4f978",
+          "offset": 952
+        },
+        {
+          "original_function": "0x69f28",
+          "candidate_function": "0x4ff28",
+          "offset": 384
+        },
+        {
+          "original_function": "0xe4348",
+          "candidate_function": "0xbb100",
+          "offset": 312
+        },
+        {
+          "original_function": "0x15dc90",
+          "candidate_function": "0x140f80",
+          "offset": 272
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bd8c0",
+      "candidate_address": "0x1c1088",
+      "original": {
+        "file": "src/de/mod.rs",
+        "line": 161,
+        "column": 54,
+        "length": 13,
+        "pointer": "0x1b5f7a"
+      },
+      "candidate": {
+        "file": "src/de/mod.rs",
+        "line": 161,
+        "column": 54,
+        "length": 13,
+        "pointer": "0x1b978e"
+      },
+      "uses": [
+        {
+          "original_function": "0x11758",
+          "candidate_function": "0x114a8",
+          "offset": 912
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bd8d8",
+      "candidate_address": "0x1c10a0",
+      "original": {
+        "file": "src/de/mod.rs",
+        "line": 169,
+        "column": 21,
+        "length": 13,
+        "pointer": "0x1b5f7a"
+      },
+      "candidate": {
+        "file": "src/de/mod.rs",
+        "line": 169,
+        "column": 21,
+        "length": 13,
+        "pointer": "0x1b978e"
+      },
+      "uses": [
+        {
+          "original_function": "0x11758",
+          "candidate_function": "0x114a8",
+          "offset": 2080
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bd900",
+      "candidate_address": "0x1c10c8",
+      "original": {
+        "file": "/home/runner/work/platform-tools/platform-tools/out/rust/library/alloc/src/collections/btree/navigate.rs",
+        "line": 601,
+        "column": 48,
+        "length": 104,
+        "pointer": "0x1b6070"
+      },
+      "candidate": {
+        "file": "/home/runner/work/platform-tools/platform-tools/out/rust/library/alloc/src/collections/btree/navigate.rs",
+        "line": 601,
+        "column": 48,
+        "length": 104,
+        "pointer": "0x1b9884"
+      },
+      "uses": [
+        {
+          "original_function": "0xc4b0",
+          "candidate_function": "0xc200",
+          "offset": 440
+        },
+        {
+          "original_function": "0x11d950",
+          "candidate_function": "0xf4708",
+          "offset": 5544
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bd918",
+      "candidate_address": "0x1c10e0",
+      "original": {
+        "file": "/home/runner/work/platform-tools/platform-tools/out/rust/library/alloc/src/vec/mod.rs",
+        "line": 3112,
+        "column": 13,
+        "length": 85,
+        "pointer": "0x1b60d8"
+      },
+      "candidate": {
+        "file": "/home/runner/work/platform-tools/platform-tools/out/rust/library/alloc/src/vec/mod.rs",
+        "line": 3112,
+        "column": 13,
+        "length": 85,
+        "pointer": "0x1b98ec"
+      },
+      "uses": [
+        {
+          "original_function": "0x12ae8",
+          "candidate_function": "0x12838",
+          "offset": 1152
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bd930",
+      "candidate_address": "0x1c10f8",
+      "original": {
+        "file": "src/de/mod.rs",
+        "line": 637,
+        "column": 21,
+        "length": 13,
+        "pointer": "0x1b5f7a"
+      },
+      "candidate": {
+        "file": "src/de/mod.rs",
+        "line": 637,
+        "column": 21,
+        "length": 13,
+        "pointer": "0x1b978e"
+      },
+      "uses": [
+        {
+          "original_function": "0x101448",
+          "candidate_function": "0xd8200",
+          "offset": 1616
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bdb18",
+      "candidate_address": "0x1c1688",
+      "original": {
+        "file": "programs/pump/src/creator/set_creator.rs",
+        "line": 63,
+        "column": 31,
+        "length": 40,
+        "pointer": "0x1b6c9b"
+      },
+      "candidate": {
+        "file": "programs/pump/src/creator/set_creator.rs",
+        "line": 3,
+        "column": 313,
+        "length": 40,
+        "pointer": "0x1ba6fd"
+      },
+      "uses": [
+        {
+          "original_function": "0x38fc0",
+          "candidate_function": "0x2bc60",
+          "offset": 664
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bdb30",
+      "candidate_address": "0x1c16a0",
+      "original": {
+        "file": "programs/pump/src/creator/set_metaplex_creator.rs",
+        "line": 43,
+        "column": 31,
+        "length": 49,
+        "pointer": "0x1b6d01"
+      },
+      "candidate": {
+        "file": "programs/pump/src/creator/set_metaplex_creator.rs",
+        "line": 3,
+        "column": 245,
+        "length": 49,
+        "pointer": "0x1ba763"
+      },
+      "uses": [
+        {
+          "original_function": "0x3a7b8",
+          "candidate_function": "0x2d458",
+          "offset": 304
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bdcf8",
+      "candidate_address": "0x1c13b8",
+      "original": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 170,
+        "column": 22,
+        "length": 56,
+        "pointer": "0x1b70ea"
+      },
+      "candidate": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 230,
+        "column": 14,
+        "length": 56,
+        "pointer": "0x1ba140"
+      },
+      "uses": [
+        {
+          "original_function": "0x7bda8",
+          "candidate_function": "0x5f068",
+          "offset": 112
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bdd10",
+      "candidate_address": "0x1c13d0",
+      "original": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 164,
+        "column": 22,
+        "length": 56,
+        "pointer": "0x1b70ea"
+      },
+      "candidate": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 227,
+        "column": 14,
+        "length": 56,
+        "pointer": "0x1ba140"
+      },
+      "uses": [
+        {
+          "original_function": "0x7bda8",
+          "candidate_function": "0x5f068",
+          "offset": 256
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bdd28",
+      "candidate_address": "0x1c13e8",
+      "original": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 192,
+        "column": 22,
+        "length": 56,
+        "pointer": "0x1b70ea"
+      },
+      "candidate": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 242,
+        "column": 14,
+        "length": 56,
+        "pointer": "0x1ba140"
+      },
+      "uses": [
+        {
+          "original_function": "0x7bec0",
+          "candidate_function": "0x5f180",
+          "offset": 112
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bdd40",
+      "candidate_address": "0x1c1400",
+      "original": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 186,
+        "column": 22,
+        "length": 56,
+        "pointer": "0x1b70ea"
+      },
+      "candidate": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 239,
+        "column": 14,
+        "length": 56,
+        "pointer": "0x1ba140"
+      },
+      "uses": [
+        {
+          "original_function": "0x7bec0",
+          "candidate_function": "0x5f180",
+          "offset": 256
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bde00",
+      "candidate_address": "0x1c12e0",
+      "original": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 425,
+        "column": 14,
+        "length": 56,
+        "pointer": "0x1b70ea"
+      },
+      "candidate": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 118,
+        "column": 19,
+        "length": 56,
+        "pointer": "0x1ba140"
+      },
+      "uses": [
+        {
+          "original_function": "0x7dfc8",
+          "candidate_function": "0x609b8",
+          "offset": 208
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bde68",
+      "candidate_address": "0x1c1250",
+      "original": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 436,
+        "column": 28,
+        "length": 56,
+        "pointer": "0x1b70ea"
+      },
+      "candidate": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 98,
+        "column": 28,
+        "length": 56,
+        "pointer": "0x1ba140"
+      },
+      "uses": [
+        {
+          "original_function": "0x7dfc8",
+          "candidate_function": "0x609b8",
+          "offset": 72
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bde80",
+      "candidate_address": "0x1c19e8",
+      "original": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 1442,
+        "column": 62,
+        "length": 24,
+        "pointer": "0x1b72c5"
+      },
+      "candidate": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 998,
+        "column": 27,
+        "length": 24,
+        "pointer": "0x1baac2"
+      },
+      "uses": [
+        {
+          "original_function": "0x970f8",
+          "candidate_function": "0x6df28",
+          "offset": 1136
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bde98",
+      "candidate_address": "0x1c1a00",
+      "original": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 1443,
+        "column": 40,
+        "length": 24,
+        "pointer": "0x1b72c5"
+      },
+      "candidate": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 999,
+        "column": 30,
+        "length": 24,
+        "pointer": "0x1baac2"
+      },
+      "uses": [
+        {
+          "original_function": "0x970f8",
+          "candidate_function": "0x6df28",
+          "offset": 72
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bdeb0",
+      "candidate_address": "0x1c1988",
+      "original": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 1477,
+        "column": 42,
+        "length": 24,
+        "pointer": "0x1b72c5"
+      },
+      "candidate": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 886,
+        "column": 33,
+        "length": 24,
+        "pointer": "0x1baac2"
+      },
+      "uses": [
+        {
+          "original_function": "0x97eb0",
+          "candidate_function": "0x6ece0",
+          "offset": 840
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bdec8",
+      "candidate_address": "0x1c19a0",
+      "original": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 1478,
+        "column": 40,
+        "length": 24,
+        "pointer": "0x1b72c5"
+      },
+      "candidate": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 887,
+        "column": 36,
+        "length": 24,
+        "pointer": "0x1baac2"
+      },
+      "uses": [
+        {
+          "original_function": "0x97eb0",
+          "candidate_function": "0x6ece0",
+          "offset": 80
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bdee0",
+      "candidate_address": "0x1c1928",
+      "original": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 1939,
+        "column": 14,
+        "length": 24,
+        "pointer": "0x1b72c5"
+      },
+      "candidate": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 774,
+        "column": 10,
+        "length": 24,
+        "pointer": "0x1baac2"
+      },
+      "uses": [
+        {
+          "original_function": "0x9a048",
+          "candidate_function": "0x70e78",
+          "offset": 304
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bdef8",
+      "candidate_address": "0x1c1940",
+      "original": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 1936,
+        "column": 45,
+        "length": 24,
+        "pointer": "0x1b72c5"
+      },
+      "candidate": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 772,
+        "column": 10,
+        "length": 24,
+        "pointer": "0x1baac2"
+      },
+      "uses": [
+        {
+          "original_function": "0x9a048",
+          "candidate_function": "0x70e78",
+          "offset": 256
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bdf98",
+      "candidate_address": "0x1c1bd0",
+      "original": {
+        "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+        "line": 217,
+        "column": 1,
+        "length": 52,
+        "pointer": "0x1b6bf7"
+      },
+      "candidate": {
+        "file": "programs/pump/src/creator/distribute_creator_fees.rs",
+        "line": 38,
+        "column": 1,
+        "length": 52,
+        "pointer": "0x1ba8d9"
+      },
+      "uses": [
+        {
+          "original_function": "0xc4e00",
+          "candidate_function": "0x9b9f8",
+          "offset": 424
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bdfb0",
+      "candidate_address": "0x1c1be8",
+      "original": {
+        "file": "programs/pump/src/quote_control/state.rs",
+        "line": 16,
+        "column": 1,
+        "length": 40,
+        "pointer": "0x1b6ef5"
+      },
+      "candidate": {
+        "file": "programs/pump/src/quote_control/state.rs",
+        "line": 16,
+        "column": 1,
+        "length": 40,
+        "pointer": "0x1baa0d"
+      },
+      "uses": [
+        {
+          "original_function": "0xe4630",
+          "candidate_function": "0xbb3e8",
+          "offset": 40
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bdfc8",
+      "candidate_address": "0x1c1a68",
+      "original": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 8,
+        "column": 1,
+        "length": 56,
+        "pointer": "0x1b70ea"
+      },
+      "candidate": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 4,
+        "column": 1,
+        "length": 56,
+        "pointer": "0x1ba140"
+      },
+      "uses": [
+        {
+          "original_function": "0x101448",
+          "candidate_function": "0xd8200",
+          "offset": 40
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be0c0",
+      "candidate_address": "0x1c1b60",
+      "original": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 19,
+        "column": 1,
+        "length": 56,
+        "pointer": "0x1b70ea"
+      },
+      "candidate": {
+        "file": "programs/pump/src/token_incentives/volume_accumulator.rs",
+        "line": 15,
+        "column": 1,
+        "length": 56,
+        "pointer": "0x1ba140"
+      },
+      "uses": [
+        {
+          "original_function": "0x101ef8",
+          "candidate_function": "0xd8cb0",
+          "offset": 40
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be0d8",
+      "candidate_address": "0x1c1c00",
+      "original": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 83,
+        "column": 1,
+        "length": 24,
+        "pointer": "0x1b72c5"
+      },
+      "candidate": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 70,
+        "column": 1,
+        "length": 24,
+        "pointer": "0x1baac2"
+      },
+      "uses": [
+        {
+          "original_function": "0x109488",
+          "candidate_function": "0xe0240",
+          "offset": 40
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be0f0",
+      "candidate_address": "0x1c1c18",
+      "original": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 84,
+        "column": 1,
+        "length": 24,
+        "pointer": "0x1b72c5"
+      },
+      "candidate": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 71,
+        "column": 1,
+        "length": 24,
+        "pointer": "0x1baac2"
+      },
+      "uses": [
+        {
+          "original_function": "0x1159d8",
+          "candidate_function": "0xec790",
+          "offset": 40
+        },
+        {
+          "original_function": "0x116158",
+          "candidate_function": "0xecf10",
+          "offset": 40
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be108",
+      "candidate_address": "0x1c1c30",
+      "original": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 90,
+        "column": 1,
+        "length": 24,
+        "pointer": "0x1b72c5"
+      },
+      "candidate": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 75,
+        "column": 1,
+        "length": 24,
+        "pointer": "0x1baac2"
+      },
+      "uses": [
+        {
+          "original_function": "0x11ef10",
+          "candidate_function": "0xf5cc8",
+          "offset": 3536
+        },
+        {
+          "original_function": "0x11ef10",
+          "candidate_function": "0xf5cc8",
+          "offset": 3632
+        },
+        {
+          "original_function": "0x11fd58",
+          "candidate_function": "0xf6b10",
+          "offset": 2016
+        },
+        {
+          "original_function": "0x11fd58",
+          "candidate_function": "0xf6b10",
+          "offset": 2064
+        },
+        {
+          "original_function": "0x131128",
+          "candidate_function": "0x107ee0",
+          "offset": 1448
+        },
+        {
+          "original_function": "0x1316e8",
+          "candidate_function": "0x1084a0",
+          "offset": 1968
+        },
+        {
+          "original_function": "0x178d50",
+          "candidate_function": "0x15c040",
+          "offset": 600
+        },
+        {
+          "original_function": "0x17ba58",
+          "candidate_function": "0x15ed48",
+          "offset": 40
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be720",
+      "candidate_address": "0x1c2298",
+      "original": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 1815,
+        "column": 1,
+        "length": 24,
+        "pointer": "0x1b72c5"
+      },
+      "candidate": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 500,
+        "column": 1,
+        "length": 24,
+        "pointer": "0x1baac2"
+      },
+      "uses": [
+        {
+          "original_function": "0x1600a8",
+          "candidate_function": "0x143398",
+          "offset": 40
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be738",
+      "candidate_address": "0x1c22b0",
+      "original": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 2639,
+        "column": 1,
+        "length": 24,
+        "pointer": "0x1b72c5"
+      },
+      "candidate": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 936,
+        "column": 1,
+        "length": 24,
+        "pointer": "0x1baac2"
+      },
+      "uses": [
+        {
+          "original_function": "0x1615b0",
+          "candidate_function": "0x1448a0",
+          "offset": 3792
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be750",
+      "candidate_address": "0x1c22c8",
+      "original": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 2664,
+        "column": 1,
+        "length": 24,
+        "pointer": "0x1b72c5"
+      },
+      "candidate": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 940,
+        "column": 1,
+        "length": 24,
+        "pointer": "0x1baac2"
+      },
+      "uses": [
+        {
+          "original_function": "0x1624b0",
+          "candidate_function": "0x1457a0",
+          "offset": 5384
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be848",
+      "candidate_address": "0x1c23c0",
+      "original": {
+        "file": "/home/runner/work/platform-tools/platform-tools/out/rust/library/alloc/src/string.rs",
+        "line": 2559,
+        "column": 14,
+        "length": 84,
+        "pointer": "0x1b9fd3"
+      },
+      "candidate": {
+        "file": "/home/runner/work/platform-tools/platform-tools/out/rust/library/alloc/src/string.rs",
+        "line": 2559,
+        "column": 14,
+        "length": 84,
+        "pointer": "0x1bd756"
+      },
+      "uses": [
+        {
+          "original_function": "0x1899b0",
+          "candidate_function": "0x16c560",
+          "offset": 400
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be860",
+      "candidate_address": "0x1c23d8",
+      "original": {
+        "file": "src/de/mod.rs",
+        "line": 161,
+        "column": 54,
+        "length": 13,
+        "pointer": "0x1b9f74"
+      },
+      "candidate": {
+        "file": "src/de/mod.rs",
+        "line": 161,
+        "column": 54,
+        "length": 13,
+        "pointer": "0x1bd6f7"
+      },
+      "uses": [
+        {
+          "original_function": "0x189c20",
+          "candidate_function": "0x16c7d0",
+          "offset": 744
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be878",
+      "candidate_address": "0x1c23f0",
+      "original": {
+        "file": "src/de/mod.rs",
+        "line": 169,
+        "column": 21,
+        "length": 13,
+        "pointer": "0x1b9f74"
+      },
+      "candidate": {
+        "file": "src/de/mod.rs",
+        "line": 169,
+        "column": 21,
+        "length": 13,
+        "pointer": "0x1bd6f7"
+      },
+      "uses": [
+        {
+          "original_function": "0x189c20",
+          "candidate_function": "0x16c7d0",
+          "offset": 1888
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be8e0",
+      "candidate_address": "0x1c2458",
+      "original": {
+        "file": "src/generated/instructions/create_metadata_account_v3.rs",
+        "line": 44,
+        "column": 47,
+        "length": 56,
+        "pointer": "0x1ba0cc"
+      },
+      "candidate": {
+        "file": "src/generated/instructions/create_metadata_account_v3.rs",
+        "line": 44,
+        "column": 47,
+        "length": 56,
+        "pointer": "0x1bd84f"
+      },
+      "uses": [
+        {
+          "original_function": "0x18c610",
+          "candidate_function": "0x16f1c0",
+          "offset": 1832
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be8f8",
+      "candidate_address": "0x1c2470",
+      "original": {
+        "file": "src/generated/instructions/create_metadata_account_v3.rs",
+        "line": 76,
+        "column": 42,
+        "length": 56,
+        "pointer": "0x1ba0cc"
+      },
+      "candidate": {
+        "file": "src/generated/instructions/create_metadata_account_v3.rs",
+        "line": 76,
+        "column": 42,
+        "length": 56,
+        "pointer": "0x1bd84f"
+      },
+      "uses": [
+        {
+          "original_function": "0x18c610",
+          "candidate_function": "0x16f1c0",
+          "offset": 1952
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be920",
+      "candidate_address": "0x1c2498",
+      "original": {
+        "file": "/home/runner/work/platform-tools/platform-tools/out/rust/library/core/src/iter/traits/accum.rs",
+        "line": 149,
+        "column": 1,
+        "length": 94,
+        "pointer": "0x1ba130"
+      },
+      "candidate": {
+        "file": "/home/runner/work/platform-tools/platform-tools/out/rust/library/core/src/iter/traits/accum.rs",
+        "line": 149,
+        "column": 1,
+        "length": 94,
+        "pointer": "0x1bd8b3"
+      },
+      "uses": [
+        {
+          "original_function": "0x190f08",
+          "candidate_function": "0x173ab8",
+          "offset": 416
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be938",
+      "candidate_address": "0x1c24b0",
+      "original": {
+        "file": "src/extension/transfer_fee/instruction.rs",
+        "line": 384,
+        "column": 43,
+        "length": 41,
+        "pointer": "0x1ba1e0"
+      },
+      "candidate": {
+        "file": "src/extension/transfer_fee/instruction.rs",
+        "line": 384,
+        "column": 43,
+        "length": 41,
+        "pointer": "0x1bd968"
+      },
+      "uses": [
+        {
+          "original_function": "0x1905a8",
+          "candidate_function": "0x173158",
+          "offset": 1056
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be950",
+      "candidate_address": "0x1c24c8",
+      "original": {
+        "file": "src/instruction.rs",
+        "line": 1468,
+        "column": 43,
+        "length": 18,
+        "pointer": "0x1ba11e"
+      },
+      "candidate": {
+        "file": "src/instruction.rs",
+        "line": 1468,
+        "column": 43,
+        "length": 18,
+        "pointer": "0x1bd8a1"
+      },
+      "uses": [
+        {
+          "original_function": "0x192108",
+          "candidate_function": "0x174cb8",
+          "offset": 1408
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be968",
+      "candidate_address": "0x1c24e0",
+      "original": {
+        "file": "src/instruction.rs",
+        "line": 1497,
+        "column": 43,
+        "length": 18,
+        "pointer": "0x1ba11e"
+      },
+      "candidate": {
+        "file": "src/instruction.rs",
+        "line": 1497,
+        "column": 43,
+        "length": 18,
+        "pointer": "0x1bd8a1"
+      },
+      "uses": [
+        {
+          "original_function": "0x1926b8",
+          "candidate_function": "0x175268",
+          "offset": 1336
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be980",
+      "candidate_address": "0x1c24f8",
+      "original": {
+        "file": "src/instruction.rs",
+        "line": 1527,
+        "column": 43,
+        "length": 18,
+        "pointer": "0x1ba11e"
+      },
+      "candidate": {
+        "file": "src/instruction.rs",
+        "line": 1527,
+        "column": 43,
+        "length": 18,
+        "pointer": "0x1bd8a1"
+      },
+      "uses": [
+        {
+          "original_function": "0x192c20",
+          "candidate_function": "0x1757d0",
+          "offset": 1336
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be998",
+      "candidate_address": "0x1c2510",
+      "original": {
+        "file": "src/instruction.rs",
+        "line": 1556,
+        "column": 43,
+        "length": 18,
+        "pointer": "0x1ba11e"
+      },
+      "candidate": {
+        "file": "src/instruction.rs",
+        "line": 1556,
+        "column": 43,
+        "length": 18,
+        "pointer": "0x1bd8a1"
+      },
+      "uses": [
+        {
+          "original_function": "0x193188",
+          "candidate_function": "0x175d38",
+          "offset": 1304
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be9b0",
+      "candidate_address": "0x1c2528",
+      "original": {
+        "file": "src/instruction.rs",
+        "line": 1647,
+        "column": 43,
+        "length": 18,
+        "pointer": "0x1ba11e"
+      },
+      "candidate": {
+        "file": "src/instruction.rs",
+        "line": 1647,
+        "column": 43,
+        "length": 18,
+        "pointer": "0x1bd8a1"
+      },
+      "uses": [
+        {
+          "original_function": "0x1936d0",
+          "candidate_function": "0x176280",
+          "offset": 1472
+        }
+      ]
+    },
+    {
+      "original_address": "0x1be9f8",
+      "candidate_address": "0x1c2570",
+      "original": {
+        "file": "src/instruction.rs",
+        "line": 1069,
+        "column": 43,
+        "length": 18,
+        "pointer": "0x1ba2bc"
+      },
+      "candidate": {
+        "file": "src/instruction.rs",
+        "line": 1069,
+        "column": 43,
+        "length": 18,
+        "pointer": "0x1bda44"
+      },
+      "uses": [
+        {
+          "original_function": "0x195340",
+          "candidate_function": "0x177ef0",
+          "offset": 1336
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bea10",
+      "candidate_address": "0x1c2588",
+      "original": {
+        "file": "src/instruction.rs",
+        "line": 1098,
+        "column": 43,
+        "length": 18,
+        "pointer": "0x1ba2bc"
+      },
+      "candidate": {
+        "file": "src/instruction.rs",
+        "line": 1098,
+        "column": 43,
+        "length": 18,
+        "pointer": "0x1bda44"
+      },
+      "uses": [
+        {
+          "original_function": "0x1958a8",
+          "candidate_function": "0x178458",
+          "offset": 1264
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bea70",
+      "candidate_address": "0x1c25e8",
+      "original": {
+        "file": "/home/runner/work/platform-tools/platform-tools/out/rust/library/std/src/io/mod.rs",
+        "line": 1707,
+        "column": 36,
+        "length": 82,
+        "pointer": "0x1ba348"
+      },
+      "candidate": {
+        "file": "/home/runner/work/platform-tools/platform-tools/out/rust/library/std/src/io/mod.rs",
+        "line": 1707,
+        "column": 36,
+        "length": 82,
+        "pointer": "0x1bdad0"
+      },
+      "uses": [
+        {
+          "original_function": "0x196960",
+          "candidate_function": "0x179510",
+          "offset": 272
+        }
+      ]
+    },
+    {
+      "original_address": "0x1beaa8",
+      "candidate_address": "0x1c2620",
+      "original": {
+        "file": "src/instruction.rs",
+        "line": 201,
+        "column": 53,
+        "length": 18,
+        "pointer": "0x1ba39a"
+      },
+      "candidate": {
+        "file": "src/instruction.rs",
+        "line": 201,
+        "column": 53,
+        "length": 18,
+        "pointer": "0x1bdb22"
+      },
+      "uses": [
+        {
+          "original_function": "0x197868",
+          "candidate_function": "0x17a418",
+          "offset": 4608
+        }
+      ]
+    },
+    {
+      "original_address": "0x1beac0",
+      "candidate_address": "0x1c2638",
+      "original": {
+        "file": "src/instruction.rs",
+        "line": 205,
+        "column": 53,
+        "length": 18,
+        "pointer": "0x1ba39a"
+      },
+      "candidate": {
+        "file": "src/instruction.rs",
+        "line": 205,
+        "column": 53,
+        "length": 18,
+        "pointer": "0x1bdb22"
+      },
+      "uses": [
+        {
+          "original_function": "0x197868",
+          "candidate_function": "0x17a418",
+          "offset": 4456
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bead8",
+      "candidate_address": "0x1c2650",
+      "original": {
+        "file": "src/instruction.rs",
+        "line": 209,
+        "column": 53,
+        "length": 18,
+        "pointer": "0x1ba39a"
+      },
+      "candidate": {
+        "file": "src/instruction.rs",
+        "line": 209,
+        "column": 53,
+        "length": 18,
+        "pointer": "0x1bdb22"
+      },
+      "uses": [
+        {
+          "original_function": "0x197868",
+          "candidate_function": "0x17a418",
+          "offset": 4744
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bebd0",
+      "candidate_address": "0x1c2748",
+      "original": {
+        "file": "/home/runner/work/platform-tools/platform-tools/out/rust/library/alloc/src/string.rs",
+        "line": 2559,
+        "column": 14,
+        "length": 84,
+        "pointer": "0x1ba429"
+      },
+      "candidate": {
+        "file": "/home/runner/work/platform-tools/platform-tools/out/rust/library/alloc/src/string.rs",
+        "line": 2559,
+        "column": 14,
+        "length": 84,
+        "pointer": "0x1bdbb1"
+      },
+      "uses": [
+        {
+          "original_function": "0x19bee0",
+          "candidate_function": "0x17ea90",
+          "offset": 256
+        },
+        {
+          "original_function": "0x19f320",
+          "candidate_function": "0x181ed0",
+          "offset": 272
+        },
+        {
+          "original_function": "0x19ff68",
+          "candidate_function": "0x182b18",
+          "offset": 312
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bec28",
+      "candidate_address": "0x1c27a0",
+      "original": {
+        "file": "src/bpf_writer.rs",
+        "line": 28,
+        "column": 9,
+        "length": 17,
+        "pointer": "0x1ba676"
+      },
+      "candidate": {
+        "file": "src/bpf_writer.rs",
+        "line": 28,
+        "column": 9,
+        "length": 17,
+        "pointer": "0x1bddfe"
+      },
+      "uses": [
+        {
+          "original_function": "0x19b548",
+          "candidate_function": "0x17e0f8",
+          "offset": 264
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bec40",
+      "candidate_address": "0x1c27b8",
+      "original": {
+        "file": "src/common.rs",
+        "line": 11,
+        "column": 21,
+        "length": 13,
+        "pointer": "0x1ba687"
+      },
+      "candidate": {
+        "file": "src/common.rs",
+        "line": 11,
+        "column": 21,
+        "length": 13,
+        "pointer": "0x1bde0f"
+      },
+      "uses": [
+        {
+          "original_function": "0x19b668",
+          "candidate_function": "0x17e218",
+          "offset": 1088
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bec58",
+      "candidate_address": "0x1c27d0",
+      "original": {
+        "file": "src/common.rs",
+        "line": 9,
+        "column": 32,
+        "length": 13,
+        "pointer": "0x1ba687"
+      },
+      "candidate": {
+        "file": "src/common.rs",
+        "line": 9,
+        "column": 32,
+        "length": 13,
+        "pointer": "0x1bde0f"
+      },
+      "uses": [
+        {
+          "original_function": "0x19b668",
+          "candidate_function": "0x17e218",
+          "offset": 1064
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bec70",
+      "candidate_address": "0x1c27e8",
+      "original": {
+        "file": "src/common.rs",
+        "line": 10,
+        "column": 61,
+        "length": 13,
+        "pointer": "0x1ba687"
+      },
+      "candidate": {
+        "file": "src/common.rs",
+        "line": 10,
+        "column": 61,
+        "length": 13,
+        "pointer": "0x1bde0f"
+      },
+      "uses": [
+        {
+          "original_function": "0x19b668",
+          "candidate_function": "0x17e218",
+          "offset": 1040
+        }
+      ]
+    },
+    {
+      "original_address": "0x1beea8",
+      "candidate_address": "0x1c2a20",
+      "original": {
+        "file": "src/idl.rs",
+        "line": 75,
+        "column": 14,
+        "length": 10,
+        "pointer": "0x1ba77c"
+      },
+      "candidate": {
+        "file": "src/idl.rs",
+        "line": 75,
+        "column": 14,
+        "length": 10,
+        "pointer": "0x1bdf04"
+      },
+      "uses": [
+        {
+          "original_function": "0x19d4b0",
+          "candidate_function": "0x180060",
+          "offset": 360
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf390",
+      "candidate_address": "0x1c2f08",
+      "original": {
+        "file": "src/idl.rs",
+        "line": 61,
+        "column": 1,
+        "length": 10,
+        "pointer": "0x1ba77c"
+      },
+      "candidate": {
+        "file": "src/idl.rs",
+        "line": 61,
+        "column": 1,
+        "length": 10,
+        "pointer": "0x1bdf04"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a02c8",
+          "candidate_function": "0x182e78",
+          "offset": 40
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf3a8",
+      "candidate_address": "0x1c2f20",
+      "original": {
+        "file": "src/v1.rs",
+        "line": 14,
+        "column": 1,
+        "length": 9,
+        "pointer": "0x1bbcb8"
+      },
+      "candidate": {
+        "file": "src/v1.rs",
+        "line": 14,
+        "column": 1,
+        "length": 9,
+        "pointer": "0x1bf440"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a08c0",
+          "candidate_function": "0x183470",
+          "offset": 96
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf3c0",
+      "candidate_address": "0x1c2f38",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 95,
+        "column": 11,
+        "length": 10,
+        "pointer": "0x1bbcc1"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 95,
+        "column": 11,
+        "length": 10,
+        "pointer": "0x1bf449"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a0ae8",
+          "candidate_function": "0x183698",
+          "offset": 352
+        },
+        {
+          "original_function": "0x1a0c78",
+          "candidate_function": "0x183828",
+          "offset": 376
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf3d8",
+      "candidate_address": "0x1c2f50",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 95,
+        "column": 10,
+        "length": 10,
+        "pointer": "0x1bbcc1"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 95,
+        "column": 10,
+        "length": 10,
+        "pointer": "0x1bf449"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a0ae8",
+          "candidate_function": "0x183698",
+          "offset": 376
+        },
+        {
+          "original_function": "0x1a0c78",
+          "candidate_function": "0x183828",
+          "offset": 400
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf3f0",
+      "candidate_address": "0x1c2f68",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 323,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 323,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 3160
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf408",
+      "candidate_address": "0x1c2f80",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 326,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 326,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 3184
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf420",
+      "candidate_address": "0x1c2f98",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 339,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 339,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 2872
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf438",
+      "candidate_address": "0x1c2fb0",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 343,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 343,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 2896
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf450",
+      "candidate_address": "0x1c2fc8",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 347,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 347,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 2920
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf468",
+      "candidate_address": "0x1c2fe0",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 353,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 353,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 2944
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf480",
+      "candidate_address": "0x1c2ff8",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 356,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 356,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 2968
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf498",
+      "candidate_address": "0x1c3010",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 359,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 359,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 2992
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf4b0",
+      "candidate_address": "0x1c3028",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 363,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 363,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 3016
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf4c8",
+      "candidate_address": "0x1c3040",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 367,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 367,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 3040
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf4e0",
+      "candidate_address": "0x1c3058",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 376,
+        "column": 15,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 376,
+        "column": 15,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 3064
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf4f8",
+      "candidate_address": "0x1c3070",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 376,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 376,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 3088
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf510",
+      "candidate_address": "0x1c3088",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 377,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 377,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 3112
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf528",
+      "candidate_address": "0x1c30a0",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 381,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 381,
+        "column": 5,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 3136
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf540",
+      "candidate_address": "0x1c30b8",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 420,
+        "column": 9,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 420,
+        "column": 9,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 2824
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf558",
+      "candidate_address": "0x1c30d0",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 426,
+        "column": 13,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 426,
+        "column": 13,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 2848
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf570",
+      "candidate_address": "0x1c30e8",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 429,
+        "column": 35,
+        "length": 10,
+        "pointer": "0x1bbccb"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 429,
+        "column": 35,
+        "length": 10,
+        "pointer": "0x1bf453"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a10d0",
+          "candidate_function": "0x183c80",
+          "offset": 632
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf628",
+      "candidate_address": "0x1c31a0",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 53,
+        "column": 59,
+        "length": 10,
+        "pointer": "0x1bbd10"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 53,
+        "column": 59,
+        "length": 10,
+        "pointer": "0x1bf498"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a25b0",
+          "candidate_function": "0x185160",
+          "offset": 1064
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf640",
+      "candidate_address": "0x1c31b8",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 73,
+        "column": 25,
+        "length": 10,
+        "pointer": "0x1bbd10"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 73,
+        "column": 25,
+        "length": 10,
+        "pointer": "0x1bf498"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a25b0",
+          "candidate_function": "0x185160",
+          "offset": 528
+        },
+        {
+          "original_function": "0x1a29f0",
+          "candidate_function": "0x1855a0",
+          "offset": 96
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf658",
+      "candidate_address": "0x1c31d0",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 94,
+        "column": 19,
+        "length": 10,
+        "pointer": "0x1bbd10"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 94,
+        "column": 19,
+        "length": 10,
+        "pointer": "0x1bf498"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a25b0",
+          "candidate_function": "0x185160",
+          "offset": 704
+        },
+        {
+          "original_function": "0x1a2a68",
+          "candidate_function": "0x185618",
+          "offset": 56
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf670",
+      "candidate_address": "0x1c31e8",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 102,
+        "column": 19,
+        "length": 10,
+        "pointer": "0x1bbd10"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 102,
+        "column": 19,
+        "length": 10,
+        "pointer": "0x1bf498"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a2b38",
+          "candidate_function": "0x1856e8",
+          "offset": 80
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf6c8",
+      "candidate_address": "0x1c3240",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 229,
+        "column": 45,
+        "length": 10,
+        "pointer": "0x1bc1ae"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 229,
+        "column": 45,
+        "length": 10,
+        "pointer": "0x1bf936"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a46a8",
+          "candidate_function": "0x187258",
+          "offset": 7344
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf7c0",
+      "candidate_address": "0x1c3338",
+      "original": {
+        "file": "src/ser/mod.rs",
+        "line": 242,
+        "column": 9,
+        "length": 14,
+        "pointer": "0x1bc261"
+      },
+      "candidate": {
+        "file": "src/ser/mod.rs",
+        "line": 242,
+        "column": 9,
+        "length": 14,
+        "pointer": "0x1bf9e9"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a4080",
+          "candidate_function": "0x186c30",
+          "offset": 48
+        },
+        {
+          "original_function": "0x1a46a8",
+          "candidate_function": "0x187258",
+          "offset": 1672
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf7d8",
+      "candidate_address": "0x1c3350",
+      "original": {
+        "file": "src/encode.rs",
+        "line": 464,
+        "column": 27,
+        "length": 13,
+        "pointer": "0x1bc26f"
+      },
+      "candidate": {
+        "file": "src/encode.rs",
+        "line": 464,
+        "column": 27,
+        "length": 13,
+        "pointer": "0x1bf9f7"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a81d0",
+          "candidate_function": "0x18ad80",
+          "offset": 824
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf7f0",
+      "candidate_address": "0x1c3368",
+      "original": {
+        "file": "src/encode.rs",
+        "line": 465,
+        "column": 16,
+        "length": 13,
+        "pointer": "0x1bc26f"
+      },
+      "candidate": {
+        "file": "src/encode.rs",
+        "line": 465,
+        "column": 16,
+        "length": 13,
+        "pointer": "0x1bf9f7"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a81d0",
+          "candidate_function": "0x18ad80",
+          "offset": 1312
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf808",
+      "candidate_address": "0x1c3380",
+      "original": {
+        "file": "src/encode.rs",
+        "line": 460,
+        "column": 9,
+        "length": 13,
+        "pointer": "0x1bc26f"
+      },
+      "candidate": {
+        "file": "src/encode.rs",
+        "line": 460,
+        "column": 9,
+        "length": 13,
+        "pointer": "0x1bf9f7"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a81d0",
+          "candidate_function": "0x18ad80",
+          "offset": 1352
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf820",
+      "candidate_address": "0x1c3398",
+      "original": {
+        "file": "src/encode.rs",
+        "line": 441,
+        "column": 32,
+        "length": 13,
+        "pointer": "0x1bc26f"
+      },
+      "candidate": {
+        "file": "src/encode.rs",
+        "line": 441,
+        "column": 32,
+        "length": 13,
+        "pointer": "0x1bf9f7"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a81d0",
+          "candidate_function": "0x18ad80",
+          "offset": 1384
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf8a8",
+      "candidate_address": "0x1c3420",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 131,
+        "column": 18,
+        "length": 10,
+        "pointer": "0x1bc2be"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 131,
+        "column": 18,
+        "length": 10,
+        "pointer": "0x1bfa46"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a7ff0",
+          "candidate_function": "0x18aba0",
+          "offset": 440
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf8d0",
+      "candidate_address": "0x1c3448",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 612,
+        "column": 32,
+        "length": 10,
+        "pointer": "0x1bc2be"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 612,
+        "column": 32,
+        "length": 10,
+        "pointer": "0x1bfa46"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a7eb8",
+          "candidate_function": "0x18aa68",
+          "offset": 200
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf8e8",
+      "candidate_address": "0x1c3460",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 818,
+        "column": 32,
+        "length": 10,
+        "pointer": "0x1bc2be"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 818,
+        "column": 32,
+        "length": 10,
+        "pointer": "0x1bfa46"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a81d0",
+          "candidate_function": "0x18ad80",
+          "offset": 1280
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf920",
+      "candidate_address": "0x1c3498",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 818,
+        "column": 41,
+        "length": 10,
+        "pointer": "0x1bc2be"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 818,
+        "column": 41,
+        "length": 10,
+        "pointer": "0x1bfa46"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a81d0",
+          "candidate_function": "0x18ad80",
+          "offset": 1496
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf958",
+      "candidate_address": "0x1c34d0",
+      "original": {
+        "file": "src/lib.rs",
+        "line": 817,
+        "column": 49,
+        "length": 10,
+        "pointer": "0x1bc2be"
+      },
+      "candidate": {
+        "file": "src/lib.rs",
+        "line": 817,
+        "column": 49,
+        "length": 10,
+        "pointer": "0x1bfa46"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a81d0",
+          "candidate_function": "0x18ad80",
+          "offset": 776
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bf9e8",
+      "candidate_address": "0x1c3560",
+      "original": {
+        "file": "src/encode.rs",
+        "line": 431,
+        "column": 11,
+        "length": 13,
+        "pointer": "0x1bc3f3"
+      },
+      "candidate": {
+        "file": "src/encode.rs",
+        "line": 431,
+        "column": 11,
+        "length": 13,
+        "pointer": "0x1bfb7b"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a9048",
+          "candidate_function": "0x18bbf8",
+          "offset": 128
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bfa00",
+      "candidate_address": "0x1c3578",
+      "original": {
+        "file": "src/encode.rs",
+        "line": 431,
+        "column": 5,
+        "length": 13,
+        "pointer": "0x1bc3f3"
+      },
+      "candidate": {
+        "file": "src/encode.rs",
+        "line": 431,
+        "column": 5,
+        "length": 13,
+        "pointer": "0x1bfb7b"
+      },
+      "uses": [
+        {
+          "original_function": "0x1a9048",
+          "candidate_function": "0x18bbf8",
+          "offset": 152
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bfb28",
+      "candidate_address": "0x1c36a0",
+      "original": {
+        "file": "library/alloc/src/raw_vec.rs",
+        "line": 25,
+        "column": 5,
+        "length": 28,
+        "pointer": "0x1bc8e4"
+      },
+      "candidate": {
+        "file": "library/alloc/src/raw_vec.rs",
+        "line": 25,
+        "column": 5,
+        "length": 28,
+        "pointer": "0x1c006c"
+      },
+      "uses": [
+        {
+          "original_function": "0x1aad60",
+          "candidate_function": "0x18d910",
+          "offset": 72
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bfb60",
+      "candidate_address": "0x1c36d8",
+      "original": {
+        "file": "library/alloc/src/fmt.rs",
+        "line": 633,
+        "column": 32,
+        "length": 24,
+        "pointer": "0x1bc933"
+      },
+      "candidate": {
+        "file": "library/alloc/src/fmt.rs",
+        "line": 633,
+        "column": 32,
+        "length": 24,
+        "pointer": "0x1c00bb"
+      },
+      "uses": [
+        {
+          "original_function": "0x1ab248",
+          "candidate_function": "0x18ddf8",
+          "offset": 528
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bfd08",
+      "candidate_address": "0x1c3890",
+      "original": {
+        "file": "library/core/src/fmt/num.rs",
+        "line": 105,
+        "column": 23,
+        "length": 27,
+        "pointer": "0x1bcabe"
+      },
+      "candidate": {
+        "file": "library/core/src/fmt/num.rs",
+        "line": 105,
+        "column": 23,
+        "length": 27,
+        "pointer": "0x1c0267"
+      },
+      "uses": [
+        {
+          "original_function": "0x1b2b78",
+          "candidate_function": "0x195728",
+          "offset": 480
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bfd20",
+      "candidate_address": "0x1c38a8",
+      "original": {
+        "file": "library/core/src/fmt/mod.rs",
+        "line": 2060,
+        "column": 9,
+        "length": 27,
+        "pointer": "0x1bc9b7"
+      },
+      "candidate": {
+        "file": "library/core/src/fmt/mod.rs",
+        "line": 2060,
+        "column": 9,
+        "length": 27,
+        "pointer": "0x1c0160"
+      },
+      "uses": [
+        {
+          "original_function": "0x1aca90",
+          "candidate_function": "0x18f640",
+          "offset": 24
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bfd58",
+      "candidate_address": "0x1c38e0",
+      "original": {
+        "file": "library/core/src/fmt/mod.rs",
+        "line": 2406,
+        "column": 26,
+        "length": 27,
+        "pointer": "0x1bc9b7"
+      },
+      "candidate": {
+        "file": "library/core/src/fmt/mod.rs",
+        "line": 2406,
+        "column": 26,
+        "length": 27,
+        "pointer": "0x1c0160"
+      },
+      "uses": [
+        {
+          "original_function": "0x1afaf0",
+          "candidate_function": "0x1926a0",
+          "offset": 1848
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bfd70",
+      "candidate_address": "0x1c38f8",
+      "original": {
+        "file": "library/core/src/fmt/mod.rs",
+        "line": 2399,
+        "column": 34,
+        "length": 27,
+        "pointer": "0x1bc9b7"
+      },
+      "candidate": {
+        "file": "library/core/src/fmt/mod.rs",
+        "line": 2399,
+        "column": 34,
+        "length": 27,
+        "pointer": "0x1c0160"
+      },
+      "uses": [
+        {
+          "original_function": "0x1afaf0",
+          "candidate_function": "0x1926a0",
+          "offset": 1208
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bfed8",
+      "candidate_address": "0x1c3a60",
+      "original": {
+        "file": "library/core/src/str/mod.rs",
+        "line": 261,
+        "column": 44,
+        "length": 27,
+        "pointer": "0x1bcdb6"
+      },
+      "candidate": {
+        "file": "library/core/src/str/mod.rs",
+        "line": 261,
+        "column": 44,
+        "length": 27,
+        "pointer": "0x1c055f"
+      },
+      "uses": [
+        {
+          "original_function": "0x1b1458",
+          "candidate_function": "0x194008",
+          "offset": 1088
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bfef0",
+      "candidate_address": "0x1c3a78",
+      "original": {
+        "file": "library/core/src/unicode/printable.rs",
+        "line": 26,
+        "column": 54,
+        "length": 37,
+        "pointer": "0x1bcdd1"
+      },
+      "candidate": {
+        "file": "library/core/src/unicode/printable.rs",
+        "line": 26,
+        "column": 54,
+        "length": 37,
+        "pointer": "0x1c057a"
+      },
+      "uses": [
+        {
+          "original_function": "0x1b1c58",
+          "candidate_function": "0x194808",
+          "offset": 608
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bff08",
+      "candidate_address": "0x1c3a90",
+      "original": {
+        "file": "library/core/src/unicode/printable.rs",
+        "line": 10,
+        "column": 43,
+        "length": 37,
+        "pointer": "0x1bcdd1"
+      },
+      "candidate": {
+        "file": "library/core/src/unicode/printable.rs",
+        "line": 10,
+        "column": 43,
+        "length": 37,
+        "pointer": "0x1c057a"
+      },
+      "uses": [
+        {
+          "original_function": "0x1b1c58",
+          "candidate_function": "0x194808",
+          "offset": 648
+        },
+        {
+          "original_function": "0x1b1c58",
+          "candidate_function": "0x194808",
+          "offset": 688
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bff20",
+      "candidate_address": "0x1c3aa8",
+      "original": {
+        "file": "library/core/src/unicode/unicode_data.rs",
+        "line": 80,
+        "column": 40,
+        "length": 40,
+        "pointer": "0x1bd371"
+      },
+      "candidate": {
+        "file": "library/core/src/unicode/unicode_data.rs",
+        "line": 80,
+        "column": 40,
+        "length": 40,
+        "pointer": "0x1c0b1a"
+      },
+      "uses": [
+        {
+          "original_function": "0x1b3250",
+          "candidate_function": "0x195e00",
+          "offset": 744
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bff38",
+      "candidate_address": "0x1c3ac0",
+      "original": {
+        "file": "library/core/src/unicode/unicode_data.rs",
+        "line": 92,
+        "column": 22,
+        "length": 40,
+        "pointer": "0x1bd371"
+      },
+      "candidate": {
+        "file": "library/core/src/unicode/unicode_data.rs",
+        "line": 92,
+        "column": 22,
+        "length": 40,
+        "pointer": "0x1c0b1a"
+      },
+      "uses": [
+        {
+          "original_function": "0x1b3250",
+          "candidate_function": "0x195e00",
+          "offset": 704
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bff50",
+      "candidate_address": "0x1c3ad8",
+      "original": {
+        "file": "library/core/src/escape.rs",
+        "line": 56,
+        "column": 11,
+        "length": 26,
+        "pointer": "0x1bd399"
+      },
+      "candidate": {
+        "file": "library/core/src/escape.rs",
+        "line": 56,
+        "column": 11,
+        "length": 26,
+        "pointer": "0x1c0b42"
+      },
+      "uses": [
+        {
+          "original_function": "0x1abba0",
+          "candidate_function": "0x18e750",
+          "offset": 2152
+        }
+      ]
+    },
+    {
+      "original_address": "0x1bff68",
+      "candidate_address": "0x1c3af0",
+      "original": {
+        "file": "library/core/src/escape.rs",
+        "line": 102,
+        "column": 35,
+        "length": 26,
+        "pointer": "0x1bd399"
+      },
+      "candidate": {
+        "file": "library/core/src/escape.rs",
+        "line": 102,
+        "column": 35,
+        "length": 26,
+        "pointer": "0x1c0b42"
+      },
+      "uses": [
+        {
+          "original_function": "0x1afaf0",
+          "candidate_function": "0x1926a0",
+          "offset": 1296
+        },
+        {
+          "original_function": "0x1b0270",
+          "candidate_function": "0x192e20",
+          "offset": 336
+        }
+      ]
+    }
+  ],
+  "full_data_identity": false,
+  "goal_complete": false
+}

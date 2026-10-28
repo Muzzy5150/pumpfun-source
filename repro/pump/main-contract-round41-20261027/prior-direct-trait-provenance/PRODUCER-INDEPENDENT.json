@@ -1,0 +1,28 @@
+{
+  "scope": "Fresh main compile from new dependency cache while original clean producer target path is absent; reversible rename restored unchanged producer outputs.",
+  "producer_target": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-create-sizing/build-direct-trait/target",
+  "hidden_target": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-create-sizing/build-direct-trait/target-hidden-for-proof",
+  "producer_original_path_absent_before_and_after_child": true,
+  "producer_restored": true,
+  "producer_files_sha256": {
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-create-sizing/build-direct-trait/candidate.so": "1f5eab4646f2f0d5435f49b5dac49099ad620c249162a844f013229daf776cd4",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-create-sizing/build-direct-trait/unstripped.so": "f4e7b0daba61d2f5c415d76486a86177b9ddf790605f4702f641c08f826be55b",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-create-sizing/build-direct-trait/build-comparison.json": "fe0f4f79a8d8af0455e0e69a4d89bce99739b134f42647589fa2102888520b99"
+  },
+  "command": [
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/test-env/bin/python",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_build_verified.py",
+    "--source-directory",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-create-sizing/source-direct-trait-checked",
+    "--workspace-layout",
+    "--registry-home",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-create-sizing/build-direct-trait/cargo-home",
+    "--dependency-cache",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-cache/direct-cache",
+    "--output",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-create-sizing/build-direct-trait-checked"
+  ],
+  "returncode": 0,
+  "elapsed_seconds": 55.528751917008776,
+  "child_build_sha256": "0b947cfc3677eed0b63b35c50c0901b50a387dbf36eae6bf9dd9bc3fbc035e9a"
+}

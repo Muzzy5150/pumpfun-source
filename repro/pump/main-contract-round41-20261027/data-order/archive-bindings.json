@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "artifacts": {
+    "original_elf": {
+      "sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+      "bytes": 10485715
+    },
+    "baseline_elf": {
+      "sha256": "fcc876fba7451c10d94d192cc29d5467de7ecda6e1da6aa450288372f3ec6505",
+      "bytes": 2685992
+    },
+    "baseline_map": {
+      "sha256": "ca18b376c3d2c0362f4e4fb47581c3168bab95eaacaa92aceed212289ad5483e",
+      "bytes": 2289477
+    },
+    "final_elf": {
+      "sha256": "8f8db4faaa749deaf3821a192e30eb345f79b3b472344e6df6e26fa9b916da5f",
+      "bytes": 2685992
+    },
+    "final_map": {
+      "sha256": "a92f1062c1c086bbee44675896f49b4442d090398df6e5e8921ab09d9b05d596",
+      "bytes": 2267427
+    },
+    "admitted_certificate": {
+      "sha256": "76c023ffc555a4bac8c5dda847761888f946974027430b5cdcaaf1bae292d27f",
+      "bytes": 811139
+    }
+  },
+  "tools": {
+    "pump_data_order.py": "275bd1ded0f949aee08901e4a82fe209417fe3477aadac31a60f68a710de12ea",
+    "pump_derive_data_order.py": "0d6c3ce0acb8397e5ab8a018b4d9f9fa7df22453988f2463e6fe8774134739af",
+    "pump_compare_function_bytes.py": "43fa359dce1e398f820df445d534e0912ac5f181f1ea15e13a5267b53105b075",
+    "pump_quote_control_function_match.py": "28ad656012f8fbcd41ed1726e9345ee76f6249992bf28c91c4b9202479d3e94e",
+    "build_source_manifest.py": "bbcf5081f99cc911af108216dee430ac15721c16159406490beb7671e4b14a8b",
+    "pump_build_verified.py": "d8a63fb5ed15db3525a93ff98203e9f6821b3e1b44e689ca2db3e576acdc4e5c",
+    "pump_text_layout.py": "a8f57b4edb31237010a32371e8d6893b684eeedae75d642b2c2985b6d0bcefc9",
+    "pump_text_layout_default.ld": "5e8370b9380f55411d827721e2e43c8cfd1eac71d1383e20b938397bc0bd82c3",
+    "pump_target_library_profile.py": "f997a891051ee84aec6f0bc22270425213880a4b1ef358774f015b08e0c9a605",
+    "pump_linux_v144_sbf_libraries.json": "55f0957e17eba608657207d4962122c3ac778d7be194b3fd4ededa6448e91fc6",
+    "pump_linux_v144_sbpf_libraries.json": "7e2461b5ec54416d6b64508af1e2677f63afd83d35e9a3eeae6ca877ae879f1e",
+    "pump_dependency_cache.py": "6ac18c9fd98e010850bdeef0211a58840696064bd664e5ea3f35960a94f4b9ed"
+  }
+}

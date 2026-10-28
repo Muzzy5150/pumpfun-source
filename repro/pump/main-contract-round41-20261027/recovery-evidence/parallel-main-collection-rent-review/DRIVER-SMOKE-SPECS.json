@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "case": {
+        "name": "legacy-actual-token-amount0",
+        "version": "legacy",
+        "native": 890880,
+        "actual_executable": "token"
+      },
+      "input_hash": "61f6b96c2ced9fa4e5de1cfc3ca52b93c3b2a35d8a6d1a7e61dd0e109bcebdd1",
+      "source_receipt": "executable01.json.gz"
+    },
+    {
+      "case": {
+        "name": "token-live-FEES-amount1-missingTrue",
+        "version": "v2",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "tokens": 1,
+        "source_missing": true,
+        "patch": {
+          "creator": {
+            "owner": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+            "lamports": 1
+          }
+        }
+      },
+      "input_hash": "cd7840edfe71e4759c886d557228c27cd134b98c648238a3c7c5900daccc4a45",
+      "source_receipt": "owner-live01.json.gz"
+    }
+  ]
+}

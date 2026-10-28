@@ -1,0 +1,9 @@
+{
+  "manifest": "additional-manifest01.json",
+  "manifest_sha256": "036e2dce0a0e430bf3154d760e5713ee3973941dabb3abf958022cfd3ada02e0",
+  "incremental_cases": 28,
+  "before_control_cases": 30,
+  "existing_claim_cases": 498,
+  "dedup_proof": "DEDUPLICATED-COMPOUND01.json",
+  "script": "work/parallel-main-claim-boundary-review/probe-compound-new.py"
+}

@@ -1,0 +1,26 @@
+{
+  "baseline_counts": {
+    "total": 1035,
+    "raw": 124,
+    "normalized": 732,
+    "unmatched": 303
+  },
+  "candidate_counts": {
+    "total": 1035,
+    "raw": 124,
+    "normalized": 733,
+    "unmatched": 302
+  },
+  "sets": {
+    "normalized_matches": {
+      "gains": [
+        "0x8d108"
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  }
+}

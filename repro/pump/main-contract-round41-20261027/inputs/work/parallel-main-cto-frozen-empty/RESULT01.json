@@ -1,0 +1,64 @@
+{
+  "status": "Exact472-byte token_frozen helper restored;529existing signed CTO cases pass",
+  "source_file": "src/creator/admin_cto.rs",
+  "source_sha256": "941a62addff36d4e3244f10692fc934e30fb69a6726b1ca76187aaaa2920a503",
+  "baseline_source_sha256": "8d9f48cec8c2ab40aa3ae4a49019bf9da3c8e2f7891cf331a60a972398d0add2",
+  "patch_sha256": "80fbc6867898483ffa37dcb0d950bfcdc0f10a56e329be853823b7ddcc0c28a0",
+  "candidate_sha256": "7cc8b4d9432d7d6c3655783e0890fb58b07d0541498fe7376caaf22ad2456553",
+  "unstripped_sha256": "97a4ca63f48cdcd6150a3cccc32ac5add1c2ececf7cd4b79c7ab43b95a89577d",
+  "build_receipt_sha256": "c9efa880ab366bbcf2bba8114640957f25c6b4a6e0ec1d1981ee5c3a4623c732",
+  "inventory": {
+    "baseline": {
+      "total": 1035,
+      "raw": 121,
+      "normalized": 737,
+      "unmatched": 298
+    },
+    "candidate": {
+      "total": 1035,
+      "raw": 121,
+      "normalized": 738,
+      "unmatched": 297
+    },
+    "delta": {
+      "normalized_matches": {
+        "gains": [
+          "0x29518"
+        ],
+        "losses": []
+      },
+      "raw_match": {
+        "gains": [],
+        "losses": []
+      }
+    }
+  },
+  "body": {
+    "original": "0x29518",
+    "bytes": 472,
+    "normalized_equal": true,
+    "direct_callee_relationships_exact": 4
+  },
+  "retained": {
+    "original": "0x296f0",
+    "helper": "token_raw_amount",
+    "bytes": 448,
+    "normalized_equal": true,
+    "source_unchanged": true
+  },
+  "runtime": {
+    "cases": 529,
+    "verified_transactions": 1058,
+    "verified_signatures": 2108,
+    "diagnostic_mismatches": 0,
+    "invocation_order_mismatches": 0,
+    "new_inputs": 0
+  },
+  "call_graph_limit": "Original helper has5real callers; current has4. The separate combined token_amount path remains an unresolved call-boundary difference. No full five-edge closure claimed.",
+  "limits": [
+    "Byte equality uses the existing narrow call/address normalization, with all4direct callees checked independently.",
+    "Current callsites generally precheck empty data. The signed outer-instruction suite is preservation evidence, not instrumentation proving that the new internal empty branch executes.",
+    "Counts are relative to the frozenR35identity-layout build; no ordered-layout raw-count claim is made.",
+    "Full original ELF equality remains false."
+  ]
+}

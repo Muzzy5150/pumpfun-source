@@ -1,0 +1,23 @@
+{
+  "script": "work/parallel-main-unobserved-gates/probe.py",
+  "script_sha256": "054beb832a21f153afe82438802c0197b8631b818f3a64f7798a4fb508c6297b",
+  "args": [
+    "--family",
+    "cashback_accounts",
+    "--candidate",
+    "CANDIDATE",
+    "--output",
+    "OUTPUT.json.gz"
+  ],
+  "raw_cases": 22,
+  "intra_matrix_unique_observable_fixtures": 22,
+  "overlap_with_focused143": [
+    "cashback_False_full",
+    "ordinary_False",
+    "ordinary_no_remaining_False",
+    "cashback_True_full",
+    "ordinary_True"
+  ],
+  "new_unique_observable_fixtures_vs_focused143": 17,
+  "fingerprint": "original transaction bytes and recorded complete before-account snapshot; does not prove globally unique tests"
+}

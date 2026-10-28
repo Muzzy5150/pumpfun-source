@@ -1,0 +1,107 @@
+{
+  "status": "family closed; controls unpromoted; recommend adding regression cases only",
+  "original_helper": "0x8b970",
+  "original_helper_bytes": 608,
+  "inferred_api": "Result<Option<Vec<Shareholder>>> from raw AccountInfo",
+  "original_callers": [
+    {
+      "site": "0x13e240",
+      "caller": "0x13b9b8",
+      "caller_bytes": 15480
+    },
+    {
+      "site": "0x1430c8",
+      "caller": "0x13f630",
+      "caller_bytes": 20184
+    },
+    {
+      "site": "0x146768",
+      "caller": "0x144508",
+      "caller_bytes": 13976
+    }
+  ],
+  "controls": [
+    {
+      "control": "01",
+      "source": "work/parallel-main-optional-sharing/source01",
+      "files": {
+        "src/buy_v2.rs": "fe1b9b55146fa67a4c3a8f4a1bbfd51261bc33aea5fedf15bc5af7a23c4542be",
+        "src/sell_v2.rs": "f508fe0838ca30c3437d63470cf555522d07ad4e181abfb18652e2e6cf74b94a",
+        "src/optional_sharing.rs": "7a77df8167d39b877e3e8a8c28bf53bae70b30231ce62b46e07bcbe2512a5968"
+      },
+      "candidate_sha256": "c8f543cae5d99b93fa051523dfdd9f24b1bf226fbd06ddca9e1a9ec6845e10f1",
+      "unstripped_sha256": "8b63432825b81398dbb3efbc42b5048ad0217d789d3b21bef40d0905990ca963",
+      "helper_bytes": 536,
+      "normalized_different_slots": 61,
+      "case_count": 246,
+      "strict_cases": 246,
+      "new_optional_helper_windows": [],
+      "lost_windows": [],
+      "archive": "work/parallel-main-optional-sharing/after01.json.gz",
+      "archive_sha256": "cf088d50e217b648d2199eeae9e9aae750daa66744ffd2b293f9a0d9599ff457"
+    },
+    {
+      "control": "02",
+      "source": "work/parallel-main-optional-sharing/source02",
+      "files": {
+        "src/buy_v2.rs": "fe1b9b55146fa67a4c3a8f4a1bbfd51261bc33aea5fedf15bc5af7a23c4542be",
+        "src/sell_v2.rs": "f508fe0838ca30c3437d63470cf555522d07ad4e181abfb18652e2e6cf74b94a",
+        "src/optional_sharing.rs": "188b24f3a22f44e26a6019e7375f610a87541433fe96f2f78cd2cfb4fbe85cc9"
+      },
+      "candidate_sha256": "81be7b56a1b65d6b6927b9ad1afb10674c1fb9dcb60f506650785724c8ed41fd",
+      "unstripped_sha256": "3592d6c163630ab8f5b6786e7acabe135bf4012dbca2738f8c123d6359311c4b",
+      "helper_bytes": 656,
+      "normalized_different_slots": 59,
+      "case_count": 246,
+      "strict_cases": 246,
+      "new_optional_helper_windows": [],
+      "lost_windows": [],
+      "archive": "work/parallel-main-optional-sharing/after02.json.gz",
+      "archive_sha256": "30e139677a440aa887b3e5a96e98ffd54716056a12ca093c71f2f3de2fb663d3"
+    },
+    {
+      "control": "03",
+      "source": "work/parallel-main-optional-sharing/source03",
+      "files": {
+        "src/buy_v2.rs": "fe1b9b55146fa67a4c3a8f4a1bbfd51261bc33aea5fedf15bc5af7a23c4542be",
+        "src/sell_v2.rs": "f508fe0838ca30c3437d63470cf555522d07ad4e181abfb18652e2e6cf74b94a",
+        "src/optional_sharing.rs": "aeb4c90b22818d099448b14d1b04d6f2c56ee4b8e4979ed93692bf26f94046ae"
+      },
+      "candidate_sha256": "0e73203a1e2bf5fc3d07586b515852164065ecb1ab48c6247c9889b384360d39",
+      "unstripped_sha256": "d1f3ce683f9e10328cee58de906252f92bfb832e5291fff4fc9c7af79d6a3ee7",
+      "helper_bytes": 608,
+      "normalized_different_slots": 33,
+      "case_count": 246,
+      "strict_cases": 246,
+      "new_optional_helper_windows": [],
+      "lost_windows": [],
+      "archive": "work/parallel-main-optional-sharing/after03.json.gz",
+      "archive_sha256": "49cd69f66bc446ea8736602d5cf16eff49b4a67a05572b683646a1e3b29f7bd8"
+    }
+  ],
+  "best_control": "03",
+  "best_remaining_gap": "post-deserialize return/error-cleanup control flow,33instruction slots; no complete windowgain",
+  "published_baseline_cases": 246,
+  "per_control_cases": 246,
+  "unique_optional_fixtures": 216,
+  "new_unique_optional_fixtures": 209,
+  "intra_matrix_duplicates": 30,
+  "existing_unique_overlaps": 7,
+  "verified_transactions_across_baseline_and_controls": 1968,
+  "captured_loads_across_baseline_and_controls": 1968,
+  "cli_manifest": "work/parallel-main-optional-sharing/CLI-MANIFEST.json",
+  "observed_semantics": [
+    "empty/short/bad discriminator or decode failure yields empty shareholders",
+    "validconfigownerisnotchecked",
+    "pausedstatusandrevokedadminstillreturnshareholders",
+    "mismatchedmint/adminandarbitrarysharebpsareacceptedbythisoptionalloader"
+  ],
+  "not_runtime_exercised": "AccountInfo borrow conflicts; borrow-error propagation inferred from originalcallflow",
+  "best_unpromoted_patches": [
+    "unpromoted-module.patch",
+    "unpromoted-buy-tail.patch",
+    "unpromoted-sell-tail.patch"
+  ],
+  "decoder_note": "checkedSharingConfigdecoder744Bhas2source-locationdifferences; untouched",
+  "maintained_source_edits": false
+}

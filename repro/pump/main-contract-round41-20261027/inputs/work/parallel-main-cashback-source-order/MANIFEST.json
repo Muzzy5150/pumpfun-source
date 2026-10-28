@@ -1,0 +1,257 @@
+{
+  "scope": "Private staged single source-order control, no compile or runtime",
+  "files": {
+    "EVIDENCE.json": {
+      "sha256": "69ab0a4895b8097e3281645ba84ee0de60c1087b2e460e5ab07a1c5678306731",
+      "bytes": 5670
+    },
+    "PLAN.md": {
+      "sha256": "989b20f612542392b810d9198ea659bda21e5e03760442112778a98cf82cca51",
+      "bytes": 2678
+    },
+    "PLANNED-REGRESSION.json": {
+      "sha256": "da498a3492cca2e04013a1290b0da83b14a49c7297e7a379ba54fe4490af21ab",
+      "bytes": 830
+    },
+    "STAGING.json": {
+      "sha256": "34338f394d2789b73248615c10221691a369cb66bbe7ddb8f7987e551f0e9110",
+      "bytes": 12238
+    },
+    "map_evidence.py": {
+      "sha256": "b06ca6b2f5e69092ee2a9d5a3604cd886dbf5c897e0afd38faed06404ccaedf9",
+      "bytes": 3955
+    },
+    "source-order.patch": {
+      "sha256": "48b1caccd52ee5a937a147f22b94114764d052ebe8d954ae2703a5a2cbd2f3ca",
+      "bytes": 1304
+    },
+    "source01/Cargo.lock": {
+      "sha256": "8307bd5e79789b5190291ea014c2f5556e23fb9829fa2f68a7ede581235eae98",
+      "bytes": 70751
+    },
+    "source01/Cargo.toml": {
+      "sha256": "7a1d296cd7b25bb0f6ea89a5fc7616f43a94fb75027fdc329e27f99305ae2dad",
+      "bytes": 637
+    },
+    "source01/README.md": {
+      "sha256": "1574d71c2f22cfd1391509a8bdb991f64ca0c3341769130e1f40bef816449cc9",
+      "bytes": 16513
+    },
+    "source01/recovered/README.md": {
+      "sha256": "46eac75f48743d05e9acd4964080c739eedcc47cf47ad291f6f87459304f52b3",
+      "bytes": 2333
+    },
+    "source01/recovered/constant_product.rs": {
+      "sha256": "ec71f386f5f42abca163df627c7d8a5741c8954efec8732a1c9093728d33a99b",
+      "bytes": 684
+    },
+    "source01/recovered/constant_product_host.rs": {
+      "sha256": "ee2e9e7fb89d7cdc42525dcafa28c802faab4ccb874652fa9df2307b11bc5825",
+      "bytes": 443
+    },
+    "source01/recovered/sell_accounting.rs": {
+      "sha256": "23c1bbd79d6aa2987472a6eba572e0ded99cc8846cffd6bc23883f0700a25983",
+      "bytes": 1377
+    },
+    "source01/recovered/sell_accounting_host.rs": {
+      "sha256": "b4aa42643c68895a23b99d5c46ac429cdaff76f0b650b69211b813b48859a39a",
+      "bytes": 528
+    },
+    "source01/src/admin_set_idl_authority.rs": {
+      "sha256": "d54a5ba66b17018c8d765abe6d38dc7387f70ddf042cd3e10dad8ce013b899a7",
+      "bytes": 2068
+    },
+    "source01/src/buy.rs": {
+      "sha256": "9d4af64b2adcf7ebc52949a5bae65b58fe6e10751f27cbe7c45dcb82a3d09af8",
+      "bytes": 9316
+    },
+    "source01/src/buy_v2.rs": {
+      "sha256": "9cf7e6c14a3e567780a0768cc65d34cb3de2e37fb6bacad11a24f1bf36d97dbc",
+      "bytes": 16371
+    },
+    "source01/src/cashback.rs": {
+      "sha256": "998e8bd7a87c74ca660aa0ea7136f2b81cc274bc8b3acde81783c4b0fcbdb5d6",
+      "bytes": 4922
+    },
+    "source01/src/create.rs": {
+      "sha256": "330b3826bce059a62f5ec07c400d9e8886acff99e66ae60b711d5cebdc77bf18",
+      "bytes": 4659
+    },
+    "source01/src/create_v2.rs": {
+      "sha256": "67668a10b5733ff3eff79dc384c27e5e181c068e78189834e27f85edd7da92e2",
+      "bytes": 18298
+    },
+    "source01/src/creator/admin_cto.rs": {
+      "sha256": "8d9f48cec8c2ab40aa3ae4a49019bf9da3c8e2f7891cf331a60a972398d0add2",
+      "bytes": 18101
+    },
+    "source01/src/creator/collect_creator_fee.rs": {
+      "sha256": "a00ed6655a289ac407f6164a3f6777f34a73799dd2277e64af89c30e6f32ce14",
+      "bytes": 3213
+    },
+    "source01/src/creator/distribute_fee_to_holders.rs": {
+      "sha256": "0f7e1bed2407d4abf4202079cfcbe89932cdfa83f4b5f4da0329284488fb25ad",
+      "bytes": 4377
+    },
+    "source01/src/creator/migrate_bonding_curve_creator.rs": {
+      "sha256": "5b83c3a7db77d639bb36eb8dc840ec8530ebb5b56e8dd670a717fcd2d377bd24",
+      "bytes": 1702
+    },
+    "source01/src/curve_quote_payments.rs": {
+      "sha256": "84d8ae750f67db2b2e01084b3e983996f76a8e1354d6c0bab6f8e9efbfe896ba",
+      "bytes": 2990
+    },
+    "source01/src/distribution.rs": {
+      "sha256": "50be401d3a89612f46927f8750a3b32ad025979bb74a99d8049caf065a0eb9b5",
+      "bytes": 13015
+    },
+    "source01/src/extend_account.rs": {
+      "sha256": "016a0daa8baf7454668aa3756c862b0495637b7a05db3b82ec6ad889c42ac039",
+      "bytes": 1982
+    },
+    "source01/src/fee_cpi.rs": {
+      "sha256": "db77bbded616a63571686a05487fa12776fcef9bae55d4da74743944ac0ce404",
+      "bytes": 4575
+    },
+    "source01/src/fee_recipient.rs": {
+      "sha256": "a0a58edb66cc5ffb5d5f066b441923d64430d1ca1fbc9bb07af9e35a603a932a",
+      "bytes": 834
+    },
+    "source01/src/global_init.rs": {
+      "sha256": "d4e23109ab022e0e8d90fd4485de189843a559eb40923c652fdc0d5d58db97c6",
+      "bytes": 439
+    },
+    "source01/src/incentives.rs": {
+      "sha256": "cb9fb2fd6efe31590f6cfd6aec633a064b9ce3a1e2e4426b6a6813275945d2ea",
+      "bytes": 2415
+    },
+    "source01/src/legacy_native_payments.rs": {
+      "sha256": "f929fd69edeb27fbc16d94cfea558347f3b163838329f3efc684eb536ba6389d",
+      "bytes": 986
+    },
+    "source01/src/lib.rs": {
+      "sha256": "9c6c151c7d735caf72364b06f4ea965bf00ddcb03e96045331fd035237dbeeef",
+      "bytes": 36558
+    },
+    "source01/src/lib.rs.orig": {
+      "sha256": "6a97e8bc6e0d10bb26a7ad6c79d3160a951ff4bd63d7bdbc8a040fb3ca082485",
+      "bytes": 30080
+    },
+    "source01/src/mayhem_virtual_params.rs": {
+      "sha256": "6eeae687e0f29176d48a4de0d57b0457f5e4fa498c17fd5de0520e162b5677da",
+      "bytes": 4703
+    },
+    "source01/src/migrate.rs": {
+      "sha256": "fb03bc70b5359b29527fec5f8c5328c2212012bd782a9aabd62f4489fc115db7",
+      "bytes": 11526
+    },
+    "source01/src/migrate_v2.rs": {
+      "sha256": "b557054b667629085d5a284329fec569df376520c17228d84be119f99ebec4c3",
+      "bytes": 16308
+    },
+    "source01/src/migration_native_payments.rs": {
+      "sha256": "d67b1eecd822d8fee7ae470922c3612b0c852308beab2ec73184f74f1042839e",
+      "bytes": 1802
+    },
+    "source01/src/minimum.rs": {
+      "sha256": "aab3cb1d7c3598bf5a44c3bd8917493c3cf05fb356f7a315ed862669fe64155d",
+      "bytes": 1524
+    },
+    "source01/src/multi_hop_curve_swap.rs": {
+      "sha256": "f27e2d6626a384d85bcd682aa59b3f556cd06498baa7efc284392b1ddcf1898b",
+      "bytes": 27390
+    },
+    "source01/src/nested_create.rs": {
+      "sha256": "4a08a86ff5df5467b3638ab02ee51f680158960b0427da4223441a0335174461",
+      "bytes": 9871
+    },
+    "source01/src/quote_control/initialize_quote_control.rs": {
+      "sha256": "f69183651495574b85e572aafd23ab768fdf3072a0d4c7e05da6ca51715b9136",
+      "bytes": 941
+    },
+    "source01/src/quote_control/mod.rs": {
+      "sha256": "c1a355d9ed55a4b69224ddd3ddc703b2dd7608bc8aa0bbde830d88a6a61a8120",
+      "bytes": 180
+    },
+    "source01/src/quote_control/state.rs": {
+      "sha256": "98df5c28a3c0006fcdef4f3cb0c3529ad0aca6393fe8b99852f12abc502d5213",
+      "bytes": 4294
+    },
+    "source01/src/quote_control/update_quote_control_mints.rs": {
+      "sha256": "820a28f795130c637b30709cabfe5426915a68e72bd3b5f6c557266ea3e9dea5",
+      "bytes": 7216
+    },
+    "source01/src/sell.rs": {
+      "sha256": "77ee2e493b73895d870b7df426855e47162cc11ca6678cbb422781a1d00e47ef",
+      "bytes": 8316
+    },
+    "source01/src/sell_v2.rs": {
+      "sha256": "aad9918da13d1df2b2132f6a417e2651486fd163f4d573a540ed99838a2d780f",
+      "bytes": 12127
+    },
+    "source01/src/set_creator.rs": {
+      "sha256": "ea1147a3d3249191f75727bca27aa4ddbef6f2831070f88dfb7f0f99b84eb4ae",
+      "bytes": 2671
+    },
+    "source01/src/set_params.rs": {
+      "sha256": "6b411241b6eaf90dcccaa8f51a52f005f8d608e365cb7aab3a14a2e22e9e9ca2",
+      "bytes": 3767
+    },
+    "source01/src/sweep_fees.rs": {
+      "sha256": "b2e29c4da032ad18d39b4940780d2fb91967801462b2e4875870425a99877df0",
+      "bytes": 4136
+    },
+    "source01/src/token_incentives/claim_token_incentives.rs": {
+      "sha256": "bd9de953a077b869ada9074aa623591b3966449d546a74e02febd68d076e8558",
+      "bytes": 4317
+    },
+    "source01/src/token_incentives/mod.rs": {
+      "sha256": "21a914a951ef03c576813dd29a5f890d25ada1b6917d0bfd6425fa48576cd806",
+      "bytes": 96
+    },
+    "source01/src/token_incentives/volume_accumulator.rs": {
+      "sha256": "4a693725cf3b109901dd141f36e55e0c0c998794ef783dd60d0666476d6df350",
+      "bytes": 8533
+    },
+    "source01/src/trade_types.rs": {
+      "sha256": "7e4bb39cd348bfcc7007a6ca6cbcd9cfba37eadd243ee7471a4c39782b4b0124",
+      "bytes": 17168
+    },
+    "source01/src/trade_v3.rs": {
+      "sha256": "d5497d033b752566ed596f7c30fbdc513f842b43936823e6efb7a36cf2364f76",
+      "bytes": 36895
+    },
+    "source01/src/util/fee.rs": {
+      "sha256": "43537cceaef50f0052c1e868d686db2fa48b6dfe8b2b6de8fe6474f5eade6e7a",
+      "bytes": 764
+    },
+    "source01/src/v2_native_payments.rs": {
+      "sha256": "26ec8fb6d1d4c36e88f72df3980e8325eb3220ee25b9be87c600a20c5c32fac1",
+      "bytes": 1006
+    },
+    "source01/src/v2_quote_token_transfers.rs": {
+      "sha256": "ac15f56326e6b234c9593a6843a2ac19d353bfa047d5cd8b381a5517afe83bfe",
+      "bytes": 968
+    },
+    "source01/src/v2_recipient_payments.rs": {
+      "sha256": "6c9d433652f4d879aba19281eeb98f14853d0421d74409318775154c0a36f51e",
+      "bytes": 1240
+    },
+    "source01/src/v2_token_transfers.rs": {
+      "sha256": "9b538a848ee03174e864d114c6bd3fba43a61012ba9180e76f881602e2ef7bae",
+      "bytes": 1109
+    },
+    "source01/src/v2_user_token_transfers.rs": {
+      "sha256": "86577a8573623af55b93fab323306c8fc087bbb8478f7d5a13d1be8581d8beb5",
+      "bytes": 903
+    },
+    "source01/src/v3_native_transfer_fee.rs": {
+      "sha256": "81047d109f5cffabdb13795c67003eb34e8285708d68d7594485c0bfc55b9b75",
+      "bytes": 1731
+    },
+    "source01/src/volume_sync.rs": {
+      "sha256": "3e84175c4cdca3c559aa1928716bd98ad573ca7d82eca0248c73c3fc1304b6ff",
+      "bytes": 1609
+    }
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "status": "validated frozen genuine quote-token CPI helper",
+  "source": "work/parallel-main-quote-token-helper/source01",
+  "base": "work/parallel-main-sweep-recipient-reuse/source01",
+  "files": {
+    "src/sell_v2.rs": "572c4f5c86277faefcc052cb21ac3d8f40de10327c40441a73fccd7d3754c6ca",
+    "src/sweep_fees.rs": "8a3a7d875af3fb2d41b3afc4aeebf71790611f84fec512a1bc4e4c8c7ccacf1d",
+    "src/v2_quote_token_transfers.rs": "ac15f56326e6b234c9593a6843a2ac19d353bfa047d5cd8b381a5517afe83bfe"
+  },
+  "patch": "work/parallel-main-quote-token-helper/quote-token-helper.patch",
+  "candidate_sha256": "c1dc848707f74c8eccf7de2079dd0c54b076863b0ef171426c1ce2bcdb3ffdb6",
+  "unstripped_sha256": "adc4b4a87f39ff9b7262b445f2adb0216e858620b14b992e0d4e4f4273908791",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "source_build_binding": true,
+  "case_count": 2150,
+  "strict_case_count": 2148,
+  "verified_transaction_signatures": 4300,
+  "paired_comparison_loads": 4300,
+  "per_case_program_loads": 4762,
+  "extra_original_fixture_loads": 462,
+  "suites": [
+    {
+      "suite": "regression",
+      "case_count": 882,
+      "strict_case_count": 880,
+      "archive": "work/parallel-main-quote-token-helper/after01-regression.json.gz",
+      "archive_sha256": "c020272a56e91ac5e874b599314012834c45dc7596d05a48930664ba9079458d"
+    },
+    {
+      "suite": "order",
+      "case_count": 130,
+      "strict_case_count": 130,
+      "archive": "work/parallel-main-quote-token-helper/after01-order.json.gz",
+      "archive_sha256": "2ffb268d2ac0eee9ef3aa23b02e91af43d4c5030ee00dda5faec85102a0982c3"
+    },
+    {
+      "suite": "sell-expanded",
+      "case_count": 32,
+      "strict_case_count": 32,
+      "archive": "work/parallel-main-quote-token-helper/after01-sell-expanded.json.gz",
+      "archive_sha256": "9265105f9dfe6e822293930e9d96b34a0cf458df799a4db1521a077925d91de5"
+    },
+    {
+      "suite": "sell-atas",
+      "case_count": 25,
+      "strict_case_count": 25,
+      "archive": "work/parallel-main-quote-token-helper/after01-sell-atas.json.gz",
+      "archive_sha256": "1803d43815244a4dab5093f24e1d00e5d6e7478ab21d20914f02aadd3bc09a01"
+    },
+    {
+      "suite": "sell-prepare",
+      "case_count": 12,
+      "strict_case_count": 12,
+      "archive": "work/parallel-main-quote-token-helper/after01-sell-prepare.json.gz",
+      "archive_sha256": "445184b56aaa72959247dae23e670d83d85cb195821f8f822cd9486744a4f136"
+    },
+    {
+      "suite": "recipients",
+      "case_count": 144,
+      "strict_case_count": 144,
+      "archive": "work/parallel-main-quote-token-helper/after01-recipients.json.gz",
+      "archive_sha256": "e036d9ccee10ab528fe6e5546228a6b1475ebae4e66ddab5dde4863c4e5f0dc6"
+    },
+    {
+      "suite": "boundaries",
+      "case_count": 206,
+      "strict_case_count": 206,
+      "archive": "work/parallel-main-quote-token-helper/after01-boundaries.json.gz",
+      "archive_sha256": "1c8fb71a8a803d4fd634e33b6fcdf9284415955c6dad92c5e959a51afa024dc8"
+    },
+    {
+      "suite": "crossing",
+      "case_count": 36,
+      "strict_case_count": 36,
+      "archive": "work/parallel-main-quote-token-helper/after01-crossing.json.gz",
+      "archive_sha256": "aeee3ae13f8475793f82fa396bf09bbd4a05d5ec2be9ed99a8c7dd019eedc939"
+    },
+    {
+      "suite": "waiver",
+      "case_count": 27,
+      "strict_case_count": 27,
+      "archive": "work/parallel-main-quote-token-helper/after01-waiver.json.gz",
+      "archive_sha256": "a25508d7780fcb1771f970a5c07c0a2059581ad724e43dcbbaa263a950e93532"
+    },
+    {
+      "suite": "payment",
+      "case_count": 64,
+      "strict_case_count": 64,
+      "archive": "work/parallel-main-quote-token-helper/after01-payment.json.gz",
+      "archive_sha256": "7704247ab91ae29fee0064a57d3d91386cf7ab639c2b272ca7c8ecba9479cbdc"
+    },
+    {
+      "suite": "legacy-boundary",
+      "case_count": 36,
+      "strict_case_count": 36,
+      "archive": "work/parallel-main-quote-token-helper/after01-legacy-boundary.json.gz",
+      "archive_sha256": "a24af37326d506a7592d2f165307c6a9c9e5d36fb96c45f955e1b4f4747bd386"
+    },
+    {
+      "suite": "low-lamports",
+      "case_count": 6,
+      "strict_case_count": 6,
+      "archive": "work/parallel-main-quote-token-helper/after01-low-lamports.json.gz",
+      "archive_sha256": "dd48692754aea757b0323eac54d67cde5d3f34dea496078aad2032af2477f43f"
+    },
+    {
+      "suite": "partial-balance",
+      "case_count": 2,
+      "strict_case_count": 2,
+      "archive": "work/parallel-main-quote-token-helper/after01-partial-balance.json.gz",
+      "archive_sha256": "c24ac0999cbc59130231323b965292353c5848bf213455ad67e199fa5417aab8"
+    },
+    {
+      "suite": "thresholds",
+      "case_count": 12,
+      "strict_case_count": 12,
+      "archive": "work/parallel-main-quote-token-helper/after01-thresholds.json.gz",
+      "archive_sha256": "463712fa84f96a721475e53b0bb7f0ddd4f31b9358ae14074d1cad441f6eab43"
+    },
+    {
+      "suite": "creator-order",
+      "case_count": 8,
+      "strict_case_count": 8,
+      "archive": "work/parallel-main-quote-token-helper/after01-creator-order.json.gz",
+      "archive_sha256": "c0d4febbed92e9ed52f5c9e0c1e3327c309a03de75e27952e581c30df271dd55"
+    },
+    {
+      "suite": "sell-v2-split",
+      "case_count": 24,
+      "strict_case_count": 24,
+      "archive": "work/parallel-main-quote-token-helper/after01-sell-v2-split.json.gz",
+      "archive_sha256": "050dad793c0d107d2e4ac97e58fb13cc9f7130e166c0ca1ff4f62c103d7aa2f1"
+    },
+    {
+      "suite": "sell-v2-thresholds",
+      "case_count": 42,
+      "strict_case_count": 42,
+      "archive": "work/parallel-main-quote-token-helper/after01-sell-v2-thresholds.json.gz",
+      "archive_sha256": "30805b14488372f18914116c6af99c2535a97497f4941b2c6e8a334a8dcf489c"
+    },
+    {
+      "suite": "sweeps",
+      "case_count": 462,
+      "strict_case_count": 462,
+      "archive": "work/parallel-main-quote-token-helper/after01-sweeps.json.gz",
+      "archive_sha256": "5e922790e511fbe175b11663730fe8751ee3fccfed4e0f8f6e68f39cabff1d29"
+    }
+  ],
+  "helper": {
+    "original": "0x91ef0",
+    "candidate": "0x5c368",
+    "bytes": 2352,
+    "normalized_equal": true,
+    "raw_equal": false,
+    "callees": [
+      {
+        "offset": 2184,
+        "original": "0x17fcc8",
+        "candidate": "0x1635f0",
+        "bytes": 2192,
+        "normalized_equal": true
+      }
+    ],
+    "live_callers": [
+      {
+        "site": "0x596c8",
+        "caller": "_ZN14pump_recovered7sell_v27execute17h96deb08aab2d7ea0E"
+      },
+      {
+        "site": "0x59c00",
+        "caller": "_ZN14pump_recovered7sell_v27execute17h96deb08aab2d7ea0E"
+      },
+      {
+        "site": "0x5a160",
+        "caller": "_ZN14pump_recovered7sell_v27execute17h96deb08aab2d7ea0E"
+      },
+      {
+        "site": "0x5a378",
+        "caller": "_ZN14pump_recovered7sell_v27execute17h96deb08aab2d7ea0E"
+      },
+      {
+        "site": "0x77378",
+        "caller": "_ZN14pump_recovered5sweep7execute17he3583b17b5320a38E"
+      }
+    ],
+    "inventory": {
+      "total": 1035,
+      "raw": 123,
+      "normalized": 712,
+      "unmatched": 323
+    },
+    "new_normalized_windows": [
+      "0x91ef0"
+    ],
+    "lost_normalized_windows": []
+  },
+  "new_behavioral_counterexamples": 0,
+  "scope": "Restore original liveCPIboundary/ABI; no behavioral change intended. Exacthelper plus existing token2022 transfer_checked callee, realSellV2/Sweep callers.",
+  "full_elf_identity": false,
+  "set_comparisons": {
+    "r22": {
+      "normal_added": [
+        "0x91ef0"
+      ],
+      "normal_missing": [],
+      "raw_added": [],
+      "raw_missing": [],
+      "baseline_counts": {
+        "total": 1035,
+        "raw": 123,
+        "normalized": 711,
+        "unmatched": 324
+      }
+    },
+    "build-round23-final": {
+      "normal_added": [
+        "0x91ef0"
+      ],
+      "normal_missing": [
+        "0x8c770"
+      ],
+      "raw_added": [],
+      "raw_missing": [],
+      "baseline_counts": {
+        "total": 1035,
+        "raw": 123,
+        "normalized": 712,
+        "unmatched": 323
+      }
+    }
+  },
+  "r23_note": "Candidate was built from R22 plus acceptedSweepreuse. Its lackof0x8c770 is anancestorbaseline omission, notcausedbythis3filepatch. ApplypatchtoR23forR24 andpreserveR23migrationfiles.",
+  "r23_patch_base_compatibility": {
+    "src/sell_v2.rs": true,
+    "src/sweep_fees.rs": true
+  },
+  "incremental_probes": {
+    "new_case_count": 0,
+    "reason": "ABI-only extraction, no intended behavior change; reused2150signedcasesincludingToken22,feewaivers,paymentorder,andSweepcreator/protocolbranches."
+  }
+}

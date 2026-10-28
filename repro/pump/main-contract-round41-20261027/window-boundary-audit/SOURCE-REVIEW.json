@@ -1,0 +1,14 @@
+{
+  "current_matcher": "work/pump-reserve-byte-recovery/inventory_current.py",
+  "finding": "Reads fixedfunctions.tsv; it does not derive or independently validateoriginalboundaries. It recordsinputhashes but has no expectedoriginalhash/count/partition assertions. Thisaudit validates thecurrentinputs separately.",
+  "producer": "work/pump-admin-cto-error-batch-build/elf_reader.py",
+  "producer_rule": "Union ofdefinedfunctionsymbols,ELFentry,nonexternalrelativeCALLtargets,andR_BPF_64_RELATIVEpointerstotext; sortedentrytonextentrypartition.",
+  "producer_hash_matches_published_inner_manifest": true,
+  "loader_corroboration": {
+    "path": "/Users/shawwalters/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-sbpf-0.13.1/src/elf.rs",
+    "sha256": "a9ee51dd0112639bdfb5baac0b11fb21827e5490c745a7501e144bd840327112",
+    "lines": "1048-1080",
+    "fact": "R_Bpf_64_Relative outside text reads32-bitaddendatsite+4 for historicalcompilercompatibility; corroboratestheoriginaldata-relocationdecoder. Not asserted as originalhistoricaltoolchainidentity."
+  },
+  "recommendation": "Keep1035denominator describedasinferredwindows; add thisaudit asread-onlyvalidationbeforeusingtableonchangedELF. No boundarytablechangeswarrantedbycurrentevidence."
+}

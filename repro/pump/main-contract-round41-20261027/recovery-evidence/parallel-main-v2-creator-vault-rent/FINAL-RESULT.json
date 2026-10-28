@@ -1,0 +1,236 @@
+{
+  "status": "frozen; all selected signed regressions passed",
+  "source_base": "work/parallel-main-integration/round24-source/programs/pump",
+  "source_files": {
+    "src/buy_v2.rs": "7d7322c4b66737f785f4e1bf2c8371f6427efe04b1922a9de0153b8c609fd0da",
+    "src/sell_v2.rs": "654ea4a649d045a48bb5482ed7d13e452fe670939a80a70dbdfe45331da12d0b",
+    "src/v2_native_payments.rs": "26ec8fb6d1d4c36e88f72df3980e8325eb3220ee25b9be87c600a20c5c32fac1"
+  },
+  "baseline_source_hashes": {
+    "src/buy_v2.rs": "2c7c8a8111cf60481a23ac74f1f91ded394445d8cd172baeeb488d17d3e11787",
+    "src/sell_v2.rs": "4e1938bfae9c6e25faa534bdbf6dc263a5d53c989a9d6b5df170c82e032fea15",
+    "src/v2_native_payments.rs": "8104628d40b47123f565617e49a06e73b64e840e2e97baf63d79374641d6819b"
+  },
+  "candidate_sha256": "fad449882ca8d550a1df72101196f2a94f16243b6e0918b53f38bfcdbaef3c1d",
+  "unstripped_sha256": "abf40b6934604f40e8b2f85a7de402d0b87e0366ef6888f3844d85faded1abb2",
+  "patches": [
+    "sell-v2-funding.patch",
+    "helper-visibility.patch",
+    "v2-creator-vault-rent.patch"
+  ],
+  "before_mismatches": 12,
+  "after_mismatches": 0,
+  "strict_mismatches": 0,
+  "new_cases": 108,
+  "verified_transactions": 4516,
+  "captured_main_loads": 4979,
+  "inventory": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 720,
+    "unmatched": 315
+  },
+  "helper_original": "0x3b598",
+  "helper_bytes": 416,
+  "helper_normalized_different_slots": 22,
+  "helper_body_changed": false,
+  "placement": "After base-token CPI; before creator payment; cf > 0 and !cashback_coin",
+  "semantics": "Fund full Rent::minimum_balance(0) from user when creator vault below minimum; poor user retains original System custom1 error",
+  "main_owned_files_only": true,
+  "total_cases": 2258,
+  "strict_cases": 2256,
+  "regressions": [
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-regression.json.gz",
+      "sha256": "2b4361da72a3aa1ba519f6484cb47de0602cd9e4938a58b8264b3fac3454b1b1",
+      "cases": 882,
+      "strict_cases": 880,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-order.json.gz",
+      "sha256": "473ef3db5d25b7e3f50ccfe9c69b27f51e05ff686bed76ae919f3d26a889158d",
+      "cases": 130,
+      "strict_cases": 130,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-sell-expanded.json.gz",
+      "sha256": "ad1bac8816a860258d3b9514497ef20ef7c7e286d418ef1d2cc7e3f66d481bf2",
+      "cases": 32,
+      "strict_cases": 32,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-sell-atas.json.gz",
+      "sha256": "540c6b94e95bd875478a0da4623c32fd238bec3575826247b0323910e3d6c850",
+      "cases": 25,
+      "strict_cases": 25,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-sell-prepare.json.gz",
+      "sha256": "24283ae309a4ef5d60ed0f74f8b2c081d1dc5992aacc7e0fa2acc8ff60be587f",
+      "cases": 12,
+      "strict_cases": 12,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-recipients.json.gz",
+      "sha256": "c4aba5efdfa2e506c7de51ba39c1611c5b0840179fa36621a83dac4ec2568f54",
+      "cases": 144,
+      "strict_cases": 144,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-boundaries.json.gz",
+      "sha256": "656b4fd4145091eb4b44b0d2a581f48442474c1bd93ec4f01f606a167f498fcc",
+      "cases": 206,
+      "strict_cases": 206,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-crossing.json.gz",
+      "sha256": "e6caf08cd1d70bc1c5b4870035e54934e9625487e7ab2222ba0749f1806146fd",
+      "cases": 36,
+      "strict_cases": 36,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-waiver.json.gz",
+      "sha256": "fcc0c1e43a887d20d77b65480b6e05cf9fa8aa0fdd0c323fbdb7c7f5b228f7ea",
+      "cases": 27,
+      "strict_cases": 27,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-payment.json.gz",
+      "sha256": "74a16ebe9d4b36c94e08a4d583218bb863b4759d7bc39f264a5611e4cc80adfe",
+      "cases": 64,
+      "strict_cases": 64,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-legacy-boundary.json.gz",
+      "sha256": "285b7af42915fe4f9568eed3dcc7c630bd9f3b039a69182ff382d21ea7cd074f",
+      "cases": 36,
+      "strict_cases": 36,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-low-lamports.json.gz",
+      "sha256": "5d6f0ad2dede7d48b62df8383f397ebee3fa6b976f00c144642b9a32e1a4349f",
+      "cases": 6,
+      "strict_cases": 6,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-partial-balance.json.gz",
+      "sha256": "7c55783afabd6a2f21d9d74dd5ee615f219db894dde663992aecdfe6365f284c",
+      "cases": 2,
+      "strict_cases": 2,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-thresholds.json.gz",
+      "sha256": "84d6254f041711305c2a9763c6c1113c550fabf768188518344fc8bdfaeead0b",
+      "cases": 12,
+      "strict_cases": 12,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-creator-order.json.gz",
+      "sha256": "2d9975cd7c2b8b887736a01cdd8a40c6c905af58f390043a0fe2bea50a93bfd7",
+      "cases": 8,
+      "strict_cases": 8,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-sell-v2-split.json.gz",
+      "sha256": "425a7040a0c589c6b5ebf1ddd097b059da78046db0967f9d1443adf4281bf4ce",
+      "cases": 24,
+      "strict_cases": 24,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-sell-v2-thresholds.json.gz",
+      "sha256": "7d5fe6e979a5462336c1ae8cc39cef2fefb5983209569e2117c961a8475d9d51",
+      "cases": 42,
+      "strict_cases": 42,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01-sweeps.json.gz",
+      "sha256": "fdd77bee6126936bfb5b349f19186135316370164219a92b1543987a6e15b3c7",
+      "cases": 462,
+      "strict_cases": 462,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "archive": "work/parallel-main-v2-creator-vault-rent/after01.json.gz",
+      "sha256": "f3f28e490c4eb4a66c4b95fd17310df712cea6dbb4bde02ac361b91a3884eb85",
+      "cases": 108,
+      "strict_cases": 108,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    }
+  ],
+  "window_sets": {
+    "normalized": {
+      "gains": [],
+      "losses": []
+    },
+    "raw": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "waiver_loader_receipt": "after01-waiver.loader.json",
+  "duplicates": {
+    "method": "SHA256 of original signed transaction bytes plus complete original post-execution accounts snapshot, with sorted JSON keys. An observable-fixture count, not a claim that every covered path is distinct.",
+    "raw_cases": 108,
+    "unique_observable_fixtures": 108,
+    "intra_matrix_duplicates": [],
+    "prior_corpus_archives": [
+      "work/parallel-main-v2-creator-vault-rent/after01-boundaries.json.gz",
+      "work/parallel-main-v2-creator-vault-rent/after01-creator-order.json.gz",
+      "work/parallel-main-v2-creator-vault-rent/after01-crossing.json.gz",
+      "work/parallel-main-v2-creator-vault-rent/after01-legacy-boundary.json.gz",
+      "work/parallel-main-v2-creator-vault-rent/after01-low-lamports.json.gz",
+      "work/parallel-main-v2-creator-vault-rent/after01-order.json.gz",
+      "work/parallel-main-v2-creator-vault-rent/after01-partial-balance.json.gz",
+      "work/parallel-main-v2-creator-vault-rent/after01-payment.json.gz",
+      "work/parallel-main-v2-creator-vault-rent/after01-recipients.json.gz",
+      "work/parallel-main-v2-creator-vault-rent/after01-regression.json.gz",
+      "work/parallel-main-v2-creator-vault-rent/after01-sell-atas.json.gz",
+      "work/parallel-main-v2-creator-vault-rent/after01-sell-expanded.json.gz",
+      "work/parallel-main-v2-creator-vault-rent/after01-sell-prepare.json.gz",
+      "work/parallel-main-v2-creator-vault-rent/after01-sell-v2-split.json.gz",
+      "work/parallel-main-v2-creator-vault-rent/after01-sell-v2-thresholds.json.gz",
+      "work/parallel-main-v2-creator-vault-rent/after01-thresholds.json.gz",
+      "work/parallel-main-v2-creator-vault-rent/after01-waiver.json.gz",
+      "work/parallel-main-optional-sharing/before.json.gz"
+    ],
+    "unique_prior_overlaps": 0,
+    "prior_overlaps": [],
+    "new_unique_observable_fixtures": 108
+  }
+}

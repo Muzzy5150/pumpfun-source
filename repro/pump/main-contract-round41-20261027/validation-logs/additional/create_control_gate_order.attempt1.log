@@ -1,0 +1,11 @@
+controlled-unlisted TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6071)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6071)))) []
+controlled-unlisted-zero TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6071)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6071)))) []
+controlled-empty TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063)))) []
+controlled-malformed TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6075)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6075)))) []
+controlled-whitelist TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3012)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3012)))) []
+controlled-normal-mode None None []
+controlled-mode-disabled TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6048)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6048)))) []
+controlled-cashback TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6082)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6082)))) []
+controlled-create-disabled TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6046)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6046)))) []
+controlled-name-long TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6071)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6071)))) []
+cases 10 mismatches 0

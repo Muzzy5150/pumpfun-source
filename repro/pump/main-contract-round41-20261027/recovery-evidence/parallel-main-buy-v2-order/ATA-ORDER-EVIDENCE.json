@@ -1,0 +1,32 @@
+[
+  {
+    "case": "buy_v2_['associated_quote_fee_recipient', 'associated_quote_buyback_fee_recipient', 'associated_creator_vault', 'associated_user_volume_accumulator']_valid",
+    "original": [
+      "associated_creator_vault",
+      "associated_user_volume_accumulator",
+      "associated_quote_fee_recipient",
+      "associated_quote_buyback_fee_recipient"
+    ],
+    "candidate": [
+      "associated_quote_fee_recipient",
+      "associated_quote_buyback_fee_recipient",
+      "associated_creator_vault",
+      "associated_user_volume_accumulator"
+    ]
+  },
+  {
+    "case": "buy_exact_quote_in_v2_['associated_quote_fee_recipient', 'associated_quote_buyback_fee_recipient', 'associated_creator_vault', 'associated_user_volume_accumulator']_valid",
+    "original": [
+      "associated_creator_vault",
+      "associated_user_volume_accumulator",
+      "associated_quote_fee_recipient",
+      "associated_quote_buyback_fee_recipient"
+    ],
+    "candidate": [
+      "associated_quote_fee_recipient",
+      "associated_quote_buyback_fee_recipient",
+      "associated_creator_vault",
+      "associated_user_volume_accumulator"
+    ]
+  }
+]

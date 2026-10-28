@@ -1,0 +1,39 @@
+{
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "helper": "0x2b490",
+  "arithmetic": "At2bcf8 add recipient-lamports to amount; unsigned carry test at2bd08 selectsu64::MAX through2bd18/2bd28. Rent-floor comparison is strict< at2bd60.",
+  "callee_mapping": [
+    {
+      "site": "0x2b4d8",
+      "target": "0x1b3678",
+      "bytes": 64,
+      "exact_candidate_symbols": [
+        "memcmp"
+      ]
+    },
+    {
+      "site": "0x2bce8",
+      "target": "0x1a29f0",
+      "bytes": 120,
+      "exact_candidate_symbols": [
+        "_ZN19solana_account_info11AccountInfo8lamports17h0ff88b0cb687fca7E"
+      ]
+    },
+    {
+      "site": "0x2bd38",
+      "target": "0x1a2a68",
+      "bytes": 80,
+      "exact_candidate_symbols": [
+        "_ZN19solana_account_info11AccountInfo8data_len17h11478a473a815c65E"
+      ]
+    },
+    {
+      "site": "0x2bd58",
+      "target": "0x1a0ae8",
+      "bytes": 400,
+      "exact_candidate_symbols": [
+        "_ZN11solana_rent4Rent15minimum_balance17hea6ac3bc2b8bb235E"
+      ]
+    }
+  ]
+}

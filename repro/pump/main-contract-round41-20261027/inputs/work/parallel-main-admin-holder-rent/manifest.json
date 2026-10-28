@@ -1,0 +1,22 @@
+[
+  {
+    "name": "holder_rent_boundaries",
+    "script": "work/parallel-main-admin-holder-rent/probe_holder_rent_expanded.py",
+    "count": 35
+  },
+  {
+    "name": "admin_cto",
+    "script": "scripts/pump_admin_cto_differential.py",
+    "count": 363
+  },
+  {
+    "name": "curve_rent",
+    "script": "work/parallel-main-admin-cto-rent/probe_cto_rent.py",
+    "count": 12
+  },
+  {
+    "name": "creator_fee_guard",
+    "script": "work/parallel-main-admin-cto-rent/probe_cto_fees.py",
+    "count": 12
+  }
+]

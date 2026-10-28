@@ -1,0 +1,5 @@
+mode-policy-before-fee-disabled TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6071)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6071)))) []
+mode-policy-before-fee-range TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6071)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6071)))) []
+holder-disabled-before-mode-policy TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6084)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6084)))) []
+whitelist-mode-fee-ignored TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3012)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(3012)))) []
+cases 4 mismatches 0

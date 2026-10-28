@@ -1,0 +1,32 @@
+{
+  "sets": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": [
+        "0xa7e0",
+        "0x18a3b0",
+        "0x18a4d8",
+        "0x18a888",
+        "0x18de90",
+        "0x18e568",
+        "0x1a0f68",
+        "0x1a2340",
+        "0x1a6370",
+        "0x1a6940",
+        "0x1ab220",
+        "0x1ab730",
+        "0x1b31d8",
+        "0x1b3220",
+        "0x1b38b0",
+        "0x1b38c0",
+        "0x1b4088",
+        "0x1b40d0"
+      ]
+    }
+  },
+  "raw_limit": "Private build omitted final ordered recipe; raw layout is not qualified."
+}

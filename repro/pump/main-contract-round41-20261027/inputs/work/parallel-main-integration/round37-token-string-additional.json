@@ -1,0 +1,22 @@
+{
+  "scope": "8 additional signed token planner executable-recipient inputs; proven distinct from completeR36 corpus",
+  "counts": {
+    "full": 0,
+    "additional": 8
+  },
+  "definition_sha256": {
+    "work/parallel-main-token-distribution-string/probe_executable.py": "9584df64c9c24ddcb7aebb0386883dcaf203f6ac07444ca40b0df1b528cb299c",
+    "work/parallel-main-token-distribution-string/INCREMENTAL-INPUTS01.json": "79e0bc7594da65af14e68c90efe41d5efec1913b5dfce0f8cd274cf94b364b35",
+    "work/parallel-main-token-distribution-string/INCREMENTAL-CLI01.json": "ff3343d3003c38a2835c38aefded39841348debe06ee3454292454b4bd5e8593",
+    "work/parallel-main-integration/round37-token-string-dedup.json": "bb8c445c6ba3d371e59461c242051a81bb773a6bc720504d59ceadf41b821589"
+  },
+  "suites": [
+    {
+      "group": "additional",
+      "name": "token_planner_executable_recipients",
+      "script": "work/parallel-main-token-distribution-string/probe_executable.py",
+      "cases": 8,
+      "args": []
+    }
+  ]
+}

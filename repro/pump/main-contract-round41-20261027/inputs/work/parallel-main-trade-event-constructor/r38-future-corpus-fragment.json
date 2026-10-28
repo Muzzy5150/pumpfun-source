@@ -1,0 +1,24 @@
+{
+  "scope": "One deduplicated nonzero existing-volume SellV3 state; zero control retained only in private regression. One distinct signed transaction covers two distinct state inputs.",
+  "counts": {
+    "full": 0,
+    "additional": 1
+  },
+  "definition_sha256": {
+    "work/parallel-main-trade-event-constructor/probe_volume.py": "692c9ca3c15d77c6344bc90593332cd4020e3a9466f425156479e8f1384f258f",
+    "work/parallel-main-trade-event-constructor/DEDUP01.json": "c9fae9fabb92e4c3d97515373614ca4736fda3b949a43edadae8c6cd6162506e",
+    "work/parallel-main-trade-event-constructor/input-capture.json.gz": "b2e6156d2656ecba74bce056a031a61ae2122d9088f47b7ecd6b5bd7e9cf34bf",
+    "work/parallel-main-trade-event-constructor/R38-DEDUP02.json": "a2cf82e8e222b7ca51a61bad50ac83c706f1f6123a492c84c7e7e075f378f702"
+  },
+  "suites": [
+    {
+      "group": "additional",
+      "name": "sell_v3_existing_volume_event",
+      "script": "work/parallel-main-trade-event-constructor/probe_volume.py",
+      "cases": 1,
+      "args": [
+        "--only-new"
+      ]
+    }
+  ]
+}

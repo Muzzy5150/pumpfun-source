@@ -1,0 +1,511 @@
+{
+  "scope": "Read-only evidence for the remaining external-account root origin.\n\nNo source, compiler output, or maintained tool is changed. The report supports\na source hypothesis; it does not claim the original macro spelling is known.\n",
+  "baseline": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/source01",
+  "original_location": {
+    "address": "0x1be0f0",
+    "pointer": {
+      "site": 1827056,
+      "relocation_type": 8,
+      "target": 1798853,
+      "raw": "00000000c5721b00"
+    },
+    "file": "programs/pump/src/lib.rs",
+    "line": 84,
+    "column": 1,
+    "raw_payload": "00000000c5721b0018000000000000005400000001000000"
+  },
+  "all_original_direct_location_uses": [
+    {
+      "owner": "0x89258",
+      "owner_bytes": 2288,
+      "site": "0x897f0",
+      "offset": 1432,
+      "location_argument_register": 1,
+      "following_call": "0x1ac500",
+      "following_callee_normalized_labels": [
+        "_ZN4core6option13unwrap_failed17hb61032f7115db118E"
+      ],
+      "lddw_and_call_bytes": "18010000f0e01b000000000000000000851000009f450200"
+    },
+    {
+      "owner": "0x89258",
+      "owner_bytes": 2288,
+      "site": "0x89b30",
+      "offset": 2264,
+      "location_argument_register": 5,
+      "following_call": "0x1ace18",
+      "following_callee_normalized_labels": [
+        "_ZN4core6result13unwrap_failed17h3adcf81658ff1466E"
+      ],
+      "lddw_and_call_bytes": "18050000f0e01b000000000000000000851000005a460200"
+    },
+    {
+      "owner": "0x1159d8",
+      "owner_bytes": 1176,
+      "site": "0x115a00",
+      "offset": 40,
+      "location_argument_register": 3,
+      "following_call": "0x1b04b0",
+      "following_callee_normalized_labels": [
+        "rust_begin_unwind",
+        "__rg_oom",
+        "_ZN3std7process5abort17he6ff7c8bb12005f8E",
+        "_ZN4core5slice5index26slice_start_index_len_fail17hec283fabba6f1151E",
+        "_ZN4core5slice5index24slice_end_index_len_fail17h638da42f21cbc10dE",
+        "_ZN4core5slice5index22slice_index_order_fail17h9fb9fab9d1a5e522E",
+        "_ZN4core3str16slice_error_fail17haa9fce0ad1e44cbfE"
+      ],
+      "lddw_and_call_bytes": "18030000f0e01b0000000000000000008510000053350100"
+    },
+    {
+      "owner": "0x116158",
+      "owner_bytes": 1472,
+      "site": "0x116180",
+      "offset": 40,
+      "location_argument_register": 3,
+      "following_call": "0x1b04b0",
+      "following_callee_normalized_labels": [
+        "rust_begin_unwind",
+        "__rg_oom",
+        "_ZN3std7process5abort17he6ff7c8bb12005f8E",
+        "_ZN4core5slice5index26slice_start_index_len_fail17hec283fabba6f1151E",
+        "_ZN4core5slice5index24slice_end_index_len_fail17h638da42f21cbc10dE",
+        "_ZN4core5slice5index22slice_index_order_fail17h9fb9fab9d1a5e522E",
+        "_ZN4core3str16slice_error_fail17haa9fce0ad1e44cbfE"
+      ],
+      "lddw_and_call_bytes": "18030000f0e01b0000000000000000008510000063340100"
+    }
+  ],
+  "external_accounts": [
+    {
+      "interface_name": "FeeConfig",
+      "checked_original": "0x1156f0",
+      "unchecked_original": "0x1159d8",
+      "discriminator": [
+        143,
+        52,
+        146,
+        187,
+        219,
+        123,
+        76,
+        155
+      ],
+      "checked_discriminator_load": "0x115718",
+      "unchecked_call_sites": [
+        "0x1159c8"
+      ],
+      "captured_type": {
+        "name": "FeeConfig",
+        "type": {
+          "kind": "struct",
+          "fields": [
+            {
+              "name": "bump",
+              "docs": [
+                "The bump for the PDA"
+              ],
+              "type": "u8"
+            },
+            {
+              "name": "admin",
+              "docs": [
+                "The admin account that can update the fee config"
+              ],
+              "type": "pubkey"
+            },
+            {
+              "name": "flat_fees",
+              "docs": [
+                "The flat fees for non-pump pools"
+              ],
+              "type": {
+                "defined": {
+                  "name": "Fees"
+                }
+              }
+            },
+            {
+              "name": "fee_tiers",
+              "docs": [
+                "The fee tiers"
+              ],
+              "type": {
+                "vec": {
+                  "defined": {
+                    "name": "FeeTier"
+                  }
+                }
+              }
+            },
+            {
+              "name": "stable_fee_tiers",
+              "docs": [
+                "The fee tiers"
+              ],
+              "type": {
+                "vec": {
+                  "defined": {
+                    "name": "FeeTier"
+                  }
+                }
+              }
+            },
+            {
+              "name": "exotic_flat_fees",
+              "type": {
+                "defined": {
+                  "name": "Fees"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "interface_name": "SharingConfig",
+      "checked_original": "0x115e70",
+      "unchecked_original": "0x116158",
+      "discriminator": [
+        216,
+        74,
+        9,
+        0,
+        56,
+        140,
+        93,
+        75
+      ],
+      "checked_discriminator_load": "0x115e98",
+      "unchecked_call_sites": [
+        "0x116148"
+      ],
+      "captured_type": {
+        "name": "SharingConfig",
+        "type": {
+          "kind": "struct",
+          "fields": [
+            {
+              "name": "bump",
+              "type": "u8"
+            },
+            {
+              "name": "version",
+              "type": "u8"
+            },
+            {
+              "name": "status",
+              "type": {
+                "defined": {
+                  "name": "ConfigStatus"
+                }
+              }
+            },
+            {
+              "name": "mint",
+              "type": "pubkey"
+            },
+            {
+              "name": "admin",
+              "type": "pubkey"
+            },
+            {
+              "name": "admin_revoked",
+              "type": "bool"
+            },
+            {
+              "name": "shareholders",
+              "type": {
+                "vec": {
+                  "defined": {
+                    "name": "Shareholder"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "current_sharing_decoder": {
+    "bytes": 1472,
+    "original": "0x116158",
+    "candidate": "0x8dc30",
+    "symbol": "_ZN95_$LT$pump_recovered..distribution..SharingConfig$u20$as$u20$anchor_lang..AccountDeserialize$GT$25try_deserialize_unchecked17h5545cf8ec08a84a6E",
+    "complete_normalized_equal": true
+  },
+  "captured_program_address": "pfeeUxB6jkeY1Hxd7CsFCAjcbHA9rWtchMGdZ6VojVZ",
+  "captured_related_types": [
+    {
+      "name": "ConfigStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Paused"
+          },
+          {
+            "name": "Active"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Fees",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "lp_fee_bps",
+            "type": "u64"
+          },
+          {
+            "name": "protocol_fee_bps",
+            "type": "u64"
+          },
+          {
+            "name": "creator_fee_bps",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FeeTier",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "market_cap_lamports_threshold",
+            "type": "u128"
+          },
+          {
+            "name": "fees",
+            "type": {
+              "defined": {
+                "name": "Fees"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Shareholder",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "address",
+            "type": "pubkey"
+          },
+          {
+            "name": "share_bps",
+            "type": "u16"
+          }
+        ]
+      }
+    }
+  ],
+  "macro_version": "0.31.2",
+  "macro_evidence": {
+    "declare_program": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-attribute-program-0.31.2/src/declare_program/mod.rs",
+      "sha256": "3b8be488de600eccff3945294790dec1713ce636d09e8eda2b814e2a134b260e",
+      "relevant_lines": [
+        {
+          "line": 85,
+          "text": "#accounts_mod"
+        },
+        {
+          "line": 89,
+          "text": "#cpi_mod"
+        }
+      ]
+    },
+    "declare_accounts": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-attribute-program-0.31.2/src/declare_program/mods/accounts.rs",
+      "sha256": "36eec6a0742c5112601fa85e5bb432f467fe73a4e29ed1adba19a54c1b543d01",
+      "relevant_lines": [
+        {
+          "line": 33,
+          "text": "Self::try_deserialize_unchecked(buf)"
+        },
+        {
+          "line": 54,
+          "text": "fn try_deserialize_unchecked(buf: &mut &[u8]) -> anchor_lang::Result<Self> {"
+        },
+        {
+          "line": 55,
+          "text": "let mut data: &[u8] = &buf[#disc.len()..];"
+        },
+        {
+          "line": 78,
+          "text": "fn try_deserialize_unchecked(buf: &mut &[u8]) -> anchor_lang::Result<Self> {"
+        },
+        {
+          "line": 79,
+          "text": "let data: &[u8] = &buf[#disc.len()..];"
+        },
+        {
+          "line": 105,
+          "text": "#program_id"
+        }
+      ]
+    },
+    "declare_cpi": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-attribute-program-0.31.2/src/declare_program/mods/cpi.rs",
+      "sha256": "e2025210f6f205b9d1c67f1401a9243375bcd41c19f803a0a98f40891b8e1e8d",
+      "relevant_lines": [
+        {
+          "line": 112,
+          "text": "let (_key, data) = anchor_lang::solana_program::program::get_return_data().unwrap();"
+        },
+        {
+          "line": 113,
+          "text": "T::try_from_slice(&data).unwrap()"
+        }
+      ]
+    },
+    "declare_common": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-attribute-program-0.31.2/src/declare_program/common.rs",
+      "sha256": "6cadf5a7657586fd543087ccd0e964c7eb7627d0d4a6d7f05d8b8a6c807ce1ad",
+      "relevant_lines": [
+        {
+          "line": 12,
+          "text": "quote! { super::__ID }"
+        }
+      ]
+    },
+    "account_attribute": {
+      "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-attribute-account-0.31.2/src/lib.rs",
+      "sha256": "b8b45db7eb7e4ed68751b3f1980ff9f8d816bc7a7c2c190e625fae8484c706cd",
+      "relevant_lines": [
+        {
+          "line": 116,
+          "text": "let namespace = if namespace.is_empty() {"
+        },
+        {
+          "line": 131,
+          "text": "if namespace.is_empty() {"
+        },
+        {
+          "line": 136,
+          "text": "crate::ID"
+        },
+        {
+          "line": 198,
+          "text": "Self::try_deserialize_unchecked(buf)"
+        },
+        {
+          "line": 201,
+          "text": "fn try_deserialize_unchecked(buf: &mut &[u8]) -> anchor_lang::Result<Self> {"
+        },
+        {
+          "line": 202,
+          "text": "let data: &[u8] = &buf[#disc.len()..];"
+        },
+        {
+          "line": 252,
+          "text": "Self::try_deserialize_unchecked(buf)"
+        },
+        {
+          "line": 255,
+          "text": "fn try_deserialize_unchecked(buf: &mut &[u8]) -> anchor_lang::Result<Self> {"
+        },
+        {
+          "line": 256,
+          "text": "let mut data: &[u8] = &buf[#disc.len()..];"
+        }
+      ]
+    }
+  },
+  "inference": {
+    "strongest_source_hypothesis": "One root declare_program!(pump_fees) expansion supplies external FeeConfig and SharingConfig accounts plus the CPI Return API.",
+    "support": "The two unchecked-account slice panics and both inlined fee-return unwraps share one original lib.rs:84:1 Location. Pinned declare_program emits all four relevant operations from one invocation and gives accounts the captured external program owner.",
+    "not_proved": "The exact original token spelling, macro name, declared module name, and full generated source are not recovered. A manually written local generator could reproduce the same caller-origin grouping.",
+    "minimal_future_control": "A single main-owned root external-interface declaration with captured IDL, plus type aliases/reexports and existing CPI callers; first map conversion boundaries, then request one isolated compile. Do not merely force a Location constant or pad lines."
+  },
+  "required_followup_before_source_trial": [
+    "Resolve generated Shareholder identity against the existing shared event/planner Shareholder type; do not silently convert vectors or change wire/ownership behavior.",
+    "Generated ConfigStatus has no PartialEq derive. The two current status==Active uses in distribution.rs require a natural matches! expression or another evidenced API choice, not an assumed drop-in alias.",
+    "Generated AccountSerialize writes the discriminator and Borsh fields; current SharingConfig and LegacyFeeConfig serialize as no-ops. Audit every real account exit before replacing the public type implementation.",
+    "FeeConfig, FeeTier, Fees, and Shareholder currently live in trade_types.rs; V3 decodes FeeConfig and constructs Fees directly, so a coherent alias plan must be coordinated with that owner.",
+    "Preserve all existing account owner/discriminator/serialization behavior and exact fee-return full-consumption/panic order.",
+    "Keep unrelated IDL-generated APIs unreferenced; count only real live callers and hash the captured IDL as a main-owned source input.",
+    "Use a fresh isolated source after root confirms scope; no further build is included in this read-only packet."
+  ],
+  "current_boundary_map": {
+    "SharingConfig": [
+      "distribution.rs: native and token distribution account contexts",
+      "minimum.rs: minimum-distributable context",
+      "buy_v2.rs and sell_v2.rs: optional decoded shareholders"
+    ],
+    "ConfigStatus": [
+      "distribution.rs: two Active comparisons"
+    ],
+    "Shareholder": [
+      "trade_types.rs: one shared declaration",
+      "root TradeEvent and distribution event vectors",
+      "distribution native/token planner slices"
+    ],
+    "FeeConfig_FeeTier_Fees": [
+      "trade_types.rs: current Borsh definitions",
+      "sell.rs: LegacyFeeConfig wrapper and account decoder",
+      "fee_cpi.rs: Return<Fees>",
+      "trade_v3.rs: local pricing and compatibility decode"
+    ]
+  },
+  "location_counts": {
+    "recognized": 102,
+    "filepath_matches": 100,
+    "complete_file_line_column_matches": 84,
+    "remaining_wrong_filepath": 2,
+    "same_filepath_wrong_coordinates": 16,
+    "filepath_gain_origins": [
+      "0x1bdee0",
+      "0x1bdef8"
+    ],
+    "lost_complete_matches": []
+  },
+  "other_remaining_filepath": {
+    "routine": "DistributeCreatorFeesEvent::data",
+    "original": "0xc4e00",
+    "original_location": "0x1bdf98",
+    "original_file": "programs/pump/src/creator/distribute_creator_fees.rs",
+    "original_line_column": [
+      217,
+      1
+    ],
+    "current_file": "programs/pump/src/distribution.rs",
+    "boundary": "Event serves both V1 and V2. Place with V1 creator distribution, not solely the V2 child; coordinate separately with the distribution owner."
+  },
+  "input_sha256": {
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/evidence/original/pump/deployed.so": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/evidence/upstream/pump_fees.json": "6b9fa3eccc6e06273076a47b581f9fcb9e531bb7c3c88acbcd44db55a4002b29",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_compare_function_bytes.py": "43fa359dce1e398f820df445d534e0912ac5f181f1ea15e13a5267b53105b075",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_quote_control_function_match.py": "28ad656012f8fbcd41ed1726e9345ee76f6249992bf28c91c4b9202479d3e94e",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-data-layout-r34/typed_values.py": "32b992d5e86ce051a0d9cd30ddc278933ed0ba8a0405a21af2f478dfc7ec14fc",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-attribute-account-0.31.2/src/lib.rs": "b8b45db7eb7e4ed68751b3f1980ff9f8d816bc7a7c2c190e625fae8484c706cd",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-attribute-program-0.31.2/src/declare_program/common.rs": "6cadf5a7657586fd543087ccd0e964c7eb7627d0d4a6d7f05d8b8a6c807ce1ad",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-attribute-program-0.31.2/src/declare_program/mod.rs": "3b8be488de600eccff3945294790dec1713ce636d09e8eda2b814e2a134b260e",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-attribute-program-0.31.2/src/declare_program/mods/accounts.rs": "36eec6a0742c5112601fa85e5bb432f467fe73a4e29ed1adba19a54c1b543d01",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221/registry-home/registry/src/index.crates.io-6f17d22bba15001f/anchor-attribute-program-0.31.2/src/declare_program/mods/cpi.rs": "e2025210f6f205b9d1c67f1401a9243375bcd41c19f803a0a98f40891b8e1e8d",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/FINAL-RESULT.json": "d45c1d892b00208881d34b2352f55a29d6924f5e74a18c2cfe0d8bca43575210",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/build01/normalized-inventory.json": "6ba68052a0b32d980f2e1ab46e289e5c49ad8e4b84c80287f6a79b700998d412",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/build01/unstripped.so": "6a81dfefa311ff8ef913b4e3e3cccd6e59273c3584b1a6346bc2a013ce853b0d",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/locations.json": "50761bcf7055d7c3ba3b4855dfc4a6517e35fcf0c2c29bf412bccd2fc797eb09",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/source01/Cargo.lock": "8307bd5e79789b5190291ea014c2f5556e23fb9829fa2f68a7ede581235eae98",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/source01/src/distribution.rs": "7ca42333a9da3a97ca32e08f505a6328810d8811a191960e694e30c4027b9f8d",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/source01/src/fee_cpi.rs": "db77bbded616a63571686a05487fa12776fcef9bae55d4da74743944ac0ce404",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/source01/src/lib.rs": "e529cbf4aea7dac213b6889847053ac330fedf67e76103e6a00c2981cac22b51",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/source01/src/sell.rs": "77ee2e493b73895d870b7df426855e47162cc11ca6678cbb422781a1d00e47ef",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/source01/src/trade_types.rs": "31f21ef4e3099443da3e5f7f827990cfdebee6d062d366a4ac1a264cc13a6197",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-sharing-origin/audit.py": "c4631bf0e2bc03a6380ae8370502f2df25d63da746958db180fc67e02fede70a"
+  },
+  "compiler_runs": 0,
+  "source_edits": false,
+  "whole_original_identity": false
+}

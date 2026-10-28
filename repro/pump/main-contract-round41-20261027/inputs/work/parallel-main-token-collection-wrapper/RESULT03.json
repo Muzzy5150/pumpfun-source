@@ -1,0 +1,104 @@
+{
+  "status": "Exact borrowed-authority token CPI wrapper recovered",
+  "source_files": {
+    "src/creator/collect_creator_fee.rs": {
+      "before": "291d885d92ac869992b3deddc1b96b7fde159e95bbcc54f9166895abe5ed34cc",
+      "after": "95ca7828e58f6cce51b13609f20e89daf32dedd9a844d10da66b20ab0f3a5378"
+    },
+    "src/distribution.rs": {
+      "before": "4d3c5f09dc68668a5af91b20b1d8470d29176e95b8a14694ca4cc38a58dd2ca7",
+      "after": "db0b4832b28d3771a5ba81d7eec564c7a3624262455d614889ad32cb673818a5"
+    }
+  },
+  "source_patch_sha256": "95026a7f26cd08abc5f0fe20aa6d137edf0d1e417d524e19fcdcf1f7f1382ff1",
+  "candidate_sha256": "215d8697850a7a6c49295ab4b68f088089cf14cc6c929dd8bce211099dfcd6b6",
+  "unstripped_sha256": "636ed9c8114502e2b4c8c515568f91abed9c014877f794e1ff532726293a7f57",
+  "build_receipt_sha256": "776e0d62131f9d845015b109bf2efb7efacd0a849077f1042cc0cafbd57db3d1",
+  "baseline_manifest_sha256": "f44e635bd82e19675d91f2f4e987b7661af912ef0ce961b77c455b833810d0a8",
+  "abi_proof_sha256": "b1f4cfe335c40822778840a7ef68c376b0d67ee856b91d979df39b67585bd7f5",
+  "physical_split_patch_sha256": "bc2377fa26dbce8a5116a949eb815b9558df4101497bd79e7992f520e1abc357",
+  "preserved_controls": {
+    "source01": {
+      "bytes": 2080,
+      "normalized_gain": 0,
+      "focused_cases": 16
+    },
+    "source02": {
+      "bytes": 2112,
+      "normalized_gain": 0,
+      "runtime": "not replayed"
+    },
+    "source03": {
+      "bytes": 2088,
+      "normalized_equal": true
+    }
+  },
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 740,
+    "unmatched": 295
+  },
+  "delta": {
+    "normalized_matches": {
+      "gains": [
+        "0x90638"
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "wrapper": {
+    "original": "0x90638",
+    "candidate": "0x789e0",
+    "bytes": 2088,
+    "normalized_equal": true,
+    "different_slots": 0,
+    "callers": [
+      {
+        "site": "0x78190",
+        "callers": [
+          "_ZN14pump_recovered10collect_v27collect17hb66a006b34e70383E"
+        ]
+      },
+      {
+        "site": "0x91688",
+        "callers": [
+          "_ZN14pump_recovered12distribution10execute_v217hec07a273d268927bE"
+        ]
+      }
+    ],
+    "callees": [
+      {
+        "original": "0x17fcc8",
+        "candidate": "0x169d90",
+        "original_offset": 2032,
+        "candidate_offset": 2032,
+        "bytes": 2192,
+        "normalized_equal": true
+      }
+    ],
+    "zero_guard": "Entry amount load and zero branch are retained before the first clone; full body status is separate.",
+    "candidate_sha256": "215d8697850a7a6c49295ab4b68f088089cf14cc6c929dd8bce211099dfcd6b6",
+    "unstripped_sha256": "636ed9c8114502e2b4c8c515568f91abed9c014877f794e1ff532726293a7f57"
+  },
+  "runtime": {
+    "cases": 1576,
+    "existing": 1556,
+    "focused": 20,
+    "transactions": 3152,
+    "verified_signatures": 4728,
+    "diagnostic_mismatches": 0,
+    "invocation_order_mismatches": 0,
+    "new_inputs": 0
+  },
+  "limits": [
+    "The shared collector and token executor are not claimed exact.",
+    "The full original ELF remains different.",
+    "Physical V2 split and String changes are independent; transplant only the execute_v2 token transfer statement into the child module.",
+    "Machine evidence establishes borrowed authority and clone/drop behavior, not unique historical Rust source spelling or public visibility."
+  ]
+}

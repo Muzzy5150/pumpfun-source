@@ -1,0 +1,17 @@
+{
+  "files": {
+    "review01.py": "eb743cc7d61cad1e5585bee8746c2e295aba877b18764804b4e711cfa37706aa",
+    "REVIEW01.json": "fae75bb51ccf548502553d4b1d4d1def8c10fb128c9d83b37c25ee4daf43db47"
+  },
+  "external_inputs": {
+    "work/parallel-main-integration/round38-draft-plan.json": "7bee67b80dfb1f446c53c81ee831a24337b1c1e95bc9160d77d690f2e319e665",
+    "work/parallel-main-native-executor-ownership/native-executor01-physical-split.patch": "b740dc146a2ebb2a6b7c0f8a80d2620af7215a269ed1f0bb2e4396754f3a843b",
+    "work/parallel-main-distribution-event-placement/portable-r37/event-after-native.patch": "28a3a1df2c5b7e252c14fbf961c27f789043bc27ede8b48995f7bd9a655b43fb",
+    "work/parallel-main-holder-ata-api/holder-ata-only.patch": "b27e34a558e6a495c8064137066f03ec66b4d820763e3ae39b1f4abd495b4147",
+    "work/parallel-main-holder-native-api/holder-native-only.patch": "9874a4a91d097b6968c78d48f1804a6100c780c2b67e080d27856ffa55e6176c",
+    "work/parallel-main-holder-token-source-info/source-info-only.patch": "8be1d1a44efb286d2213db78c5e5c2fbfac4350c5e397a165f0abe5e691a71e2",
+    "work/parallel-main-collector-core-abi/collector-core01.patch": "4893f7c15b44763454e9f4186b4f0d81d56f289a132eafd99afa28cea670357b",
+    "work/parallel-main-idl-clone-order/combined-idl01.patch": "f3272bf1c4d669634e3dc33069d5dd3e214ad26b5fba2f1404001461cb9ac1d1",
+    "work/parallel-main-schedule-guard-witness/guard-order01.patch": "93925e8a8dabd5860e1e8828c7c63d5167cd6cccdefac2509009d32f21b30e53"
+  }
+}

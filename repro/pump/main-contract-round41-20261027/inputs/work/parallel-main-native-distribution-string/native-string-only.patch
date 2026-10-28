@@ -1,0 +1,11 @@
+--- a/programs/pump/src/distribution.rs
++++ b/programs/pump/src/distribution.rs
+@@ -92,7 +92,7 @@
+   let recipient=recipients.get(i).ok_or_else(||error!(PumpError::NotEnoughRemainingAccounts))?;
+   require!(share.address==recipient.key(),PumpError::ShareholdersAndRemainingAccountsMismatch);
+   if recipient.executable{
+-   msg!("Unable to distribute to {}. Shareholder is a program account, use pump_fees::update_fee_shares to remove the shareholder from the team",recipient.key());
++   msg!("Unable to distribute to {}. Shareholder is a program account, use pump_fees::update_fee_shares to remove the shareholder from the team",recipient.key().to_string());
+    return err!(PumpError::UnableToDistributeCreatorFeesToExecutableRecipient);
+   }
+   require!(share.share_bps>0,PumpError::InvalidShareBps);

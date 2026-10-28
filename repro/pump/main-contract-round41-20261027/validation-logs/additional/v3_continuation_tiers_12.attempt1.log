@@ -1,0 +1,13 @@
+buy_v3-token-False-threshold-27959045590 None None []
+buy_v3-token-False-threshold-27959045591 None None []
+buy_v3-token-False-threshold-27959045644 None None []
+buy_exact_quote_in_v3-token-False-threshold-27959045590 None None []
+buy_exact_quote_in_v3-token-False-threshold-27959045591 None None []
+buy_exact_quote_in_v3-token-False-threshold-27959045644 None None []
+buy_v3-token-True-threshold-27959045590 None None []
+buy_v3-token-True-threshold-27959045591 None None []
+buy_v3-token-True-threshold-27959045644 None None []
+buy_exact_quote_in_v3-token-True-threshold-27959045590 None None []
+buy_exact_quote_in_v3-token-True-threshold-27959045591 None None []
+buy_exact_quote_in_v3-token-True-threshold-27959045644 None None []
+{"count": 12, "mismatches": [], "diagnostics": 0}

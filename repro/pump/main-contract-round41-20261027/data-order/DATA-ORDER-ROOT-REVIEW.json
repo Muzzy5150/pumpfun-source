@@ -1,0 +1,30 @@
+{
+  "status": "reviewed for later installation",
+  "scope": "Main Pump certificate-bound two-object data order only",
+  "implementation_sha256": {
+    "pump_build_verified.py": "ecd7a059c743861bc2d36c6c9e1a6c4b4fbdad037a37fadd78d2542edea7caef",
+    "pump_text_layout.py": "fa5ddf72272e847d23f9481175b64ab464425eaed1c1fdd0d747f2cfa1193d25",
+    "pump_data_order.py": "7c02897baacca2db0d0e47919300d46a45398384c6fea2d2f3a79f02750d4ef2",
+    "pump_derive_data_order.py": "0d6c3ce0acb8397e5ab8a018b4d9f9fa7df22453988f2463e6fe8774134739af"
+  },
+  "manifest_sha256": "5605d9c5d71551b1ad14d7784c14a8a0b88baf2a8c469762e82fb1e31a186e96",
+  "addendum_sha256": "7bc027614e72ca75dae9fa2d11a0b0698b482a54d345701734cd42f19e024e53",
+  "files_checked": 1701,
+  "default_text_data_build_hashes_checked": true,
+  "admission_controls": 31,
+  "finalization_negative_controls": 3,
+  "finalization_positive_controls": 2,
+  "source_review": [
+    "fixed original roles and typed fields",
+    "current source/profile/cache/link argument binding",
+    "whole-file code/data/relocation/symbol transformation",
+    "report withheld until source/cache finalization",
+    "assertions-disabled explicit rejection"
+  ],
+  "limits": [
+    "Archive flow documented but not yet executed for a current composite",
+    "Original toolchain provenance remains unproved",
+    "High load timings are observations, not controlled benchmarks"
+  ],
+  "installation_gate": "Wait for R34 publication and recheck shared build helper hashes; no shared helper changed in this review."
+}

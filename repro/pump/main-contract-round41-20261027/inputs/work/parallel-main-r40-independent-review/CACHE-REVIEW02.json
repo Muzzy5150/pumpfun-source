@@ -1,0 +1,72 @@
+{
+  "status": "passed_read_only_staged_cache_binding_review",
+  "package_sha256": "59c482653094de99432af30fb9c3871c33a6b4b8a1deb4fca55e6b9e89fb1fb7",
+  "checks": [
+    {
+      "name": "profile_clean",
+      "passed": true
+    },
+    {
+      "name": "profile_cached",
+      "passed": true
+    },
+    {
+      "name": "profile_unavailable",
+      "passed": true
+    },
+    {
+      "name": "profile_final_source_probe",
+      "passed": true
+    },
+    {
+      "name": "same_dependency_context_with_two_real_Rust_changes",
+      "passed": true,
+      "changes": [
+        "src/migrate.rs",
+        "src/trade_types.rs"
+      ]
+    },
+    {
+      "name": "reject_wrong_primary_clean",
+      "passed": true
+    },
+    {
+      "name": "reject_wrong_primary_final_source_probe",
+      "passed": true
+    },
+    {
+      "name": "actual_two_file_build_resolves_runner_root",
+      "passed": true
+    },
+    {
+      "name": "exact_archive_copy_resolves_all61_isolated_root_paths",
+      "passed": true
+    },
+    {
+      "name": "manifest_binding_accepts_real_Rust_only_delta",
+      "passed": true
+    },
+    {
+      "name": "reject_changed_Cargo.toml",
+      "passed": true
+    },
+    {
+      "name": "reject_changed_Cargo.lock",
+      "passed": true
+    },
+    {
+      "name": "reject_primary_path_escape",
+      "passed": true
+    }
+  ],
+  "producer_primary_files": 61,
+  "final_primary_files": 61,
+  "changes": [
+    "src/migrate.rs",
+    "src/trade_types.rs"
+  ],
+  "dependency_manifest_context_equal": true,
+  "archive_source_paths_resolved": 61,
+  "profile_and_producer_transition_tested": true,
+  "future_requirements": "Four final builds and both final-source identity builds remain bound to final primary. Only cache clean/cached/unavailable provenance is bound to producer primary. Final publication builder must remain rooted at repository as planned."
+}

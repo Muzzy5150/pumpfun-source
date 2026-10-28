@@ -1,0 +1,1797 @@
+{
+  "scope": "Frozen main-Pump R40 corpus:18,109 paired executions; all R39 suites retained verbatim.",
+  "counts": {
+    "full": 10468,
+    "additional": 7641
+  },
+  "definition_sha256": {
+    "work/parallel-main-integration/validate_additional_round21.py": "1967bd25b6bf43626ed71530d307db20f820fcedbabb6b092eb62aa0d6f277aa",
+    "work/parallel-main-integration/validate_combined.py": "9eaa7d25b18829779c7981db113be7ab21fc0f63ecbc49f1cf7c52cc0517947d",
+    "work/parallel-main-trading-third/verify_candidate.py": "3c9cfc27259c049995ce04a10a2565b2955ad0c1d2e68e94f1a132ad3e1daee6",
+    "work/parallel-main-trading-third/final-validation-parallel-02/summary.json": "15f23269e55097874315037ff7386c25a5d5fb7b45ada3ba7fcc6acc1c1fd630",
+    "work/parallel-main-legacy-buyback-split/NEW-CASES.json": "13b3ae764ccdb31aa6178f353ad7521bdd952dda5dea535db9195e2318b4ce3e",
+    "work/parallel-main-sell-v2-buyback-accounting/NEW-CASES.json": "1259cdc369ebf88081f4d4aaacdb09c717dc8a4bdf15bcd64d53583ad5e09212",
+    "work/parallel-main-v3-cost-order/INCREMENTAL-CLI-MANIFEST.json": "f17a00ca883f76c173fc394365f57378b641055a2f7f0ae9f6bd23d452c89d97",
+    "work/parallel-main-v3-quote-fee-tail/INCREMENTAL-CLI-MANIFEST.json": "dce9b539bdc33acef280de8ab2657ca8f955e6ec44e3f8ed7f550cce80f04c1f",
+    "work/parallel-main-v3-quote-scanner/PARSER-CLI-MANIFEST.json": "1834c5e1c73af273679d9b17f85f74b4fa4b6fa6d0549ef1bcf3fe68e4897937",
+    "work/parallel-main-optional-sharing/CLI-MANIFEST.json": "b10e8b97e8eee43afafdbfb14db3ea8a716b5ba7f12c5071932877085a29213e",
+    "work/parallel-main-legacy-creator-rent/INCREMENTAL-CLI-MANIFEST.json": "4b23e607888ede00ba92df5a5c9119861df29198e76d378bcaa6ff0ee4002924",
+    "work/parallel-main-legacy-creator-rent/probe-vault-rent02.py": "b5067d4b91b5bee2ec2d2b3ed9b5753ca503c0851ca761434fde41be7b72b00b",
+    "work/parallel-main-legacy-creator-rent/legacy_buy_fixture.py": "cd18ca2cfad69f051b3c9ad7b809e279c5f2aee62bb676be86d0466278a841a0",
+    "work/parallel-main-legacy-creator-rent/legacy_sell_fixture.py": "db6e61d875ee0dd27be0aeede48313d521267c13d5fb4c9dd05d4ec8eeb118da",
+    "work/parallel-main-v2-creator-vault-rent/CLI-MANIFEST.json": "38dce96df41254887ca00a75ec22940a3fb946e9056a15e54d56fa75b9b2e969",
+    "work/parallel-main-sweep-recipient-rent/probe.py": "067eb1adfc93b6da2a4a9c8120cdf0b863df3d0041f6438b52b696a29cf7fe62",
+    "work/parallel-main-admin-holder-rent/probe_holder_rent_expanded.py": "c67c4df0f089c225ed31cee52ac64dda15c8dfe7e13ccddb9167766586ff398d",
+    "work/parallel-main-sweep-recipient-rent/INCREMENTAL-CLI-MANIFEST.json": "baadcc5393b586b4a55a36ad9541a74da01dffecb0f15f9d8f991524c3e9942d",
+    "work/parallel-main-admin-holder-rent/manifest.json": "13274aaf6dca0d40ed50429f2602affb95b443a19453a19d83e9556fcb1e5991",
+    "work/parallel-main-create-extension-validation/focused-manifest.json": "5aff1ae9459f48250790411023eab472e9c5865bdc03d182ed86f31d4cca7a01",
+    "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_volume.py": "95eb6a8e7afef5da4a76d421ad9bd1959d35ab63434113dd13f4f02d8d3f9c57",
+    "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_admin.py": "f7b3f7841e93ee5fc7446bad1559285dce04e68c8908ef7c7a4e77e125067dac",
+    "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_authority.py": "9b72352a23492ae782b82d6ce35c4fed402300baeba42d2088ea6c7ebfa54503",
+    "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_config_admin.py": "0a2367ee313bd59b36e653fcb61e907d5f711ca067d71e3f9823e2810bb6aa43",
+    "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_buy.py": "88b444d601ebabdd0d396c2b05a213d05354bd6d9b157b5f3f61943daf202505",
+    "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_sell.py": "da3a50813bf39f7d44e46a068364b36b139d5868c90e60f3187b289013619bab",
+    "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_quote.py": "225545e27ea1c5f3ba6dd99559e87db674bdae8be8e647276cef42764890bc8c",
+    "work/parallel-main-receipt-capture/instrumented/work/parallel-main-buyback-recipients/check_remaining.py": "24d48d3c4b422314a5ef2862a4be2b5367ac973e440dc7d2712125b33f745c6a",
+    "evidence/upstream/pump.json": "7616681ea557975f9f623ac211080f22a93060781eaf4765b0a488d980997207",
+    "work/parallel-main-receipt-capture/instrumented/scripts/main_receipt_capture.py": "5b2d2d5a5788b2f891f4017a83d9b4805d9beec90b7e2f0eafb6d26c22897c1f",
+    "work/parallel-main-receipt-capture/VALIDATED-OVERLAY.json": "4de92319d1915b9d33a9eab8b15a99b66a7888c0efc36472af76f381380614a0",
+    "work/parallel-main-create-validation-next/focused-manifest.json": "a08f2364303115f11f596a011cde65cbcaa05633542ea72e590af95814a1cfbd",
+    "work/parallel-main-create-pool-links/focused-manifest.json": "5c9e7b57f68cff285ce3eeca0e02e3ffb66316f338918ddb2c1106a97dd90c53",
+    "work/parallel-main-receipt-verifier/receipt_verifier.py": "d534cb7e5364d3ec50ea6183ce6b1b9cc0f0b9b8b055f0cc053e7206c4b40838",
+    "work/parallel-main-receipt-verifier/verify_receipts.py": "f6b0899be3d175543132ded0ac57f540c6254aa9d369277173a861c3613c6abd",
+    "work/parallel-main-create-gate-order/focused-manifest02.json": "9a14b317484bfe2f119278b1c437326b0fdcd480ab3a5a83e6d6aadaf9ce6187",
+    "work/parallel-main-nested-comparison-audit/focused-manifest.json": "4d1ea7307fe1e9c73c396101d2e5b93087c967dc96452d8d38ca13c90d09d5e3",
+    "work/parallel-main-legacy-cashback-order/CLI-MANIFEST.json": "235241af65c65b42bf4114f3a8973f0ecec51244e74bf558f1cbe953e334e372",
+    "work/parallel-main-leaf-validation/focused-manifest.json": "2c6bca39832c4dce3e23e43ec45093dae3655123e15d8392ad79532b9a9c15c9",
+    "work/parallel-main-leaf-validation/MIGRATE-PAUSABLE-REVIEW.json": "13265681b98a7135e7b56ab9cf2fa71d66e08c0315e409108a49f5ec34db971e",
+    "work/parallel-main-error-frontier/tail-manifest.json": "8f642592c343a72185dc46a495d83494dbe7106d75d6cb131de7f74df4b1f5a5",
+    "work/parallel-main-error-frontier/later-hop-manifest.json": "66618bbb69bb59ff8216435529cd70c1dc9298437e129e82e14e591778a8771c",
+    "work/parallel-main-transfer-fee-boundary/EVIDENCE-MANIFEST04.json": "9c5fbe13e62d1a751d0334f6fc45f0ef7d193930fa7d2785c6da56d5c9fb3b7d",
+    "work/parallel-main-ata-drop/ATA-FIXED-ARRAY-REVIEW02.json": "d28895e7e467da51c0e7f857413462c47a156d63e4c5c7fe1d9ebac96eba31f3",
+    "work/parallel-main-entrypoint-221/LOCK-DIFF.json": "482b81fe3c8dc053f8dec6011878ec25d4124b037c951ad99ab68a92e682d9d9",
+    "work/parallel-main-shared-ata/manifest.json": "451e0a664d6fee17c4d5d5a6a3af6641e1032f01c2a9f1b2fa26b789d82cf9a7",
+    "work/parallel-main-shared-ata/authority-manifest.json": "e6e8e92594be829538d4437e95845340107cdd74bf36190592f399b48a76a327",
+    "work/parallel-main-shared-ata/SHARED-ATA-REVIEW01.json": "75a2ce78d4dceb966de0ad394afffa2fb0b7a5c4a57ce1852553c4e544aceab6",
+    "work/parallel-main-shared-ata/AUTHORITY-CONTENT-REVIEW.json": "7eef3820e2160789e30d666516298222fa14b2199ee89d0045c659f295dc8626",
+    "work/parallel-main-user-quote-wrapper/RESULT03.json": "e060c0789be3ce785d3056cd3a19a10e6ac51b7b469f1607243dac33dff71bba",
+    "work/parallel-main-user-quote-wrapper/MANIFEST03.json": "27ed98c271e894131364d61799a5a5a11a411432606089638b81c9901d212797",
+    "work/parallel-main-user-quote-wrapper/README03.md": "0a66d15209197f87543e7ddadcdaae108569a4e1a37702d7123f4470fd8dee75",
+    "work/parallel-main-user-quote-generic/CLI-MANIFEST.json": "95ca30746d8fc2c8620a04bcebcf3cee6c6c90339276e37e73b4d4bb3036b26a",
+    "work/parallel-main-user-quote-recipient/RESULT01.json": "542fc19e28e7334dd9d3c3c610927c3dc0cb573d42ffbb6f157fb94bec8a72cf",
+    "work/parallel-main-mint-admission-audit/incremental-manifest.json": "bddb79a84738b402552614955b03d91038681078e9c2882e89a53f1283a713a7",
+    "work/parallel-main-multihop-native-edge/CLI-MANIFEST.json": "fffa814d03b7b34795a358880549f142412f8b321cc62ea1c607646c60b6972e",
+    "work/parallel-main-hybrid-profile/DIRECT-TRAIT-PARITY.json": "2ca923798a47f8b55e44baee60161ad63fe3eb792158afc4a3750604a1e13e1e",
+    "work/parallel-main-hybrid-root-review/ROOT-REVIEW.json": "748ce9f9dc6cfd57a2ff06d8f5ef0629d8e52b6facca5f6f541f029b5cc2c732",
+    "scripts/pump_target_library_profile.py": "f997a891051ee84aec6f0bc22270425213880a4b1ef358774f015b08e0c9a605",
+    "scripts/pump_linux_v144_sbf_libraries.json": "55f0957e17eba608657207d4962122c3ac778d7be194b3fd4ededa6448e91fc6",
+    "work/parallel-main-migration-payment-fix/MIGRATION-CASE-GROUPS02.json": "edc906ea4658912d7cf5547add4c44c90d78cf76ec076a324b2f7f09fe07952f",
+    "work/parallel-main-migration-payment-fix/probe-migration-group.py": "2d353e507b06cd2afb5ebaae0b4475647183f836589045a0bfbd8cb173253800",
+    "work/parallel-main-migration-payment-fix/RESULT02.json": "618e3c981ad69072fcdd21c82c1c632019add339d30c1059d29259318ac56971",
+    "work/parallel-main-migration-payment-fix/SOURCE-MANIFEST02.json": "02dbef33a5aaa4c6830f757ced3890c1fd57ecff639e34a939ed1913aa718adb",
+    "work/parallel-main-migration-payment-fix/CLI-MANIFEST02.json": "9f701a5738a15070507a7921c8846f962d8b2ef588b9fba9ca8244b06c5a9ea1",
+    "work/parallel-main-migration-payment-fix/additional-manifest02.json": "7be5dd4d26423d884d046887c79ecf956480692ae723e41b2e13066d33a4f844",
+    "scripts/pump_migrate_probe.py": "567f1426342972e9227ba0a68bc1340a8b603c3de93fc2abed81042a7936f11c",
+    "scripts/pump_migrate_v2_probe.py": "942674bb84109d6acff62fc98a003d65c266a6d6f09ebb791822cf769d64bad1",
+    "work/parallel-main-claim-boundary-review/probe-compound-new.py": "da27870982f1556eb3d2d022534c89640ce21020103b478de75d60b70ec7ed31",
+    "work/parallel-main-claim-boundary-review/probe-compound.py": "b894fdae85384c57680b3b37eed68ee94529a02e71c6c2eda774a57356f0025b",
+    "work/parallel-main-claim-boundary-review/DEDUPLICATED-COMPOUND01.json": "17634b4e380e7724af3332967510925f3c63ffa2a5ac82fb08f4d578614bb99c",
+    "work/parallel-main-distribution-pending-fees/incremental-cases.json": "06159355b90ee0c6e92b60033eaeb5c40341c9331377315a4a124215a95e6ce9",
+    "scripts/pump_creator_distribution_differential.py": "24bbff55fb54cb53c913fb4c059efa65965b537c78e6ab04f923027c61e4e738",
+    "scripts/fees_sharing_update_differential.py": "21ec993ac86f364a58bfb9073d991bb83aba100cc91c6eaa6d4a3adf48216ffe",
+    "scripts/fees_sharing_create_differential.py": "8ebf122a3177147de9484537acee97c7dff589bd2ed6cc388f07bd6886451898",
+    "scripts/fees_donation_create_differential.py": "610e3296d912dde1e4f7c071416b81a204095ff3aafe4a4e318ee48411a46b87",
+    "scripts/fees_admin_differential.py": "30ae2037e1bb4288f5fca5a7f1ee4dbf7e59ad8170857113f58e302d65ea3003",
+    "scripts/pump_validate_admin.py": "bcb7ea8f10be236910823c5320f03a1b339f64fe6ef90ff36e0e7ef07238c2e8",
+    "work/parallel-main-distribution-pending-fees/RESULT01.json": "858f9fff3598d43f056ff8cbfad57b2fea8faa07cdab9ff5408d6b6f82b8b474",
+    "work/parallel-main-distribution-pending-fees/MANIFEST.json": "fb305a7445e6987175ab566177cf761192bbc2588524f3e7d6f571be2a45bb15",
+    "work/parallel-main-distribution-pending-fees/CLI-MANIFEST.json": "5c47f9f47a0a914ff55bafd8bd21b7c288aa52a0495bf19632362859a8851bb2",
+    "work/parallel-main-collection-rent/combined-incremental-cases.json": "a293c2c3f259ffac1058ddb2e198e300e9bfa9f41c2f02c3828729341656b756",
+    "work/parallel-main-collection-rent/probe_rent.py": "e141b3bd6090f2d8e95c9b12c6cf3f97065c95ba9b78ae48e5b73ce3b8216ccd",
+    "work/parallel-main-collection-rent-review/probe-precedence.py": "46cfcb9eebd9a9ec11c4090334dfef049de6ba75f9a9b6f40dc63d4d97cd8c8e",
+    "work/parallel-main-collection-rent-review/probe-executable.py": "d5a92ae4db65d62d9436cfb70a879f38c6496dcd4d5c7d1a23229a240aeb7d72",
+    "work/parallel-main-collection-rent-review/probe-owner-live.py": "858911ac8c8e90355efc3e07d4a14194c87b1c3e12142aa1cdf0e0507d50d28f",
+    "scripts/pump_creator_collect_v2_differential.py": "519ce5139755e1132fbd44c7a8592b7866ab67fb37adb981606fd62328f7b70b",
+    "scripts/pump_creator_collect_differential.py": "1425b2eb7449621f0d15685819f019252481b5661347876cf378eca2a8ea4c24",
+    "work/parallel-main-collection-rent/RESULT01.json": "c161e2aa5beed4c3b99e487bb7709743f0746123132f65940fa25828e3e05563",
+    "work/parallel-main-collection-rent/MANIFEST.json": "06fa86e58f7578433d6cf16c403f46ba727fdc8f59491a491bd8f5b2d83f63d1",
+    "work/parallel-main-collection-rent/CLI-MANIFEST.json": "724b895a7b6014f77508ec81fde937c3101d697c78e3520d3605400b83f8da27",
+    "scripts/pump_quote_control_fresh_differential.py": "5d6139ee50f1d8ba87d14344a281b3031fea42a9362f06d3b3ba124971049333",
+    "work/parallel-main-quote-control-frontier/RESULT01.json": "f81f33cfa43e566ec481a4c079cc6a62b7796e7203cc1175212e616a9763e6b8",
+    "work/parallel-main-quote-control-frontier/MANIFEST.json": "e7307eff845a9498c34dc50a07747adcae7a27de6fc6734eea27251fbf170448",
+    "work/parallel-main-quote-control-frontier/CLI-MANIFEST.json": "babd2413e55e8f3a8294fcecfd09f11ff9a9c7f463e44721f3e0333d9e83110c",
+    "work/parallel-main-claim-boundary-review/RESULT01.json": "75536674908f58c1a9bae281bfd5fc0ab102989d55a9ee049389cdbbc242a9fc",
+    "work/parallel-main-claim-boundary-review/MANIFEST.json": "50b379afbf14a7fb9da3d08434fde1d95ce89a4876c671bddc24324b5d13d414",
+    "work/parallel-main-collection-rent-review/RESULT01.json": "4f3d76af3d032a93e84fef25ebf40e37d5a75dd9d7d2b9cac8f774a6d95595e1",
+    "work/parallel-main-collection-rent-review/MANIFEST.json": "d8c3156ae5fbe95ae8c2a8df21eabc9a70dd136f34a20542f23237a120473b77",
+    "work/parallel-main-extend-boundary-review/probe-full-logs-v2.py": "9afff671deefedd951352345b76132860bde53c0d255d2c4d65fa8ba70556c5f",
+    "work/parallel-main-extend-boundary-review/probe-full-logs.py": "a83bf02ac0d2c6ee8ae40a0e5fca3796c93713c1fdef6a5ac60e7d6f66c43df6",
+    "work/parallel-main-extend-boundary-review/probe-logs.py": "4ef24e44c22304cde78ddd4abb19f90290021ee457a773bcd498ccac7424041e",
+    "work/parallel-main-extend-boundary-review/probe-incremental.py": "12ca06fd416a265c784b9b5f48559341030b0ed16c1b7fca80074af8d6f5d481",
+    "work/parallel-main-extend-boundary-review/probe-zero-rent.py": "4faba4c65d830d5b5f862550ee128448ae0dadaa73a7fbe0287bcf1db7e477b8",
+    "work/parallel-main-extend-boundary-review/INCREMENTAL-SPECS.json": "5d9855c1459dba9a7514bc3f1f199c169afe22333d843deb541d7a9463292ea2",
+    "work/parallel-main-extend-boundary-review/additional-manifest.json": "6a6ba76e90934fb403f01460e29ce4110c79ac5f72093fe0a64f60383dfb9634",
+    "work/parallel-main-idl-boundary-review/probe-new.py": "ef27a5f7b5cb5ca6c726dc19f21a8071bc306ed9807435b6531880ff665ddc82",
+    "work/parallel-main-idl-boundary-review/probe-transfer.py": "99807e458a9bfd3cc8ff9b184112794096c671ee4108e815694429723219f709",
+    "work/parallel-main-idl-boundary-review/DEDUP01.json": "8587685acb86f88e004cbbbc4dd638ed48ccafccab73e2a2012fafca6797304d",
+    "work/parallel-main-idl-boundary-review/additional-manifest01.json": "1a92d3643485e6930a21faade3aaa2319a7ad934a1f3b3d5d58257dd5e92f020",
+    "work/parallel-main-quote-control-reader/probe-incremental.py": "1c5b3d035f578b3231f1599265306cec9a846817cd4c82c26b738839504b36df",
+    "work/parallel-main-quote-control-reader/probe-reader.py": "263a16e5a73784a5daa8683d8c595eaee0c63bdf26aa13387f28114777e426f5",
+    "work/parallel-main-quote-control-reader/DEDUP01.json": "3e4cab06ed6ffdece5a1567106ce9d066eb23eec2f7f9e2a280747ded999d1b9",
+    "work/parallel-main-quote-control-reader/additional-manifest01.json": "9aa5ffd01de846c2749c647a838bc468acdc33de083e844cd17be2797b1e36a3",
+    "work/parallel-main-distribution-parser-correction/probe_incremental.py": "610c833b5ac46f6755b7f9507d0d1770c902417d3767450b410018feb4bcae13",
+    "work/parallel-main-distribution-parser-correction/incremental-cases.json": "fb0e2a5038076969726cbd9d03385e6f26cecf9bfd29626421843376b7f06c3c",
+    "work/parallel-main-distribution-parser-audit/probe_quote_gate.py": "00a66b7334c17fbd1a6a5f059d209c575caf75aa349124570cc02938780e5ac5",
+    "work/parallel-main-distribution-parser-correction/CLI-MANIFEST.json": "837a15e11886e4aeb4f4b9ac26d929e9342b1522cba5687a1e144bc6e46899ff",
+    "work/parallel-main-extend-boundary-review/RESULT02.json": "8a12ed03e74f05de1ed13afe91ce5bc4c659d2bcce25b78b4b10a2272cc095db",
+    "work/parallel-main-extend-boundary-review/MANIFEST.json": "1c1b98235988039e0a7475431626f34eae2adca1b8fb3cfe4f933783b315be73",
+    "work/parallel-main-extend-boundary-review/CLI-MANIFEST.json": "a60a4dd617c967353717fd9040416d219164821f79ec9659165cd7e521c97951",
+    "work/parallel-main-extend-boundary-review/MAPPING308.json": "0ae69b5392b427a8a792f6517ca9adffba5808f5d46c621359bfe1ab00d74a3a",
+    "work/parallel-main-idl-boundary-review/RESULT01.json": "eed99c460483a71f2caf8bed09e35a84c0ff6a065592d4fa691247fca56e875f",
+    "work/parallel-main-idl-boundary-review/MANIFEST.json": "28602ba819e1632ec1519a21eee2fe1ad58091ef31ce594482c24291402bb46a",
+    "work/parallel-main-native-distribution-plan/RESULT01.json": "e26531bd0f1dc2b80d1e0f3efcfc6573c0a7aee713512318051e19af0c8a23e6",
+    "work/parallel-main-native-distribution-plan/STATIC01.json": "21462b5c2d8e24d876dab3b728fce126546a5e9df0fa39f8b899fb18cc8fa414",
+    "work/parallel-main-native-distribution-plan/MANIFEST.json": "bcad2342f076e74cc04c3271f89d21732c09842da820339a0eb96f9b9c4391c9",
+    "work/parallel-main-idl-borrow-review/RESULT01.json": "74ef91050367f113e791d4b6791d7518c55730de56ea4b81a1e842cb2a129c27",
+    "work/parallel-main-idl-borrow-review/MANIFEST.json": "51aa1b5795939feb067cd87a4116bef9e10cbfd5dde529088e1a661816978505",
+    "work/parallel-main-idl-borrow-review/ENTRY-PROOF.json": "199647575e59aec71914da54d7a8ff9f88f654621b333dac2dc4f3fe94b8a4f5",
+    "work/parallel-main-native-distribution-abi/ABI-PROOF.json": "74b851a295f5459fa0269e0be5a1a918e162b5209f417f1abfc3afbecd285ac0",
+    "work/parallel-main-idl-cfg-review/RESULT01.json": "996b64972133385ffa82ccb548eb7ee6de784834e424fb4a07318ea0b2044dc1",
+    "work/parallel-main-idl-cfg-review/MANIFEST.json": "c99b258ea5d025c26dfa3542077722c93860ffdd8103cb0b4cfd003a8b730f05",
+    "work/parallel-main-idl-cfg-review/CFG-FACTS.json": "edac9854dc191e8a9d4180bc3c9daf5c5d364b844d24adc5a78402a8b52ea25e",
+    "work/parallel-main-distribution-context/RESULT02.json": "c79cff6dc1b3f7b27c867a66dfb3caecd0c279225b2d4b8a593346d6df1cfbbd",
+    "work/parallel-main-distribution-context/MANIFEST02.json": "62a890dde57c997324ef6836d85c23f97100923928ce6b2133585df6d3301f9c",
+    "work/parallel-main-distribution-v1-context/RESULT01.json": "4f5eef0492ee8672e46c7d726266c01740a6901e7f65285a7501a0feae001b53",
+    "work/parallel-main-distribution-v1-context/MANIFEST01.json": "f8ce8a616b077098fc4ef5397b7fb77a1477097289f174235f16bdc5d3d0744d",
+    "work/parallel-main-quote-control-reader/RESULT01.json": "a36e2ade867d2d8973fb97c3bc83ac45a96316c201f0de94e19a115a240fe127",
+    "work/parallel-main-quote-control-reader/MANIFEST.json": "6c64dfb21dc9db892a2e4eb36b69d23577263e56c9d5a11020f2c93ff8258b4c",
+    "work/parallel-main-distribution-parser-correction/STAGED.json": "c2d94699bd32c7185e3bfd98c950b1b01a73b92bc3fe00113db96ce17f1e3f70",
+    "work/parallel-main-distribution-parser-correction/MANIFEST.json": "67a85196ddecfb7aa270d77f2ec5a9bb063a9c30478eaeb4f0d562da630d43e1",
+    "work/parallel-main-distribution-parser-audit/FINDINGS.json": "8062100b2fc8a6da7b3b37ea5b8af4da8769e6c047c32bac89869e4d731c4160",
+    "work/parallel-main-distribution-parser-audit/MANIFEST.json": "ae93f8f2ad20cc67ba311df029591eed0e3384fb6ba0f32e0d3032028efa8fce",
+    "work/parallel-main-distribution-parser-review/REVIEW01.json": "8d728c37b99988e06ad6d3ac402c34da268857bd24d06d35c928b25ee728e161",
+    "scripts/pump_build_verified.py": "d8a63fb5ed15db3525a93ff98203e9f6821b3e1b44e689ca2db3e576acdc4e5c",
+    "scripts/pump_text_layout.py": "a8f57b4edb31237010a32371e8d6893b684eeedae75d642b2c2985b6d0bcefc9",
+    "scripts/pump_data_order.py": "275bd1ded0f949aee08901e4a82fe209417fe3477aadac31a60f68a710de12ea",
+    "scripts/pump_derive_data_order.py": "0d6c3ce0acb8397e5ab8a018b4d9f9fa7df22453988f2463e6fe8774134739af",
+    "work/parallel-main-integration/DATA-ORDER-ROOT-REVIEW.json": "ab3b7552478101666329e7a4770e9d63b8e29be3bbb71637f987fb8f2e4d77cd",
+    "work/parallel-main-data-order-option/FINAL-RESULT.json": "152814b363faa070b638b3ede03963e2411cd5cc71b087c2a2b85d8fd07ad1a1",
+    "work/parallel-main-data-order-option/MANIFEST.json": "5605d9c5d71551b1ad14d7784c14a8a0b88baf2a8c469762e82fb1e31a186e96",
+    "work/parallel-main-data-order-option/MANIFEST-ADDENDUM.json": "7bc027614e72ca75dae9fa2d11a0b0698b482a54d345701734cd42f19e024e53",
+    "work/parallel-main-cto-fifth-call/probe_incremental.py": "d1f95c56add6b560a03b56604dee6b782cf0b0a2696a7a360d0d746a77f3b354",
+    "work/parallel-main-cto-fifth-call/probe_collection_boundary.py": "5abf20a17d51d60218ff4cc26e2a0692289d4b985789327cb7eb777698bfc129",
+    "work/parallel-main-cto-fifth-call/probe_wsol_boundary.py": "aeb639e1389467274c0c55bf227965ddec0e3ac0c571f184e97fe3e095d418bf",
+    "work/parallel-main-cto-fifth-call/incremental-cases01.json": "493496519f17cffce688669639e4d17bb9399c2f41506b73c5478958687cc7a3",
+    "work/parallel-main-cto-fifth-call/additional-manifest01.json": "04354668e6304093ba43233979f3ea0d899f099b9091ec4d82d4d9388db5123e",
+    "work/parallel-main-quote-control-reader-followup/RESULT01.json": "68612827322e1f82c448931b860a91778875aa4a2778705f51d53ebe5a1a5f94",
+    "work/parallel-main-quote-control-reader-followup/MANIFEST.json": "989aa9697af6e89556bd64add489502d44c3726f3845537580e92b862bb036a1",
+    "work/parallel-main-cashback-source-order/FINAL-RESULT.json": "5db475643232291d0e78abe7bf49e015a1a5b6031b9bbed6fd696fe5c99cdbf4",
+    "work/parallel-main-cashback-source-order/MANIFEST.json": "7ff467d5adfc8486054dec5855242140de852e64f5536330a4e68b2f0976f6dc",
+    "work/parallel-main-cashback-source-order/DELIVERY-MANIFEST.json": "d69cb6b94227196b91d467eedb2d62316da98c81c7c4b8e2dc35686dd22fecf4",
+    "work/parallel-main-cto-frozen-empty/RESULT01.json": "b5a3806d162aee530a7e9d65b0fbd57da315054e296f957f39cd992f2270577d",
+    "work/parallel-main-cto-frozen-empty/MANIFEST.json": "07fb1bb40ef4b9b8c7762090347ba4f95562f31d46de25330ea4bee5770e3d1b",
+    "work/parallel-main-volume-model-placement/FINAL-RESULT.json": "22c3a78622fdb6a1501c7eed72e5ffb2e49d0079d583b3f26e09dde5b79522b4",
+    "work/parallel-main-volume-model-placement/MANIFEST.json": "d881cece6c4a27ba9b71a5cca6590991eaf1de76dcfdc9921eefd066e0fea2ba",
+    "work/parallel-main-cto-fifth-call/RESULT01.json": "f3888ee4a0465830c76ce79162da2c53d504bac1441ffe515382eb4c7600e2b5",
+    "work/parallel-main-cto-fifth-call/MANIFEST.json": "7aecd0887c4c7c7b1fb0194d7c34fea53515c2fb6d095215177c78419c9ea783",
+    "work/parallel-main-token-distribution-plan/RESULT02.json": "1ddb5ca4d8c1de45486494988a3b9026e4d01d927fbcdc1183ab3a73f2fed9a9",
+    "work/parallel-main-token-distribution-plan/MANIFEST02.json": "7da13172c781c9d349805e892da1e0ec19acb20d3f1022d12884bffe5c1ef582",
+    "work/parallel-main-token-distribution-data-len/RESULT01.json": "755d5d4a5ab7156d7b0e64e196526454c131a1a707ffb9677f53e658963d8be9",
+    "work/parallel-main-token-distribution-data-len/MANIFEST01.json": "dc33f5eadc1d3f5cb60c53f83319c0f5633a32cec4b595cd6d03179a682a5009",
+    "work/parallel-main-token-distribution-mint-scope/RESULT01.json": "92c84bb379e45bc0802d7c20b0d9c77b2c4636400bea0195fcb7010cffb3608a",
+    "work/parallel-main-token-distribution-mint-scope/MANIFEST01.json": "061688334c4a3639d03c014693b88bddee42d2a4949015eccef348781a04931b",
+    "work/parallel-main-token-distribution-string/probe_executable.py": "9584df64c9c24ddcb7aebb0386883dcaf203f6ac07444ca40b0df1b528cb299c",
+    "work/parallel-main-token-distribution-string/INCREMENTAL-INPUTS01.json": "79e0bc7594da65af14e68c90efe41d5efec1913b5dfce0f8cd274cf94b364b35",
+    "work/parallel-main-token-distribution-string/INCREMENTAL-CLI01.json": "ff3343d3003c38a2835c38aefded39841348debe06ee3454292454b4bd5e8593",
+    "work/parallel-main-integration/round37-token-string-dedup.json": "bb8c445c6ba3d371e59461c242051a81bb773a6bc720504d59ceadf41b821589",
+    "work/parallel-main-integration/round37-token-string-additional.json": "0b63aade8d3178b26f7542988ff9e067922b2c042d2c87f99d4c8d2a3c387b35",
+    "work/parallel-main-event-placement/placement.patch": "3ca5bd345cb5bc9546b0f5480e28a414ae26215b82e7b2bcf2c8f7a3a690ab3f",
+    "work/parallel-main-native-distribution-edge/native-edge-r36-02.patch": "75720daa8e25bbcebca05424d0769dd5127be9203a935e46b5d429f3be714e7b",
+    "work/parallel-main-event-placement/FINAL-RESULT.json": "ab845e7630164babc4dd396a308a137e8139ad875d14dae1ccb8b35cecdb8f5e",
+    "work/parallel-main-event-placement/MANIFEST.json": "bfb4d58e5ed0a4e3462b116dcaa168b8486427416c0f49756b973045dbf4c8fb",
+    "work/parallel-main-distribution-physical-split/RESULT02.json": "7a02eb955b26c6c15523a3d4ed7a5a959ad795c424a46f9b08d8cdd913029409",
+    "work/parallel-main-distribution-physical-split/MANIFEST02.json": "ce50b88e3ae76d96987b75e3ab62435a0f052ed3f7be62ac9bfeddd74c6265f6",
+    "work/parallel-main-native-distribution-edge/RESULT02.json": "e239d0ca52dbd26588477c8a0470d5ab86d6ea777ddd54e5d6618c074ab89650",
+    "work/parallel-main-native-distribution-edge/MANIFEST.json": "f44e635bd82e19675d91f2f4e987b7661af912ef0ce961b77c455b833810d0a8",
+    "work/parallel-main-native-distribution-edge/R35-CTO-DEDUP02.json": "418ea6045b6d30be7c364b649a7e54e7433865f391755b00610b8b801bedd91f",
+    "work/parallel-main-token-distribution-string/RESULT01.json": "c1ac20bd12ddbfb78b60bf0a1913dcfbadbd6acbf1a4d03e587b5197ffe8c269",
+    "work/parallel-main-token-distribution-string/MANIFEST01.json": "e437c4558cfadf1566cd37efa6b8fc3dd1940fe3b80fda5a4119112a644aa5bd",
+    "work/parallel-main-token-distribution-string/string-only.patch": "a8e8e725f1b289c56d9c6b2331c47a1641f1e22711c808c5110f9c8548c92bc8",
+    "work/parallel-main-fee-split-placement/FINAL-RESULT.json": "d45c1d892b00208881d34b2352f55a29d6924f5e74a18c2cfe0d8bca43575210",
+    "work/parallel-main-fee-split-placement/MANIFEST.json": "2e847b2d452c42424f76b4147035deaa0842485e4400a42aabcb17d118bffe26",
+    "work/parallel-main-fee-split-placement/placement.patch": "c7faeb88435938e192653fe9d53a621c9334670e8a4990aa6e21ca1d870edf35",
+    "work/parallel-main-native-distribution-string/RESULT01.json": "865a9be0e7c060814927dbccea3b276a44b5110587eb694e8155d5b996301e38",
+    "work/parallel-main-native-distribution-string/MANIFEST01.json": "6ef36e7b5b4fed29546ba7c5625eba6d22431d7e558d595013abad8c70152241",
+    "work/parallel-main-native-distribution-string/native-string-only.patch": "f4f19c73622cbf703689e57ee91bd6f9e4539dd9011aca67334d7c5eeb512a41",
+    "work/parallel-main-distribution-v1-parser-next/RESULT01.json": "70083587e5de6e1cd68ce97b7028cdb24f50750b4242908aefa84a2093614ba1",
+    "work/parallel-main-distribution-v1-parser-next/MANIFEST01.json": "862dc1821faae39c943eb3b2f2dcbe7a8fe0763aef216bc08ec4a7a02f6fb6e2",
+    "work/parallel-main-distribution-v1-parser-next/v1-creator-seed-only.patch": "7ce7978bba2bdccd10df7f3c0b3e1ef71a9ab9541b8daf2a84af10cf563693f4",
+    "work/parallel-main-distribution-v1-parser-next/STATIC-BEFORE01.json": "54f7750af926a9de9fccf4e5a3db4ff793ea0c812625ee73ea439cb4390ea48f",
+    "work/parallel-main-token-collection-wrapper/RESULT03.json": "d85cc49752cbdc73074e6d1795dacf9ac268acb7d25e2137646e6a5e1379e039",
+    "work/parallel-main-token-collection-wrapper/MANIFEST.json": "a045c4ff7d6507be4e7f4f13bf82c74feef85d56bfa003faf737f401eb0df07b",
+    "work/parallel-main-token-collection-wrapper/token-wrapper03-physical-split.patch": "bc2377fa26dbce8a5116a949eb815b9558df4101497bd79e7992f520e1abc357",
+    "work/parallel-main-token-collection-wrapper/PHYSICAL-SPLIT-PORT03.json": "99f376a969e32c722647fa63dcc3ddeb625f1803077098735091ac536c9ebc23",
+    "work/parallel-main-token-collection-wrapper/ABI01.json": "b1f4cfe335c40822778840a7ef68c376b0d67ee856b91d979df39b67585bd7f5",
+    "work/parallel-main-root-fees-interface/FINAL-RESULT.json": "22e4e99b4acb9bd4b5384e7a392867c7ae7b43f7a3531f77ca25d7950c7c9128",
+    "work/parallel-main-root-fees-interface/MANIFEST.json": "c1581fe5a3a21b83d0944e4ef6d2c2f3635d91b7e510b4077ecc4c89b43f147b",
+    "work/parallel-main-root-fees-interface-port-r37/PORT.json": "27e82b4b0265c2664d750fd2cd96dd9bb908b8ebd4afdfde60662bbc6ded975b",
+    "work/parallel-main-root-fees-interface-port-r37/MANIFEST.json": "b1865bf384110fa1fbbacf5ded85caad718dd4fbeb96f2336cb348b8e2fe5d4b",
+    "work/parallel-main-root-fees-interface-port-r37/root-interface.patch": "9f3a0b329f1085d36200872e725b742950b51f38d3f839a89cecba201b5c0ed4",
+    "work/parallel-main-sharing-origin/REPORT.json": "8ee2ee5cdda55dcac1b08d3079d82ef9defe86793905f8706aea15a56ff40682",
+    "work/parallel-main-sharing-origin/MANIFEST.json": "d26d86d05f0a0903130384c6dc1ec0d0a61900498db76f5c2b42d6c739f49ded",
+    "work/parallel-main-distribution-v2-parser-next/RESULT01.json": "f9292e95f8068a40496b8bce407a56463a99b17dfbb9475cf2a69440f670fbaa",
+    "work/parallel-main-distribution-v2-parser-next/MANIFEST01.json": "5742dbb8cd68d36cb81c71072d1e0de30d4c86d421743d3a757a296a8bd1b7f8",
+    "work/parallel-main-distribution-v2-parser-next/v2-creator-seed-only.patch": "43bf0dfee2000316cf6cbe53c50414052fef171396762db69f53fd072a1c616b",
+    "work/parallel-main-integration/round37-interface-source-import.json": "048820211741040dbd7ed1e918820835fa950e6e30d8398e8556c3924a3b4fc9",
+    "work/parallel-main-schedule-guard-corpus/probe_incremental.py": "898938f19d6059b96d5604945edc72bf603d6c65e6b6b9d05650c92dd6f9c974",
+    "work/parallel-main-schedule-guard-corpus/selected-cases.json": "440137d7ad3eefd0ac4c4ecf723dd595a07a51a00a2a8771047fb917415cbb02",
+    "work/parallel-main-schedule-guard-corpus/DEDUP06.json": "e5c45181f3569819fc05b353ed0dbcd0e275fb8d384ec3738414aa32e18fa70c",
+    "scripts/pump_incentives_admin_differential.py": "b3044b0d999f29eaffa1a4707047a46560d3ee8d0a3ef459d0caeac6b48062c0",
+    "scripts/pump_diagnostic_audit.py": "0343c70e4f9c7860ad392f0a8bd10d90ac94fe17bb2ba5bfd49a45683edbe343",
+    "research/imported-lab/analysis/pump_fun/config-snapshot.json": "17b886a6b4aa7fdc89f2fca9a1b67b318d33998794da59fe4df1fe89ca70bd27",
+    "work/parallel-main-schedule-guard-corpus/CLI-MANIFEST.json": "36a05e0c66624b57b129951950d7533ea86b3b503d0208151a49c0c87698453e",
+    "work/parallel-main-native-executor-ownership/RESULT01.json": "b3382907b614be22128cdc1d425f0a1da109c1f08e7ef7d96e057e13653a37ab",
+    "work/parallel-main-native-executor-ownership/MANIFEST.json": "bf0129f00a390005129c0b3b2da374a9e28a197dff71e7db05eab33c616a8ff5",
+    "work/parallel-main-native-executor-ownership/native-executor01-physical-split.patch": "b740dc146a2ebb2a6b7c0f8a80d2620af7215a269ed1f0bb2e4396754f3a843b",
+    "work/parallel-main-distribution-event-placement/FINAL-RESULT.json": "ddabf48c9e8bdd385c2add0b438d84c97a75dd4b0396993e15a33292138b30cb",
+    "work/parallel-main-distribution-event-placement/MANIFEST.json": "9dcb9b37140b2995609c6d394e5e66ace800525831bf144c7310dbb0bb7fb482",
+    "work/parallel-main-distribution-event-placement/portable-r37/PORT.json": "3bdfeb70d4cc3c5391ab1548f6e3ec0565c0570678fdaf5e7ef93cc389b8b5b7",
+    "work/parallel-main-distribution-event-placement/portable-r37/event-after-native.patch": "28a3a1df2c5b7e252c14fbf961c27f789043bc27ede8b48995f7bd9a655b43fb",
+    "work/parallel-main-holder-ata-api/RESULT01.json": "0f8d847b9c1f7e11760dea0615767cabd9ed00644e0fff94f7dcdcb301aa07c8",
+    "work/parallel-main-holder-ata-api/MANIFEST01.json": "fa2658e3e37734ecb58cc04e86f468106daac5a258e894cb2385cb89b96f0704",
+    "work/parallel-main-holder-ata-api/holder-ata-only.patch": "b27e34a558e6a495c8064137066f03ec66b4d820763e3ae39b1f4abd495b4147",
+    "work/parallel-main-collector-core-abi/RESULT01.json": "d4688932dd33006128b296d1a1257dea97e0d1019ae4d32939e63f8ff329cbc6",
+    "work/parallel-main-collector-core-abi/MANIFEST.json": "0144b3741ff943758c845ff3be7bcfdb37b7a280265a4e0e22536d38e17f753d",
+    "work/parallel-main-collector-core-abi/collector-core01.patch": "4893f7c15b44763454e9f4186b4f0d81d56f289a132eafd99afa28cea670357b",
+    "work/parallel-main-holder-native-api/RESULT01.json": "8ffba08c89d82400d7f87bda3ccdeb2b542ea4cd1b17c4313eebd7b4787466f5",
+    "work/parallel-main-holder-native-api/MANIFEST01.json": "c7331474f0a62f88277cf7fb246be7d0be1abd20d911c787a6034ea275ddcc7c",
+    "work/parallel-main-holder-native-api/holder-native-only.patch": "9874a4a91d097b6968c78d48f1804a6100c780c2b67e080d27856ffa55e6176c",
+    "work/parallel-main-holder-token-source-info/RESULT01.json": "ce910ed2818554f8927299b359abe02ac25b4a6fd941e5502e74f6c22bc3a80a",
+    "work/parallel-main-holder-token-source-info/MANIFEST01.json": "9282499ba7f60ea6d5eacb2ada8712188a30654950c887a288bde38dac6dadef",
+    "work/parallel-main-holder-token-source-info/source-info-only.patch": "8be1d1a44efb286d2213db78c5e5c2fbfac4350c5e397a165f0abe5e691a71e2",
+    "work/parallel-main-idl-clone-order/RESULT01.json": "19ad51cbcb2adb6b285dcb5dc5a2e6f3e79f9acdcf5e67d8b6dc186ee06a06fc",
+    "work/parallel-main-idl-clone-order/MANIFEST01.json": "4a3952e6b4639d4d7b243da922ea4ec9c0751fad5921c4e4b550bc9820965321",
+    "work/parallel-main-idl-clone-order/combined-idl01.patch": "f3272bf1c4d669634e3dc33069d5dd3e214ad26b5fba2f1404001461cb9ac1d1",
+    "work/parallel-main-idl-next-abi/RESULT01.json": "26e2b623db1f79b3e4519aec350aa64ccb6180950c95adb6f05b680944ac419c",
+    "work/parallel-main-idl-next-abi/MANIFEST.json": "deb1fdd322ab36b360530e8cac2a105e893a96184e9392912e1044af54fa7e28",
+    "work/parallel-main-idl-next-abi/SEED-PROOF01.json": "9d30e629f9bd74379ef1f65687f3a8cf81dd4e968073b86fd8083406ef6bb428",
+    "work/parallel-main-schedule-guard-witness/STAGED01.json": "4df2f03b9c9844212fe9b5ed20be8a20e339648500e96ea48b131be88f7c780d",
+    "work/parallel-main-schedule-guard-witness/MANIFEST02.json": "fcff86937b62cab4a5ed82dd6e1392700c8b051b78dcb4530b9d6e54d9e96e4f",
+    "work/parallel-main-schedule-guard-witness/guard-order01.patch": "93925e8a8dabd5860e1e8828c7c63d5167cd6cccdefac2509009d32f21b30e53",
+    "work/parallel-main-schedule-guard-witness/before01.json.gz": "ca37c8a578cec31ef94257cd256ebcda7efa718269e623eee6a06767e9bc820d",
+    "work/parallel-main-migration-root-error/RESULT.json": "4694a87e0b5750f3d608373a7db7ccbe7dadfe0443c58a89f7ea52d4887c306e",
+    "work/parallel-main-migration-root-error/MANIFEST.json": "dab3e51fe1bf9ac4694f1f1e2bfb6fdd7cd6d2b75b9e19b8c509872424ca473c",
+    "work/parallel-main-migration-root-error/root-error.patch": "bcfb992d53fb2d12e1b9b80329a60030b87ec8ce4fdc0a2a5d93cc30fdbf6459",
+    "work/parallel-main-holder-token-combined/RESULT01.json": "140fc63940fcf848d9a0a73433987a6bf4d997ab8e157fe4415448ffafc7ed95",
+    "work/parallel-main-holder-token-combined/FINAL-MANIFEST01.json": "675095bef42f782be64b05a530c08f6edc37079352473f4ac12a7a18b216fef2",
+    "work/parallel-main-holder-token-combined/combined.patch": "d13e014710e4d2ec4a795957fefd58420d590a9458d4c42a8f2077b46f1fe0b3",
+    "work/parallel-main-holder-token-combined/INSTRUCTION-PROOF01.json": "f49fe721e41d74c25bcf1ccdec6b249193722a52314234a84c408824917ba998",
+    "work/parallel-main-schedule-guard-corpus/RESULT01.json": "057d9f70d135c6d66adbfb6b413cb979dbbd22827499db5047e71e10dfe0d16c",
+    "work/parallel-main-schedule-guard-corpus/MANIFEST01.json": "f5d17738b6277cdbe88a2b8a8bd666ae88fe0967a80cae792ac6c58d334076ec",
+    "work/parallel-main-round38-independent-review/REVIEW01.json": "fae75bb51ccf548502553d4b1d4d1def8c10fb128c9d83b37c25ee4daf43db47",
+    "work/parallel-main-round38-independent-review/MANIFEST01.json": "3e340cdc97395fb734eeade2ec85cccd708aea1cf033d94884e035770531b7de",
+    "work/parallel-main-round38-independent-review/REVIEW02.json": "e4a6816065eba300d7109327614ce14c499e6f40324bae3617ffb405385b6200",
+    "work/parallel-main-round38-independent-review/MANIFEST02.json": "4a20d762ee448088ee6c8d633277d6dd3c2c892f28873e7508083dcf6f366964",
+    "work/parallel-main-trade-event-constructor/probe_volume.py": "692c9ca3c15d77c6344bc90593332cd4020e3a9466f425156479e8f1384f258f",
+    "work/parallel-main-trade-event-constructor/DEDUP01.json": "c9fae9fabb92e4c3d97515373614ca4736fda3b949a43edadae8c6cd6162506e",
+    "work/parallel-main-trade-event-constructor/input-capture.json.gz": "b2e6156d2656ecba74bce056a031a61ae2122d9088f47b7ecd6b5bd7e9cf34bf",
+    "work/parallel-main-trade-event-constructor/R38-DEDUP02.json": "a2cf82e8e222b7ca51a61bad50ac83c706f1f6123a492c84c7e7e075f378f702",
+    "work/parallel-main-trade-event-constructor/r38-future-corpus-fragment.json": "48c8dbdb75e110f7f3dca8d91691ffb8085a2fb1fae88a0c999f74a392e31e08",
+    "work/parallel-main-genuine06-r38-composition/REVIEW01.json": "6d366d1bc7b6ae2d17e7d5ab8e5712402f2925c6861fa792cbe1880f8ec6ec70",
+    "work/parallel-main-genuine06-r38-composition/REVIEW02.json": "873561ac1e929d0bd490f5d2e945aa42511a3be04f67fe69181553b01487357c",
+    "work/parallel-main-genuine06-r38-composition/SOURCE-MANIFEST02.json": "3d93bc4b726060d38257027e346e8f67e241147d26852901ad00aad7edc89ad5",
+    "work/parallel-main-genuine06-r38-composition/RESOLUTION01.json": "4ec9e12619b5ab0bb0f335ddf1bd975fc13e3c7ce014e351c3d954911dc45bae",
+    "work/parallel-main-genuine06-r38-composition/from-r38.patch": "67cf48c081cf7593e6d06f40b9f37b608db1e3a59f57f98b19f3c89379f9f1ac",
+    "work/parallel-main-trade-event-constructor/RESULT02.json": "0aae7328955e28a4ee708106a1af6a82a3d10a6f5f527e6a661af091d1bfead3",
+    "work/parallel-main-trade-event-constructor/RESULT03.json": "34f6f3688bb58046dd858c632da9b8a4a065ab7e70ec6aab4202df6f8a6aeea7",
+    "work/parallel-main-trade-event-constructor/MANIFEST03.json": "8067631765c1936aac73a9282a9ef3f2974a9a0d998dfd4ca13198668045af0a",
+    "work/parallel-main-trade-event-constructor/constructor-r38-eager.patch": "c307260c14bdded2f2ced328e2d6aba8dbcdc24bd401b80ab761e182db5edaaa",
+    "work/parallel-main-live-frontier-review/FRONTIER-AUDIT.json": "6b48bdde95819c2933e72fc4ad16d1488888b99a8fbbe9d3efb864903192c7de",
+    "work/parallel-main-live-frontier-review/GENUINE06-TRANSFER-WINDOWS.json": "f05e2c3bf0dbf451c86c07f65318036937a9b9bf5746a0e8e1013e32edd8a85f",
+    "work/parallel-main-remaining-review/AUDIT01.json": "0cbf50dceaad2e8c953fa9dcfd1caa73b26b62f32cc118f2fd94aa08d89abd3d",
+    "work/parallel-main-genuine06-r38-cache/DIRECT-TRAIT-PARITY.json": "bd74cb859536ff7813272c1b74e5602dcde35a19b018888f89d79da24e657325",
+    "work/parallel-main-genuine06-r38-cache/MANIFEST01.json": "17f354aefdf4c084b3605f36173783a013e32e026659c2fc9f820617ab6d5962",
+    "work/parallel-main-round39-independent-review/REVIEW.json": "4cfe4b470aba58faee1b9144a716f3658fde96eca0daa0c64f13c7bd5f4e3107",
+    "work/parallel-main-round39-independent-review/MANIFEST.json": "25fc62dc800d07c039709676481e312f4524f5e6b8c56b3018d914e5c4e8c32f",
+    "work/parallel-main-r39-conflict-review/REVIEW.json": "4496f4322e2de38be89285c02b2617f44b48d7ecc8c7b2a7d028b881c9e46310",
+    "work/parallel-main-r39-conflict-review/MANIFEST.json": "47c461c56c6d40abf5de0eb9c32fb9419af5ddd3ad82cfc847d5f5351f07434a",
+    "work/parallel-main-pr401-source-review/R40-RESULT01.json": "b1e00f8116ee8422220a71d90df534be3584e49d825dca02822f568b4fc7c993",
+    "work/parallel-main-pr401-source-review/REVIEW.json": "0119207a2c462777ca565118310ab1bef85d98437a7efdeb79bb4b32dab64dfa",
+    "work/parallel-main-pr401-source-review/two-source-gains.patch": "0ad16cfe079c28f2435e8cbe53a110b304032f1d8f419c786bc365ef66e0b332",
+    "work/parallel-main-pr402-review/REVIEW01.json": "0f04f364cc88fea91df34322c79f8dc79ac2f6a611fa17558d50a5355113f36f",
+    "work/parallel-main-pr402-review/STAGED.json": "b0f01f3702d6dce4b495c4890111ef7f1089e95644b560614d92f494240662d9",
+    "work/parallel-main-pr402-review/MANIFEST01.json": "16c166bdc5a58de63b0508b3595bd59164e863072dac05f4df16ddae3fa9003f",
+    "work/parallel-main-pr402-review/01-set_creator.patch": "32dd8423d58726b6362ec37c4fd46e26f39fa9337b80ff8916d1f2a1e7a4922c",
+    "work/parallel-main-pr402-review/02-set_metaplex_creator.patch": "4d42486749644c59c80f522a782c1e7495c5479904c7196f980a080e3793be0a",
+    "work/parallel-main-pr402-review/03-admin_update_token_incentives.patch": "d3ba884751ec0e9ad442cdfa7019ea4e84db1c9a1f4524c0ca0e0cf3de7ecb81",
+    "work/parallel-main-r40-independent-review/REVIEW01.json": "dfafeb9a10330733746d2c0975ce600afd70f2cb69a0e6114a539ea5f4723443",
+    "work/parallel-main-r40-independent-review/CACHE-REVIEW02.json": "6bf6f163d28bb227056fdfd4e64dd2625c95bc01c16fb198ff9d51b9445eb6f3",
+    "work/parallel-main-r40-tooling/ROOT-ACTIVATION-REVIEW.json": "c298b3291c527286a30000b3377bf2dcee6782e2946939032ed8864e1c7242ae",
+    "work/parallel-main-r40-sbpf/DIRECT-TRAIT-PARITY.json": "5810fc4f562ead69216a7e31c13efac71a67fbfd7913630871ec6261498f3b02",
+    "work/parallel-main-pr402-review/RUNTIME-RESULT02.json": "1edd375640d7ce8b7a3fa919e0b8136c15c41054488b5e334efd210251730b5e",
+    "work/parallel-main-pr402-review/RUNTIME-MANIFEST02.json": "f0444f4ef506ab13113d57fad869ac9c11d06baa98aed78c993b120b509455dd",
+    "work/parallel-main-pr402-review/RUNTIME-INPUT-ADAPTATION02.json": "bd0adc6b5d1eff181b7c115436312a14a017a386b0e9e8ca9984733125d5034c",
+    "work/parallel-main-r40-sbpf/PACKAGING-CACHE-PROOF.json": "a950b754b776c4d03ae4afc0bd0dd76d28cc2064d70dae9b60881f2dd49c5fc7",
+    "work/parallel-main-integration/round40-builder-installation.json": "c5567a5b66a50406d9492f90f6a6f85a14c204f3ebe064f22e026fba54636b88",
+    "scripts/pump_dependency_cache.py": "6ac18c9fd98e010850bdeef0211a58840696064bd664e5ea3f35960a94f4b9ed",
+    "scripts/pump_linux_v144_sbpf_libraries.json": "7e2461b5ec54416d6b64508af1e2677f63afd83d35e9a3eeae6ca877ae879f1e",
+    "scripts/pump_text_layout_linker.py": "b5a3dba004827c2ea355be1147901737bf4b7f7b4132ffa58c00a305de5dea00",
+    "scripts/pump_text_layout_rustc.py": "c4e84469d80d668ea85f53e9a203d7aaa5e8d186439a3eb7e1c030f8c74c5873",
+    "scripts/pump_text_layout_default.ld": "5e8370b9380f55411d827721e2e43c8cfd1eac71d1383e20b938397bc0bd82c3",
+    "scripts/pump_compare_function_bytes.py": "43fa359dce1e398f820df445d534e0912ac5f181f1ea15e13a5267b53105b075",
+    "scripts/pump_quote_control_function_match.py": "28ad656012f8fbcd41ed1726e9345ee76f6249992bf28c91c4b9202479d3e94e",
+    "scripts/build_source_manifest.py": "bbcf5081f99cc911af108216dee430ac15721c16159406490beb7671e4b14a8b",
+    "scripts/pump_physical_source_wrapper.py": "d959fe0074fafe7f310a8f40051ce87f795b1e81b104a38dfe57086efa6bae1b"
+  },
+  "suites": [
+    {
+      "group": "additional",
+      "name": "scheduler_577",
+      "script": "work/parallel-main-incentives/check-scheduler-final.py",
+      "cases": 577,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "token_extension_edges_416",
+      "script": "work/parallel-main-trading-third/probe_extension_edges.py",
+      "cases": 416,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "admin_context_299",
+      "script": "scripts/pump_incentives_admin_differential.py",
+      "cases": 299,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "fee_market_cap",
+      "script": "work/parallel-main-integration/recovered_fee_market_probes.py",
+      "cases": 206,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v2_guards_200",
+      "script": "work/parallel-main-integration/recovered_trade_probes.py",
+      "cases": 200,
+      "args": [
+        "--family",
+        "v2-guard"
+      ]
+    },
+    {
+      "group": "additional",
+      "name": "new_v2_fees_151",
+      "script": "work/parallel-main-trading/fee_corpus.py",
+      "cases": 151,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "recipient_order_144",
+      "script": "work/parallel-main-integration/recovered_recipient_probes.py",
+      "cases": 144,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_fee_config_boundaries_144",
+      "script": "work/parallel-main-v3-fee-wrapper/probe-config-boundaries.py",
+      "cases": 144,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "claim_grid_132",
+      "script": "work/parallel-main-integration/claim_grid_cli.py",
+      "cases": 132,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "buy_v2_order_130",
+      "script": "work/parallel-main-buy-v2-order/probe.py",
+      "cases": 130,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_extensions",
+      "script": "scripts/pump_v3_token_extensions_differential.py",
+      "cases": 126,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "completion_fuzz_120",
+      "script": "work/parallel-main-trading-next/fuzz_completion.py",
+      "cases": 120,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "creator_gate_120",
+      "script": "work/parallel-main-trading-next/verify_creator_gate.py",
+      "cases": 120,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "trade_optional_bool_115",
+      "script": "work/parallel-main-integration/recovered_trade_probes.py",
+      "cases": 115,
+      "args": [
+        "--family",
+        "bool"
+      ]
+    },
+    {
+      "group": "additional",
+      "name": "buyback_recipients_100",
+      "script": "work/parallel-main-receipt-capture/instrumented/work/parallel-main-buyback-recipients/check_remaining.py",
+      "cases": 100,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_net_budget",
+      "script": "work/parallel-main-v3-net-budget/probe.py",
+      "cases": 96,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "completion_92",
+      "script": "work/parallel-main-trading-next/compare_saved_completions.py",
+      "cases": 92,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v2_creator_rent_80",
+      "script": "work/parallel-main-integration/recovered_rent_probes.py",
+      "cases": 80,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_post_fees_80",
+      "script": "work/parallel-main-trading-contexts/probe_v3_post_fees.py",
+      "cases": 80,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "sharing_config_78",
+      "script": "work/parallel-main-decode-envelope/probe_sharing_config.py",
+      "cases": 78,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "selector_72",
+      "script": "work/parallel-main-trading-next/probe_quote_selector.py",
+      "cases": 72,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "ancestor_boundaries_68",
+      "script": "work/parallel-main-create-frontier/probe_ancestor_boundaries.py",
+      "cases": 68,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "extension_order_68",
+      "script": "work/parallel-main-trading-third/probe_extension_order.py",
+      "cases": 68,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "migration_headers",
+      "script": "work/parallel-main-migration-quote-reader/check_headers.py",
+      "cases": 66,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "new_v2_66",
+      "script": "work/parallel-main-trading/probe_v2.py",
+      "cases": 66,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "curve_boundaries_64",
+      "script": "work/parallel-main-curve-layouts/curve-boundary-probe.py",
+      "cases": 64,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "new_route_holder_64",
+      "script": "work/parallel-main-trading/route_probe.py",
+      "cases": 64,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v2_payment_panic_order_64",
+      "script": "work/parallel-main-buy-native-recipient/probe-payment-order.py",
+      "cases": 64,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "distribution_regressions_62",
+      "script": "work/parallel-main-integration/distribution_regressions.py",
+      "cases": 62,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "native_completion_62",
+      "script": "work/parallel-main-trading-next/probe_native_completion.py",
+      "cases": 62,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "buyback_allocation_54",
+      "script": "work/parallel-main-trading-third/probe_buyback_allocation.py",
+      "cases": 54,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "root_v2_layouts",
+      "script": "work/parallel-main-context2/migration_v2_partial_layouts.py",
+      "cases": 54,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "unknown_tlv_50",
+      "script": "work/parallel-main-trading-third/probe_unknown_tlv.py",
+      "cases": 50,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "root_account_origins",
+      "script": "work/parallel-main-origins/compare_origins.py",
+      "cases": 47,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "old_fences_46",
+      "script": "work/parallel-main-trading/probe_remaining_fences.py",
+      "cases": 46,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_continuation_42",
+      "script": "work/parallel-main-trading-contexts/probe_v3_continuation.py",
+      "cases": 42,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "cto_edges",
+      "script": "work/parallel-main-cto-frozen/check_edges.py",
+      "cases": 40,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_context_39",
+      "script": "work/parallel-main-trading-contexts/probe_v3_context.py",
+      "cases": 39,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "origin_kinds_38",
+      "script": "work/parallel-main-trading-third/probe_origin_kinds.py",
+      "cases": 38,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "accounts_zero_payout",
+      "script": "work/parallel-main-accounts/admin_cto_zero_token_payout.py",
+      "cases": 36,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "fee_waiver_crossing_36",
+      "script": "work/parallel-main-fee-waiver/crossing.py",
+      "cases": 36,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "token_extensions_36",
+      "script": "work/parallel-main-trading-third/probe_extensions.py",
+      "cases": 36,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_precedence_36",
+      "script": "work/parallel-main-v3-helpers/probe_precedence_extended.py",
+      "cases": 36,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "cto_context_34",
+      "script": "work/parallel-main-integration/cto_regressions.py",
+      "cases": 34,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "cto_frozen",
+      "script": "work/parallel-main-cto-frozen/check_frozen.py",
+      "cases": 32,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "migrate_v2_prepare",
+      "script": "work/parallel-main-migrate-v2-prepare/probe_prepare.py",
+      "cases": 32,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "sell_v2_buyback_32",
+      "script": "work/parallel-main-sell-v2-buyback/probe-expanded.py",
+      "cases": 32,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_post_fees_32",
+      "script": "work/parallel-main-trading-next/probe_v3_post_fees_cli.py",
+      "cases": 32,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_buy_boundaries_28",
+      "script": "work/parallel-main-trading-contexts/probe_v3_buy_boundaries.py",
+      "cases": 28,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "completion_edges_27",
+      "script": "work/parallel-main-trading-next/probe_completion_edges.py",
+      "cases": 27,
+      "args": [
+        "--compute-unit-limit",
+        "600000"
+      ]
+    },
+    {
+      "group": "additional",
+      "name": "fee_waiver_27",
+      "script": "work/parallel-main-global-fee-waiver/probe-v2.py",
+      "cases": 27,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "legacy_token22_27",
+      "script": "work/parallel-main-migration-contexts/token22-verify.py",
+      "cases": 27,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "root_legacy_layouts",
+      "script": "work/parallel-main-context2/migration_partial_layouts.py",
+      "cases": 27,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_post_edges_27",
+      "script": "work/parallel-main-trading-next/probe_v3_post_edges.py",
+      "cases": 27,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "sell_v2_atas_25",
+      "script": "work/parallel-main-sell-v2-buyback/probe-atas.py",
+      "cases": 25,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "context_failures_24",
+      "script": "work/parallel-main-trading-next/probe_context_failures.py",
+      "cases": 24,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "root_v2_bool_layouts",
+      "script": "work/parallel-main-context2/migration_v2_decoder_boundaries.py",
+      "cases": 24,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "accounts_contexts",
+      "script": "work/parallel-main-accounts/account_context_probe.py",
+      "cases": 23,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "claim_program_precedence_20",
+      "script": "work/parallel-main-incentives-next/probe_claim_program_precedence.py",
+      "cases": 20,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "sweep_order",
+      "script": "work/parallel-main-sweep-prepare/probe_prepare_edges.py",
+      "cases": 20,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "authority_19",
+      "script": "work/parallel-main-coverage/capture_authority_receipts.py",
+      "cases": 19,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_mint_curve_18",
+      "script": "work/parallel-main-v3-user-constraints/probe_v2.py",
+      "cases": 18,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_native_buyback_18",
+      "script": "work/parallel-main-v3-user-constraints/probe_buyback.py",
+      "cases": 18,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_waiver",
+      "script": "work/parallel-main-global-fee-waiver/probe-v3.py",
+      "cases": 18,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_waiver_order",
+      "script": "work/parallel-main-v3-fee-waiver/probe-order.py",
+      "cases": 18,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "multihop_validity_flags",
+      "script": "work/parallel-main-v3-validity/probe_multihop_flags.py",
+      "cases": 16,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_sell_supply_16",
+      "script": "work/parallel-main-v3-net-budget/probe-sell-supply.py",
+      "cases": 16,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_waived_crossing",
+      "script": "work/parallel-main-v3-fee-waiver/probe-waived-crossing.py",
+      "cases": 16,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "cto_fees",
+      "script": "work/parallel-main-admin-cto-rent/probe_cto_fees.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "cto_rent",
+      "script": "work/parallel-main-admin-cto-rent/probe_cto_rent.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "legacy_rent_12",
+      "script": "work/parallel-main-legacy-buy-next/probe_rent_available.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "legacy_sell_rent_12",
+      "script": "work/parallel-main-legacy-sell-rent/probe_sell_rent.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "migrate_prepare",
+      "script": "work/parallel-main-migrate-prepare/probe_migrate_prepare.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "quote_origins_12",
+      "script": "work/parallel-main-trading-next/probe_quote_origins.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "sell_v2_prepare_12",
+      "script": "work/parallel-main-sell-v2-buyback/probe-prepare.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "sweep_rent",
+      "script": "work/parallel-main-sweep-prepare/probe_native_reserve.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_continuation_tiers_12",
+      "script": "work/parallel-main-v3-fee-wrapper/probe-continuation-tiers.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_crossing_matrix",
+      "script": "work/parallel-main-v3-fee-waiver/probe-crossing-matrix.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_post_ceil_boundaries",
+      "script": "work/parallel-main-v3-post-ceil/probe-boundaries.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_post_ceil_divisible",
+      "script": "work/parallel-main-v3-post-ceil/probe.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_post_state_12",
+      "script": "work/parallel-main-trading-next/probe_v3_post_state.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_token_buyback_12",
+      "script": "work/parallel-main-v3-user-constraints/probe_buyback_token.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_user_constraints_12",
+      "script": "work/parallel-main-v3-user-constraints/probe.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "legacy_buyback_order_8",
+      "script": "work/parallel-main-legacy-buy-next/probe_buyback_order.py",
+      "cases": 8,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "legacy_partial_zero_8",
+      "script": "work/parallel-main-legacy-buy-next/probe_partial_zero.py",
+      "cases": 8,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "legacy_user_owner_8",
+      "script": "work/parallel-main-legacy-context/probe_user_owner.py",
+      "cases": 8,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "legacy_zero_buyback_8",
+      "script": "work/parallel-main-legacy-buy-next/probe_zero_buyback.py",
+      "cases": 8,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "sweep_default_quote",
+      "script": "work/parallel-main-sweep-quote-predicate/probe_default_quote.py",
+      "cases": 8,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v2_curve_rent_8",
+      "script": "work/parallel-main-v2-helpers/curve-rent-probe.py",
+      "cases": 8,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v2_zero_fee_8",
+      "script": "work/parallel-main-v2-helpers/fee-zero-probe.py",
+      "cases": 8,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "migration_balances",
+      "script": "work/parallel-main-migration-preexisting/check_balances.py",
+      "cases": 7,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "cashback_program_6",
+      "script": "work/parallel-main-cashback-program/check_program.py",
+      "cases": 6,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "claim_mint_6",
+      "script": "work/parallel-main-incentives-next/probe_claim_incentive_mint.py",
+      "cases": 6,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "creator_owner_6",
+      "script": "work/parallel-main-creator-owner/check_owner.py",
+      "cases": 6,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "distribution_custom_rent_6",
+      "script": "work/parallel-main-minimum-audit/rent-probe.py",
+      "cases": 6,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "claim_zero_log_4",
+      "script": "work/parallel-main-incentives-next/probe_claim_empty_log.py",
+      "cases": 4,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "legacy_user_authority_4",
+      "script": "work/parallel-main-legacy-context/probe_user_authority.py",
+      "cases": 4,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_sell_zero_reserve_4",
+      "script": "work/parallel-main-v3-sell-supply/probe-zero-reserve.py",
+      "cases": 4,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "native_quote_3",
+      "script": "work/parallel-main-trading-next/probe_native_quote.py",
+      "cases": 3,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "volume",
+      "script": "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_volume.py",
+      "cases": 66,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "administration",
+      "script": "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_admin.py",
+      "cases": 93,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "authority",
+      "script": "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_authority.py",
+      "cases": 59,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "configuration",
+      "script": "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_config_admin.py",
+      "cases": 351,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "buy",
+      "script": "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_buy.py",
+      "cases": 334,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "sell",
+      "script": "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_sell.py",
+      "cases": 301,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "quote",
+      "script": "work/parallel-main-receipt-capture/instrumented/scripts/pump_validate_quote.py",
+      "cases": 130,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "creator_collection",
+      "script": "scripts/pump_creator_collect_differential.py",
+      "cases": 119,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "creator_distribution",
+      "script": "scripts/pump_creator_distribution_differential.py",
+      "cases": 298,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "minimum_distribution",
+      "script": "scripts/pump_minimum_fee_differential.py",
+      "cases": 181,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "creator_collection_v2",
+      "script": "scripts/pump_creator_collect_v2_differential.py",
+      "cases": 154,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "extension",
+      "script": "work/parallel-main-extend-boundary-review/probe-full-logs-v2.py",
+      "cases": 308,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "volume_sync",
+      "script": "scripts/pump_volume_sync_differential.py",
+      "cases": 341,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "fee_sweeps",
+      "script": "scripts/pump_fee_sweep_differential.py",
+      "cases": 504,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "creator_migration",
+      "script": "scripts/pump_creator_migration_differential.py",
+      "cases": 139,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "admin_cto",
+      "script": "scripts/pump_admin_cto_differential.py",
+      "cases": 363,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "set_params",
+      "script": "scripts/pump_set_params_differential.py",
+      "cases": 169,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "set_creator",
+      "script": "scripts/pump_set_creator_differential.py",
+      "cases": 509,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "idl_authority",
+      "script": "scripts/pump_idl_authority_differential.py",
+      "cases": 171,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "legacy_create",
+      "script": "scripts/pump_create_differential.py",
+      "cases": 87,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "exact_quote_v3",
+      "script": "scripts/pump_exact_quote_differential.py",
+      "cases": 352,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "create_v2",
+      "script": "scripts/pump_create_quote_differential.py",
+      "cases": 297,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "legacy_sell",
+      "script": "scripts/pump_legacy_sell_differential.py",
+      "cases": 115,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "legacy_sell_configured_fee",
+      "script": "scripts/pump_legacy_sell_configured_fee_differential.py",
+      "cases": 28,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "sell_v2",
+      "script": "scripts/pump_sell_v2_differential.py",
+      "cases": 206,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "create_control",
+      "script": "scripts/pump_create_control_differential.py",
+      "cases": 85,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "migration",
+      "script": "scripts/pump_migrate_differential.py",
+      "cases": 228,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "v3_configured_fee",
+      "script": "scripts/pump_v3_configured_fee_differential.py",
+      "cases": 372,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "legacy_buy",
+      "script": "scripts/pump_legacy_buy_differential.py",
+      "cases": 284,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "buy_v2",
+      "script": "scripts/pump_buy_v2_differential.py",
+      "cases": 216,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "migrate_v2",
+      "script": "scripts/pump_migrate_v2_differential.py",
+      "cases": 827,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "cashback",
+      "script": "scripts/pump_cashback_differential.py",
+      "cases": 283,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "global_init",
+      "script": "scripts/pump_global_init_differential.py",
+      "cases": 40,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "holder_distribution",
+      "script": "scripts/pump_holder_distribution_differential.py",
+      "cases": 649,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "nested_create",
+      "script": "scripts/pump_create_nested_differential.py",
+      "cases": 48,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "quote_control",
+      "script": "scripts/pump_quote_control_fresh_differential.py",
+      "cases": 507,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "multi_hop_curve_partial",
+      "script": "repro/pump/native-curve-partial-fortyeight/harness/pump_multi_hop_curve_differential.py",
+      "cases": 56,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "tokenkeg_two_curve",
+      "script": "scripts/pump_tokenkeg_two_curve_differential.py",
+      "cases": 20,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "incentive_claim",
+      "script": "scripts/pump_claim_boundary_differential.py",
+      "cases": 334,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "virtual_reserve_sync",
+      "script": "scripts/pump_virtual_reserve_differential.py",
+      "cases": 192,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "claim_panic_diagnostics",
+      "script": "scripts/pump_claim_panic_differential.py",
+      "cases": 2,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "incentive_schedule",
+      "script": "scripts/pump_incentive_schedule_differential.py",
+      "cases": 575,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "earned_cashback",
+      "script": "scripts/pump_earned_cashback_differential.py",
+      "cases": 61,
+      "args": []
+    },
+    {
+      "group": "full",
+      "name": "legacy_cashback",
+      "script": "scripts/pump_legacy_cashback_differential.py",
+      "cases": 14,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "legacy_buyback_legacy-boundary",
+      "script": "work/parallel-main-buyback-split/probe-legacy-boundary.py",
+      "cases": 36,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "legacy_buyback_low-lamports",
+      "script": "work/parallel-main-legacy-buyback-split/probe-sell-low-lamports.py",
+      "cases": 6,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "legacy_buyback_partial-balance",
+      "script": "work/parallel-main-legacy-buyback-split/probe-sell-partial-balance.py",
+      "cases": 2,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "legacy_buyback_thresholds",
+      "script": "work/parallel-main-legacy-buyback-split/probe-sell-payment-thresholds.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "legacy_buyback_creator-order",
+      "script": "work/parallel-main-legacy-buyback-split/probe-sell-creator-order02.py",
+      "cases": 8,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "sell_v2_buyback_sell-v2-split",
+      "script": "work/parallel-main-legacy-buyback-split/probe-sell-v2-boundary.py",
+      "cases": 24,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "sell_v2_buyback_sell-v2-thresholds",
+      "script": "work/parallel-main-sell-v2-buyback-accounting/probe-payment-thresholds.py",
+      "cases": 42,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_buyback_probe_cost_order",
+      "script": "work/parallel-main-v3-accounting-boundary/probe-cost-order.py",
+      "cases": 8,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_buyback_probe",
+      "script": "work/parallel-main-v3-buyback-assert/probe.py",
+      "cases": 54,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_buyback_probe_order",
+      "script": "work/parallel-main-v3-buyback-assert/probe-order.py",
+      "cases": 16,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_buyback_probe_post",
+      "script": "work/parallel-main-v3-buyback-assert/probe-post.py",
+      "cases": 8,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_buyback_probe_payment_prefix",
+      "script": "work/parallel-main-v3-buyback-assert/probe-payment-prefix.py",
+      "cases": 7,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v3_buyback_probe_protocol_overflow",
+      "script": "work/parallel-main-v3-buyback-assert/probe-protocol-overflow.py",
+      "cases": 4,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "quote_fee_tail_1_22",
+      "script": "work/parallel-main-v3-quote-validation-order/probe.py",
+      "cases": 22,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "quote_fee_tail_2_18",
+      "script": "work/parallel-main-v3-quote-validation-order/probe-oversized.py",
+      "cases": 18,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "quote_fee_tail_3_9",
+      "script": "work/parallel-main-v3-quote-fee-tail/probe-boundaries.py",
+      "cases": 9,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "mixed_tlv_1_18",
+      "script": "work/parallel-main-v3-quote-scanner/probe-tlv-shapes.py",
+      "cases": 18,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "optional_sharing_246",
+      "script": "work/parallel-main-optional-sharing/probe.py",
+      "cases": 246,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "legacy_creator_vault_rent_63",
+      "script": "work/parallel-main-legacy-creator-rent/probe-vault-rent02.py",
+      "cases": 63,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "v2_creator_vault_rent_108",
+      "script": "work/parallel-main-v2-creator-vault-rent/probe.py",
+      "cases": 108,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "sweep_creator_rent_32",
+      "script": "work/parallel-main-sweep-recipient-rent/probe.py",
+      "cases": 32,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "admin_holder_rent_35",
+      "script": "work/parallel-main-admin-holder-rent/probe_holder_rent_expanded.py",
+      "cases": 35,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "creation_quote_tlv_26",
+      "script": "work/parallel-main-create-extension-validation/probe_extensions.py",
+      "cases": 26,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "nested_vault_diagnostics_32",
+      "script": "work/parallel-main-create-validation-next/probe_nested_diagnostics_expanded.py",
+      "cases": 32,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "nested_pool_links_10",
+      "script": "work/parallel-main-create-pool-links/probe_pool_links_strict.py",
+      "cases": 10,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "create_gate_order",
+      "script": "work/parallel-main-create-gate-order/probe_gates.py",
+      "cases": 34,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "create_control_gate_order",
+      "script": "work/parallel-main-create-gate-order/probe_control_gates.py",
+      "cases": 10,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "create_policy_precedence",
+      "script": "work/parallel-main-create-gate-order/probe_policy_precedence.py",
+      "cases": 4,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "create_early_pairs",
+      "script": "work/parallel-main-create-gate-order/probe_early_pairs.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "nested_comparison_matrix",
+      "script": "work/parallel-main-nested-comparison-audit/probe_comparisons.py",
+      "cases": 73,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "distinct_precedence",
+      "script": "work/parallel-main-nested-comparison-audit/probe_precedence_distinct.py",
+      "cases": 3,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "legacy_sell_cashback_order_22",
+      "script": "work/parallel-main-unobserved-gates/probe.py",
+      "cases": 22,
+      "args": [
+        "--family",
+        "cashback_accounts"
+      ]
+    },
+    {
+      "group": "additional",
+      "name": "migration_required_account_size",
+      "script": "work/parallel-main-leaf-validation/probe_sizes.py",
+      "cases": 14,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "migration_pausable_migration",
+      "script": "work/parallel-main-leaf-validation/probe_pausable.py",
+      "cases": 6,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "nested_chain_tail_boundaries",
+      "script": "work/parallel-main-error-frontier/probe_chain_tails.py",
+      "cases": 23,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "multihop_later_account_errors",
+      "script": "work/parallel-main-error-frontier/probe_later_hops.py",
+      "cases": 10,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "ata_owner_precedence",
+      "script": "work/parallel-main-shared-ata/probe_owners.py",
+      "cases": 92,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "ata_authority_content",
+      "script": "work/parallel-main-shared-ata/probe_authority_content.py",
+      "cases": 56,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "owned_quote_order",
+      "script": "work/parallel-main-user-quote-generic/probe-owned-order.py",
+      "cases": 48,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "quote_admission_incremental",
+      "script": "work/parallel-main-mint-admission-audit/probe_incremental.py",
+      "cases": 58,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "multihop_native_lamports",
+      "script": "work/parallel-main-multihop-native-edge/probe-native-lamports.py",
+      "cases": 9,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "migration_config_group_01",
+      "script": "work/parallel-main-migration-payment-fix/probe-migration-group.py",
+      "args": [
+        "--group",
+        "1"
+      ],
+      "cases": 59
+    },
+    {
+      "group": "additional",
+      "name": "migration_config_group_02",
+      "script": "work/parallel-main-migration-payment-fix/probe-migration-group.py",
+      "args": [
+        "--group",
+        "2"
+      ],
+      "cases": 58
+    },
+    {
+      "group": "additional",
+      "name": "migration_config_group_03",
+      "script": "work/parallel-main-migration-payment-fix/probe-migration-group.py",
+      "args": [
+        "--group",
+        "3"
+      ],
+      "cases": 58
+    },
+    {
+      "group": "additional",
+      "name": "migration_config_group_04",
+      "script": "work/parallel-main-migration-payment-fix/probe-migration-group.py",
+      "args": [
+        "--group",
+        "4"
+      ],
+      "cases": 58
+    },
+    {
+      "group": "additional",
+      "name": "migration_config_group_05",
+      "script": "work/parallel-main-migration-payment-fix/probe-migration-group.py",
+      "args": [
+        "--group",
+        "5"
+      ],
+      "cases": 58
+    },
+    {
+      "group": "additional",
+      "name": "migration_config_group_06",
+      "script": "work/parallel-main-migration-payment-fix/probe-migration-group.py",
+      "args": [
+        "--group",
+        "6"
+      ],
+      "cases": 58
+    },
+    {
+      "group": "additional",
+      "name": "migration_config_group_07",
+      "script": "work/parallel-main-migration-payment-fix/probe-migration-group.py",
+      "args": [
+        "--group",
+        "7"
+      ],
+      "cases": 58
+    },
+    {
+      "group": "additional",
+      "name": "migration_config_group_08",
+      "script": "work/parallel-main-migration-payment-fix/probe-migration-group.py",
+      "args": [
+        "--group",
+        "8"
+      ],
+      "cases": 58
+    },
+    {
+      "group": "additional",
+      "name": "claim_event_cpi_compound_28",
+      "script": "work/parallel-main-claim-boundary-review/probe-compound-new.py",
+      "cases": 28,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "distribution_pending_fees",
+      "script": "work/parallel-main-distribution-pending-fees/probe_pending.py",
+      "cases": 61,
+      "args": [
+        "--cases-file",
+        "work/parallel-main-distribution-pending-fees/incremental-cases.json"
+      ]
+    },
+    {
+      "group": "additional",
+      "name": "creator_collection_rent",
+      "script": "work/parallel-main-collection-rent/probe_incremental.py",
+      "cases": 128,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "quote_control_capacity",
+      "script": "work/parallel-main-quote-control-frontier/probe_boundaries.py",
+      "cases": 36,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "extension_boundary12",
+      "script": "work/parallel-main-extend-boundary-review/probe-incremental.py",
+      "cases": 12,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "idl_transfer_boundary10",
+      "script": "work/parallel-main-idl-boundary-review/probe-new.py",
+      "cases": 10,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "quote_control_reader",
+      "script": "work/parallel-main-quote-control-reader/probe-incremental.py",
+      "cases": 34,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "distribution_quote_parser",
+      "script": "work/parallel-main-distribution-parser-correction/probe_incremental.py",
+      "cases": 18,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "cto_collection_boundary",
+      "script": "work/parallel-main-cto-fifth-call/probe_incremental.py",
+      "cases": 18,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "token_planner_executable_recipients",
+      "script": "work/parallel-main-token-distribution-string/probe_executable.py",
+      "cases": 8,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "scheduler_guard_order",
+      "script": "work/parallel-main-schedule-guard-corpus/probe_incremental.py",
+      "cases": 4,
+      "args": []
+    },
+    {
+      "group": "additional",
+      "name": "sell_v3_existing_volume_event",
+      "script": "work/parallel-main-trade-event-constructor/probe_volume.py",
+      "cases": 1,
+      "args": [
+        "--only-new"
+      ]
+    }
+  ]
+}

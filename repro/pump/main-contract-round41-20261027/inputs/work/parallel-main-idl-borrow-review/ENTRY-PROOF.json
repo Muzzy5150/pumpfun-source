@@ -1,0 +1,32 @@
+{
+  "original_handler": "0x1557e8/5704B",
+  "baseline_handler": "0x8c540/6096B",
+  "baseline_elf_sha256": "8bd1f9d8c4fb07cb18d78304bdd16ae14f1a18ae80e3028d7d92701d37d151c8",
+  "typed_layout_evidence": {
+    "parser_original": "0xa2880/6592B",
+    "wrapper_original": "0x130518/936B",
+    "both_normalized_exact": true,
+    "context_offsets": {
+      "0x8": "Program<System>",
+      "0x10": "raw IDL AccountInfo",
+      "0x28": "IDL owner pointer inside raw AccountInfo"
+    }
+  },
+  "original_entry": [
+    "0x155808: loads Program<System> reference from ctx+8",
+    "0x155818..0x155858: copies that program key into a stack Pubkey",
+    "0x155860: loads IDL owner pointer at ctx+0x28",
+    "0x155888: memcmp(owner,&system_program.key,32)",
+    "No AccountInfo Rc increment precedes owner comparison"
+  ],
+  "candidate_entry": [
+    "0x8c558..0x8c590: increments first IDL Rc before owner check",
+    "0x8c5a0..0x8c5e0: increments second IDL Rc before owner check",
+    "0x8c678..0x8c6b0: compares owner against static System ID"
+  ],
+  "proposed_ordinary_source": [
+    "Borrow &ctx.accounts.idl_account instead of cloning it at entry.",
+    "Compare account.owner to &ctx.accounts.system_program.key()."
+  ],
+  "scope": "Evidence-led ownership and validated-key source restoration only; no source/ELF edits yet."
+}

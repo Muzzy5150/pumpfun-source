@@ -149,16 +149,19 @@ pub mod cashback {
  #[derive(Clone)]
  pub struct ClaimCashbackEvent{pub user:Pubkey,pub amount:u64,pub timestamp:i64,pub total_claimed:u64,pub total_cashback_earned:u64}
  pub fn claim(ctx:Context<ClaimCashback>)->Result<()>{
-  let a=&mut *ctx.accounts;let amount=a.user_volume_accumulator.to_account_info().lamports().saturating_sub(Rent::get()?.minimum_balance(a.user_volume_accumulator.to_account_info().data_len()));if amount==0{return Ok(());}
+  let a=&mut *ctx.accounts;let amount=a.user_volume_accumulator.to_account_info().lamports().saturating_sub(Rent::get()?.minimum_balance(a.user_volume_accumulator.to_account_info().data_len()));if amount==0{msg!("No cashback to claim");return Ok(());}
   a.user_volume_accumulator.total_cashback_claimed=a.user_volume_accumulator.total_cashback_claimed.checked_add(amount).ok_or_else(||error!(PumpError::Overflow))?;
   a.user_volume_accumulator.sub_lamports(amount)?;a.user.add_lamports(amount)?;
   let event=ClaimCashbackEvent{user:a.user.key(),amount,timestamp:Clock::get()?.unix_timestamp,total_claimed:a.user_volume_accumulator.total_cashback_claimed,total_cashback_earned:a.user_volume_accumulator.cashback_earned};emit!(event.clone());emit_cpi!(event);Ok(())
  }
  pub fn claim_v2(ctx:Context<ClaimCashbackV2>)->Result<()>{
   let a=&mut *ctx.accounts;let native=a.quote_mint.key()==anchor_spl::token::spl_token::native_mint::ID;
-  if !native{require_keys_eq!(*a.quote_mint.owner,a.quote_token_program.key(),PumpError::AccountTypeNotSupported);}
+  if !native{
+   require!(a.quote_token_program.key()==anchor_spl::token::ID || a.quote_token_program.key()==anchor_spl::token_2022::ID,PumpError::InvalidQuoteTokenProgram);
+   require_keys_eq!(*a.quote_mint.owner,a.quote_token_program.key(),PumpError::AccountTypeNotSupported);
+  }
   let amount=if native{a.user_volume_accumulator.to_account_info().lamports().saturating_sub(Rent::get()?.minimum_balance(a.user_volume_accumulator.to_account_info().data_len()))}else{let data=a.associated_user_volume_accumulator.try_borrow_data()?;if data.is_empty(){0}else{TokenAccount::try_deserialize(&mut &data[..])?.amount}};
-  if amount==0{return Ok(());}
+  if amount==0{msg!("No cashback to claim");return Ok(());}
   if native{a.user_volume_accumulator.sub_lamports(amount)?;a.user.add_lamports(amount)?;}
   else{
    

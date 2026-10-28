@@ -1,0 +1,15 @@
+{
+  "status": "approved",
+  "activation_plan_sha256": "9630ae866ac721c06897abf97789ce6b93d20c44c8c7394d1a8350d6fcfc584b",
+  "ready_sha256": "0c1743ff122aa43006847eaaf483eb214305f2d0fdbea81e73de42f71f97bfb4",
+  "staged_manifest_sha256": "3bea89d9044f8336145707f81f84b6ac86f6f2e0a91faf0eb4dab461b14b2265",
+  "files": 15,
+  "conditions": [
+    "R39 publication independently verified",
+    "No running shared builder observed",
+    "SBF default/spec unchanged",
+    "New target hash-bound to official25libraries",
+    "Upstream SDK-host discovery retained",
+    "New identity/certificate/final/runtime/reproductions mandatory"
+  ]
+}

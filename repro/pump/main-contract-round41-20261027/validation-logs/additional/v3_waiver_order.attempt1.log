@@ -1,0 +1,19 @@
+{"case": "buy_v3-token-False-empty_tiers", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_v3-token-False-maximum_creator_bps", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_v3-token-False-zero_virtual_base", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "diff": []}
+{"case": "buy_v3-token-True-empty_tiers", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_v3-token-True-maximum_creator_bps", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_v3-token-True-zero_virtual_base", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "diff": []}
+{"case": "buy_exact_quote_in_v3-token-False-empty_tiers", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_exact_quote_in_v3-token-False-maximum_creator_bps", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_exact_quote_in_v3-token-False-zero_virtual_base", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6042))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6042))))", "diff": []}
+{"case": "buy_exact_quote_in_v3-token-True-empty_tiers", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_exact_quote_in_v3-token-True-maximum_creator_bps", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "buy_exact_quote_in_v3-token-True-zero_virtual_base", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6042))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6042))))", "diff": []}
+{"case": "sell_v3-token-False-empty_tiers", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell_v3-token-False-maximum_creator_bps", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell_v3-token-False-zero_virtual_base", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "diff": []}
+{"case": "sell_v3-token-True-empty_tiers", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell_v3-token-True-maximum_creator_bps", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "sell_v3-token-True-zero_virtual_base", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024))))", "diff": []}
+{"case_count": 18, "mismatches": []}

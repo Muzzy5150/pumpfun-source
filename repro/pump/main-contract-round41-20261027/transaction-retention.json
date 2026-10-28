@@ -1,0 +1,271 @@
+{
+  "status": "passed",
+  "scope": "Read-only verification of paired Pump transaction retention and attribution.\n\nImports only decoding/cryptographic libraries. Never builds, signs, submits,\nor executes a transaction. Logical substitutions add proven receipt fields;\ninput report objects and input files are not modified.\n",
+  "candidate_sha256": "f169345d952b0e2a8ba6cbd400ab2decca0bee97bdc6645240466d901e4f1bc0",
+  "program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+  "inputs_sha256": {
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-captured-full.json.gz": "900c8180379a353456c8dccc45997c49f4e3b4b8c4e962d372be44e559cb1035",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round41-captured-additional.json.gz": "338090cd072a41ec59d53927f09e3c610c0b6820e759d4425bfe069f0b66bd2c",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/evidence/upstream/pump.json": "7616681ea557975f9f623ac211080f22a93060781eaf4765b0a488d980997207"
+  },
+  "counts": {
+    "paired_rows": 18110,
+    "verified_result_objects": 36220,
+    "fully_backed_pairs": 18110,
+    "distinct_signed_transactions": 3768,
+    "distinct_transaction_pairs": 3768
+  },
+  "groups": {
+    "full": {
+      "paired_rows": 10468,
+      "fully_backed_pairs": 10468
+    },
+    "additional": {
+      "paired_rows": 7642,
+      "fully_backed_pairs": 7642
+    }
+  },
+  "main_attribution": {
+    "known_main_instruction": 36058,
+    "unknown_or_malformed_main_instruction": 128,
+    "main_not_invoked": 34
+  },
+  "families": {
+    "add_quote_control_mint": {
+      "serialized_result_objects": 490,
+      "successful_transaction_results": 114
+    },
+    "add_quote_mint": {
+      "serialized_result_objects": 126,
+      "successful_transaction_results": 4
+    },
+    "admin_cto": {
+      "serialized_result_objects": 1164,
+      "successful_transaction_results": 552
+    },
+    "admin_set_idl_authority": {
+      "serialized_result_objects": 358,
+      "successful_transaction_results": 108
+    },
+    "admin_update_token_incentives": {
+      "serialized_result_objects": 2898,
+      "successful_transaction_results": 1016
+    },
+    "buy": {
+      "serialized_result_objects": 528,
+      "successful_transaction_results": 378
+    },
+    "buy_exact_quote_in_v2": {
+      "serialized_result_objects": 1506,
+      "successful_transaction_results": 810
+    },
+    "buy_exact_quote_in_v3": {
+      "serialized_result_objects": 1938,
+      "successful_transaction_results": 1106
+    },
+    "buy_exact_sol_in": {
+      "serialized_result_objects": 596,
+      "successful_transaction_results": 370
+    },
+    "buy_v2": {
+      "serialized_result_objects": 1602,
+      "successful_transaction_results": 904
+    },
+    "buy_v3": {
+      "serialized_result_objects": 2014,
+      "successful_transaction_results": 1402
+    },
+    "claim_cashback": {
+      "serialized_result_objects": 82,
+      "successful_transaction_results": 28
+    },
+    "claim_cashback_v2": {
+      "serialized_result_objects": 498,
+      "successful_transaction_results": 214
+    },
+    "claim_token_incentives": {
+      "serialized_result_objects": 1052,
+      "successful_transaction_results": 582
+    },
+    "close_user_volume_accumulator": {
+      "serialized_result_objects": 74,
+      "successful_transaction_results": 30
+    },
+    "collect_creator_fee": {
+      "serialized_result_objects": 360,
+      "successful_transaction_results": 174
+    },
+    "collect_creator_fee_v2": {
+      "serialized_result_objects": 454,
+      "successful_transaction_results": 232
+    },
+    "create": {
+      "serialized_result_objects": 170,
+      "successful_transaction_results": 64
+    },
+    "create_v2": {
+      "serialized_result_objects": 1672,
+      "successful_transaction_results": 652
+    },
+    "distribute_creator_fees": {
+      "serialized_result_objects": 402,
+      "successful_transaction_results": 168
+    },
+    "distribute_creator_fees_v2": {
+      "serialized_result_objects": 558,
+      "successful_transaction_results": 190
+    },
+    "distribute_fee_to_holders": {
+      "serialized_result_objects": 1298,
+      "successful_transaction_results": 572
+    },
+    "extend_account": {
+      "serialized_result_objects": 576,
+      "successful_transaction_results": 248
+    },
+    "get_minimum_distributable_fee": {
+      "serialized_result_objects": 464,
+      "successful_transaction_results": 250
+    },
+    "init_user_volume_accumulator": {
+      "serialized_result_objects": 58,
+      "successful_transaction_results": 28
+    },
+    "initialize": {
+      "serialized_result_objects": 74,
+      "successful_transaction_results": 14
+    },
+    "initialize_quote_control": {
+      "serialized_result_objects": 22,
+      "successful_transaction_results": 12
+    },
+    "migrate": {
+      "serialized_result_objects": 910,
+      "successful_transaction_results": 424
+    },
+    "migrate_bonding_curve_creator": {
+      "serialized_result_objects": 278,
+      "successful_transaction_results": 50
+    },
+    "migrate_v2": {
+      "serialized_result_objects": 2836,
+      "successful_transaction_results": 1220
+    },
+    "multi_hop_curve_swap": {
+      "serialized_result_objects": 2174,
+      "successful_transaction_results": 1104
+    },
+    "remove_quote_control_mint": {
+      "serialized_result_objects": 130,
+      "successful_transaction_results": 20
+    },
+    "remove_quote_mint": {
+      "serialized_result_objects": 126,
+      "successful_transaction_results": 8
+    },
+    "sell": {
+      "serialized_result_objects": 626,
+      "successful_transaction_results": 334
+    },
+    "sell_v2": {
+      "serialized_result_objects": 1304,
+      "successful_transaction_results": 710
+    },
+    "sell_v3": {
+      "serialized_result_objects": 1560,
+      "successful_transaction_results": 1060
+    },
+    "set_creator": {
+      "serialized_result_objects": 516,
+      "successful_transaction_results": 260
+    },
+    "set_max_curve_depth": {
+      "serialized_result_objects": 42,
+      "successful_transaction_results": 14
+    },
+    "set_mayhem_virtual_params": {
+      "serialized_result_objects": 384,
+      "successful_transaction_results": 282
+    },
+    "set_metaplex_creator": {
+      "serialized_result_objects": 506,
+      "successful_transaction_results": 260
+    },
+    "set_params": {
+      "serialized_result_objects": 350,
+      "successful_transaction_results": 92
+    },
+    "set_quote_control_admin": {
+      "serialized_result_objects": 42,
+      "successful_transaction_results": 8
+    },
+    "set_quote_control_mint_reserves": {
+      "serialized_result_objects": 360,
+      "successful_transaction_results": 54
+    },
+    "set_quote_control_reserves_admin": {
+      "serialized_result_objects": 42,
+      "successful_transaction_results": 14
+    },
+    "set_reserved_fee_recipients": {
+      "serialized_result_objects": 128,
+      "successful_transaction_results": 24
+    },
+    "set_virtual_quote_reserves": {
+      "serialized_result_objects": 102,
+      "successful_transaction_results": 22
+    },
+    "sweep_creator_fee": {
+      "serialized_result_objects": 564,
+      "successful_transaction_results": 242
+    },
+    "sweep_protocol_fee": {
+      "serialized_result_objects": 628,
+      "successful_transaction_results": 284
+    },
+    "sync_user_volume_accumulator": {
+      "serialized_result_objects": 666,
+      "successful_transaction_results": 576
+    },
+    "toggle_cashback_enabled": {
+      "serialized_result_objects": 42,
+      "successful_transaction_results": 4
+    },
+    "toggle_create_v2": {
+      "serialized_result_objects": 42,
+      "successful_transaction_results": 4
+    },
+    "toggle_mayhem_mode": {
+      "serialized_result_objects": 42,
+      "successful_transaction_results": 4
+    },
+    "update_buyback_config": {
+      "serialized_result_objects": 312,
+      "successful_transaction_results": 32
+    },
+    "update_creator_fee_config": {
+      "serialized_result_objects": 124,
+      "successful_transaction_results": 28
+    },
+    "update_global_authority": {
+      "serialized_result_objects": 76,
+      "successful_transaction_results": 24
+    },
+    "update_holder_reward_config": {
+      "serialized_result_objects": 112,
+      "successful_transaction_results": 26
+    }
+  },
+  "findings": [],
+  "substitutions": [],
+  "limitations": [
+    "Known instruction bytes do not establish branch coverage.",
+    "Unknown/malformed main payloads remain classified by retained bytes.",
+    "A verified outer transaction rejected before a main call is recorded as main_not_invoked, not as main-family execution.",
+    "No transaction was constructed, signed, submitted or executed."
+  ],
+  "verifier_sha256": {
+    "receipt_verifier.py": "d534cb7e5364d3ec50ea6183ce6b1b9cc0f0b9b8b055f0cc053e7206c4b40838",
+    "verify_receipts.py": "f6b0899be3d175543132ded0ac57f540c6254aa9d369277173a861c3613c6abd"
+  }
+}

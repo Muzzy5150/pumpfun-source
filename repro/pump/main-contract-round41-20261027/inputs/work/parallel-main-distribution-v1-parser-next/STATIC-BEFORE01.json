@@ -1,0 +1,510 @@
+{
+  "status": "Original-backed static proof before one private source control",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "baseline_sha256": "0c1e93417ab6ed0c9815f40f19d6c4c57674e58f0d046379629a16977a4a27eb",
+  "original_parser": {
+    "start": "0xc1d58",
+    "bytes": 7256
+  },
+  "current_parser": {
+    "start": "0x11aaa8",
+    "bytes": 7320
+  },
+  "old_7080_limit": "7080 was the pre-quote-guard parser; current baseline already includes the accepted quote constraint.",
+  "original_field_pointer": [
+    {
+      "site": "0xc2b00",
+      "opcode": 191,
+      "dst": 7,
+      "src": 10,
+      "offset": 0,
+      "immediate": 0,
+      "bytes": "bfa7000000000000"
+    },
+    {
+      "site": "0xc2b08",
+      "opcode": 7,
+      "dst": 7,
+      "src": 0,
+      "offset": 0,
+      "immediate": -560,
+      "bytes": "07070000d0fdffff"
+    },
+    {
+      "site": "0xc2b10",
+      "opcode": 121,
+      "dst": 1,
+      "src": 10,
+      "offset": -1240,
+      "immediate": 0,
+      "bytes": "79a128fb00000000"
+    },
+    {
+      "site": "0xc2b18",
+      "opcode": 121,
+      "dst": 1,
+      "src": 1,
+      "offset": 0,
+      "immediate": 0,
+      "bytes": "7911000000000000"
+    },
+    {
+      "site": "0xc2b20",
+      "opcode": 121,
+      "dst": 2,
+      "src": 1,
+      "offset": 24,
+      "immediate": 0,
+      "bytes": "7912180000000000"
+    },
+    {
+      "site": "0xc2b28",
+      "opcode": 123,
+      "dst": 10,
+      "src": 2,
+      "offset": -376,
+      "immediate": 0,
+      "bytes": "7b2a88fe00000000"
+    },
+    {
+      "site": "0xc2b30",
+      "opcode": 121,
+      "dst": 2,
+      "src": 1,
+      "offset": 16,
+      "immediate": 0,
+      "bytes": "7912100000000000"
+    },
+    {
+      "site": "0xc2b38",
+      "opcode": 123,
+      "dst": 10,
+      "src": 2,
+      "offset": -384,
+      "immediate": 0,
+      "bytes": "7b2a80fe00000000"
+    },
+    {
+      "site": "0xc2b40",
+      "opcode": 121,
+      "dst": 2,
+      "src": 1,
+      "offset": 8,
+      "immediate": 0,
+      "bytes": "7912080000000000"
+    },
+    {
+      "site": "0xc2b48",
+      "opcode": 123,
+      "dst": 10,
+      "src": 2,
+      "offset": -392,
+      "immediate": 0,
+      "bytes": "7b2a78fe00000000"
+    },
+    {
+      "site": "0xc2b50",
+      "opcode": 121,
+      "dst": 1,
+      "src": 1,
+      "offset": 0,
+      "immediate": 0,
+      "bytes": "7911000000000000"
+    },
+    {
+      "site": "0xc2b58",
+      "opcode": 123,
+      "dst": 10,
+      "src": 1,
+      "offset": -400,
+      "immediate": 0,
+      "bytes": "7b1a70fe00000000"
+    },
+    {
+      "site": "0xc2b60",
+      "opcode": 191,
+      "dst": 2,
+      "src": 10,
+      "offset": 0,
+      "immediate": 0,
+      "bytes": "bfa2000000000000"
+    },
+    {
+      "site": "0xc2b68",
+      "opcode": 7,
+      "dst": 2,
+      "src": 0,
+      "offset": 0,
+      "immediate": -400,
+      "bytes": "0702000070feffff"
+    },
+    {
+      "site": "0xc2b70",
+      "opcode": 191,
+      "dst": 1,
+      "src": 7,
+      "offset": 0,
+      "immediate": 0,
+      "bytes": "bf71000000000000"
+    },
+    {
+      "site": "0xc2b78",
+      "opcode": 183,
+      "dst": 3,
+      "src": 0,
+      "offset": 0,
+      "immediate": 32,
+      "bytes": "b703000020000000"
+    }
+  ],
+  "original_seed_construction": [
+    {
+      "site": "0xc3160",
+      "opcode": 191,
+      "dst": 8,
+      "src": 6,
+      "offset": 0,
+      "immediate": 0,
+      "bytes": "bf68000000000000"
+    },
+    {
+      "site": "0xc3168",
+      "opcode": 123,
+      "dst": 10,
+      "src": 7,
+      "offset": -16,
+      "immediate": 0,
+      "bytes": "7b7af0ff00000000"
+    },
+    {
+      "site": "0xc3170",
+      "opcode": 24,
+      "dst": 1,
+      "src": 0,
+      "offset": 0,
+      "immediate": 1796554,
+      "bytes": "18010000ca691b00"
+    },
+    {
+      "site": "0xc3178",
+      "opcode": 0,
+      "dst": 0,
+      "src": 0,
+      "offset": 0,
+      "immediate": 0,
+      "bytes": "0000000000000000"
+    },
+    {
+      "site": "0xc3180",
+      "opcode": 123,
+      "dst": 10,
+      "src": 1,
+      "offset": -32,
+      "immediate": 0,
+      "bytes": "7b1ae0ff00000000"
+    },
+    {
+      "site": "0xc3188",
+      "opcode": 122,
+      "dst": 10,
+      "src": 0,
+      "offset": -8,
+      "immediate": 32,
+      "bytes": "7a0af8ff20000000"
+    },
+    {
+      "site": "0xc3190",
+      "opcode": 122,
+      "dst": 10,
+      "src": 0,
+      "offset": -24,
+      "immediate": 13,
+      "bytes": "7a0ae8ff0d000000"
+    },
+    {
+      "site": "0xc3198",
+      "opcode": 191,
+      "dst": 1,
+      "src": 10,
+      "offset": 0,
+      "immediate": 0,
+      "bytes": "bfa1000000000000"
+    },
+    {
+      "site": "0xc31a0",
+      "opcode": 7,
+      "dst": 1,
+      "src": 0,
+      "offset": 0,
+      "immediate": -400,
+      "bytes": "0701000070feffff"
+    },
+    {
+      "site": "0xc31a8",
+      "opcode": 191,
+      "dst": 2,
+      "src": 10,
+      "offset": 0,
+      "immediate": 0,
+      "bytes": "bfa2000000000000"
+    },
+    {
+      "site": "0xc31b0",
+      "opcode": 7,
+      "dst": 2,
+      "src": 0,
+      "offset": 0,
+      "immediate": -32,
+      "bytes": "07020000e0ffffff"
+    },
+    {
+      "site": "0xc31b8",
+      "opcode": 183,
+      "dst": 3,
+      "src": 0,
+      "offset": 0,
+      "immediate": 2,
+      "bytes": "b703000002000000"
+    },
+    {
+      "site": "0xc31c0",
+      "opcode": 121,
+      "dst": 4,
+      "src": 10,
+      "offset": -1168,
+      "immediate": 0,
+      "bytes": "79a470fb00000000"
+    },
+    {
+      "site": "0xc31c8",
+      "opcode": 133,
+      "dst": 0,
+      "src": 1,
+      "offset": 0,
+      "immediate": 117149,
+      "bytes": "851000009dc90100"
+    }
+  ],
+  "current_key_copy": [
+    {
+      "site": "0x11bea0",
+      "opcode": 191,
+      "dst": 8,
+      "src": 6,
+      "offset": 0,
+      "immediate": 0,
+      "bytes": "bf68000000000000"
+    },
+    {
+      "site": "0x11bea8",
+      "opcode": 121,
+      "dst": 1,
+      "src": 7,
+      "offset": 24,
+      "immediate": 0,
+      "bytes": "7971180000000000"
+    },
+    {
+      "site": "0x11beb0",
+      "opcode": 123,
+      "dst": 10,
+      "src": 1,
+      "offset": -8,
+      "immediate": 0,
+      "bytes": "7b1af8ff00000000"
+    },
+    {
+      "site": "0x11beb8",
+      "opcode": 121,
+      "dst": 1,
+      "src": 7,
+      "offset": 16,
+      "immediate": 0,
+      "bytes": "7971100000000000"
+    },
+    {
+      "site": "0x11bec0",
+      "opcode": 123,
+      "dst": 10,
+      "src": 1,
+      "offset": -16,
+      "immediate": 0,
+      "bytes": "7b1af0ff00000000"
+    },
+    {
+      "site": "0x11bec8",
+      "opcode": 121,
+      "dst": 1,
+      "src": 7,
+      "offset": 8,
+      "immediate": 0,
+      "bytes": "7971080000000000"
+    },
+    {
+      "site": "0x11bed0",
+      "opcode": 123,
+      "dst": 10,
+      "src": 1,
+      "offset": -24,
+      "immediate": 0,
+      "bytes": "7b1ae8ff00000000"
+    },
+    {
+      "site": "0x11bed8",
+      "opcode": 121,
+      "dst": 1,
+      "src": 7,
+      "offset": 0,
+      "immediate": 0,
+      "bytes": "7971000000000000"
+    },
+    {
+      "site": "0x11bee0",
+      "opcode": 123,
+      "dst": 10,
+      "src": 1,
+      "offset": -32,
+      "immediate": 0,
+      "bytes": "7b1ae0ff00000000"
+    },
+    {
+      "site": "0x11bee8",
+      "opcode": 191,
+      "dst": 1,
+      "src": 10,
+      "offset": 0,
+      "immediate": 0,
+      "bytes": "bfa1000000000000"
+    },
+    {
+      "site": "0x11bef0",
+      "opcode": 7,
+      "dst": 1,
+      "src": 0,
+      "offset": 0,
+      "immediate": -32,
+      "bytes": "07010000e0ffffff"
+    },
+    {
+      "site": "0x11bef8",
+      "opcode": 123,
+      "dst": 10,
+      "src": 1,
+      "offset": -48,
+      "immediate": 0,
+      "bytes": "7b1ad0ff00000000"
+    },
+    {
+      "site": "0x11bf00",
+      "opcode": 24,
+      "dst": 1,
+      "src": 0,
+      "offset": 0,
+      "immediate": 1713411,
+      "bytes": "1801000003251a00"
+    },
+    {
+      "site": "0x11bf08",
+      "opcode": 0,
+      "dst": 0,
+      "src": 0,
+      "offset": 0,
+      "immediate": 0,
+      "bytes": "0000000000000000"
+    },
+    {
+      "site": "0x11bf10",
+      "opcode": 123,
+      "dst": 10,
+      "src": 1,
+      "offset": -64,
+      "immediate": 0,
+      "bytes": "7b1ac0ff00000000"
+    },
+    {
+      "site": "0x11bf18",
+      "opcode": 122,
+      "dst": 10,
+      "src": 0,
+      "offset": -40,
+      "immediate": 32,
+      "bytes": "7a0ad8ff20000000"
+    },
+    {
+      "site": "0x11bf20",
+      "opcode": 122,
+      "dst": 10,
+      "src": 0,
+      "offset": -56,
+      "immediate": 13,
+      "bytes": "7a0ac8ff0d000000"
+    },
+    {
+      "site": "0x11bf28",
+      "opcode": 191,
+      "dst": 1,
+      "src": 10,
+      "offset": 0,
+      "immediate": 0,
+      "bytes": "bfa1000000000000"
+    },
+    {
+      "site": "0x11bf30",
+      "opcode": 7,
+      "dst": 1,
+      "src": 0,
+      "offset": 0,
+      "immediate": -400,
+      "bytes": "0701000070feffff"
+    },
+    {
+      "site": "0x11bf38",
+      "opcode": 191,
+      "dst": 2,
+      "src": 10,
+      "offset": 0,
+      "immediate": 0,
+      "bytes": "bfa2000000000000"
+    },
+    {
+      "site": "0x11bf40",
+      "opcode": 7,
+      "dst": 2,
+      "src": 0,
+      "offset": 0,
+      "immediate": -64,
+      "bytes": "07020000c0ffffff"
+    },
+    {
+      "site": "0x11bf48",
+      "opcode": 183,
+      "dst": 3,
+      "src": 0,
+      "offset": 0,
+      "immediate": 2,
+      "bytes": "b703000002000000"
+    },
+    {
+      "site": "0x11bf50",
+      "opcode": 121,
+      "dst": 4,
+      "src": 10,
+      "offset": -1168,
+      "immediate": 0,
+      "bytes": "79a470fb00000000"
+    },
+    {
+      "site": "0x11bf58",
+      "opcode": 133,
+      "dst": 0,
+      "src": 1,
+      "offset": 0,
+      "immediate": 60101,
+      "bytes": "85100000c5ea0000"
+    }
+  ],
+  "inference": "The curve creator at frame-0x230 is compared with sharing_config.key, then the identical retained pointer r7 is the creator-vault second seed. Current source instead returns an owned sharing_config.key(), forcing four loads/stores into a new32-byte temporary.",
+  "source_change": "Only V1 creator_vault seeds=[b\"creator-vault\",bonding_curve.creator.as_ref()]. Preserve the earlier creator==sharing_config.key constraint and all account order.",
+  "no_new_behavior_claim": "The two Pubkeys are equal on the admitted path; seed derivation and failure order should remain the same. Validate against original and existing637 cases.",
+  "no_padding_or_attribute_changes": true
+}

@@ -1,0 +1,7 @@
+[
+  {
+    "name": "nested_vault_diagnostics",
+    "script": "work/parallel-main-create-validation-next/probe_nested_diagnostics_expanded.py",
+    "count": 32
+  }
+]

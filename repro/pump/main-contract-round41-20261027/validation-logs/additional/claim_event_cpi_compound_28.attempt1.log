@@ -1,0 +1,29 @@
+{"case": "claim-claimed0-amount0-empty-source", "error": null, "diff": []}
+{"case": "claim-claimed0-amount0-frozen-source", "error": null, "diff": []}
+{"case": "claim-claimed0-amount0-frozen-destination", "error": null, "diff": []}
+{"case": "claim-claimed0-amount1-empty-source", "error": "TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(1))))", "diff": []}
+{"case": "claim-claimed0-amount1-frozen-source", "error": "TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(17))))", "diff": []}
+{"case": "claim-claimed0-amount1-frozen-destination", "error": "TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(17))))", "diff": []}
+{"case": "claim-claimed0-amount200-none", "error": null, "diff": []}
+{"case": "claim-claimed0-amount200-empty-source", "error": "TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(1))))", "diff": []}
+{"case": "claim-claimed0-amount200-frozen-source", "error": "TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(17))))", "diff": []}
+{"case": "claim-claimed0-amount200-frozen-destination", "error": "TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(17))))", "diff": []}
+{"case": "claim-claimed18446744073709551615-amount0-none", "error": null, "diff": []}
+{"case": "claim-claimed18446744073709551615-amount0-empty-source", "error": null, "diff": []}
+{"case": "claim-claimed18446744073709551615-amount0-frozen-source", "error": null, "diff": []}
+{"case": "claim-claimed18446744073709551615-amount0-frozen-destination", "error": null, "diff": []}
+{"case": "claim-claimed18446744073709551615-amount1-none", "error": "TransactionErrorInstructionError((0, Fieldless(ProgramFailedToComplete)))", "diff": []}
+{"case": "claim-claimed18446744073709551615-amount1-empty-source", "error": "TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(1))))", "diff": []}
+{"case": "claim-claimed18446744073709551615-amount1-frozen-source", "error": "TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(17))))", "diff": []}
+{"case": "claim-claimed18446744073709551615-amount1-frozen-destination", "error": "TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(17))))", "diff": []}
+{"case": "claim-claimed18446744073709551615-amount200-none", "error": "TransactionErrorInstructionError((0, Fieldless(ProgramFailedToComplete)))", "diff": []}
+{"case": "claim-claimed18446744073709551615-amount200-empty-source", "error": "TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(1))))", "diff": []}
+{"case": "claim-claimed18446744073709551615-amount200-frozen-source", "error": "TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(17))))", "diff": []}
+{"case": "claim-claimed18446744073709551615-amount200-frozen-destination", "error": "TransactionErrorInstructionError((0, Tagged(InstructionErrorCustom(17))))", "diff": []}
+{"case": "before-start-period-1-pending0", "error": null, "diff": []}
+{"case": "before-start-period-1-pending1", "error": null, "diff": []}
+{"case": "before-start-period0-pending0", "error": null, "diff": []}
+{"case": "before-start-period0-pending1", "error": null, "diff": []}
+{"case": "before-start-period1-pending0", "error": null, "diff": []}
+{"case": "before-start-period1-pending1", "error": null, "diff": []}
+{"case_count": 28, "mismatches": [], "diagnostic_mismatches": []}

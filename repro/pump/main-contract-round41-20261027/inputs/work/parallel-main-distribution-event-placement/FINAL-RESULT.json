@@ -1,0 +1,71 @@
+{
+  "status": "validated_event_physical_placement",
+  "base": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-native-executor-ownership/source01",
+  "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-distribution-event-placement/source01",
+  "changed_files": {
+    "src/distribution.rs": "9acb812d6a52d1df82d144fa151bf4e0a51f5a88ef7de97065add9c6b8074a0a",
+    "src/creator/distribute_creator_fees.rs": "bb256e6d56d7250a47a735b90bb30fca1c185e9b65308b499484b6d77b2694c9"
+  },
+  "event_block_unchanged": true,
+  "helper_prefix_sha256": "7853fdf73b387b49d8d0bccd84c0f40226adac120bff3608fc60152860ccb184",
+  "native_helper_machine_body_normalized_unchanged": true,
+  "compiled_variants": 1,
+  "candidate_sha256": "770e48958a50a8025d836e59244058cdb574e6a85526016a5b0c991450283f35",
+  "unstripped_sha256": "cc8ed8042e34e7976b366b21026bdcead6a8f589c5d5d3886f78c66a56e531e4",
+  "source_unchanged": true,
+  "sets": {
+    "normalized_matches": {
+      "before": 740,
+      "after": 740,
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "before": 121,
+      "after": 121,
+      "gains": [],
+      "losses": []
+    }
+  },
+  "Location_counts": {
+    "before": {
+      "shape_recognized_pairs": 102,
+      "same_filename": 96,
+      "same_filename_line_column": 84
+    },
+    "after": {
+      "shape_recognized_pairs": 102,
+      "same_filename": 97,
+      "same_filename_line_column": 84
+    },
+    "filepath_gains": [
+      "0x1bdf98"
+    ],
+    "filepath_losses": [],
+    "complete_gains": [],
+    "complete_losses": []
+  },
+  "runtime": {
+    "cases": 626,
+    "suites": 6,
+    "strict_diagnostic_cases": 626,
+    "CPI_pairs": 626,
+    "retention": {
+      "paired_rows": 626,
+      "verified_result_objects": 1252,
+      "fully_backed_pairs": 626,
+      "distinct_signed_transactions": 103,
+      "distinct_transaction_pairs": 103
+    },
+    "findings": [],
+    "new_case_definitions": 0
+  },
+  "patch_sha256": "88969c8491a132618ab6500c18ba50210e7e4fa5f51d3dd173cc6b076d63fbe3",
+  "limits": [
+    "This isolated baseline predates the root interface/event composition; only the event filepath gain is attributed here.",
+    "Full Location coordinates remain different; no padding or forced line is used.",
+    "Portable R37 source is source-only, not compiled in this trial.",
+    "Whole-original-ELF identity is not achieved."
+  ],
+  "shared_source_edits": false
+}

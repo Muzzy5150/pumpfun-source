@@ -1,0 +1,19 @@
+native-size0-amount0-delta0 [] True
+native-size0-amount1-delta-1 [] True
+native-size0-amount1-delta0 [] True
+native-size0-amount1-delta1 [] True
+native-size8-amount0-delta0 [] True
+native-size8-amount1-delta-1 [] True
+native-size8-amount1-delta0 [] True
+native-size8-amount1-delta1 [] True
+native-size128-amount0-delta0 [] True
+native-size128-amount1-delta-1 [] True
+native-size128-amount1-delta0 [] True
+native-size128-amount1-delta1 [] True
+token-TokenzQd-zero-frozenFalse [] True
+token-TokenzQd-zero-frozenTrue [] True
+wsol/native-size0-amount0-delta0 [] True
+wsol/native-size0-amount1-delta-1 [] True
+wsol/native-size8-amount1-delta-1 [] True
+wsol/native-size8-amount1-delta0 [] True
+{'passed': 18}

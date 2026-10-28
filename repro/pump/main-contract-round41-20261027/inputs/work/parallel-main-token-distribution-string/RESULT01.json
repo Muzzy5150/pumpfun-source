@@ -1,0 +1,65 @@
+{
+  "status": "Validated one-line owned-String source recovery; no whole-window gain",
+  "baseline": "work/parallel-main-distribution-physical-split/source02",
+  "files": {
+    "src/creator/distribute_creator_fee_v2.rs": "a996123cd7dd94133d94af372c499920f51b9a675bfd400eb5659ec6a03a9fb2"
+  },
+  "patch": "string-only.patch",
+  "patch_sha256": "a8e8e725f1b289c56d9c6b2331c47a1641f1e22711c808c5110f9c8548c92bc8",
+  "candidate_sha256": "e25e4198c9e7660f95777cbe77220043ab25ae207dc953c9407db967aa683eb2",
+  "unstripped_sha256": "5524ca781ad8fb892c9fe00f1e6c82b842190e1bcd319a9c56adedcc36c7bacc",
+  "build_receipt_sha256": "8495109870b0b29be22a424f7cc64ec0a40a728c3c9e24e88a8aaddf1bb900a4",
+  "cache_key": "5de55fe66a808ad0a24be6877353a5af4a2c2ab4334b9630a1908e3e140fcb59",
+  "scope": "One existing executable-recipient log argument uses recipient.key().to_string(). Separate from the prior physical-source split.",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 737,
+    "unmatched": 298
+  },
+  "complete_match_delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "helper": {
+    "original_bytes": 6664,
+    "baseline_bytes": 6360,
+    "candidate_bytes": 6552,
+    "normalized_equal": false,
+    "different_slots": 815
+  },
+  "instruction_evidence": {
+    "report": "STATIC01.json",
+    "sha256": "4defeb75b8c866b7b3b3dc7fa58aa070e158acd6f6570626056027e17fdbe5d2",
+    "exact_local_block_bytes": 480,
+    "typed_callees": [
+      "Pubkey Display",
+      "String Display",
+      "str Display",
+      "format_inner"
+    ]
+  },
+  "runtime": {
+    "existing_cases": 637,
+    "additional_executable_cases": 8,
+    "cases": 645,
+    "mismatches": 0,
+    "strict_diagnostics": 0,
+    "invocation_mismatches": 0,
+    "distinct_signed_transactions": 109
+  },
+  "limitations": [
+    "Complete planner and whole ELF are not byte-identical.",
+    "The full planner grows192bytes, leaving112bytes of size difference. Positional difference count is not a semantic distance metric.",
+    "Physical-source split must be applied separately; this patch only changes the child source argument.",
+    "No new final text/data order recipe is qualified by this identity build.",
+    "Line coordinates remain naturally different; none were padded or forced."
+  ],
+  "launch_control": "The first executable-suite launch selected the system interpreter by resolving the venv symlink and failed importing solders before the probe ran. Its log/manifest are retained; only that suite was rerun with the venv path intact."
+}

@@ -1,0 +1,20 @@
+{
+  "script": "work/parallel-main-multihop-native-edge/probe-native-lamports.py",
+  "script_sha256": "9695c25556913be518b4e7d7148aec75e84a56fc4b39af3929dba8b61afbb6da",
+  "arguments": [
+    "--candidate",
+    "CANDIDATE",
+    "--output",
+    "OUTPUT.json.gz"
+  ],
+  "case_count": 9,
+  "uses_optimized_captured_loader": true,
+  "validated_candidate_sha256": "5337a335204a6301f42012c942a1762276b41df9716db75bf63796154d93921f",
+  "validated_output_sha256": "dfc967b1015774a60802bdd15a75354090fea8ea2b0b42214beb1e89b92cae24",
+  "coverage": {
+    "successful_native_edge": 2,
+    "system_cpi_overflow": 4,
+    "zero_before_native_edge": 3
+  },
+  "new_case_count": 9
+}

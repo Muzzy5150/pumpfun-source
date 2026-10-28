@@ -1,0 +1,74 @@
+{
+  "status": "passed_targeted_experiment",
+  "source": "work/parallel-main-r40-sbpf/two-source-primary",
+  "candidate_sha256": "9cf619b1d94ce68439b7c862e09a368152849fd83cb12d655a90a9bb5aa6f308",
+  "unstripped_sha256": "3df37c7d7867eda1a644dc7723d85cf975d2ebcaa270a0e0809174f6f7d5ddec",
+  "counts": {
+    "total": 1035,
+    "raw": 165,
+    "normalized": 813,
+    "unmatched": 222,
+    "matched_text_bytes": 1072152
+  },
+  "delta": {
+    "baseline_counts": {
+      "total": 1035,
+      "normalized": 811,
+      "raw": 165,
+      "unmatched": 224,
+      "matched_text_bytes": 1070592
+    },
+    "candidate_counts": {
+      "total": 1035,
+      "raw": 165,
+      "normalized": 813,
+      "unmatched": 222
+    },
+    "normalized_gains": [
+      300808,
+      1137112
+    ],
+    "normalized_losses": [],
+    "raw_gains": [],
+    "raw_losses": [],
+    "expected_two_gains": [
+      300808,
+      1137112
+    ],
+    "retains_all_prior_windows": true,
+    "both_new_windows_present": true
+  },
+  "runtime": {
+    "cases": 3477,
+    "suites": 29,
+    "retained": {
+      "paired_rows": 3477,
+      "verified_result_objects": 6954,
+      "fully_backed_pairs": 3477,
+      "distinct_signed_transactions": 712,
+      "distinct_transaction_pairs": 712
+    },
+    "main_attribution": {
+      "known_main_instruction": 6936,
+      "main_not_invoked": 18
+    }
+  },
+  "patch_sha256": "0ad16cfe079c28f2435e8cbe53a110b304032f1d8f419c786bc365ef66e0b332",
+  "direct_call_proof_sha256": "3ea10844450c49181b9f62ec868a448bdac1747911048e1284aaa281e25d89f6",
+  "cache_proof_sha256": "5810fc4f562ead69216a7e31c13efac71a67fbfd7913630871ec6261498f3b02",
+  "new_cases": 0,
+  "limits": [
+    "One source experiment build and targeted existing corpus only; full18109case integration and independent reproductions still required.",
+    "No new whole-ELF identity claim; current result is source plus bounded window/runtime evidence."
+  ],
+  "inputs_sha256": {
+    "work/parallel-main-r40-sbpf/build-two-source01/build-comparison.json": "012bea7646baebead11bbf96f0802ebb368b6e4a9e6dc2cc028a5f1481b8514b",
+    "work/parallel-main-r40-sbpf/build-two-source01/normalized-inventory.json": "65032ada9b82f43bbabe8262d05f7cf38af63320edf16e53b8492a1626a1402c",
+    "work/parallel-main-pr401-source-review/r40-targeted01/state.json": "e577c659140e2e895d37fbe53341e81e30d2b3e04c9c8829e29eeb3e3f450376",
+    "work/parallel-main-pr401-source-review/r40-retention01.json": "83b44ffe6dc0a26a0f78244a3be3515c726b0a4328ddc12b62138f92215b7209",
+    "work/parallel-main-pr401-source-review/RUNNER-ROOT-ADAPTATION.json": "33ccb924668c83ae3ef2e0307de44103ca41198f6d932719a6334ede3b723526",
+    "work/parallel-main-pr401-source-review/R40-DIRECT-CALL-PROOF.json": "3ea10844450c49181b9f62ec868a448bdac1747911048e1284aaa281e25d89f6",
+    "work/parallel-main-pr401-source-review/two-source-gains.patch": "0ad16cfe079c28f2435e8cbe53a110b304032f1d8f419c786bc365ef66e0b332",
+    "work/parallel-main-pr401-source-review/STAGED.json": "02b8f390de4ca27c0b759cdbd6220834498e6f2cc762cff0bf4b7c4df9dacd6c"
+  }
+}

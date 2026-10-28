@@ -1,0 +1,12 @@
+{"name": "buy-control", "original_error": null, "candidate_error": null, "diff": []}
+{"name": "buy-quote_above_lamports", "original_error": null, "candidate_error": null, "diff": []}
+{"name": "buy-fees_above_lamports", "original_error": null, "candidate_error": null, "diff": []}
+{"name": "buy-sum_above_lamports", "original_error": null, "candidate_error": null, "diff": []}
+{"name": "buy-quote_below_lamports", "original_error": null, "candidate_error": null, "diff": []}
+{"name": "buy-large_quote", "original_error": null, "candidate_error": null, "diff": []}
+{"name": "buy_exact_sol_in-control", "original_error": null, "candidate_error": null, "diff": []}
+{"name": "buy_exact_sol_in-quote_above_lamports", "original_error": null, "candidate_error": null, "diff": []}
+{"name": "buy_exact_sol_in-fees_above_lamports", "original_error": null, "candidate_error": null, "diff": []}
+{"name": "buy_exact_sol_in-sum_above_lamports", "original_error": null, "candidate_error": null, "diff": []}
+{"name": "buy_exact_sol_in-quote_below_lamports", "original_error": null, "candidate_error": null, "diff": []}
+{"name": "buy_exact_sol_in-large_quote", "original_error": null, "candidate_error": null, "diff": []}

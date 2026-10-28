@@ -1,0 +1,182 @@
+{
+  "status": "validated_next_wave_event_placement",
+  "not_in_R36": true,
+  "source_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-event-placement/source01",
+  "base": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round36-source/programs/pump",
+  "changed_files": {
+    "src/lib.rs": "f7ad456ed78dbf49e71855d1f20b238af6143e1915f277b9e2903abb173d22ba",
+    "src/create.rs": "cb79aabdc8d4c43b7d8b16cba29b01859496b3a601a88909a8589174f6e9b201",
+    "src/trade_types.rs": "31f21ef4e3099443da3e5f7f827990cfdebee6d062d366a4ac1a264cc13a6197"
+  },
+  "patch_sha256": "3ca5bd345cb5bc9546b0f5480e28a414ae26215b82e7b2bcf2c8f7a3a690ab3f",
+  "build_candidate_sha256": "cd63998d5d1267837dddc694cac3203e08e96c943c936815dfde6afe332be7d5",
+  "build_unstripped_sha256": "b94720903eca2d2a7337fab5aac435ab2b4d5e0527b07047dbf351ad77f72493",
+  "compiled_variants": 1,
+  "fresh_main": true,
+  "locations": {
+    "before": {
+      "shape_recognized_pairs": 102,
+      "same_filename": 96,
+      "same_filename_line_column": 84
+    },
+    "after": {
+      "shape_recognized_pairs": 102,
+      "same_filename": 98,
+      "same_filename_line_column": 84
+    },
+    "new_filepath_matches": [
+      "0x1be738",
+      "0x1be750"
+    ],
+    "lost_filepath_matches": [],
+    "new_complete_fields": [],
+    "lost_complete_fields": [],
+    "0x1be738": {
+      "original_address": "0x1be738",
+      "candidate_address": "0x1aa188",
+      "original": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 2639,
+        "column": 1,
+        "length": 24,
+        "pointer": "0x1b72c5"
+      },
+      "candidate": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 653,
+        "column": 1,
+        "length": 24,
+        "pointer": "0x1a287c"
+      },
+      "uses": [
+        {
+          "original_function": "0x1615b0",
+          "candidate_function": "0x1608a0",
+          "offset": 3792
+        }
+      ]
+    },
+    "0x1be750": {
+      "original_address": "0x1be750",
+      "candidate_address": "0x1aa1a0",
+      "original": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 2664,
+        "column": 1,
+        "length": 24,
+        "pointer": "0x1b72c5"
+      },
+      "candidate": {
+        "file": "programs/pump/src/lib.rs",
+        "line": 657,
+        "column": 1,
+        "length": 24,
+        "pointer": "0x1a287c"
+      },
+      "uses": [
+        {
+          "original_function": "0x1624b0",
+          "candidate_function": "0x161a60",
+          "offset": 5384
+        }
+      ]
+    }
+  },
+  "function_sets": {
+    "R35_identity": {
+      "normalized_matches": {
+        "before": 737,
+        "after": 738,
+        "gains": [
+          "0x29518"
+        ],
+        "losses": []
+      },
+      "raw_match": {
+        "before": 121,
+        "after": 121,
+        "gains": [],
+        "losses": []
+      }
+    },
+    "R35_selected": {
+      "normalized_matches": {
+        "before": 737,
+        "after": 738,
+        "gains": [
+          "0x29518"
+        ],
+        "losses": []
+      },
+      "raw_match": {
+        "before": 145,
+        "after": 121,
+        "gains": [],
+        "losses": [
+          "0xa7e0",
+          "0x18a3b0",
+          "0x18a4d8",
+          "0x18a888",
+          "0x18de90",
+          "0x18e568",
+          "0x194998",
+          "0x194ae0",
+          "0x197508",
+          "0x1991e0",
+          "0x19a758",
+          "0x19a8a0",
+          "0x1a0f68",
+          "0x1a2340",
+          "0x1a6370",
+          "0x1a6940",
+          "0x1ab220",
+          "0x1ab730",
+          "0x1b31d8",
+          "0x1b3220",
+          "0x1b38b0",
+          "0x1b38c0",
+          "0x1b4088",
+          "0x1b40d0"
+        ]
+      }
+    },
+    "volume_placement_identity": {
+      "normalized_matches": {
+        "before": 737,
+        "after": 738,
+        "gains": [
+          "0x29518"
+        ],
+        "losses": []
+      },
+      "raw_match": {
+        "before": 121,
+        "after": 121,
+        "gains": [],
+        "losses": []
+      }
+    }
+  },
+  "combined_gain_attribution": "0x29518 is admin_cto::token_frozen; this control also contains other accepted R36 changes. Gain is not attributed to event relocation.",
+  "event_field_counts": {
+    "CreateEvent": 20,
+    "TradeEvent": 36
+  },
+  "TradeEvent_extra_trailing_u64_preserved": true,
+  "root_and_old_module_API_preserved": true,
+  "runtime": {
+    "suites": 18,
+    "cases": 3006,
+    "new_cases": 0,
+    "diagnostic_log_cases": 3002,
+    "CPI_order_pairs": 3006,
+    "fully_backed_pairs": 3006,
+    "signature_verified_result_objects": 6012,
+    "distinct_signed_transactions": 982,
+    "mismatches": []
+  },
+  "raw_limit": "Identity raw121 is unchanged. The selected R35 ordered image has145 raw; this is not a fresh ordered qualification.",
+  "line_coordinates_still_differ": true,
+  "padding_or_forced_coordinates": false,
+  "whole_original_identity": false
+}

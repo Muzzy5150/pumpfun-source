@@ -1,0 +1,4 @@
+{"name": "buy-control", "original_error": null, "candidate_error": null, "diff": [], "original_anchor": [], "original_entered": true}
+{"name": "buy-wrong-authority", "original_error": null, "candidate_error": null, "diff": [], "original_anchor": [], "original_entered": true}
+{"name": "sell-control", "original_error": null, "candidate_error": null, "diff": [], "original_anchor": [], "original_entered": true}
+{"name": "sell-wrong-authority", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(4))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(4))))", "diff": [], "original_anchor": [], "original_entered": true}

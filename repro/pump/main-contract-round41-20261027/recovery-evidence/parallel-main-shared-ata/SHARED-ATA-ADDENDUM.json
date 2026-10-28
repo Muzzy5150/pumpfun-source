@@ -1,0 +1,105 @@
+{
+  "scope": "Addendum to immutable accepted shared ATA source01; no new source promotion.",
+  "accepted_review_sha256": "75a2ce78d4dceb966de0ad394afffa2fb0b7a5c4a57ce1852553c4e544aceab6",
+  "source01_unchanged": true,
+  "additional_signed_cases": 56,
+  "additional_strict_diagnostic_pairs": 56,
+  "source01_total_verified_cases_across_separate_runs": 1130,
+  "additional_failures": 0,
+  "physical_source_path": "programs/pump/src/buy_v2.rs",
+  "runtime_origin": "programs/pump/src/buy_v2.rs:81",
+  "token_authority_rule": "Shared helper compares token.mint but does not compare token.owner; user-token authority belongs to a separate caller gate. Confirmed by56 new signed cases,40 original successes.",
+  "resolved_positional_arguments": [
+    "target AccountInfo",
+    "authority AccountInfo",
+    "mint Pubkey",
+    "selected token program Pubkey",
+    "mint AccountInfo",
+    "selected token program AccountInfo",
+    "allow-create bool",
+    "payer AccountInfo",
+    "system AccountInfo"
+  ],
+  "provenance_correction": "Early semantic labels in STATIC-EVIDENCE/ABI-CORRECTION/INFO-ORDER-TRACE were provisional and are superseded by ABI-RESOLVED, based on actual SDK type layout plus normalized-exact Sweep parser and original caller dataflow. Accepted source01 semantics were valid because every caller followed its declaration.",
+  "controls": [
+    {
+      "source": "source02",
+      "description": "Materialize payer/authority Key::key values before the real instruction builder, as observed in original.",
+      "bytes": 6056,
+      "different_slots": 703,
+      "normalized_exact": false,
+      "gains": [],
+      "losses": [],
+      "runtime_claim": false,
+      "source_program_sha256": "51b220e2ac3e697e23c5a5ef6e6e186fe6172d7ee3c670f702e743f41e7e5e2d",
+      "comparison_sha256": "10b2785446f8d7902e842ed9bb299b15bb72051290b691b53c2b8295a62e7c52"
+    },
+    {
+      "source": "source03",
+      "description": "Owned versus borrowed Pubkey argument control; original ownership cannot be established solely by indirect ABI.",
+      "bytes": 6056,
+      "different_slots": 703,
+      "normalized_exact": false,
+      "gains": [],
+      "losses": [],
+      "runtime_claim": false,
+      "source_program_sha256": "569c40c75e5196d7c4bf0473960e0493166904d14fc18b9ffc0550c68f028639",
+      "comparison_sha256": "518cf17bb3a721bb9847d2f80b49784b0d080850daae3ef5a28954871da54cc1"
+    },
+    {
+      "source": "source04",
+      "description": "Intermediate positional ABI control; mint/system/token semantic labels still provisional.",
+      "bytes": 6112,
+      "different_slots": 356,
+      "normalized_exact": false,
+      "gains": [],
+      "losses": [],
+      "runtime_claim": false,
+      "source_program_sha256": "7d7aa6c8c9a9d7e9f3b79bf10590eef4eda58d05e4ede8839dde9c771ca29c59",
+      "comparison_sha256": "d7cceba06b6f3903f635784cae3526d2edd01115dbbed7a5543d173d967e8079"
+    },
+    {
+      "source": "source05",
+      "description": "Intermediate array-tail control under provisional labels; not promoted.",
+      "bytes": 6064,
+      "different_slots": 683,
+      "normalized_exact": false,
+      "gains": [],
+      "losses": [],
+      "runtime_claim": false,
+      "source_program_sha256": "6cb6da61646ba666ed601fea4f615048efc27d906c5b9016824036b1b50368d8",
+      "comparison_sha256": "810adddac80db3f9527b5850bfc481c257769d122cdc0015fa80452e9b5bd657"
+    },
+    {
+      "source": "source06",
+      "description": "Final caller-resolved argument order; standard logical CPI info order retained.",
+      "bytes": 6064,
+      "different_slots": 683,
+      "normalized_exact": false,
+      "gains": [],
+      "losses": [],
+      "runtime_claim": false,
+      "source_program_sha256": "66757a5113333a40cf304c67c75bcf26123ecb98b7ecac7dd70b5bbdf35da106",
+      "comparison_sha256": "ea69ebb37a8a91b8fe41ba0d84dbee705a09194212ec0290f594dd61cfd34378"
+    }
+  ],
+  "limits": [
+    "No successor is byte-exact, and no successor received the1130-case runtime qualification.",
+    "No source coordinates, padding or artificial retention were introduced.",
+    "Accepted source01 and all sealed reports remain unchanged."
+  ],
+  "evidence_sha256": {
+    "work/parallel-main-shared-ata/SOURCE-PATH-PROOF.json": "894c1da185c0f065db1799401c9ad3eea64c2f51014bbcc2f1e963b7a887f1e3",
+    "work/parallel-main-shared-ata/SOURCE-ORIGINS.json": "3cedf2901bd7b7b078e73d69cc19d9895c32de040ec7072229cffe863dcff23d",
+    "work/parallel-main-shared-ata/AUTHORITY-CONTENT-REVIEW.json": "7eef3820e2160789e30d666516298222fa14b2199ee89d0045c659f295dc8626",
+    "work/parallel-main-shared-ata/authority-content01.json.gz": "812531c69bc34b6e484768b2b6ccdd2fc4ee4951cdb2aa1baccd9bf4a21b3c88",
+    "work/parallel-main-shared-ata/authority-content01.loader.json": "1a44731a1ae1c563df7ffe975dd33bd0eede281ba58b1edbdda54d0c3e365c2e",
+    "work/parallel-main-shared-ata/authority-manifest.json": "e6e8e92594be829538d4437e95845340107cdd74bf36190592f399b48a76a327",
+    "work/parallel-main-shared-ata/probe_authority_content.py": "9c4c4b477c23e5b76b2ab0fe57b7bb4e677f7ef648fc411b6c5335aeb6ff0040",
+    "work/parallel-main-shared-ata/ABI-RESOLVED.json": "807089d2380ecdf4c75df5f650dc03b241e6021e9a5eedc3bfe349fa06b776df",
+    "work/parallel-main-shared-ata/original-sweep.asm": "0146884a9336218ffd2a8584e522e3b6e6c5be857c40c21122dc48dae7fe1bff",
+    "work/parallel-main-shared-ata/type-layout-ir/command.json": "73f2e94ca54b7dc62c0aa1a7fe99a18aaf2bd24baedb32f3dd2a858098ee782f",
+    "work/parallel-main-shared-ata/type-layout-ir/status.json": "fe48b30f4f98f43ba1a1dfc3ad16d460aed58753b327df9616c4638704df4e47",
+    "work/parallel-main-shared-ata/type-layout-ir/log": "5b85bd8b7837427fdbf0ab8ae3172d53f7df89e8c0ffb1ff4dcf41d5d690ff55"
+  }
+}

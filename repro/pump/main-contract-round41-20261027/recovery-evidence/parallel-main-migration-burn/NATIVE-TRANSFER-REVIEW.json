@@ -1,0 +1,64 @@
+{
+  "status": "verified main-Pump native transfer helper delivery; no whole-ELF identity claim",
+  "baseline": "source01 Burn API delivery",
+  "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-migration-burn/source06",
+  "source_files": {
+    "migrate.rs": "c6ca4c1dba9a7c6a05c1cd2a4766c0b61906d782ee279f8db7e9f995f9427094",
+    "migrate_v2.rs": "1dbf4124bbc0edabbb06f6825eeecc5ddc2fca1cebe88e6c629ab8e74cc52ab6"
+  },
+  "candidate_sha256": "4e0c1b521ccb25cf2bb05509336d495cbe1eedf30003480af810d1847f792351",
+  "unstripped_sha256": "96d243b7fbf357ee6073e17e073083c9b263def761efdbf7dd4816eec1355487",
+  "counts_before": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 710,
+    "unmatched": 325
+  },
+  "counts_after": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 711,
+    "unmatched": 324
+  },
+  "deltas": {
+    "normalized_matches": {
+      "gains": [
+        "0x8c770"
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "recovered_helper": {
+    "original_start": "0x8c770",
+    "bytes": 1256,
+    "normalized_equal": true,
+    "different_slots": 0,
+    "callee": "exact anchor_lang::system_program::transfer"
+  },
+  "behavior": "Final pool-authority refund uses original zero-amount guards, a shared public helper with UncheckedAccount source reference, and fixed one-entry outer signer array. No instruction dispatch added.",
+  "runtime": {
+    "suite_count": 6,
+    "cases": 1172,
+    "strict_diagnostics": 1172,
+    "errors": [],
+    "mismatches": []
+  },
+  "all_nine_historical_leaves_retained": true,
+  "all_prior_normalized_and_raw_windows_retained": true,
+  "source07_bounded_control": "Same full match sets; wrappers384B/19different slots rather than06 384B/22. No extra whole window, no runtime, not selected.",
+  "evidence_sha256": {
+    "PLAN06.json": "3ec3ca4cc8bb39fd03a0563e8dd77375b0f0ffe1879492bb03c652380a78bcf0",
+    "MATCH-DELTA06.json": "e14d7a49449bb2fb805af98af73ebb0e674dd212dfa40759f141f5f680b556bb",
+    "FULL-MATCH-SETS06.json": "8030b060eced09998a754dada98000c46530daedb6f23db51116374aad1b6b1e",
+    "manifest.json": "e775f46cd450184a58d9bb6c13899792bcb795448620aa5dc4f84e8650767cd3",
+    "runtime06/summary.json": "ce1f8e97ec24d6938d23c1797e79ab3402c35b083c1f5523be4492f8371c2c83",
+    "build06/build-comparison.json": "8f39c91b05693bf1a312d1e8f58521785c409a37a84a7ea5e2ef46ca1a5de406",
+    "build06/native-comparison.json": "31d3ea585b76674a9bc77e343548ae2499443d5737a60a2cf9820293580a8057",
+    "NATIVE-CALL-CLOSURE06.json": "03658b41df1a5d9f808a06bc93ece64f8231811a98de8806e1533687ab998161",
+    "native-transfer-from-burn01.patch": "b2ed272ec4e7b1227a00a36f7873580500ae48a8281f1ab320a432193aacb6e5"
+  }
+}

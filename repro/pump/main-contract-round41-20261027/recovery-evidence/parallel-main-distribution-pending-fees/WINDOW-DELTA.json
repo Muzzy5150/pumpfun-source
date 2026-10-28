@@ -1,0 +1,35 @@
+{
+  "baseline": "work/parallel-main-integration/build-round32/normalized-inventory.json",
+  "baseline_sha256": "6a2106157044da857d1569c4e9074247eba9462c6e3566170114b484272b9f45",
+  "candidate_sha256": "3899f29328cf6d118cf9c5535f8ab6700ff9b580ed79f4f00e0b0b33b591de26",
+  "sets": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": [
+        "0xa7e0",
+        "0x18a3b0",
+        "0x18a4d8",
+        "0x18a888",
+        "0x18de90",
+        "0x18e568",
+        "0x1a0f68",
+        "0x1a2340",
+        "0x1a6370",
+        "0x1a6940",
+        "0x1ab220",
+        "0x1ab730",
+        "0x1b31d8",
+        "0x1b3220",
+        "0x1b38b0",
+        "0x1b38c0",
+        "0x1b4088",
+        "0x1b40d0"
+      ]
+    }
+  },
+  "raw_note": "Trial uses current hybrid profile without ordered linker recipe; raw layout is not qualified. All normalized matches are preserved."
+}

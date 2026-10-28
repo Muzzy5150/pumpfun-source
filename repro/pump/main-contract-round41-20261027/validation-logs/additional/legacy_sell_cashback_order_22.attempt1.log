@@ -1,0 +1,23 @@
+{"case": "cashback_False_full", "original": null, "candidate": null, "diff": []}
+{"case": "cashback_False_none", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6072))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6072))))", "diff": []}
+{"case": "cashback_False_uva_only", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6074))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6074))))", "diff": []}
+{"case": "cashback_False_v2_only", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6073))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6073))))", "diff": []}
+{"case": "cashback_False_uva_v2", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6062))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6062))))", "diff": []}
+{"case": "precedence_False_zero", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6022))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6022))))", "diff": []}
+{"case": "precedence_False_complete", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6005))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6005))))", "diff": []}
+{"case": "precedence_False_slippage", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6003))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6003))))", "diff": []}
+{"case": "precedence_False_recipient", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6000))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6000))))", "diff": []}
+{"case": "ordinary_False", "original": null, "candidate": null, "diff": []}
+{"case": "ordinary_no_remaining_False", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6074))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6074))))", "diff": []}
+{"case": "cashback_True_full", "original": null, "candidate": null, "diff": []}
+{"case": "cashback_True_none", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6072))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6072))))", "diff": []}
+{"case": "cashback_True_uva_only", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6074))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6074))))", "diff": []}
+{"case": "cashback_True_v2_only", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6073))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6073))))", "diff": []}
+{"case": "cashback_True_uva_v2", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6062))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6062))))", "diff": []}
+{"case": "precedence_True_zero", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6022))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6022))))", "diff": []}
+{"case": "precedence_True_complete", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6005))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6005))))", "diff": []}
+{"case": "precedence_True_slippage", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6003))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6003))))", "diff": []}
+{"case": "precedence_True_recipient", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6000))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6000))))", "diff": []}
+{"case": "ordinary_True", "original": null, "candidate": null, "diff": []}
+{"case": "ordinary_no_remaining_True", "original": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6074))))", "candidate": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6074))))", "diff": []}
+{"cases": 22, "mismatches": 0, "strict_mismatches": 0}

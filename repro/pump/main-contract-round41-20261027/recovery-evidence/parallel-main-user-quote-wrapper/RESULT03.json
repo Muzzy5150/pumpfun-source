@@ -1,0 +1,198 @@
+{
+  "status": "validated physical source-placement successor; source02 remains frozen",
+  "baseline": "accepted source02",
+  "source": "source03",
+  "candidate_sha256": "80a71299353fe234861739dce439909dcdc191108e178193ca394245db4a7bb3",
+  "unstripped_sha256": "ecf78999ea9dfc4bfdb9b9351d10d711cff820e2dae5f027d7c264921a54a2ac",
+  "build_receipt_sha256": "5e73074a4de8956e232034abb4cb5efb25b610eb72b3c43784123cb8a0b3bfe6",
+  "source_hashes": {
+    "src/lib.rs": "ba614e986ea839cf6cfd901840c532aa67cbe2b909606e7e35c86b48e53d9eeb",
+    "src/trade_v3.rs": "d5497d033b752566ed596f7c30fbdc513f842b43936823e6efb7a36cf2364f76",
+    "src/buy_v2.rs": "3353a0c3ac94ab40db5ca8111ce1105aec90bf1b4006b0463dcd806a08d63ea4"
+  },
+  "removed_file": "src/user_quote_payments.rs",
+  "patch_from02_sha256": "a05426eba9e372bab9bded9638e3e894be473a16bc7103d27f23f5ac9c0aaafd",
+  "patch_fromR30_sha256": "67bf82e3b79c3b5838467ef28ab9c7bea169c8d100773da3018635dc29c75713",
+  "inventory": {
+    "total": 1035,
+    "raw": 124,
+    "normalized": 730,
+    "unmatched": 305
+  },
+  "gains_vs_source02": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "reconstructed_bodies": [
+    {
+      "original": "0x97930",
+      "bytes": 704,
+      "candidate": "0xbb2d8"
+    },
+    {
+      "original": "0x8df98",
+      "bytes": 1208,
+      "candidate": "0xbae20"
+    }
+  ],
+  "locations": [
+    {
+      "wrapper_instruction_offset": 72,
+      "role": "24-byte Location payload passed to Option::unwrap_failed; allocation extent and historical type identity unproved",
+      "original": {
+        "address": "0x1bdec8",
+        "path": "programs/pump/src/lib.rs",
+        "line": 1478,
+        "column": 40,
+        "pointer": {
+          "site": 1826504,
+          "relocation_type": 8,
+          "target": 1798853,
+          "raw": "00000000c5721b00"
+        }
+      },
+      "candidate": {
+        "address": "0x1a8278",
+        "path": "programs/pump/src/lib.rs",
+        "line": 568,
+        "column": 36,
+        "pointer": {
+          "site": 1737336,
+          "relocation_type": 8,
+          "target": 1708587,
+          "raw": "000000002b121a00"
+        }
+      },
+      "equal_path": true,
+      "equal_path_line_column": false
+    },
+    {
+      "wrapper_instruction_offset": 680,
+      "role": "24-byte Location payload passed to Option::unwrap_failed; allocation extent and historical type identity unproved",
+      "original": {
+        "address": "0x1bdeb0",
+        "path": "programs/pump/src/lib.rs",
+        "line": 1477,
+        "column": 42,
+        "pointer": {
+          "site": 1826480,
+          "relocation_type": 8,
+          "target": 1798853,
+          "raw": "00000000c5721b00"
+        }
+      },
+      "candidate": {
+        "address": "0x1a8260",
+        "path": "programs/pump/src/lib.rs",
+        "line": 567,
+        "column": 33,
+        "pointer": {
+          "site": 1737312,
+          "relocation_type": 8,
+          "target": 1708587,
+          "raw": "000000002b121a00"
+        }
+      },
+      "equal_path": true,
+      "equal_path_line_column": false
+    }
+  ],
+  "runtime": {
+    "counts": {
+      "buy-v2": 216,
+      "v3-extensions": 126,
+      "v3-continuation": 42,
+      "v3-configured": 372,
+      "v3-native-buyback": 18,
+      "v3-token-buyback": 12,
+      "v3-crossing": 16,
+      "v3-matrix": 12,
+      "v3-post-fees": 80,
+      "price-divisible": 12,
+      "price-boundaries": 12,
+      "v3-order": 18,
+      "buyback-order16": 16,
+      "buyback-post8": 8,
+      "buyback-prefix7": 7,
+      "buyback54": 54,
+      "buyback-protocol4": 4,
+      "cost-order8": 8,
+      "quote-order22": 22
+    },
+    "total": 1055,
+    "all_signatures_verified": true,
+    "transaction_bytes_identical": true,
+    "fixture_mismatches": [],
+    "diagnostic_mismatches": [],
+    "exact_invocation_sequences": true
+  },
+  "callees": [
+    {
+      "source_original": "0x97930",
+      "source_candidate": "0xbb2d8",
+      "offset": 88,
+      "original_target": "0x1ac500",
+      "candidate_target": "0x195930",
+      "bytes": 40,
+      "matching_symbols": [
+        "_ZN4core6option13unwrap_failed17h2b22848a3f32bcb7E"
+      ]
+    },
+    {
+      "source_original": "0x97930",
+      "source_candidate": "0xbb2d8",
+      "offset": 136,
+      "original_target": "0x8df98",
+      "candidate_target": "0xbae20",
+      "bytes": 1208,
+      "matching_symbols": [
+        "_ZN14pump_recovered19user_quote_payments15transfer_native17h7ad249fecab419edE"
+      ]
+    },
+    {
+      "source_original": "0x97930",
+      "source_candidate": "0xbb2d8",
+      "offset": 632,
+      "original_target": "0x91ef0",
+      "candidate_target": "0x5eae8",
+      "bytes": 2352,
+      "matching_symbols": [
+        "_ZN14pump_recovered7sell_v221quote_token_transfers21transfer_quote_tokens17hc044e5bd10fbf9c3E"
+      ]
+    },
+    {
+      "source_original": "0x97930",
+      "source_candidate": "0xbb2d8",
+      "offset": 696,
+      "original_target": "0x1ac500",
+      "candidate_target": "0x195930",
+      "bytes": 40,
+      "matching_symbols": [
+        "_ZN4core6option13unwrap_failed17h2b22848a3f32bcb7E"
+      ]
+    },
+    {
+      "source_original": "0x8df98",
+      "source_candidate": "0xbae20",
+      "offset": 1152,
+      "original_target": "0x19e090",
+      "candidate_target": "0x1864d0",
+      "bytes": 800,
+      "matching_symbols": [
+        "_ZN11anchor_lang14system_program8transfer17h6e716b5d4cc7ca2eE"
+      ]
+    }
+  ],
+  "limits": [
+    "Full ELF equality remains false.",
+    "Both Location filename strings now match; their line/column fields still differ. No line or column padding was used.",
+    "Same duplicate-normalized-window caveats as source02: two actual recovered bodies, four matching original windows.",
+    "Full parent composite qualification remains required."
+  ]
+}

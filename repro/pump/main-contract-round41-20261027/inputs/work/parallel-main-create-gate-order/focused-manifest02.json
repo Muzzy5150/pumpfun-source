@@ -1,0 +1,22 @@
+[
+  {
+    "name": "create_gate_order",
+    "script": "work/parallel-main-create-gate-order/probe_gates.py",
+    "count": 34
+  },
+  {
+    "name": "create_control_gate_order",
+    "script": "work/parallel-main-create-gate-order/probe_control_gates.py",
+    "count": 10
+  },
+  {
+    "name": "create_policy_precedence",
+    "script": "work/parallel-main-create-gate-order/probe_policy_precedence.py",
+    "count": 4
+  },
+  {
+    "name": "create_early_pairs",
+    "script": "work/parallel-main-create-gate-order/probe_early_pairs.py",
+    "count": 12
+  }
+]

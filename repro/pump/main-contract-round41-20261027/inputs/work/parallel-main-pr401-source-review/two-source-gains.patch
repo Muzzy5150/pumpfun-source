@@ -1,0 +1,40 @@
+--- a/programs/pump/src/migrate.rs
++++ b/programs/pump/src/migrate.rs
+@@ -82,8 +82,8 @@
+ #[inline(never)]
+ fn refund_pool_authority<'info>(a:&Migrate<'info>,bump:u8,destination:&AccountInfo<'info>,amount:u64)->Result<()>{
+  if amount==0{return Ok(());}
+- let mint=a.mint.key();let bump=[bump];let signer_seeds:&[&[&[u8]];1]=&[&[b"pool-authority",mint.as_ref(),&bump]];
+- crate::migrate::transfer_native(a.system_program.as_ref(),&a.pool_authority,destination,amount,signer_seeds)
++ let transfer=|signer_seeds:&[&[&[u8]];1]|crate::migrate::transfer_native(a.system_program.as_ref(),&a.pool_authority,destination,amount,signer_seeds);
++ transfer(&[&[b"pool-authority",a.mint.key().as_ref(),&[bump]]])
+ }
+ 
+ #[inline(never)]
+--- a/programs/pump/src/trade_types.rs
++++ b/programs/pump/src/trade_types.rs
+@@ -362,13 +362,23 @@
+ 
+ pub use crate::TradeEvent;
+ pub use crate::pump_fees::{
+-    accounts::FeeConfig,
+     types::{FeeTier, Fees, Shareholder},
+ };
+ 
+ #[event]
+ #[derive(Clone)]
+ pub struct CompleteEvent {pub user:Pubkey,pub mint:Pubkey,pub bonding_curve:Pubkey,pub timestamp:i64,pub quote_mint:Pubkey}
++
++// Route decoding has its own Rust type; the external CPI account keeps the IDL type.
++#[derive(AnchorSerialize, AnchorDeserialize, Clone)]
++pub struct FeeConfig {
++    pub bump: u8,
++    pub admin: Pubkey,
++    pub flat_fees: Fees,
++    pub fee_tiers: Vec<FeeTier>,
++    pub stable_fee_tiers: Vec<FeeTier>,
++    pub exotic_flat_fees: Fees,
++}
+ 
+ // Original shared event constructor 0x8bbd0. Both callers retain Clock reads.
+ pub struct TradeEventFees {

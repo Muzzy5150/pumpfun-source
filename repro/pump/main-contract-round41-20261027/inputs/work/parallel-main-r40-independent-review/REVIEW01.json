@@ -1,0 +1,96 @@
+{
+  "status": "passed_read_only_review",
+  "scope": "Runner and source contract review, not a runtime or whole-ELF completion claim",
+  "runner": {
+    "original_sha256": "3623bbe1df352819e770c0f6988ff2277047330433505716637b3dccb8f57678",
+    "derived_sha256": "44b533b7f025eb08364d1f9315167040b2726dd4b726e6f6b29955710dbc18fb",
+    "exactly_two_documented_replacements": true,
+    "AST_identical_after_reversing_path_changes": true,
+    "assert_nodes_retained": 23,
+    "all_original_candidate_diagnostic_CPI_transaction_retention_code_unchanged": true,
+    "repository_root_unchanged": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source",
+    "helper_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration",
+    "build_record_root": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf",
+    "actual_control_source_hashes_resolve": 62,
+    "limits": "Crypto-signature receipt verification remains a separate step, exactly as in the original runner. No such check is claimed from the path adaptation alone."
+  },
+  "source": {
+    "files": 61,
+    "changed_files": [
+      "src/migrate.rs",
+      "src/trade_types.rs"
+    ],
+    "Cargo_lock_and_IDLs_unchanged": true,
+    "FeeConfig_fields": [
+      [
+        "bump",
+        "u8"
+      ],
+      [
+        "admin",
+        "Pubkey"
+      ],
+      [
+        "flat_fees",
+        "Fees"
+      ],
+      [
+        "fee_tiers",
+        "Vec<FeeTier>"
+      ],
+      [
+        "stable_fee_tiers",
+        "Vec<FeeTier>"
+      ],
+      [
+        "exotic_flat_fees",
+        "Fees"
+      ]
+    ],
+    "RouteFeeConfig_owner": "FEES",
+    "RouteFeeConfig_discriminator": [
+      143,
+      52,
+      146,
+      187,
+      219,
+      123,
+      76,
+      155
+    ],
+    "generated_external_FeeConfig_retained_for_legacy_CPI": true,
+    "route_parser_and_owner_code_unchanged": true,
+    "no_repr_transmute_or_layout_override": true,
+    "seed_parts": {
+      "prefix_bytes": 14,
+      "mint_bytes": 32,
+      "bump_bytes": 1,
+      "outer_length": 1
+    },
+    "seed_lifetime": "All borrowed temporary key, bump and nested arrays live for the synchronous closure call expression. The closure forwards to transfer_native and returns Result; no borrowed seed escapes.",
+    "zero_amount_guard_unchanged": true,
+    "constructor_unchanged": true,
+    "limits": [
+      "Same Borsh declaration order does not itself prove the concrete optimized Rust memory layout; final compiler evidence remains required.",
+      "Original source names/visibility are not uniquely recovered by matching instruction windows."
+    ]
+  },
+  "targeted_plan": {
+    "cases": 3477,
+    "suites": 29,
+    "input_bindings_verified": true
+  },
+  "inputs": {
+    "work/parallel-main-integration/main_corpus_runner_v3.py": "3623bbe1df352819e770c0f6988ff2277047330433505716637b3dccb8f57678",
+    "work/parallel-main-pr401-source-review/run_targeted_r40.py": "44b533b7f025eb08364d1f9315167040b2726dd4b726e6f6b29955710dbc18fb",
+    "work/parallel-main-pr401-source-review/RUNNER-ROOT-ADAPTATION.json": "33ccb924668c83ae3ef2e0307de44103ca41198f6d932719a6334ede3b723526",
+    "work/parallel-main-pr401-source-review/two-source-gains.patch": "0ad16cfe079c28f2435e8cbe53a110b304032f1d8f419c786bc365ef66e0b332",
+    "work/parallel-main-pr401-source-review/STAGED.json": "02b8f390de4ca27c0b759cdbd6220834498e6f2cc762cff0bf4b7c4df9dacd6c",
+    "work/parallel-main-pr401-source-review/targeted-manifest.json": "1d18b38b5bc800a582919abe652761593348828a7c75eab4cf8265fb0881bac6",
+    "work/parallel-main-r40-sbpf/preserved-control/build-comparison.json": "41f92c9e8472c912bfcfa6006ed37ede9e26143103b59282e61cf771f046cf56",
+    "work/parallel-main-r40-sbpf/two-source-primary/idls/pump_fees.json": "6b9fa3eccc6e06273076a47b581f9fcb9e531bb7c3c88acbcd44db55a4002b29",
+    "work/parallel-main-r40-sbpf/two-source-primary/src/trade_types.rs": "36e755961aa8ecb79196076f4f8fe48b43ad2e55d048bf7f34719e80bf6b8d8f",
+    "work/parallel-main-r40-sbpf/two-source-primary/src/migrate.rs": "8090cb3d47fdc8ba889daa040720d6c2e204a8e4e5dfc987214a2bb68605572f",
+    "work/parallel-main-r40-sbpf/two-source-primary/src/multi_hop_curve_swap.rs": "127d21f8bc5e742b88ace3a93b11174a94ea8d556584111990be470eaf0192c0"
+  }
+}

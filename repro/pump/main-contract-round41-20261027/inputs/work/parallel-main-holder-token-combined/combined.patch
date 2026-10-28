@@ -1,0 +1,20 @@
+--- a/src/creator/distribute_fee_to_holders.rs
++++ b/src/creator/distribute_fee_to_holders.rs
+@@ -21,7 +21,7 @@
+ pub fn execute<'info>(ctx:Context<'_, '_, '_, 'info,DistributeFeeToHolders<'info>>,amounts:Vec<u64>)->Result<()>{
+  let a=&ctx.accounts;let mint=a.mint.key();let bump=[ctx.bumps.holder_rewards];let seeds:&[&[u8]]=&[b"holder-rewards",mint.as_ref(),&bump];let signer=&[seeds];
+  let native=a.quote_mint.key()==anchor_spl::token::spl_token::native_mint::ID;
+- require!(ctx.remaining_accounts.len()==amounts.len()*2,PumpError::HolderRewardRecipientsMismatch);
++ require!(ctx.remaining_accounts.len()==amounts.len().saturating_mul(2),PumpError::HolderRewardRecipientsMismatch);
+  if let Some(source)=&a.holder_rewards_token_account {
+   if native {anchor_spl::token_interface::close_account(CpiContext::new_with_signer(a.quote_token_program.to_account_info(),anchor_spl::token_interface::CloseAccount{account:source.to_account_info(),destination:a.holder_rewards.to_account_info(),authority:a.holder_rewards.to_account_info()},signer))?;}
+  }
+@@ -34,7 +34,7 @@
+    require_keys_eq!(*pair[1].key,anchor_spl::associated_token::get_associated_token_address_with_program_id(pair[0].key,&a.quote_mint.key(),&a.quote_token_program.key()),PumpError::HolderRewardRecipientsMismatch);
+    if pair[1].data_is_empty(){anchor_spl::associated_token::create(CpiContext::new(a.associated_token_program.to_account_info(),anchor_spl::associated_token::Create{payer:a.holder_reward_claim_authority.to_account_info(),associated_token:pair[1].clone(),authority:pair[0].clone(),mint:a.quote_mint.to_account_info(),system_program:a.system_program.to_account_info(),token_program:a.quote_token_program.to_account_info()}))?;}
+    let source_info=source.to_account_info();
+-   if *amount!=0 {anchor_spl::token_interface::transfer_checked(CpiContext::new_with_signer(a.quote_token_program.to_account_info(),anchor_spl::token_interface::TransferChecked{from:source_info.clone(),mint:a.quote_mint.to_account_info(),to:pair[1].clone(),authority:a.holder_rewards.to_account_info()},signer),*amount,a.quote_mint.decimals)?;}
++   if *amount!=0 {anchor_spl::token_interface::transfer_checked(CpiContext::new_with_signer(a.quote_token_program.to_account_info(),anchor_spl::token_interface::TransferChecked{from:source_info.clone(),to:pair[1].clone(),authority:a.holder_rewards.to_account_info(),mint:a.quote_mint.to_account_info()},signer),*amount,a.quote_mint.decimals)?;}
+   }
+   total=total.checked_add(*amount).ok_or_else(||error!(PumpError::Overflow))?;
+  }

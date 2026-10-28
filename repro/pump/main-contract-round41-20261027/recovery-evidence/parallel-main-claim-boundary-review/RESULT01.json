@@ -1,0 +1,57 @@
+{
+  "status": "Validated single-account event-CPI ABI restoration; no normalized-window gain",
+  "source_file": "src/token_incentives/claim_token_incentives.rs",
+  "source_sha256": "bd9de953a077b869ada9074aa623591b3966449d546a74e02febd68d076e8558",
+  "baseline_file_sha256": "2d433154b1585754ffa4e40794f260c7e6e6b179be1966d547bc8135b0ec55f0",
+  "candidate_sha256": "f62d37d0d1d6d990784f25868006f732c784c4df2defe5b194e7a66f0cba98ad",
+  "unstripped_sha256": "c26699faea779437932e454c2313960d38db7eb4d476c0da95e6059dbdcd1f7e",
+  "build_receipt_sha256": "e78cf53bebb338c93cf5e96c2d756e914c6c9f3b354ef8be6cf65d60c597af1b",
+  "patch_sha256": "77200f4663903b573670c9ac3cddd40a5aaf17dd7f2e56d3c399a587bfe40df0",
+  "inventory": {
+    "total": 1035,
+    "raw": 119,
+    "normalized": 733,
+    "unmatched": 302
+  },
+  "complete_window_delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "claim": {
+    "original": {
+      "bytes": 5920,
+      "event_account_info_count": 1
+    },
+    "baseline": {
+      "bytes": 6240,
+      "event_account_info_count": 2
+    },
+    "candidate": {
+      "bytes": 5624,
+      "event_account_info_count": 1
+    }
+  },
+  "runtime": {
+    "claim_cases": 528,
+    "verified_transactions": 1056,
+    "verified_signatures": 1060,
+    "new_compound_cases": 30,
+    "deduplicated_incremental_cases": 28,
+    "incremental_driver_replay": 28,
+    "diagnostic_mismatches": 0,
+    "invocation_sequence_mismatches": 0
+  },
+  "limits": [
+    "Claim body remains unmatched:5624vsoriginal5920bytes.",
+    "No source event schema, worker, context parser, account-meta list or migration changes.",
+    "Raw119/normalized733 comparison uses R33 hybrid identity layout; not native or final ordered-layout raw count.",
+    "Full original ELF equality remains false.",
+    "Only AccountInfo slice supplied to invoke_signed is restored; outer transaction and CPI Instruction AccountMeta lists are unchanged."
+  ]
+}

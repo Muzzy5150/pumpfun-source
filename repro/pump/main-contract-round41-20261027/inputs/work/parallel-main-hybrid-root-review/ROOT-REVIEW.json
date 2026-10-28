@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "reviewed_profile_patch_sha256": "eadf7b3abb74146ef5d4764e6b85130044bd2a67428bd365f670113280dc1f5f",
+  "offline_controls": 11,
+  "cli_rejections": [
+    {
+      "name": "profile_without_directory",
+      "returncode": 2,
+      "output_not_created": true
+    },
+    {
+      "name": "directory_without_profile",
+      "returncode": 2,
+      "output_not_created": true
+    },
+    {
+      "name": "unknown_profile",
+      "returncode": 2,
+      "output_not_created": true
+    }
+  ],
+  "native_and_hybrid_keys_distinct": true,
+  "default_real_build_parity": true,
+  "hybrid_real_build_parity": true,
+  "whole_original_sdk_provenance": false,
+  "profile_cache_key": "5de55fe66a808ad0a24be6877353a5af4a2c2ab4334b9630a1908e3e140fcb59"
+}

@@ -1,0 +1,8 @@
+{"name": "buy-legacy-wrong-owner-False", "original_error": null, "candidate_error": null, "different_fields": [], "original_entered": true}
+{"name": "buy-legacy-wrong-owner-True", "original_error": "TransactionErrorInstructionError((1, Fieldless(ExternalAccountDataModified)))", "candidate_error": "TransactionErrorInstructionError((1, Fieldless(ExternalAccountDataModified)))", "different_fields": [], "original_entered": true}
+{"name": "buy-token22-wrong-owner-False", "original_error": null, "candidate_error": null, "different_fields": [], "original_entered": true}
+{"name": "buy-token22-wrong-owner-True", "original_error": "TransactionErrorInstructionError((1, Fieldless(IncorrectProgramId)))", "candidate_error": "TransactionErrorInstructionError((1, Fieldless(IncorrectProgramId)))", "different_fields": [], "original_entered": true}
+{"name": "sell-legacy-wrong-owner-False", "original_error": null, "candidate_error": null, "different_fields": [], "original_entered": true}
+{"name": "sell-legacy-wrong-owner-True", "original_error": "TransactionErrorInstructionError((1, Fieldless(ExternalAccountDataModified)))", "candidate_error": "TransactionErrorInstructionError((1, Fieldless(ExternalAccountDataModified)))", "different_fields": [], "original_entered": true}
+{"name": "sell-token22-wrong-owner-False", "original_error": null, "candidate_error": null, "different_fields": [], "original_entered": true}
+{"name": "sell-token22-wrong-owner-True", "original_error": "TransactionErrorInstructionError((1, Fieldless(IncorrectProgramId)))", "candidate_error": "TransactionErrorInstructionError((1, Fieldless(IncorrectProgramId)))", "different_fields": [], "original_entered": true}

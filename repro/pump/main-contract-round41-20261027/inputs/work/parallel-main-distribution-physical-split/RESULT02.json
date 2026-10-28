@@ -1,0 +1,68 @@
+{
+  "status": "validated V2 physical-source split; no whole-window gain; ready for next-wave review",
+  "baseline": "work/parallel-main-token-distribution-mint-scope/source01",
+  "files": {
+    "src/distribution.rs": "eb0d1a0abe66f10c7d70342e029de2de957b2a5524a442bb727d96ec47fe66ad",
+    "src/creator/distribute_creator_fee_v2.rs": "44bc66e43c5149a3e896b1da4625b462a33bc808aa2d5df20c2bc229b3441edd"
+  },
+  "patch_sha256": "cc06900fafab06e7a3b27c4c0be9dc72fee97971a4fb45cf04b7f67c274fcd76",
+  "candidate_sha256": "0c41cff676c546ed9ab0d8c1a85ba777c2c795d4420c459ec2fc75c0b5d80809",
+  "unstripped_sha256": "219cbd40b1c91b748962eff485581466918bc5842e64fb9dc863cc692ee87c50",
+  "build_receipt_sha256": "2e1de4eadef007be2f182c088484f494a8cf6561056467b0aaa4429923159cfd",
+  "scope": "Only witnessed execute_v2 andtokenplanner moved withverbatimfunctionbodies; parentfacade re-exportstwoexistingAPIs.",
+  "preserved": [
+    "V2 context andgeneratedAnchor modules",
+    "SharingConfig and FEES",
+    "eventdeclaration",
+    "V1/nativefunctions",
+    "lib.rs",
+    "Cargo inputs"
+  ],
+  "recovered_origin": "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+  "origin_proof_sha256": "e231b3e73d09f082e4dcb72f5419107d3637254851309e54c82558816229ca9e",
+  "context_origin_limit": "Contextfileoriginisnotindependentlyestablished; it remains inparent.",
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 737,
+    "unmatched": 298
+  },
+  "complete_match_delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "helper": {
+    "original_bytes": 6664,
+    "candidate_bytes": 6360,
+    "normalized_equal": false,
+    "different_slots": 811
+  },
+  "runtime": {
+    "case_counts": {
+      "distribution": 298,
+      "minimum": 181,
+      "regressions": 62,
+      "rent": 6,
+      "pending": 72,
+      "quote_gate": 18
+    },
+    "cases": 637,
+    "mismatches": 0,
+    "strict_diagnostics": 0,
+    "invocation_mismatches": 0,
+    "distinct_signed_transactions": 105
+  },
+  "preserved_failed_attempt": "source01/build01 missingConfigStatusimport; repaired source02 adds onlytheimport",
+  "limitations": [
+    "No exacthelperorwhole-ELFidentityclaim.",
+    "Linecoordinateswere notforced andremain different.",
+    "Nofreshfinaltext/data layoutqualified; theseareidentitybuildsets.",
+    "No newinputcoverageorownermutation."
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "scope": "Literal main-Pump source path strings present in each ELF; addresses are file offsets, not claims of source possession.",
+  "paths": {
+    "original": {
+      "programs/pump/src/admin_set_idl_authority.rs": [
+        1796059
+      ],
+      "programs/pump/src/buy.rs": [
+        1796130
+      ],
+      "programs/pump/src/buy_v2.rs": [
+        1796167
+      ],
+      "programs/pump/src/create_v2.rs": [
+        1796215
+      ],
+      "programs/pump/src/creator/admin_cto.rs": [
+        1796300
+      ],
+      "programs/pump/src/creator/collect_creator_fee.rs": [
+        1796567
+      ],
+      "programs/pump/src/creator/distribute_creator_fee_v2.rs": [
+        1796760
+      ],
+      "programs/pump/src/creator/distribute_creator_fees.rs": [
+        1797111
+      ],
+      "programs/pump/src/creator/distribute_fee_to_holders.rs": [
+        1797163
+      ],
+      "programs/pump/src/creator/migrate_bonding_curve_creator.rs": [
+        1797217
+      ],
+      "programs/pump/src/creator/set_creator.rs": [
+        1797275
+      ],
+      "programs/pump/src/creator/set_metaplex_creator.rs": [
+        1797377
+      ],
+      "programs/pump/src/extend_account.rs": [
+        1797492
+      ],
+      "programs/pump/src/fee_recipient.rs": [
+        1797527
+      ],
+      "programs/pump/src/migrate.rs": [
+        1797577
+      ],
+      "programs/pump/src/migrate_v2.rs": [
+        1797760
+      ],
+      "programs/pump/src/multi_hop_curve_swap.rs": [
+        1797791
+      ],
+      "programs/pump/src/pump_quote.rs": [
+        1797846
+      ],
+      "programs/pump/src/quote_control/state.rs": [
+        1797877
+      ],
+      "programs/pump/src/quote_control/update_quote_control_mints.rs": [
+        1797917
+      ],
+      "programs/pump/src/sell.rs": [
+        1797978
+      ],
+      "programs/pump/src/sell_v2.rs": [
+        1798026
+      ],
+      "programs/pump/src/set_reserved_fee_recipients.rs": [
+        1798054
+      ],
+      "programs/pump/src/sweep_fees.rs": [
+        1798126
+      ],
+      "programs/pump/src/token_incentives/claim_token_incentives.rs": [
+        1798244
+      ],
+      "programs/pump/src/token_incentives/volume_accumulator.rs": [
+        1798378
+      ],
+      "programs/pump/src/trade_v3.rs": [
+        1798715
+      ],
+      "programs/pump/src/util/constant_product.rs": [
+        1798744
+      ],
+      "programs/pump/src/util/fee.rs": [
+        1798786
+      ],
+      "programs/pump/src/util/transfer_fee.rs": [
+        1798815
+      ],
+      "programs/pump/src/lib.rs": [
+        1798853
+      ],
+      "programs/pump/src/quote_control/initialize_quote_control.rs": [
+        1800360
+      ],
+      "programs/pump/src/token_incentives/init_user_volume_accumulator.rs": [
+        1800509
+      ]
+    },
+    "candidate": {
+      "programs/pump/src/volume_sync.rs": [
+        1678600
+      ],
+      "programs/pump/src/global_init.rs": [
+        1678664
+      ],
+      "programs/pump/src/set_creator.rs": [
+        1678696
+      ],
+      "programs/pump/src/trade_types.rs": [
+        1679016
+      ],
+      "programs/pump/src/legacy_sell.rs": [
+        1679368
+      ],
+      "programs/pump/src/multi_hop_curve.rs": [
+        1682147
+      ],
+      "programs/pump/src/token_incentives/volume_accumulator.rs": [
+        1682366
+      ],
+      "programs/pump/src/buy_v2.rs": [
+        1682729
+      ],
+      "programs/pump/src/cashback.rs": [
+        1682756
+      ],
+      "programs/pump/src/migrate_v2.rs": [
+        1682808
+      ],
+      "programs/pump/src/legacy_buy.rs": [
+        1682926
+      ],
+      "programs/pump/src/holder_distribution.rs": [
+        1682971
+      ],
+      "programs/pump/src/migrate.rs": [
+        1683011
+      ],
+      "programs/pump/src/sell_v2.rs": [
+        1683039
+      ],
+      "programs/pump/src/fee_recipient.rs": [
+        1683067
+      ],
+      "programs/pump/src/fee_cpi.rs": [
+        1683101
+      ],
+      "programs/pump/src/nested_create.rs": [
+        1683129
+      ],
+      "programs/pump/src/create_v2.rs": [
+        1683163
+      ],
+      "programs/pump/src/create.rs": [
+        1683264
+      ],
+      "programs/pump/src/collect_v2.rs": [
+        1683291
+      ],
+      "programs/pump/src/extend.rs": [
+        1683420
+      ],
+      "programs/pump/src/sweep.rs": [
+        1683447
+      ],
+      "programs/pump/src/admin_cto.rs": [
+        1683473
+      ],
+      "programs/pump/src/creator_migration.rs": [
+        1683503
+      ],
+      "programs/pump/src/set_params.rs": [
+        1683541
+      ],
+      "programs/pump/src/idl_authority.rs": [
+        1683650
+      ],
+      "programs/pump/src/distribution.rs": [
+        1683694
+      ],
+      "programs/pump/src/trade_v3.rs": [
+        1683872
+      ],
+      "programs/pump/src/quote_control/state.rs": [
+        1683901
+      ],
+      "programs/pump/src/quote_control/update_quote_control_mints.rs": [
+        1683941
+      ],
+      "programs/pump/src/lib.rs": [
+        1684002
+      ],
+      "programs/pump/src/quote_control/initialize_quote_control.rs": [
+        1685731
+      ]
+    }
+  },
+  "missing_original_paths": [
+    "programs/pump/src/admin_set_idl_authority.rs",
+    "programs/pump/src/buy.rs",
+    "programs/pump/src/creator/admin_cto.rs",
+    "programs/pump/src/creator/collect_creator_fee.rs",
+    "programs/pump/src/creator/distribute_creator_fee_v2.rs",
+    "programs/pump/src/creator/distribute_creator_fees.rs",
+    "programs/pump/src/creator/distribute_fee_to_holders.rs",
+    "programs/pump/src/creator/migrate_bonding_curve_creator.rs",
+    "programs/pump/src/creator/set_creator.rs",
+    "programs/pump/src/creator/set_metaplex_creator.rs",
+    "programs/pump/src/extend_account.rs",
+    "programs/pump/src/multi_hop_curve_swap.rs",
+    "programs/pump/src/pump_quote.rs",
+    "programs/pump/src/sell.rs",
+    "programs/pump/src/set_reserved_fee_recipients.rs",
+    "programs/pump/src/sweep_fees.rs",
+    "programs/pump/src/token_incentives/claim_token_incentives.rs",
+    "programs/pump/src/token_incentives/init_user_volume_accumulator.rs",
+    "programs/pump/src/util/constant_product.rs",
+    "programs/pump/src/util/fee.rs",
+    "programs/pump/src/util/transfer_fee.rs"
+  ],
+  "new_candidate_paths": [
+    "programs/pump/src/admin_cto.rs",
+    "programs/pump/src/cashback.rs",
+    "programs/pump/src/collect_v2.rs",
+    "programs/pump/src/create.rs",
+    "programs/pump/src/creator_migration.rs",
+    "programs/pump/src/distribution.rs",
+    "programs/pump/src/extend.rs",
+    "programs/pump/src/fee_cpi.rs",
+    "programs/pump/src/global_init.rs",
+    "programs/pump/src/holder_distribution.rs",
+    "programs/pump/src/idl_authority.rs",
+    "programs/pump/src/legacy_buy.rs",
+    "programs/pump/src/legacy_sell.rs",
+    "programs/pump/src/multi_hop_curve.rs",
+    "programs/pump/src/nested_create.rs",
+    "programs/pump/src/set_creator.rs",
+    "programs/pump/src/set_params.rs",
+    "programs/pump/src/sweep.rs",
+    "programs/pump/src/trade_types.rs",
+    "programs/pump/src/volume_sync.rs"
+  ]
+}

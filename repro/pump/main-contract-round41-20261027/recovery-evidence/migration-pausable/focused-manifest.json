@@ -1,0 +1,12 @@
+[
+  {
+    "name": "required_account_size",
+    "script": "work/parallel-main-leaf-validation/probe_sizes.py",
+    "count": 14
+  },
+  {
+    "name": "pausable_migration",
+    "script": "work/parallel-main-leaf-validation/probe_pausable.py",
+    "count": 6
+  }
+]

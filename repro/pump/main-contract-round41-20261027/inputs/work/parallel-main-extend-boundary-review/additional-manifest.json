@@ -1,0 +1,22 @@
+{
+  "scope": "12 distinct extension inputs with explicit Rent config; existing308 are separate",
+  "counts": {
+    "full": 0,
+    "additional": 12
+  },
+  "definition_sha256": {
+    "work/parallel-main-extend-boundary-review/probe-incremental.py": "12ca06fd416a265c784b9b5f48559341030b0ed16c1b7fca80074af8d6f5d481",
+    "work/parallel-main-extend-boundary-review/probe-logs.py": "4ef24e44c22304cde78ddd4abb19f90290021ee457a773bcd498ccac7424041e",
+    "work/parallel-main-extend-boundary-review/probe-zero-rent.py": "4faba4c65d830d5b5f862550ee128448ae0dadaa73a7fbe0287bcf1db7e477b8",
+    "work/parallel-main-extend-boundary-review/INCREMENTAL-SPECS.json": "5d9855c1459dba9a7514bc3f1f199c169afe22333d843deb541d7a9463292ea2"
+  },
+  "suites": [
+    {
+      "group": "additional",
+      "name": "extension_boundary12",
+      "script": "work/parallel-main-extend-boundary-review/probe-incremental.py",
+      "cases": 12,
+      "args": []
+    }
+  ]
+}

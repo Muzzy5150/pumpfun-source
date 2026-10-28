@@ -1,0 +1,126 @@
+{
+  "status": "validated owned quote-mint validation lifetime control; see measured match sets; ready for parent review",
+  "baseline": "work/parallel-main-token-distribution-data-len/source01",
+  "baseline_distribution_sha256": "7ca42333a9da3a97ca32e08f505a6328810d8811a191960e694e30c4027b9f8d",
+  "source": "work/parallel-main-token-distribution-mint-scope/source01/src/distribution.rs",
+  "source_sha256": "4b4b11015f896130a5dccfec8344938b64e4fb50446e988a920e42890647c0b8",
+  "patch_sha256": "ebc47718a01b3c1717d5d9c650b54f79a0b85ed0f21fe7a9ff10d74ab522af4b",
+  "candidate_sha256": "0c3d5e6363c8ee8513bfa69bde4bb3e1dd2a0f7a7658820f451ee7370c2ba271",
+  "unstripped_sha256": "9cabb920e0e9b629e6217d600acf79b745ff94c246a6e0f79a9ddc76873ae969",
+  "helper": {
+    "original_start": "0x2bf18",
+    "original_bytes": 6664,
+    "candidate_start": "0x95428",
+    "candidate_bytes": 6360,
+    "normalized_equal": false,
+    "different_slots": 811
+  },
+  "measured_abi": {
+    "numeric_return": "retains Vec fields+sourceamount atresult+24",
+    "source_input": "Typed source pointer from accepted public baseline retained",
+    "typed_mint_owner": "Typed mint pointer and owner-derived ATA program retained",
+    "actual_api_sequence": {
+      "scope": "Owned quote-mint validation block, source and emitted lifetime check.",
+      "before_source_sha256": "7ca42333a9da3a97ca32e08f505a6328810d8811a191960e694e30c4027b9f8d",
+      "after_source_sha256": "4b4b11015f896130a5dccfec8344938b64e4fb50446e988a920e42890647c0b8",
+      "source_policy": "Same recipient/ATA key comparisons, executable gate, bps/overflow andATAinitialization checks. Only quoteMintInfo capture/use lifetime changes.",
+      "candidate_sequence": {
+        "clone_rc_increment_sites": [
+          "0x95bb8",
+          "0x95c08"
+        ],
+        "recipient_key_comparison": "0x95ce8",
+        "ata_derivation": "0x95e68",
+        "ata_key_comparison": "0x95ed8",
+        "executable_guard": "0x95670..0x95680",
+        "drop_rc_decrement_sites": [
+          "0x95698",
+          "0x956d8"
+        ],
+        "share_bps_guard": "0x95720",
+        "multiplication": "0x95750"
+      },
+      "original_sequence": {
+        "clone_rc_increment_sites": [
+          "0x2c380",
+          "0x2c3d8"
+        ],
+        "recipient_key_comparison": "0x2c4d8",
+        "ata_derivation": "0x2c6f8",
+        "ata_key_comparison": "0x2c760",
+        "executable_guard": "0x2c938..0x2c940",
+        "drop_rc_decrement_sites": [
+          "0x2ccd8",
+          "0x2cd18"
+        ],
+        "share_bps_guard": "0x2cd50",
+        "multiplication": "0x2cd80"
+      },
+      "instruction_assertions": {
+        "0x95bb8": [
+          7,
+          1,
+          0,
+          1
+        ],
+        "0x95c08": [
+          7,
+          1,
+          0,
+          1
+        ],
+        "0x95698": [
+          7,
+          1,
+          0,
+          -1
+        ],
+        "0x956d8": [
+          7,
+          1,
+          0,
+          -1
+        ]
+      },
+      "limits": "Lifecycle order is recovered; exact full helper identity remains false. Physical source path correction is not included."
+    },
+    "parent_result_sha256": "755d5d4a5ab7156d7b0e64e196526454c131a1a707ffb9677f53e658963d8be9"
+  },
+  "inventory": {
+    "total": 1035,
+    "raw": 121,
+    "normalized": 737,
+    "unmatched": 298
+  },
+  "complete_match_delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "runtime": {
+    "counts": {
+      "distribution": 298,
+      "minimum": 181,
+      "regressions": 62,
+      "rent": 6,
+      "pending": 72,
+      "quote_gate": 18
+    },
+    "cases": 637,
+    "mismatches": 0,
+    "strict_diagnostic_mismatches": 0,
+    "invocation_mismatches": 0,
+    "distinct_signed_transactions": 105
+  },
+  "consumer_proof": "work/parallel-main-token-distribution-consumer/CONSUMER-ADDENDUM.json",
+  "limits": [
+    "No owner mutation or adversarial owner probe.",
+    "No exact token-planner body claim.",
+    "R35 combined source remains parent-owned; this is isolated."
+  ]
+}

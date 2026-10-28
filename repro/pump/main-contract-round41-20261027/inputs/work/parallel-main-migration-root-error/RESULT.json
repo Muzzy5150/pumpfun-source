@@ -1,0 +1,264 @@
+{
+  "scope": "Seal the one-build root-error migration control after unchanged corpus execution.",
+  "status": "validated private source control; parent integration required",
+  "changed_files": {
+    "src/migrate_v2.rs": "2429dbb72fa04e737fa16f49737061833c99671cbb640cd6260ada9709a69d9d"
+  },
+  "patch": {
+    "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-migration-root-error/root-error.patch",
+    "sha256": "bcfb992d53fb2d12e1b9b80329a60030b87ec8ce4fdc0a2a5d93cc30fdbf6459"
+  },
+  "candidate_sha256": "88d9d1f1ce8808349f0886415562cd0ecee046e161e24a12b94ac649ec44d694",
+  "unstripped_sha256": "761eb0012f6e6ff27074ea8ad4aabfae4a9e302f90693a07c605119a4a31b533",
+  "source_binding": {
+    "path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-migration-root-error/SOURCE-MANIFEST.json",
+    "sha256": "975ea0443d1385319f9cec8477d8e7749b6056e819ce67cdc8235d4de91b6eb3"
+  },
+  "default_link_window_comparison": {
+    "baseline": {
+      "total": 1035,
+      "raw": 121,
+      "normalized": 744,
+      "unmatched": 291
+    },
+    "candidate": {
+      "total": 1035,
+      "raw": 121,
+      "normalized": 744,
+      "unmatched": 291
+    },
+    "normalized_gained": [],
+    "normalized_lost": [],
+    "raw_gained": [],
+    "raw_lost": []
+  },
+  "ordered_baseline_caveat": "The control uses default link order, so121raw vs175in selected ordered R37 is not a source regression. Fresh ordered composition remains a parent integration step.",
+  "body_change": {
+    "before_bytes": 28376,
+    "after_bytes": 28160,
+    "original_bytes": 8888
+  },
+  "allocated_section_delta": {
+    "scope": "Default-link allocated section sizes, not byte/layout equivalence",
+    "baseline_path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/build-round37-identity/unstripped.so",
+    "candidate_path": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-migration-root-error/build/unstripped.so",
+    "sections": {
+      ".data.rel.ro": {
+        "before": {
+          "address": 1735800,
+          "bytes": 11656,
+          "flags": 3
+        },
+        "after": {
+          "address": 1735400,
+          "bytes": 11656,
+          "flags": 3
+        },
+        "size_delta": 0
+      },
+      ".dynamic": {
+        "before": {
+          "address": 1747456,
+          "bytes": 176,
+          "flags": 3
+        },
+        "after": {
+          "address": 1747056,
+          "bytes": 176,
+          "flags": 3
+        },
+        "size_delta": 0
+      },
+      ".dynstr": {
+        "before": {
+          "address": 1748088,
+          "bytes": 288,
+          "flags": 2
+        },
+        "after": {
+          "address": 1747688,
+          "bytes": 288,
+          "flags": 2
+        },
+        "size_delta": 0
+      },
+      ".dynsym": {
+        "before": {
+          "address": 1747632,
+          "bytes": 456,
+          "flags": 2
+        },
+        "after": {
+          "address": 1747232,
+          "bytes": 456,
+          "flags": 2
+        },
+        "size_delta": 0
+      },
+      ".rel.dyn": {
+        "before": {
+          "address": 1748376,
+          "bytes": 93280,
+          "flags": 2
+        },
+        "after": {
+          "address": 1747976,
+          "bytes": 93296,
+          "flags": 2
+        },
+        "size_delta": 16
+      },
+      ".rodata": {
+        "before": {
+          "address": 1703976,
+          "bytes": 31819,
+          "flags": 18
+        },
+        "after": {
+          "address": 1703568,
+          "bytes": 31827,
+          "flags": 18
+        },
+        "size_delta": 8
+      },
+      ".text": {
+        "before": {
+          "address": 288,
+          "bytes": 1703688,
+          "flags": 6
+        },
+        "after": {
+          "address": 288,
+          "bytes": 1703280,
+          "flags": 6
+        },
+        "size_delta": -408
+      }
+    },
+    "sha256": {
+      "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/build-round37-identity/unstripped.so": "4ab6eb624a3dd8a0f7a8c2802ece55993121c9b82ede056361c2a00ce0b54780",
+      "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-migration-root-error/build/unstripped.so": "761eb0012f6e6ff27074ea8ad4aabfae4a9e302f90693a07c605119a4a31b533"
+    }
+  },
+  "restored_original_error_path": true,
+  "runtime": {
+    "cases": 1928,
+    "suites": 21,
+    "full": 1194,
+    "additional": 734,
+    "diagnostic_mismatches": [],
+    "CPI_order_mismatches": [],
+    "manifest_sha256": "76d38a8a8d5899a183675d6bd7a1294a478426d76006e4e698015fc1a4c22d05",
+    "state_sha256": "e8daea6c250ea3c3d6befe61feb9eb41a881055950ad97bf704b01fee994c5bc",
+    "retention_sha256": "acfbacf9b90c2fc711a10e82c9645a6a2e5089f05ba66f08f9c9a95957ba59b8"
+  },
+  "error6110_cases": [
+    {
+      "case_sha256": "e210dc1a46c35bead10157e798c56c0e5ccd3b611e4378f4043d46f67a8b7865",
+      "original": {
+        "transaction_sha256": "60781de735ef06738354cb7656d2f6cb93f765a5f8890642e944d14635b3e7ea",
+        "signature_verification": true,
+        "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6110))))",
+        "diagnostic": "Program log: AnchorError thrown in programs/pump/src/migrate_v2.rs:335. Error Code: QuoteMintNotWritable. Error Number: 6110. Error Message: quote_mint must be writable for a quote with a Token-2022 transfer fee: its withheld fees are harvested to the mint."
+      },
+      "candidate": {
+        "transaction_sha256": "60781de735ef06738354cb7656d2f6cb93f765a5f8890642e944d14635b3e7ea",
+        "signature_verification": true,
+        "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6110))))",
+        "diagnostic": "Program log: AnchorError thrown in programs/pump/src/migrate_v2.rs:141. Error Code: QuoteMintNotWritable. Error Number: 6110. Error Message: quote_mint must be writable for a quote with a Token-2022 transfer fee: its withheld fees are harvested to the mint."
+      }
+    },
+    {
+      "case_sha256": "e7eb579fcaa017d349f9d66fc5ccf595480787d83d4e430216bc1804a44db08c",
+      "original": {
+        "transaction_sha256": "60781de735ef06738354cb7656d2f6cb93f765a5f8890642e944d14635b3e7ea",
+        "signature_verification": true,
+        "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6110))))",
+        "diagnostic": "Program log: AnchorError thrown in programs/pump/src/migrate_v2.rs:335. Error Code: QuoteMintNotWritable. Error Number: 6110. Error Message: quote_mint must be writable for a quote with a Token-2022 transfer fee: its withheld fees are harvested to the mint."
+      },
+      "candidate": {
+        "transaction_sha256": "60781de735ef06738354cb7656d2f6cb93f765a5f8890642e944d14635b3e7ea",
+        "signature_verification": true,
+        "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6110))))",
+        "diagnostic": "Program log: AnchorError thrown in programs/pump/src/migrate_v2.rs:141. Error Code: QuoteMintNotWritable. Error Number: 6110. Error Message: quote_mint must be writable for a quote with a Token-2022 transfer fee: its withheld fees are harvested to the mint."
+      }
+    },
+    {
+      "case_sha256": "0a7ea4bd4bc5eec14a50bc635e31eaceaf5e7dcfd68856beea72767232e4b5d2",
+      "original": {
+        "transaction_sha256": "60781de735ef06738354cb7656d2f6cb93f765a5f8890642e944d14635b3e7ea",
+        "signature_verification": true,
+        "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6110))))",
+        "diagnostic": "Program log: AnchorError thrown in programs/pump/src/migrate_v2.rs:335. Error Code: QuoteMintNotWritable. Error Number: 6110. Error Message: quote_mint must be writable for a quote with a Token-2022 transfer fee: its withheld fees are harvested to the mint."
+      },
+      "candidate": {
+        "transaction_sha256": "60781de735ef06738354cb7656d2f6cb93f765a5f8890642e944d14635b3e7ea",
+        "signature_verification": true,
+        "error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6110))))",
+        "diagnostic": "Program log: AnchorError thrown in programs/pump/src/migrate_v2.rs:141. Error Code: QuoteMintNotWritable. Error Number: 6110. Error Message: quote_mint must be writable for a quote with a Token-2022 transfer fee: its withheld fees are harvested to the mint."
+      }
+    }
+  ],
+  "retention_report": {
+    "status": "passed",
+    "scope": "Read-only verification of paired Pump transaction retention and attribution.\n\nImports only decoding/cryptographic libraries. Never builds, signs, submits,\nor executes a transaction. Logical substitutions add proven receipt fields;\ninput report objects and input files are not modified.\n",
+    "candidate_sha256": "88d9d1f1ce8808349f0886415562cd0ecee046e161e24a12b94ac649ec44d694",
+    "program": "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+    "inputs_sha256": {
+      "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-migration-root-error/runtime/full.json.gz": "da38048e2a99be31748c79b98a45c51f36253309f9a511259c795ea2be6a3af4",
+      "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-migration-root-error/runtime/additional.json.gz": "de033150214f345227f0c448cd5e5e57975212ff2793a0e87dfcb5da9931e8dd",
+      "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/evidence/upstream/pump.json": "7616681ea557975f9f623ac211080f22a93060781eaf4765b0a488d980997207"
+    },
+    "counts": {
+      "paired_rows": 1928,
+      "verified_result_objects": 3856,
+      "fully_backed_pairs": 1928,
+      "distinct_signed_transactions": 242,
+      "distinct_transaction_pairs": 242
+    },
+    "groups": {
+      "full": {
+        "paired_rows": 1194,
+        "fully_backed_pairs": 1194
+      },
+      "additional": {
+        "paired_rows": 734,
+        "fully_backed_pairs": 734
+      }
+    },
+    "main_attribution": {
+      "known_main_instruction": 3856
+    },
+    "families": {
+      "migrate": {
+        "serialized_result_objects": 900,
+        "successful_transaction_results": 424
+      },
+      "migrate_bonding_curve_creator": {
+        "serialized_result_objects": 278,
+        "successful_transaction_results": 50
+      },
+      "migrate_v2": {
+        "serialized_result_objects": 2678,
+        "successful_transaction_results": 1190
+      }
+    },
+    "findings": [],
+    "substitutions": [],
+    "limitations": [
+      "Known instruction bytes do not establish branch coverage.",
+      "Unknown/malformed main payloads remain classified by retained bytes.",
+      "A verified outer transaction rejected before a main call is recorded as main_not_invoked, not as main-family execution.",
+      "No transaction was constructed, signed, submitted or executed."
+    ],
+    "verifier_sha256": {
+      "receipt_verifier.py": "d534cb7e5364d3ec50ea6183ce6b1b9cc0f0b9b8b055f0cc053e7206c4b40838",
+      "verify_receipts.py": "f6b0899be3d175543132ded0ac57f540c6254aa9d369277173a861c3613c6abd"
+    }
+  },
+  "limits": [
+    "No complete migrate_v2 body or whole-ELF identity.",
+    "Source diagnostic line numbers remain authentic current source coordinates; no padding was added.",
+    "No new transactions; all21suites selected unchanged from frozen R37 manifest."
+  ]
+}

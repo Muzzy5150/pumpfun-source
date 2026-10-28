@@ -1,0 +1,24 @@
+{
+  "registry_home": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/cold-producer01/cargo-home",
+  "dependency_cache": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/external-cache",
+  "cache_key": "cc75395a3c1f178105d500df5cc825f8696f42c21fd51a1d70bbd0aaac03ce9f",
+  "manifest_sha256": "3a0f72ffc445fe5929f0963350885734de7061390326e2671fdce1919861104c",
+  "producer": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/cold-producer01",
+  "cache_proof": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/PACKAGING-CACHE-PROOF.json",
+  "entrypoint_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-entrypoint-221",
+  "consumer": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/cached-consumer01",
+  "cache_root": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/external-cache",
+  "clean_build_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/cold-producer01",
+  "cached_build_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/cached-consumer01",
+  "target_library_profile": "linux-v1.44-sbpf",
+  "target_library_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/claude-pump-work/toolchains/hybrid144/rust/lib/rustlib/sbpf-solana-solana/lib",
+  "sdk": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/fees-compat/toolchains/v1.44",
+  "builder": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/scripts/pump_build_verified.py",
+  "profile_provenance": [
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-live-frontier-review/SBPF-ARCHIVE-PROVENANCE.json",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-additive-profile-review/REVIEW.json",
+    "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-r40-sbpf/PLAN01.json"
+  ],
+  "tooling_installation": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-integration/round40-builder-installation.json",
+  "tooling_installation_sha256": "c5567a5b66a50406d9492f90f6a6f85a14c204f3ebe064f22e026fba54636b88"
+}

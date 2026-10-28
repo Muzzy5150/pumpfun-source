@@ -1,0 +1,28 @@
+{
+  "scope": "Incremental signed legacy creator-vault funding boundaries",
+  "case_count": 63,
+  "script": "work/parallel-main-legacy-creator-rent/probe-vault-rent02.py",
+  "command": [
+    "work/test-env/bin/python",
+    "work/parallel-main-legacy-creator-rent/probe-vault-rent02.py",
+    "--candidate",
+    "<candidate.so>",
+    "--output",
+    "<report.json.gz>"
+  ],
+  "internally_installs_optimized_loader": true,
+  "files_sha256": {
+    "work/parallel-main-legacy-creator-rent/probe-vault-rent02.py": "b5067d4b91b5bee2ec2d2b3ed9b5753ca503c0851ca761434fde41be7b72b00b",
+    "work/parallel-main-legacy-creator-rent/legacy_buy_fixture.py": "cd18ca2cfad69f051b3c9ad7b809e279c5f2aee62bb676be86d0466278a841a0",
+    "work/parallel-main-legacy-creator-rent/legacy_sell_fixture.py": "db6e61d875ee0dd27be0aeede48313d521267c13d5fb4c9dd05d4ec8eeb118da"
+  },
+  "comparison": [
+    "error",
+    "accounts",
+    "events",
+    "inner",
+    "return_data",
+    "anchor/panic diagnostics",
+    "all program invocation logs"
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "status": "No concrete composition issue found in this snapshot; runtime/byte qualification remains root work",
+  "scope": "Read-only main-Pump R38 draft composition, eight sealed patches against frozen R37",
+  "source_directory": "work/parallel-main-integration/round38-source/programs/pump",
+  "source_sha256": {
+    "Cargo.lock": "8307bd5e79789b5190291ea014c2f5556e23fb9829fa2f68a7ede581235eae98",
+    "Cargo.toml": "7a1d296cd7b25bb0f6ea89a5fc7616f43a94fb75027fdc329e27f99305ae2dad",
+    "README.md": "1574d71c2f22cfd1391509a8bdb991f64ca0c3341769130e1f40bef816449cc9",
+    "idls/pump_fees.json": "6b9fa3eccc6e06273076a47b581f9fcb9e531bb7c3c88acbcd44db55a4002b29",
+    "recovered/README.md": "46eac75f48743d05e9acd4964080c739eedcc47cf47ad291f6f87459304f52b3",
+    "recovered/constant_product.rs": "ec71f386f5f42abca163df627c7d8a5741c8954efec8732a1c9093728d33a99b",
+    "recovered/constant_product_host.rs": "ee2e9e7fb89d7cdc42525dcafa28c802faab4ccb874652fa9df2307b11bc5825",
+    "recovered/sell_accounting.rs": "23c1bbd79d6aa2987472a6eba572e0ded99cc8846cffd6bc23883f0700a25983",
+    "recovered/sell_accounting_host.rs": "b4aa42643c68895a23b99d5c46ac429cdaff76f0b650b69211b813b48859a39a",
+    "src/admin_set_idl_authority.rs": "8218b8bdea2d64454e73ed322a2d5431f34753a6f2c5f40cb889a63c0be4c417",
+    "src/buy.rs": "9d4af64b2adcf7ebc52949a5bae65b58fe6e10751f27cbe7c45dcb82a3d09af8",
+    "src/buy_v2.rs": "9cf7e6c14a3e567780a0768cc65d34cb3de2e37fb6bacad11a24f1bf36d97dbc",
+    "src/cashback.rs": "998e8bd7a87c74ca660aa0ea7136f2b81cc274bc8b3acde81783c4b0fcbdb5d6",
+    "src/create.rs": "cb79aabdc8d4c43b7d8b16cba29b01859496b3a601a88909a8589174f6e9b201",
+    "src/create_v2.rs": "993734a309d89ed7f2e4dbf1d43e236c8444abf34e84ef9adf3c2ce3c8f2f640",
+    "src/creator/admin_cto.rs": "c40409a0c1eb86a2f8010000a812ad4c591b1bf3ea1200a17d98c233cb5948ad",
+    "src/creator/collect_creator_fee.rs": "b6c64ec699b290154eaa3016bf59200610bf8ab842e9d0b9d5495441b2cd7910",
+    "src/creator/distribute_creator_fee_v2.rs": "3614ffb738ea149923737bf76176d7672527bcdbab356c9c3e718a414ce0729b",
+    "src/creator/distribute_creator_fees.rs": "bb256e6d56d7250a47a735b90bb30fca1c185e9b65308b499484b6d77b2694c9",
+    "src/creator/distribute_fee_to_holders.rs": "9a3605ac6e7ab685227f70682a2884129efd31e2db8f1f32067794cee8b3088f",
+    "src/creator/migrate_bonding_curve_creator.rs": "5b83c3a7db77d639bb36eb8dc840ec8530ebb5b56e8dd670a717fcd2d377bd24",
+    "src/curve_quote_payments.rs": "84d8ae750f67db2b2e01084b3e983996f76a8e1354d6c0bab6f8e9efbfe896ba",
+    "src/distribution.rs": "4b961b52f3cb95c0ed2c44e1f1ec5c1fd20f20bbf58b56b8687f2b8e4dd362e2",
+    "src/extend_account.rs": "a833e5eaa3e18d9abaa914c560fca853644063495de6f2a1dc4192ea1dafec60",
+    "src/fee_cpi.rs": "e8bc413f1b2609c1634d9929178eaae9859a5725c5f7d69b5239d20d1f59ef9e",
+    "src/fee_recipient.rs": "a0a58edb66cc5ffb5d5f066b441923d64430d1ca1fbc9bb07af9e35a603a932a",
+    "src/global_init.rs": "d4e23109ab022e0e8d90fd4485de189843a559eb40923c652fdc0d5d58db97c6",
+    "src/incentives.rs": "cb9fb2fd6efe31590f6cfd6aec633a064b9ce3a1e2e4426b6a6813275945d2ea",
+    "src/legacy_native_payments.rs": "f929fd69edeb27fbc16d94cfea558347f3b163838329f3efc684eb536ba6389d",
+    "src/lib.rs": "15bcebce8f10e026990f19418c538cc243b988de3ffac90155546b3b66647d70",
+    "src/lib.rs.orig": "6a97e8bc6e0d10bb26a7ad6c79d3160a951ff4bd63d7bdbc8a040fb3ca082485",
+    "src/mayhem_virtual_params.rs": "6eeae687e0f29176d48a4de0d57b0457f5e4fa498c17fd5de0520e162b5677da",
+    "src/migrate.rs": "fb03bc70b5359b29527fec5f8c5328c2212012bd782a9aabd62f4489fc115db7",
+    "src/migrate_v2.rs": "b557054b667629085d5a284329fec569df376520c17228d84be119f99ebec4c3",
+    "src/migration_native_payments.rs": "d67b1eecd822d8fee7ae470922c3612b0c852308beab2ec73184f74f1042839e",
+    "src/minimum.rs": "aab3cb1d7c3598bf5a44c3bd8917493c3cf05fb356f7a315ed862669fe64155d",
+    "src/multi_hop_curve_swap.rs": "f27e2d6626a384d85bcd682aa59b3f556cd06498baa7efc284392b1ddcf1898b",
+    "src/nested_create.rs": "bfd7308b017623f288a372871a298bd76151c64faf58a081cb6cb8c8ee19a644",
+    "src/quote_control/initialize_quote_control.rs": "f69183651495574b85e572aafd23ab768fdf3072a0d4c7e05da6ca51715b9136",
+    "src/quote_control/mod.rs": "c1a355d9ed55a4b69224ddd3ddc703b2dd7608bc8aa0bbde830d88a6a61a8120",
+    "src/quote_control/state.rs": "960e011099451f70156573f1e0a4c3f600d500a63fd3b35bd0af05a121794921",
+    "src/quote_control/update_quote_control_mints.rs": "820a28f795130c637b30709cabfe5426915a68e72bd3b5f6c557266ea3e9dea5",
+    "src/sell.rs": "6558a4b22b112ac4a2350b011be9f13fc5436ee7f749f991a885a0fcd1590933",
+    "src/sell_v2.rs": "aad9918da13d1df2b2132f6a417e2651486fd163f4d573a540ed99838a2d780f",
+    "src/set_creator.rs": "ea1147a3d3249191f75727bca27aa4ddbef6f2831070f88dfb7f0f99b84eb4ae",
+    "src/set_params.rs": "6b411241b6eaf90dcccaa8f51a52f005f8d608e365cb7aab3a14a2e22e9e9ca2",
+    "src/sweep_fees.rs": "b2e29c4da032ad18d39b4940780d2fb91967801462b2e4875870425a99877df0",
+    "src/token_incentives/claim_token_incentives.rs": "bd9de953a077b869ada9074aa623591b3966449d546a74e02febd68d076e8558",
+    "src/token_incentives/mod.rs": "21a914a951ef03c576813dd29a5f890d25ada1b6917d0bfd6425fa48576cd806",
+    "src/token_incentives/volume_accumulator.rs": "85713f122b8506ea2521fb2fdf60b50072fb4ccb9c10df49f578152e6f4a7773",
+    "src/trade_types.rs": "526dc94caaefd9826a83a8b76abc82e34c97ff27fce3fd0ccb581bb6cc1d47fe",
+    "src/trade_v3.rs": "d5497d033b752566ed596f7c30fbdc513f842b43936823e6efb7a36cf2364f76",
+    "src/util/fee.rs": "43537cceaef50f0052c1e868d686db2fa48b6dfe8b2b6de8fe6474f5eade6e7a",
+    "src/v2_native_payments.rs": "26ec8fb6d1d4c36e88f72df3980e8325eb3220ee25b9be87c600a20c5c32fac1",
+    "src/v2_quote_token_transfers.rs": "ac15f56326e6b234c9593a6843a2ac19d353bfa047d5cd8b381a5517afe83bfe",
+    "src/v2_recipient_payments.rs": "afdf1516ed7cb43f98cd04f73c69837c3d02319841ec4d64e0f3dd239e72bbf5",
+    "src/v2_token_transfers.rs": "9b538a848ee03174e864d114c6bd3fba43a61012ba9180e76f881602e2ef7bae",
+    "src/v2_user_token_transfers.rs": "86577a8573623af55b93fab323306c8fc087bbb8478f7d5a13d1be8581d8beb5",
+    "src/v3_native_transfer_fee.rs": "81047d109f5cffabdb13795c67003eb34e8285708d68d7594485c0bfc55b9b75",
+    "src/volume_sync.rs": "6ed1f053f6b318d7cb27cbaa723f88917e87e757df0d5035d00b6b40c29ce699"
+  },
+  "plan_sha256": "7bee67b80dfb1f446c53c81ee831a24337b1c1e95bc9160d77d690f2e319e665",
+  "applied_in_memory": [
+    {
+      "patch": "work/parallel-main-native-executor-ownership/native-executor01-physical-split.patch",
+      "sha256": "b740dc146a2ebb2a6b7c0f8a80d2620af7215a269ed1f0bb2e4396754f3a843b",
+      "files": [
+        "src/distribution.rs",
+        "src/creator/distribute_creator_fee_v2.rs",
+        "src/creator/distribute_creator_fees.rs"
+      ]
+    },
+    {
+      "patch": "work/parallel-main-distribution-event-placement/portable-r37/event-after-native.patch",
+      "sha256": "28a3a1df2c5b7e252c14fbf961c27f789043bc27ede8b48995f7bd9a655b43fb",
+      "files": [
+        "src/creator/distribute_creator_fees.rs",
+        "src/distribution.rs"
+      ]
+    },
+    {
+      "patch": "work/parallel-main-holder-ata-api/holder-ata-only.patch",
+      "sha256": "b27e34a558e6a495c8064137066f03ec66b4d820763e3ae39b1f4abd495b4147",
+      "files": [
+        "src/creator/distribute_fee_to_holders.rs"
+      ]
+    },
+    {
+      "patch": "work/parallel-main-holder-native-api/holder-native-only.patch",
+      "sha256": "9874a4a91d097b6968c78d48f1804a6100c780c2b67e080d27856ffa55e6176c",
+      "files": [
+        "src/creator/distribute_fee_to_holders.rs"
+      ]
+    },
+    {
+      "patch": "work/parallel-main-holder-token-source-info/source-info-only.patch",
+      "sha256": "8be1d1a44efb286d2213db78c5e5c2fbfac4350c5e397a165f0abe5e691a71e2",
+      "files": [
+        "src/creator/distribute_fee_to_holders.rs"
+      ]
+    },
+    {
+      "patch": "work/parallel-main-collector-core-abi/collector-core01.patch",
+      "sha256": "4893f7c15b44763454e9f4186b4f0d81d56f289a132eafd99afa28cea670357b",
+      "files": [
+        "src/creator/collect_creator_fee.rs"
+      ]
+    },
+    {
+      "patch": "work/parallel-main-idl-clone-order/combined-idl01.patch",
+      "sha256": "f3272bf1c4d669634e3dc33069d5dd3e214ad26b5fba2f1404001461cb9ac1d1",
+      "files": [
+        "src/admin_set_idl_authority.rs"
+      ]
+    },
+    {
+      "patch": "work/parallel-main-schedule-guard-witness/guard-order01.patch",
+      "sha256": "93925e8a8dabd5860e1e8828c7c63d5167cd6cccdefac2509009d32f21b30e53",
+      "files": [
+        "src/token_incentives/volume_accumulator.rs"
+      ]
+    }
+  ],
+  "unexpected_differences": [],
+  "changed_files": [
+    "src/admin_set_idl_authority.rs",
+    "src/creator/collect_creator_fee.rs",
+    "src/creator/distribute_creator_fee_v2.rs",
+    "src/creator/distribute_creator_fees.rs",
+    "src/creator/distribute_fee_to_holders.rs",
+    "src/distribution.rs",
+    "src/token_incentives/volume_accumulator.rs"
+  ],
+  "checks": [
+    "All60 files exactly reproduce from R37 plus the eight sealed patches; only seven expected files differ.",
+    "R37 root lib aliases and handler declarations remain identical.",
+    "Collector native and token transfer wrappers are source-identical, including zero guards, clone order and fixed outer token signer array.",
+    "Collector split is accepted source01, not neutral raw-System control. AdminCto caller is unchanged.",
+    "Native executor is accepted source01, not public visibility control; both real callers and borrowed plan retained.",
+    "SharingConfig key seeds are backed by preserved creator==sharing_config.key() constraints in both context types.",
+    "Moved distribution event fields and public facade alias preserve both V1/V2 consumers.",
+    "Holder ATA/native/source-info patches compose exactly; holder seeds and other guards remain R37 except these scoped statements.",
+    "IDL matches sealed combined seed+clone source, retaining all R37 account/header gates and typed TransferWithSeed.",
+    "Scheduler file matches the one-guard-move patch exactly.",
+    "Root-quote prototype is absent from draft; R37 nested_create is unchanged."
+  ],
+  "limits": [
+    "This is source composition review, not proof of combined compiled window counts or runtime behavior.",
+    "Snapshot precedes independent root-error/holder additions not named in this draft plan; those need their own composition check.",
+    "Native executor and collector bodies remain nonexact in their sealed reports; no exactness is claimed here."
+  ],
+  "compiler_launched": false,
+  "source_written": false
+}

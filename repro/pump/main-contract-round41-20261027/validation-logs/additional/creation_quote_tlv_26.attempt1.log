@@ -1,0 +1,27 @@
+{"case": "valid-pointer", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "padding-82", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case": "padding-123", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case": "padding-164", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case": "duplicate-1", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case": "duplicate-4", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case": "duplicate-6", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case": "duplicate-12", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case": "duplicate-14", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case": "duplicate-16", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case": "duplicate-18", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case": "duplicate-19", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case": "duplicate-25", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case": "duplicate-26", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case": "unique-18-19", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "unique-4-12", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "unique-1-18", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "length-166", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case": "length-167", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "length-168", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case": "length-169", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case": "partial-tail-00", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "partial-tail-01", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "partial-tail-7f", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "partial-tail-ff", "original_error": null, "candidate_error": null, "diff": []}
+{"case": "unknown-duplicate", "original_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "candidate_error": "TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6063))))", "diff": []}
+{"case_count": 26, "mismatches": []}

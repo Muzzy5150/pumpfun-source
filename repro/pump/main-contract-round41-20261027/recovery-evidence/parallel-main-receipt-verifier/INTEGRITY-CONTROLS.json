@@ -1,0 +1,71 @@
+{
+  "status": "passed",
+  "controls": [
+    {
+      "name": "positive",
+      "accepted": true,
+      "findings": []
+    },
+    {
+      "name": "missing_bytes",
+      "accepted": false,
+      "findings": [
+        {
+          "case": "full/fixture/cases/0/original",
+          "kind": "missing_transaction_bytes"
+        }
+      ]
+    },
+    {
+      "name": "wrong_tx_hash",
+      "accepted": false,
+      "findings": [
+        {
+          "case": "full/fixture/cases/0/candidate",
+          "kind": "invalid_or_unattributed_transaction",
+          "error": "Recorded transaction hash differs"
+        }
+      ]
+    },
+    {
+      "name": "wrong_attribution",
+      "accepted": false,
+      "findings": [
+        {
+          "case": "full/fixture/cases/0/candidate",
+          "kind": "invalid_or_unattributed_transaction",
+          "error": "Recorded attribution differs from actual bytes"
+        }
+      ]
+    },
+    {
+      "name": "invalid_signature",
+      "accepted": false,
+      "findings": [
+        {
+          "case": "full/fixture/cases/0/candidate",
+          "kind": "invalid_or_unattributed_transaction",
+          "error": "Invalid cryptographic signature"
+        }
+      ]
+    },
+    {
+      "name": "positive_substitution",
+      "accepted": true,
+      "findings": []
+    },
+    {
+      "name": "altered_old_field",
+      "accepted": false,
+      "error": "('Substitution changes pre-existing result fields', 'full', 'fixture', '/cases/0', 'original')"
+    },
+    {
+      "name": "altered_substitution_hash",
+      "accepted": false,
+      "error": ""
+    }
+  ],
+  "source_receipt": "work/parallel-main-receipt-capture/run02/full.volume.json.gz",
+  "source_sha256": "9520e0c57b0fe4674933595d1c3cba3838387e8f435c8c736039c78a4679eabb",
+  "transactions_constructed_or_executed": 0
+}

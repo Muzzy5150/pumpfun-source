@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "candidate_sha256": "fa408e7634217422b3b5d88b05979e885c61c2f07b5011c9227fdaea879bf6ed",
+  "unstripped_sha256": "1ca40b5f29542f5e4f99d201fecf971ecfd4eada974f205238f190dc2c57f20c",
+  "source_changed_files": [
+    "src/volume_sync.rs"
+  ],
+  "normalized_and_raw_retention": {
+    "baseline": "work/parallel-main-pr402-review/inventory01.json",
+    "baseline_sha256": "1732ad38ae7316d98cd8147fc56de25a97620194182bd4df7409339165546f05",
+    "new_sha256": "ef690c09f6db266b7c9a3e5dfaeef7dc443ab05a23e073a9f9c0afacd8d73347",
+    "baseline_comparison": "Both inventories are plain-link SBPF with the same qualified external dependency cache. R40 packaged text ordering has a separate raw identity set.",
+    "delta": {
+      "normalized_matches": {
+        "before": 816,
+        "after": 816,
+        "gains": [],
+        "losses": []
+      },
+      "raw_match": {
+        "before": 165,
+        "after": 165,
+        "gains": [],
+        "losses": []
+      }
+    },
+    "counts": {
+      "total": 1035,
+      "raw": 165,
+      "normalized": 816,
+      "unmatched": 219
+    },
+    "candidate_sha256": "fa408e7634217422b3b5d88b05979e885c61c2f07b5011c9227fdaea879bf6ed",
+    "unstripped_sha256": "1ca40b5f29542f5e4f99d201fecf971ecfd4eada974f205238f190dc2c57f20c",
+    "status": "passed"
+  },
+  "cases": 341,
+  "suites": 1,
+  "counts": {
+    "success_no_change": 223,
+    "error": 53,
+    "success_event": 65
+  },
+  "ordered_raw_logs_equal": 341,
+  "ordinary_log_normalization": [
+    "Remove compute-unit lines only.",
+    "Replace only source line/column coordinates; preserve filenames and all other text and order."
+  ],
+  "same_signed_transaction_bytes": 341,
+  "source_unchanged": true,
+  "full_elf_identity": false,
+  "scope": "One compiled source-only volume-sync notice restoration on frozen R40; all existing volume-sync cases rerun in fresh VM instances with qualified captured loader."
+}

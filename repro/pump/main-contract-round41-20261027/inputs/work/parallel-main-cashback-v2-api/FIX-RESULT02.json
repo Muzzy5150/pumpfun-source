@@ -1,0 +1,66 @@
+{
+  "status": "passed_combined_cashback_fix",
+  "candidate_sha256": "4d2d7b80168667d89e96e517ec07fb8081fce520300e27ce734b786df374af4c",
+  "unstripped_sha256": "8a54cb69f06151a028fb9fd1c6d18858ed80179c119609abf89bcbd43f735909",
+  "source_file": "work/parallel-main-cashback-v2-api/source03/src/token_incentives/claim_token_incentives.rs",
+  "source_sha256": "23cfb84b5d1dda8acd6521e3034732e0d0079c640155a8f2460a7f16754910b2",
+  "patch_sha256": "3cb7ccc2b7e858a6e5acfc99c15674f98a561e26709e4c0c337d72b4381b06b1",
+  "counts": {
+    "total": 1035,
+    "raw": 165,
+    "normalized": 816,
+    "unmatched": 219
+  },
+  "normalized_gains": [],
+  "normalized_losses": [],
+  "raw_gains": [],
+  "raw_losses": [],
+  "handlers": [
+    {
+      "original": "0x76a28",
+      "original_bytes": 3864,
+      "candidate_start": "0x296b8",
+      "candidate_bytes": 4472,
+      "normalized_equal": false
+    },
+    {
+      "original": "0x77940",
+      "original_bytes": 8832,
+      "candidate_start": "0x2a830",
+      "candidate_bytes": 8760,
+      "normalized_equal": false
+    }
+  ],
+  "runtime": {
+    "paired_rows": 722,
+    "verified_result_objects": 1444,
+    "fully_backed_pairs": 722,
+    "distinct_signed_transactions": 86,
+    "distinct_transaction_pairs": 86
+  },
+  "case_count": 722,
+  "business_logs": {
+    "prior_V2_missing_notices_fixed": 31,
+    "prior_V1_missing_notices_fixed": 3,
+    "remaining_business_message_mismatches": 0,
+    "source_file_only_mismatches": 13,
+    "ordinary_log_normalization": "Only compute lines and source coordinates; source file names retained"
+  },
+  "new_case_count": 1,
+  "controls": "V1/V2 zero variants are strengthened existing evidence and add no distinct inputs",
+  "input_hashes": {
+    "work/parallel-main-cashback-v2-api/build-fix02/build-comparison.json": "294767405ffdb13f0223c1268e50e1cf6c988bdd0942a0cd23f716796f721f73",
+    "work/parallel-main-cashback-v2-api/build-fix02/normalized-inventory.json": "a170e59d79b414535cfd0cb0ee258f1bfaeb20e1714767053c14f33cb5aaff1b",
+    "work/parallel-main-cashback-v2-api/fix-targeted02/state.json": "6d33ee84d894777a24308f5bc324e6042d21b9705924609cb273ad1243ac2a3b",
+    "work/parallel-main-cashback-v2-api/FIX-RETENTION02.json": "356c3a095f0fd68b4d450abd718c15c2d590017f39c80ff46ea262a1c01356ef",
+    "work/parallel-main-cashback-v2-api/FIX-RAW-LOGS02.json": "d8493c1fd29e960120968c1b6dcab32da45f0af0693c7fcdf0f94c8425708d1d",
+    "work/parallel-main-cashback-v2-api/DEDUP01.json": "fae66701f1fe8533fc7528dcaa660eae3f0c5dc0b0c81762b6dcd78f38e9cb96",
+    "work/parallel-main-cashback-v2-api/V1-CFG-PROOF.json": "e6c7f8c5586a759c9a15cb91314f5832f45d914070de508233a454956b947763",
+    "work/parallel-main-cashback-v2-api/CLI-MANIFEST.json": "3120e892c100a662bd0430daa25d8272c07196c16c09447162747519093eeefc"
+  },
+  "limits": [
+    "Combined source is only private and targeted-validated; full18110-case integration and independent reproductions remain.",
+    "No event ownership/explicit-return experiment or additional Clock/AccountInfo changes included.",
+    "Whole-ELF identity remains unproved."
+  ]
+}

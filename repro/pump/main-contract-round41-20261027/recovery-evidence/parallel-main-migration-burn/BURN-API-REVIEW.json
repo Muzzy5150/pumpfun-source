@@ -1,0 +1,55 @@
+{
+  "status": "verified narrow main-Pump Burn API delivery; not whole-ELF identity",
+  "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-migration-burn/source01",
+  "source_files": {
+    "migrate.rs": "54bddfbeba8ff18286b12a37b29399ce734eeea782147659ac6e2e9a2bb926d7",
+    "migrate_v2.rs": "47967ba02bf56dfcefc514d3194ab17924c89e0bec937a4a6dd6ccdde63668f1"
+  },
+  "candidate_sha256": "232c2b927b63d08bd8e75b5c8e47c3426da8c47d2efc3d6d18a8446699db1543",
+  "unstripped_sha256": "e7aa7c3db4659f06165c24f2bf3deb1a369336f4d8bd800297148f2e72e8bdb5",
+  "counts_before": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 708,
+    "unmatched": 327
+  },
+  "counts_after": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 710,
+    "unmatched": 325
+  },
+  "deltas": {
+    "normalized_matches": {
+      "gains": [
+        "0x180cc0",
+        "0x192c20"
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "runtime": {
+    "case_count": 1172,
+    "diagnostic_cases": 1172,
+    "errors": [],
+    "mismatches": [],
+    "suite_count": 6
+  },
+  "all_nine_leaves_retained": true,
+  "all_six_creation_context_bodies_retained": true,
+  "evidence_sha256": {
+    "PLAN01.json": "612130949a6c43d00149f586d3f1cf81b2818bfaa15e3aa2e9c4f49b1fdf5311",
+    "MATCH-DELTA01.json": "a7f8285f5b06b1b5f88c9dc6cc58b88864be72a6bc56707bcb63175a96580de6",
+    "burn-api-from-round21.patch": "189fc679f33d76e7832f4d1e8e16fad6b31c8449eaeacb49a148752b775e8483",
+    "runtime01/summary.json": "8e1b60796ed484eb9709c01bfcf0c0623cdc8448cfd746c770771b82c522dacc",
+    "build01/build-comparison.json": "03a408a8d4553fafb4c91783c78bf2543fe54b3c2f4e26961d3dc0f4c262c494",
+    "build01/normalized-inventory.json": "444897eff13b6c614ca71689d91f1d5a050f69a2b9d331baa1106793580f7968",
+    "build01/burn-wrapper-comparison.json": "0c98c0e573493d541677056f8107a202ac394d19f433f9c3c60b82938bbb47e6",
+    "build01/burn-instruction-comparison.json": "5a08c843f2bd22a9231371eac5234a358e2a2f5eb5faf4dce054b177aab8633b"
+  },
+  "bounded_limit": "Original decode-and-burn caller helpers remain unmatched. This patch preserves the existing raw amount read; further typed LP account decoding is isolated as source02."
+}

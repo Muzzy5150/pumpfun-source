@@ -1,0 +1,32 @@
+{
+  "only_changed_source_file": [
+    "Cargo.lock"
+  ],
+  "before": {
+    "name": "solana-program-entrypoint",
+    "version": "2.3.0",
+    "source": "registry+https://github.com/rust-lang/crates.io-index",
+    "checksum": "32ce041b1a0ed275290a5008ee1a4a6c48f5054c8a3d78d313c08958a06aedbd",
+    "dependencies": [
+      "solana-account-info",
+      "solana-msg",
+      "solana-program-error",
+      "solana-pubkey"
+    ]
+  },
+  "after": {
+    "name": "solana-program-entrypoint",
+    "version": "2.2.1",
+    "source": "registry+https://github.com/rust-lang/crates.io-index",
+    "checksum": "473ffe73c68d93e9f2aa726ad2985fe52760052709aaab188100a42c618060ec",
+    "dependencies": [
+      "solana-account-info",
+      "solana-msg",
+      "solana-program-error",
+      "solana-pubkey"
+    ]
+  },
+  "other_package_records_unchanged": 254,
+  "old_lock_sha256": "cc8b86f4aec8fb963bc55d7ad149f474550323b76b3d62074f633dba60782ec0",
+  "new_lock_sha256": "8307bd5e79789b5190291ea014c2f5556e23fb9829fa2f68a7ede581235eae98"
+}

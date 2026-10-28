@@ -1,0 +1,21 @@
+{
+ "sections": 940,
+ "moved_sections": 936,
+ "text_bytes": 1699328,
+ "entry": [
+  1365184,
+  1038128
+ ],
+ "local_branches": 20904,
+ "direct_calls": 10714,
+ "lddw_other": 7762,
+ "lddw_text": 116,
+ "data_sections_checked": 4,
+ "data_text_pointers": 158,
+ "dynsym_entries": 19,
+ "relocations": 5812,
+ "relocation_sites_in_text": 5172,
+ "baseline_sha256": "578bf7ddf493e21a17ff83c3acf6ee8bd8f4b6aa39b739708dd06608c47c35fd",
+ "reordered_sha256": "2e2e5dbd8f72cc86c2801c911ab9844ee6582b8576ed1c251a419d171de19157",
+ "scope": "Prove a reordered build is the default-layout build with only its functions permuted."
+}

@@ -1,0 +1,98 @@
+{
+  "status": "validated frozen delivery",
+  "base": "work/parallel-main-integration/round20-source/programs/pump",
+  "source": "work/parallel-main-buy-native-recipient/source02",
+  "files": {
+    "buy_v2.rs": "3cdc8d02be26be1f43b889b673b12b236d3fabc29a9567d009a9043079b8b6ea",
+    "v2_recipient_payments.rs": "a9e882febfa403637b973e2bf8027ce1d5db54ba32343574e7c82b56c028d6ee"
+  },
+  "candidate_sha256": "06e69f76a8bfe259d5fc4133088f615978209dcc99d8c5ea361d711703861b93",
+  "unstripped_sha256": "cd738709a749a566825fd4c3fe1bee0597d607b1ed697528abfab156792f1bea",
+  "case_count": 1558,
+  "strict_case_count": 1556,
+  "paired_captured_loads": 3116,
+  "new_cases": 64,
+  "positive_before_counterexamples": 14,
+  "inventory": {
+    "total": 1035,
+    "raw": 120,
+    "normalized": 705,
+    "unmatched": 330
+  },
+  "normalized_gains": [],
+  "normalized_losses": [],
+  "patch": "payment-order.patch",
+  "suites": [
+    {
+      "suite": "regression",
+      "cases": 882,
+      "strict_cases": 880,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "order",
+      "cases": 130,
+      "strict_cases": 130,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "sell-expanded",
+      "cases": 32,
+      "strict_cases": 32,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "sell-atas",
+      "cases": 25,
+      "strict_cases": 25,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "sell-prepare",
+      "cases": 12,
+      "strict_cases": 12,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "recipients",
+      "cases": 144,
+      "strict_cases": 144,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "boundaries",
+      "cases": 206,
+      "strict_cases": 206,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "crossing",
+      "cases": 36,
+      "strict_cases": 36,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "waiver",
+      "cases": 27,
+      "strict_cases": 27,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    },
+    {
+      "suite": "payment",
+      "cases": 64,
+      "strict_cases": 64,
+      "mismatches": 0,
+      "strict_mismatches": 0
+    }
+  ],
+  "scope": "Native/token V2 buys: creator and curve payments precede buyback conversion/subtraction expect panics, then fee/buyback payments and event construction. Panic payloads preserved; source coordinates remain genuine current Rust locations."
+}

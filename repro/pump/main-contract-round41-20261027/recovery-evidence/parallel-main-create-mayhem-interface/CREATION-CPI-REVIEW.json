@@ -1,0 +1,82 @@
+{
+  "status": "verified main-owned creation CPI interface delivery; not whole-ELF identity",
+  "scope": "Only main Pump create_v2.rs. Client instruction serialization/account binding only; no companion program implementation or binary changes; no dependency changes.",
+  "source": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-create-mayhem-interface/source01",
+  "create_v2_sha256": "76ca5a9f00aa63ab0dd5e125c4f61bced7fb8ca076ab409437c9c2c39fc43bcc",
+  "candidate_sha256": "b000132fc30084aa33ff937195f32bc361c789afe6a6adbb00261056af37af51",
+  "unstripped_sha256": "48d627772f5a97533210a3201bf5a4fb39af07aa72d293d3d3675f2558830bd7",
+  "counts_before": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 711,
+    "unmatched": 324
+  },
+  "counts_after": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 714,
+    "unmatched": 321
+  },
+  "deltas": {
+    "normalized_matches": {
+      "gains": [
+        "0x118b50",
+        "0x11a4f8",
+        "0x11ad10"
+      ],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "new_windows": [
+    {
+      "start": "0x118b50",
+      "bytes": 4352,
+      "identity": "CPI function"
+    },
+    {
+      "start": "0x11a4f8",
+      "bytes": 2072,
+      "identity": "ToAccountMetas"
+    },
+    {
+      "start": "0x11ad10",
+      "bytes": 2632,
+      "identity": "ToAccountInfos"
+    }
+  ],
+  "internal_call_closure": {
+    "calls": 50,
+    "all_targets_match": true
+  },
+  "retained": "all prior normalized/raw windows, all6 creation contexts, all9 historical decoders",
+  "outer_setup_residual": {
+    "original_start": "0x8a530",
+    "original_bytes": 4840,
+    "candidate_bytes": 4776,
+    "not_promoted_as_exact": true
+  },
+  "runtime": {
+    "cases": 517,
+    "diagnostic_cases": 515,
+    "suite_count": 4,
+    "errors": [],
+    "mismatches": []
+  },
+  "evidence_sha256": {
+    "PLAN01.json": "deba9969e364f9328801a7bdb57c3b6676babaee188d7ced9318d50d3e5c606a",
+    "manifest.json": "53737ffe4203cec30698521e413abbe88f67c7599c4d2ca9b1cd4292d6980256",
+    "MATCH-DELTA01.json": "75187ace4684bf6c3079d1d0e9da7e59b9b7a19c2bfe81e997575477cfca9725",
+    "FULL-MATCH-SETS01.json": "81731e96006d02ea8e1c0de417b30f4b58a8408f65c576f192586b47f6b3c463",
+    "CALL-CLOSURE01.json": "cf73a35271ac0d86d725f9f569550cf6137f12a22bbaeb2ee64f16622b18492a",
+    "runtime01/summary.json": "30791367d93046cc4a391787dff1e21f51ba103dfebfbe6b7e5a37ed8b150efe",
+    "build01/build-comparison.json": "1ab3f1540e792bc5c9b6740ab777c3fae821998ed2ad977c51533d7322cce7bf",
+    "build01/cpi-comparison.json": "77f2a06bae872017c0ff85d812e414863905be3f5bb6d49a52c78ee6031b9f78",
+    "build01/metas-comparison.json": "7ba9f264e9d9494daf4881035c09dcf64bdc9320b637f26b625b162d16a87768",
+    "build01/infos-comparison.json": "bbb27fd86ec27d78d10596bd0a0970ef6eca8477405ffbe4c6c9611d91dd2275",
+    "creation-cpi-interface-from-round22.patch": "19561a58cd47d4b69278250bb56aeddc05c8d60aaa7a297c20cb838e5d0ab671"
+  }
+}

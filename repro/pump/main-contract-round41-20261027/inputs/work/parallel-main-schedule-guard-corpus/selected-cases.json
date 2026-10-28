@@ -1,0 +1,70 @@
+{
+  "scope": "Unique scheduler witnesses versus every paired original row in frozen R37. Includes synthetic reversed stored range; historical reachability unproved.",
+  "definition": "Decoded signed transaction SHA256 plus canonical address-keyed non-null original before state (owner,lamports,data and optional executable/rent_epoch). A conflicting known field proves distinction. Same transaction with absent or compatible partial prestate remains ambiguous, never assumed unique.",
+  "cases": [
+    {
+      "case": {
+        "name": "reversed_range_before_start",
+        "now": 10,
+        "old_start": 20,
+        "old_end": 5,
+        "old_day": 1,
+        "start": 0,
+        "end": 0,
+        "day": 1,
+        "index": 0,
+        "supply": 1
+      },
+      "transaction_sha256": "206b817bfa02c0b38d2c35c1bbe6ec540ae39560ef13205a41e823048841eee2",
+      "prestate_sha256": "bd3c01f72b4a6b4ee12766ae5acbfb5af975a4e6f89cad7ad1823b446b0ee16c"
+    },
+    {
+      "case": {
+        "name": "valid_range_before_start_control",
+        "now": 10,
+        "old_start": 20,
+        "old_end": 49,
+        "old_day": 1,
+        "start": 0,
+        "end": 0,
+        "day": 1,
+        "index": 0,
+        "supply": 1
+      },
+      "transaction_sha256": "206b817bfa02c0b38d2c35c1bbe6ec540ae39560ef13205a41e823048841eee2",
+      "prestate_sha256": "975722ecee521497844a448d15d2b7ad0586702281548b884aa6303fc094f55e"
+    },
+    {
+      "case": {
+        "name": "reversed_range_zero_supply_control",
+        "now": 10,
+        "old_start": 20,
+        "old_end": 5,
+        "old_day": 1,
+        "start": 0,
+        "end": 0,
+        "day": 1,
+        "index": 0,
+        "supply": 0
+      },
+      "transaction_sha256": "2a857ec4b90d4f3a0e0ab9caa3879822f45dd3e6e37db9795672c5a1a5f37b4e",
+      "prestate_sha256": "bd3c01f72b4a6b4ee12766ae5acbfb5af975a4e6f89cad7ad1823b446b0ee16c"
+    },
+    {
+      "case": {
+        "name": "expired_active_range_control",
+        "now": 10,
+        "old_start": 0,
+        "old_end": 5,
+        "old_day": 1,
+        "start": 0,
+        "end": 0,
+        "day": 1,
+        "index": 0,
+        "supply": 1
+      },
+      "transaction_sha256": "206b817bfa02c0b38d2c35c1bbe6ec540ae39560ef13205a41e823048841eee2",
+      "prestate_sha256": "3da4ef9cd1ccb860129d5738c9331266570ef5e82a2a5b0c77c54a3ff128e0ee"
+    }
+  ]
+}

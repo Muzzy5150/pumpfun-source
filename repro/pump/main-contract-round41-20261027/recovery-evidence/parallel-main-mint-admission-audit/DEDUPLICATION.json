@@ -1,0 +1,424 @@
+{
+  "scope": "Exact effective fixture-argument deduplication against public297 CreateV2/quote cases, accepted26 TLV cases, then within combined107+32 inputs. Names removed; empty optional collections, default false quote_token22 / true quote_whitelisted normalized. This does not claim non-overlap against every other distinct harness/context in the global corpus.",
+  "groups": {
+    "boundary107": {
+      "raw_count": 107,
+      "new_count": 34,
+      "overlap_count": 73
+    },
+    "gate32": {
+      "raw_count": 32,
+      "new_count": 24,
+      "overlap_count": 8
+    }
+  },
+  "kept_count": 58,
+  "overlaps": [
+    {
+      "group": "boundary107",
+      "case": "transfer-fee-size-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "transfer-fee-size-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "transfer-fee-size-32",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "transfer-fee-size-107",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "transfer-fee-size-108",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "transfer-fee-size-109",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "default-state-0-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "default-state-1-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "default-state-1-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "default-state-1-2",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "transfer-hook-size-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "transfer-hook-size-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "transfer-hook-size-32",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "transfer-hook-size-63",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "transfer-hook-size-64",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "transfer-hook-size-65",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-4-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-4-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-4-64",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-12-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-12-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-12-64",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-16-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-16-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-16-64",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-18-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-18-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-18-64",
+      "same_effective_input_as": "accepted_quote_tlv26"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-19-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-19-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-19-64",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-25-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-25-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-25-64",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-26-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-26-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "allowed-26-64",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-2-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-2-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-3-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-3-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-5-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-5-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-7-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-7-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-8-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-8-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-9-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-9-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-10-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-10-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-11-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-11-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-13-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-13-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-15-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-15-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-17-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-17-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-20-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-20-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-21-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-21-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-22-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-22-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-23-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-23-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-24-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-24-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-27-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-27-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-28-0",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "boundary107",
+      "case": "rejected-28-1",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "gate32",
+      "case": "False-False-base",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "gate32",
+      "case": "False-True-base",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "gate32",
+      "case": "False-True-metadata",
+      "same_effective_input_as": "accepted_quote_tlv26"
+    },
+    {
+      "group": "gate32",
+      "case": "False-True-group-pointer",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "gate32",
+      "case": "False-True-member-pointer",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "gate32",
+      "case": "False-True-short-fee",
+      "same_effective_input_as": "public_create_quote"
+    },
+    {
+      "group": "gate32",
+      "case": "False-True-padding",
+      "same_effective_input_as": "accepted_quote_tlv26"
+    },
+    {
+      "group": "gate32",
+      "case": "False-True-duplicate",
+      "same_effective_input_as": "accepted_quote_tlv26"
+    }
+  ],
+  "case_sha256": "1c917b2344cbc349a28f55607f6602318f3e53d28f36a3385597dc710c81ad9c"
+}

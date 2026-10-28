@@ -1,0 +1,49 @@
+{
+  "scope": "Read-only observation from existing final build timestamps and frozen implementation call paths; no timing benchmark or code changes.",
+  "builds": [
+    {
+      "mode": "default",
+      "shell_log_created_utc": "2026-10-27T15:37:24.585076+00:00",
+      "comparison_written_utc": "2026-10-27T15:54:47.598415+00:00",
+      "shell_start_to_final_report_seconds": 1043.0133385658264,
+      "last_compiler_log_to_final_report_seconds": 9.397716522216797,
+      "attempt_first_created_to_report_seconds": 830.5996315479279
+    },
+    {
+      "mode": "text",
+      "shell_log_created_utc": "2026-10-27T15:37:24.575688+00:00",
+      "comparison_written_utc": "2026-10-27T15:56:04.855943+00:00",
+      "shell_start_to_final_report_seconds": 1120.2802548408508,
+      "last_compiler_log_to_final_report_seconds": 15.535330772399902,
+      "attempt_first_created_to_report_seconds": 209.74523973464966
+    },
+    {
+      "mode": "data",
+      "shell_log_created_utc": "2026-10-27T15:37:24.599337+00:00",
+      "comparison_written_utc": "2026-10-27T15:57:26.599304+00:00",
+      "shell_start_to_final_report_seconds": 1201.999967098236,
+      "last_compiler_log_to_final_report_seconds": 68.54174542427063,
+      "attempt_first_created_to_report_seconds": 198.66450381278992
+    }
+  ],
+  "sdk_bytes_per_pass": {
+    "cache_context_files": 1828,
+    "cache_context_bytes": 1081476744,
+    "full_inventory_regular_files": 2773,
+    "full_inventory_bytes": 1286106162
+  },
+  "static_success_path_repetitions": {
+    "load_certificate_calls": 5,
+    "derive_payload_per_load": 1,
+    "baseline_context_sdk_hash_passes": 5,
+    "baseline_full_sdk_inventory_passes": 5,
+    "request_native_sdk_inventory_passes": 1,
+    "separate_linker_process_loads": 2
+  },
+  "qualification": [
+    "Elapsed values are filesystem timestamp intervals, not instrumented CPU times. Shell log birthtime brackets invocation; final report mtime brackets successful acceptance.",
+    "The host reported load averages above180 during these runs. Native/text/data durations are not an isolated comparative benchmark.",
+    "Call counts are derived from the frozen builder/configure/linker/final path. Per-call durations were not logged.",
+    "Existing target-profile preparation/final verification adds its own SDK passes outside these certificate counts."
+  ]
+}

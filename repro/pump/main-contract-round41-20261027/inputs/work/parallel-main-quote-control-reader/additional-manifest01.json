@@ -1,0 +1,21 @@
+{
+  "scope": "34 unique QuoteControl raw-reader inputs, deduplicated against original signed inputs in accepted R34. Existing create/quote suites are retained in the parent combined corpus.",
+  "counts": {
+    "full": 0,
+    "additional": 34
+  },
+  "definition_sha256": {
+    "work/parallel-main-quote-control-reader/probe-incremental.py": "1c5b3d035f578b3231f1599265306cec9a846817cd4c82c26b738839504b36df",
+    "work/parallel-main-quote-control-reader/probe-reader.py": "263a16e5a73784a5daa8683d8c595eaee0c63bdf26aa13387f28114777e426f5",
+    "work/parallel-main-quote-control-reader/DEDUP01.json": "3e4cab06ed6ffdece5a1567106ce9d066eb23eec2f7f9e2a280747ded999d1b9"
+  },
+  "suites": [
+    {
+      "group": "additional",
+      "name": "quote_control_reader",
+      "script": "work/parallel-main-quote-control-reader/probe-incremental.py",
+      "cases": 34,
+      "args": []
+    }
+  ]
+}

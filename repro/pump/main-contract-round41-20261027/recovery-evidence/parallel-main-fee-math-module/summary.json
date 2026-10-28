@@ -1,0 +1,124 @@
+{
+  "status": "validated frozen source-fidelity option; not a new complete window",
+  "source": "work/parallel-main-fee-math-module/source01",
+  "base": "work/parallel-main-sell-v2-buyback-accounting/source01",
+  "files": {
+    "src/legacy_sell.rs": "317b4606f04a288d517d67ef135aeff8270519fd7b01b7142638414bc8eb374e",
+    "src/fee_cpi.rs": "db77bbded616a63571686a05487fa12776fcef9bae55d4da74743944ac0ce404",
+    "src/util/fee.rs": "43537cceaef50f0052c1e868d686db2fa48b6dfe8b2b6de8fe6474f5eade6e7a"
+  },
+  "patch": "work/parallel-main-fee-math-module/math-module.patch",
+  "candidate_sha256": "91c8f67213c70c50112615c28b39761186b35355440ddc0b692e5d9a27e2f1c0",
+  "unstripped_sha256": "83f0fbaef467510263482fb4c109a4d96fd745620be9a131e695fda1f215eb80",
+  "source_build_binding": true,
+  "inventory": {
+    "total": 1035,
+    "raw": 123,
+    "normalized": 709,
+    "unmatched": 326
+  },
+  "normalized_gains": [],
+  "normalized_losses": [],
+  "helpers": {
+    "0x88908": {
+      "bytes": 1672,
+      "remaining_normalized_slots": 3,
+      "remaining_differences": "source line numbers only: original15/17/19 vs candidate12/14/16",
+      "direct_callees": [
+        {
+          "offset": 248,
+          "original": "0x1b4088",
+          "candidate": "0x198f30",
+          "bytes": 72,
+          "normalized_equal": true
+        },
+        {
+          "offset": 328,
+          "original": "0x157380",
+          "candidate": "0x14b1b0",
+          "bytes": 26896,
+          "normalized_equal": true
+        },
+        {
+          "offset": 472,
+          "original": "0x15de88",
+          "candidate": "0x151cb8",
+          "bytes": 3616,
+          "normalized_equal": true
+        },
+        {
+          "offset": 688,
+          "original": "0x19bb30",
+          "candidate": "0x17de70",
+          "bytes": 136,
+          "normalized_equal": true
+        },
+        {
+          "offset": 752,
+          "original": "0x157380",
+          "candidate": "0x14b1b0",
+          "bytes": 26896,
+          "normalized_equal": true
+        },
+        {
+          "offset": 896,
+          "original": "0x15de88",
+          "candidate": "0x151cb8",
+          "bytes": 3616,
+          "normalized_equal": true
+        },
+        {
+          "offset": 952,
+          "original": "0x157380",
+          "candidate": "0x14b1b0",
+          "bytes": 26896,
+          "normalized_equal": true
+        },
+        {
+          "offset": 1096,
+          "original": "0x15de88",
+          "candidate": "0x151cb8",
+          "bytes": 3616,
+          "normalized_equal": true
+        },
+        {
+          "offset": 1184,
+          "original": "0x1ace18",
+          "candidate": "0x190148",
+          "bytes": 232,
+          "normalized_equal": true
+        },
+        {
+          "offset": 1384,
+          "original": "0x19bb30",
+          "candidate": "0x17de70",
+          "bytes": 136,
+          "normalized_equal": true
+        },
+        {
+          "offset": 1640,
+          "original": "0x19bb30",
+          "candidate": "0x17de70",
+          "bytes": 136,
+          "normalized_equal": true
+        }
+      ]
+    },
+    "0x88f90": {
+      "bytes": 712,
+      "remaining_normalized_slots": 1,
+      "remaining_differences": "source line number only: original34 vs candidate5"
+    }
+  },
+  "source_path": "programs/pump/src/util/fee.rs",
+  "source_path_bytes_and_length_match": true,
+  "case_count": 1688,
+  "strict_case_count": 1686,
+  "paired_captured_loads": 3376,
+  "verified_transaction_signatures": 3376,
+  "runtime_report": "work/parallel-main-fee-math-module/RUNTIME-RESULT.json",
+  "fee_cpi_visibility": "unchanged from accepted source; pub(crate)",
+  "padding_or_fabricated_coordinates": false,
+  "full_elf_identity": false,
+  "caveat": "Normal copied formatting retained; selectedSDKdoesnotshiprustfmt. No line tuning to reproduce unknown original layout."
+}

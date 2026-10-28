@@ -1,0 +1,151 @@
+#!/usr/bin/env python3
+"""Run the published 44-suite bounded Pump corpus against one compiled ELF."""
+import argparse
+import gzip
+import hashlib
+import json
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+ROOT = next(p for p in Path(__file__).resolve().parents if (p / 'evidence/original/pump/deployed.so').is_file())
+SUITES = [('volume', 'pump_validate_volume.py'), ('administration', 'pump_validate_admin.py'), ('authority', 'pump_validate_authority.py'), ('configuration', 'pump_validate_config_admin.py'), ('buy', 'pump_validate_buy.py'), ('sell', 'pump_validate_sell.py'), ('quote', 'pump_validate_quote.py'), ('creator_collection', 'pump_creator_collect_differential.py'), ('creator_distribution', 'pump_creator_distribution_differential.py'), ('minimum_distribution', 'pump_minimum_fee_differential.py'), ('creator_collection_v2', 'pump_creator_collect_v2_differential.py'), ('extension', 'pump_extend_differential.py'), ('volume_sync', 'pump_volume_sync_differential.py'), ('fee_sweeps', 'pump_fee_sweep_differential.py'), ('creator_migration', 'pump_creator_migration_differential.py'), ('admin_cto', 'pump_admin_cto_differential.py'), ('set_params', 'pump_set_params_differential.py'), ('set_creator', 'pump_set_creator_differential.py'), ('idl_authority', 'pump_idl_authority_differential.py'), ('legacy_create', 'pump_create_differential.py'), ('exact_quote_v3', 'pump_exact_quote_differential.py'), ('create_v2', 'pump_create_quote_differential.py'), ('legacy_sell', 'pump_legacy_sell_differential.py'), ('legacy_sell_configured_fee', 'pump_legacy_sell_configured_fee_differential.py'), ('sell_v2', 'pump_sell_v2_differential.py'), ('create_control', 'pump_create_control_differential.py'), ('migration', 'pump_migrate_differential.py'), ('v3_configured_fee', 'pump_v3_configured_fee_differential.py'), ('legacy_buy', 'pump_legacy_buy_differential.py'), ('buy_v2', 'pump_buy_v2_differential.py'), ('migrate_v2', 'pump_migrate_v2_differential.py'), ('cashback', 'pump_cashback_differential.py'), ('global_init', 'pump_global_init_differential.py'), ('holder_distribution', 'pump_holder_distribution_differential.py'), ('nested_create', 'pump_create_nested_differential.py'), ('quote_control', 'pump_quote_control_fresh_differential.py'), ('multi_hop_curve_partial', 'repro/pump/native-curve-partial-fortyeight/harness/pump_multi_hop_curve_differential.py')]
+EXPECTED_CASES = {'volume': 66, 'administration': 93, 'creator_collection_v2': 154, 'extension': 308, 'exact_quote_v3': 352, 'sell_v2': 206, 'legacy_buy': 284, 'migrate_v2': 827, 'global_init': 40, 'buy': 334, 'creator_collection': 119, 'creator_distribution': 298, 'admin_cto': 363, 'set_params': 169, 'legacy_create': 87, 'migration': 228, 'holder_distribution': 649, 'multi_hop_curve_partial': 56, 'authority': 59, 'configuration': 351, 'sell': 301, 'minimum_distribution': 181, 'creator_migration': 139, 'set_creator': 509, 'legacy_sell': 115, 'legacy_sell_configured_fee': 28, 'v3_configured_fee': 372, 'cashback': 283, 'quote': 130, 'volume_sync': 341, 'fee_sweeps': 504, 'idl_authority': 171, 'create_v2': 297, 'create_control': 85, 'buy_v2': 216, 'nested_create': 48, 'quote_control': 507}
+
+SUITES.append(('tokenkeg_two_curve', 'pump_tokenkeg_two_curve_differential.py'))
+EXPECTED_CASES['tokenkeg_two_curve'] = 20
+SUITES.append(('incentive_claim', 'pump_claim_boundary_differential.py'))
+EXPECTED_CASES['incentive_claim'] = 334
+SUITES.append(('virtual_reserve_sync', 'pump_virtual_reserve_differential.py'))
+EXPECTED_CASES['virtual_reserve_sync'] = 192
+SUITES.append(('claim_panic_diagnostics', 'pump_claim_panic_differential.py'))
+EXPECTED_CASES['claim_panic_diagnostics'] = 2
+SUITES.append(('incentive_schedule', 'pump_incentive_schedule_differential.py'))
+EXPECTED_CASES['incentive_schedule'] = 575
+
+SUITES.append(('earned_cashback', 'pump_earned_cashback_differential.py'))
+EXPECTED_CASES['earned_cashback'] = 61
+
+SUITES.append(('legacy_cashback', 'pump_legacy_cashback_differential.py'))
+EXPECTED_CASES['legacy_cashback'] = 14
+
+def validate_two_curve(result, candidate_sha, original_sha):
+    assert result['candidate_sha256'] == candidate_sha
+    assert result['provenance']['repository_inputs']['evidence/original/pump/deployed.so'] == original_sha
+    assert result['inputs_unchanged']
+    assert result['case_count'] == len(result['cases']) == 20
+    assert result['original_successes'] == 16 and result['original_pump_cpi_cases'] == 18
+    assert result['verified_outer_signatures'] == 40
+    assert all(row['candidate'] is not None and row['mismatches'] == [] for row in result['cases'])
+    return 20
+
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def has_digest(value, digest):
+    if isinstance(value, str): return value == digest
+    if isinstance(value, dict): return any(has_digest(v, digest) for v in value.values())
+    if isinstance(value, list): return any(has_digest(v, digest) for v in value)
+    return False
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--candidate', type=Path, required=True)
+    parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--source-directory', type=Path, required=True)
+    parser.add_argument('--build-comparison', type=Path, required=True)
+    parser.add_argument('--resume-from', type=Path)
+    args = parser.parse_args()
+    candidate = args.candidate.resolve()
+    original = ROOT / 'evidence/original/pump/deployed.so'
+    runner = Path(__file__).resolve()
+    candidate_sha, original_sha, runner_sha = map(sha, (candidate, original, runner))
+    build = json.loads(args.build_comparison.read_text())
+    assert build['returncode'] == 0 and build['source_unchanged']
+    assert build['comparison']['candidate_sha256'] == candidate_sha
+    recorded_source = build['source_sha256']
+    assert all(sha(ROOT / name) == digest for name, digest in recorded_source.items())
+    build_record_sha = sha(args.build_comparison)
+    suites, scripts, resumed = {}, {}, {}
+    assert len(SUITES) == len(EXPECTED_CASES) == len({name for name, _ in SUITES}) == 44
+    assert {name for name, _ in SUITES} == set(EXPECTED_CASES)
+    with tempfile.TemporaryDirectory(prefix='pump-differential-') as tmp:
+        for name, filename in SUITES:
+            script = ROOT / filename if filename.startswith('repro/') else ROOT / 'scripts' / filename
+            before = sha(script)
+            output = Path(tmp) / (name + '.json')
+            command = [sys.executable, str(script), '--candidate', str(candidate), '--output', str(output)]
+            source_text = script.read_text()
+            if "'--source-directory'" in source_text or '"--source-directory"' in source_text:
+                command += ['--source-directory', str(args.source_directory.resolve())]
+            previous = args.resume_from / (name + '.json.gz') if args.resume_from else None
+            reuse = False
+            if previous and previous.is_file():
+                prior_raw = previous.read_bytes()
+                prior = json.loads(gzip.decompress(prior_raw))
+                if has_digest(prior, before):
+                    output.write_bytes(prior_raw)
+                    resumed[name] = {'path': str(previous.resolve()), 'sha256': sha(previous), 'script_sha256': before}
+                    reuse = True
+            if not reuse:
+                subprocess.run(command, check=True, cwd=ROOT)
+            assert build_record_sha == sha(args.build_comparison)
+            assert all(sha(ROOT / key) == digest for key, digest in recorded_source.items())
+            assert before == sha(script), f'harness changed during execution: {filename}'
+            assert runner_sha == sha(runner), 'aggregate runner changed during execution'
+            assert candidate_sha == sha(candidate), 'candidate changed during execution'
+            assert original_sha == sha(original), 'original changed during execution'
+            raw = output.read_bytes()
+            result = json.loads(gzip.decompress(raw) if raw.startswith(b'\x1f\x8b') else raw)
+            if name == 'quote_control':
+                bound = result['bound_inputs_sha256']
+                assert bound[str(candidate.relative_to(ROOT))] == candidate_sha
+                assert bound[str(original.relative_to(ROOT))] == original_sha
+                count = result['cases']
+                assert count == len(result['results'])
+                assert all(row['matches'] and not row['different_fields'] for row in result['results'])
+            elif name == 'multi_hop_curve_partial':
+                assert result['candidate_sha256'] == candidate_sha
+                assert result['original_pump_sha256'] == original_sha
+                assert result['passed'] == result['case_count'] == 56
+                assert len(result['cases']) == 56
+                assert all(not row['mismatches'] for row in result['cases'])
+                count = result['case_count']
+            elif name == 'tokenkeg_two_curve':
+                count = validate_two_curve(result, candidate_sha, original_sha)
+            else:
+                assert result.get('original_sha256', result.get('provenance', {}).get(str(original))) == original_sha
+                assert result.get('candidate_sha256', result.get('provenance', {}).get(str(candidate))) == candidate_sha
+                count = result['case_count'] if 'case_count' in result else len(result['cases'])
+            assert count == EXPECTED_CASES[name], (name, count, EXPECTED_CASES[name])
+            assert not result.get('mismatches', result.get('failures', [])), name
+            result['case_count'] = count
+            suites[name] = result
+            scripts[filename] = before
+            retained = args.output.parent / (args.output.name + '.suites')
+            retained.mkdir(parents=True, exist_ok=True)
+            (retained / (name + '.json.gz')).write_bytes(
+                gzip.compress(json.dumps(result, separators=(',', ':')).encode(), mtime=0))
+    assert all(sha(Path(row['path'])) == row['sha256'] for row in resumed.values())
+    assert sum(s['case_count'] for s in suites.values()) == 10468
+    report = {
+        'scope': 'Published 44-suite bounded Pump differential corpus. Per-suite limits remain in receipts; not full source recovery or binary identity.',
+        'original_sha256': original_sha, 'candidate_sha256': candidate_sha,
+        'runner_sha256': runner_sha, 'script_sha256': scripts,
+        'build_comparison_sha256': build_record_sha,
+        'compiled_source_sha256': recorded_source,
+        'source_directory': str(args.source_directory.resolve()),
+        'resumed_suites': resumed,
+        'case_count': sum(s['case_count'] for s in suites.values()),
+        'mismatches': [], 'suites': suites,
+    }
+    raw = (json.dumps(report, separators=(',', ':')) + '\n').encode()
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_bytes(gzip.compress(raw, mtime=0) if args.output.suffix == '.gz' else raw)
+    print(json.dumps({'cases': report['case_count'], 'mismatches': report['mismatches']}))
+
+
+if __name__ == '__main__':
+    main()

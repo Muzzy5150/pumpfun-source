@@ -1,0 +1,179 @@
+{
+  "status": "passed",
+  "counts": {
+    "total": 1035,
+    "raw": 165,
+    "normalized": 816,
+    "unmatched": 219
+  },
+  "window_delta": {
+    "normalized_matches": {
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "gains": [],
+      "losses": []
+    }
+  },
+  "location_delta": {
+    "before_counts": {
+      "shape_recognized_pairs": 108,
+      "same_filename": 106,
+      "same_filename_line_column": 85
+    },
+    "after_counts": {
+      "shape_recognized_pairs": 108,
+      "same_filename": 108,
+      "same_filename_line_column": 85
+    },
+    "newly_bound": [],
+    "unbound": [],
+    "filename_gains": [
+      "0x1bdb30",
+      "0x1bdb18"
+    ],
+    "filename_losses": [],
+    "complete_gains": [],
+    "complete_losses": []
+  },
+  "candidate_sha256": "e3c1ef85548daeb5f0f3714c6f62b99da80ed76c5985e404e7794d75e0b2912d",
+  "unstripped_sha256": "b706550daa18e2340dbe19372a2d796bb2e44c419d5a6608513b2bb8079bc8bf",
+  "expected_two_filename_fixes": true,
+  "full_original_identity": false,
+  "runtime_cases": 688,
+  "runtime_suites": 3,
+  "retention_sha256": "a8723ce2fd98b15a2111277b560a2987657e59a1263b1558ea46c8082a1bdc03",
+  "source_hashes_unchanged": true,
+  "verified_results": {
+    "paired_rows": 688,
+    "verified_result_objects": 1376,
+    "fully_backed_pairs": 688,
+    "distinct_signed_transactions": 87,
+    "distinct_transaction_pairs": 87
+  },
+  "source_sha256": {
+    "Cargo.lock": "8307bd5e79789b5190291ea014c2f5556e23fb9829fa2f68a7ede581235eae98",
+    "Cargo.toml": "14b729d8c312968e6d8c775e7d942480d3ac44277c1af18117841ca139ee1998",
+    "idls/pump_amm.json": "7a6d9badd36c50fd2426a89073fabce7398394035c95503b48fc2fefa7662bac",
+    "idls/pump_fees.json": "6b9fa3eccc6e06273076a47b581f9fcb9e531bb7c3c88acbcd44db55a4002b29",
+    "recovered/constant_product.rs": "ec71f386f5f42abca163df627c7d8a5741c8954efec8732a1c9093728d33a99b",
+    "recovered/constant_product_host.rs": "ee2e9e7fb89d7cdc42525dcafa28c802faab4ccb874652fa9df2307b11bc5825",
+    "recovered/sell_accounting.rs": "23c1bbd79d6aa2987472a6eba572e0ded99cc8846cffd6bc23883f0700a25983",
+    "recovered/sell_accounting_host.rs": "b4aa42643c68895a23b99d5c46ac429cdaff76f0b650b69211b813b48859a39a",
+    "src/admin_set_idl_authority.rs": "8218b8bdea2d64454e73ed322a2d5431f34753a6f2c5f40cb889a63c0be4c417",
+    "src/buy.rs": "828f32743422006dcdcfc0dcf0b6bf31dff6e0a7cc660b7848d506436a4973ee",
+    "src/buy_v2.rs": "bb9936302f6685a1ac9fb03c7e97b825229728709ca0ffa44356b08faa1625aa",
+    "src/cashback.rs": "1c632938b7f4d9c08b4f6ef173a47f1674b1c53dd255f0a3fd38109570a17863",
+    "src/create.rs": "8af4fb0525644d230f5fd394cd479aaeab412ca76d39e7995b963f5dbaae8e33",
+    "src/create_v2.rs": "caaed29c5fa5c4dae51c8c827c9422aa6e5eef418b0702379aebd614f7fa68ef",
+    "src/creator/admin_cto.rs": "aaced7abe2b993efdc58c88ab1f6d6543020ea8ee42ce75c6a4b276177602bb6",
+    "src/creator/collect_creator_fee.rs": "e3c1e1960221eb35e7b071d44fad1626636af21c931d67a5953dc26a2420f1c4",
+    "src/creator/distribute_creator_fee_v2.rs": "3614ffb738ea149923737bf76176d7672527bcdbab356c9c3e718a414ce0729b",
+    "src/creator/distribute_creator_fees.rs": "bb256e6d56d7250a47a735b90bb30fca1c185e9b65308b499484b6d77b2694c9",
+    "src/creator/distribute_fee_to_holders.rs": "fe5bbccad0c05d7f65cc8f5c9ae022f0760e81eb93f5cbf53e481ada20ae2780",
+    "src/creator/migrate_bonding_curve_creator.rs": "5b83c3a7db77d639bb36eb8dc840ec8530ebb5b56e8dd670a717fcd2d377bd24",
+    "src/creator/set_creator.rs": "4f613ffe892cf4ab24b134b5cec292a1fd81f5ea7a1f10ab89c93e333eaab40a",
+    "src/creator/set_metaplex_creator.rs": "d2de84fd0c6e21622634946f9ed400f227df7dca209f510181f99d4def2476ce",
+    "src/curve_quote_payments.rs": "ba246d5badc7a71c688db4be658555ecbb0eb350f882ff79d06d889f1d1b66b0",
+    "src/distribution.rs": "d4c8ea01097f96c45e808d6a2d53f4fdbf861b0b70a3ca35523eba02d10838bc",
+    "src/extend_account.rs": "a833e5eaa3e18d9abaa914c560fca853644063495de6f2a1dc4192ea1dafec60",
+    "src/fee_cpi.rs": "b6977ff24ad33bf1546e4e9c8af13afb226aac7b82eef8f380e2e0be57fd5754",
+    "src/fee_recipient.rs": "a0a58edb66cc5ffb5d5f066b441923d64430d1ca1fbc9bb07af9e35a603a932a",
+    "src/global_init.rs": "10af175df7b55445cd3a239c4d63f42bf4cfe459892e2ec3abe4a926f2d89e45",
+    "src/incentives.rs": "2ef61bf21c8a21daa80a45a9337e38205826a8abae401439fa65ce602915018d",
+    "src/legacy_native_payments.rs": "e10fdcb0373ba407df6e35a9092e7e5a4c38fa40a9d0e542dcb9a95f8c05037f",
+    "src/lib.rs": "a80ac3aba0cca7078e626ec4f95fd82eae710416a1447ac06dccc8fbeeef8b24",
+    "src/mayhem_virtual_params.rs": "7a3d037c8f0b2e4b995f6023eb98f7d6a13dbd3c81101d49a100de9b6b2e2511",
+    "src/migrate.rs": "8090cb3d47fdc8ba889daa040720d6c2e204a8e4e5dfc987214a2bb68605572f",
+    "src/migrate_v2.rs": "e56041d507daf546eadfc59ad5bfb0c93fab9019a19cb8f2a89179bc550a4cd2",
+    "src/migration_native_payments.rs": "d5c3558ca41e76f6f815f73bbe55c836086a0adcf8f0bbfbe5edac3ae364a59f",
+    "src/minimum.rs": "aab3cb1d7c3598bf5a44c3bd8917493c3cf05fb356f7a315ed862669fe64155d",
+    "src/multi_hop_curve_swap.rs": "127d21f8bc5e742b88ace3a93b11174a94ea8d556584111990be470eaf0192c0",
+    "src/quote_control/initialize_quote_control.rs": "f69183651495574b85e572aafd23ab768fdf3072a0d4c7e05da6ca51715b9136",
+    "src/quote_control/mod.rs": "c1a355d9ed55a4b69224ddd3ddc703b2dd7608bc8aa0bbde830d88a6a61a8120",
+    "src/quote_control/state.rs": "960e011099451f70156573f1e0a4c3f600d500a63fd3b35bd0af05a121794921",
+    "src/quote_control/update_quote_control_mints.rs": "820a28f795130c637b30709cabfe5426915a68e72bd3b5f6c557266ea3e9dea5",
+    "src/sell.rs": "967fb7a70eed80c130ba8d09997ec61c4208dc554dbc0b377bf629edb32abd59",
+    "src/sell_v2.rs": "ee6ec5bb846c3bbbfa7590347cb95da485b3ad1d7d3339b76132c3b1e21cf874",
+    "src/set_creator.rs": "22fe5a74b1345c40be254299d4ef1b85c7bed7e27cd833dd296bcc0df83a60ba",
+    "src/set_params.rs": "0508a02b59e8ca1feb1f642db1597c4d2553800571ef09c0eef7370d9c6ce84c",
+    "src/sweep_fees.rs": "b2e29c4da032ad18d39b4940780d2fb91967801462b2e4875870425a99877df0",
+    "src/token_incentives/claim_token_incentives.rs": "0cb2eb0418661007e8847f659c9dd856ce67b9c6628a8eed85181ea5bb2019a6",
+    "src/token_incentives/init_user_volume_accumulator.rs": "3017fb0462fc866b4059384dddc82cf1c25153e655a1eee21200115a17f2cebc",
+    "src/token_incentives/mod.rs": "5b8f20984b1e98a9ac1809592275b787a6fc78b41c2406076490065912f38b76",
+    "src/token_incentives/volume_accumulator.rs": "85713f122b8506ea2521fb2fdf60b50072fb4ccb9c10df49f578152e6f4a7773",
+    "src/trade_types.rs": "36e755961aa8ecb79196076f4f8fe48b43ad2e55d048bf7f34719e80bf6b8d8f",
+    "src/trade_v3.rs": "ca734ceb3e3a639a321253f29e8beaa3ce5f5fe5a1373652b9b6369f48d42f45",
+    "src/util/account_name.rs": "d1f56578bc7f5f9ba770b14d97108984ec38d84b62a938f0def71e518602113e",
+    "src/util/constant_product.rs": "5011b956cd36566f1ae331624483cecb1729d98e337a2e9b41957aa9d263f726",
+    "src/util/fee.rs": "4f2a9dbf0eadcf31d6b3e96d9ad43c2f8ebbcff151b4add3577548868ae6a52d",
+    "src/util/transfer_fee.rs": "9996b9b73bbf42380e8419186de517959c2d318d9fc5e19e2132af74dbdda7d1",
+    "src/v2_native_payments.rs": "0d6ed2941144ba94a1eec70e87df193538b3de8745525e4ac479cf6c6f783eb8",
+    "src/v2_quote_token_transfers.rs": "ac15f56326e6b234c9593a6843a2ac19d353bfa047d5cd8b381a5517afe83bfe",
+    "src/v2_recipient_payments.rs": "afdf1516ed7cb43f98cd04f73c69837c3d02319841ec4d64e0f3dd239e72bbf5",
+    "src/v2_token_transfers.rs": "61c0a1a7ab4fca1607deb661e0da6265eb89dcd9fd091088e14813e1decbda99",
+    "src/v2_user_token_transfers.rs": "86577a8573623af55b93fab323306c8fc087bbb8478f7d5a13d1be8581d8beb5",
+    "src/v3_native_transfer_fee.rs": "81047d109f5cffabdb13795c67003eb34e8285708d68d7594485c0bfc55b9b75",
+    "src/volume_sync.rs": "6ed1f053f6b318d7cb27cbaa723f88917e87e757df0d5035d00b6b40c29ce699"
+  },
+  "caller_proof_sha256": "2352dfafbfc9afd22c925782e9736d07848c6a255bcf356009a9c11e4e296497",
+  "original_path_evidence": {
+    "0x1bdb18": {
+      "value": "programs/pump/src/creator/set_creator.rs",
+      "sha256": "17f8391aa1b5e6dc4f4b8784cd9fe06b7b70ed02f41dbcd458059e47fb8c3ef7",
+      "bytes": 40,
+      "pointer": {
+        "site": 1825560,
+        "relocation_type": 8,
+        "target": 1797275,
+        "raw": "000000009b6c1b00"
+      },
+      "uses": [
+        {
+          "original_function": "0x38fc0",
+          "candidate_function": "0x7c5e0",
+          "offset": 664
+        }
+      ]
+    },
+    "0x1bdb30": {
+      "value": "programs/pump/src/creator/set_metaplex_creator.rs",
+      "sha256": "2c47ebe799e9c1e20358528ff91ceaef6cf43203300a57ca6755dffd9dab094f",
+      "bytes": 49,
+      "pointer": {
+        "site": 1825584,
+        "relocation_type": 8,
+        "target": 1797377,
+        "raw": "00000000016d1b00"
+      },
+      "uses": [
+        {
+          "original_function": "0x3a7b8",
+          "candidate_function": "0x7ddd8",
+          "offset": 304
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Physical filenames match all108trackedLocationpairs, but only85completefilename/line/columnvalues match.",
+    "No code-window gains or whole-ELF identity claimed.",
+    "One private build and688existingcases only; full18109 integration/reproduction remains pending.",
+    "FrozenR40andsharedsource unchanged."
+  ],
+  "input_sha256": {
+    "work/parallel-main-creator-path-placement/STAGED.json": "d483555bd9b8d76eb74fab5d8722b671bcfe70d472ff143e4a0513ec7639b65e",
+    "work/parallel-main-creator-path-placement/creator-paths.patch": "ff05de325b0a15b9b58292a70283ee47c114268052c8734dd288299e9b828ef2",
+    "work/parallel-main-creator-path-placement/build01/build-comparison.json": "3a74140057fc7670ffb3deea81a7ed1437f137af26505cd93f4739cb71340844",
+    "work/parallel-main-creator-path-placement/build01/normalized-inventory.json": "8abdc144e20c46180fc84b51dad206827cd6057070f50b3e52fb9d83988380c9",
+    "work/parallel-main-creator-path-placement/baseline-locations.json": "e3f854a145cec8f6b0d9dc40fbd71cb7870e4658541b9807467abd381e7768d7",
+    "work/parallel-main-creator-path-placement/locations.json": "48aca16082834bfaaeebd1c75c33033c10d8dab0b239f97a3b0b8ed2cb35bbd0",
+    "work/parallel-main-creator-path-placement/runtime-manifest.json": "4351d27695bb90fd74462902eef5bbebc05fc4cdd0b91b4c86fcbf81d0c8fdb0",
+    "work/parallel-main-creator-path-placement/runtime01/state.json": "5b2dee1336e70b8cd2ec34d9d04c2638ee3c289693d7c56f1a75e3130ba1d397",
+    "work/parallel-main-creator-path-placement/runtime01/full.json.gz": "bed4d39c2c67429db6b894c2307778bf8cbe4afcf3d49a349c853f9be7fe170b",
+    "work/parallel-main-creator-path-placement/runtime01/additional.json.gz": "02a3199967562542c350d40721730a9f87be00146cc8542aa992b8ece4e7c095",
+    "work/parallel-main-creator-path-placement/CALLS01.json": "2352dfafbfc9afd22c925782e9736d07848c6a255bcf356009a9c11e4e296497",
+    "work/parallel-main-creator-path-placement/retention01.json": "a8723ce2fd98b15a2111277b560a2987657e59a1263b1558ea46c8082a1bdc03"
+  }
+}

@@ -1,0 +1,268 @@
+{
+  "algorithm": "SHA256(transaction_base64 + newline + compact sorted JSON of non-null original.before map)",
+  "baseline_corpora": {
+    "work/parallel-main-integration/round35-captured-full.json.gz": {
+      "sha256": "2e5a11a858cfe185e640469b320149c83358d2d49733796bdf709ca13008a67a",
+      "observations": 6980,
+      "declared_case_count": 10468
+    },
+    "work/parallel-main-integration/round35-captured-additional.json.gz": {
+      "sha256": "c3a543514d6c57c650092caaf3a61f1bc2a6350e8524867f6c2b59588d677a0e",
+      "observations": 4432,
+      "declared_case_count": 7610
+    }
+  },
+  "additional_compared_existing_cases": 637,
+  "records": [
+    {
+      "case": {
+        "name": "token22=False/recipient=pump/amount=0",
+        "op": "distribute_creator_fees_v2",
+        "quote": "6ws1bVyu3F8wGy1fPHhrc2v8UyWiGbRAAuek8SwikKPD",
+        "curve_patches": [
+          [
+            83,
+            "5858585858585858585858585858585858585858585858585858585858585858"
+          ]
+        ],
+        "remaining_atas": true,
+        "grouped_remaining": true,
+        "old_shareholders": [
+          [
+            "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            10000
+          ]
+        ],
+        "remaining": [
+          [
+            "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            false
+          ]
+        ],
+        "token22": false,
+        "pump_tokens": 0
+      },
+      "input_sha256": "9cdf7f04f2c722aa1773862d24a3d655784ae21fe60f6043f8d4516d4873f918",
+      "already_in_round35_or_existing637": false
+    },
+    {
+      "case": {
+        "name": "token22=False/recipient=pump/amount=1000000",
+        "op": "distribute_creator_fees_v2",
+        "quote": "6ws1bVyu3F8wGy1fPHhrc2v8UyWiGbRAAuek8SwikKPD",
+        "curve_patches": [
+          [
+            83,
+            "5858585858585858585858585858585858585858585858585858585858585858"
+          ]
+        ],
+        "remaining_atas": true,
+        "grouped_remaining": true,
+        "old_shareholders": [
+          [
+            "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            10000
+          ]
+        ],
+        "remaining": [
+          [
+            "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            false
+          ]
+        ],
+        "token22": false,
+        "pump_tokens": 1000000
+      },
+      "input_sha256": "ff676ecd6b4ec389d837b5d74abc9b88523ec5aac51c7833c2a82c227cf856a2",
+      "already_in_round35_or_existing637": false
+    },
+    {
+      "case": {
+        "name": "token22=False/recipient=token/amount=0",
+        "op": "distribute_creator_fees_v2",
+        "quote": "6ws1bVyu3F8wGy1fPHhrc2v8UyWiGbRAAuek8SwikKPD",
+        "curve_patches": [
+          [
+            83,
+            "5858585858585858585858585858585858585858585858585858585858585858"
+          ]
+        ],
+        "remaining_atas": true,
+        "grouped_remaining": true,
+        "old_shareholders": [
+          [
+            "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            10000
+          ]
+        ],
+        "remaining": [
+          [
+            "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            false
+          ]
+        ],
+        "token22": false,
+        "pump_tokens": 0
+      },
+      "input_sha256": "c63345790f99a456da17025b20169caab40ab11a97e9010a7c15f3d66d07a9e6",
+      "already_in_round35_or_existing637": false
+    },
+    {
+      "case": {
+        "name": "token22=False/recipient=token/amount=1000000",
+        "op": "distribute_creator_fees_v2",
+        "quote": "6ws1bVyu3F8wGy1fPHhrc2v8UyWiGbRAAuek8SwikKPD",
+        "curve_patches": [
+          [
+            83,
+            "5858585858585858585858585858585858585858585858585858585858585858"
+          ]
+        ],
+        "remaining_atas": true,
+        "grouped_remaining": true,
+        "old_shareholders": [
+          [
+            "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            10000
+          ]
+        ],
+        "remaining": [
+          [
+            "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            false
+          ]
+        ],
+        "token22": false,
+        "pump_tokens": 1000000
+      },
+      "input_sha256": "183a26cbdc66b0d461c2b0bb1e28b7ba72e49e1b63deaef5b4e6539d19d8620c",
+      "already_in_round35_or_existing637": false
+    },
+    {
+      "case": {
+        "name": "token22=True/recipient=pump/amount=0",
+        "op": "distribute_creator_fees_v2",
+        "quote": "6ws1bVyu3F8wGy1fPHhrc2v8UyWiGbRAAuek8SwikKPD",
+        "curve_patches": [
+          [
+            83,
+            "5858585858585858585858585858585858585858585858585858585858585858"
+          ]
+        ],
+        "remaining_atas": true,
+        "grouped_remaining": true,
+        "old_shareholders": [
+          [
+            "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            10000
+          ]
+        ],
+        "remaining": [
+          [
+            "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            false
+          ]
+        ],
+        "token22": true,
+        "pump_tokens": 0
+      },
+      "input_sha256": "3262cf6a0741b191cf6fefde218066b3cc25c82d91d76b9418f9f4c6f9f47870",
+      "already_in_round35_or_existing637": false
+    },
+    {
+      "case": {
+        "name": "token22=True/recipient=pump/amount=1000000",
+        "op": "distribute_creator_fees_v2",
+        "quote": "6ws1bVyu3F8wGy1fPHhrc2v8UyWiGbRAAuek8SwikKPD",
+        "curve_patches": [
+          [
+            83,
+            "5858585858585858585858585858585858585858585858585858585858585858"
+          ]
+        ],
+        "remaining_atas": true,
+        "grouped_remaining": true,
+        "old_shareholders": [
+          [
+            "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            10000
+          ]
+        ],
+        "remaining": [
+          [
+            "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",
+            false
+          ]
+        ],
+        "token22": true,
+        "pump_tokens": 1000000
+      },
+      "input_sha256": "97ab5c40bb3908efba9000374146d0d3d199f1742b39c4e07ba9d33726b7733b",
+      "already_in_round35_or_existing637": false
+    },
+    {
+      "case": {
+        "name": "token22=True/recipient=token/amount=0",
+        "op": "distribute_creator_fees_v2",
+        "quote": "6ws1bVyu3F8wGy1fPHhrc2v8UyWiGbRAAuek8SwikKPD",
+        "curve_patches": [
+          [
+            83,
+            "5858585858585858585858585858585858585858585858585858585858585858"
+          ]
+        ],
+        "remaining_atas": true,
+        "grouped_remaining": true,
+        "old_shareholders": [
+          [
+            "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            10000
+          ]
+        ],
+        "remaining": [
+          [
+            "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            false
+          ]
+        ],
+        "token22": true,
+        "pump_tokens": 0
+      },
+      "input_sha256": "63ae2d183276afdef14b6da98e9cdc5a3089c123eee2243c92f4940097310e97",
+      "already_in_round35_or_existing637": false
+    },
+    {
+      "case": {
+        "name": "token22=True/recipient=token/amount=1000000",
+        "op": "distribute_creator_fees_v2",
+        "quote": "6ws1bVyu3F8wGy1fPHhrc2v8UyWiGbRAAuek8SwikKPD",
+        "curve_patches": [
+          [
+            83,
+            "5858585858585858585858585858585858585858585858585858585858585858"
+          ]
+        ],
+        "remaining_atas": true,
+        "grouped_remaining": true,
+        "old_shareholders": [
+          [
+            "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            10000
+          ]
+        ],
+        "remaining": [
+          [
+            "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+            false
+          ]
+        ],
+        "token22": true,
+        "pump_tokens": 1000000
+      },
+      "input_sha256": "5286597588a543e5ca18fde6c7732c5877b63ee039fa81c7e2ce4cbc464f7577",
+      "already_in_round35_or_existing637": false
+    }
+  ],
+  "unique_new_cases": 8,
+  "limit": "Deduplication is against completed Round35 full/additional reports and the existing637 relevant cases; any newer corpus additions require integration-time deduplication."
+}

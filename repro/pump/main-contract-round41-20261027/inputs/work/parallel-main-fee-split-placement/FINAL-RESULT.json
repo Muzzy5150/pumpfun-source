@@ -1,0 +1,70 @@
+{
+  "status": "validated_next_wave_fee_helper_placement",
+  "base": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-event-placement/source01",
+  "source_directory": "/Users/shawwalters/Documents/Codex/2026-10-24/pumpfun-source/work/parallel-main-fee-split-placement/source01",
+  "changed_files": {
+    "src/lib.rs": "e529cbf4aea7dac213b6889847053ac330fedf67e76103e6a00c2981cac22b51",
+    "src/v2_recipient_payments.rs": "afdf1516ed7cb43f98cd04f73c69837c3d02319841ec4d64e0f3dd239e72bbf5"
+  },
+  "patch_sha256": "c7faeb88435938e192653fe9d53a621c9334670e8a4990aa6e21ca1d870edf35",
+  "compiled_variants": 1,
+  "build_candidate_sha256": "d32e74ae54975abfff8b92b91ac7a947cb4817f063205c32cc906ef80b748ce0",
+  "build_unstripped_sha256": "6a81dfefa311ff8ef913b4e3e3cccd6e59273c3584b1a6346bc2a013ce853b0d",
+  "fresh_main": true,
+  "sets": {
+    "normalized_matches": {
+      "before": 738,
+      "after": 738,
+      "gains": [],
+      "losses": []
+    },
+    "raw_match": {
+      "before": 121,
+      "after": 121,
+      "gains": [],
+      "losses": []
+    }
+  },
+  "Location_status": {
+    "recognized": 102,
+    "filepath_matches": 100,
+    "complete_file_line_column_matches": 84,
+    "remaining_wrong_filepath": 2,
+    "same_filepath_wrong_coordinates": 16,
+    "filepath_gain_origins": [
+      "0x1bdee0",
+      "0x1bdef8"
+    ],
+    "lost_complete_matches": []
+  },
+  "original_helper_bytes": 328,
+  "current_helper_normalized_exact": true,
+  "original_direct_callers": 6,
+  "current_direct_call_sites_before_after": [
+    5,
+    5
+  ],
+  "caller_limit": "The existing reconstruction shares BuyV2 normal/exact execution, so its five direct call sites cover six original instruction routes. The declaration move adds or removes no current caller.",
+  "runtime": {
+    "suites": 19,
+    "cases": 1208,
+    "new_case_definitions": 0,
+    "strict_diagnostic_log_cases": 1208,
+    "CPI_order_pairs": 1208,
+    "verified_result_objects": 2416,
+    "distinct_signed_transactions": 273,
+    "mismatches": []
+  },
+  "scope": "Actual unchanged helper moved to original evidenced file; no source-coordinate or object-order padding.",
+  "limits": [
+    "Original free-function versus impl-method spelling is not proved.",
+    "Identity-layout raw121 is preserved; this is not a fresh ordered-layout comparison against selected R35 raw145.",
+    "Correct filepath alone is not complete Location equality or whole-original-ELF identity."
+  ],
+  "remaining_filepath_owners": [
+    "DistributeCreatorFeesEvent.data: creator/distribute_creator_fees.rs",
+    "SharingConfig.try_deserialize_unchecked: lib.rs; original macro/declaration form unresolved"
+  ],
+  "shared_source_or_tool_edits": false,
+  "whole_original_identity": false
+}

@@ -1,0 +1,1301 @@
+{
+  "observations": [
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_False_associated_quote_bonding_curve_owner",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_bonding_curve": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_False_associated_quote_bonding_curve_owner_and_mint",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_bonding_curve": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_False_associated_quote_bonding_curve_other_token",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_bonding_curve": {
+            "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_False_associated_creator_vault_owner",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_creator_vault": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_False_associated_creator_vault_owner_and_mint",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_creator_vault": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_False_associated_creator_vault_other_token",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_creator_vault": {
+            "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_False_associated_user_volume_accumulator_owner",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_user_volume_accumulator": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_False_associated_user_volume_accumulator_owner_and_mint",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_user_volume_accumulator": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_False_associated_user_volume_accumulator_other_token",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_user_volume_accumulator": {
+            "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_False_associated_quote_fee_recipient_owner",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_fee_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_False_associated_quote_fee_recipient_owner_and_mint",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_fee_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_False_associated_quote_fee_recipient_other_token",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_fee_recipient": {
+            "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_False_associated_quote_buyback_fee_recipient_owner",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_buyback_fee_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_False_associated_quote_buyback_fee_recipient_owner_and_mint",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_buyback_fee_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_False_associated_quote_buyback_fee_recipient_other_token",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_buyback_fee_recipient": {
+            "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_True_associated_quote_bonding_curve_owner",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_bonding_curve": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_True_associated_quote_bonding_curve_owner_and_mint",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_bonding_curve": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_True_associated_quote_bonding_curve_other_token",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_bonding_curve": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_True_associated_creator_vault_owner",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_creator_vault": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_True_associated_creator_vault_owner_and_mint",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_creator_vault": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_True_associated_creator_vault_other_token",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_creator_vault": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_True_associated_user_volume_accumulator_owner",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_user_volume_accumulator": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_True_associated_user_volume_accumulator_owner_and_mint",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_user_volume_accumulator": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_True_associated_user_volume_accumulator_other_token",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_user_volume_accumulator": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_True_associated_quote_fee_recipient_owner",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_fee_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_True_associated_quote_fee_recipient_owner_and_mint",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_fee_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_True_associated_quote_fee_recipient_other_token",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_fee_recipient": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_True_associated_quote_buyback_fee_recipient_owner",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_buyback_fee_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_True_associated_quote_buyback_fee_recipient_owner_and_mint",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_buyback_fee_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "buy_True_associated_quote_buyback_fee_recipient_other_token",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_buyback_fee_recipient": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_False_associated_quote_bonding_curve_owner",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_bonding_curve": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_False_associated_quote_bonding_curve_owner_and_mint",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_bonding_curve": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_False_associated_quote_bonding_curve_other_token",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_bonding_curve": {
+            "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_False_associated_creator_vault_owner",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_creator_vault": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_False_associated_creator_vault_owner_and_mint",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_creator_vault": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_False_associated_creator_vault_other_token",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_creator_vault": {
+            "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_False_associated_user_volume_accumulator_owner",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_user_volume_accumulator": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_False_associated_user_volume_accumulator_owner_and_mint",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_user_volume_accumulator": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_False_associated_user_volume_accumulator_other_token",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_user_volume_accumulator": {
+            "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_False_associated_quote_fee_recipient_owner",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_fee_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_False_associated_quote_fee_recipient_owner_and_mint",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_fee_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_False_associated_quote_fee_recipient_other_token",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_fee_recipient": {
+            "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_False_associated_quote_buyback_fee_recipient_owner",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_buyback_fee_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_False_associated_quote_buyback_fee_recipient_owner_and_mint",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_buyback_fee_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_False_associated_quote_buyback_fee_recipient_other_token",
+        "token_quote": true,
+        "token22": false,
+        "account_mutations": {
+          "associated_quote_buyback_fee_recipient": {
+            "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_True_associated_quote_bonding_curve_owner",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_bonding_curve": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_True_associated_quote_bonding_curve_owner_and_mint",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_bonding_curve": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_True_associated_quote_bonding_curve_other_token",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_bonding_curve": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_True_associated_creator_vault_owner",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_creator_vault": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_True_associated_creator_vault_owner_and_mint",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_creator_vault": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_True_associated_creator_vault_other_token",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_creator_vault": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_True_associated_user_volume_accumulator_owner",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_user_volume_accumulator": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_True_associated_user_volume_accumulator_owner_and_mint",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_user_volume_accumulator": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_True_associated_user_volume_accumulator_other_token",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_user_volume_accumulator": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_True_associated_quote_fee_recipient_owner",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_fee_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_True_associated_quote_fee_recipient_owner_and_mint",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_fee_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_True_associated_quote_fee_recipient_other_token",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_fee_recipient": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_True_associated_quote_buyback_fee_recipient_owner",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_buyback_fee_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_True_associated_quote_buyback_fee_recipient_owner_and_mint",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_buyback_fee_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sell_True_associated_quote_buyback_fee_recipient_other_token",
+        "token_quote": true,
+        "token22": true,
+        "account_mutations": {
+          "associated_quote_buyback_fee_recipient": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sweep_False_associated_quote_bonding_curve_owner",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "token22": false,
+        "patch": {
+          "associated_quote_bonding_curve": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sweep_False_associated_quote_bonding_curve_owner_and_mint",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "token22": false,
+        "patch": {
+          "associated_quote_bonding_curve": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                "63"
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sweep_False_associated_quote_bonding_curve_other_token",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "token22": false,
+        "patch": {
+          "associated_quote_bonding_curve": {
+            "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sweep_False_associated_quote_recipient_owner",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "token22": false,
+        "patch": {
+          "associated_quote_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sweep_False_associated_quote_recipient_owner_and_mint",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "token22": false,
+        "patch": {
+          "associated_quote_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                "63"
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sweep_False_associated_quote_recipient_other_token",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "token22": false,
+        "patch": {
+          "associated_quote_recipient": {
+            "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sweep_True_associated_quote_bonding_curve_owner",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "token22": true,
+        "patch": {
+          "associated_quote_bonding_curve": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sweep_True_associated_quote_bonding_curve_owner_and_mint",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "token22": true,
+        "patch": {
+          "associated_quote_bonding_curve": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                "63"
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sweep_True_associated_quote_bonding_curve_other_token",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "token22": true,
+        "patch": {
+          "associated_quote_bonding_curve": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sweep_True_associated_quote_recipient_owner",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "token22": true,
+        "patch": {
+          "associated_quote_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sweep_True_associated_quote_recipient_owner_and_mint",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "token22": true,
+        "patch": {
+          "associated_quote_recipient": {
+            "owner": "ESrpUvg2gM75m1mzoSuquCaoabs42edBCCdabdvDgJBg",
+            "bytes": [
+              [
+                0,
+                "63"
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "owners-before.json.gz",
+      "case": {
+        "name": "sweep_True_associated_quote_recipient_other_token",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "token22": true,
+        "patch": {
+          "associated_quote_recipient": {
+            "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "runtime01/buy_v2.json.gz",
+      "case": {
+        "name": "absent_associated_quote_user_True",
+        "kind": "buy_v2",
+        "token_quote": true,
+        "absent": [
+          "associated_quote_user"
+        ]
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:109. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "runtime01/buy_v2.json.gz",
+      "case": {
+        "name": "absent_associated_quote_user_True",
+        "kind": "buy_exact_quote_in_v2",
+        "token_quote": true,
+        "absent": [
+          "associated_quote_user"
+        ]
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:109. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "runtime01/buy_v2.json.gz",
+      "case": {
+        "name": "context_associated_quote_user_True_{'system_owner': True}",
+        "kind": "buy_v2",
+        "token_quote": true,
+        "sharing": false,
+        "account_mutations": {
+          "associated_quote_user": {
+            "system_owner": true
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:109. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "runtime01/sell_v2.json.gz",
+      "case": {
+        "name": "absent_associated_quote_user_True",
+        "token_quote": true,
+        "absent": [
+          "associated_quote_user"
+        ]
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:109. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "runtime01/sell_v2.json.gz",
+      "case": {
+        "name": "mut_associated_quote_user_True_{'system_owner': True}",
+        "token_quote": true,
+        "account_mutations": {
+          "associated_quote_user": {
+            "system_owner": true
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:109. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "runtime01/sell_v2.json.gz",
+      "case": {
+        "name": "token_authority_associated_quote_user",
+        "token_quote": true,
+        "account_mutations": {
+          "associated_quote_user": {
+            "bytes": [
+              [
+                32,
+                99
+              ]
+            ]
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:121. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported."
+    },
+    {
+      "report": "runtime01/fee_sweeps.json.gz",
+      "case": {
+        "op": "sweep_creator_fee",
+        "curve_quote": "11111111111111111111111111111111",
+        "quote": "So11111111111111111111111111111111111111112",
+        "recipient": "9gECFE3oJt262dFDhySt7ymNNVRUhrq5tbNjZRE3qoQ9"
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/sweep_fees.rs:145. Error Code: ConstraintSeeds. Error Number: 2006. Error Message: A seeds constraint was violated."
+    },
+    {
+      "report": "runtime01/fee_sweeps.json.gz",
+      "case": {
+        "op": "sweep_creator_fee",
+        "curve_quote": "11111111111111111111111111111111",
+        "quote": "So11111111111111111111111111111111111111112",
+        "patch": {
+          "bonding_curve": {
+            "length": 49
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/sweep_fees.rs:145. Error Code: ConstraintSeeds. Error Number: 2006. Error Message: A seeds constraint was violated."
+    },
+    {
+      "report": "runtime01/fee_sweeps.json.gz",
+      "case": {
+        "op": "sweep_creator_fee",
+        "curve_quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "quote": "6Ckm2BrnXxsSjyG5b17kQQRjoECVrts92RKXVGT8XeqS",
+        "recipient": "9gECFE3oJt262dFDhySt7ymNNVRUhrq5tbNjZRE3qoQ9"
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/sweep_fees.rs:145. Error Code: ConstraintSeeds. Error Number: 2006. Error Message: A seeds constraint was violated."
+    },
+    {
+      "report": "runtime01/fee_sweeps.json.gz",
+      "case": {
+        "op": "sweep_creator_fee",
+        "curve_quote": "So11111111111111111111111111111111111111112",
+        "quote": "So11111111111111111111111111111111111111112",
+        "recipient": "9gECFE3oJt262dFDhySt7ymNNVRUhrq5tbNjZRE3qoQ9"
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/sweep_fees.rs:145. Error Code: ConstraintSeeds. Error Number: 2006. Error Message: A seeds constraint was violated."
+    },
+    {
+      "report": "runtime01/fee_sweeps.json.gz",
+      "case": {
+        "op": "sweep_creator_fee",
+        "curve_quote": "So11111111111111111111111111111111111111112",
+        "quote": "So11111111111111111111111111111111111111112",
+        "patch": {
+          "bonding_curve": {
+            "length": 49
+          }
+        }
+      },
+      "log": "Program log: AnchorError thrown in programs/pump/src/sweep_fees.rs:145. Error Code: ConstraintSeeds. Error Number: 2006. Error Message: A seeds constraint was violated."
+    }
+  ],
+  "unique_logs": [
+    "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:109. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported.",
+    "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:121. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported.",
+    "Program log: AnchorError thrown in programs/pump/src/buy_v2.rs:81. Error Code: AccountTypeNotSupported. Error Number: 6010. Error Message: Account type not supported.",
+    "Program log: AnchorError thrown in programs/pump/src/sweep_fees.rs:145. Error Code: ConstraintSeeds. Error Number: 2006. Error Message: A seeds constraint was violated."
+  ]
+}

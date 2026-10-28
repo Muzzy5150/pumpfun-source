@@ -1,0 +1,1552 @@
+{
+  "scope": "Deduplicate the two valid existing-volume inputs against frozen R37.\n\nFor the same signed SellV3 transaction, a different existing volume account is\na different input. Full before maps are compared when available. Older suites\nonly store post-state: the four volume metrics are unchanged by SellV3, as\nseparately established by the static path and both witnesses; those values can\nexclude equality but never create an exact full-state duplicate claim.\n",
+  "R37_suite_files_sha256": {
+    "work/parallel-main-integration/round37-unified/suites/full/admin_cto.attempt1.json.gz": "0c65b2ba62ec709f44587ab0a10de2910b9a03fcf7e7b535ace9ef167e309f24",
+    "work/parallel-main-integration/round37-unified/suites/full/administration.attempt1.json.gz": "c2d4bb9de10f754e6ba32dae90b6cc19f4b5cd6f0e9ddf08bc94730cb368f0b6",
+    "work/parallel-main-integration/round37-unified/suites/full/authority.attempt1.json.gz": "02c87e00fbe987d19510901c343a0e073e9c0dadec082080714206e4405e294f",
+    "work/parallel-main-integration/round37-unified/suites/full/buy.attempt1.json.gz": "4c4bedb1b3d46625611155fdc99d79c40a472b3965bd6b46792bad3f5c653ba0",
+    "work/parallel-main-integration/round37-unified/suites/full/buy_v2.attempt1.json.gz": "78de603b90f9566e52772ecb9166e8125d34007df4630fb18c1aedeac9684905",
+    "work/parallel-main-integration/round37-unified/suites/full/cashback.attempt1.json.gz": "efc151d9e457a901b91841505025e680f754f2879aac907a76d0c557dc05976c",
+    "work/parallel-main-integration/round37-unified/suites/full/claim_panic_diagnostics.attempt1.json.gz": "8e3d3ada6bddec578f671ac8418ca84beff9561211751146fd2c807579bb08b4",
+    "work/parallel-main-integration/round37-unified/suites/full/configuration.attempt1.json.gz": "c3a665efe4cdd970da913ba940e7c9807ac11cd00287d16b6a521704c5d5de2d",
+    "work/parallel-main-integration/round37-unified/suites/full/create_control.attempt1.json.gz": "88f13f759d3a8054d9ffcccc00d4329cfea26710945f1ad3636d26f0821d4214",
+    "work/parallel-main-integration/round37-unified/suites/full/create_v2.attempt1.json.gz": "86589ca68e06dc9b8b0880e1553a179330d4710746641eee7ea78471995ab4d3",
+    "work/parallel-main-integration/round37-unified/suites/full/creator_collection.attempt1.json.gz": "bd70bc6d9ad86d00c8ae0c82a3d80e21ff1992bb09104e87ad385c161b5b607b",
+    "work/parallel-main-integration/round37-unified/suites/full/creator_collection_v2.attempt1.json.gz": "05eb033a64009cabfcf40ebb8f0f5c3b61b83765de31ab0e30c6eff8104e2d7a",
+    "work/parallel-main-integration/round37-unified/suites/full/creator_distribution.attempt1.json.gz": "88af10863913bf4e30c4eaf1014487ff25cb6d1716e02fb7c7e9fae64095f92b",
+    "work/parallel-main-integration/round37-unified/suites/full/creator_migration.attempt1.json.gz": "b492860e9e599173a8300b3c2f9d985d2a2d9a0500a731c6a3b64a59a6122c54",
+    "work/parallel-main-integration/round37-unified/suites/full/earned_cashback.attempt1.json.gz": "78aee882119b97980e63010173cca744899202d05fa7c9ceb101432f9329c7b3",
+    "work/parallel-main-integration/round37-unified/suites/full/exact_quote_v3.attempt1.json.gz": "16cc810916132f50997608a5484506decdd3ca4b76a99bb8b7a263a418090166",
+    "work/parallel-main-integration/round37-unified/suites/full/extension.attempt1.json.gz": "762b0563ce68a5397b5c67d4398fe39533d827cc005e48dac26f9688ef71ec72",
+    "work/parallel-main-integration/round37-unified/suites/full/fee_sweeps.attempt1.json.gz": "2e5fcf60302c0bb3841c302dd6433fbaec4a64055ae34db3c907443a6eb15e7f",
+    "work/parallel-main-integration/round37-unified/suites/full/global_init.attempt1.json.gz": "4c168f83e02da344279de1c72d3b4582e9caeee9a3f6b81b520c013c8303d8f7",
+    "work/parallel-main-integration/round37-unified/suites/full/holder_distribution.attempt1.json.gz": "18bab7c9a4f142c702f68ae178f2d55477b6dce867d0ff9ee91b26445970b445",
+    "work/parallel-main-integration/round37-unified/suites/full/idl_authority.attempt1.json.gz": "e7d7916b347f89a5a43863a45fdb5cc7ebfbaf1dc1d279eaffeaac4f98b670d8",
+    "work/parallel-main-integration/round37-unified/suites/full/incentive_claim.attempt1.json.gz": "d0eb9ae6f5523970b1c8c93854d139801bedf4f21344ed07f799af2b207ebd0c",
+    "work/parallel-main-integration/round37-unified/suites/full/incentive_schedule.attempt1.json.gz": "21c15393475820bd813f5ccaba32350857742e661b84da75a13713e661c9c0d0",
+    "work/parallel-main-integration/round37-unified/suites/full/legacy_buy.attempt1.json.gz": "60700e454045e12e4e69ec0b7a1153a25dc5345a68ed6e8e74e0737bc03c139a",
+    "work/parallel-main-integration/round37-unified/suites/full/legacy_cashback.attempt1.json.gz": "96ef22f0c2e2dcebdab50ae60e1b42d3a0935c35a88fa8b8f400755009b5cfe0",
+    "work/parallel-main-integration/round37-unified/suites/full/legacy_create.attempt1.json.gz": "1547c12e6cc8e28f7591587568b21b681a52d7ab92dc04834ab954b4f759bbc3",
+    "work/parallel-main-integration/round37-unified/suites/full/legacy_sell.attempt1.json.gz": "f3cf724c39d7d9f4d2666c0f462711bbc8a65f6e700ba8432399a7a84070b808",
+    "work/parallel-main-integration/round37-unified/suites/full/legacy_sell_configured_fee.attempt1.json.gz": "08bf39cb03c276b35e2ab5b2c0e9ac023c8470d57578f0e2e2b211b2ce07fd0f",
+    "work/parallel-main-integration/round37-unified/suites/full/migrate_v2.attempt1.json.gz": "d8e733561bb3c0b68838849705dd0ebc08ac9cbdad28a8959ca8b511e1dcaf76",
+    "work/parallel-main-integration/round37-unified/suites/full/migration.attempt1.json.gz": "7145b640df9f2ad9c6719c5e20af71ff9427ac758884ceb5b545cda31d32a981",
+    "work/parallel-main-integration/round37-unified/suites/full/minimum_distribution.attempt1.json.gz": "d671225a446bc3fa00f9238394f641244cff0789443f79a383f7d4fcb266a384",
+    "work/parallel-main-integration/round37-unified/suites/full/multi_hop_curve_partial.attempt1.json.gz": "96fae8484d24bfd88f96da1096d4a1b2c41d85af4896942f014e2de7b9170c33",
+    "work/parallel-main-integration/round37-unified/suites/full/nested_create.attempt1.json.gz": "5c43a4032a97185c2b464667b859b71d2f40ccfe68de90ba03cd82560199dbe6",
+    "work/parallel-main-integration/round37-unified/suites/full/quote.attempt1.json.gz": "67240b31add3423baca04a11e10a538adb6e8e4edcbedd59e9dc36b5d38a29b8",
+    "work/parallel-main-integration/round37-unified/suites/full/quote_control.attempt1.json.gz": "52e8a5794a8506408024c4f0c009368ce5e1b24f4b77f1292f169089932ad890",
+    "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz": "cf87ba27bf45bbc4b34a42c737a4ed895b22c7814a07112b9376db40e0f8f96a",
+    "work/parallel-main-integration/round37-unified/suites/full/sell_v2.attempt1.json.gz": "2107e5d8358aeb36072979843a59862ca972d6147055b618b23498e0fb98fb59",
+    "work/parallel-main-integration/round37-unified/suites/full/set_creator.attempt1.json.gz": "d3e3ab294bfe675d1ef69cd5ad6df85f8c50178ced9e57b9d8f81957ac381088",
+    "work/parallel-main-integration/round37-unified/suites/full/set_params.attempt1.json.gz": "b63c2aae0bcec94d59e715fe71c1d73b91d587c25332b34c0280d6873aafb684",
+    "work/parallel-main-integration/round37-unified/suites/full/tokenkeg_two_curve.attempt1.json.gz": "fed4e2fa46bc12c15054d69997882f92e20fbfa341f3d8bbdd784bce076ffab1",
+    "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz": "64b35166099a8e7bea76cd378767fd8b29a24622dead587257c8c70c30b6e7e6",
+    "work/parallel-main-integration/round37-unified/suites/full/virtual_reserve_sync.attempt1.json.gz": "c85fcce4d422fd44854ed28416f4e0fda444e09b8845d9c68ab3023fa3b0eb6e",
+    "work/parallel-main-integration/round37-unified/suites/full/volume.attempt1.json.gz": "91d76108a5872b7341f2cc08e9d88aae991d24e016efa388cd274d0482845cf7",
+    "work/parallel-main-integration/round37-unified/suites/full/volume_sync.attempt1.json.gz": "e8faf16f259c93331bbd711e8fe9d0447f4ca40c492543550aa4e28ae78eac92",
+    "work/parallel-main-integration/round37-unified/suites/additional/accounts_contexts.attempt1.json.gz": "c060272da870ef2ef018c84b2ba641dc4485174b893f12cb29adebf277ccfc05",
+    "work/parallel-main-integration/round37-unified/suites/additional/accounts_zero_payout.attempt1.json.gz": "2673685168053845c5fcfaed1103747de722932e623f356e47339509320badca",
+    "work/parallel-main-integration/round37-unified/suites/additional/admin_context_299.attempt1.json.gz": "0a51eb4ca6b884c64f2ad42102ea1d02979918c3fc7ec091be5ddf2f289443e0",
+    "work/parallel-main-integration/round37-unified/suites/additional/admin_holder_rent_35.attempt1.json.gz": "d04f1d16824a9a1f7087c16646a836d60cc222176862b7b7f2b423d2050da245",
+    "work/parallel-main-integration/round37-unified/suites/additional/ancestor_boundaries_68.attempt1.json.gz": "2fa1684163655bc4db14f083dc78ddb7232cd7798a99b03017b17115420607d1",
+    "work/parallel-main-integration/round37-unified/suites/additional/ata_authority_content.attempt1.json.gz": "5cfb4adc12b8fa877e17da42050304f85bf20cde3ec8716251afc7e19e592cce",
+    "work/parallel-main-integration/round37-unified/suites/additional/ata_owner_precedence.attempt1.json.gz": "258a6be0c9c6c7fcfa0e03d08500f849745fba28e811d2b16ebfc124977f6601",
+    "work/parallel-main-integration/round37-unified/suites/additional/authority_19.attempt1.json.gz": "360a0b732d596026fcf3fb9d04a729cee4fe70fc5e9ae339bdcb35f27e586874",
+    "work/parallel-main-integration/round37-unified/suites/additional/buy_v2_order_130.attempt1.json.gz": "4a766e3745fcdeab54ef392203b4944b7b80c2b797cbfe8e09077be6f001ecea",
+    "work/parallel-main-integration/round37-unified/suites/additional/buyback_allocation_54.attempt1.json.gz": "363d16c1edae4e617fa28dfde09d1e855960d2277e2d2091ad9e47cc32f5fe5a",
+    "work/parallel-main-integration/round37-unified/suites/additional/buyback_recipients_100.attempt1.json.gz": "31cee1f20a102fc0254e835f5f1c7968066e1e1b707462e2f257d66f7f09a710",
+    "work/parallel-main-integration/round37-unified/suites/additional/cashback_program_6.attempt1.json.gz": "423d8dcd08144310ad743d0f35276df566cb5e2cf55309cd84574a7d3aa3c169",
+    "work/parallel-main-integration/round37-unified/suites/additional/claim_event_cpi_compound_28.attempt1.json.gz": "1e99b604b9fd64a1c036527e08f45fc67aabda28e3c23487b46ff193c1c16764",
+    "work/parallel-main-integration/round37-unified/suites/additional/claim_grid_132.attempt1.json.gz": "1f3ab767371b3ca2e3c972a832d3eaeaad89134b305c637361cafa4205a2c7dd",
+    "work/parallel-main-integration/round37-unified/suites/additional/claim_mint_6.attempt1.json.gz": "80637dfca0bfa4285215384f95b7ae8e4b23afd759166ee5d7eacfa2ec954632",
+    "work/parallel-main-integration/round37-unified/suites/additional/claim_program_precedence_20.attempt1.json.gz": "0d0adde664c5ddfb7ff892225a3d7a1471f5e7a9f4a31b3bae3d86b9057d5402",
+    "work/parallel-main-integration/round37-unified/suites/additional/claim_zero_log_4.attempt1.json.gz": "1f1482edb8015d83e15126e5854acd714618d891812c5985ab8c985c5a497c48",
+    "work/parallel-main-integration/round37-unified/suites/additional/completion_92.attempt1.json.gz": "3312d5872ed72f1e2c0d46f86785d43911842afcf6de82e272e976df86756ee0",
+    "work/parallel-main-integration/round37-unified/suites/additional/completion_edges_27.attempt1.json.gz": "8f96ff6e9a0f4cda2274653b9f788f62797dc50d4c4e24847ce6156ab5102547",
+    "work/parallel-main-integration/round37-unified/suites/additional/completion_fuzz_120.attempt1.json.gz": "df34e69cb81f497e78e29e7bc039957969f404d6f229008daabe7d85ac090a68",
+    "work/parallel-main-integration/round37-unified/suites/additional/context_failures_24.attempt1.json.gz": "060e2f8f7af54d7bb53ca3c1aa98f21aba53f05933d23800eca385d2322b85aa",
+    "work/parallel-main-integration/round37-unified/suites/additional/create_control_gate_order.attempt1.json.gz": "49d4f4fa8d7ef265a9ab0f0f7a3d293fd378c54676748c704ca5291a0d7df69f",
+    "work/parallel-main-integration/round37-unified/suites/additional/create_early_pairs.attempt1.json.gz": "b3384398de339d58a5da0e1109c895f1ebd4e4e80d70ae8d0dae491f343a9055",
+    "work/parallel-main-integration/round37-unified/suites/additional/create_gate_order.attempt1.json.gz": "826da7b4475006c78982537744fc58cd0590e3d68331ac022c47b06ec5246efb",
+    "work/parallel-main-integration/round37-unified/suites/additional/create_policy_precedence.attempt1.json.gz": "4e6902a21ce6ded25123cf1673287d807321e94de66d5c75035f6f93c7412d1b",
+    "work/parallel-main-integration/round37-unified/suites/additional/creation_quote_tlv_26.attempt1.json.gz": "6264047d53e3733f0d52f5c0f69bc6b8a7e111c41d894f170241a47883bcace5",
+    "work/parallel-main-integration/round37-unified/suites/additional/creator_collection_rent.attempt1.json.gz": "6904a13f7460b0e0752a1c318f232424acd24b0d5679af0f2724d3948eb4ce36",
+    "work/parallel-main-integration/round37-unified/suites/additional/creator_gate_120.attempt1.json.gz": "99a2d807dd4f2e00beaa41c6d7db4962e64f184c39c4b3a84bab70e85c494f1a",
+    "work/parallel-main-integration/round37-unified/suites/additional/creator_owner_6.attempt1.json.gz": "26992295b0b4cc1840a8fe4d7644095a1e8a2089cf6230babea8958567354500",
+    "work/parallel-main-integration/round37-unified/suites/additional/cto_collection_boundary.attempt1.json.gz": "e3d5e3c2bbb46f0869af3fcb57ed682ac1a35098657492634eeed0809835d6e4",
+    "work/parallel-main-integration/round37-unified/suites/additional/cto_context_34.attempt1.json.gz": "2aeca5bdbace7f69e7ee061b605210d1b2720c05af9d4d15998a9b0406aa29d9",
+    "work/parallel-main-integration/round37-unified/suites/additional/cto_edges.attempt1.json.gz": "68dc0a5b3afdd6a781b3e12e64d88c1db9205a54198fe16b93f5edb37701db7e",
+    "work/parallel-main-integration/round37-unified/suites/additional/cto_fees.attempt1.json.gz": "e923475e56650a2e003191266c6f4066ae8dbbae507e3c83298e8eae923c4849",
+    "work/parallel-main-integration/round37-unified/suites/additional/cto_frozen.attempt1.json.gz": "1a5b215e4a6bc8d1d55c16e12335323bc1a469764ca0d61ed34ae7cf5a4f42d5",
+    "work/parallel-main-integration/round37-unified/suites/additional/cto_rent.attempt1.json.gz": "9fd4f63ab2fb83847d31cddd7db9de21359af35a25fa4065c02d559de9087a1e",
+    "work/parallel-main-integration/round37-unified/suites/additional/curve_boundaries_64.attempt1.json.gz": "bd944d403a16231ef145e08d73b0b0a646dc3930f7fcff818d117c7d3a21d502",
+    "work/parallel-main-integration/round37-unified/suites/additional/distinct_precedence.attempt1.json.gz": "f7e77718d700ee366f321bfe0a1fdaa35083f8600b65a5bb7ca1bd4f651e6304",
+    "work/parallel-main-integration/round37-unified/suites/additional/distribution_custom_rent_6.attempt1.json.gz": "37a92c8af1b5bac16bda5168e9763cc7039050a1a735f96c1f105fce76705c35",
+    "work/parallel-main-integration/round37-unified/suites/additional/distribution_pending_fees.attempt1.json.gz": "6e24c1d41025e44811433f435337e73096d7224a3fbd3a3c1a739d92d9bcb405",
+    "work/parallel-main-integration/round37-unified/suites/additional/distribution_quote_parser.attempt1.json.gz": "d2c30312a8e2d5d3a4e4a8fcb82884d7bd80935b9012d7bea5a1ad4fc30c8e70",
+    "work/parallel-main-integration/round37-unified/suites/additional/distribution_regressions_62.attempt1.json.gz": "5d2927e85a851f73ea6ef31f3c36840c71d36b5cb6361b21d8f273eaab050bbb",
+    "work/parallel-main-integration/round37-unified/suites/additional/extension_boundary12.attempt1.json.gz": "e173d3292e323c2f03db8160687a28f9b5802d4b97d72b1cfefdd605206c1455",
+    "work/parallel-main-integration/round37-unified/suites/additional/extension_order_68.attempt1.json.gz": "aefdb93c691d268872ca849f51905a1079999b77e2e0f763c8f1cf0f58ac4211",
+    "work/parallel-main-integration/round37-unified/suites/additional/fee_market_cap.attempt1.json.gz": "34bd61b1dc100349886f9f4dc63074dff59eaa53c30e6a5ab6581dedf9551911",
+    "work/parallel-main-integration/round37-unified/suites/additional/fee_waiver_27.attempt1.json.gz": "d081962e909dddaf4dede6d678a267797952c3eceef7f1ff39cbc00dc644eb9e",
+    "work/parallel-main-integration/round37-unified/suites/additional/fee_waiver_crossing_36.attempt1.json.gz": "8270bb61bfa6740715cbd6cbad1e5251b46ece53126738195c8e6a54484ff584",
+    "work/parallel-main-integration/round37-unified/suites/additional/idl_transfer_boundary10.attempt1.json.gz": "ab9191e60df4b3719e6245f79451c9792b551bede661c88ede7bb1211f8bc4b2",
+    "work/parallel-main-integration/round37-unified/suites/additional/legacy_buyback_creator-order.attempt1.json.gz": "d74395d8e7e40872beb4a1591a0a7b8dd08d9d40dfbbd28ea96bdd6aee066047",
+    "work/parallel-main-integration/round37-unified/suites/additional/legacy_buyback_legacy-boundary.attempt1.json.gz": "53bb1d95363b2fd296358dad494cc3baa2009d3cbb80f93f7aa9f41429c75f25",
+    "work/parallel-main-integration/round37-unified/suites/additional/legacy_buyback_low-lamports.attempt1.json.gz": "7d93e17a1c26a14262ea6d0d0def3a4a2347467250d6f6c1bf729c3fc8480195",
+    "work/parallel-main-integration/round37-unified/suites/additional/legacy_buyback_order_8.attempt1.json.gz": "8820d2296fceda7b154b1b3d18c29b55e15fb5211bc3c89a51b2e04b237a7fa0",
+    "work/parallel-main-integration/round37-unified/suites/additional/legacy_buyback_partial-balance.attempt1.json.gz": "22561198abc29fe83a9d8e580c2865e3d7e34ab37ebe495865dc9b8a0255e1ab",
+    "work/parallel-main-integration/round37-unified/suites/additional/legacy_buyback_thresholds.attempt1.json.gz": "5b4e5a0764cb387085f6fde1d09cb028b91b7bacdf99336df29b48274a2b691c",
+    "work/parallel-main-integration/round37-unified/suites/additional/legacy_creator_vault_rent_63.attempt1.json.gz": "332566aece80891c216da47d985806d86cc73c5cadd7b3204c969d9502db24fc",
+    "work/parallel-main-integration/round37-unified/suites/additional/legacy_partial_zero_8.attempt1.json.gz": "11890453f795960efbf02f23f98ff3e0bc81b791cdd904cfbe2bcd3c87cfdd81",
+    "work/parallel-main-integration/round37-unified/suites/additional/legacy_rent_12.attempt1.json.gz": "9b873fbfcd731ec1f2d9f844938486e5dc8a7546d3dd2f64f77bdfc57e735d4a",
+    "work/parallel-main-integration/round37-unified/suites/additional/legacy_sell_cashback_order_22.attempt1.json.gz": "0ee11ecd556e7750a75c9b1545c6e940e13b98aaf963b856f787b4933629a52e",
+    "work/parallel-main-integration/round37-unified/suites/additional/legacy_sell_rent_12.attempt1.json.gz": "ba6ad67d5cbba7cef332904520f8eff40e833624c8bb19c8fd0da6a4ec5fb686",
+    "work/parallel-main-integration/round37-unified/suites/additional/legacy_token22_27.attempt1.json.gz": "2c8f075726ab57d84a28c76990c72ea0fe9fb1215ecf022956184a958fc0db81",
+    "work/parallel-main-integration/round37-unified/suites/additional/legacy_user_authority_4.attempt1.json.gz": "f1d194a58b010fede77b580dd14cab0ed046ee480f567297da70a427a65d66e9",
+    "work/parallel-main-integration/round37-unified/suites/additional/legacy_user_owner_8.attempt1.json.gz": "b631c9eb6dc3aa35952b54d9fbe7964f2632a6ab59ccebd9e0e9fcf4d6e55609",
+    "work/parallel-main-integration/round37-unified/suites/additional/legacy_zero_buyback_8.attempt1.json.gz": "28f59d5b93a500aaac72c2a41ea3f89c340e087046091de369d27288bbb21134",
+    "work/parallel-main-integration/round37-unified/suites/additional/migrate_prepare.attempt1.json.gz": "b64044519a49ee369cd34678dc61fee9c9afd516c358f2acd87cb425ae34cb06",
+    "work/parallel-main-integration/round37-unified/suites/additional/migrate_v2_prepare.attempt1.json.gz": "104082c718503650a74a57fdc6bb860204feae6a97d53e2bea4ccd1a90a64a29",
+    "work/parallel-main-integration/round37-unified/suites/additional/migration_balances.attempt1.json.gz": "c7b22e66680679bb128dd1c2954fcf3244af303539b6008139b086a96225f54e",
+    "work/parallel-main-integration/round37-unified/suites/additional/migration_config_group_01.attempt1.json.gz": "ccadf65a98d6b5c5738a22679dbbd7adb9e154053234a41c175e220e60602702",
+    "work/parallel-main-integration/round37-unified/suites/additional/migration_config_group_02.attempt1.json.gz": "81a29e73ae83744252fc7a32e31b41e399eafbebb87edeb25cb1fce219c8f8e4",
+    "work/parallel-main-integration/round37-unified/suites/additional/migration_config_group_03.attempt1.json.gz": "6e4a9980d0903b57e674b429e908941b5337793177fce8a190dd75f8835b9260",
+    "work/parallel-main-integration/round37-unified/suites/additional/migration_config_group_04.attempt1.json.gz": "69c94b1167564b2809160e9070e376174e91d5c4e4f2978c40b58d1505d67c0f",
+    "work/parallel-main-integration/round37-unified/suites/additional/migration_config_group_05.attempt1.json.gz": "ee18e810452811493e498c35fa4c779579522683f999eb7d6b08ad0d717359ce",
+    "work/parallel-main-integration/round37-unified/suites/additional/migration_config_group_06.attempt1.json.gz": "0d93b27e3ee811209fd39f65545030d7d683e0e094ea64a14585c00ba0e8b482",
+    "work/parallel-main-integration/round37-unified/suites/additional/migration_config_group_07.attempt1.json.gz": "9dc7e1d1e4c7e5569e65861bcc9556e51b1dffb712a81f84ab663497190956ad",
+    "work/parallel-main-integration/round37-unified/suites/additional/migration_config_group_08.attempt1.json.gz": "422a46dda1e10ba414c8138604e666156fd3743ce44f6a088ab3849cb40e271f",
+    "work/parallel-main-integration/round37-unified/suites/additional/migration_headers.attempt1.json.gz": "39012fee3ef215972f1de07d58446ae8ec6c5e33643423611e1ed921166adb3d",
+    "work/parallel-main-integration/round37-unified/suites/additional/migration_pausable_migration.attempt1.json.gz": "6d611aeb99cd74248b19682346500adc7af4590b0a5dcb7c7c65e6980960b4a2",
+    "work/parallel-main-integration/round37-unified/suites/additional/migration_required_account_size.attempt1.json.gz": "b73626319ebf61988e036d5ed283e3a9f55319ecb26708ba513d4435643445e1",
+    "work/parallel-main-integration/round37-unified/suites/additional/mixed_tlv_1_18.attempt1.json.gz": "af5191eb8b7daea5e7d86350c566ca5d1fd2f97f1861eecec2dcaea9c0c1a949",
+    "work/parallel-main-integration/round37-unified/suites/additional/multihop_later_account_errors.attempt1.json.gz": "edecea4561c57abc79fd0ffe29c28b0cee8c7e46213b10aced97c491b6c4c48a",
+    "work/parallel-main-integration/round37-unified/suites/additional/multihop_native_lamports.attempt1.json.gz": "8b88ff2c309b398ed97db3dab56a049d3a608944f59886e0beb55885438e9ff0",
+    "work/parallel-main-integration/round37-unified/suites/additional/multihop_validity_flags.attempt1.json.gz": "6a1965ad9fd940032b5e10cc338824540af7a69c4d6f728cd992edaf1881599d",
+    "work/parallel-main-integration/round37-unified/suites/additional/native_completion_62.attempt1.json.gz": "6e6b80304aa711808484bde6a6981289f8c33d6ad4fa09900f6af6eec8ab8db6",
+    "work/parallel-main-integration/round37-unified/suites/additional/native_quote_3.attempt1.json.gz": "7e51144ce2adab31635aab1bb58a85a37f4e27467950a818182981a777853797",
+    "work/parallel-main-integration/round37-unified/suites/additional/nested_chain_tail_boundaries.attempt1.json.gz": "b2dd5ad4ce0d67ebe5effe12d12d4ab6bcf3d211bc8f90651937e1f96f12bb18",
+    "work/parallel-main-integration/round37-unified/suites/additional/nested_comparison_matrix.attempt1.json.gz": "0483a38ba6be3c1b567649c1cfb6585f80c3d8908cbb110ccc12d4e3b15a171e",
+    "work/parallel-main-integration/round37-unified/suites/additional/nested_pool_links_10.attempt1.json.gz": "a64ba069eb0ed660b22df861d04db22b5b5f15442688e4c6cbcb22d7937c9d46",
+    "work/parallel-main-integration/round37-unified/suites/additional/nested_vault_diagnostics_32.attempt1.json.gz": "5f21221f02e6c534edd073630be836712fe0b36ce69973698f30a3178ff4cb66",
+    "work/parallel-main-integration/round37-unified/suites/additional/new_route_holder_64.attempt1.json.gz": "b5588e607b081514dfdcec13490a8213a1d3a6f52dd0e180226f8b17e11174d3",
+    "work/parallel-main-integration/round37-unified/suites/additional/new_v2_66.attempt1.json.gz": "2bd4da25da1727370115619183f0d97ca90797ad9a52451e8364aaefe4711e69",
+    "work/parallel-main-integration/round37-unified/suites/additional/new_v2_fees_151.attempt1.json.gz": "b383aa29d6e9dec7fcebdc809843df0c20e5554dee0275df26b1975ad826cdd9",
+    "work/parallel-main-integration/round37-unified/suites/additional/old_fences_46.attempt1.json.gz": "7aabe81641463a56fc4bdb4af245053100d6b15735dc9295657e53a9b57e86f9",
+    "work/parallel-main-integration/round37-unified/suites/additional/optional_sharing_246.attempt1.json.gz": "125f0a43ac59139ffc9a3534726eafbd2319b97eb3971ff1c2f67a9656878a6c",
+    "work/parallel-main-integration/round37-unified/suites/additional/origin_kinds_38.attempt1.json.gz": "47efadb5e9d80d3a544768fd77fddbf5bba5fa84e4a87da4fd3862f9268a6adc",
+    "work/parallel-main-integration/round37-unified/suites/additional/owned_quote_order.attempt1.json.gz": "79a1411b9b3ee9370ad4c56be91b0daf18622131e53c04565a1f53266785ac30",
+    "work/parallel-main-integration/round37-unified/suites/additional/quote_admission_incremental.attempt1.json.gz": "48f6cf5473d925fa8b7c85e137161696b1b0d7b047ce16bbe343a0eef5d22627",
+    "work/parallel-main-integration/round37-unified/suites/additional/quote_control_capacity.attempt1.json.gz": "a0f077c8647ebab984865d176310ead5c773f665fa9172002aaacf54e5ac1bb9",
+    "work/parallel-main-integration/round37-unified/suites/additional/quote_control_reader.attempt1.json.gz": "935786949d6f78e2853d921cb33a19b7d02d5cd2852ed6437c66050454f577c6",
+    "work/parallel-main-integration/round37-unified/suites/additional/quote_fee_tail_1_22.attempt1.json.gz": "3c5137eb48d6594f03376ebc191a79baed2ae2c7aa89ceee65c37b062bf263f0",
+    "work/parallel-main-integration/round37-unified/suites/additional/quote_fee_tail_2_18.attempt1.json.gz": "8607f3e8ae41ded0f2eb3f75eeb686a85016f6c60233394eff78100803da1f3e",
+    "work/parallel-main-integration/round37-unified/suites/additional/quote_fee_tail_3_9.attempt1.json.gz": "1bc95b1df7cecc4935b09d2edac9f7e144d48314eecc7c4dd916c70b4f39d934",
+    "work/parallel-main-integration/round37-unified/suites/additional/quote_origins_12.attempt1.json.gz": "1f0f687496733cac87758af040bac7e52674322fae968438bb9d3970097bf40c",
+    "work/parallel-main-integration/round37-unified/suites/additional/recipient_order_144.attempt1.json.gz": "2dd9d7bb8987705c8ab633aa2b80724e0c80d2eab3c139ab2867c904c3d787bd",
+    "work/parallel-main-integration/round37-unified/suites/additional/root_account_origins.attempt1.json.gz": "880f970c5390d71a205aa5434dddc58c4472b85a3f8cad366b3e4e32b6b9772f",
+    "work/parallel-main-integration/round37-unified/suites/additional/root_legacy_layouts.attempt1.json.gz": "944a1734dd533ea368cf070a7a1500e5f96d2257ce6782eca22ab39ae25f67d8",
+    "work/parallel-main-integration/round37-unified/suites/additional/root_v2_bool_layouts.attempt1.json.gz": "21accf3468a0bfacfbe3486642e812ffea6791d1d8962afbf9cfb40a8d9aef19",
+    "work/parallel-main-integration/round37-unified/suites/additional/root_v2_layouts.attempt1.json.gz": "11f44da4b978a2de84f0506fcc11b4f9da0013c0e45f5d307c86e3b0c46fb030",
+    "work/parallel-main-integration/round37-unified/suites/additional/scheduler_577.attempt1.json.gz": "5f09054ca6329088be8745656c9e636440a4c9f56e2db5ba8ef2eee96c3e395f",
+    "work/parallel-main-integration/round37-unified/suites/additional/selector_72.attempt1.json.gz": "4e8e682b6e3638278f7796194a9b91ef47a1e508d72043c76905a8c581aa7b83",
+    "work/parallel-main-integration/round37-unified/suites/additional/sell_v2_atas_25.attempt1.json.gz": "cddc9775b2d9f7680edee009136a8a82f5d0381537633276e5045060ad20061c",
+    "work/parallel-main-integration/round37-unified/suites/additional/sell_v2_buyback_32.attempt1.json.gz": "b6e9000b0e6b402abb145a1cb8135dc57f908a6d5dd6e706322d7bff4b71abd0",
+    "work/parallel-main-integration/round37-unified/suites/additional/sell_v2_buyback_sell-v2-split.attempt1.json.gz": "3d2601643d2edc3607aca9a945b2d499ddd176f36a0e4d7debf8e9ecc2a52171",
+    "work/parallel-main-integration/round37-unified/suites/additional/sell_v2_buyback_sell-v2-thresholds.attempt1.json.gz": "0c6fbd5ced7e8e894c43e30714a316a0b9ff2510caa977821fa24fb30701c840",
+    "work/parallel-main-integration/round37-unified/suites/additional/sell_v2_prepare_12.attempt1.json.gz": "93b8b68c650575479f387f99ae99061b03109679742e7b40edc035458af38fbd",
+    "work/parallel-main-integration/round37-unified/suites/additional/sharing_config_78.attempt1.json.gz": "332dad3f65afd1017f480bf1153abe010e3b44ead3f3dff0c56d31f2d5d90dd3",
+    "work/parallel-main-integration/round37-unified/suites/additional/sweep_creator_rent_32.attempt1.json.gz": "5fda05893d8fcb87f8503ae0373c89f820490c27bc573851d420186d8f10713c",
+    "work/parallel-main-integration/round37-unified/suites/additional/sweep_default_quote.attempt1.json.gz": "fb80f58526d013e92a2c6ed2d2048e74c77f5cd8ef396c448fcae1ad2ebfbbbe",
+    "work/parallel-main-integration/round37-unified/suites/additional/sweep_order.attempt1.json.gz": "070dc0117410bbef87cb1caa7b193fa64da765a0108ca1346d566f6d3a8046b0",
+    "work/parallel-main-integration/round37-unified/suites/additional/sweep_rent.attempt1.json.gz": "954f1906a65577592584e764a53ad4403996163be59b3aade19e004108a85f07",
+    "work/parallel-main-integration/round37-unified/suites/additional/token_extension_edges_416.attempt1.json.gz": "58f78a3e766eb40fc400b6397eafe3ac83575ebec8ef6444d89b34691969915a",
+    "work/parallel-main-integration/round37-unified/suites/additional/token_extensions_36.attempt1.json.gz": "cf9fa136983bfecc89ec22923d26bbee6c4ee8b3430f3519fe45eff553731987",
+    "work/parallel-main-integration/round37-unified/suites/additional/token_planner_executable_recipients.attempt1.json.gz": "60754911250f933f28a619cdd7d540bd5f679d44e1bc1e7c5a5211f0bef6cf1a",
+    "work/parallel-main-integration/round37-unified/suites/additional/trade_optional_bool_115.attempt1.json.gz": "fef9d5e1fbdfa0c263eefbe7655b9445507d8da041a9caae08b0c013512298f4",
+    "work/parallel-main-integration/round37-unified/suites/additional/unknown_tlv_50.attempt1.json.gz": "df33f7b3f57af75587a62d8175e260ab697217f32d30981a3f603b52ae395e21",
+    "work/parallel-main-integration/round37-unified/suites/additional/v2_creator_rent_80.attempt1.json.gz": "5b4da7e0786690104c2787f1b1f37024ad4118ff8a3a23d6f9a5e759ea7a8ca2",
+    "work/parallel-main-integration/round37-unified/suites/additional/v2_creator_vault_rent_108.attempt1.json.gz": "0a53a3436b201a28c03e35c7fb0a29961f5433300ca86db8cd0aa9ba345fd818",
+    "work/parallel-main-integration/round37-unified/suites/additional/v2_curve_rent_8.attempt1.json.gz": "e2bb3c5e231f5d4a70396df8710b9734ed0ce70746ddd074f74fc5aa8023ba12",
+    "work/parallel-main-integration/round37-unified/suites/additional/v2_guards_200.attempt1.json.gz": "a2710742ef5a24ed0d688f72686715200f8e2cf6ee12b506ad516891efaf4c7c",
+    "work/parallel-main-integration/round37-unified/suites/additional/v2_payment_panic_order_64.attempt1.json.gz": "78a961767e647b1c3b74adf161d1f9be454181337efacc5e5d93a79f2f9813c5",
+    "work/parallel-main-integration/round37-unified/suites/additional/v2_zero_fee_8.attempt1.json.gz": "8c85b87651a01f921e17a388cf289a65d8cf323eadbffccbc422d21bddf57d79",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_buy_boundaries_28.attempt1.json.gz": "371cec244387fb2f31754f15ad02537dfe39ffae9ecf195e78534a9605e4cbcb",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe.attempt1.json.gz": "81d6c0ed660beb970027903ef791eca535fe9d3c337aad925d30c6d9149c54f1",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe_cost_order.attempt1.json.gz": "e417ce494c1aca9d97cdfa51a436d65e05e7ce186ad6747c9d7a4fe9f2b4aff6",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe_order.attempt1.json.gz": "fcea54e54949edfbe1b4b632b95ae21364bdb7af61665a5a95307bfbb600b787",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe_payment_prefix.attempt1.json.gz": "10d249fe0d0efdb8e4fbfc7e397af0eae6820b99bbaa7b954d9c9152df32b0bd",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe_post.attempt1.json.gz": "c61244ca73f27d40240b8e8fb088aee0d71f4cad0ae74e7d57061943195111c1",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe_protocol_overflow.attempt1.json.gz": "e9828f28ff648066c7250663b988c58a148714998224f560ae1c2c75bdf2d2dd",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_context_39.attempt1.json.gz": "10a7a39c8c5199382130382ef712d9cb3fee5c96089b289c58192dc95f76d465",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_continuation_42.attempt1.json.gz": "6e0c7176667b52bb9e421388b7e667ff7e387d95d1139a1c22c3defca8de477a",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_continuation_tiers_12.attempt1.json.gz": "961ce46e49d6c6c03f9d73bda963587a910f5a870f94f9634af2f1729ca25c05",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_crossing_matrix.attempt1.json.gz": "3d8d603173c7852381626e230919947f3ba0018870c403dd4cfe1c0d417886d4",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_extensions.attempt1.json.gz": "fe579e12fd38d7d221d772daf3705f1c17d8cfe8cfdf25d5037fcc7ccfac6a82",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz": "6a44644d287464fc15da8abe050318e3c9c60b76618ff9a2cdd9d9e5e6522861",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_mint_curve_18.attempt1.json.gz": "16fae2bb4b02c7a8055b2a23de6ee1f3f06d48a0d6ae1cad6e20fecffab7e17b",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_native_buyback_18.attempt1.json.gz": "408cba4fca3a5e3d4d82464522be0e2a5480b66633b3813571ce23efa0aeadab",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_net_budget.attempt1.json.gz": "5a46c3c789342a23c40406f38c582443c61f8b30b5966311a650ed21f1409565",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_post_ceil_boundaries.attempt1.json.gz": "074e937fa65a4c2f91220c32c8ffd0e8c42ab7e5c7c2725017eddd954f8f21bf",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_post_ceil_divisible.attempt1.json.gz": "2fc3bc39d425d3ed667ebdfa0198199f7602a01925d24070a569a149cd6f028a",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_post_edges_27.attempt1.json.gz": "1a677ae0842b56534c4590935bc46435c36f9ce780b91886a1773802d85d0e0d",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_post_fees_32.attempt1.json.gz": "1ef1f929055886b900601aa240384bc57f321c058f79a67eb2e4211fb3c4fb37",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_post_fees_80.attempt1.json.gz": "2e18da875cf1c2ecbd98e664f66622fd480ec11eeabdc294732ea49fc383023e",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_post_state_12.attempt1.json.gz": "aca7c745a6453825e5139106d22086d0fdc1b5b3339f3fd2efcb64504cff5635",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_precedence_36.attempt1.json.gz": "b4469ac6d11c49b619b9198e04ee5def0cb0ea1c579a0bd59a9bac55944c82f4",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_sell_supply_16.attempt1.json.gz": "15c5e81b95b7b01f92a775878b701981b97c2d63892fc9892784d54b0d2858a0",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_sell_zero_reserve_4.attempt1.json.gz": "b74bba08b5660fddcf80a12cb48442a2051bd9df1551738998ef9eed714cdd1c",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_token_buyback_12.attempt1.json.gz": "3490b12a4e2c1b6a3aa1b7e53e5d3cea2295c81bf17aa2af742f561f08db96c6",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_user_constraints_12.attempt1.json.gz": "32f19515faada9b4daaa1f2b9b9c38eb20a43a060bdc3ec2ac82c95eac38d6b8",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_waived_crossing.attempt1.json.gz": "ad4e40fc0ad275ae04c45fe9f699c0f24e60fda772c06ce05a2e20d62db83797",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_waiver.attempt1.json.gz": "461065c18c400b9e7c95dad7eeed90b62e7ef298eb204821decd0c328b3ef581",
+    "work/parallel-main-integration/round37-unified/suites/additional/v3_waiver_order.attempt1.json.gz": "b697ebd596e1d33ca783728434145824c9a515225da740400792af3a48837b79"
+  },
+  "observations": 18115,
+  "same_transaction_observations": 188,
+  "unbound_transaction_collisions": [],
+  "records": [
+    {
+      "case": {
+        "name": "zero-control",
+        "operation": "sell_v3",
+        "reserve_in": 1072999000000000,
+        "reserve_out": 30000027960,
+        "amount": 500000000,
+        "max_cost": 0,
+        "user_lamports": 10000000000000000,
+        "volume_metrics": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "input_sha256": "7dfa4c6dedd7962fddec19f896e6af5c15504ef4b0b4a73d56979304d0710771",
+      "same_signed_transaction": "4ad3d1f31663049741f3ffa7fe12c8d7552ec3fc100bf76e1cc6df60974d52da",
+      "possible_prior_matches": [
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 72,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 164,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 165,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 167,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 168,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 169,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 171,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 217,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 218,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 219,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 220,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 221,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 222,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 223,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 224,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 225,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 226,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 227,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 228,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 229,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 230,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 232,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 234,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 236,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 238,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 239,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 242,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 244,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 246,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 248,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 249,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 252,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 254,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 256,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 258,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 259,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 262,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 264,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 266,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 268,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 269,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 272,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 274,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 276,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 278,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 279,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 282,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 284,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 286,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 288,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 289,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 292,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 294,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 296,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 298,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/sell.attempt1.json.gz",
+          "observation": 299,
+          "state_field": "accounts",
+          "volume_account_hash_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 105,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 106,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 107,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 108,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 109,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 120,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 121,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 122,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 123,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 124,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 135,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 136,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 137,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 138,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 139,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 150,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 151,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 152,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 153,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 154,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 165,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 166,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 167,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 168,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 169,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 180,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 181,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 182,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 183,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 184,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 195,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 196,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 197,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 198,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/full/v3_configured_fee.attempt1.json.gz",
+          "observation": 199,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/context_failures_24.attempt1.json.gz",
+          "observation": 8,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/context_failures_24.attempt1.json.gz",
+          "observation": 9,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/context_failures_24.attempt1.json.gz",
+          "observation": 10,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/context_failures_24.attempt1.json.gz",
+          "observation": 11,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/context_failures_24.attempt1.json.gz",
+          "observation": 12,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/context_failures_24.attempt1.json.gz",
+          "observation": 13,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/context_failures_24.attempt1.json.gz",
+          "observation": 14,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/creator_gate_120.attempt1.json.gz",
+          "observation": 16,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/creator_gate_120.attempt1.json.gz",
+          "observation": 17,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/creator_gate_120.attempt1.json.gz",
+          "observation": 18,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/creator_gate_120.attempt1.json.gz",
+          "observation": 19,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/creator_gate_120.attempt1.json.gz",
+          "observation": 20,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/creator_gate_120.attempt1.json.gz",
+          "observation": 21,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/creator_gate_120.attempt1.json.gz",
+          "observation": 22,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/creator_gate_120.attempt1.json.gz",
+          "observation": 23,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/origin_kinds_38.attempt1.json.gz",
+          "observation": 32,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/origin_kinds_38.attempt1.json.gz",
+          "observation": 33,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/origin_kinds_38.attempt1.json.gz",
+          "observation": 34,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/origin_kinds_38.attempt1.json.gz",
+          "observation": 35,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/origin_kinds_38.attempt1.json.gz",
+          "observation": 36,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/origin_kinds_38.attempt1.json.gz",
+          "observation": 37,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/selector_72.attempt1.json.gz",
+          "observation": 1,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/selector_72.attempt1.json.gz",
+          "observation": 4,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/selector_72.attempt1.json.gz",
+          "observation": 7,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/selector_72.attempt1.json.gz",
+          "observation": 10,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe.attempt1.json.gz",
+          "observation": 36,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe.attempt1.json.gz",
+          "observation": 37,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe.attempt1.json.gz",
+          "observation": 38,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe.attempt1.json.gz",
+          "observation": 39,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe.attempt1.json.gz",
+          "observation": 40,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe.attempt1.json.gz",
+          "observation": 41,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe.attempt1.json.gz",
+          "observation": 42,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe.attempt1.json.gz",
+          "observation": 43,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe.attempt1.json.gz",
+          "observation": 44,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe_payment_prefix.attempt1.json.gz",
+          "observation": 0,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe_payment_prefix.attempt1.json.gz",
+          "observation": 1,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe_payment_prefix.attempt1.json.gz",
+          "observation": 3,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe_payment_prefix.attempt1.json.gz",
+          "observation": 4,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe_payment_prefix.attempt1.json.gz",
+          "observation": 6,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe_protocol_overflow.attempt1.json.gz",
+          "observation": 0,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_buyback_probe_protocol_overflow.attempt1.json.gz",
+          "observation": 1,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_context_39.attempt1.json.gz",
+          "observation": 13,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_context_39.attempt1.json.gz",
+          "observation": 14,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_context_39.attempt1.json.gz",
+          "observation": 17,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_context_39.attempt1.json.gz",
+          "observation": 19,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_context_39.attempt1.json.gz",
+          "observation": 20,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_context_39.attempt1.json.gz",
+          "observation": 21,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz",
+          "observation": 96,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz",
+          "observation": 97,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz",
+          "observation": 98,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz",
+          "observation": 99,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz",
+          "observation": 100,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz",
+          "observation": 101,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz",
+          "observation": 102,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz",
+          "observation": 103,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz",
+          "observation": 104,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz",
+          "observation": 105,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz",
+          "observation": 106,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz",
+          "observation": 107,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz",
+          "observation": 108,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz",
+          "observation": 109,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz",
+          "observation": 110,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_fee_config_boundaries_144.attempt1.json.gz",
+          "observation": 111,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_mint_curve_18.attempt1.json.gz",
+          "observation": 6,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_mint_curve_18.attempt1.json.gz",
+          "observation": 7,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_mint_curve_18.attempt1.json.gz",
+          "observation": 8,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_mint_curve_18.attempt1.json.gz",
+          "observation": 9,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_mint_curve_18.attempt1.json.gz",
+          "observation": 10,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_mint_curve_18.attempt1.json.gz",
+          "observation": 11,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_native_buyback_18.attempt1.json.gz",
+          "observation": 6,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_precedence_36.attempt1.json.gz",
+          "observation": 12,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_precedence_36.attempt1.json.gz",
+          "observation": 13,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_precedence_36.attempt1.json.gz",
+          "observation": 17,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_precedence_36.attempt1.json.gz",
+          "observation": 22,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_precedence_36.attempt1.json.gz",
+          "observation": 23,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_sell_supply_16.attempt1.json.gz",
+          "observation": 0,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_sell_supply_16.attempt1.json.gz",
+          "observation": 1,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_sell_supply_16.attempt1.json.gz",
+          "observation": 2,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_sell_supply_16.attempt1.json.gz",
+          "observation": 3,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_sell_supply_16.attempt1.json.gz",
+          "observation": 4,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_sell_supply_16.attempt1.json.gz",
+          "observation": 5,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_sell_supply_16.attempt1.json.gz",
+          "observation": 6,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_sell_supply_16.attempt1.json.gz",
+          "observation": 7,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_sell_zero_reserve_4.attempt1.json.gz",
+          "observation": 1,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_user_constraints_12.attempt1.json.gz",
+          "observation": 4,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_user_constraints_12.attempt1.json.gz",
+          "observation": 5,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_user_constraints_12.attempt1.json.gz",
+          "observation": 6,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_user_constraints_12.attempt1.json.gz",
+          "observation": 7,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_waiver.attempt1.json.gz",
+          "observation": 12,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_waiver.attempt1.json.gz",
+          "observation": 13,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_waiver.attempt1.json.gz",
+          "observation": 14,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_waiver_order.attempt1.json.gz",
+          "observation": 12,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_waiver_order.attempt1.json.gz",
+          "observation": 13,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        },
+        {
+          "file": "work/parallel-main-integration/round37-unified/suites/additional/v3_waiver_order.attempt1.json.gz",
+          "observation": 14,
+          "state_field": "accounts",
+          "metric_match": true,
+          "full_before_equal": false
+        }
+      ],
+      "admit_as_new": false
+    },
+    {
+      "case": {
+        "name": "nonzero-existing",
+        "operation": "sell_v3",
+        "reserve_in": 1072999000000000,
+        "reserve_out": 30000027960,
+        "amount": 500000000,
+        "max_cost": 0,
+        "user_lamports": 10000000000000000,
+        "volume_metrics": [
+          101,
+          202,
+          303,
+          1699999900
+        ]
+      },
+      "input_sha256": "0638ac5bf104f1322716ee1356063f7fbaefb1a3db041b0718bb2af58a01681e",
+      "same_signed_transaction": "4ad3d1f31663049741f3ffa7fe12c8d7552ec3fc100bf76e1cc6df60974d52da",
+      "possible_prior_matches": [],
+      "admit_as_new": true
+    }
+  ],
+  "new_input_count": 1,
+  "policy": "Suppress any possible prior metric match; admit only when every same-transaction record is excluded by bound account state. Full canonical before hashes keep the two witness states distinct."
+}

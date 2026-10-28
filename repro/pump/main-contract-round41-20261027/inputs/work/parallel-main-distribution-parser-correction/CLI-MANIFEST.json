@@ -1,0 +1,27 @@
+{
+  "scope": "18 new inputs from24 signed V1 quote-admission cases after exact-input dedup against full R34 corpus. Post-fix qualification is delegated to combined R35 run.",
+  "script": "work/parallel-main-distribution-parser-correction/probe_incremental.py",
+  "script_sha256": "610c833b5ac46f6755b7f9507d0d1770c902417d3767450b410018feb4bcae13",
+  "arguments": [
+    "--candidate",
+    "CANDIDATE",
+    "--output",
+    "OUTPUT.json.gz"
+  ],
+  "extra_inputs": {
+    "work/parallel-main-distribution-parser-correction/incremental-cases.json": "fb0e2a5038076969726cbd9d03385e6f26cecf9bfd29626421843376b7f06c3c",
+    "work/parallel-main-distribution-parser-audit/probe_quote_gate.py": "00a66b7334c17fbd1a6a5f059d209c575caf75aa349124570cc02938780e5ac5",
+    "scripts/pump_creator_distribution_differential.py": "24bbff55fb54cb53c913fb4c059efa65965b537c78e6ab04f923027c61e4e738",
+    "scripts/fees_sharing_update_differential.py": "21ec993ac86f364a58bfb9073d991bb83aba100cc91c6eaa6d4a3adf48216ffe",
+    "scripts/fees_sharing_create_differential.py": "8ebf122a3177147de9484537acee97c7dff589bd2ed6cc388f07bd6886451898",
+    "scripts/fees_donation_create_differential.py": "610e3296d912dde1e4f7c071416b81a204095ff3aafe4a4e318ee48411a46b87",
+    "scripts/fees_admin_differential.py": "30ae2037e1bb4288f5fca5a7f1ee4dbf7e59ad8170857113f58e302d65ea3003",
+    "scripts/pump_validate_admin.py": "bcb7ea8f10be236910823c5320f03a1b339f64fe6ef90ff36e0e7ef07238c2e8"
+  },
+  "case_count": 18,
+  "before_mismatch_count": 16,
+  "after_mismatch_count": null,
+  "status": "staged, not yet run on corrected source",
+  "full_focused_cases": 24,
+  "dedup_report_sha256": "9036855eb675380317fb4c5a74522083511fb0459a845d516cec9fd662be8362"
+}

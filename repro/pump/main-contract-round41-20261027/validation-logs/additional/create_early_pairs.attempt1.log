@@ -1,0 +1,13 @@
+False-create-off-cashback TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6082)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6082)))) []
+False-create-off-zero TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6030)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6030)))) []
+False-create-off-holder TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6084)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6084)))) []
+False-cashback-zero TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6082)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6082)))) []
+False-cashback-holder TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6082)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6082)))) []
+False-holder-zero TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6084)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6084)))) []
+True-create-off-cashback TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6082)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6082)))) []
+True-create-off-zero TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6030)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6030)))) []
+True-create-off-holder TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6084)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6084)))) []
+True-cashback-zero TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6082)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6082)))) []
+True-cashback-holder TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6082)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6082)))) []
+True-holder-zero TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6084)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6084)))) []
+cases 12 mismatches 0

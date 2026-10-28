@@ -1,0 +1,21 @@
+{
+  "scope": "Ten distinct IDL transfer boundary inputs;171existing cases remain unchanged",
+  "counts": {
+    "full": 0,
+    "additional": 10
+  },
+  "definition_sha256": {
+    "work/parallel-main-idl-boundary-review/probe-new.py": "ef27a5f7b5cb5ca6c726dc19f21a8071bc306ed9807435b6531880ff665ddc82",
+    "work/parallel-main-idl-boundary-review/probe-transfer.py": "99807e458a9bfd3cc8ff9b184112794096c671ee4108e815694429723219f709",
+    "work/parallel-main-idl-boundary-review/DEDUP01.json": "8587685acb86f88e004cbbbc4dd638ed48ccafccab73e2a2012fafca6797304d"
+  },
+  "suites": [
+    {
+      "group": "additional",
+      "name": "idl_transfer_boundary10",
+      "script": "work/parallel-main-idl-boundary-review/probe-new.py",
+      "cases": 10,
+      "args": []
+    }
+  ]
+}

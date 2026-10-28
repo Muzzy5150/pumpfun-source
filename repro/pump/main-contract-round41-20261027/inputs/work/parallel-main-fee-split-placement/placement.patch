@@ -1,0 +1,49 @@
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -522,6 +522,23 @@
+      let slot=self.whitelisted_quote_mints.iter_mut().find(|key|**key==quote_mint).ok_or_else(||error!(PumpError::QuoteMintNotWhitelisted))?;*slot=Pubkey::default();Ok(())
+         }
+ }
++/// Split protocol fees after the curve payment, preserving the buyback invariants.
++#[inline(never)]
++pub(crate) fn split_protocol_fee(
++    global: &crate::Global,
++    protocol_fee: u64,
++    is_mayhem_mode: bool,
++) -> (u64, u64) {
++    if is_mayhem_mode {
++        return (0, protocol_fee);
++    }
++    let buyback_fee = u64::try_from(global.buyback_basis_points as u128 * protocol_fee as u128 / 10000)
++        .expect("buyback fee is at most protocol_fee");
++    let remaining = protocol_fee.checked_sub(buyback_fee)
++        .expect("buyback_fee never exceeds protocol_fee");
++    (buyback_fee, remaining)
++}
++
+ fn update_global_authority_handler(ctx:Context<UpdateGlobalAuthority>)->Result<()>{
+     ctx.accounts.global.authority=ctx.accounts.new_authority.key();
+     let event=UpdateGlobalAuthorityEvent{global:ctx.accounts.global.key(),authority:ctx.accounts.authority.key(),new_authority:ctx.accounts.new_authority.key(),timestamp:Clock::get()?.unix_timestamp};
+--- a/src/v2_recipient_payments.rs
++++ b/src/v2_recipient_payments.rs
+@@ -23,19 +23,4 @@
+     )
+ }
+ 
+-/// Split protocol fees after the curve payment, preserving the buyback invariants.
+-#[inline(never)]
+-pub(crate) fn split_protocol_fee(
+-    global: &crate::Global,
+-    protocol_fee: u64,
+-    is_mayhem_mode: bool,
+-) -> (u64, u64) {
+-    if is_mayhem_mode {
+-        return (0, protocol_fee);
+-    }
+-    let buyback_fee = u64::try_from(global.buyback_basis_points as u128 * protocol_fee as u128 / 10000)
+-        .expect("buyback fee is at most protocol_fee");
+-    let remaining = protocol_fee.checked_sub(buyback_fee)
+-        .expect("buyback_fee never exceeds protocol_fee");
+-    (buyback_fee, remaining)
+-}
++pub(crate) use crate::split_protocol_fee;

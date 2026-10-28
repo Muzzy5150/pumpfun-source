@@ -1,0 +1,8 @@
+token-False-crossing-False-bps-0 None None []
+token-False-crossing-False-bps-9300000000000000000 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024)))) []
+token-False-crossing-True-bps-0 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024)))) []
+token-False-crossing-True-bps-9300000000000000000 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024)))) []
+token-True-crossing-False-bps-0 None None []
+token-True-crossing-False-bps-9300000000000000000 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6024)))) []
+token-True-crossing-True-bps-0 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6021)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6021)))) []
+token-True-crossing-True-bps-9300000000000000000 TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6021)))) TransactionErrorInstructionError((1, Tagged(InstructionErrorCustom(6021)))) []

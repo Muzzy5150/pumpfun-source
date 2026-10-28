@@ -1,0 +1,243 @@
+{
+  "scope": "Main Pump only. Static ABI/control-flow proof for the borrowed-authority token CPI wrapper.",
+  "original_sha256": "7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d",
+  "baseline_unstripped_sha256": "014d7c9d9fafa756d7a0baa622d0cc0d137438d1c45caeace71458938d8cd2b2",
+  "baseline_manifest_sha256": "f44e635bd82e19675d91f2f4e987b7661af912ef0ce961b77c455b833810d0a8",
+  "wrapper": {
+    "start": "0x90638",
+    "bytes": 2088,
+    "raw_sha256": "c99a91561d29a22fad4b73f622b9a2b41ece112bfa615fdd32ea94b49db0fd2e",
+    "direct_callers": [
+      "0x2bbb0",
+      "0x2ff50"
+    ],
+    "standard_callee": "0x17fcc8",
+    "standard_callee_bytes": 2192,
+    "standard_callee_matches_in_baseline": [
+      {
+        "start": 1483824,
+        "symbol": "_ZN10anchor_spl10token_202216transfer_checked17h72375b9d73ad03f9E",
+        "raw_sha256": "26e8f1085ee0a140c8a700d1a80eb3ec40bc1420604df915066cbdda534342e7",
+        "operands": [
+          {
+            "offset": 144,
+            "kind": "direct-call",
+            "target": 1558128
+          },
+          {
+            "offset": 352,
+            "kind": "direct-call",
+            "target": 1697304
+          },
+          {
+            "offset": 456,
+            "kind": "direct-call",
+            "target": 1697304
+          },
+          {
+            "offset": 496,
+            "kind": "direct-call",
+            "target": 1697304
+          },
+          {
+            "offset": 536,
+            "kind": "direct-call",
+            "target": 1697304
+          },
+          {
+            "offset": 576,
+            "kind": "direct-call",
+            "target": 1697304
+          },
+          {
+            "offset": 672,
+            "kind": "direct-call",
+            "target": 1610960
+          },
+          {
+            "offset": 752,
+            "kind": "direct-call",
+            "target": 1592152
+          },
+          {
+            "offset": 824,
+            "kind": "direct-call",
+            "target": 1375032
+          },
+          {
+            "offset": 864,
+            "kind": "direct-call",
+            "target": 1375032
+          },
+          {
+            "offset": 888,
+            "kind": "direct-call",
+            "target": 1472120
+          },
+          {
+            "offset": 904,
+            "kind": "direct-call",
+            "target": 1475168
+          },
+          {
+            "offset": 1008,
+            "kind": "direct-call",
+            "target": 1375032
+          },
+          {
+            "offset": 1104,
+            "kind": "direct-call",
+            "target": 1375032
+          },
+          {
+            "offset": 1176,
+            "kind": "direct-call",
+            "target": 1592152
+          },
+          {
+            "offset": 1296,
+            "kind": "direct-call",
+            "target": 1375032
+          },
+          {
+            "offset": 1392,
+            "kind": "direct-call",
+            "target": 1375032
+          },
+          {
+            "offset": 1496,
+            "kind": "direct-call",
+            "target": 1375032
+          },
+          {
+            "offset": 1592,
+            "kind": "direct-call",
+            "target": 1375032
+          },
+          {
+            "offset": 1696,
+            "kind": "direct-call",
+            "target": 1375032
+          },
+          {
+            "offset": 1792,
+            "kind": "direct-call",
+            "target": 1375032
+          },
+          {
+            "offset": 1896,
+            "kind": "direct-call",
+            "target": 1375032
+          },
+          {
+            "offset": 1992,
+            "kind": "direct-call",
+            "target": 1375032
+          },
+          {
+            "offset": 2008,
+            "kind": "direct-call",
+            "target": 1475168
+          },
+          {
+            "offset": 2112,
+            "kind": "direct-call",
+            "target": 1375032
+          }
+        ]
+      }
+    ]
+  },
+  "physical_arguments": {
+    "r2": "typed Interface<TokenInterface> wrapper address, dereferenced at90668",
+    "r3": "borrowed raw source AccountInfo",
+    "r4": "borrowed raw destination AccountInfo",
+    "stack[-1000]": "borrowed raw authority AccountInfo",
+    "stack[-ff8]": "mint decimals",
+    "stack[-ff0]": "borrowed raw mint AccountInfo",
+    "stack[-fe8]": "u64 amount",
+    "stack[-fe0]": "one-group signer descriptor pointer"
+  },
+  "clones": [
+    {
+      "role": "program",
+      "range": "0x90668..0x90748"
+    },
+    {
+      "role": "source",
+      "range": "0x90750..0x90848"
+    },
+    {
+      "role": "destination",
+      "range": "0x90858..0x90938"
+    },
+    {
+      "role": "authority",
+      "range": "0x90940..0x90a40"
+    },
+    {
+      "role": "mint",
+      "range": "0x90a68..0x90b60"
+    }
+  ],
+  "zero_path": {
+    "load": "0x90650",
+    "branch": "0x90658",
+    "target": "0x90e48",
+    "effect": "Writes unit-success tag2 and returns, no clone/CPI/owned AccountInfo destruction."
+  },
+  "collector_caller": {
+    "site": "0x2bbb0",
+    "positive_guard": "shared core returns None before this branch when available amount is zero",
+    "authority": "creator_vault borrowed account",
+    "preserve": "owner/executable/rent/zero checks and branch order"
+  },
+  "token_distribution_caller": {
+    "site": "0x2ff50",
+    "amount_load": "0x2fe00 from tuple[-8]",
+    "branch": "0x2fe18 tests tuple Boolean at+0 (ATA initialization flag), not amount",
+    "authority": "borrowed local AccountInfo at stack[-220]",
+    "preserve": "ATA creation precedes transfer; checked distributed total follows; planned zero amounts reach wrapper"
+  },
+  "seed_descriptor": {
+    "outer_group_count": 1,
+    "inner_seed_count": 3,
+    "inner_seed_lengths": [
+      13,
+      32,
+      1
+    ],
+    "values": [
+      "creator-vault",
+      "creator Pubkey",
+      "vault bump"
+    ],
+    "evidence": "SEED-PROOF01.json"
+  },
+  "existing_distinct_helper": {
+    "start": "0x91ef0",
+    "bytes": 2352,
+    "authority": "owned AccountInfo; destructor runs on zero return",
+    "decision": "Do not alias borrowed wrapper to this owned helper."
+  },
+  "proposed_api": "pub(crate) fn transfer_tokens(&Interface<TokenInterface>, &AccountInfo, &AccountInfo, &AccountInfo, u8, &AccountInfo, u64, &[&[&[u8]]]) -> Result<()>",
+  "proposed_source": "Existing creator/collect_creator_fee.rs; no new file/line-padding, no unique historical path claim.",
+  "control": "Ordinary Anchor token_interface::transfer_checked; explicit zero return; no source retention/visibility beyond actual two-caller need.",
+  "validation": "Complete 739/121 baseline inventory no loss; both actual caller edges and exact standard CPI callee; positive and zero token paths plus collection/CTO/distribution regression suites.",
+  "limits": [
+    "Machine ABI does not uniquely determine original Rust type spelling.",
+    "Parent physical V2 split is independent; deliver V2 token-loop hunk for transplant.",
+    "No source changes or build performed by this evidence script."
+  ],
+  "prior_evidence_sha256": {
+    "SEED-PROOF01.json": "500c076fb05e38b4c2e3ba0071318e220f8c4817727e5fbf1c3dc18b637edc4a",
+    "token-original.asm": "63b1a21c9bb8060a459f2274ee5db95be00ec408f6a19a022a9ef4ee581c0d75",
+    "REVIEW01.json": "e591835b1d5e4657b5f50bbad089aebbf44fb888cfeb188e7f032ee0086b3325",
+    "token-caller-second.asm": "36b86452bf94fbda9d9aaa76d4b649e092c0ecc19ebf71102560e5f7440c6c44",
+    "token-caller-original.asm": "aa04ce3d43297f3e292aea5c720d0d4b4b7b304c166f9847e2292246054876fd",
+    "native-original.asm": "2583102bc88bd2b801d828e8d01196c752ed65fc720fd2cedee4865d56fd90ed",
+    "native-caller-cto.asm": "2543ee7392c6bae3f3991338eb82eb047c29c8d2fac2519603945a34a0dd427d",
+    "direct-callers.json": "d2a14e1307a832b520675223d68b24ae7a5adb5b450e07176385089229380683",
+    "native-caller-legacy.asm": "103d2eb2e001b0383218285f1470f6fc59b0b890489a70e2082a68070a0be537"
+  }
+}

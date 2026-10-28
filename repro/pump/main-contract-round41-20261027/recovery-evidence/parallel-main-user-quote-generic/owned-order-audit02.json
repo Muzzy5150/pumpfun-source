@@ -1,0 +1,441 @@
+{
+  "cases": 48,
+  "zero_fee_cases": 24,
+  "nonzero_fee_cases": 24,
+  "all_zero_fee_creator_payments_absent": true,
+  "all_positive_fee_creator_payments_present": true,
+  "rows": [
+    {
+      "case": "buy_v2_native_cashback_False_zero_creator_False_buyback_0",
+      "zero_creator": false,
+      "cashback": false,
+      "creator_payments": [
+        42
+      ],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_v2_native_cashback_False_zero_creator_False_buyback_20000",
+      "zero_creator": false,
+      "cashback": false,
+      "creator_payments": [
+        42
+      ],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_native_cashback_False_zero_creator_True_buyback_0",
+      "zero_creator": true,
+      "cashback": false,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_v2_native_cashback_False_zero_creator_True_buyback_20000",
+      "zero_creator": true,
+      "cashback": false,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_native_cashback_True_zero_creator_False_buyback_0",
+      "zero_creator": false,
+      "cashback": true,
+      "creator_payments": [
+        42
+      ],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_v2_native_cashback_True_zero_creator_False_buyback_20000",
+      "zero_creator": false,
+      "cashback": true,
+      "creator_payments": [
+        42
+      ],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_native_cashback_True_zero_creator_True_buyback_0",
+      "zero_creator": true,
+      "cashback": true,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_v2_native_cashback_True_zero_creator_True_buyback_20000",
+      "zero_creator": true,
+      "cashback": true,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_token_cashback_False_zero_creator_False_buyback_0",
+      "zero_creator": false,
+      "cashback": false,
+      "creator_payments": [
+        42
+      ],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_v2_token_cashback_False_zero_creator_False_buyback_20000",
+      "zero_creator": false,
+      "cashback": false,
+      "creator_payments": [
+        42
+      ],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_token_cashback_False_zero_creator_True_buyback_0",
+      "zero_creator": true,
+      "cashback": false,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_v2_token_cashback_False_zero_creator_True_buyback_20000",
+      "zero_creator": true,
+      "cashback": false,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_token_cashback_True_zero_creator_False_buyback_0",
+      "zero_creator": false,
+      "cashback": true,
+      "creator_payments": [
+        42
+      ],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_v2_token_cashback_True_zero_creator_False_buyback_20000",
+      "zero_creator": false,
+      "cashback": true,
+      "creator_payments": [
+        42
+      ],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_token_cashback_True_zero_creator_True_buyback_0",
+      "zero_creator": true,
+      "cashback": true,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_v2_token_cashback_True_zero_creator_True_buyback_20000",
+      "zero_creator": true,
+      "cashback": true,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_token22_cashback_False_zero_creator_False_buyback_0",
+      "zero_creator": false,
+      "cashback": false,
+      "creator_payments": [
+        42
+      ],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_v2_token22_cashback_False_zero_creator_False_buyback_20000",
+      "zero_creator": false,
+      "cashback": false,
+      "creator_payments": [
+        42
+      ],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_token22_cashback_False_zero_creator_True_buyback_0",
+      "zero_creator": true,
+      "cashback": false,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_v2_token22_cashback_False_zero_creator_True_buyback_20000",
+      "zero_creator": true,
+      "cashback": false,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_token22_cashback_True_zero_creator_False_buyback_0",
+      "zero_creator": false,
+      "cashback": true,
+      "creator_payments": [
+        42
+      ],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_v2_token22_cashback_True_zero_creator_False_buyback_20000",
+      "zero_creator": false,
+      "cashback": true,
+      "creator_payments": [
+        42
+      ],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_v2_token22_cashback_True_zero_creator_True_buyback_0",
+      "zero_creator": true,
+      "cashback": true,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_v2_token22_cashback_True_zero_creator_True_buyback_20000",
+      "zero_creator": true,
+      "cashback": true,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_native_cashback_False_zero_creator_False_buyback_0",
+      "zero_creator": false,
+      "cashback": false,
+      "creator_payments": [
+        1481482
+      ],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_native_cashback_False_zero_creator_False_buyback_20000",
+      "zero_creator": false,
+      "cashback": false,
+      "creator_payments": [
+        1481482
+      ],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_native_cashback_False_zero_creator_True_buyback_0",
+      "zero_creator": true,
+      "cashback": false,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_native_cashback_False_zero_creator_True_buyback_20000",
+      "zero_creator": true,
+      "cashback": false,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_native_cashback_True_zero_creator_False_buyback_0",
+      "zero_creator": false,
+      "cashback": true,
+      "creator_payments": [
+        1481482
+      ],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_native_cashback_True_zero_creator_False_buyback_20000",
+      "zero_creator": false,
+      "cashback": true,
+      "creator_payments": [
+        1481482
+      ],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_native_cashback_True_zero_creator_True_buyback_0",
+      "zero_creator": true,
+      "cashback": true,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_native_cashback_True_zero_creator_True_buyback_20000",
+      "zero_creator": true,
+      "cashback": true,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_token_cashback_False_zero_creator_False_buyback_0",
+      "zero_creator": false,
+      "cashback": false,
+      "creator_payments": [
+        1481482
+      ],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_token_cashback_False_zero_creator_False_buyback_20000",
+      "zero_creator": false,
+      "cashback": false,
+      "creator_payments": [
+        1481482
+      ],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_token_cashback_False_zero_creator_True_buyback_0",
+      "zero_creator": true,
+      "cashback": false,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_token_cashback_False_zero_creator_True_buyback_20000",
+      "zero_creator": true,
+      "cashback": false,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_token_cashback_True_zero_creator_False_buyback_0",
+      "zero_creator": false,
+      "cashback": true,
+      "creator_payments": [
+        1481482
+      ],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_token_cashback_True_zero_creator_False_buyback_20000",
+      "zero_creator": false,
+      "cashback": true,
+      "creator_payments": [
+        1481482
+      ],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_token_cashback_True_zero_creator_True_buyback_0",
+      "zero_creator": true,
+      "cashback": true,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_token_cashback_True_zero_creator_True_buyback_20000",
+      "zero_creator": true,
+      "cashback": true,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_token22_cashback_False_zero_creator_False_buyback_0",
+      "zero_creator": false,
+      "cashback": false,
+      "creator_payments": [
+        1481482
+      ],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_token22_cashback_False_zero_creator_False_buyback_20000",
+      "zero_creator": false,
+      "cashback": false,
+      "creator_payments": [
+        1481482
+      ],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_token22_cashback_False_zero_creator_True_buyback_0",
+      "zero_creator": true,
+      "cashback": false,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_token22_cashback_False_zero_creator_True_buyback_20000",
+      "zero_creator": true,
+      "cashback": false,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_token22_cashback_True_zero_creator_False_buyback_0",
+      "zero_creator": false,
+      "cashback": true,
+      "creator_payments": [
+        1481482
+      ],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_token22_cashback_True_zero_creator_False_buyback_20000",
+      "zero_creator": false,
+      "cashback": true,
+      "creator_payments": [
+        1481482
+      ],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    },
+    {
+      "case": "buy_exact_quote_in_v2_token22_cashback_True_zero_creator_True_buyback_0",
+      "zero_creator": true,
+      "cashback": true,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": null
+    },
+    {
+      "case": "buy_exact_quote_in_v2_token22_cashback_True_zero_creator_True_buyback_20000",
+      "zero_creator": true,
+      "cashback": true,
+      "creator_payments": [],
+      "same_candidate_payments": true,
+      "original_error": "TransactionErrorInstructionError((1, Fieldless(ProgramFailedToComplete)))"
+    }
+  ]
+}

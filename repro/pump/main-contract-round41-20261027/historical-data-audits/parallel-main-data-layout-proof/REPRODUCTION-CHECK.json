@@ -1,0 +1,7 @@
+{
+  "audit_equal": true,
+  "summary_equal": true,
+  "audit_sha256": "874fa999055e4dcd1110e9444e5f8b3a493a2ed8135d316cd336b6fce4215f1f",
+  "summary_sha256": "528214299ca3ddcf1c6e8b1ccf24ee12e445a2acc15ca6ae1772336e2d774a9f",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]"
+}
