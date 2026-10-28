@@ -104,6 +104,16 @@ The same patches also passed on Round23, with patch 01 included: 1,266 cases acr
 | `sync_virtual_quote_reserves` multiplication with `ok_or_else` / explicit `match` | identical binary |
 | `sync_virtual_quote_reserves` multiplication operands swapped | different binary, no gain |
 
+## Verify without rebuilding
+
+```sh
+HOME=$(mktemp -d) python3 -B research/claude-pump-mid-20261027/verify.py
+```
+
+`verify.py` uses only the standard library. It checks `artifacts/SHA256SUMS`, `CANDIDATE.json` and the shipped source files.
+It then recomputes the window counts of `artifacts/unstripped.so.gz` against `evidence/original/pump/deployed.so`, using the ELF's own `.symtab` and the repository normalizer.
+The result must equal `CLAIM.json`: 724 normalized / 123 raw on Round26, gaining 0xcf510, 0xdd700 and 0x1255a8, with no normalized or raw loss.
+
 ## Reproduce
 
 ```sh
