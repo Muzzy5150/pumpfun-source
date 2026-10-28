@@ -67,4 +67,6 @@ for v in spec:
     h = subprocess.run(['python3', '-B', f'{B}/hunks.py', label, 'O0079', 'regs'], capture_output=True, text=True, cwd=B)
     c = subprocess.run(['python3', '-B', f'{B}/calls.py', 'c', f'{BUILDS}/{label}/symbols.so', 'sell_pump_swap7handler'], capture_output=True, text=True, cwd=B)
     nclone = c.stdout.count('Clone')
+    mk = subprocess.run(['python3', '-B', '-c', 'import sys; sys.path.insert(0, %r); import llc79, mark79; c = mark79.code_of(%r); print(f"size {len(c)} ratio79 {llc79.ratio(c):.4f} prefix {llc79.prefix(c)} rd2800 {llc79.regdiff(c,0,2800)} rdall {llc79.regdiff(c)} | " + " ".join(llc79.markers(c)))' % (B, label)], capture_output=True, text=True)
+    print('   ' + (mk.stdout.strip() or mk.stderr[-300:]), flush=True)
     print((h.stdout.splitlines()[0] if h.stdout else h.stderr[-300:]) + f'  clone-calls={nclone}', flush=True)

@@ -30,7 +30,16 @@ EQ = {
 EQ_HELPERS = {
     'helper': "#[inline(always)] fn effective_quote(amount:u64,virtual_quote:i128)->core::result::Result<u64,MayhemError> { let q=(amount as i128).checked_add(virtual_quote).ok_or(MayhemError::MathOverflow)?; u64::try_from(q).map_err(|_|MayhemError::MathOverflow) }",
 }
+PRICE_CD = ' let price=(vs*1_000_000_000_000_000u128).checked_div(vt).ok_or(MayhemError::MathOverflow)?;'
+SCALED = ' let scaled=reference.checked_mul(tolerance_bps as u128); let delta=scaled.ok_or(MayhemError::MathOverflow)?/10_000;'
+CMP = ' if price<low||price>high{return Err(MayhemError::PumpCpiSlippage);}'
 PC_BODY = {
+    'pcC': PRICE_CD + SCALED + ' let (low,under)=reference.overflowing_sub(delta); let (high,over)=reference.overflowing_add(delta); if under||over{return Err(MayhemError::MathOverflow);}' + CMP,
+    'pcD': PRICE_CD + SCALED + ' let low=reference.checked_sub(delta); let high=reference.checked_add(delta); let (Some(low),Some(high))=(low,high) else {return Err(MayhemError::MathOverflow)};' + CMP,
+    'pcE': PRICE_CD + SCALED + ' match (reference.checked_sub(delta),reference.checked_add(delta)) {(Some(low),Some(high)) => if price<low||price>high{return Err(MayhemError::PumpCpiSlippage);}, _ => return Err(MayhemError::MathOverflow)}',
+    'pcF': PRICE_CD + SCALED + ' if delta>reference{return Err(MayhemError::MathOverflow);} let high=reference.checked_add(delta).ok_or(MayhemError::MathOverflow)?; let low=reference-delta;' + CMP,
+    'pcG': PRICE_CD + SCALED + ' let low=reference.checked_sub(delta).ok_or(MayhemError::MathOverflow)?; let high=reference.checked_add(delta).ok_or(MayhemError::MathOverflow)?; if !(low..=high).contains(&price){return Err(MayhemError::PumpCpiSlippage);}',
+    'pcH': PRICE_CD + SCALED + ' let Some(low)=reference.checked_sub(delta) else {return Err(MayhemError::MathOverflow)}; let Some(high)=reference.checked_add(delta) else {return Err(MayhemError::MathOverflow)};' + CMP,
     # checked_div for the price (unlikely(vt==0) branch weights), price first
     'pc3': ' let price=(vs*1_000_000_000_000_000u128).checked_div(vt).ok_or(MayhemError::MathOverflow)?; let scaled=reference.checked_mul(tolerance_bps as u128); let delta=scaled.ok_or(MayhemError::MathOverflow)?/10_000; let low=reference.checked_sub(delta).ok_or(MayhemError::MathOverflow)?; let high=reference.checked_add(delta).ok_or(MayhemError::MathOverflow)?; if price<low||price>high{return Err(MayhemError::PumpCpiSlippage);}',
     # SellV2 order: scaled computed first, then checked_div price, then delta
@@ -75,6 +84,44 @@ SEEDS = {
     'var': '&[seeds]',
 }
 
+# SellEvent literal pieces (keys are short names; EV builds literals in a chosen order)
+EVF = {
+    'side': 'side:1', 'sv': 'sol_vault:a.sol_vault.key()', 'mint': 'mint:a.mint.key()',
+    'sa': 'sol_amount:if native{sol}else{0}', 'ta': 'token_amount:tokens',
+    'svb': 'sol_vault_balance:if native{a.sol_vault.lamports()}else{0}',
+    'svbq': 'sol_vault_balance:if native{quote_vault_balance}else{0}',
+    'tvb': 'token_vault_balance:a.mayhem_token_vault.amount',
+    'ssd': 'state_sol_deployed:if native{a.mayhem_state.field_56}else{0}', 'stn': 'state_token_net:a.mayhem_state.field_72',
+    'vs': 'virtual_sol:if native{a.pool_quote_token_account.amount}else{0}', 'vt': 'virtual_tokens:a.pool_base_token_account.amount',
+    'gsd': 'global_sol_deployed:if native{a.global_params.sol_deployed}else{0}', 'ts': 'timestamp:Clock::get()?.unix_timestamp',
+    'et': 'end_timestamp:a.mayhem_state.end_timestamp', 'rs': 'real_sol:if native{a.pool_quote_token_account.amount}else{0}',
+    'rt': 'real_tokens:a.pool_base_token_account.amount', 'ver': 'version:a.global_params.version', 'rrb': 'retained_reserve_bps',
+    'qa': 'quote_amount:sol', 'qvb': 'quote_vault_balance:after_quote', 'qvbl': 'quote_vault_balance',
+    'qvbi': 'quote_vault_balance:if native{a.sol_vault.lamports()}else{a.mayhem_quote_vault.amount}',
+    'sqd': 'state_quote_deployed:a.mayhem_state.field_56', 'vq': 'virtual_quote:a.pool_quote_token_account.amount',
+    'gqd': 'global_quote_deployed:if native_accounting{a.global_params.sol_deployed}else{a.global_params.stable_deployed}',
+    'gqdn': 'global_quote_deployed:if native{a.global_params.sol_deployed}else{a.global_params.stable_deployed}',
+    'rq': 'real_quote:a.pool_quote_token_account.amount', 'qm': 'quote_mint:if native{Pubkey::default()}else{a.quote_mint.key()}',
+}
+PARENT_EV = ['side', 'sv', 'mint', 'sa', 'ta', 'svb', 'tvb', 'ssd', 'stn', 'vs', 'vt', 'gsd', 'ts', 'et', 'rs', 'rt', 'ver', 'rrb',
+             'qa', 'qvb', 'sqd', 'vq', 'gqd', 'rq', 'qm']
+QVB_LOCAL = ' let quote_vault_balance=if native{a.sol_vault.lamports()}else{a.mayhem_quote_vault.amount};'
+
+
+def ev(order, pre=''):
+    return pre + ' let event=SellEvent{' + ','.join(EVF[k] for k in order) + '};'
+
+
+EV = {
+    'p': ev(PARENT_EV),
+    'p2': ev([{'gqd': 'gqdn', 'qvb': 'qvbi'}.get(k, k) for k in PARENT_EV]),
+    'p3': ev([{'gqd': 'gqdn', 'qvb': 'qvbl', 'svb': 'svbq'}.get(k, k) for k in PARENT_EV], QVB_LOCAL),
+    'n1': ev(['side', 'sa', 'svbq', 'ssd', 'vs', 'gsd', 'rs', 'qvbl', 'sqd', 'vq', 'gqdn', 'rq', 'qm', 'sv', 'mint', 'ta', 'tvb',
+              'stn', 'vt', 'et', 'ts', 'rt', 'ver', 'rrb', 'qa'], QVB_LOCAL),
+    'n2': ev(['side', 'sa', 'svbq', 'ssd', 'vs', 'gsd', 'rs', 'qvbl', 'sqd', 'vq', 'gqdn', 'rq', 'qm', 'sv', 'mint', 'ta', 'tvb',
+              'stn', 'vt', 'ts', 'et', 'rt', 'ver', 'rrb', 'qa'], QVB_LOCAL),
+}
+
 
 def build(o):
     o = dict(o)
@@ -108,8 +155,10 @@ def build(o):
     body.append(' let after_quote=if native{a.sol_vault.lamports()}else{a.mayhem_quote_vault.amount};')
     body.append(' let (sol,tokens)=super::pump_amm_interface::sold_amounts(before_sol,after_quote,before_tokens,a.mayhem_token_vault.amount);')
     body.append(' crate::state::record_sell(&mut a.global_params,&mut a.mayhem_state,sol,tokens,&a.quote_mint.key())?;')
-    body.append(' let event=SellEvent{side:1,sol_vault:a.sol_vault.key(),mint:a.mint.key(),sol_amount:if native{sol}else{0},token_amount:tokens,sol_vault_balance:if native{a.sol_vault.lamports()}else{0},token_vault_balance:a.mayhem_token_vault.amount,state_sol_deployed:if native{a.mayhem_state.field_56}else{0},state_token_net:a.mayhem_state.field_72,virtual_sol:if native{a.pool_quote_token_account.amount}else{0},virtual_tokens:a.pool_base_token_account.amount,global_sol_deployed:if native{a.global_params.sol_deployed}else{0},timestamp:Clock::get()?.unix_timestamp,end_timestamp:a.mayhem_state.end_timestamp,real_sol:if native{a.pool_quote_token_account.amount}else{0},real_tokens:a.pool_base_token_account.amount,version:a.global_params.version,retained_reserve_bps,quote_amount:sol,quote_vault_balance:after_quote,state_quote_deployed:a.mayhem_state.field_56,virtual_quote:a.pool_quote_token_account.amount,global_quote_deployed:if native_accounting{a.global_params.sol_deployed}else{a.global_params.stable_deployed},real_quote:a.pool_quote_token_account.amount,quote_mint:if native{Pubkey::default()}else{a.quote_mint.key()}};')
+    body.append(EV[o.get('ev', 'p')] if o.get('ev', 'p') in EV else o['ev'])
     body.append(' emit!(event);emit_cpi!(event);Ok(())')
+    if o.get('nonacc'):
+        body = [l for l in body if 'let native_accounting' not in l]
     for k, v in o.items():
         if k.startswith('sub:'):
             old, new = k[4:], v
