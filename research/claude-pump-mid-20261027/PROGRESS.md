@@ -50,3 +50,16 @@ Coordinate-only, nearmiss, identity and libinst families belong to the "Main pum
   - Fastbuild reproduced unstripped `5a13b87f89d0a18232a7b5d6a3146871cd21d75469c3fd7a0ef886cea06e911b`.
   - `runtime_valid` is true, with no stack warnings.
 - Next: wait for the coordinator's confirmed slice (`targets/nearmiss.json` + a chosen set), then report only gains beyond the composite.
+
+### Nearmiss slice check against integ-genuine-r37-04 (806/165)
+
+Both `targets/nearmiss.json` windows are now coordinate-only in the composite. Their only differing slots are Anchor Source-line immediates; the path lengths are equal.
+
+| Window | Function | Original lines | Candidate lines | Composite candidate |
+| --- | --- | --- | --- | --- |
+| 0x7e0b0 | `trade::validate_trade` | `trade_v3.rs` 149 and 150 | 75 and 76 | 0x90538 |
+| 0x1091b0 | `pump_amm::accounts::GlobalConfig::try_deserialize` | `lib.rs` 83 | 66 | 0x115e40 |
+
+- 0x7e0b0's earlier branch-order difference was already closed by nearmiss2's allow-first form.
+- For 0x1091b0, the line is that of the `declare_program!(pump_amm)` invocation.
+- Neither has a remaining genuine (non-coordinate) difference, so both belong to the integration session's line positioning.
