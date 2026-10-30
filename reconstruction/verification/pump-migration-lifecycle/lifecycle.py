@@ -624,6 +624,18 @@ def validate_lifecycle(run):
             failures.append("migrate:pool-base-not-funded")
         if not (account_amount(after, names["pool_quote_token_account"]) or 0) > 0:
             failures.append("migrate:pool-quote-not-funded")
+        lp = after[names["lp_mint"]]
+        lp_data = bytes.fromhex(lp["data_hex"]) if lp else b""
+        if (not lp or lp["owner"] != str(TOKEN22) or len(lp_data) < 44
+                or int.from_bytes(lp_data[36:44], "little") != 0):
+            failures.append("migrate:lp-mint-not-burned-to-zero")
+        for temporary in (
+            "user_pool_token_account",
+            "pool_authority_mint_account",
+            "pool_authority_quote_account",
+        ):
+            if after[names[temporary]] is not None:
+                failures.append("migrate:" + temporary + "-not-closed")
         if first["nonfee_state_equal"]:
             failures.append("migrate:success-did-not-change-state")
     return failures
