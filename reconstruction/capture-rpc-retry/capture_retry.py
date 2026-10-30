@@ -28,5 +28,5 @@ if deferred:
 
 module = types.ModuleType('capture_rpc_retry')
 module.__file__ = str(source_path)
-exec(compile(''.join(lines), str(source_path), 'exec'), module.__dict__)
+exec(compile(''.join(lines), str(source_path), 'exec', optimize=0), module.__dict__)
 capture = module.capture
