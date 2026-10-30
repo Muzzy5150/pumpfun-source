@@ -17,7 +17,10 @@ Python file set, source bytes, captured accounts and prior packages stay intact.
 
 Tested base: `ccd3330bfd12ed04c3a598af9a2ab95ed5de77ac`. Source binding:
 `scripts/capture.py`, SHA-256
-`16b2a6e9f747dee5a964afae25d90cdd974d5da76e0db3fdfd4bf018fe80b5f5`.
+`71e28a5fb815a45664f06d6902ef1437f469a4d3c99a00e221efe583daa11905`.
+This binding includes the reviewed #1289 source transition, which changed only
+the archived CLI's program-address selection; the adapted `capture()` body and
+the retry adapter's transformation anchors are unchanged.
 
 Run from the repository root:
 
