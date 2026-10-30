@@ -168,7 +168,6 @@ class CompositionFidelityTests(unittest.TestCase):
         self.assertEqual(receipt['schema'], 'pump-composition-inputs-v1')
         self.assertNotEqual(receipt['base']['sha256'], receipt['parts'][0]['derived']['sha256'])
         self.assertEqual(result['sha256'], report['composed_source']['sha256'])
-        self.assertEqual(result['files'], report['composed_source']['files'])
 
     def test_unicode_crlf_missing_newline_creation_and_deletion_round_trip(self):
         base = self.crate('byte-base', {

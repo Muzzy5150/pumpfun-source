@@ -12,12 +12,13 @@ building or scoring its incomplete source tree.
 Output: SC/integ/<NAME>/{src, parts/<label>.patch, rejects/, report.json}
 Names must be fresh; an earlier result is never overwritten.
 """
-import argparse, ast, json, shutil, subprocess, sys, re
+import argparse, ast, hashlib, json, shutil, subprocess, sys, re
 from pathlib import Path
 
 H = Path(__file__).resolve().parent
 SC = H.parent
 sys.path.insert(0, str(H))
+from source_inputs import assert_unchanged, snapshot
 
 
 def build_source(*args, **kwargs):
@@ -128,6 +129,34 @@ def patched_files(text: str):
     return sorted(files)
 
 
+def capture_inputs(base, parts):
+    """Snapshot every selected tree once and return a path-free deterministic receipt."""
+    captured = {}
+
+    def get(path):
+        path = Path(path)
+        if path not in captured:
+            captured[path] = snapshot(path)
+        return captured[path]
+
+    receipt = {
+        'schema': 'pump-composition-inputs-v1',
+        'base': get(base),
+        'parts': [
+            {'label': label, 'source': get(path), 'derived': get(derived_from)}
+            for label, path, derived_from in parts
+        ],
+    }
+    return receipt, captured
+
+
+def write_receipt(path, value):
+    canonical = json.dumps(value, sort_keys=True, separators=(',', ':'),
+                           ensure_ascii=False).encode('utf-8')
+    path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+    return hashlib.sha256(canonical).hexdigest()
+
+
 def preflight(name, base, parts, overrides):
     """Validate the complete composition before touching its output or snapshots."""
     def label(value):
@@ -182,12 +211,19 @@ def main():
         raise FileNotFoundError(f'Required scoring baseline is missing: {baseline}')
     try:
         out, base, parts = preflight(a.name, a.base_src, a.part, a.base_of)
+        input_receipt, captured_inputs = capture_inputs(base, parts)
     except (ValueError, OSError) as error:
         ap.error(str(error))
     (out / 'parts').mkdir(parents=True); (out / 'rejects').mkdir()
+    input_receipt_sha = write_receipt(out / 'source-inputs.json', input_receipt)
     src = out / 'src'
     shutil.copytree(base, src, ignore=crate_ignore(base))
-    report = {'name': a.name, 'base': str(a.base_src), 'parts': []}
+    report = {
+        'name': a.name,
+        'base': str(a.base_src),
+        'source_inputs': {'receipt': 'source-inputs.json', 'sha256': input_receipt_sha},
+        'parts': [],
+    }
     exit_code = 0
     composition_failed = False
     # GNU patch on Windows otherwise strips CR bytes from patch/source input.
@@ -218,6 +254,18 @@ def main():
             (out / 'rejects' / f'{label}.txt').write_text(dry.stdout + dry.stderr)
             report['parts'].append({'label': label, 'status': 'conflict', 'detail': (dry.stdout + dry.stderr)[-1500:]})
             composition_failed = True
+    try:
+        for path, expected in captured_inputs.items():
+            assert_unchanged(path, expected)
+    except (ValueError, OSError) as error:
+        report['input_error'] = str(error)
+        composition_failed = True
+    composed = snapshot(src)
+    write_receipt(out / 'composed-source.json', composed)
+    report['composed_source'] = {
+        'receipt': 'composed-source.json',
+        'sha256': composed['sha256'],
+    }
     if composition_failed:
         report['composition_error'] = 'one or more source parts conflicted; build and score skipped'
         exit_code = 1

@@ -25,7 +25,8 @@ class EmptyFileCompositionTests(unittest.TestCase):
         self.root = Path(temporary.name)
         self.tool = self.root / 'reconstruction/harness/integrate.py'
         self.tool.parent.mkdir(parents=True)
-        shutil.copyfile(TOOL, self.tool)
+        for name in ('integrate.py', 'source_inputs.py'):
+            shutil.copyfile(TOOL.with_name(name), self.tool.with_name(name))
 
     def crate(self, name, files):
         root = self.root / name
