@@ -75,6 +75,7 @@ jobs:
               python research/tooling-token-program-constant-detector-20261029/verify.py
               python -B tests/test_checkpoint_manifest_paths.py
               python -B reconstruction/capture-rpc-retry/test_capture.py
+              python -B reconstruction/verification/donation-relay-stateful/test_stateful.py
           - suite: host-fragments
             commands: |
               python -B scripts/test_fee_host_validation.py
