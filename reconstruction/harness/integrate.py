@@ -24,13 +24,29 @@ def build_source(*args, **kwargs):
     return fastbuild.build(*args, **kwargs)
 
 
+def crate_ignore(root: Path, *patterns):
+    """Skip the crate-root build directory, as fastbuild staging does, plus `patterns` anywhere.
+
+    Nested target directories and a regular file named target are source inputs.
+    """
+    root = Path(root)
+    by_name = shutil.ignore_patterns(*patterns)
+
+    def ignore(directory, names):
+        ignored = set(by_name(directory, names))
+        if Path(directory) == root and 'target' in names and (root / 'target').is_dir():
+            ignored.add('target')
+        return ignored
+    return ignore
+
+
 def make_patch(base: Path, part: Path, out: Path, tmp: Path):
     if tmp.exists():
         shutil.rmtree(tmp)
     (tmp / 'a').mkdir(parents=True); (tmp / 'b').mkdir(parents=True)
-    ign = shutil.ignore_patterns('target', '*.orig', '*.rej', '.DS_Store')
-    shutil.copytree(base, tmp / 'a/pump', ignore=ign)
-    shutil.copytree(part, tmp / 'b/pump', ignore=ign)
+    patterns = ('*.orig', '*.rej', '.DS_Store')
+    shutil.copytree(base, tmp / 'a/pump', ignore=crate_ignore(base, *patterns))
+    shutil.copytree(part, tmp / 'b/pump', ignore=crate_ignore(part, *patterns))
     d = subprocess.run(['diff', '-ruN', 'a/pump', 'b/pump'], cwd=tmp, capture_output=True)
     if d.returncode not in (0, 1):
         raise subprocess.CalledProcessError(d.returncode, d.args, output=d.stdout, stderr=d.stderr)
@@ -118,7 +134,7 @@ def main():
         ap.error(str(error))
     (out / 'parts').mkdir(parents=True); (out / 'rejects').mkdir()
     src = out / 'src'
-    shutil.copytree(base, src, ignore=shutil.ignore_patterns('target'))
+    shutil.copytree(base, src, ignore=crate_ignore(base))
     report = {'name': a.name, 'base': str(a.base_src), 'parts': []}
     exit_code = 0
     # GNU patch on Windows otherwise strips CR bytes from patch/source input.
