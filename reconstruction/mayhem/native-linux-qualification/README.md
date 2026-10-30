@@ -25,6 +25,14 @@ The retained 67-source input set and the staged 98-file recipe remain the
 maintained `programs/mayhem/build_exact.py` inputs. This Linux entrypoint adds no
 Rust source revision and preserves the existing exact Windows build.
 
+The checked-in [`QUALIFICATION.json`](QUALIFICATION.json) summarizes the clean
+2026-10-30 qualification. That run extracted the SDK from its authenticated
+archive, compiled with networking disabled, deleted every target cache after
+retaining its evidence, and completed in 1,423.479 seconds. The two exact builds
+took 317.746 and 296.848 seconds. The receipt records the host kernel, container
+image digest, tool and input hashes, diagnostic output, resource measurements,
+and repeat-build result.
+
 ## Root cause and correction
 
 Cargo's target `-C metadata` identities differ between the selected Windows
