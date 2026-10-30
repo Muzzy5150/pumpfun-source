@@ -38,13 +38,13 @@ class EmptyFileCompositionTests(unittest.TestCase):
             path.write_bytes(data)
         return root
 
-    def compose(self, base, *parts):
+    def compose(self, base, *parts, expected_returncode=0):
         argv = [sys.executable, '-B', str(self.tool), '--name', 'test',
                 '--base-src', str(base), '--no-build']
         for index, part in enumerate(parts):
             argv += ['--part', f'part{index}={part}']
         result = subprocess.run(argv, cwd=self.root, capture_output=True, text=True, timeout=30)
-        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(result.returncode, expected_returncode, result.stdout + result.stderr)
         output = self.root / 'reconstruction/integ/test'
         return output, json.loads((output / 'report.json').read_bytes())
 
@@ -128,7 +128,7 @@ class EmptyFileCompositionTests(unittest.TestCase):
         first = self.crate('first', {'src/empty.rs': b'// keep earlier contribution\n'})
         second = self.crate('second', {'src/empty.rs': b'',
                                        'src/lib.rs': b'pub fn value() -> u64 { 2 }\n'})
-        output, report = self.compose(base, first, second)
+        output, report = self.compose(base, first, second, expected_returncode=1)
         self.assertEqual([part['status'] for part in report['parts']], ['applied', 'conflict'])
         self.assertEqual(snapshot(output / 'src'), snapshot(first))
 
@@ -136,7 +136,7 @@ class EmptyFileCompositionTests(unittest.TestCase):
         base = self.crate('base', {'src/empty.rs': b''})
         first = self.crate('first', {'src/empty.rs': b'// keep earlier contribution\n'})
         second = self.crate('second', {})
-        output, report = self.compose(base, first, second)
+        output, report = self.compose(base, first, second, expected_returncode=1)
         self.assertEqual([part['status'] for part in report['parts']], ['applied', 'conflict'])
         self.assertEqual(snapshot(output / 'src'), snapshot(first))
 

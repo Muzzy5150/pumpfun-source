@@ -6,8 +6,9 @@
 
 Each part is turned into a patch against the crate it was derived from (default: --base-src),
 then applied in order. File-existence, binary and executable-mode changes use Git
-patch metadata; ordinary text changes retain `patch -p2 --forward`. Rejects are reported and the part is skipped
-(the composition continues). The composed crate is built with fastbuild.py and scored.
+patch metadata; ordinary text changes retain `patch -p2 --forward`. Rejects are
+reported and the part is skipped, but any conflict fails the composition without
+building or scoring its incomplete source tree.
 Output: SC/integ/<NAME>/{src, parts/<label>.patch, rejects/, report.json}
 Names must be fresh; an earlier result is never overwritten.
 """
@@ -188,6 +189,7 @@ def main():
     shutil.copytree(base, src, ignore=crate_ignore(base))
     report = {'name': a.name, 'base': str(a.base_src), 'parts': []}
     exit_code = 0
+    composition_failed = False
     # GNU patch on Windows otherwise strips CR bytes from patch/source input.
     patch_command = ['patch'] + (['--binary'] if sys.platform == 'win32' else [])
     for label, path, derived_from in parts:
@@ -215,7 +217,11 @@ def main():
         else:
             (out / 'rejects' / f'{label}.txt').write_text(dry.stdout + dry.stderr)
             report['parts'].append({'label': label, 'status': 'conflict', 'detail': (dry.stdout + dry.stderr)[-1500:]})
-    if not a.no_build:
+            composition_failed = True
+    if composition_failed:
+        report['composition_error'] = 'one or more source parts conflicted; build and score skipped'
+        exit_code = 1
+    elif not a.no_build:
         res = build_source(src, out / 'work', out / 'build', quiet=True)
         report['build'] = res
         if res['ok']:
