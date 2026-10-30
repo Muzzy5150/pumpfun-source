@@ -34,7 +34,7 @@ class CompositionFidelityTests(unittest.TestCase):
         self.root = Path(temporary.name)
         harness = self.root / 'reconstruction/harness'
         harness.mkdir(parents=True)
-        for name in ('integrate.py', 'source_inputs.py'):
+        for name in ('integrate.py', 'source_inputs.py', 'treediff.py'):
             shutil.copy2(HARNESS / name, harness / name)
         self.tool = harness / 'integrate.py'
 

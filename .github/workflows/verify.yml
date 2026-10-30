@@ -31,6 +31,7 @@ jobs:
               python -B reconstruction/harness/test_integrate_failures.py
               python -B reconstruction/harness/test_integrate_no_build_cli.py
               python -B reconstruction/harness/test_integrate_empty_files.py
+              python -B reconstruction/harness/test_integrate_fidelity.py
               python -B reconstruction/harness/test_integrate_source_links.py
               python -I -B tests/test_integrate_patch_bytes.py
               python -I -B reconstruction/harness/test_treediff_links.py
