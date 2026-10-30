@@ -25,6 +25,7 @@ import tarfile
 import time
 
 
+HERE = Path(__file__).resolve().parent
 PLATFORM_ARCHIVE_SHA256 = "fcc41631c7f77561bf5412218bf297501dccf0305ea280f338f0ace2aab9f31e"
 OFFICIAL_TOOLS = {
     "rust/bin/rustc": "fa2c61467ffa823dc1a64c28cba22c6ce24b2439ebe28fe546609d7fc638569a",
@@ -39,6 +40,11 @@ EXPECTED = {
     "symbols.so": "7b15bb1e5c7c9c53041322fa64d4a420906fffd96ff97a55d70d627bcb854960",
     "candidate.so": "9af9e3b1cbc9d89340af4d9d46e4c88d3dc2fc67e0090f9370047d97532ff09d",
 }
+CAPTURE_SHA256 = "a87fa9f866272514e6acb852b668c4a08aeb173d56c883039991d114d1199bdb"
+PROGRAMDATA_SHA256 = "a556c21bbf54f1da76ada6bd6b809a8315e45a1af43f13ac7e2839dd5312cfa2"
+MEANINGFUL_ELF_BYTES = 775416
+ALLOCATION_TAIL_BYTES = 1992
+BUILD_JOBS = "6"
 
 
 def require(condition: bool, message: str) -> None:
@@ -120,6 +126,46 @@ def pin_files(root: Path, rows: list[dict[str, object]]) -> None:
         require(path.is_file() and not path.is_symlink(), f"nonregular pinned file: {name}")
         require(path.stat().st_size == row["bytes"], f"pinned file size differs: {name}")
         require(sha256(path) == row["sha256"], f"pinned file digest differs: {name}")
+
+
+def pin_snapshot(root: Path, expected: dict[str, dict[str, object]], label: str) -> None:
+    require(snapshot(root) == expected, f"{label} changed during build")
+
+
+def pin_canonical_sources(repo: Path, expected: dict[str, str]) -> None:
+    source = repo / "programs/mayhem"
+    actual = {name: sha256(source / safe(name)) for name in expected}
+    require(actual == expected, "canonical Mayhem source changed during build")
+
+
+def verify_capture(repo: Path, candidate: Path) -> dict[str, object]:
+    capture = repo / "evidence/original/mayhem/deployed.so"
+    programdata = repo / "evidence/original/mayhem/programdata-account.bin"
+    require(identity(capture) == {"bytes": 777408, "sha256": CAPTURE_SHA256}, "captured allocation differs")
+    require(
+        identity(programdata) == {"bytes": 777453, "sha256": PROGRAMDATA_SHA256},
+        "captured ProgramData differs",
+    )
+    payload = capture.read_bytes()
+    require(programdata.read_bytes()[45:] == payload, "ProgramData payload binding differs")
+    require(
+        len(payload) == MEANINGFUL_ELF_BYTES + ALLOCATION_TAIL_BYTES
+        and payload[MEANINGFUL_ELF_BYTES:] == bytes(ALLOCATION_TAIL_BYTES),
+        "captured allocation tail differs",
+    )
+    built = candidate.read_bytes()
+    require(
+        len(built) == MEANINGFUL_ELF_BYTES and built == payload[:MEANINGFUL_ELF_BYTES],
+        "native Linux meaningful ELF differs from capture",
+    )
+    return {
+        "programdata_header_bytes": 45,
+        "programdata": identity(programdata),
+        "captured_allocation": identity(capture),
+        "meaningful_elf_bytes": MEANINGFUL_ELF_BYTES,
+        "meaningful_elf_sha256": sha256(candidate),
+        "excluded_zero_allocation_tail_bytes": ALLOCATION_TAIL_BYTES,
+    }
 
 
 def check_vendor(vendor: Path, controller: Path) -> int:
@@ -255,7 +301,7 @@ def build_historical_macro(recipe: Path, sdk: Path, vendor: Path, output: Path) 
         "-p",
         "anchor-attribute-program",
         "--jobs",
-        "1",
+        BUILD_JOBS,
         "--verbose",
     ]
     save(
@@ -304,12 +350,86 @@ def compile_controller(source: Path, destination: Path, sdk: Path, env: dict[str
     return {"command": command, "source_sha256": sha256(source), "output": identity(destination)}
 
 
+def derive_linux_metadata_map(records: Path, output: Path) -> dict[str, object]:
+    evidence = load(HERE / "published-metadata-bindings.json")
+    require(evidence["schema"] == 1, "published metadata binding schema differs")
+    require(
+        evidence["selected_windows_build_zip_sha256"]
+        == "eb93ee0f5208c5d51aa359c765b13cc71e11da5908dfc196182e096aa5a0ebfc",
+        "selected Windows evidence binding differs",
+    )
+    require(evidence["selected_windows_wrapper_records"] == 176, "selected Windows wrapper count differs")
+    bindings = {
+        (row["crate"], row["source"]): row
+        for row in evidence["target_compile_bindings"]
+    }
+    require(len(bindings) == 85, "published metadata binding count differs")
+    registry = {source.split("/", 1)[1] for _, source in bindings if source.startswith("registry/")}
+
+    observed = {}
+    for path in sorted(records.glob("*.json")):
+        record = load(path)
+        arguments = record["before"]
+        if "--target" not in arguments or "--crate-name" not in arguments:
+            continue
+        if arguments[arguments.index("--target") + 1] != "sbpf-solana-solana":
+            continue
+        metadata = [value.split("=", 1)[1] for value in arguments if value.startswith("metadata=")]
+        if len(metadata) != 1:
+            continue
+        crate = arguments[arguments.index("--crate-name") + 1]
+        source_arguments = [value for value in arguments if value.endswith(".rs") and not value.startswith("-")]
+        require(len(source_arguments) == 1, f"ambiguous source locator for {crate}")
+        source_path = source_arguments[0].replace("\\", "/")
+        parts = PurePosixPath(source_path).parts
+        package = next((part for part in parts if part in registry), None)
+        if package is not None:
+            source_key = "registry/" + package
+        elif "curve-accounts" in parts:
+            source_key = "local/curve-accounts"
+        elif "vendor" in parts and "anchor-lang" in parts:
+            source_key = "local/anchor-lang"
+        else:
+            source_key = "local/mayhem"
+        key = (crate, source_key)
+        require(key in bindings, f"unbound Linux target compile: {crate} from {source_key}")
+        require(key not in observed, f"duplicate Linux target compile binding: {crate} from {source_key}")
+        observed[key] = metadata[0]
+
+    require(set(observed) == set(bindings), "Linux target compile set differs from selected Windows build")
+    rows = sorted(
+        (linux, bindings[key]["published_metadata"], key[0], key[1])
+        for key, linux in observed.items()
+    )
+    require(len({(old, crate) for old, _, crate, _ in rows}) == len(rows), "ambiguous Linux Cargo metadata")
+    output.write_text(
+        "".join(f"{old}\t{published}\t{crate}\n" for old, published, crate, _ in rows),
+        encoding="utf-8",
+        newline="\n",
+    )
+    receipt = {
+        "bindings_sha256": sha256(HERE / "published-metadata-bindings.json"),
+        "probe_wrapper_records": len(list(records.glob("*.json"))),
+        "target_compile_bindings": len(rows),
+        "linux_metadata_map": identity(output),
+        "bindings": [
+            {"crate": crate, "source": source, "linux_cargo_metadata": old, "published_metadata": published}
+            for old, published, crate, source in rows
+        ],
+    }
+    save(output.with_suffix(".json"), receipt)
+    return receipt
+
+
 def build_target(
     recipe: Path,
     sdk: Path,
     vendor: Path,
     historical: dict[str, object],
     output: Path,
+    *,
+    metadata_mode: str,
+    metadata_map: Path,
 ) -> dict[str, object]:
     output.mkdir()
     controller = recipe / "controller"
@@ -346,9 +466,9 @@ def build_target(
     env.update(
         {
             "RUSTC_WRAPPER": str(wrapper),
-            "MAYHEM_METADATA_MODE": "published-with-paths-relative",
+            "MAYHEM_METADATA_MODE": metadata_mode,
             "MAYHEM_PATH_MAP": str(controller / "path-map.tsv"),
-            "MAYHEM_METADATA_MAP": str(controller / "metadata-map.tsv"),
+            "MAYHEM_METADATA_MAP": str(metadata_map),
             "MAYHEM_WRAPPER_RECORDS": str(records),
             "MAYHEM_LINKER_REAL": str(sdk / "llvm/bin/lld"),
             "MAYHEM_LINKER_DEFAULT": str(controller / "default.ld"),
@@ -369,7 +489,7 @@ def build_target(
         "--locked",
         "--offline",
         "--jobs",
-        "1",
+        BUILD_JOBS,
         "--verbose",
         "--",
         "--remap-path-prefix=src/=programs/mayhem-program/src/",
@@ -384,6 +504,8 @@ def build_target(
             "cwd": str(source.parents[1]),
             "environment_overrides": {key: env[key] for key in sorted(env) if key.startswith(("CARGO_", "MAYHEM_", "RUST"))},
             "source_inputs": initial,
+            "metadata_mode": metadata_mode,
+            "metadata_map": identity(metadata_map),
             "wrapper_build": wrapper_build,
             "linker_build": linker_build,
         },
@@ -451,16 +573,46 @@ def qualify(args: argparse.Namespace) -> dict[str, object]:
         stage_code = run_logged(stage_command, cwd=repo, env=dict(os.environ), prefix=output / "stage")
         require(stage_code == 0, "current exact recipe staging failed")
         recipe = stage / "recipe"
+        stage_mapping = load(stage / "source-mapping.json")
+        recipe_snapshot = snapshot(recipe)
+        require(len(recipe_snapshot) == 98, "staged recipe file count differs")
+        pin_canonical_sources(repo, stage_mapping["canonical_inputs"])
         pin_files(sdk, load(recipe / "controller/target-components.json")["files"])
         vendor_packages = check_vendor(vendor, recipe / "controller")
 
         macro = build_historical_macro(recipe, sdk, vendor, output / "historical-macro")
+        probe = build_target(
+            recipe,
+            sdk,
+            vendor,
+            macro,
+            output / "metadata-probe",
+            metadata_mode="passthrough",
+            metadata_map=recipe / "controller/metadata-map.tsv",
+        )
+        linux_metadata_map = output / "linux-metadata-map.tsv"
+        linux_metadata = derive_linux_metadata_map(output / "metadata-probe/wrapper-records", linux_metadata_map)
         runs = [
-            build_target(recipe, sdk, vendor, macro, output / name)
+            build_target(
+                recipe,
+                sdk,
+                vendor,
+                macro,
+                output / name,
+                metadata_mode="published-with-paths-relative",
+                metadata_map=linux_metadata_map,
+            )
             for name in ("build-01", "build-02")
         ]
         repeat_equal = runs[0]["outputs"] == runs[1]["outputs"]
         require(repeat_equal, "independent Linux builds differ")
+        require(
+            all(all(exact.values()) for exact in (run["selected_exact"] for run in runs)),
+            "native Linux build differs from selected exact ELF",
+        )
+        capture = verify_capture(repo, output / "build-01/candidate.so")
+        pin_snapshot(recipe, recipe_snapshot, "staged recipe")
+        pin_canonical_sources(repo, stage_mapping["canonical_inputs"])
         check_vendor(vendor, recipe / "controller")
         pin_files(sdk, load(recipe / "controller/target-components.json")["files"])
         overall.update(
@@ -473,9 +625,14 @@ def qualify(args: argparse.Namespace) -> dict[str, object]:
                 "vendor_packages": vendor_packages,
                 "stage_source_mapping": identity(stage / "source-mapping.json"),
                 "historical_macro": macro["macro"],
+                "metadata_probe": probe,
+                "linux_metadata": linux_metadata,
                 "runs": runs,
                 "repeat_build_equal": repeat_equal,
-                "meaningful_elf_bytes": 775416,
+                "capture_comparison": capture,
+                "recipe_inputs_unchanged": True,
+                "canonical_sources_unchanged": True,
+                "meaningful_elf_bytes": MEANINGFUL_ELF_BYTES,
                 "allocation_tail_emitted": False,
             }
         )
