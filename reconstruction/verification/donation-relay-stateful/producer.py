@@ -361,7 +361,7 @@ def run_case(name: str, original: Path, candidate: Path, token: Path, associated
         submit(fixture.upsert_wrong_signer(), [fixture.outsider])
         expected = {"error_contains": "Custom(2012)", "rollback": True}
     elif name == "close_requires_production_relayer":
-        first = submit(fixture.donation(777))
+        first = submit(fixture.donation(777, message=b"close authority setup"))
         if first["original"]["error"] is not None:
             raise AssertionError("close authority setup donation failed")
         close, new_accounts = fixture.close_wrong_signer()
@@ -410,6 +410,16 @@ def source_manifest(root: Path) -> tuple[dict[str, str], str]:
     return rows, sha(json.dumps(rows, sort_keys=True, separators=(",", ":")).encode())
 
 
+def transaction_identity(cases: list[dict[str, Any]]) -> dict[str, Any]:
+    steps = [step for case in cases for step in case["steps"]]
+    signatures = [step["signature"] for step in steps]
+    return {
+        "count": len(signatures),
+        "unique_count": len(set(signatures)),
+        "all_signatures_verified": all(step["signature_verified"] for step in steps),
+    }
+
+
 def execute(root: Path, candidate: Path, output: Path) -> bool:
     original = root / "evidence/dependencies/donation_relay/deployed.so"
     token = root / "evidence/dependencies/spl_token/deployed.so"
@@ -422,6 +432,7 @@ def execute(root: Path, candidate: Path, output: Path) -> bool:
         raise SystemExit(f"candidate does not exist: {candidate}")
     sources, source_digest = source_manifest(root)
     cases = [run_case(name, original, candidate, token, associated) for name in CASES]
+    identities = transaction_identity(cases)
     negative_control = json.loads(json.dumps(cases[0]["steps"][-1]["candidate_state"]))
     negative_control["debouncer_total"] += 1
     control_detected = negative_control != cases[0]["steps"][-1]["original_state"]
@@ -441,6 +452,7 @@ def execute(root: Path, candidate: Path, output: Path) -> bool:
         "comparison": "same signed transaction in independent LiteSVMs; error, relevant logs, events, inner instructions, return data, and full watched before/after accounts",
         "case_count": len(cases),
         "transaction_count": sum(len(row["steps"]) for row in cases),
+        "transaction_identity": identities,
         "matching_cases": sum(row["classification"] == "equal_observed_behavior" for row in cases),
         "different_cases": [row["name"] for row in cases if row["classification"] == "different_behavior"],
         "negative_control": {"kind": "expected state mutation", "detected": control_detected},
@@ -452,7 +464,9 @@ def execute(root: Path, candidate: Path, output: Path) -> bool:
     summary = {key: report[key] for key in ("case_count", "transaction_count", "matching_cases", "different_cases")}
     summary["negative_control_detected"] = control_detected
     print(json.dumps(summary, indent=2, sort_keys=True))
-    return report["matching_cases"] == report["case_count"] and control_detected
+    return (report["matching_cases"] == report["case_count"] and control_detected
+            and identities["count"] == identities["unique_count"]
+            and identities["all_signatures_verified"])
 
 
 def main() -> None:

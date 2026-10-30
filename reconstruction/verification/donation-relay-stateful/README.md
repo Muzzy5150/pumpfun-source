@@ -33,7 +33,8 @@ instructions, return data, verified transaction signature, lamports, owners,
 data lengths, data hashes and complete bytes of watched accounts. Compute-unit
 lines and counts are retained for evidence but do not determine semantic
 equality. A changed expected debouncer total is a negative control and must be
-detected.
+detected. The final report also requires every logical step to have a verified,
+unique transaction signature.
 
 ## Build and run
 

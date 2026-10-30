@@ -31,6 +31,16 @@ class EncodingTests(unittest.TestCase):
         changed["debouncer_total"] += 1
         self.assertNotEqual(observed, changed)
 
+    def test_transaction_identity_rejects_reused_signature(self):
+        cases = [{"steps": [
+            {"signature": "same", "signature_verified": True},
+            {"signature": "same", "signature_verified": True},
+        ]}]
+        identity = relay.transaction_identity(cases)
+        self.assertEqual(identity["count"], 2)
+        self.assertEqual(identity["unique_count"], 1)
+        self.assertTrue(identity["all_signatures_verified"])
+
     def test_source_manifest_is_stable_and_nonempty(self):
         root = HERE.parents[2]
         rows, digest = relay.source_manifest(root)
