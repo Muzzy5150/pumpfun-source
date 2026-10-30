@@ -107,6 +107,30 @@ class CompositionFidelityTests(unittest.TestCase):
             ], capture_output=True, text=True, timeout=60)
             self.assertEqual(built.returncode, 0, built.stderr)
 
+    def test_binary_only_part_uses_an_applicable_binary_patch(self):
+        base = self.crate('binary-base', {'assets/image.bin': b'base\xff\xfe'})
+        part = self.crate('binary-part', {'assets/image.bin': b'part\xfe\xfd'})
+
+        output, report = self.compose(base, [('binary', part)])
+
+        self.assertEqual(snapshot(output / 'src'), snapshot(part))
+        self.assertEqual(report['parts'][0]['files'], ['assets/image.bin'])
+        patch = (output / 'parts/binary.patch').read_bytes()
+        self.assertTrue(patch.startswith(b'diff --git '))
+        self.assertIn(b'part\xfe\xfd', patch)
+
+    @unittest.skipIf(sys.platform == 'win32', 'executable permission metadata is not portable')
+    def test_executable_only_part_preserves_mode(self):
+        base = self.crate('mode-base')
+        part = self.crate('mode-part', executable=('scripts/executable-tool.sh',))
+
+        output, report = self.compose(base, [('mode', part)])
+
+        tool = output / 'src/scripts/executable-tool.sh'
+        self.assertTrue(tool.stat().st_mode & 0o111)
+        self.assertEqual(report['parts'][0]['files'], ['scripts/executable-tool.sh'])
+        self.assertIn(b'new mode 100755', (output / 'parts/mode.patch').read_bytes())
+
     def test_competing_text_and_binary_parts_fail_the_composition(self):
         base = self.crate('conflict-base', {'src/choice.rs': b'pub const CHOICE: u8 = 1;\n'})
         first = self.crate('conflict-first', {
@@ -129,6 +153,20 @@ class CompositionFidelityTests(unittest.TestCase):
                          b'first-image\x00\x01')
         self.assertNotIn('build', report)
         self.assertNotIn('score', report)
+
+    def test_competing_text_only_parts_fail_the_composition(self):
+        base = self.crate('text-base', {'src/choice.rs': b'pub const CHOICE: u8 = 1;\n'})
+        first = self.crate('text-first', {'src/choice.rs': b'pub const CHOICE: u8 = 2;\n'})
+        second = self.crate('text-second', {'src/choice.rs': b'pub const CHOICE: u8 = 3;\n'})
+
+        output, report = self.compose(
+            base, [('first', first), ('second', second)], expected_returncode=1)
+
+        self.assertEqual([part['status'] for part in report['parts']],
+                         ['applied', 'conflict'])
+        self.assertEqual((output / 'src/src/choice.rs').read_bytes(),
+                         b'pub const CHOICE: u8 = 2;\n')
+        self.assertIn('composition_error', report)
 
     def test_nonconflicting_parts_keep_explicit_derivation_provenance(self):
         base = self.crate('derived-base', {

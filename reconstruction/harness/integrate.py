@@ -63,6 +63,15 @@ def make_patch(base: Path, part: Path, out: Path, tmp: Path):
     # intentionally emptied by a part. Recursive diff also emits no applicable
     # hunks for binary files and carries no executable metadata. Git records all
     # three kinds without changing the ordinary textual-patch path.
+    def binary(data):
+        if b'\0' in data:
+            return True
+        try:
+            data.decode('utf-8')
+        except UnicodeDecodeError:
+            return True
+        return False
+
     def needs_git(name):
         old, new = trees[0].get(name), trees[1].get(name)
         if (old is not None and old['empty']) != (new is not None and new['empty']):
@@ -70,7 +79,7 @@ def make_patch(base: Path, part: Path, out: Path, tmp: Path):
         if old is not None and new is not None and old['executable'] != new['executable']:
             return True
         if old is None or new is None or old['bytes'] != new['bytes']:
-            return b'\0' in (old or {'bytes': b''})['bytes'] or b'\0' in (new or {'bytes': b''})['bytes']
+            return binary((old or {'bytes': b''})['bytes']) or binary((new or {'bytes': b''})['bytes'])
         return False
 
     metadata_change = any(needs_git(name) for name in trees[0].keys() | trees[1].keys())
