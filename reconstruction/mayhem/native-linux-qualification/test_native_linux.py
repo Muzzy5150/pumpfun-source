@@ -65,7 +65,10 @@ class NativeLinuxQualificationTests(unittest.TestCase):
         records = {"packages": [{"directory": "example-1.0.0", "package_sha256": "a" * 64, "file_count": 1}]}
         (controller / "vendor-inputs.json").write_text(json.dumps(records))
 
-        self.assertEqual(native.check_vendor(self.root / "vendor", controller), 1)
+        expected = native.inspect_vendor(self.root / "vendor", controller)["closure_sha256"]
+        self.assertEqual(native.check_vendor(self.root / "vendor", controller, expected)["packages"], 1)
+        with self.assertRaisesRegex(ValueError, "complete vendor source closure differs"):
+            native.check_vendor(self.root / "vendor", controller)
         source.unlink()
         with self.assertRaisesRegex(ValueError, "vendor file set differs"):
             native.check_vendor(self.root / "vendor", controller)
@@ -132,6 +135,7 @@ class NativeLinuxQualificationTests(unittest.TestCase):
 
     def test_published_metadata_bindings_are_complete_and_unambiguous(self):
         evidence = json.loads((HERE / "published-metadata-bindings.json").read_text())
+        self.assertEqual(native.sha256(HERE / "published-metadata-bindings.json"), native.PUBLISHED_BINDINGS_SHA256)
         rows = evidence["target_compile_bindings"]
         self.assertEqual(evidence["selected_windows_wrapper_records"], 176)
         self.assertEqual(len(rows), 85)

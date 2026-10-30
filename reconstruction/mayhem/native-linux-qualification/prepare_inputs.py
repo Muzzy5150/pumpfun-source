@@ -15,6 +15,7 @@ import urllib.request
 
 SDK_URL = "https://github.com/anza-xyz/platform-tools/releases/download/v1.54/platform-tools-linux-x86_64.tar.bz2"
 SDK_SHA256 = "fcc41631c7f77561bf5412218bf297501dccf0305ea280f338f0ace2aab9f31e"
+VENDOR_CLOSURE_SHA256 = "c679e8263e597ef94ff3b0a518a6c56a5909188acee6693ccd554248d5746097"
 
 
 def require(condition: bool, message: str) -> None:
@@ -91,6 +92,7 @@ def prepare(repo: Path, output: Path) -> dict[str, object]:
     vendor.mkdir()
     archives.mkdir()
     receipt = []
+    closure = []
     for row in records:
         package_sha = row["package_sha256"]
         if package_sha in registry:
@@ -104,6 +106,8 @@ def prepare(repo: Path, output: Path) -> dict[str, object]:
         url = f"https://static.crates.io/crates/{name}/{package}.crate"
         download(url, archive, package_sha)
         extract_crate(archive, package, vendor / package, package_sha, row["file_count"])
+        file_map = json.loads((vendor / package / ".cargo-checksum.json").read_text())["files"]
+        closure.append({"directory": package, "package_sha256": package_sha, "files": file_map})
         receipt.append(
             {
                 "directory": package,
@@ -112,8 +116,13 @@ def prepare(repo: Path, output: Path) -> dict[str, object]:
                 "source_files": row["file_count"],
             }
         )
+    closure_sha256 = hashlib.sha256(
+        json.dumps(closure, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+    require(closure_sha256 == VENDOR_CLOSURE_SHA256, "complete vendor source closure differs")
     result = {
         "sdk": {"url": SDK_URL, "bytes": sdk.stat().st_size, "sha256": sha256(sdk)},
+        "vendor_closure_sha256": closure_sha256,
         "vendor_packages": receipt,
     }
     (output / "receipt.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")

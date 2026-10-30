@@ -45,6 +45,8 @@ CAPTURE_SHA256 = "a87fa9f866272514e6acb852b668c4a08aeb173d56c883039991d114d1199b
 PROGRAMDATA_SHA256 = "a556c21bbf54f1da76ada6bd6b809a8315e45a1af43f13ac7e2839dd5312cfa2"
 MEANINGFUL_ELF_BYTES = 775416
 ALLOCATION_TAIL_BYTES = 1992
+VENDOR_CLOSURE_SHA256 = "c679e8263e597ef94ff3b0a518a6c56a5909188acee6693ccd554248d5746097"
+PUBLISHED_BINDINGS_SHA256 = "2c77f22c3f464cbecc0124845baec601412adbeb283aabb32e305b27b716b038"
 BUILD_JOBS = "6"
 
 
@@ -186,9 +188,10 @@ def verify_capture(repo: Path, candidate: Path) -> dict[str, object]:
     }
 
 
-def check_vendor(vendor: Path, controller: Path) -> int:
+def inspect_vendor(vendor: Path, controller: Path) -> dict[str, object]:
     """Validate package archives and source bytes, not host newline serialization."""
     records = load(controller / "vendor-inputs.json")["packages"]
+    closure = []
     for record in records:
         directory = vendor / safe(record["directory"])
         checksum = directory / ".cargo-checksum.json"
@@ -205,7 +208,17 @@ def check_vendor(vendor: Path, controller: Path) -> int:
         for name, digest in data["files"].items():
             path = directory / safe(name)
             require(not path.is_symlink() and sha256(path) == digest, f"vendor byte differs: {directory.name}/{name}")
-    return len(records)
+        closure.append(
+            {"directory": record["directory"], "package_sha256": data["package"], "files": data["files"]}
+        )
+    encoded = json.dumps(closure, sort_keys=True, separators=(",", ":")).encode()
+    return {"packages": len(records), "closure_sha256": hashlib.sha256(encoded).hexdigest()}
+
+
+def check_vendor(vendor: Path, controller: Path, expected: str = VENDOR_CLOSURE_SHA256) -> dict[str, object]:
+    result = inspect_vendor(vendor, controller)
+    require(result["closure_sha256"] == expected, "complete vendor source closure differs")
+    return result
 
 
 def unpack_sdk(archive: Path, destination: Path) -> None:
@@ -368,7 +381,9 @@ def compile_controller(source: Path, destination: Path, sdk: Path, env: dict[str
 
 
 def derive_linux_metadata_map(records: Path, output: Path) -> dict[str, object]:
-    evidence = load(HERE / "published-metadata-bindings.json")
+    bindings_path = HERE / "published-metadata-bindings.json"
+    require(sha256(bindings_path) == PUBLISHED_BINDINGS_SHA256, "published metadata bindings differ")
+    evidence = load(bindings_path)
     require(evidence["schema"] == 1, "published metadata binding schema differs")
     require(
         evidence["selected_windows_build_zip_sha256"]
@@ -424,7 +439,7 @@ def derive_linux_metadata_map(records: Path, output: Path) -> dict[str, object]:
         encoding="utf-8",
     )
     receipt = {
-        "bindings_sha256": sha256(HERE / "published-metadata-bindings.json"),
+        "bindings_sha256": sha256(bindings_path),
         "probe_wrapper_records": len(list(records.glob("*.json"))),
         "target_compile_bindings": len(rows),
         "linux_metadata_map": identity(output),
@@ -547,7 +562,9 @@ def build_target(
             name: result["sha256"] == EXPECTED[name]
             for name, result in {path.name: identity(path) for path in (symbols, candidate)}.items()
         },
+        "target_cache_retained": False,
     }
+    shutil.rmtree(target)
     save(output / "result.json", result)
     return result
 
@@ -565,14 +582,8 @@ def qualify(args: argparse.Namespace) -> dict[str, object]:
     try:
         archive = args.sdk_archive.resolve()
         require(sha256(archive) == PLATFORM_ARCHIVE_SHA256, "official platform-tools archive digest differs")
-        if args.sdk_directory is None:
-            sdk = output / "sdk"
-            unpack_sdk(archive, sdk)
-            sdk_origin = "fresh archive extraction"
-        else:
-            sdk = args.sdk_directory.resolve()
-            require(sdk.is_dir(), "pre-extracted SDK directory missing")
-            sdk_origin = "pre-extracted directory with archive and component revalidation"
+        sdk = output / "sdk"
+        unpack_sdk(archive, sdk)
         for name, digest in OFFICIAL_TOOLS.items():
             require(sha256(sdk / name) == digest, f"official tool differs: {name}")
 
@@ -594,7 +605,7 @@ def qualify(args: argparse.Namespace) -> dict[str, object]:
         require(len(recipe_snapshot) == 98, "staged recipe file count differs")
         pin_canonical_sources(repo, stage_mapping["canonical_inputs"])
         pin_files(sdk, load(recipe / "controller/target-components.json")["files"])
-        vendor_packages = check_vendor(vendor, recipe / "controller")
+        vendor_identity = check_vendor(vendor, recipe / "controller")
 
         macro = build_historical_macro(recipe, sdk, vendor, output / "historical-macro")
         probe = build_target(
@@ -627,6 +638,11 @@ def qualify(args: argparse.Namespace) -> dict[str, object]:
             "native Linux build differs from selected exact ELF",
         )
         capture = verify_capture(repo, output / "build-01/candidate.so")
+        require(sha256(archive) == PLATFORM_ARCHIVE_SHA256, "official platform-tools archive changed during build")
+        require(
+            sha256(HERE / "published-metadata-bindings.json") == PUBLISHED_BINDINGS_SHA256,
+            "published metadata bindings changed during build",
+        )
         pin_snapshot(recipe, recipe_snapshot, "staged recipe")
         pin_canonical_sources(repo, stage_mapping["canonical_inputs"])
         check_vendor(vendor, recipe / "controller")
@@ -636,9 +652,9 @@ def qualify(args: argparse.Namespace) -> dict[str, object]:
                 "status": "SUCCEEDED",
                 "platform": {"system": platform.system(), "machine": platform.machine(), "release": platform.release()},
                 "sdk_archive": identity(archive),
-                "sdk_origin": sdk_origin,
+                "sdk_origin": "fresh authenticated archive extraction",
                 "official_tools": {name: identity(sdk / name) for name in OFFICIAL_TOOLS},
-                "vendor_packages": vendor_packages,
+                "vendor": vendor_identity,
                 "stage_source_mapping": identity(stage / "source-mapping.json"),
                 "historical_macro": macro["macro"],
                 "metadata_probe": probe,
@@ -652,6 +668,8 @@ def qualify(args: argparse.Namespace) -> dict[str, object]:
                 "allocation_tail_emitted": False,
             }
         )
+        shutil.rmtree(sdk)
+        overall["sdk_extraction_retained"] = False
     except Exception as error:
         overall.update({"status": "FAILED", "error_type": type(error).__name__, "error": str(error)})
         raise
@@ -666,7 +684,6 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo", type=Path, required=True)
     parser.add_argument("--sdk-archive", type=Path, required=True)
-    parser.add_argument("--sdk-directory", type=Path)
     parser.add_argument("--vendor", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     print(json.dumps(qualify(parser.parse_args()), indent=2))
