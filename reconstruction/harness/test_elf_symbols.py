@@ -61,9 +61,11 @@ class ElfSymbolTests(unittest.TestCase):
             blob=fixture(); edit(blob)
             with self.assertRaises(ValueError): function_symbols(blob)
 
-    def test_captured_images_parse_without_sdk(self):
+    def test_all_retained_images_parse_without_sdk(self):
         root=Path(__file__).resolve().parents[2]
-        for path in (root/'evidence/original').glob('*/deployed.so'):
+        paths = list((root / 'evidence').glob('*/*/deployed.so'))
+        self.assertEqual(len(paths), 9)
+        for path in paths:
             with self.subTest(program=path.parent.name):
                 function_symbols(path.read_bytes())
 
@@ -108,6 +110,14 @@ class ElfSymbolTests(unittest.TestCase):
         blob = fixture()
         blob[504 + 24:504 + 48] = blob[504:528]
         self.assertEqual(function_symbols(blob), [(0x1000, 8, 'local'), (0x1000, 8, 'alias')])
+
+    def test_unsupported_instruction_versions_are_not_interpreted_as_legacy(self):
+        for version in (2, 3, 4, 32):
+            with self.subTest(version=version):
+                blob = fixture()
+                struct.pack_into('<I', blob, 48, version)
+                with self.assertRaisesRegex(ValueError, 'legacy SBPFv0/v1'):
+                    function_symbols(blob)
 
 
 if __name__ == '__main__': unittest.main()
