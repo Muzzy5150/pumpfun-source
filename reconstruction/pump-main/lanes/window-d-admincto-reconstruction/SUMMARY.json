@@ -1,0 +1,39 @@
+{
+  "lane": "window-d-admincto-reconstruction",
+  "target": "0x22a10 pump_recovered::admin_cto::execute",
+  "base_commit": "75b6547f66d097cb36e3a3f1ad60643d0c5fd848",
+  "base": {
+    "bytes": 27344,
+    "ratio": 0.37637,
+    "calls": [154, 3],
+    "normalized": 1027,
+    "raw": 276,
+    "unstripped_sha256": "c2531dc00a48a5a38d937a635b81a78fed54186e50f6e17ce9006ec016568850",
+    "stripped_sha256": "d0d414e8a710885c16e233205e696e811c3e90587a6147425cb293cc812b034a"
+  },
+  "best": {
+    "mechanism": "replace the preinitialized mutable swept local with branch-wise definite assignment",
+    "bytes": 27240,
+    "ratio": 0.37650,
+    "calls": [154, 3],
+    "normalized": 1027,
+    "raw": 276,
+    "gains": [],
+    "losses": [],
+    "raw_gains": [],
+    "raw_losses": [],
+    "unstripped_sha256": "edcd31807b37224f8083fef3677fd2d9388e276852dcbf07aa060394309abc25",
+    "stripped_sha256": "dbd210997adefe64d0ad28e094c2ab96e2d24e4368e28a4c1ec5310fea0041d9"
+  },
+  "runtime": {
+    "cases": 363,
+    "mismatches": [],
+    "report_sha256": "32b2b5b38f45b48ac4933e530b5eae55baaec8219c2d26ba7bb106955b365b74"
+  },
+  "remaining": [
+    "sweep exit remains jump-threaded into separate success and error blocks",
+    "native-mint comparison still triggers a different branch heuristic",
+    "validation and diagnostic block order still differs",
+    "stack-slot colouring and source-coordinate placement remain different"
+  ]
+}
