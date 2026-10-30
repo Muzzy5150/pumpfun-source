@@ -9,7 +9,8 @@ then applied in order. File-existence, binary and executable-mode changes use Gi
 patch metadata; ordinary text changes retain `patch -p2 --forward`. Rejects are
 reported and the part is skipped, but any conflict fails the composition without
 building or scoring its incomplete source tree.
-Output: SC/integ/<NAME>/{src, parts/<label>.patch, rejects/, report.json}
+Output: SC/integ/<NAME>/{src, parts/<label>.patch, rejects/, report.json,
+source-inputs.json, composed-source.json}
 Names must be fresh; an earlier result is never overwritten.
 """
 import argparse, ast, hashlib, json, shutil, subprocess, sys, re
@@ -250,7 +251,7 @@ def main():
         'parts': [],
     }
     exit_code = 0
-    composition_failed = False
+    composition_errors = []
     # GNU patch on Windows otherwise strips CR bytes from patch/source input.
     patch_command = ['patch'] + (['--binary'] if sys.platform == 'win32' else [])
     for label, path, derived_from in parts:
@@ -278,21 +279,21 @@ def main():
         else:
             (out / 'rejects' / f'{label}.txt').write_text(dry.stdout + dry.stderr)
             report['parts'].append({'label': label, 'status': 'conflict', 'detail': (dry.stdout + dry.stderr)[-1500:]})
-            composition_failed = True
+            composition_errors.append(f'source part conflicted: {label}')
     try:
         for path, expected in captured_inputs.items():
             assert_unchanged(path, expected)
     except (ValueError, OSError) as error:
         report['input_error'] = str(error)
-        composition_failed = True
+        composition_errors.append('selected source input changed during composition')
     composed = snapshot(src)
     write_receipt(out / 'composed-source.json', composed)
     report['composed_source'] = {
         'receipt': 'composed-source.json',
         'sha256': composed['sha256'],
     }
-    if composition_failed:
-        report['composition_error'] = 'one or more source parts conflicted; build and score skipped'
+    if composition_errors:
+        report['composition_error'] = '; '.join(composition_errors) + '; build and score skipped'
         exit_code = 1
     elif not a.no_build:
         res = build_source(src, out / 'work', out / 'build', quiet=True)
