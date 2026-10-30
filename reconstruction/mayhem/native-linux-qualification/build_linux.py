@@ -19,6 +19,7 @@ import os
 from pathlib import Path, PurePosixPath
 import platform
 import re
+import resource
 import shutil
 import subprocess
 import tarfile
@@ -72,7 +73,7 @@ def load(path: Path):
 
 
 def save(path: Path, value) -> None:
-    path.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8", newline="\n")
+    path.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
 
 
 def safe(name: str) -> str:
@@ -113,10 +114,27 @@ def extract_regular_files(data: bytes) -> dict[str, bytes]:
 
 
 def run_logged(command: list[str], *, cwd: Path, env: dict[str, str], prefix: Path) -> int:
+    before = resource.getrusage(resource.RUSAGE_CHILDREN)
+    started = time.monotonic()
     with prefix.with_suffix(".stdout.log").open("wb") as stdout, prefix.with_suffix(
         ".stderr.log"
     ).open("wb") as stderr:
-        return subprocess.run(command, cwd=cwd, env=env, stdout=stdout, stderr=stderr).returncode
+        returncode = subprocess.run(command, cwd=cwd, env=env, stdout=stdout, stderr=stderr).returncode
+    after = resource.getrusage(resource.RUSAGE_CHILDREN)
+    save(
+        prefix.with_suffix(".process.json"),
+        {
+            "command": command,
+            "cwd": str(cwd),
+            "returncode": returncode,
+            "elapsed_seconds": time.monotonic() - started,
+            "child_user_cpu_seconds": after.ru_utime - before.ru_utime,
+            "child_system_cpu_seconds": after.ru_stime - before.ru_stime,
+            "child_max_rss_kib_cumulative": after.ru_maxrss,
+            "child_involuntary_context_switches": after.ru_nivcsw - before.ru_nivcsw,
+        },
+    )
+    return returncode
 
 
 def pin_files(root: Path, rows: list[dict[str, object]]) -> None:
@@ -223,7 +241,6 @@ def configure_cargo(home: Path, vendor: Path) -> None:
         + json.dumps(str(vendor))
         + "\n[net]\noffline = true\n",
         encoding="utf-8",
-        newline="\n",
     )
 
 
@@ -405,7 +422,6 @@ def derive_linux_metadata_map(records: Path, output: Path) -> dict[str, object]:
     output.write_text(
         "".join(f"{old}\t{published}\t{crate}\n" for old, published, crate, _ in rows),
         encoding="utf-8",
-        newline="\n",
     )
     receipt = {
         "bindings_sha256": sha256(HERE / "published-metadata-bindings.json"),

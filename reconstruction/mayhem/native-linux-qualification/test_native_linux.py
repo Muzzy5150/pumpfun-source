@@ -6,6 +6,7 @@ from __future__ import annotations
 import hashlib
 import importlib.util
 import json
+import os
 from pathlib import Path
 import tempfile
 import types
@@ -33,6 +34,22 @@ class NativeLinuxQualificationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "archive digest differs"):
             native.unpack_sdk(archive, self.root / "sdk")
         self.assertFalse((self.root / "sdk").exists())
+
+    def test_real_child_process_has_bounded_resource_receipt(self):
+        prefix = self.root / "child"
+        code = native.run_logged(
+            ["/bin/sh", "-c", "printf output; printf diagnostic >&2; exit 7"],
+            cwd=self.root,
+            env=dict(os.environ),
+            prefix=prefix,
+        )
+        self.assertEqual(code, 7)
+        self.assertEqual(prefix.with_suffix(".stdout.log").read_bytes(), b"output")
+        self.assertEqual(prefix.with_suffix(".stderr.log").read_bytes(), b"diagnostic")
+        receipt = json.loads(prefix.with_suffix(".process.json").read_text())
+        self.assertEqual(receipt["returncode"], 7)
+        self.assertGreaterEqual(receipt["elapsed_seconds"], 0)
+        self.assertGreater(receipt["child_max_rss_kib_cumulative"], 0)
 
     def test_missing_and_modified_vendor_inputs_are_rejected(self):
         controller = self.root / "controller"

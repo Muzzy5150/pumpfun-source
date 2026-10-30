@@ -49,6 +49,7 @@ jobs:
             ${{ runner.temp }}/mayhem-linux-inputs/receipt.json
             ${{ runner.temp }}/mayhem-linux-qualification/result.json
             ${{ runner.temp }}/mayhem-linux-qualification/stage*.log
+            ${{ runner.temp }}/mayhem-linux-qualification/stage*.json
             ${{ runner.temp }}/mayhem-linux-qualification/stage/source-mapping.json
             ${{ runner.temp }}/mayhem-linux-qualification/historical-macro/*.json
             ${{ runner.temp }}/mayhem-linux-qualification/historical-macro/*.log
@@ -56,11 +57,13 @@ jobs:
             ${{ runner.temp }}/mayhem-linux-qualification/metadata-probe/result.json
             ${{ runner.temp }}/mayhem-linux-qualification/metadata-probe/launch.json
             ${{ runner.temp }}/mayhem-linux-qualification/metadata-probe/*.log
+            ${{ runner.temp }}/mayhem-linux-qualification/metadata-probe/*.process.json
             ${{ runner.temp }}/mayhem-linux-qualification/metadata-probe/link/**
             ${{ runner.temp }}/mayhem-linux-qualification/metadata-probe/wrapper-records/**
             ${{ runner.temp }}/mayhem-linux-qualification/build-*/result.json
             ${{ runner.temp }}/mayhem-linux-qualification/build-*/launch.json
             ${{ runner.temp }}/mayhem-linux-qualification/build-*/*.log
+            ${{ runner.temp }}/mayhem-linux-qualification/build-*/*.process.json
             ${{ runner.temp }}/mayhem-linux-qualification/build-*/symbols.so
             ${{ runner.temp }}/mayhem-linux-qualification/build-*/candidate.so
             ${{ runner.temp }}/mayhem-linux-qualification/build-*/link/**
