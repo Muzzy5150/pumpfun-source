@@ -118,3 +118,27 @@ control-flow representation; it is not a claim of exhaustive behavioral
 identity. The report SHA-256 was
 `32b2b5b38f45b48ac4933e530b5eae55baaec8219c2d26ba7bb106955b365b74`.
 
+## Final upstream rebase
+
+Immediately before publication the branch was rebased onto `origin/main` at
+`a7135a6a64c446166895f7e3ea4ca84ac1a9b848`. An independent clean build of
+that exact upstream SHA reproduced the same baseline target metrics and the
+same 1,027 normalized / 276 raw membership. A separate clean build of the
+rebased candidate reproduced the same 27,240-byte target, 0.37650 ratio, 154/3
+call census, and zero normalized or raw gains/losses versus the fresh upstream
+build.
+
+Final upstream artifacts:
+
+- Baseline unstripped:
+  `31ec6381b4e7b4a7fb4c2a27820e65df8919196e9af15e3f398d55c5bbc88d58`.
+- Baseline stripped:
+  `1b04b8d4cf9ba6fda52d25d7781cb3ceb2d0cc359dd10e09d1672a97053b1455`.
+- Candidate unstripped:
+  `e4d630ca738f861e872cd78b9426babf147694e823899ee06aed53e4449c96d8`.
+- Candidate stripped:
+  `02abf4644b2de6fc2155886fcb6dd781cc3a585fe81a2f415fe4e6d82ad40ba1`.
+
+The final candidate repeated all 363 offline comparisons with zero mismatches;
+the final report SHA-256 was
+`b50174d3b8d396d2015c63571d8a4e5251efd0615e1c2849ecb7e2bf8291eb19`.
