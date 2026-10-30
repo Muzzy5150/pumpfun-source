@@ -45,7 +45,10 @@ class CompositionFidelityTests(unittest.TestCase):
                 b'[package]\nname = "composition_fixture"\nversion = "0.0.0"\n'
                 b'edition = "2021"\n\n[lib]\npath = "src/lib.rs"\n'
             ),
-            'Cargo.lock': b'version = 3\n',
+            'Cargo.lock': (
+                b'version = 3\n\n[[package]]\nname = "composition_fixture"\n'
+                b'version = "0.0.0"\n'
+            ),
             'src/lib.rs': (
                 b'pub mod target;\n'
                 b'pub const IMAGE: &[u8] = include_bytes!("../assets/image.bin");\n'

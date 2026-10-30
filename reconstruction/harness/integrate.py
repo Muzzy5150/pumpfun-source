@@ -5,8 +5,8 @@
                [--base-of <label>=<crate it was derived from>] [--no-build]
 
 Each part is turned into a patch against the crate it was derived from (default: --base-src),
-then applied in order. Empty-file transitions use Git patch metadata; ordinary text
-changes retain `patch -p2 --forward`. Rejects are reported and the part is skipped
+then applied in order. File-existence, binary and executable-mode changes use Git
+patch metadata; ordinary text changes retain `patch -p2 --forward`. Rejects are reported and the part is skipped
 (the composition continues). The composed crate is built with fastbuild.py and scored.
 Output: SC/integ/<NAME>/{src, parts/<label>.patch, rejects/, report.json}
 Names must be fresh; an earlier result is never overwritten.
@@ -48,16 +48,32 @@ def make_patch(base: Path, part: Path, out: Path, tmp: Path):
     patterns = ('*.orig', '*.rej', '.DS_Store')
     shutil.copytree(base, tmp / 'a/pump', ignore=crate_ignore(base, *patterns))
     shutil.copytree(part, tmp / 'b/pump', ignore=crate_ignore(part, *patterns))
-    trees = [{p.relative_to(root): p.stat().st_size == 0
+    roots = (tmp / 'a/pump', tmp / 'b/pump')
+    trees = [{p.relative_to(root): {
+                  'empty': p.stat().st_size == 0,
+                  'executable': bool(p.stat().st_mode & 0o111),
+                  'bytes': p.read_bytes(),
+              }
               for p in root.rglob('*') if p.is_file()}
-             for root in (tmp / 'a/pump', tmp / 'b/pump')]
+             for root in roots]
     # diff -N equates absent and empty files, while patch -E removes files
-    # intentionally emptied by a part. Git records those existence changes.
-    empty_change = any(trees[0].get(name, False) != trees[1].get(name, False)
-                       for name in trees[0].keys() | trees[1].keys())
+    # intentionally emptied by a part. Recursive diff also emits no applicable
+    # hunks for binary files and carries no executable metadata. Git records all
+    # three kinds without changing the ordinary textual-patch path.
+    def needs_git(name):
+        old, new = trees[0].get(name), trees[1].get(name)
+        if (old is not None and old['empty']) != (new is not None and new['empty']):
+            return True
+        if old is not None and new is not None and old['executable'] != new['executable']:
+            return True
+        if old is None or new is None or old['bytes'] != new['bytes']:
+            return b'\0' in (old or {'bytes': b''})['bytes'] or b'\0' in (new or {'bytes': b''})['bytes']
+        return False
+
+    metadata_change = any(needs_git(name) for name in trees[0].keys() | trees[1].keys())
     command = (['git', '-c', 'core.autocrlf=false', 'diff', '--no-index', '--binary',
                 '--no-ext-diff', '--no-textconv', '--no-renames', '--src-prefix=',
-                '--dst-prefix=', '--', 'a/pump', 'b/pump'] if empty_change else
+                '--dst-prefix=', '--', 'a/pump', 'b/pump'] if metadata_change else
                ['diff', '-ruN', 'a/pump', 'b/pump'])
     d = subprocess.run(command, cwd=tmp, capture_output=True)
     if d.returncode not in (0, 1):
