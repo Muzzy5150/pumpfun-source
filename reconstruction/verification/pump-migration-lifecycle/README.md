@@ -119,7 +119,7 @@ python3.11 reconstruction/harness/fastbuild.py \
 
 ## Qualification identity
 
-- Upstream source: `e3f3be8bbb2c9d22b2e8e5b139d839eb3a57163d`
+- Upstream source: `7e26cbf36c5c0c824e3eb36417ce8a35866f530a`
 - Original Pump: `7a19affaa2c6187e04a5fe0ea298cee81fa5eb8c24cfcc30d85f615e89f7b02d`
 - Current rebuild: `9dfc496c288be94d866cb96652ef4325e194a1cde30665e8414775a2dd2a9890`
 - Captured PumpSwap: `6a7ad34596d83b4c435b32f458a56e718e9f82eb4ad38e4316616d15d24d8ff7`

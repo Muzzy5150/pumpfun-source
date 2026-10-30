@@ -676,7 +676,7 @@ def run_suite(candidate):
     return {
         "schema": "pump-migration-lifecycle-v1",
         "scope": "Authenticated persistent legacy migrate and migrate_v2 lifecycle differential; synthetic state, captured programs, local LiteSVM, no network.",
-        "upstream_sha": "e3f3be8bbb2c9d22b2e8e5b139d839eb3a57163d",
+        "upstream_sha": "7e26cbf36c5c0c824e3eb36417ce8a35866f530a",
         "program_ids": PROGRAM_IDS,
         "program_sha256": hashes,
         "fixture": str(FIXTURE_PATH.relative_to(ROOT)),
