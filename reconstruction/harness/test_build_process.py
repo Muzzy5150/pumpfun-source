@@ -17,31 +17,45 @@ class CompilerDeadlineTests(unittest.TestCase):
     def run_python(self, code, **kwargs):
         return run_compiler([sys.executable, '-u', '-c', code], **kwargs)
 
-    def detached_pipe_trial(self, stream='stdout', leader_exits=False):
+    def detached_pipe_trial(self, stream='stdout', leader_exits=False, interrupt=False):
         """Run run_compiler behind a watchdog and always reap escaped descendants."""
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
             leader_pid = root / 'leader.pid'
             descendant_pid = root / 'descendant.pid'
             child = (
-                'import os,sys,time; from pathlib import Path; '
-                f'Path({str(descendant_pid)!r}).write_text(str(os.getpid())); '
+                'import sys,time; '
                 f'print("detached-{stream}",file=sys.{stream},flush=True); time.sleep(30)'
             )
             leader_tail = 'sys.exit(0)' if leader_exits else 'time.sleep(30)'
             leader = (
                 'import os,subprocess,sys,time; from pathlib import Path; '
                 f'Path({str(leader_pid)!r}).write_text(str(os.getpid())); '
-                f'subprocess.Popen([sys.executable,"-u","-c",{child!r}],start_new_session=True); '
+                f'c=subprocess.Popen([sys.executable,"-u","-c",{child!r}],start_new_session=True); '
+                f'Path({str(descendant_pid)!r}).write_text(str(c.pid)); '
                 f'print("leader-{stream}",file=sys.{stream},flush=True); {leader_tail}'
             )
             harness = str(Path(__file__).resolve().parent)
-            wrapper = (
-                'import json,sys; '
-                f'sys.path.insert(0,{harness!r}); from build_process import run_compiler; '
-                f'r,t=run_compiler([sys.executable,"-u","-c",{leader!r}],timeout=0.2); '
-                'print(json.dumps({"timed_out":t,"returncode":r.returncode,"stdout":r.stdout}),flush=True)'
-            )
+            if interrupt:
+                wrapper = (
+                    'import json,os,signal,sys,threading\n'
+                    f'sys.path.insert(0,{harness!r})\n'
+                    'from build_process import run_compiler\n'
+                    f'command=[sys.executable,"-u","-c",{leader!r}]\n'
+                    'threading.Timer(0.2,lambda:os.kill(os.getpid(),signal.SIGINT)).start()\n'
+                    'try:\n'
+                    ' run_compiler(command,timeout=30)\n'
+                    'except KeyboardInterrupt:\n'
+                    ' print(json.dumps({"interrupted":True}),flush=True)\n'
+                )
+            else:
+                wrapper = (
+                    'import json,sys; '
+                    f'sys.path.insert(0,{harness!r}); from build_process import run_compiler; '
+                    f'command=[sys.executable,"-u","-c",{leader!r}]; '
+                    'r,t=run_compiler(command,timeout=0.2); '
+                    'print(json.dumps({"timed_out":t,"returncode":r.returncode,"stdout":r.stdout}),flush=True)'
+                )
             started = time.monotonic()
             outer = subprocess.Popen(
                 [sys.executable, '-u', '-c', wrapper], start_new_session=True,
@@ -49,6 +63,7 @@ class CompilerDeadlineTests(unittest.TestCase):
             )
             returned = False
             output = ''
+            descendant_alive = False
             try:
                 output, _ = outer.communicate(timeout=2.5)
                 returned = True
@@ -66,6 +81,12 @@ class CompilerDeadlineTests(unittest.TestCase):
                     if pid_path.exists():
                         pid = int(pid_path.read_text())
                         pids.append(pid)
+                        if pid_path == descendant_pid:
+                            try:
+                                os.kill(pid, 0)
+                                descendant_alive = True
+                            except ProcessLookupError:
+                                pass
                         try:
                             os.kill(pid, signal.SIGKILL)
                         except ProcessLookupError:
@@ -75,6 +96,7 @@ class CompilerDeadlineTests(unittest.TestCase):
                 'elapsed': time.monotonic() - started,
                 'outer_returncode': outer.returncode,
                 'pids': pids,
+                'descendant_alive_before_cleanup': descendant_alive,
                 'output': output,
             }
 
@@ -99,7 +121,29 @@ class CompilerDeadlineTests(unittest.TestCase):
         report = json.loads(trial['output'])
         self.assertTrue(report['timed_out'])
         self.assertNotEqual(report['returncode'], 0)
-        self.assertEqual(report['stdout'], 'leader-stdout\ndetached-stdout\n')
+        self.assertCountEqual(report['stdout'].splitlines(), ['leader-stdout', 'detached-stdout'])
+
+    def test_detached_pipes_and_exited_leader_have_bounded_cleanup(self):
+        cases = (('stderr', False, -signal.SIGKILL), ('stdout', True, 0))
+        for stream, leader_exits, returncode in cases:
+            with self.subTest(stream=stream, leader_exits=leader_exits):
+                trial = self.detached_pipe_trial(stream, leader_exits)
+                self.assertTrue(trial['returned'], trial)
+                self.assertLess(trial['elapsed'], 2.5)
+                self.assertTrue(trial['descendant_alive_before_cleanup'], trial)
+                report = json.loads(trial['output'])
+                self.assertTrue(report['timed_out'])
+                self.assertEqual(report['returncode'], returncode)
+                self.assertCountEqual(
+                    report['stdout'].splitlines(),
+                    [f'leader-{stream}', f'detached-{stream}'],
+                )
+
+    def test_interrupt_cleanup_is_bounded_with_detached_pipe(self):
+        trial = self.detached_pipe_trial(interrupt=True)
+        self.assertTrue(trial['returned'], trial)
+        self.assertLess(trial['elapsed'], 2.5)
+        self.assertEqual(json.loads(trial['output']), {'interrupted': True})
 
     def test_compiler_descendants_are_stopped(self):
         with tempfile.TemporaryDirectory() as temp:

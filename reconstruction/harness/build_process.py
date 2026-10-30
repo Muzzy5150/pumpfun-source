@@ -28,7 +28,9 @@ def run_compiler(command, *, timeout=None, **kwargs):
     def stop_group():
         try:
             os.killpg(process.pid, signal.SIGKILL)
-        except ProcessLookupError:
+        except (ProcessLookupError, PermissionError):
+            # The session may already be gone after its leader exits while an
+            # escaped descendant still owns a copy of the output pipe.
             pass
 
     def stop_and_collect():
